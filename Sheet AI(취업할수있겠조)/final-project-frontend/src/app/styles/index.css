@@ -1,0 +1,150 @@
+@import "./font.css";
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+@tailwind utilities;
+
+@theme{
+    --color-primary-100: rgba(240, 246, 255, 1);  /* 매우 연한 파란색 */
+    --color-primary-200: rgba(220, 232, 252, 1);  /* 연한 파란색 */
+    --color-primary-300: rgba(179, 204, 246, 1);  /* 밝은 파란색 */
+    --color-primary-400: rgba(128, 162, 232, 1);  /* 중간 밝은 파란색 */
+    --color-primary-500: rgba(31, 90, 217, 1);    /* #1F5AD9 - 메인 파란색 */
+    --color-primary-600: rgba(25, 77, 189, 1);    /* 진한 파란색 */
+    --color-primary-700: rgba(21, 65, 161, 1);    /* 더 진한 파란색 */
+    --color-primary-800: rgba(17, 52, 133, 1);    /* 깊은 파란색 */
+    --color-primary-900: rgba(13, 39, 105, 1);    /* 가장 진한 파란색 */
+}
+
+@layer base {
+  html, body, #root {
+    @apply m-0 p-0 w-full h-full overflow-x-hidden box-border;
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
+  }
+
+  * {
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
+  }
+}
+
+@layer utilities {
+  @media (max-width: 640px) {
+    html, body, #root {
+      @apply w-screen min-w-full max-w-full;
+    }
+  }
+
+  .font-pretendard {
+    font-family: 'Pretendard', sans-serif;
+  }
+  
+  /* 일반 화면에서는 숨기고 인쇄 시에만 표시 */
+  .print-only {
+    display: none;
+  }
+  
+  @media print {
+    .print-only {
+      display: block;
+    }
+    
+    .no-print {
+      display: none;
+    }
+  }
+}
+
+@layer components {
+
+  .parent-header{
+    display:flex;
+  }
+  .header {
+    @apply flex items-center justify-center py-8 border-gray-200 bg-white;
+  }
+
+  .logo {
+    @apply h-10 w-auto mr-3;
+  }
+
+  .title {
+    @apply text-2xl font-bold text-gray-800;
+  }
+
+  /* 공통 버튼 스타일 */
+  .btn-primary {
+    @apply w-full py-3 px-4 mt-4
+    flex justify-center items-center
+    bg-primary-600 hover:bg-primary-700
+    text-white font-medium rounded-lg
+    transition-colors duration-200
+    disabled:bg-gray-400 disabled:cursor-not-allowed;
+  }
+
+  /* 보조 버튼 스타일 (취소, 복원 등) */
+  .btn-secondary {
+    @apply flex-1 py-2 px-4
+    bg-gray-500 text-white rounded-lg
+    hover:bg-gray-600 transition-colors;
+  }
+
+  /* 성공 버튼 스타일 (적용하기 등) */
+  .btn-success {
+    @apply flex-1 py-2 px-4
+    bg-green-600 text-white rounded-lg
+    hover:bg-green-700 transition-colors;
+  }
+
+  /* 작은 버튼 스타일 */
+  .btn-sm {
+    @apply py-1 px-4 text-sm;
+  }
+
+  /* 로딩 스피너 */
+  .spinner {
+    @apply w-8 h-8 border-4 border-primary-500 border-t-transparent rounded-full animate-spin mb-2;
+  }
+
+  /* 보고서 스타일 커스터마이징 */
+  .report-prose {
+    @apply prose prose-lg max-w-none
+      prose-headings:text-blue-800 
+      prose-h1:text-2xl prose-h1:font-bold prose-h1:mb-4
+      prose-h2:text-xl prose-h2:font-semibold prose-h2:mt-6 prose-h2:mb-3
+      prose-p:text-gray-700 prose-p:leading-relaxed
+      prose-a:text-blue-600 prose-a:no-underline hover:prose-a:underline
+      prose-strong:text-blue-700 prose-strong:font-semibold
+      prose-ul:my-4 prose-ul:list-disc prose-ul:pl-6
+      prose-ol:my-4 prose-ol:list-decimal prose-ol:pl-6
+      prose-li:my-1
+      prose-table:border-collapse prose-table:w-full
+      prose-th:bg-gray-100 prose-th:p-2 prose-th:border prose-th:border-gray-300
+      prose-td:p-2 prose-td:border prose-td:border-gray-300
+      prose-blockquote:border-l-4 prose-blockquote:border-blue-500 prose-blockquote:pl-4 prose-blockquote:italic
+      prose-code:text-blue-800 prose-code:bg-gray-100 prose-code:px-1 prose-code:rounded;
+  }
+  
+  /* 보고서 생성일 스타일 */
+  .report-date {
+    @apply text-right text-gray-500 text-sm mt-2;
+  }
+  
+  /* 핵심 정보 하이라이트 */
+  .highlight-info {
+    @apply bg-blue-50 border-l-4 border-blue-500 p-4 my-4;
+  }
+  
+  /* 경고 정보 하이라이트 */
+  .highlight-warning {
+    @apply bg-yellow-50 border-l-4 border-yellow-500 p-4 my-4;
+  }
+  
+  /* 긍정적 정보 하이라이트 */
+  .highlight-positive {
+    @apply bg-green-50 border-l-4 border-green-500 p-4 my-4;
+  }
+  
+  /* 부정적 정보 하이라이트 */
+  .highlight-negative {
+    @apply bg-red-50 border-l-4 border-red-500 p-4 my-4;
+  }
+}

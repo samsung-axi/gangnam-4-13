@@ -1,0 +1,367 @@
+.hmk_introstep_container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 16px;
+    background-color: #fff;
+    height: 100vh;
+    font-family: 'Pretendard', sans-serif;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.hmk_introstep_header {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 16px;
+    height: 40px;
+}
+
+.hmk_introstep_back_button {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 8px;
+    margin-right: 16px;
+}
+
+.hmk_introstep_form_section {
+    flex: 1;
+    flex-direction: column;
+    gap: 16px;
+    overflow-y: auto;
+    padding-right: 4px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.hmk_introstep_form_group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin: 8px 0;
+}
+
+.hmk_introstep_form_group label {
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+/* 모든 입력 요소의 높이 통일 */
+.hmk_introstep_select,
+.hmk_introstep_gender_button,
+.hmk_introstep_custom_job_input {
+    height: 48px;
+    padding: 0 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: white;
+}
+
+/* 셀렉트 그룹 레이아웃 수정 */
+.hmk_introstep_date_select_group,
+.hmk_introstep_location_select_group,
+.hmk_introstep_job_selects {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    position: relative;
+    height: 48px;
+    width: 100%;
+    flex-wrap: nowrap;
+    margin-bottom: 10px;
+}
+
+/* 생년월일 셀렉트 크기 조정 */
+.hmk_introstep_date_select_group .hmk_introstep_select {
+    flex: 1;
+    min-width: 0;
+}
+
+/* 셀렉트 박스 컨테이너 스타일 수정 */
+.hmk_introstep_location_select_group,
+.hmk_introstep_job_selects {
+    position: relative;
+    z-index: 10;
+}
+
+/* 드롭다운 메뉴 스타일 */
+select.hmk_introstep_select {
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    background-size: 16px;
+    padding-right: 32px;
+    position: relative;
+}
+
+/* 드롭다운 메뉴 높이 제한 및 위치 조정 */
+.hmk_introstep_location_select_group select,
+.hmk_introstep_job_selects select {
+    max-height: 50px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #888 #f1f1f1;
+}
+
+/* 드롭다운이 열릴 때 상위로 표시 */
+.hmk_introstep_select:focus {
+    position: relative;
+    z-index: 20;
+}
+
+/* 드롭다운 옵션 스타일링 */
+.hmk_introstep_select option {
+    padding: 6px 12px;
+    font-size: 14px;
+}
+
+/* 스크롤바 스타일링 (Webkit 브라우저용) */
+.hmk_introstep_location_select_group select::-webkit-scrollbar,
+.hmk_introstep_job_selects select::-webkit-scrollbar {
+    width: 6px;
+}
+
+.hmk_introstep_location_select_group select::-webkit-scrollbar-track,
+.hmk_introstep_job_selects select::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+}
+
+.hmk_introstep_location_select_group select::-webkit-scrollbar-thumb,
+.hmk_introstep_job_selects select::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 3px;
+}
+
+/* 지역 선택 셀렉트 박스 특별 스타일 */
+.hmk_introstep_location_select_group .hmk_introstep_select {
+    flex: 1;
+    min-width: 0;
+}
+
+/* 직무 선택 셀렉트 박스 특별 스타일 */
+.hmk_introstep_job_selects .hmk_introstep_select {
+    flex: 1;
+    min-width: 0;
+}
+
+/* 성별 선택 버튼 */
+.hmk_introstep_gender_group {
+    display: flex;
+    gap: 8px;
+    height: 48px;
+}
+
+.hmk_introstep_gender_button {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.hmk_introstep_gender_button.selected {
+    background-color: #FFB800;
+    border-color: #FFB800;
+    color: white;
+}
+
+/* 직무 선택 컨테이너 */
+.hmk_introstep_job_container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* 커스텀 입력창 */
+.hmk_introstep_custom_job_input {
+    width: 100%;
+    margin-top: 8px;
+    box-sizing: border-box;
+}
+
+/* 버튼 그룹 */
+.hmk_introstep_button_group {
+    flex-shrink: 0;
+    margin-top: 20px;
+    padding-bottom: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.hmk_introstep_next_button,
+.hmk_introstep_skip_button {
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.hmk_introstep_next_button {
+    background-color: #ddd;
+    color: #666;
+    border: none;
+    transition: all 0.2s ease;
+}
+
+.hmk_introstep_next_button.active {
+    background-color: #FFB800;
+    color: #000;
+}
+
+.hmk_introstep_skip_button {
+    border: none;
+    background: none;
+    color: #666;
+}
+
+/* 나이 표시 영역 수정 */
+.hmk_introstep_age_display {
+    position: static;
+    height: 48px;
+    padding: 0 12px;
+    display: flex;
+    align-items: center;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    font-size: 14px;
+    white-space: nowrap;
+    flex: 0 0 auto;
+    min-width: 80px;
+}
+
+/* 모바일 대응 강화 */
+@media (max-width: 480px) {
+    .hmk_introstep_container {
+        padding: 12px;
+    }
+
+    .hmk_introstep_header {
+        height: 36px;
+        margin-bottom: 12px;
+    }
+
+    .hmk_introstep_form_section {
+        gap: 12px;
+        padding-right: 0;
+    }
+
+    .hmk_introstep_form_group {
+        margin: 15px 0;
+    }
+
+    .hmk_introstep_select,
+    .hmk_introstep_gender_button,
+    .hmk_introstep_custom_job_input,
+    .hmk_introstep_next_button,
+    .hmk_introstep_skip_button {
+        height: 40px;
+        font-size: 13px;
+    }
+
+    .hmk_introstep_form_group label {
+        font-size: 14px;
+    }
+
+    .hmk_introstep_date_select_group,
+    .hmk_introstep_location_select_group,
+    .hmk_introstep_job_selects {
+        gap: 4px;
+    }
+
+    .hmk_introstep_age_display {
+        height: 40px;
+        min-width: 50px;
+        padding: 0 6px;
+        font-size: 12px;
+    }
+
+    .hmk_introstep_button_group {
+        margin-top: 16px;
+        padding-bottom: 12px;
+        gap: 6px;
+    }
+
+}
+
+/* iPhone SE 등 작은 화면 대응 */
+@media (max-width: 375px) {
+    .hmk_introstep_container {
+        padding: 8px;
+    }
+
+    .hmk_introstep_header {
+        height: 32px;
+        margin-bottom: 8px;
+    }
+
+    .hmk_introstep_form_section {
+        gap: 8px;
+    }
+
+    .hmk_introstep_form_group {
+        margin: 10px 0;
+    }
+
+    .hmk_introstep_select,
+    .hmk_introstep_gender_button,
+    .hmk_introstep_custom_job_input,
+    .hmk_introstep_next_button,
+    .hmk_introstep_skip_button {
+        height: 36px;
+        font-size: 12px;
+        padding: 0 8px;
+    }
+
+    .hmk_introstep_form_group label {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .hmk_introstep_date_select_group,
+    .hmk_introstep_location_select_group,
+    .hmk_introstep_job_selects {
+        gap: 2px;
+    }
+
+    .hmk_introstep_age_display {
+        height: 36px;
+        min-width: 45px;
+        padding: 0 4px;
+        font-size: 11px;
+    }
+
+    .hmk_introstep_button_group {
+        margin-top: 12px;
+        padding-bottom: 8px;
+        gap: 4px;
+    }
+
+    .hmk_introstep_custom_job_input {
+        width: 100%;
+    }
+
+    .hmk_introstep_location_select_group select,
+    .hmk_introstep_job_selects select {
+        max-height: 50px;
+    }
+}

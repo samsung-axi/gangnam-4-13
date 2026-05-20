@@ -1,0 +1,207 @@
+@use '@assets/styles/_variables' as *;
+
+.promptContainer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 5px 9px 12px 9px;
+  background: $background-color;
+  z-index: 100;
+}
+
+.promptRow {
+  display: flex;
+  gap: 8px;
+  height: 56px;
+  align-items: center;
+  max-width: 950px;
+  margin: 0 auto;
+  padding: 0 4px;
+}
+
+.button {
+  border: none;
+  border-radius: 24px;
+  padding: 14px 16px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  white-space: nowrap;
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  .material-symbols-rounded {
+    font-size: 24px;
+  }
+}
+
+.voiceButton {
+  flex: 1;
+  background-color: #50B498;
+  color: $white-color;
+
+  &:hover:not(:disabled) {
+    background-color: #41a78a;
+  }
+}
+
+.smallButton {
+  width: 48px;
+  height: 48px;
+  background-color: #eee;
+  color: #333;
+  border-radius: 50%;
+  padding: 12px;
+
+  &:hover:not(:disabled) {
+    background-color: #ddd;
+  }
+
+  &.expanding {
+    width: 100%;
+    border-radius: 24px;
+    background-color: $light-primary-color;
+  }
+}
+
+.promptForm {
+  flex: 1;
+  display: flex;
+  gap: 8px;
+  background: $light-primary-color;
+  border-radius: 130px;
+  padding: 0 5px;
+  align-items: center;
+  animation: expandForm 0.3s ease-out;
+}
+
+@keyframes expandForm {
+  from {
+    width: 48px;
+    opacity: 0;
+  }
+  to {
+    width: 100%;
+    opacity: 1;
+  }
+}
+
+.textInput {
+  flex: 1;
+  border: none;
+  background: none;
+  font-size: 1rem;
+  padding: 18px 18px;
+  color: $light-text-color;
+  outline: none;
+
+  &::placeholder {
+    color: $light-placeholder-color;
+  }
+
+  &:disabled {
+    background-color: transparent;
+    cursor: not-allowed;
+  }
+}
+
+.sendButton {
+  width: 48px;
+  height: 48px;
+  border: none;
+  border-radius: 50%;
+  // background-color: none;
+  background: #cfdaee;
+  color: $light-text-color;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+
+  &:hover:not(:disabled) {
+    background-color: none;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+.deleteButton {
+  min-width: 48px;
+  width: 48px;
+  height: 48px;
+  padding: 8px;
+  background-color: #eee;
+  color: #333;
+  border-radius: 50%;
+
+  &:hover {
+    background-color: #ddd;
+  }
+
+  .material-symbols-rounded {
+    font-size: 20px;
+  }
+}
+
+.disclaimerText {
+  font-size: 0.8rem;
+  color: #666;
+  text-align: center;
+  line-height: 1.4;
+  margin-top: 1rem;
+  max-width: 800px;
+  margin: 0.5rem auto 0;
+}
+
+@media screen and (max-width: 480px) {
+  .promptContainer {
+    padding: 10px 8px;
+  }
+
+  .promptRow {
+    gap: 4px;
+    padding: 0 2px;
+  }
+
+  .button {
+    padding: 8px;
+    
+    &.smallButton {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  .deleteButton {
+    min-width: 48px;
+    width: 48px;
+    height: 48px;
+    padding: 6px;
+  }
+
+  .promptForm {
+    padding: 0 4px;
+  }
+
+  .textInput {
+    padding: 12px 12px;
+    font-size: 0.9rem;
+  }
+
+  .sendButton {
+    width: 40px;
+    height: 40px;
+  }
+} 

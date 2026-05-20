@@ -1,0 +1,17 @@
+/* 토스트 외부 기본 배경 제거 */
+.Toastify__toast {
+    background-color: transparent !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+}
+
+/* 내부 컨텐츠 스타일 */
+.custom-toast-body {
+    background-color: #222; /* 원하는 색상 */
+    color: white;
+    padding: 14px 16px;
+    border-radius: 10px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}

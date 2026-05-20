@@ -1,0 +1,24 @@
+fastapi==0.115.14
+fastapi_utilities==0.3.1
+gTTS==2.5.4
+httpx==0.28.1
+langchain==0.3.26
+langchain_chroma==0.2.4
+langchain_community==0.3.26
+langchain_core==0.3.66
+langchain_openai==0.3.27
+langgraph==0.5.0
+langsmith==0.4.4
+openai==1.93.0
+passlib==1.7.4
+pdf2image==1.17.0
+Pillow==11.2.1
+protobuf<5.0.0  # 버전 제약을 느슨하게 변경
+pydantic==2.11.7
+PyPDF2==3.0.1
+python-dotenv==1.1.1
+python_jose==3.5.0
+redis==6.2.0
+SQLAlchemy==2.0.41
+google-generativeai
+pymysql

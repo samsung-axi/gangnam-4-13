@@ -1,0 +1,81 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+version: 1.0
+language: python
+
+project:
+  name: LABGUARD
+  description: 실험실 안전관리 및 리포트 시스템. FastAPI 기반으로 운영되며 LangChain과 GPT를 활용해 PDF 매뉴얼 분석 및 AI 리포트를 생성합니다.
+
+frameworks:
+  - FastAPI
+  - LangChain
+  - OpenAI API
+  - dotenv
+  - PyPDFLoader
+
+environment:
+  python_version: ">=3.10"
+  env_variables:
+    - OPENAI_API_KEY
+    - DATABASE_URL
+    - SECRET_KEY
+  env_management: dotenv
+
+file_handling:
+  use_tempfile: true
+  delete_after_use: true
+  preferred_loader: PyPDFLoader
+  fallback_loader: pdfplumber
+
+llm:
+  default_model: gpt-4
+  temperature: 0.0
+  top_p: 1.0
+  chunking:
+    method: RecursiveCharacterTextSplitter
+    chunk_size: 1000
+    chunk_overlap: 100
+  prompt_template: |
+    아래 매뉴얼에서 위험요소와 주의사항을 중심으로 요약해줘.
+    요약은 항목화해서 간결하게 작성해줘.
+
+modules:
+  - routers
+  - services
+  - agents
+  - schemas
+  - utils
+
+code_style:
+  formatting_tool: black
+  linter: flake8
+  typing: strict
+  docstrings:
+    style: google
+    required: public_functions_only
+
+error_handling:
+  framework: FastAPI
+  method: HTTPException
+  fallback: generic JSON error response
+  logging: true
+
+comments:
+  preferred_language: korean
+  use_inline_for_logic: true
+  avoid: TODOs without assignees
+
+security:
+  password_handling: hash_only
+  file_uploads: validate_mime_types
+  api_keys: use_env_only
+
+tests:
+  framework: pytest
+  required_for: critical modules
+  mock_external_services: true
+

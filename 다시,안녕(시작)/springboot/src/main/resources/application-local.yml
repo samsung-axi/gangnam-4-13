@@ -1,0 +1,46 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/againhello
+    #    url: jdbc:postgresql://localhost:5432/postgres
+    username: ${POSTGRESQL_USERNAME}
+
+    password: ${POSTGRESQL_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+
+server:
+  frontend: http://localhost:3000
+  backend: http://localhost:8080
+
+file:
+  upload:
+    dir: upload
+    max-count: 3
+    max-count-text: 10
+    allowed-audio-extensions: mp3,aac,ac3,ogg,flac,wav,m4a
+    allowed-video-extensions: avi,mp4,mov,wmv,flv,mkv
+    allowed-text-extensions: txt,csv
+    allowed-image-extensions: jpg,jpeg,png,webp
+    max-audio-size: 5242880
+    max-video-size: 314572800
+    max-text-size: 314572800
+  output:
+    dir: ./output
+
+  sms:
+    call: /Users/dijeung/Desktop/Final_Project/springboot/output
+
+#  call: /dev/final/springboot/output
+#  call: \Users\201-06\Final_Project\springboot\output
+#  call: ${AUDIO_PLAY_ADDRESS}
+#  call: /Users/jin/final_project/Final_Project/Final_Project/springboot/output
+app:
+  props:
+    social:
+      kakao:
+        client-id: ${KAKAO_CLIENT_ID}
+        client-secret: ${KAKAO_CLIENT_SECRET}
+        redirect-uri: http://localhost:8080/be/member/kakao/callback
+        token-uri: https://kauth.kakao.com/oauth/token
+        user-info-uri: https://kapi.kakao.com/v2/user/me
+        user-info-name-attribute-key: id
+        client-name: Kakao

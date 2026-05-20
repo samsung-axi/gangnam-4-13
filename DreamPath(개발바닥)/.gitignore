@@ -1,0 +1,62 @@
+# Node.js
+node_modules/
+
+# Environment files (contain secrets)
+.env
+.env.local
+backend/.env
+ai-service/.env
+frontend/.env
+
+# Java / Gradle
+target/
+*.jar
+*.war
+*.class
+backend/build/
+.gradle/
+
+# AWS (contains deployment secrets)
+.aws/
+
+# Docs (개발 문서)
+docs/
+
+# Frontend build output
+frontend/out/
+
+# IDE
+.vscode/
+.idea/
+
+# Docker
+.dockerignore
+
+# Logs
+*.log
+logs/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# .bat
+*.bat
+start-server.bat
+stop-server.bat
+quick-update.bat
+check-status.bat
+
+# 백업 폴더
+frontend_backup_cra/
+
+# OpenVidu/LiveKit 로컬 설정 (개인 IP 포함)
+infra/livekit-local/community/.env
+infra/livekit-local/community/.env-e
+
+# Claude Code 설정 (개인 설정)
+.claude/
+CLAUDE.md
+
+backend-dev.log
+ai-service-dev.log

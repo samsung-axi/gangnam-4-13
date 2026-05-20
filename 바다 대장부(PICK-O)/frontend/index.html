@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="/logo.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <title>바다 대장부 - 수산물 도매 관리 시스템</title>
+</head>
+<body>
+  <div id="root"></div>
+
+  <!-- 토스 페이먼츠 SDK v2 -->
+  <script src="https://js.tosspayments.com/v2/standard"></script>
+  <script type="module" src="/src/main.tsx"></script>
+
+  <!-- 인증 버튼 -->
+  <button id="auth-chatbot-btn" 
+    style="
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      border: none;
+      background-color: #000;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 9999;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+    "
+  >
+    AI_사용인증
+  </button>
+
+  <!-- 챗봇 스크립트 미리 로드 -->
+  <script src="https://66a92e7ce493.ngrok-free.app/ai/chatbot.js" defer></script>
+
+  <script>
+    const btn = document.getElementById('auth-chatbot-btn');
+    const toggleBtnSelector = '#chatbot-widget-toggle';
+
+    // 인증 전 챗봇 토글 버튼 숨기기 (DOMContentLoaded 이후 실행)
+    document.addEventListener('DOMContentLoaded', () => {
+      const toggleBtn = document.querySelector(toggleBtnSelector);
+      if (toggleBtn) {
+        toggleBtn.style.display = 'none';
+      }
+    });
+
+    btn.addEventListener('click', () => {
+      btn.disabled = true;
+
+      // 인증 창 팝업 띄우기 (필요 시)
+      const authWindow = window.open(
+        'https://66a92e7ce493.ngrok-free.app/',
+        'ngrokAuth',
+        'width=600,height=700'
+      );
+
+      // 5초 후 인증 완료 처리
+      setTimeout(() => {
+        // 팝업 닫기
+        if (authWindow && !authWindow.closed) {
+          authWindow.close();
+        }
+
+        // 인증 버튼 제거
+        btn.remove();
+
+  // 페이지 새로고침
+  location.reload();
+  
+        // 챗봇 토글 버튼 보이기
+        const toggleBtn = document.querySelector(toggleBtnSelector);
+        if (toggleBtn) {
+          toggleBtn.style.display = 'flex';
+        }
+
+        console.log('✅ 인증 완료 및 챗봇 활성화');
+        
+      }, 5000);
+    });
+  </script>
+</body>
+</html>

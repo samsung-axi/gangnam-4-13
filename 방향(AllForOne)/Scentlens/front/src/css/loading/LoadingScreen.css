@@ -1,0 +1,84 @@
+/* 로딩 컨테이너 */
+.loading-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 중앙 향수 병 */
+.perfume-bottle {
+    width: 80px;
+    height: 120px;
+    background-image: url('../../../public/images/perfume.png'); /* 향수 병 이미지 경로 */
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 10;
+    transform: translateY(10px);
+}
+
+/* 회전하는 원형 테두리 */
+.rotating-circle {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border: 8px solid transparent; /* 투명 테두리 */
+    border-top: 8px solid rgba(255, 105, 135, 0.9); /* 초기 색상: 진한 핑크 */
+    border-radius: 50%;
+    animation: rotate 3s linear infinite, colorChange 6s linear infinite; /* 회전과 색상 변화 */
+}
+
+/* 로딩 텍스트 */
+.loading-text {
+    position: absolute;
+    bottom: -30px;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.2rem;
+    font-family: 'Gowun Batang', serif;
+    text-align: center;
+    animation: fadeInText 3s infinite ease-in-out;
+    transform: translateY(10px);
+}
+
+/* 애니메이션 */
+
+/* 원형 회전 */
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* 테두리 색상 변화 */
+@keyframes colorChange {
+    0% {
+        border-top: 8px solid rgba(255, 105, 135, 0.9); /* 진한 핑크 */
+    }
+    25% {
+        border-top: 8px solid rgba(65, 105, 255, 0.9); /* 진한 블루 */
+    }
+    50% {
+        border-top: 8px solid rgba(125, 215, 125, 0.9); /* 진한 초록 */
+    }
+    75% {
+        border-top: 8px solid rgba(255, 215, 85, 0.9); /* 진한 노랑 */
+    }
+    100% {
+        border-top: 8px solid rgba(255, 105, 135, 0.9); /* 진한 핑크 */
+    }
+}
+
+/* 텍스트 페이드인 반복 */
+@keyframes fadeInText {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.6;
+    }
+}

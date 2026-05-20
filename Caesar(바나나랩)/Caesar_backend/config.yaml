@@ -1,0 +1,93 @@
+# Caesar MCP 프로젝트 설정
+
+# 애플리케이션 설정
+app:
+  name: "Caesar MCP"
+  version: "1.0.0"
+  description: "시저 팀 MCP 프로젝트"
+
+# MCP 서버 설정
+mcp_servers:
+  google_drive:
+    enabled: true
+    credentials_path: "./credentials/google_drive_credentials.json"
+    scopes:
+      - "https://www.googleapis.com/auth/drive"
+      - "https://www.googleapis.com/auth/drive.file"
+  
+  google_calendar:
+    enabled: true
+    credentials_path: "./credentials/google_calendar_credentials.json"
+    scopes:
+      - "https://www.googleapis.com/auth/calendar"
+      - "https://www.googleapis.com/auth/calendar.events"
+  
+  notion:
+    enabled: true
+    token_env: "NOTION_TOKEN"
+  
+  slack:
+    enabled: true
+    token_env: "SLACK_BOT_TOKEN"
+
+# RAG 설정
+rag:
+  vector_db:
+    type: "chroma"  # chroma, faiss, pinecone
+    path: "./vector_db"
+    collection_name: "caesar_docs"
+  
+  embedding:
+    model: "sentence-transformers/all-MiniLM-L6-v2"
+    dimension: 384
+  
+  retrieval:
+    top_k: 5
+    similarity_threshold: 0.7
+    chunk_size: 1000
+    chunk_overlap: 200
+
+# Agent 설정
+agent:
+  name: "Caesar Agent"
+  model: "gpt-4"  # TODO: LLM 모델 설정
+  temperature: 0.1
+  max_tokens: 2000
+  
+  tools:
+    enabled:
+      - "google_drive"
+      - "google_calendar"
+      - "notion"
+      - "slack"
+      - "rag"
+
+# Workflow 설정
+workflows:
+  meeting_reservation:
+    enabled: true
+    default_duration: 60  # minutes
+    default_channel: "#general"
+  
+  document_sharing:
+    enabled: true
+    default_folder: "shared_documents"
+
+# 백엔드 API 설정
+backend:
+  host: "0.0.0.0"
+  port: 8000
+  reload: false
+  
+  cors:
+    allow_origins: ["*"]
+    allow_credentials: true
+    allow_methods: ["*"]
+    allow_headers: ["*"]
+
+# 로깅 설정
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file: "./logs/caesar.log"
+

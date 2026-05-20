@@ -1,0 +1,21 @@
+{
+  "name": "firebase-admin-tools",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Local utility to manage Firebase custom claims (e.g., ADMIN role)",
+  "license": "UNLICENSED",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "set-admin": "node set-admin.js"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.1",
+    "firebase-admin": "^12.7.0",
+    "minimist": "^1.2.8"
+  },
+  "main": "set-admin.js",
+  "keywords": [],
+  "author": ""
+}

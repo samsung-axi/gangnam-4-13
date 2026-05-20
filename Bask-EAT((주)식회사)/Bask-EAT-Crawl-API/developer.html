@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>JSON 파일 생성기</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #f7f7f7;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 520px;
+            margin: 40px auto;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            padding: 32px;
+        }
+
+        h1 {
+            color: #2d7be5;
+        }
+
+        h2 {
+            font-size: 1.2em;
+            color: #555;
+            margin-top: 32px;
+        }
+
+        .category-list {
+            margin: 24px 0;
+        }
+
+        .category-item {
+            margin-bottom: 10px;
+        }
+
+        button {
+            background: #2d7be5;
+            color: #fff;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background: #1e5a9c;
+        }
+
+        button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+        
+        .button-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        .result {
+            margin-top: 24px;
+            color: #2d7be5;
+            font-weight: bold;
+        }
+
+        input[type="checkbox"] {
+            transform: scale(1.5);
+        }
+
+        /* toast popup 스타일 */
+        #toast {
+            visibility: hidden;
+            min-width: 220px;
+            background: #2d7be5;
+            color: #fff;
+            text-align: center;
+            border-radius: 8px;
+            padding: 16px 24px;
+            position: fixed;
+            z-index: 9999;
+            right: 32px;
+            bottom: 32px;
+            font-size: 16px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+            opacity: 0;
+            transition: opacity 0.4s, visibility 0.4s;
+        }
+
+        #toast.show {
+            visibility: visible;
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>JSON 파일 생성기</h1>
+        <form id="categoryForm">
+            <div style="margin-bottom:16px;">
+                <button type="button" id="selectAllBtn" style="margin-right:8px;">모두 선택</button>
+                <button type="button" id="deselectAllBtn">모두 취소</button>
+            </div>
+            <div class="category-list">
+                <!-- 카테고리 체크박스 -->
+            </div>
+            <button type="submit">선택한 카테고리로 저장</button>
+        </form>
+        <hr style="margin:16px 0;">
+
+        <h2>스크래핑 실행</h2>
+        <div class="button-group">
+            <button type="button" id="runAllProductsBtn" style="background:#4caf50;">모든 정보 스크래핑</button>
+            <button type="button" id="runIdPriceBtn" style="background:#c3ade7;">ID & 가격 스크래핑</button>
+            <button type="button" id="runOtherInfoBtn" style="background:#bd4b5e;">ID 외 정보 스크래핑</button>
+            <button type="button" id="runImageBtn" style="background:#2196f3;">이미지 스크래핑</button>
+        </div>
+
+        <hr style="margin:16px 0;">
+        
+        <h2>Firestore 업로드</h2>
+        <div class="button-group">
+            <button type="button" id="runFirebaseAllBtn" style="background:#ff9800;">모든 정보 Firestore 업로드</button>
+            <button type="button" id="runFirebasePriceBtn" style="background:#8bc34a;">ID & 가격 Firestore 업로드</button>
+            <button type="button" id="runFirebaseOtherBtn" style="background:#9c27b0;">ID 외 정보 Firestore 업로드</button>
+        </div>
+        <hr style="margin:16px 0;">
+
+        <h2>스케줄러 키기/끄기</h2>
+        <div class="button-group">
+            <button type="button" id="schedulerOnBtn" style="background:#912641;">On</button>
+            <button type="button" id="schedulerOffBtn" style="background:#412fac;">Off</button>
+        </div>
+        <hr style="margin:16px 0;">
+        
+        <form id="envForm">
+            <h2>페이지 범위 설정</h2>
+            <label>시작 페이지: <input type="number" id="startPageInput" min="1" value="1" style="width:80px;"></label>
+            <label style="margin-left:16px;">끝 페이지: <input type="number" id="endPageInput" min="1" value="30"
+                    style="width:80px;"></label>
+            <button type="submit" style="margin-left:16px;">저장</button>
+        </form>
+
+        <form id="embServerForm" style="margin-top: 24px;">
+            <h2>임베딩 서버 주소 설정</h2>
+            <label>서버 URL: <input type="text" id="embServerInput" placeholder="https://...ngrok-free.app" style="width:300px; padding: 5px;"></label>
+            <button type="submit" style="margin-left:16px;">저장</button>
+        </form>
+        <hr style="margin:16px 0;">
+
+        <div class="result" id="envResultMsg" style="display:none;"></div>
+        <div class="result" id="resultMsg" style="display:none;"></div>
+        <div id="toast"></div>
+    </div>
+    <script>
+        const categories = {
+            "Fruits": "6000213114",
+            "Vegetables": "6000213167",
+            "Rice_Grains_Nuts": "6000215152",
+            "Meat_Eggs": "6000215194",
+            "Seafood_DriedSeafood": "6000213469",
+            "Milk_Dairy": "6000213534",
+            "MealKits_ConvenienceFood": "6000213247",
+            "Kimchi_SideDishes_Deli": "6000213299",
+            "Water_Beverages_Alcohol": "6000213424",
+            "Coffee_Beans_Tea": "6000215245",
+            "Noodles_CannedGoods": "6000213319",
+            "Seasoning_Oil": "6000215286",
+            "Snacks_Treats": "6000213362",
+            "Bakery_Jam": "6000213412"
+        };
+        const listDiv = document.querySelector('.category-list');
+        Object.entries(categories).forEach(([name, id]) => {
+            const div = document.createElement('div');
+            div.className = 'category-item';
+            div.innerHTML = `<label><input type="checkbox" name="category" value="${name}"> ${name} (${id})</label>`;
+            listDiv.appendChild(div);
+        });
+
+        // 모두 선택/모두 취소 기능
+        document.getElementById('selectAllBtn').onclick = function () {
+            document.querySelectorAll('input[name="category"]').forEach(cb => cb.checked = true);
+        };
+        document.getElementById('deselectAllBtn').onclick = function () {
+            document.querySelectorAll('input[name="category"]').forEach(cb => cb.checked = false);
+        };
+        // toast popup 함수
+        function showToast(message, duration = 2500) {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.className = 'show';
+            setTimeout(() => {
+                toast.className = toast.className.replace('show', '');
+            }, duration);
+        }
+
+        document.getElementById('categoryForm').onsubmit = async function (e) {
+            e.preventDefault();
+            const checked = Array.from(document.querySelectorAll('input[name="category"]:checked'));
+            if (checked.length === 0) {
+                showToast('카테고리를 하나 이상 선택하세요.');
+                return;
+            }
+            const selected = {};
+            checked.forEach(cb => {
+                selected[cb.value] = categories[cb.value];
+            });
+            // 서버에 POST 요청
+            const res = await fetch('/save_categories', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(selected)
+            });
+            if (res.ok) {
+                showToast('categories.json 파일이 성공적으로 저장되었습니다!');
+            } else {
+                showToast('저장에 실패했습니다.');
+            }
+        };
+
+        // 페이지 범위 저장 기능
+        document.getElementById('envForm').onsubmit = async function (e) {
+            e.preventDefault();
+            const startPage = document.getElementById('startPageInput').value;
+            const endPage = document.getElementById('endPageInput').value;
+            if (parseInt(startPage) < 1 || parseInt(endPage) < 1 || parseInt(endPage) < parseInt(startPage)) {
+                showToast('올바른 페이지 범위를 입력하세요.');
+                return;
+            }
+            const res = await fetch('/save_env', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ EMART_START_PAGE: startPage, EMART_END_PAGE: endPage })
+            });
+            if (res.ok) {
+                showToast('.env 파일이 성공적으로 저장되었습니다!');
+            } else {
+                showToast('저장에 실패했습니다.');
+            }
+        };
+
+        document.getElementById('embServerForm').onsubmit = async function (e) {
+            e.preventDefault();
+            const embServerUrl = document.getElementById('embServerInput').value.trim();
+            if (!embServerUrl) {
+                showToast('임베딩 서버 URL을 입력하세요.');
+                return;
+            }
+            const res = await fetch('/save_env', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ EMB_SERVER: embServerUrl })
+            });
+            if (res.ok) {
+                showToast('임베딩 서버 주소가 .env 파일에 저장되었습니다!');
+            } else {
+                showToast('저장에 실패했습니다.');
+            }
+        };
+
+        // 새로운 스크래핑 버튼 실행 요청
+        document.getElementById('runAllProductsBtn').onclick = async function () {
+            showToast('모든 상품 정보 스크래핑 실행 중...');
+            const res = await fetch('/run_json', { method: 'POST' });
+            if (res.ok) {
+                showToast('모든 상품 정보 스크래핑 완료!');
+            } else {
+                showToast('실행 실패!');
+            }
+        };
+
+        document.getElementById('runIdPriceBtn').onclick = async function () {
+            showToast('ID 및 가격 정보 스크래핑 실행 중...');
+            const res = await fetch('/run_price_json', { method: 'POST' });
+            if (res.ok) {
+                showToast('ID 및 가격 정보 스크래핑 완료!');
+            } else {
+                showToast('실행 실패!');
+            }
+        };
+
+        document.getElementById('runOtherInfoBtn').onclick = async function () {
+            showToast('ID 외 정보 스크래핑 실행 중...');
+            const res = await fetch('/run_non_price_json', { method: 'POST' });
+            if (res.ok) {
+                showToast('실행 완료!');
+            } else {
+                showToast('실행 실패!');
+            }
+        };
+
+        // emart_image.py 실행 요청
+        document.getElementById('runImageBtn').onclick = async function () {
+            showToast('emart_image.py 실행 중...');
+            const res = await fetch('/run_image', { method: 'POST' });
+            if (res.ok) {
+                showToast('emart_image.py 실행 완료!');
+            } else {
+                showToast('실행 실패!');
+            }
+        };
+
+        // Firebase 업로드 버튼 실행 요청 (새로 추가된 부분)
+        document.getElementById('runFirebaseAllBtn').onclick = async function () {
+            showToast('모든 상품 정보 Firestore에 업로드 중...');
+            const res = await fetch('/run_firebase_all', { method: 'POST' });
+            if (res.ok) {
+                showToast('모든 상품 정보 Firestore 업로드 완료!');
+            } else {
+                showToast('업로드 실패!');
+            }
+        };
+
+        document.getElementById('runFirebasePriceBtn').onclick = async function () {
+            showToast('ID 및 가격 정보 Firestore에 업로드 중...');
+            const res = await fetch('/run_firebase_price', { method: 'POST' });
+            if (res.ok) {
+                showToast('ID 및 가격 정보 Firestore 업로드 완료!');
+            } else {
+                showToast('업로드 실패!');
+            }
+        };
+
+        document.getElementById('runFirebaseOtherBtn').onclick = async function () {
+            showToast('ID 외 정보 Firestore에 업로드 중...');
+            const res = await fetch('/run_firebase_other', { method: 'POST' });
+            if (res.ok) {
+                showToast('ID 외 정보 Firestore 업로드 완료!');
+            } else {
+                showToast('업로드 실패!');
+            }
+        };
+
+        document.getElementById('schedulerOnBtn').onclick = async function () {
+            showToast('스케줄러를 다시 시작합니다...');
+            const res = await fetch('/scheduler/on', { method: 'POST' });
+            if (res.ok) {
+                const data = await res.json();
+                showToast(data.message || '스케줄러가 다시 시작되었습니다!');
+            } else {
+                showToast('스케줄러 시작에 실패했습니다.');
+            }
+        };
+
+        document.getElementById('schedulerOffBtn').onclick = async function () {
+            showToast('스케줄러를 일시정지합니다...');
+            const res = await fetch('/scheduler/off', { method: 'POST' });
+            if (res.ok) {
+                const data = await res.json();
+                showToast(data.message || '스케줄러가 일시정지되었습니다!');
+            } else {
+                showToast('스케줄러 일시정지에 실패했습니다.');
+            }
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,213 @@
+@font-face {
+  font-family: 'Pretendard';
+  src: url('../fonts/Pretendard-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  src: url('../fonts/Pretendard-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  src: url('../fonts/Pretendard-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  src: url('../fonts/Pretendard-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  src: url('../fonts/Pretendard-SemiBold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  background: #f8f8f8;
+}
+
+.form-section {
+  font-family: 'Pretendard', sans-serif;
+  display: flex;
+  flex-direction: column;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+  min-height: 100vh;
+  padding: 0 20px 20px 0;
+  background: #f8f8f8;
+  box-sizing: border-box;
+  overflow: auto;
+  justify-content: space-between;
+}
+
+.welcome-header {
+  width: 100%;
+  margin-bottom: 0vh;
+}
+
+.welcome-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #000;
+  display: inline-block;
+  position: relative;
+}
+
+.welcome-title span {
+  position: relative;
+  z-index: 1;
+}
+
+.welcome-title span::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 2px;
+  width: 100%;
+  height: 5px;
+  background-color: #ffbc2c;
+  z-index: -1;
+}
+
+.welcome-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-height: calc(100vh - 150px);
+  width: 100%;
+  max-width: 960px; /* 최대 너비 설정 화면 크기 커져도 넓어지지 않게 */
+  margin: 0 auto;
+}
+
+.welcome-text {
+  font-size: min(48px, 10vw);
+  color: #000;
+  margin-bottom: 0vh;
+  white-space: nowrap;
+  font-weight: 700;
+  text-align: center;
+}
+
+.welcome-subtext {
+  font-size: min(20px, 4vw);
+  line-height: 1.3;
+  color: #6f6f6f;
+  margin-bottom: 8vh;
+  text-align: center;
+}
+
+.welcome-text, .welcome-subtext {
+  opacity: 0;
+  transition: opacity 2s ease-in-out .5s;
+  animation: fadeInOut 3s ease-in-out infinite;
+}
+
+@keyframes fadeInOut {
+  0%, 100% { opacity: 0; }
+  10%, 90% { opacity: 1; }
+}
+
+.welcome-image {
+  flex: 0.8;
+  display: flex;
+  justify-content: center;
+  margin: 1vh 0;
+}
+
+.welcome-image img {
+  width: auto;
+  height: auto;
+  max-height: 30vh;
+  margin-bottom: 20vh;
+  object-fit: contain;
+}
+
+.welcome-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-top: 2vh;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding-bottom: 80px;
+}
+
+.buttons-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 80%;
+}
+
+.register-button {
+  width: 100%;
+  height: 48px;
+  background: #ffbc2c;
+  border: none;
+  border-radius: 14px;
+  color: #000;
+  font-size: 15px;
+  font-weight: 500;
+  text-align: center;
+  cursor: pointer;
+}
+
+.register-button:hover {
+  background: #ed6444;
+  color: #fff;
+}
+
+.guest-link-button {
+  width: 100%;
+  height: 48px;
+  color: #666;
+  font-size: 15px;
+  border: 1px solid #666;
+  border-radius: 14px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.guest-link-button:hover {
+  color: #000;
+}
+
+.login-section {
+  margin-top: 20px;
+  font-size: 15px;
+  color: #666;
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  padding-bottom: 20px;
+}
+
+.login-link {
+  color: #666;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.login-link:hover {
+  color: orangered;
+}

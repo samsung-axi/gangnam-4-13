@@ -1,0 +1,11 @@
+{
+  "files": [],
+  "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" }
+  ],
+  "compilerOptions": {
+    "jsx": "react-jsx", // 또는 "react" (React 17 이하면)
+    "types": ["react"] // 이 줄이 없다면 추가하세요
+  }
+}

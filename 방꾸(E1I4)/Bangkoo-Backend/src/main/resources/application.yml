@@ -1,0 +1,60 @@
+spring:
+  profiles:
+    active: ${SPRING_PROFILES_ACTIVE:dev}
+  config:
+    import:
+      - "optional:classpath:application-db.yml"
+      - "optional:file:.env"  # .env 파일도 로드
+  data:
+    mongodb:
+      # EB 환경프로퍼티로 넘긴 SPRING_DATA_MONGODB_URI 사용
+      uri: ${SPRING_DATA_MONGODB_URI}
+  docker:
+    compose:
+      enabled: false
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+server:
+  port: ${PORT:8080}
+
+logging:
+  level:
+    root: INFO
+    org.springframework.security: DEBUG
+
+jwt:
+  algorithm: HS256
+  secret-key: ${JWT_SECRET_KEY}
+  access-token-expiration-ms: 1800000 # 30분
+  refresh-token-expiration-ms: 604800000 # 7일
+
+kakao:
+  client-id: ${KAKAO_APP_CLIENT_ID}
+  client-secret: ${KAKAO_APP_CLIENT_SECRET}
+  redirect-uri: ${KAKAO_REDIRECT_URL}
+
+security:
+  oauth2:
+    client:
+      registration:
+        kakao:
+          client-id: ${KAKAO_APP_CLIENT_ID}  # .env에서 가져옴
+          client-secret: ${KAKAO_APP_CLIENT_SECRET}  # .env에서 가져옴
+          client-authentication-method: client_secret_post
+          authorization-grant-type: authorization_code
+          redirect-uri: ${KAKAO_REDIRECT_URL}
+          scope: profile_nickname,account_email
+      provider:
+        kakao:
+          authorization-uri: https://kauth.kakao.com/oauth/authorize
+          token-uri: https://kauth.kakao.com/oauth/token
+          user-info-uri: https://kapi.kakao.com/v2/user/me
+          user-name-attribute: id
+
+
+ai:
+  server:
+    url: http://localhost:8000/api

@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap');
+
+.admin-members-container {
+    position: relative;
+    width: 1200px;
+    margin: 0 auto;
+    background: #EFEDED;
+    padding: 120px;
+    box-sizing: border-box;
+    transform: translateY(-40px);
+}
+
+.admin-members-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0; /* 상하 여백 */
+    position: relative;
+    z-index: 1; /* 헤더는 검색창 아래 */
+}
+
+.admin-members-title {
+    font-family: "Gowun Batang", serif;
+    font-size: 24px;
+    font-weight: bold;
+    translate: -30px -5px;
+}
+
+.admin-members-search-container {
+    display: flex;
+    align-items: center;
+    position: relative; /* 검색창 위치 설정 */
+    max-width: 300px; /* 검색창 최대 너비 */
+    z-index: 10; /* 헤더 위로 배치 */
+    margin-left: auto; /* 오른쪽 정렬 */
+}
+
+.admin-members-search {
+    width: 100%;
+    margin-right: -50px;
+    padding: 10px 40px 10px 15px;
+    border: 1px solid #333;
+    background-color: #EFEDED;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.admin-members-search-icon {
+    position: absolute;
+    right: -40px;
+    top: 50%;
+    transform: translate(0px, -20px);
+    cursor: pointer;
+}
+
+.admin-members-divider-line {
+    width: 110%;
+    height: 1px;
+    background-color: #333;
+    margin: 60px auto 0;
+    margin-bottom: 30px;
+    transform: translateY(-70px);
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, -70px);
+}
+
+.admin-members-table {
+    margin-top: -50px;
+    width: 100%;
+}
+
+/* 테이블 외부 컨테이너에 border-radius 적용 */
+.admin-members-table {
+    border-radius: 10px;
+    overflow: hidden;  /* 내부 콘텐츠가 radius를 벗어나지 않도록 */
+}
+
+.admin-members-table table {
+    width: 100%;
+    border-collapse: separate;  /* collapse에서 separate로 변경 */
+    border-spacing: 0;  /* 셀 간격 제거 */
+    background-color: #fff;
+}
+
+.admin-members-table th,
+.admin-members-table td {
+    padding: 15px;
+    text-align: center;
+    border-right: 1px solid #333;
+    border-bottom: 1px solid #333;
+}
+
+/* 첫 번째 열의 왼쪽 테두리 */
+.admin-members-table th:first-child,
+.admin-members-table td:first-child {
+    border-left: 1px solid #333;
+}
+
+/* 첫 번째 행의 상단 테두리 */
+.admin-members-table tr:first-child th {
+    border-top: 1px solid #333;
+}
+
+/* 테이블 헤더 스타일 */
+.admin-members-table th {
+    background-color: #fff;
+    font-weight: bold;
+}
+
+/* 테이블 행 호버 효과 */
+.admin-members-table tbody tr:hover {
+    background-color: #f9f9f9;
+}
+
+/* 모서리 둥글게 처리 */
+.admin-members-table tr:first-child th:first-child {
+    border-top-left-radius: 10px;
+}
+
+.admin-members-table tr:first-child th:last-child {
+    border-top-right-radius: 10px;
+}
+
+.admin-members-table tr:last-child td:first-child {
+    border-bottom-left-radius: 10px;
+}
+
+.admin-members-table tr:last-child td:last-child {
+    border-bottom-right-radius: 10px;
+}
+
+.admin-member-pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.admin-member-pagination-button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #EFEDED;
+    color: #000000;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.admin-member-pagination-button.active {
+    background-color: #EFEDED;
+    color: black;
+    font-weight: bold;
+}
+
+.admin-member-pagination-button:hover:not(.disabled) {
+    background-color: #CDC6CE;
+    color: #FFFFFF;
+}
+
+.admin-member-pagination-button.disabled {
+    color: #A0A0A0;
+    cursor: not-allowed;
+}

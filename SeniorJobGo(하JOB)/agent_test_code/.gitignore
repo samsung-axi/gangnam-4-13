@@ -1,0 +1,21 @@
+# Python 관련
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# 환경 변수 파일
+.env
+
+# Jupyter Notebook 체크포인트
+.ipynb_checkpoints
+
+# 기타
+*.log
+*.sqlite3 

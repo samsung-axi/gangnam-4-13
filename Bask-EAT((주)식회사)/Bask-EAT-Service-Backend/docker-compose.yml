@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  backend:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_PROFILES_ACTIVE=prod
+      - GOOGLE_CLIENT_ID=${GOOGLE_CLIENT_ID}
+      - GOOGLE_CLIENT_SECRET=${GOOGLE_CLIENT_SECRET}
+      - JWT_SECRET_KEY=${JWT_SECRET_KEY}
+      - LLM_MODULE_BASE_URL=http://llm-module:8001
+    volumes:
+      - ./firebase-service-account-key.json:/app/config/firebase-service-account-key.json:ro
+      - ./logs:/app/logs
+    depends_on:
+      - llm-module
+    networks:
+      - app-network
+    restart: unless-stopped
+
+  llm-module:
+    # LLM 모듈 Docker 이미지 (별도 구현 필요)
+    image: your-llm-module:latest
+    ports:
+      - "8001:8001"
+    networks:
+      - app-network
+    restart: unless-stopped
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  app-logs:

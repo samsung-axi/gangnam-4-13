@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link id="favicon" rel="icon" href="%PUBLIC_URL%/favicon-light.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="Web site created using create-react-app" />
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <title>GORANI</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+  <script>
+    // 다크모드 감지 및 favicon 변경
+    function updateFaviconBasedOnDarkMode() {
+      const favicon = document.getElementById('favicon');
+      const darkModeQuery = window.matchMedia('(prefers-color-scheme: dark)');
+
+      // 다크모드 상태가 바뀌면 favicon을 업데이트
+      function updateFavicon() {
+        // 브라우저가 다크모드이거나, 시스템이 다크모드인 경우
+        if (darkModeQuery.matches || window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          console.log('다크모드 적용');
+          favicon.setAttribute('href', '%PUBLIC_URL%/favicon-dark.ico'); // 다크모드 아이콘
+        } else {
+          console.log('일반 모드 적용');
+          favicon.setAttribute('href', '%PUBLIC_URL%/favicon-light.ico'); // 일반모드 아이콘
+        }
+      }
+
+      // 초기 다크모드 상태에 맞게 favicon 업데이트
+      updateFavicon();
+
+      // 다크모드 상태 변경 시마다 실행
+      darkModeQuery.addEventListener('change', updateFavicon);
+    }
+
+    // 페이지 로드 시 함수 실행
+    window.onload = updateFaviconBasedOnDarkMode;
+  </script>
+</head>
+
+<body>
+  <div id="root"></div>
+</body>
+
+</html>

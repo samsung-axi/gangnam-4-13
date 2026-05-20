@@ -1,0 +1,14 @@
+spring:
+  profiles:
+    active: test
+
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/bangkoo-test-db
+
+custom:
+  environment: test
+
+jwt:
+  secret: test-secret-key
+  expiration: 3600000

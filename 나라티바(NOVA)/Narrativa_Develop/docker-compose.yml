@@ -1,0 +1,123 @@
+services:
+  # 백엔드 서비스
+  narrativa_backend:
+    build:
+      context: ./narrativa_backend
+      dockerfile: Dockerfile.local
+      args:
+        AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
+        AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
+        AWS_REGION: ${AWS_REGION}
+        S3_BUCKET_NAME: ${S3_BUCKET_NAME}
+        S3_YML_KEY: ${S3_YML_KEY}
+    environment:
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+      - AWS_REGION=${AWS_REGION}
+      - S3_BUCKET_NAME=${S3_BUCKET_NAME}
+      - S3_YML_KEY=${S3_YML_KEY}
+    container_name: narrativa_backend
+    ports:
+      - "8080:8080"
+    networks:
+      - narrativa_network
+    depends_on:
+      narrativa_mysql:
+        condition: service_healthy
+
+  # 프론트엔드 서비스
+  narrativa_frontend:
+    build:
+      context: ./narrativa_frontend
+      dockerfile: Dockerfile.local
+      args:
+        REACT_APP_KAKAO_CLIENT_ID: ${REACT_APP_KAKAO_CLIENT_ID}
+        REACT_APP_KAKAO_AUTH_CODE_PATH: ${REACT_APP_KAKAO_AUTH_CODE_PATH}
+        REACT_APP_KAKAO_REDIRECT_URI: ${REACT_APP_KAKAO_REDIRECT_URI}
+        REACT_APP_GOOGLE_CLIENT_ID: ${REACT_APP_GOOGLE_CLIENT_ID}
+        REACT_APP_GOOGLE_AUTH_CODE_PATH: ${REACT_APP_GOOGLE_AUTH_CODE_PATH}
+        REACT_APP_GOOGLE_REDIRECT_URI: ${REACT_APP_GOOGLE_REDIRECT_URI}
+        REACT_APP_GITHUB_CLIENT_ID: ${REACT_APP_GITHUB_CLIENT_ID}
+        REACT_APP_GITHUB_AUTH_CODE_PATH: ${REACT_APP_GITHUB_AUTH_CODE_PATH}
+        REACT_APP_URI: ${REACT_APP_URI}
+        REACT_APP_SPRING_URI: ${REACT_APP_SPRING_URI}
+    container_name: narrativa_frontend
+    ports:
+      - "3010:3010"
+    networks:
+      - narrativa_network
+    depends_on:
+      - narrativa_backend
+
+  # 관리자 페이지 서비스
+  narrativa_admin:
+    build:
+      context: ./narrativa_admin
+      dockerfile: Dockerfile.local
+      args:
+        REACT_APP_API_BASE_URL: ${REACT_APP_API_BASE_URL}
+        REACT_APP_BACKEND_URL: ${REACT_APP_BACKEND_URL}
+        REACT_APP_FIREBASE_API_KEY: ${REACT_APP_FIREBASE_API_KEY}
+        REACT_APP_FIREBASE_AUTH_DOMAIN: ${REACT_APP_FIREBASE_AUTH_DOMAIN}
+        REACT_APP_FIREBASE_PROJECT_ID: ${REACT_APP_FIREBASE_PROJECT_ID}
+        REACT_APP_FIREBASE_STORAGE_BUCKET: ${REACT_APP_FIREBASE_STORAGE_BUCKET}
+        REACT_APP_FIREBASE_MESSAGING_SENDER_ID: ${REACT_APP_FIREBASE_MESSAGING_SENDER_ID}
+        REACT_APP_FIREBASE_APP_ID: ${REACT_APP_FIREBASE_APP_ID}
+        REACT_APP_GITHUB_CLIENT_ID: ${REACT_APP_GITHUB_CLIENT_ID}
+        REACT_APP_GITHUB_CLIENT_SECRET: ${REACT_APP_GITHUB_CLIENT_SECRET}
+    container_name: narrativa_admin
+    ports:
+      - "3030:3030"
+    networks:
+      - narrativa_network
+    depends_on:
+      - narrativa_backend
+
+  # 머신러닝 서비스
+  narrativa_ml:
+    build:
+      context: ./narrativa_ml
+      dockerfile: Dockerfile.local
+      args:
+        CORS_ORIGINS: ${CORS_ORIGINS}
+        OPENAI_KEY: ${OPENAI_KEY}
+        DOCKERHUB_USERNAME: ${DOCKERHUB_USERNAME}
+        DOCKERHUB_PASSWORD: ${DOCKERHUB_PASSWORD}
+        AWS_REGION: ${AWS_REGION}
+        AWS_SECRET_KEY: ${AWS_SECRET_ACCESS_KEY}
+        BUCKET_NAME: ${BUCKET_NAME}
+    container_name: narrativa_ml
+    ports:
+      - "8050:8050"
+    networks:
+      - narrativa_network
+
+  # 데이터베이스 서비스
+  narrativa_mysql:
+    image: mysql:8.0.40
+    container_name: narrativa_mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./data:/var/lib/mysql
+    networks:
+      - narrativa_network
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost -p${MYSQL_ROOT_PASSWORD}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+# 네트워크 설정
+networks:
+  narrativa_network:
+    driver: bridge
+
+# 볼륨 설정
+volumes:
+  mysql_data:

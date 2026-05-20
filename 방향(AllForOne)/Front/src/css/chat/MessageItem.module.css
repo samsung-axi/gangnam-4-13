@@ -1,0 +1,81 @@
+.messageItem {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin: 10px 0;
+    width: 100%;
+}
+
+.userMessage, .botMessage {
+    font-size: 20px;
+    line-height: 1.6;
+}
+
+.userMessage {
+    justify-content: flex-end;
+}
+
+.botMessage {
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.messageContent {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px;
+    border-radius: 12px;
+    max-width: 100%;
+}
+
+.messageText {
+    margin: 0;
+    font-size: 20px;
+    line-height: 1.6;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+/* 이미지 컨테이너 스타일 */
+.imageContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;  /* 이미지와 텍스트 사이 간격 증가 */
+    justify-content: flex-end;
+    width: fit-content;  /* 컨테이너를 내용물 크기에 맞춤 */
+    margin-left: auto;   /* 오른쪽 정렬 */
+}
+
+.uploadedImage {
+    max-width: 300px;
+    max-height: 300px;
+    border-radius: 8px;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+/* 이미지와 텍스트가 함께 있는 경우 */
+.withImageAndText {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: fit-content;  /* 컨테이너를 내용물 크기에 맞춤 */
+    margin-left: auto;   /* 오른쪽 정렬 */
+    text-align: right;
+}
+
+/* 이미지만 있는 경우나 이미지+텍스트인 경우 모두 배경색 제거 */
+.userMessage .messageContent {
+    background-color: transparent;
+    padding: 0;
+    width: fit-content;  /* 컨테이너를 내용물 크기에 맞춤 */
+    margin-left: auto;   /* 오른쪽 정렬 */
+}

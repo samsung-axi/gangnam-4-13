@@ -1,0 +1,184 @@
+.popoverContainer {
+    position: absolute;
+    top: 340px;
+    right: 140px;
+    width: 300px;
+    height: 500px;
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    user-select: none;
+}
+
+.section {
+    padding: 16px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    border-bottom: 1px solid #e0e0e0;
+    flex-shrink: 0;
+}
+
+.perfumeGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    padding: 12px;
+}
+
+.perfumeItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative; /* 이 부분만 추가 */
+}
+
+.deleteButton {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: none;
+    border: none;
+    padding: 4px;
+    cursor: pointer;
+    color: #666;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s;
+    z-index: 1;
+}
+
+.deleteButton:hover {
+    color: #ff4444;
+}
+
+.perfumeImage {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    margin-bottom: 8px;
+    user-select: none;
+}
+
+.closeButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease;
+}
+
+.tabs {
+    display: flex;
+    border-bottom: 1px solid #e0e0e0;
+    flex-shrink: 0;
+}
+
+.tabButton {
+    flex: 1;
+    padding: 12px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    color: #666;
+    transition: all 0.2s;
+}
+
+.tabButton.active {
+    color: #333;
+    font-weight: bold;
+    border-bottom: 2px solid #333;
+}
+
+.contentContainer {
+    flex: 1;
+    overflow-y: auto;
+    min-height: 0;
+}
+
+.perfumeInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: 100%;
+}
+
+.perfumeName {
+    font-weight: bold;
+    font-size: 14px;
+    margin: 0;
+    user-select: none;
+}
+
+.perfumeBrand {
+    font-size: 12px;
+    color: #666;
+    margin: 0;
+    user-select: none;
+}
+
+.mainAccord {
+    font-size: 12px;
+    color: #888;
+    margin: 0;
+    user-select: none;
+}
+
+.loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    z-index: 2;
+}
+
+.error {
+    color: #ff4444;
+    text-align: center;
+    padding: 20px;
+}
+
+.contentContainer {
+    flex: 1;
+    overflow-y: auto;
+    min-height: 0;
+    position: relative;
+}
+
+/* 스크롤바 스타일링 (선택사항) */
+.contentContainer::-webkit-scrollbar {
+    width: 6px;
+}
+
+.contentContainer::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.contentContainer::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 3px;
+}
+
+.contentContainer::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}

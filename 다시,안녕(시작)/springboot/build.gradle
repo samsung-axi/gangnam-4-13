@@ -1,0 +1,91 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.4.4'
+    id 'io.spring.dependency-management' version '1.1.7'
+}
+
+ext {
+    springAiVersion = "1.0.0-M6"
+}
+
+group = 'com.aix'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+    // Spring 기본 웹/보안
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+
+    // Lombok
+    implementation 'org.projectlombok:lombok'
+    implementation 'org.springframework.boot:spring-boot-starter-websocket'
+    annotationProcessor 'org.projectlombok:lombok'
+
+    // JWT 라이브러리
+    implementation 'io.jsonwebtoken:jjwt-api:0.11.5'
+    runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.11.5'
+    runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.11.5' // JSON 파싱을 위한 jackson 연동
+
+    // Swagger
+    implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.7.0'
+
+    // MyBatis
+    implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.4'
+
+    // DB 로그 확인용
+    implementation 'org.bgee.log4jdbc-log4j2:log4jdbc-log4j2-jdbc4.1:1.16'
+
+    // 데이터 검증용
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+
+    // WebServices (필요 없으면 제거 가능)
+    implementation 'org.springframework.boot:spring-boot-starter-web-services'
+
+    // .env 환경변수 처리
+//    implementation 'io.github.cdimascio:java-dotenv:5.2.2'
+    implementation 'me.paulschwarz:spring-dotenv:3.0.0'
+
+    // PostgreSQL
+    implementation 'org.postgresql:postgresql:42.7.2'
+
+    // 개발 중 자동 재시작
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+
+    // 테스트
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter-test:3.0.4'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+    // CLOVA Speech API
+    implementation 'org.apache.httpcomponents:httpclient:4.5.12'
+    implementation 'org.apache.httpcomponents:httpmime:4.3.1'
+    implementation 'com.google.code.gson:gson:2.12.1'
+
+    //S3 관련
+    implementation 'software.amazon.awssdk:s3:2.20.135' // AWS S3 SDK
+
+    // 웹소켓
+    implementation 'org.java-websocket:Java-WebSocket:1.5.4'
+}
+
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.ai:spring-ai-bom:$springAiVersion"
+    }
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}

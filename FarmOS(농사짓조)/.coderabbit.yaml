@@ -1,0 +1,64 @@
+# CodeRabbit Configuration for FarmOS Team
+# 팀 전체가 사용하는 통합 코드 리뷰 설정
+
+language: ko-KR
+
+# PR 리뷰 기본 설정
+reviews:
+  review_status: true                    # PR 체크 표시
+  request_changes_workflow: true         # 변경 요청 가능
+  high_level_summary: true               # 상위 요약
+  poem: false                            # 시 제외
+  collapse_walkthrough: false
+  profile: "assertive"
+
+  # 무시할 파일/디렉토리
+  path_filters:
+    - "!**/.venv/**"
+    - "!**/__pycache__/**"
+    - "!**/node_modules/**"
+    - "!**/.git/**"
+    - "!**/*.lock"
+    - "!.env*"
+    - "!*.pyc"
+    - "!*.pyo"
+    - "!.DS_Store"
+    - "!*.min.js"
+    - "!*.min.css"
+
+  auto_review:
+    enabled: true
+    drafts: false                        # 드래프트 PR 제외
+    base_branches:
+      - main
+      - develop
+      - dev
+
+  # 경로별 커스텀 지시사항
+  path_instructions:
+    - path: "backend/**"
+      instructions: |
+        모든 리뷰는 반드시 한국어로 작성하세요. English responses are not allowed.
+        Python 백엔드 코드 리뷰 (보안/성능/스타일/아키텍처 순으로 검토):
+        [보안] SQL injection 방지(원본 SQL 금지, ORM 필수), Pydantic으로 입력값 검증, API key·비밀번호 하드코딩 금지, CORS·JWT 인증 설정 확인
+        [성능] N+1 쿼리 방지(joinedload 활용), DB 인덱스 고려, RAG 임베딩 캐싱·배치 처리, 블로킹 작업·무한 루프 확인
+        [스타일] snake_case 준수, 타입 힌팅 적용, 100자 라인 길이(ruff), async/await 일관성, 명확한 변수·함수명
+        [아키텍처] FastAPI 라우터/스키마 분리, Depends 의존성 주입, 서비스 계층 활용, config.py에서 설정 관리
+        [FarmOS 특화] RAG 시스템(임베딩 모델·청킹·검색 전략), ChromaDB(컬렉션 관리·메타데이터), IoT 센서 데이터 처리·정규화, 농산물 도메인 로직 일관성
+        [테스트] 주요 기능 단위 테스트, DB 포함 통합 테스트, Mock 적절성
+
+    - path: "frontend/**"
+      instructions: |
+        모든 리뷰는 반드시 한국어로 작성하세요. English responses are not allowed.
+        React/TypeScript 코드 리뷰 (보안/품질/스타일 순으로 검토):
+        [보안] XSS 취약점 확인, same-origin 또는 승인된 1st-party API 호출에만 credentials: "include" 적용 여부(외부 서비스/사전 인증 엔드포인트는 예외)
+        [품질] 함수형 컴포넌트·hooks 사용, key prop 필수(리스트 렌더링), 불필요한 리렌더링 방지, 에러 핸들링(react-hot-toast)
+        [스타일] PascalCase 컴포넌트명, strict mode·타입 안전성, 명확한 변수·함수명
+        [아키텍처] Context + Custom Hooks 상태 관리, 새 기능은 src/modules/<기능명>/ 구조 준수, 타입은 src/types/index.ts에 정의
+
+    - path: "shopping_mall/**"
+      instructions: |
+        모든 리뷰는 반드시 한국어로 작성하세요. English responses are not allowed.
+        쇼핑몰 코드 리뷰:
+        [백엔드] shopping_mall/backend/app/routers/에 라우터 추가, SQLAlchemy 동기 Session 사용 일관성, Pydantic 입력값 검증
+        [프론트엔드] 모든 API 호출에 credentials: "include" 포함, 에러 핸들링, 타입 안전성

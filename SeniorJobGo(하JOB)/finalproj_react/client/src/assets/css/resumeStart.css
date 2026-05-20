@@ -1,0 +1,78 @@
+.hmk-form-section {
+    font-family: 'Pretendard', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 12px;
+    background: white;
+    box-sizing: border-box;
+}
+
+.hmk-form-header {
+    height: 5vh;
+    margin-bottom: 2vh;
+}
+
+.hmk-resume-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+}
+
+.hmk-resume-icon {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #333;
+}
+
+.hmk-resume-button {
+    width: 60%;
+    height: 50px;
+    background: #333;
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.hmk-bottom-navigation {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 16px;
+    background: white;
+    border-top: 1px solid #E5E5E5;
+    margin: 0 -12px;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    background: none;
+    border: none;
+    color: #666;
+    font-size: 12px;
+    cursor: pointer;
+    padding: 8px;
+}
+
+.nav-item svg {
+    font-size: 20px;
+}
+
+.nav-item.active {
+    color: #FFB800;
+}
+
+.nav-item.active svg {
+    color: #FFB800;
+} 

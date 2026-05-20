@@ -1,0 +1,200 @@
+.dashboard-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(217, 217, 217, 0.9);
+    /* 모달 배경의 투명도 */
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dashboard-modal-content {
+    background: rgba(240, 240, 240, 0.7);
+    padding: 40px;
+    border-radius: 8px;
+    width: 90%;
+    height: 90%;
+    max-height: 100vh;
+    position: relative;
+    box-sizing: border-box;
+    overflow-y: auto;
+    /* 콘텐츠가 넘치면 스크롤이 생기도록 */
+}
+
+.dashboard-close-button {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.dashboard-toggle-button {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    background: #afaeae;
+    color: white;
+    border: 2px solid white;
+    border-radius: 20px;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-family: 'Nanum Myeongjo';
+    cursor: pointer;
+    margin-top: 30px;
+    transition: background-color 0.3s ease;
+}
+
+.dashboard-toggle-button:hover {
+    background-color: #949292;
+}
+
+.dashboard-section {
+    margin-bottom: 40px;
+}
+
+.dashboard-section-title {
+    font-size: 18px;
+    font-weight: normal;
+    margin-bottom: 30px;
+    font-family: 'Nanum Myeongjo', sans-serif;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 260px));
+    gap: 180px;
+    max-width: calc(3 * 260px + 2 * 180px);
+    margin: 0 auto;
+}
+
+.dashboard-card {
+    width: 260px;
+    /* 각 카드의 너비를 설정 */
+    aspect-ratio: 1;
+    /* 세로 길이를 가로와 동일하게 설정 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border: 1px solid #000;
+    border-radius: 8px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.dashboard-card-inner {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dashboard-card-icon {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 10px;
+}
+
+.dashboard-card-perfume {
+    height: 80px;
+    width: auto;
+    margin-bottom: 10px;
+}
+
+.dashboard-card-label {
+    font-size: 16px;
+    font-weight: normal;
+    margin-bottom: 8px;
+    font-family: 'Nanum Myeongjo', sans-serif;
+}
+
+.dashboard-card-name {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 5px;
+    font-family: 'Nanum Myeongjo', sans-serif;
+    text-align: center;
+}
+
+.dashboard-card-stats {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 5px;
+    font-family: 'Nanum Myeongjo', sans-serif;
+}
+
+.dashboard-card-change {
+    font-size: 14px;
+    color: #333;
+    font-family: 'Nanum Myeongjo', sans-serif;
+}
+
+/* 차트 컨테이너 */
+.chart-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 10px; /* 제목과 차트 사이 간격을 줄임 */
+    padding: 0; /* 불필요한 패딩을 제거 */
+    width: 90%;
+    gap: 10px; /* 차트 간의 간격을 줄임 */
+    margin-right: 120px;
+  }
+  
+  /* 차트 캔버스 크기 설정 */
+  .chart-container canvas {
+    width: 58%; /* 차트가 부모 요소의 크기에 맞게 반응 */
+    max-width: 100%; /* 차트가 부모 요소를 넘지 않도록 설정 */
+    height: auto; /* 높이는 자동으로 맞춤 */
+    max-height: 300px; /* 최대 높이 설정 */
+  }
+
+/* ChartComponent 제목 스타일 */
+.chart-container h3 {
+    font-size: 20px; /* 크기 설정 */
+    font-weight: bold; /* 두껍게 설정 */
+    color: #333; /* 색상 */
+    text-align: center; /* 중앙 정렬 */
+    margin-bottom: 15px; /* 제목과 차트 간 간격 */
+    font-family: 'Nanum Myeongjo', sans-serif; /* 폰트 설정 */
+    /* 텍스트 방향을 수평으로 고정 */
+    writing-mode: horizontal-tb; /* 세로로 표시되는 문제 해결 */
+    white-space: nowrap; /* 텍스트가 한 줄로 표시되도록 설정 */
+    text-overflow: ellipsis; /* 넘치는 텍스트는 '...'으로 표시 */
+  }
+  
+
+.chart-img {
+    width: 80%;
+    max-width: 600px;
+}
+
+@media (max-width: 768px) {
+    .dashboard-grid {
+        gap: 10px;
+        grid-template-columns: repeat(2, minmax(0, 260px));
+        /* 모바일에서는 2열로 표시 */
+    }
+
+    .dashboard-modal-content {
+        width: 95%;
+        padding: 20px;
+    }
+
+    .dashboard-card {
+        padding: 15px;
+    }
+
+    .chart-container canvas {
+        max-width: 90%;
+        /* 모바일에서는 차트 크기 축소 */
+        height: auto;
+    }
+}

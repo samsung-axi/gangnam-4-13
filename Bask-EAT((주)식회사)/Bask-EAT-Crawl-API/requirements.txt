@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+requests
+beautifulsoup4
+dotenv
+firebase-admin
+
+APScheduler>=3.10,<4
+

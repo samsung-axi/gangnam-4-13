@@ -1,0 +1,35 @@
+.spinner-container {
+  display: flex;
+  flex-direction: column; /* 스피너와 텍스트를 세로 배치 */
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 8px solid transparent; /* 투명한 경계선 */
+  border-top: 8px solid transparent; /* 그라데이션 적용할 부분 남기기 */
+  border-left: 8px solid #d9d9d9; /* 그라데이션 시작 색상 */
+  border-right: 8px solid #000000; /* 그라데이션 끝 색상 */
+  border-radius: 50%; /* 둥근 원형 만들기 */
+  animation: spin 1s linear infinite; /* 회전 애니메이션 */
+}
+
+.spinner-container p {
+  margin-top: 10px; /* 스피너와 텍스트 간격 조정 */
+  font-size: 14px;
+  color: #666666; /* 텍스트 색상 */
+}
+
+/* 애니메이션 키프레임 */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

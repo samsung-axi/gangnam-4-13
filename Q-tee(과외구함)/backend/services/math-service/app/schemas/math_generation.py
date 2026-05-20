@@ -1,0 +1,241 @@
+from pydantic import BaseModel, Field
+from typing import List, Optional, Dict
+from enum import Enum
+
+
+class SchoolLevel(str, Enum):
+    ELEMENTARY = "초등학교"
+    MIDDLE = "중학교"
+    HIGH = "고등학교"
+
+
+class Semester(str, Enum):
+    FIRST = "1학기"
+    SECOND = "2학기"
+
+
+class ProblemCount(str, Enum):
+    """문제 개수 선택 (드롭다운용)"""
+    TEN = "10문제"
+    TWENTY = "20문제"
+    
+    @property
+    def value_int(self) -> int:
+        """정수 값 반환"""
+        return 10 if self == ProblemCount.TEN else 20
+
+
+class DifficultyRatio(BaseModel):
+    """난이도 비율 설정 (A:B:C)"""
+    A: int = Field(ge=0, le=100, description="상급 난이도 비율")
+    B: int = Field(ge=0, le=100, description="중급 난이도 비율") 
+    C: int = Field(ge=0, le=100, description="하급 난이도 비율")
+    
+    def model_post_init(self, __context):
+        total = self.A + self.B + self.C
+        if total != 100:
+            raise ValueError("난이도 비율의 합은 100이어야 합니다")
+
+
+class ProblemTypeRatio(BaseModel):
+    """문제 유형 비율 설정 (객관식:단답형)"""
+    multiple_choice: int = Field(ge=0, le=100, description="객관식 비율")
+    short_answer: int = Field(ge=0, le=100, description="단답형 비율")
+
+    def model_post_init(self, __context):
+        total = self.multiple_choice + self.short_answer
+        if total != 100:
+            raise ValueError("문제 유형 비율의 합은 100이어야 합니다")
+
+
+class ChapterInfo(BaseModel):
+    """소단원 정보"""
+    chapter_number: str
+    chapter_name: str
+    unit_name: str
+
+
+class MathProblemGenerationRequest(BaseModel):
+    """수학 문제 생성 요청 스키마"""
+    # 교육과정 선택
+    school_level: SchoolLevel = Field(description="초/중/고 선택")
+    grade: int = Field(ge=1, le=6, description="학년 (초:1-6, 중고:1-3)")
+    semester: Semester = Field(description="학기")
+    unit_number: str = Field(description="단원 번호 (I, II, III, IV)")
+    chapter: ChapterInfo = Field(description="소단원 정보")
+    
+    # 문제 생성 설정
+    problem_count: ProblemCount = Field(description="총 문제 수")
+    difficulty_ratio: DifficultyRatio = Field(description="난이도 비율")
+    problem_type_ratio: ProblemTypeRatio = Field(description="문제 유형 비율")
+    
+    # 세부사항
+    user_text: str = Field(description="사용자 직접 입력 세부사항")
+    
+    
+class UnitInfo(BaseModel):
+    """대단원 정보"""
+    unit_number: str
+    unit_name: str
+    chapters: List[ChapterInfo]
+
+
+class GradeInfo(BaseModel):
+    """학년별 정보"""
+    grade: int
+    semesters: Dict[str, List[UnitInfo]]
+
+
+class CurriculumStructureResponse(BaseModel):
+    """교육과정 구조 응답"""
+    school_level: SchoolLevel
+    grades: Dict[str, GradeInfo]  # key: "1", "2", "3"...
+
+
+class GenerationSummary(BaseModel):
+    """생성 요약 정보"""
+    total_problems: int
+    difficulty_distribution: Dict[str, int]  # {"A": 3, "B": 4, "C": 3}
+    type_distribution: Dict[str, int]  # {"multiple_choice": 5, "short_answer": 5}
+
+
+class MathProblemGenerationResponse(BaseModel):
+    """수학 문제 생성 응답"""
+    generation_id: str = Field(description="생성 세션 ID")
+    worksheet_id: int = Field(description="워크시트 ID")
+    school_level: str
+    grade: int
+    semester: str
+    unit_name: str
+    chapter_name: str
+    problem_count: int
+    difficulty_ratio: Dict[str, int]
+    problem_type_ratio: Dict[str, int]
+    user_prompt: str
+    actual_difficulty_distribution: Dict[str, int]
+    actual_type_distribution: Dict[str, int]
+    problems: List[dict] = Field(description="생성된 문제 목록")
+    total_generated: int
+    created_at: str
+
+
+# 과제 배포 관련 스키마
+class AssignmentCreate(BaseModel):
+    """과제 생성 요청"""
+    title: str
+    worksheet_id: int
+    classroom_id: int
+    teacher_id: int
+    unit_name: str
+    chapter_name: str
+    problem_count: int
+
+
+class AssignmentResponse(BaseModel):
+    """과제 응답"""
+    id: int
+    title: str
+    worksheet_id: int
+    classroom_id: int
+    teacher_id: int
+    unit_name: str
+    chapter_name: str
+    problem_count: int
+    is_deployed: str
+    created_at: str
+
+
+class AssignmentDeployRequest(BaseModel):
+    """과제 배포 요청"""
+    assignment_id: int
+    student_ids: List[int]
+    classroom_id: int
+
+
+class AssignmentDeploymentResponse(BaseModel):
+    """과제 배포 응답"""
+    id: int
+    assignment_id: int
+    student_id: int
+    classroom_id: int
+    status: str
+    deployed_at: str
+
+    class Config:
+        from_attributes = True
+
+    @classmethod
+    def from_orm(cls, deployment):
+        """ORM 객체에서 deployed_at을 문자열로 변환"""
+        return cls(
+            id=deployment.id,
+            assignment_id=deployment.assignment_id,
+            student_id=deployment.student_id,
+            classroom_id=deployment.classroom_id,
+            status=deployment.status,
+            deployed_at=deployment.deployed_at.isoformat() if deployment.deployed_at else ""
+        )
+
+
+class StudentAssignmentResponse(BaseModel):
+    """학생용 과제 응답"""
+    id: int
+    title: str
+    unit_name: str
+    chapter_name: str
+    problem_count: int
+    status: str
+    deployed_at: str
+    assignment_id: int
+    classroom_id: int
+
+    class Config:
+        from_attributes = True
+
+    @classmethod
+    def from_orm(cls, deployment):
+        """AssignmentDeployment 객체에서 필요한 정보 추출"""
+        assignment = deployment.assignment
+        return cls(
+            id=deployment.id,
+            title=assignment.title,
+            unit_name=assignment.unit_name,
+            chapter_name=assignment.chapter_name,
+            problem_count=assignment.problem_count,
+            status=deployment.status,
+            classroom_id=deployment.classroom_id,
+            deployed_at=deployment.deployed_at.isoformat() if deployment.deployed_at else "",
+            assignment_id=assignment.id
+        )
+
+
+# ===== 테스트 세션 관련 스키마 =====
+
+class TestSessionCreateRequest(BaseModel):
+    """테스트 세션 생성 요청"""
+    assignment_id: int
+
+class TestSessionResponse(BaseModel):
+    """테스트 세션 응답"""
+    session_id: str
+    assignment_id: int
+    student_id: int
+    started_at: str
+    status: str  # started, completed, submitted
+
+class TestAnswerRequest(BaseModel):
+    """테스트 답안 저장 요청"""
+    session_id: str
+    problem_id: int
+    answer: str
+
+class TestSubmissionRequest(BaseModel):
+    """테스트 제출 요청"""
+    answers: Dict[int, str]
+
+class TestSubmissionResponse(BaseModel):
+    """테스트 제출 응답"""
+    session_id: str
+    submitted_at: str
+    total_problems: int
+    answered_problems: int

@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  redis:
+    image: redis:latest
+    container_name: redis-local
+    ports:
+      - "6379:6379"
+
+  fastapi:
+    build: .
+    image: aripos/main-model-fastapi:latest
+    container_name: fastapi-app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - redis
+    environment:
+      - CELERY_BROKER_URL=redis://redis:6379/0
+      - CELERY_RESULT_BACKEND=redis://redis:6379/0
+    env_file:
+      - .env  # ✅ .env 파일 추가
+
+  celery_worker:
+    build: .
+    image: aripos/main-model-celery_worker:latest
+    container_name: celery-worker
+    depends_on:
+      - redis
+      - fastapi
+    environment:
+      - CELERY_BROKER_URL=redis://redis:6379/0
+      - CELERY_RESULT_BACKEND=redis://redis:6379/0
+    env_file:
+      - .env  # ✅ .env 파일 추가
+    command: celery -A app.celery_worker worker --loglevel=info --pool=solo

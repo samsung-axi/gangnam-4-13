@@ -1,0 +1,47 @@
+[
+    {
+        "function": "calculate_sum",
+        "parameters": {
+            "a": "int",
+            "b": "int"
+        }
+    },
+    {
+        "function": "greet_user",
+        "parameters": {
+            "name": "str"
+        }
+    },
+    {
+        "function": "send_email",
+        "parameters": {
+            "to": "str",
+            "subject": "str",
+            "body": "str"
+        }
+    },
+    {
+        "function": "fetch_weather",
+        "parameters": {
+            "location": "str",
+            "date": "str"
+        }
+    },
+    {
+        "function": "convert_currency",
+        "parameters": {
+            "amount": "float",
+            "from_currency": "str",
+            "to_currency": "str"
+        }
+    },
+    {
+        "function": "book_flight",
+        "parameters": {
+            "origin": "str",
+            "destination": "str",
+            "departure_date": "str",
+            "return_date": "str"
+        }
+    }
+] 

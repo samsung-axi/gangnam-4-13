@@ -1,0 +1,51 @@
+# FastAPI & Web Framework
+fastapi
+uvicorn[standard]
+python-multipart
+
+# LangChain core + integrations
+langchain
+langchain-openai
+langchain-pinecone
+langchain-google-genai
+google-ai-generativelanguage==0.6.15
+
+# AI & ML
+openai
+transformers
+torch
+torchvision
+timm
+open_clip_torch
+sentence-transformers
+
+# Vector Database
+pinecone>=3.0.0
+protobuf
+
+# PDF Processing
+pdfplumber
+pymupdf
+pypdfium2
+pdf2image
+pytesseract
+
+# Image Processing
+pillow
+scikit-image
+opencv-contrib-python
+
+# Data Science & Visualization
+numpy
+matplotlib
+seaborn
+
+# Utilities
+python-dotenv
+pydantic
+requests
+langdetect
+schedule
+beautifulsoup4
+sentence-transformers
+

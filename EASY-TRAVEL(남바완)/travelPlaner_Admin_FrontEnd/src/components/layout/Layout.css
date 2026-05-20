@@ -1,0 +1,31 @@
+.layout-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    width: 100%;
+    min-height: 100vh;
+    max-width: var(--max-width);
+  
+    .side-bar-container {
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+  
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 9998;
+      display: none;
+  
+      &.visible {
+        display: block;
+      }
+    }
+  }
+  

@@ -1,0 +1,229 @@
+name: Deploy to EC2
+
+"on":
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Clean up disk space
+        run: |
+          echo "=== Before cleanup ==="
+          df -h
+          sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc
+          sudo docker system prune -af || true
+          echo "=== After cleanup ==="
+          df -h
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Build and Push Backend
+        uses: docker/build-push-action@v6
+        with:
+          context: ./backend
+          platforms: linux/amd64
+          push: true
+          tags: |
+            ${{ secrets.DOCKER_USERNAME }}/brickers-backend:latest
+            ${{ secrets.DOCKER_USERNAME }}/brickers-backend:${{ github.sha }}
+          provenance: false
+          cache-from: type=gha,scope=backend
+          cache-to: type=gha,mode=max,scope=backend
+          build-args: |
+            AWS_S3_BUCKET=dummy
+
+      # ✅ 통합된 프론트엔드 빌드 (Next.js + Nginx)
+      - name: Build and Push Frontend
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: ./gallery-app/Dockerfile.prod
+          platforms: linux/amd64
+          push: true
+          tags: |
+            ${{ secrets.DOCKER_USERNAME }}/brickers-frontend:latest
+            ${{ secrets.DOCKER_USERNAME }}/brickers-frontend:${{ github.sha }}
+          provenance: false
+          cache-from: type=gha,scope=frontend
+          cache-to: type=gha,mode=max,scope=frontend
+          build-args: |
+            NEXT_PUBLIC_API_BASE_URL=${{ secrets.VITE_API_BASE_URL }}
+            REVALIDATE_SECRET=${{ secrets.GALLERY_REVALIDATE_SECRET }}
+            NEXT_PUBLIC_GA_ID=${{ secrets.NEXT_PUBLIC_GA_ID }}
+            NEXT_PUBLIC_GTM_ID=${{ secrets.NEXT_PUBLIC_GTM_ID }}
+
+  deploy:
+    needs: build-and-push
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Copy docker-compose.yml to EC2
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ubuntu
+          key: ${{ secrets.EC2_SSH_KEY }}
+          source: "docker-compose.yml"
+          target: "~/brickers"
+
+      - name: Deploy on EC2 via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ubuntu
+          key: ${{ secrets.EC2_SSH_KEY }}
+          script: |
+            set -euo pipefail
+            echo "🚀 Starting deployment on EC2..."
+
+            mkdir -p ~/brickers
+            cd ~/brickers
+
+            echo "🔧 Ensuring docker compose is available..."
+            if ! docker compose version >/dev/null 2>&1; then
+              sudo apt-get update -y
+              sudo apt-get install -y docker-compose-plugin docker-buildx-plugin || true
+            fi
+            if ! docker-compose version >/dev/null 2>&1; then
+              sudo curl -L "https://github.com/docker/compose/releases/download/v2.27.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+              sudo chmod +x /usr/local/bin/docker-compose
+            fi
+
+            echo "📄 Creating .env file..."
+            # AI_SERVER_URL은 start-mac.sh가 Tunnel URL로 동적 관리하므로 기존 값 보존
+            EXISTING_AI_URL=$(grep '^AI_SERVER_URL=' .env 2>/dev/null | cut -d= -f2- || echo "")
+
+            cat > .env <<'EOF'
+            DOCKER_USERNAME=${{ secrets.DOCKER_USERNAME }}
+
+            # MongoDB
+            PRIMARY_MONGODB_URI=${{ secrets.PRIMARY_MONGODB_URI }}
+
+            # Frontend Vars (런타임 참조용)
+            VITE_API_BASE_URL=${{ secrets.VITE_API_BASE_URL }}
+            VITE_KAKAO_CLIENT_ID=${{ secrets.VITE_KAKAO_CLIENT_ID }}
+            VITE_KAKAO_REDIRECT_URI=${{ secrets.VITE_KAKAO_REDIRECT_URI }}
+
+            # Backend - JWT
+            JWT_SECRET=${{ secrets.JWT_SECRET }}
+            JWT_ACCESS_EXPIRATION=${{ secrets.JWT_ACCESS_EXPIRATION }}
+            JWT_REFRESH_EXPIRATION=${{ secrets.JWT_REFRESH_EXPIRATION }}
+
+            # Backend - AWS S3
+            AWS_S3_BUCKET=${{ secrets.AWS_S3_BUCKET }}
+            AWS_REGION=${{ secrets.AWS_REGION }}
+            AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }}
+            AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }}
+            UPLOAD_PROVIDER=S3
+            UPLOAD_PUBLIC_BASE_URL=https://${{ secrets.AWS_S3_BUCKET }}.s3.${{ secrets.AWS_REGION }}.amazonaws.com
+
+            # Backend - OAuth
+            KAKAO_CLIENT_ID=${{ secrets.KAKAO_CLIENT_ID }}
+            KAKAO_CLIENT_SECRET=${{ secrets.KAKAO_CLIENT_SECRET }}
+            KAKAO_ADMIN_KEY=${{ secrets.KAKAO_ADMIN_KEY }}
+            KAKAO_REDIRECT_URI=${{ secrets.KAKAO_REDIRECT_URI }}
+
+            # Google
+            GOOGLE_CLIENT_ID=${{ secrets.GOOGLE_CLIENT_ID }}
+            GOOGLE_CLIENT_SECRET=${{ secrets.GOOGLE_CLIENT_SECRET }}
+            GOOGLE_REDIRECT_URI=${{ secrets.GOOGLE_REDIRECT_URI }}
+            GOOGLE_LOCAL_REDIRECT_URI=${{ secrets.GOOGLE_LOCAL_REDIRECT_URI }}
+
+            # GA4 / GTM
+            NEXT_PUBLIC_GA_ID=${{ secrets.NEXT_PUBLIC_GA_ID }}
+            NEXT_PUBLIC_GTM_ID=${{ secrets.NEXT_PUBLIC_GTM_ID }}
+
+
+            # Cookie
+            COOKIE_SECURE=true
+            COOKIE_SAMESITE=None
+
+            # Base URLs & Ports
+            FRONT_BASE_URL=${{ secrets.FRONT_BASE_URL }}
+            BACKEND_PORT=${{ secrets.BACKEND_PORT }}
+            FRONTEND_PORT=${{ secrets.FRONTEND_PORT }}
+
+            # OpenAI (챗봇용)
+            APP_OPENAI_API_KEY=${{ secrets.APP_OPENAI_API_KEY }}
+
+            # SQS (2개 Queue 분리)
+            AWS_SQS_ENABLED=true
+            AWS_SQS_REQUEST_QUEUE_URL=${{ secrets.AWS_SQS_REQUEST_QUEUE_URL }}
+            AWS_SQS_RESULT_QUEUE_URL=${{ secrets.AWS_SQS_RESULT_QUEUE_URL }}
+
+            # Gallery Revalidate
+            GALLERY_REVALIDATE_ENABLED=true
+            GALLERY_REVALIDATE_SECRET=${{ secrets.GALLERY_REVALIDATE_SECRET }}
+
+            # Next.js
+            NEXT_PUBLIC_API_BASE_URL=${{ secrets.VITE_API_BASE_URL }}
+
+            # Internal API Token (AI Server → Backend 로그 전송용)
+            INTERNAL_API_TOKEN=${{ secrets.INTERNAL_API_TOKEN }}
+
+            # GA4 Data API (Backend 전용)
+            GA4_PROPERTY_ID=${{ secrets.GA4_PROPERTY_ID }}
+            GA4_CREDENTIALS_JSON=${{ secrets.GA4_CREDENTIALS_JSON }}
+            EOF
+
+            # AI_SERVER_URL: 기존 Tunnel URL 보존, 없으면 Secret fallback
+            if [ -n "$EXISTING_AI_URL" ]; then
+              echo "AI_SERVER_URL=$EXISTING_AI_URL" >> .env
+              echo "✅ AI_SERVER_URL preserved: $EXISTING_AI_URL"
+            else
+              echo "AI_SERVER_URL=${{ secrets.AI_SERVER_URL }}" >> .env
+              echo "⚠️ AI_SERVER_URL fallback to secret"
+            fi
+
+            echo "🔐 Docker Hub login..."
+            echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+
+            echo "🔁 Stopping old containers to free 'in-use' images..."
+            docker-compose down || true
+
+            echo "🧹 Cleaning up unused images to free space..."
+            docker system prune -af || true
+            echo "🛑 Stopping old containers to free 'in-use' images..."
+            docker compose down || docker-compose down
+
+            echo "🧹 Aggressive cleanup to free disk..."
+            docker system prune -af --volumes || true
+            docker builder prune -af || true
+            docker volume prune -f || true
+            df -h
+
+            echo "📦 Pulling fresh images..."
+            docker compose pull || docker-compose pull
+
+            echo "🚀 Starting containers..."
+            docker compose up -d --remove-orphans || docker-compose up -d --remove-orphans
+
+            echo "📦 Pulling fresh images..."
+            docker-compose pull
+
+            echo "🚀 Starting containers..."
+            docker-compose up -d --remove-orphans
+
+            echo "🧹 Final cleaning..."
+            docker image prune -f
+
+            echo "✅ Deployment completed successfully!"

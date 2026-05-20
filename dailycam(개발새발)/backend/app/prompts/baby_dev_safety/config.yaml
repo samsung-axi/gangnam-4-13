@@ -1,0 +1,46 @@
+stages:
+  "1":
+    id: "stage_01"
+    age_range_months: [0, 2]
+    prompt_file: "stage_01_0-2m.ko.txt"
+  "2":
+    id: "stage_02"
+    age_range_months: [3, 5]
+    prompt_file: "stage_02_3-5m.ko.txt"
+  "3":
+    id: "stage_03"
+    age_range_months: [6, 8]
+    prompt_file: "stage_03_6-8m.ko.txt"
+  "4":
+    id: "stage_04"
+    age_range_months: [9, 11]
+    prompt_file: "stage_04_9-11m.ko.txt"
+  "5":
+    id: "stage_05"
+    age_range_months: [12, 17]
+    prompt_file: "stage_05_12-17m.ko.txt"
+  "6":
+    id: "stage_06"
+    age_range_months: [18, 23]
+    prompt_file: "stage_06_18-23m.ko.txt"
+  "7":
+    id: "stage_07"
+    age_range_months: [24, 29]
+    prompt_file: "stage_07_24-29m.ko.txt"
+  "8":
+    id: "stage_08"
+    age_range_months: [30, 35]
+    prompt_file: "stage_08_30-35m.ko.txt"
+  "9":
+    id: "stage_09"
+    age_range_months: [36, 47]
+    prompt_file: "stage_09_36-47m.ko.txt"
+  "10":
+    id: "stage_10"
+    age_range_months: [48, 59]
+    prompt_file: "stage_10_48-59m.ko.txt"
+  "11":
+    id: "stage_11"
+    age_range_months: [60, 71]
+    prompt_file: "stage_11_60-71m.ko.txt"
+

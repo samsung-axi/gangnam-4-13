@@ -1,0 +1,48 @@
+.header {
+    text-align: center;
+    width: 100%;
+    position: relative;
+    padding: 20px 0;
+}
+
+.backButton {
+    position: fixed; /* fixed로 변경하여 항상 고정 */
+    top: 20px;
+    left: 20px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1000; /* 다른 요소들 위에 표시되도록 */
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+}
+
+.backImage {
+    width: 24px; /* 크기 조정 */
+    height: 24px;
+    transition: transform 0.2s ease;
+}
+
+.backButton:hover .backImage {
+    transform: scale(1.1);
+}
+
+.titleImage {
+    max-width: 120px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+}
+
+.subtitle {
+    font-size: 18px;
+    color: #333;
+    text-align: center;
+    margin-top: 10px;
+    font-family: 'Gowun Batang';
+    line-height: 1.5;
+}

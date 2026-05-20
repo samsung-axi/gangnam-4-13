@@ -1,0 +1,179 @@
+.modal-backdrop {
+  color: #000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  position: relative;
+  background: white;
+  border-radius: 8px;
+  width: 500px;
+  height: 380px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px 100px;
+}
+
+.modal h2 {
+  margin-bottom: 20px;
+  font-size: 32px;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  width: 480px;
+  height: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.form-group input:focus {
+  border-color: #2ec4b6;
+  box-shadow: 0 0 10px rgba(46, 196, 182, 0.75);
+  outline: none;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.save-button {
+  background: #2ec4b6;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 0 auto;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  color: #333;
+  font-size: 20px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  font-weight: bolder;
+}
+
+.save-button:hover {
+  background: #28b2a5;
+}
+
+.close-button:hover {
+  transform: scale(1.2); /* 호버 시 크기 확대 */
+  color: #333;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* 반투명 배경 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  width: 400px;
+}
+
+.modal-content h2 {
+  margin-bottom: 20px;
+}
+
+.modal-content label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.modal-content input {
+  width: 95%;
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.create-button {
+  background-color: #6c757d;
+  color: white;
+}
+
+.create-button:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.mobile-Information{
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .modal{
+    width: 80%;
+    padding: 20px;
+    height: 300px;
+  }
+
+  .modal-content{
+    width: 80%;
+    max-width: 340px;
+  }
+
+  .form-group input{
+    width: 95%;
+    padding: 5px;
+  }
+
+  .logo{
+    margin-left: 20px;
+  }
+
+  .modal h2{
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+
+  .form-group label{
+    font-size: 16px;
+  }
+
+  .modal-content h2{
+    margin-bottom: 15px;
+  }
+}

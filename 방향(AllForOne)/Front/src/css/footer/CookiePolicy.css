@@ -1,0 +1,71 @@
+/* * {
+    font-family: 'Nanum Myeongjo', serif;
+} */
+
+.cookiepolicy-container {
+    background-color: #EFEDED;
+    min-height: 100vh;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+}
+
+.cookiepolicy-li {
+    margin-left: 30px;
+}
+
+.cookiepolicy-content {
+    background-color: transparent;
+    max-width: 800px;
+    width: 100%;
+    padding: 3rem;
+    border-radius: 8px;
+}
+
+.cookiepolicy-title {
+    text-align: left;
+    font-size: 30px;
+    margin-bottom: 2rem;
+}
+
+.cookiepolicy-notice {
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.cookiepolicy-section {
+    margin-bottom: 2rem;
+}
+
+.cookiepolicy-section h2 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.cookiepolicy-section ul {
+    list-style: none;
+    padding-left: 1rem;
+}
+
+.cookiepolicy-section li {
+    margin-bottom: 0.5rem;
+    position: relative;
+}
+
+.cookiepolicy-section li:before {
+    content: "•";
+    position: absolute;
+    left: -1rem;
+}
+
+.cookiepolicy-section p {
+    padding-left: 1rem;
+    line-height: 1.6;
+}
+
+.cookiepolicy-footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+}

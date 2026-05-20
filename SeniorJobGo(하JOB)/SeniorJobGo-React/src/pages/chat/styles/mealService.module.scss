@@ -1,0 +1,113 @@
+@use '@assets/styles/_variables' as *;
+.mealServiceMessage {
+  width: 100%;
+  background: transparent;
+  
+  .messageText {
+    margin-bottom: 1rem;
+    color: $text-color;
+    // font-size: $font-size-md;
+    font-size: 16px;
+    white-space: pre-line;
+  }
+
+  .cardList {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .card {
+    background: $white-color;
+    border: 1px solid $border-light-color;
+    border-radius: $radius-lg;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:hover {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, .1);
+      transform: translateY(-1px);
+    }
+
+    &.expanded {
+      background: $color-background-light;
+    }
+  }
+
+  .cardHeader {
+    padding: 10px 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: $white-color;
+    
+    .facilityName {
+      margin: 0;
+      font-size: $font-size-16;
+      font-weight: $font-weight-medium;
+      color: #2c2c2c;
+    }
+
+    .icon {
+      color: $icon-color;
+      font-size: $font-icon-sm;
+    }
+  }
+
+  .cardContent {
+    padding: 0.5rem 1rem 1rem;
+    border-top: 1px solid #eee;
+    background: $color-background-light;
+    
+    .infoRow {
+      display: flex;
+      margin: 0.5rem 0;
+      font-size: $font-size-md;
+      line-height: 1.5;
+      
+      .label {
+        min-width: 70px;
+        color: $secondary-text-color;
+        font-weight: $font-weight-medium;
+      }
+      
+      .value {
+        flex: 1;
+        color: $text-title-color;
+        padding-left: 0.5rem;
+
+        // 요일 표시 스타일
+        .weekdayContainer {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 6px;
+          margin-top: 4px;
+
+          .weekdayBox {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 500;
+            min-width: 40px;
+            
+            &.active {
+              background-color: #4CAF50;
+              color: #ffffff;
+            }
+            
+            &.inactive {
+              background-color: #e0e0e0;
+              color: #757575;
+            }
+          }
+        }
+      }
+    }
+  }
+} 

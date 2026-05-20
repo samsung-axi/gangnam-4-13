@@ -1,0 +1,41 @@
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+.header {
+  width: 100%;
+  margin-bottom: 0vh;
+}
+
+.header-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: #000;
+  display: inline-block;
+  position: relative;
+  padding: 10px 20px;
+}
+
+.header-title:hover {
+  cursor: pointer;
+}
+
+.header-title span {
+  position: relative;
+  z-index: 1;
+}
+
+.header-title span::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 2px;
+  width: 100%;
+  height: 6px;
+  background-color: #ffbc2c;
+  z-index: -1;
+}

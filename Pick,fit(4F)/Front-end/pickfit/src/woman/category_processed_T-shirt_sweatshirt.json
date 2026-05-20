@@ -1,0 +1,1589 @@
+[
+    {
+        "product_info": {
+            "id": 1,
+            "brand": "톰브라운",
+            "title": "엔지니어드 사선 스웨트셔츠 라이트 그레이",
+            "price": "2,288,000",
+            "detail_page_url": "https://www.trenbe.com/product/++67366929?catalog=66426",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240820_638597555152678027_21239860_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "cozy_minimal"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 2,
+            "brand": "스톤아일랜드",
+            "title": "스톤 아일랜드 와펜 패치 크루넥 스웻셔츠 블랙",
+            "price": "750,000",
+            "detail_page_url": "https://www.trenbe.com/product/++114312484?catalog=100812215",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1728284806077_9c316b73fb202668e3cbe635d725b5cf_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "high_end_street"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 5,
+            "brand": "나이키",
+            "title": "나이키 NBA 팀 31 플리스 스웨트셔츠 블랙 FD6549-010",
+            "price": "219,000",
+            "detail_page_url": "https://www.trenbe.com/product/++73107582?catalog=100926015",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1710587985745_ca6af49a3947707341196eb028505bd8_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "casual_sporty"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 6,
+            "brand": "스톤아일랜드",
+            "title": "와펜 기모 남성 맨투맨 라이트그레이",
+            "price": "771,000",
+            "detail_page_url": "https://www.trenbe.com/product/++99009252?catalog=100903195",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1722839372695_d32cf1767737419bd7c402ab71ec871e_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "high_end_street"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 7,
+            "brand": "버버리",
+            "title": "JARRAD 스트라이프 맨즈 넥 스웻셔츠",
+            "price": "780,000",
+            "detail_page_url": "https://www.trenbe.com/product/++47362227?catalog=100928672",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1726187482934-08bdf23e-6443-4654-8347-45ce0a530e4d.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "cozy_minimal"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 8,
+            "brand": "스톤아일랜드",
+            "title": "와펜 패치 맨투맨 그레이",
+            "price": "729,600",
+            "detail_page_url": "https://www.trenbe.com/product/++89942966?catalog=100650538",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240821_638597842491540706_22674143_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "cozy_minimal"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 9,
+            "brand": "메종키츠네",
+            "title": "그레이 폭스헤드 패치 클래식 코튼 맨투맨 그레이",
+            "price": "335,000",
+            "detail_page_url": "https://www.trenbe.com/product/++118591945?catalog=61874",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1731396793464_8cee13146c3c2c0691db579c731dc6c3_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "cozy_minimal"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 10,
+            "brand": "메종키츠네",
+            "title": "폭스헤드 패치 클래식 코튼 맨투맨 블랙",
+            "price": "593,500",
+            "detail_page_url": "https://www.trenbe.com/product/++118591925?catalog=61141",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1731396781661_c32d978df8b1c97a63de526e9d0c10da_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 12,
+            "brand": "발렌시아가",
+            "title": "폴리티컬 캠페인 웨이브 로고 후드 티셔츠 블루",
+            "price": "720,500",
+            "detail_page_url": "https://www.trenbe.com/product/++88292055?catalog=83205",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1719468180700_7bcaf24c0628ce9dc3e02b37c875e5f8_1.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "cozy_minimal"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 13,
+            "brand": "메종키츠네",
+            "title": "폭스 헤드 패치 클래식 코튼 맨투맨 네이비",
+            "price": "430,000",
+            "detail_page_url": "https://www.trenbe.com/product/++118591918?catalog=61866",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1731396776630_1ea0f68d4980245f4ded52ce89ee143a_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "cozy_minimal"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 14,
+            "brand": "구찌",
+            "title": "점보 gg 크루넥 넥 니트 Jumbo GG Crew Neck Knit 692900-XKCC5-2075 Camel",
+            "price": "1,300,000",
+            "detail_page_url": "https://www.trenbe.com/product/++116534668?catalog=100004564",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1730254312799_b1da8279a9dc80c805e5372116dc03bd_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 15,
+            "brand": "스톤아일랜드",
+            "title": "스톤아일랜드 컴퍼스 아플리케 스웨트셔츠",
+            "price": "729,600",
+            "detail_page_url": "https://www.trenbe.com/product/++73538432?catalog=100040290",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1711094143619_7fddaf8d999cd1ee75ac170f37d057a1_1.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "cozy_minimal"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 16,
+            "brand": "발렌시아가",
+            "title": "중고 508184 M사이즈 백로고 후드 티셔츠",
+            "price": "500,000",
+            "detail_page_url": "https://www.trenbe.com/product/++106539071?catalog=&options=owned",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1726810519463-8e835ed7-affe-4ae3-ba8b-62db0c745271.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "cozy_minimal"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 17,
+            "brand": "메종키츠네",
+            "title": "메종 폭스 헤드 패치 집업 스웨트",
+            "price": "615,000",
+            "detail_page_url": "https://www.trenbe.com/product/++76750576?catalog=100909294",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240821_638597847375471115_22149988_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "cozy_minimal"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 18,
+            "brand": "스톤아일랜드",
+            "title": "브러쉬드 코튼 플리스 레귤러핏 스냅 남성 후드티 그린",
+            "price": "422,000",
+            "detail_page_url": "https://www.trenbe.com/product/++91355574?catalog=100010500",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1732117557185_ca073f0df75f000ecb53f9ade1c25c3d_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "high_end_street"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 19,
+            "brand": "텐씨",
+            "title": "[스크래치] 나일론 다운 자켓 21CTCUC03127 006102 661",
+            "price": "1,380,000",
+            "detail_page_url": "https://www.trenbe.com/product/++103936191?catalog=&options=owned",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1725324077637-181852bd-dc8a-46d4-914c-19d0fdfbd769.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "high_end_street"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 21,
+            "brand": "폴로랄프로렌",
+            "title": "23FW 포니 자수 기모 후드티 그레이 710766778 006",
+            "price": "303,030",
+            "detail_page_url": "https://www.trenbe.com/product/++114726710?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1728633644112_f6509a6745489df445e3f28de10f9132_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "cozy_minimal"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 22,
+            "brand": "메종키츠네",
+            "title": "폭스 헤드 패치 카라 남성 긴팔 티셔츠 블랙",
+            "price": "625,000",
+            "detail_page_url": "https://www.trenbe.com/product/++58266062?catalog=100009334",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1694754858049_022108b36640a5c8185330af2b744452_0.jpg",
+                "https://image-cdn.trenbe.com/product-images/1694754858130_9252ab984d3da2157a5deb510b99d0f1_1.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "casual_sporty"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 24,
+            "brand": "골든구스",
+            "title": "레터링 패치 맨투맨 그레이 G24U548 A1 52503",
+            "price": "174,330",
+            "detail_page_url": "https://www.trenbe.com/product/++114609524?catalog=100645068",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1728542282927_0e10f806b44faa7df89090d31442d314_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "cozy_minimal"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 25,
+            "brand": "아미",
+            "title": "톤온톤 스몰하트 자수로고 공용 후드 티셔츠 블랙",
+            "price": "743,000",
+            "detail_page_url": "https://www.trenbe.com/product/++34349757?catalog=255388",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1704942953746-5cf77383-a2b5-4346-ba6f-f1fdc31dce83.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "cozy_minimal"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 26,
+            "brand": "아미",
+            "title": "아미 로고 하트 맨투맨 블랙",
+            "price": "744,000",
+            "detail_page_url": "https://www.trenbe.com/product/++61659206?catalog=100009667",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1732132247695_bfc5680079e59eff337ee362c41ae461_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "cozy_minimal"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 28,
+            "brand": "버버리",
+            "title": "버버리 JENSON 로고 롱 슬리브 코튼 티셔츠 WHITE 80042561",
+            "price": "500,000",
+            "detail_page_url": "https://www.trenbe.com/product/++113148209?catalog=100026270",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1728024500910-11da7531-04ee-41c9-a6cb-7d6ead83974a.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 29,
+            "brand": "메종키츠네",
+            "title": "메종키츠네 볼드 폭스헤드 오버사이즈 맨투맨 그레이멜란지",
+            "price": "684,000",
+            "detail_page_url": "https://www.trenbe.com/product/++73334123?catalog=100023987",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240607_638533265904817698_21826874_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "cozy_minimal"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 30,
+            "brand": "메종키츠네",
+            "title": "폭스헤드 패치 컴포트 후드 집업 잉크블루",
+            "price": "799,000",
+            "detail_page_url": "https://www.trenbe.com/product/++115167285?catalog=100023791",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1729226049949_40e1804b9579a247da8d2979b3f64acd_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "modern_classic"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 32,
+            "brand": "우영미",
+            "title": "백로고 남성 후드티 그레이",
+            "price": "524,000",
+            "detail_page_url": "https://www.trenbe.com/product/++100529259?catalog=100942801",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1723267278345-afdd0175-327f-4298-83de-bcab663c08fe.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "cozy_minimal"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 33,
+            "brand": "파라점퍼스",
+            "title": "CALER 카레리 남성 맨투맨블랙",
+            "price": "238,000",
+            "detail_page_url": "https://www.trenbe.com/product/++53227668?catalog=100931187",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1688551342723_5a5a3f311a8323badaf74d2379e28a2d_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "cozy_minimal"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 34,
+            "brand": "메종키츠네",
+            "title": "칠랙스 폭스 패치 후드 네이비 IU00355KM0001 P480 59075",
+            "price": "494,000",
+            "detail_page_url": "https://www.trenbe.com/product/++46670920?catalog=100647015",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1680247943118_2d822a3409991714d658fd711a839b70_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "cozy_minimal"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 35,
+            "brand": "스톤아일랜드",
+            "title": "와펜 패치 남성 후드 티셔츠 블랙",
+            "price": "450,000",
+            "detail_page_url": "https://www.trenbe.com/product/++15046571?catalog=89774",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20241011_638642110348069456_767368_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "high_end_street"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 37,
+            "brand": "톰브라운",
+            "title": "톰브라운 루프백 저지 니트 센터백 스트라이프 풀오버 후드 네이비",
+            "price": "1,655,000",
+            "detail_page_url": "https://www.trenbe.com/product/++92221313?catalog=83103",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240706_638558098742545757_22725948_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "high_end_street"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 41,
+            "brand": "아미",
+            "title": "체인스티치 하트로고 롱슬리브",
+            "price": "369,000",
+            "detail_page_url": "https://www.trenbe.com/product/++80369712?catalog=100032092",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1724228983368_773915d6003bc5a5b392428afa5abb9d_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "modern_classic"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 42,
+            "brand": "CP컴퍼니",
+            "title": "13주년 와펜 크루넥 맨투맨 12CM2A 005086W 888",
+            "price": "334,200",
+            "detail_page_url": "https://www.trenbe.com/product/++114616524?catalog=100952366",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1728544754278_50de5f98281cf64118acc0a7275d5696_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "cozy_minimal"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 45,
+            "brand": "버버리",
+            "title": "체크 테크니컬 니트 아카이브 베이지",
+            "price": "2,430,000",
+            "detail_page_url": "https://www.trenbe.com/product/++60655989?catalog=100007094",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1694096478361_6fc89a8b72bcd00e5f054a5bc5782aaf_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 47,
+            "brand": "CP컴퍼니",
+            "title": "로고 포켓 맨투맨 화이트",
+            "price": "209,430",
+            "detail_page_url": "https://www.trenbe.com/product/++114615128?catalog=100644741",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1728544447623_e7fb861e0cec46018e70fe03a5691ae4_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 50,
+            "brand": "우영미",
+            "title": "메탈릭 그래픽 남성 반팔 티셔츠 블랙",
+            "price": "403,000",
+            "detail_page_url": "https://www.trenbe.com/product/++112636572?catalog=100655445",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1727582746870-cb10c7bf-7a5f-471b-99f0-00a22140fc82.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "high_end_street"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 51,
+            "brand": "몽클레르",
+            "title": "로고패치 사이드 지퍼 티셔츠 화이트 8C714 00 8390Y 001 46606",
+            "price": "361,530",
+            "detail_page_url": "https://www.trenbe.com/product/++114600614?catalog=100644013",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1728540679843_7364041858f8fe969c43b4793d19bfdd_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "elegant_classic"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 52,
+            "brand": "아미",
+            "title": "아미 체인스티치 하트 로고 코튼 맨투맨 네이비",
+            "price": "711,000",
+            "detail_page_url": "https://www.trenbe.com/product/++61718729?catalog=100007345",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1731916677110_5ec6c2ba7029196bfd63e61d6225468d_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "cozy_minimal"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 53,
+            "brand": "아크네스튜디오",
+            "title": "페어뷰 페이스 로고 패치 남성 맨투맨 블랙",
+            "price": "419,000",
+            "detail_page_url": "https://www.trenbe.com/product/++114602695?catalog=62051",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1728541426368_164ff090ff4d0516fbd4fdbd10a45a75_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "cozy_minimal"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 54,
+            "brand": "스톤아일랜드",
+            "title": "(M) 와펜 패치 크루넥 맨투맨 그린",
+            "price": "450,000",
+            "detail_page_url": "https://www.trenbe.com/product/++117057497?catalog=62693",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1730441945116_63749a576c9ef3449e2475e506841932_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 55,
+            "brand": "CP컴퍼니",
+            "title": "후드 집업 가디건 블랙",
+            "price": "1,003,000",
+            "detail_page_url": "https://www.trenbe.com/product/++60397334?catalog=100142250",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1698054627989_8b85da5444b5c6c47d5cc3344096ce3a_0.jpg",
+                "https://image-cdn.trenbe.com/product-images/1698054627993_4f3dd3236003a691b682fbf25fbfc5ad_1.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "high_end_street"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 57,
+            "brand": "발렌시아가",
+            "title": "발렌시아가 후드 티셔츠 739024 TKVI99711",
+            "price": "2,164,000",
+            "detail_page_url": "https://www.trenbe.com/product/++117975381?catalog=100151520",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1730286905999_e28af7342d7e1303dd34fbbff98cb6f9_0.jpeg",
+                "https://image-cdn.trenbe.com/product-images/1730286906205_16cf7489eb3ee47ef25ef34a51d7a6b2_1.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "cozy_minimal"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 62,
+            "brand": "골든구스",
+            "title": "골든구스 후드 티셔츠 GMP01224 P00053480203 Black",
+            "price": "745,000",
+            "detail_page_url": "https://www.trenbe.com/product/++37713048?catalog=100726577",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1667291326514_7320d65df8e32ea4d5882e775c63b385_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "cozy_minimal"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 63,
+            "brand": "세인트제임스",
+            "title": "밍콰이어 스트라이프 남녀공용 티셔츠 네주 블랙",
+            "price": "190,000",
+            "detail_page_url": "https://www.trenbe.com/product/++67686430?catalog=76757",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1706063796966_d82812d94696fe2f27613b29cfff4305_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 66,
+            "brand": "이자벨마랑",
+            "title": "마일리 후드티 그레이",
+            "price": "706,000",
+            "detail_page_url": "https://www.trenbe.com/product/++57546038?catalog=100014196",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1693713664158-32288f35-7c24-47a3-8e89-18dd4c1e461a.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "cozy_minimal"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 70,
+            "brand": "톰브라운",
+            "title": "사선완장 클래식 맨투맨 네이비",
+            "price": "1,275,120",
+            "detail_page_url": "https://www.trenbe.com/product/++74223910?catalog=224723",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240328_638472081785775440_21907828_1.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "high_end_street"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 71,
+            "brand": "발렌시아가",
+            "title": "폴리티컬 캠페인 라지핏 후디 카키",
+            "price": "1,606,000",
+            "detail_page_url": "https://www.trenbe.com/product/++44727115?catalog=100638228",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1696579511422-c690bf88-d1b2-474c-97a6-ede38fb09c18.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "high_end_street"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 74,
+            "brand": "발렌시아가",
+            "title": "674986 심슨 와이드핏 남성 후드티셔츠",
+            "price": "1,228,100",
+            "detail_page_url": "https://www.trenbe.com/product/++33709344?catalog=100929633",
+            "images": [
+                "https://image-cdn.trenbe.com/open-api-product-images/21/20220919/41a15dee-fc97-4ff1-bcab-b0ff2733383f.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "modern_classic"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 78,
+            "brand": "리바이스",
+            "title": "오아시스 티셔츠 화이트",
+            "price": "79,000",
+            "detail_page_url": "https://www.trenbe.com/product/++102307083?catalog=100935901",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240828_638603703651994878_23159735_1.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "casual_sporty"
+        },
+        "category_analysis": {
+            "big_category": "bottom"
+        }
+    },
+    {
+        "product_info": {
+            "id": 80,
+            "brand": "노스페이스",
+            "title": "노스페이스 데날리 2 플리스 자켓 - 남성 TNFZC8O 9310702",
+            "price": "258,602",
+            "detail_page_url": "https://www.trenbe.com/product/++99084557?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1731108819755_6bdf76ed25721f19a9911a5e39f7dc51_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "modern_classic"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 84,
+            "brand": "아미",
+            "title": "[AMI] USW016 JE0052 263 공용 맨투맨",
+            "price": "424,000",
+            "detail_page_url": "https://www.trenbe.com/product/++115747972?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1729760825878_875d1a34387c1d9c37cc3617a0baca3f_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "cozy_minimal"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 85,
+            "brand": "톰브라운",
+            "title": "다이애그널 스트라이프 코튼 남성 맨투맨 화이트",
+            "price": "1,200,000",
+            "detail_page_url": "https://www.trenbe.com/product/++70856924?catalog=61699",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1708160318872_cad6f6e5d1ecb22697c11b2050acabe8_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "cozy_minimal"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 87,
+            "brand": "몽클레르",
+            "title": "긴팔 티셔츠 블랙",
+            "price": "1,397,000",
+            "detail_page_url": "https://www.trenbe.com/product/++118555030?catalog=100813554",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1730259932470_777ab23a836604d11b266cb2e95cdca3_1.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "cozy_minimal"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 91,
+            "brand": "스톤아일랜드",
+            "title": "23757 오가닉 남성 반팔티셔츠핑크",
+            "price": "285,250",
+            "detail_page_url": "https://www.trenbe.com/product/++90993765?catalog=100933127",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1719562204843-8740bcba-11f8-4a2e-832b-f8b4590cb39f.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "cozy_minimal"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 92,
+            "brand": "메종키츠네",
+            "title": "메종키츠네 모노크롬 더블 폭스헤드 패치 클래식 맨투맨 블랙",
+            "price": "496,000",
+            "detail_page_url": "https://www.trenbe.com/product/++62282940?catalog=249730",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1700023225639-ad1c14db-8e57-4385-b960-d29da5fe21da.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "cozy_minimal"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 93,
+            "brand": "CP컴퍼니",
+            "title": "렌즈 와펜 넥로고 맨투맨 블루그린",
+            "price": "379,000",
+            "detail_page_url": "https://www.trenbe.com/product/++67185274?catalog=100033339",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1705480528486_2081ee4c2832aeb19e69fbe22a8f68e2_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 95,
+            "brand": "CP컴퍼니",
+            "title": "15CM2A 기모 맨투맨라이트블루",
+            "price": "364,900",
+            "detail_page_url": "https://www.trenbe.com/product/++60892275?catalog=100931507",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1698739681016_1361214e3e3ae31dee48fc719c090295_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "cozy_minimal"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 96,
+            "brand": "칼하트",
+            "title": "CARHARTT WIP 칼하트 윕 칼럭스 남여공용 후드 집업 블랙 I032935 0GLXX G&B/turkiye/CARHARTT WIP/24W",
+            "price": "330,800",
+            "detail_page_url": "https://www.trenbe.com/product/++117834660?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1730981007045_869277536ce2c6b53a47cc9bafa7e9f4_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "cozy_minimal"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 97,
+            "brand": "아미",
+            "title": "아미 긴팔 티셔츠 USW017 740430",
+            "price": "799,000",
+            "detail_page_url": "https://www.trenbe.com/product/++63894995?catalog=100150649",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1724988654253_5c0c8a5da973c379434b5218e2e71b4b_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "cozy_minimal"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 100,
+            "brand": "아크네스튜디오",
+            "title": "버거 프린트 로고 티셔츠 옵틱화이트 CL0176 183 53632",
+            "price": "291,330",
+            "detail_page_url": "https://www.trenbe.com/product/++114609980?catalog=100645298",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1728542365495_962f87c996fcdfc5c41fdcf248334ec5_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 102,
+            "brand": "이자벨마랑",
+            "title": "이자벨마랑 긴팔 티셔츠 SW0030HA B1M18HFKEC",
+            "price": "530,000",
+            "detail_page_url": "https://www.trenbe.com/product/++118998306?catalog=100184529",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1731698691596_ea934483c9d97c69545af43db7924f06_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 103,
+            "brand": "CP컴퍼니",
+            "title": "씨피 컴퍼니 긴팔 티셔츠 16CM8A 110044G888",
+            "price": "408,000",
+            "detail_page_url": "https://www.trenbe.com/product/++118798808?catalog=100334489",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1731583494885_2949036628392fe081edb3c2c854df06_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 104,
+            "brand": "폴로랄프로렌",
+            "title": "폴로 랄프로렌 코듀로이 로고 자수 셔츠 올리브 그린",
+            "price": "448,000",
+            "detail_page_url": "https://www.trenbe.com/product/++59685602?catalog=100652562",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20231012_638326698099611669_20269831_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "vintage_classic"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 105,
+            "brand": "아미",
+            "title": "드 꾀흐 체크 셔츠",
+            "price": "266,000",
+            "detail_page_url": "https://www.trenbe.com/product/++53180777?catalog=100028663",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1704938119930-78a800d0-5396-42fa-b9fd-5476ebc9f172.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "modern_classic"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 106,
+            "brand": "폴로랄프로렌",
+            "title": "폴로 랄프로렌 남성 클래식핏 코듀로이 셔츠",
+            "price": "239,000",
+            "detail_page_url": "https://www.trenbe.com/product/++115935556?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1729841827538-5419b5a2-bded-49d6-866d-7c0212a93580.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "modern_classic"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 108,
+            "brand": "톰브라운",
+            "title": "사선완장 남성 셔츠 네이비",
+            "price": "1,632,000",
+            "detail_page_url": "https://www.trenbe.com/product/++75837044?catalog=76592",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1732127557189_b71267d642c7180f5e36fc29d6e57fd3_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "modern_classic"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 109,
+            "brand": "드홀드무슈",
+            "title": "드롤드무슈 후드 티셔츠 HO162 CO127BLACK",
+            "price": "922,000",
+            "detail_page_url": "https://www.trenbe.com/product/++116639157?catalog=100491566",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1730634807656_8e63a972de54b6ea9f0fb90151d26997_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "casual_sporty"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 110,
+            "brand": "질샌더",
+            "title": "질샌더 반팔 티셔츠 J21GC0161J46219104",
+            "price": "693,400",
+            "detail_page_url": "https://www.trenbe.com/product/++117928253?catalog=100505192",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1730272824034_1f4a6fcee99939178d5b3367525bc902_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "formal_minimal"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 111,
+            "brand": "에트로",
+            "title": "에트로 반팔 티셔츠 MRMA0002AJ054X0880 Blue",
+            "price": "730,000",
+            "detail_page_url": "https://www.trenbe.com/product/++116713598?catalog=100618973",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1730281935837_2361d3d2520caef2044a1dd2e007747f_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "boho_romantic"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 113,
+            "brand": "CP컴퍼니",
+            "title": "렌즈와펜 디아고날 레이즈 퀼팅 믹스 남성 맨투맨",
+            "price": "694,000",
+            "detail_page_url": "https://www.trenbe.com/product/++118588804?catalog=100941026",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1731396151757_b3be8377609524e69bc2865806e99086_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "high_end_street"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 116,
+            "brand": "톰브라운",
+            "title": "중고 [2] 톰브라운 사선완장 맨투맨 THA110514",
+            "price": "650,000",
+            "detail_page_url": "https://www.trenbe.com/product/++119265112?catalog=&options=owned",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1732008496946_00f27eb2f8a5541d445ebc802e858858_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 118,
+            "brand": "스톤아일랜드",
+            "title": "와펜 크루넥 맨투맨 다크블루 761563051 V0027 66701",
+            "price": "443,430",
+            "detail_page_url": "https://www.trenbe.com/product/++114612658?catalog=100642516",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1728543431507_c259e9f10eba9d17e0ab41d3213cf678_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "cozy_minimal"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 119,
+            "brand": "스톤아일랜드",
+            "title": "와펜 패치 라운드 맨투맨 네이비",
+            "price": "548,000",
+            "detail_page_url": "https://www.trenbe.com/product/++114612137?catalog=100009893",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1728543239770_44a3aba0e1dad7ecf4fc7ea196b124be_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "cozy_minimal"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 121,
+            "brand": "스톤아일랜드",
+            "title": "스톤 아일랜드 후드 티셔츠 801564151 V0065",
+            "price": "436,000",
+            "detail_page_url": "https://www.trenbe.com/product/++71620403?catalog=100184957",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1708936238261_be78afaa23ae7eee6b42b9c0f517ff78_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "cozy_minimal"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 122,
+            "brand": "겐조",
+            "title": "겐조 후드 티셔츠 FE58SW0114MF 93A Grey",
+            "price": "860,000",
+            "detail_page_url": "https://www.trenbe.com/product/++118745068?catalog=100721029",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1731525880524_0f6d749b0fb478e8d0ad38a27c78bd5a_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "casual_sporty"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 123,
+            "brand": "질샌더",
+            "title": "질샌더 폴로 티셔츠 J21GC0001 J45148102",
+            "price": "969,000",
+            "detail_page_url": "https://www.trenbe.com/product/++118597611?catalog=100797252",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1715661991562_fba2fc3834f8e61741c1e3e0b5807788_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "modern_classic"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 124,
+            "brand": "사카이",
+            "title": "사카이 후드 티셔츠 2403367M 101 WHITE",
+            "price": "451,000",
+            "detail_page_url": "https://www.trenbe.com/product/++115999995?catalog=100215145",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1709871653333_e9b9274b62fd916eb249c85228cbff11_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "cozy_minimal"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 126,
+            "brand": "브루넬로쿠치넬리",
+            "title": "브루넬로 쿠치넬리 반팔 티셔츠 M0B138440 CHP63 BLU INDIGO Blue",
+            "price": "860,000",
+            "detail_page_url": "https://www.trenbe.com/product/++102277888?catalog=100855735",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240827_638603480695509448_23155678_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "casual_sporty"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 127,
+            "brand": "아미",
+            "title": "아미 긴팔 티셔츠 HPL341KN0039430 BLUE",
+            "price": "797,000",
+            "detail_page_url": "https://www.trenbe.com/product/++115127980?catalog=100461381",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1729175189969_64d13a6cfc4e8b4091d920f5a67681c8_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "modern_classic"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 128,
+            "brand": "릭오웬스",
+            "title": "릭오웬스 x 챔피온 후드 티셔츠 CM02C9227 CHFE09",
+            "price": "1,200,000",
+            "detail_page_url": "https://www.trenbe.com/product/++118084921?catalog=100112880",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1731091173238_2e94833c795c3675209b5a5cd37c3739_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "high_end_street"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 130,
+            "brand": "베르사체",
+            "title": "베르사체 후드 티셔츠 77GAI3Z1 FS161KJ2",
+            "price": "1,109,000",
+            "detail_page_url": "https://www.trenbe.com/product/++116645851?catalog=100830046",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1724214848393_e019ee8b69499cb2deabd205bd291947_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 131,
+            "brand": "톰브라운",
+            "title": "센터백 스트라이프 폴로 코튼 남성 셔츠 라이트 그레이",
+            "price": "954,100",
+            "detail_page_url": "https://www.trenbe.com/product/++79672964?catalog=72514",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240531_638526973781970624_22486950_1.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "casual_sporty"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 132,
+            "brand": "메종마르지엘라",
+            "title": "버드패치 남성 맨투맨 그린",
+            "price": "1,349,000",
+            "detail_page_url": "https://www.trenbe.com/product/++31312922?catalog=231859",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1705242404557-7201ef0f-4648-4223-a238-c705746c3c8c.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 133,
+            "brand": "스톤아일랜드",
+            "title": "스톤 아일랜드 터틀넥 791561720 V0M64 GREY",
+            "price": "815,000",
+            "detail_page_url": "https://www.trenbe.com/product/++91592439?catalog=100679140",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1720003090470_1e01439cc065aa9267e5711f9c0c98f0_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "high_end_street"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 135,
+            "brand": "우영미",
+            "title": "백로고 후드 티셔츠 그레이",
+            "price": "730,000",
+            "detail_page_url": "https://www.trenbe.com/product/++72703583?catalog=100020517",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1710152526259_0375d6d21912a6c0d0a9e42f266b42c0_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "high_end_street"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 136,
+            "brand": "발렌시아가",
+            "title": "발렌시아가 긴팔 티셔츠 764235TQVS82020 WASHED BLACK",
+            "price": "1,634,000",
+            "detail_page_url": "https://www.trenbe.com/product/++115128596?catalog=100566471",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1729175256871_b8c0145d08a30030e0e86f38a0bfd163_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "high_end_street"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 137,
+            "brand": "생로랑",
+            "title": "생로랑 후드 티셔츠 677259YB2PG 9000 WHITE",
+            "price": "1,746,000",
+            "detail_page_url": "https://www.trenbe.com/product/++117723522?catalog=100220284",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1715316058648_8761642fa3c7c7c2866a1e5a4bd3d48f_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "cozy_minimal"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 141,
+            "brand": "돌체앤가바나",
+            "title": "돌체앤가바나 반팔 티셔츠 G8RK1THU7MAN0000 Black",
+            "price": "1,643,000",
+            "detail_page_url": "https://www.trenbe.com/product/++100543293?catalog=100581683",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1723271371248_546c49754baa3d0d874d71a495f871a0_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "elegant_classic"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 147,
+            "brand": "R13",
+            "title": "R13 탠 점보 후디",
+            "price": "1,334,000",
+            "detail_page_url": "https://www.trenbe.com/product/++64578242?catalog=100926819",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20231219_638385478772352794_20967197_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "cozy_minimal"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 150,
+            "brand": "생로랑",
+            "title": "생로랑 후드 티셔츠 754100Y37IT 1099",
+            "price": "3,553,000",
+            "detail_page_url": "https://www.trenbe.com/product/++118592484?catalog=100070862",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1730286522370_d3d2a1d08e4d29e30b6f7fd343a1d14f_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "cozy_minimal"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    }
+]

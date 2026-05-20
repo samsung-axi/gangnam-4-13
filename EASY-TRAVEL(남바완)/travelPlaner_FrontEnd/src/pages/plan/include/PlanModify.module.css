@@ -1,0 +1,286 @@
+.travel_plan_list_container {
+  width: 100%;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  background-color: var(--white);
+  position: relative;
+  min-height: 100vh;
+}
+
+.travel_plan_controls {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding: 50px 120px 0px 0px;
+  box-sizing: border-box;
+  font-size: var(--font-size-5);
+  color: var(--text-main);
+  cursor: pointer;
+}
+
+/* 일정 카드 섹션 */
+.travel_plan_card_section {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  box-sizing: border-box;
+  gap: 10px;
+  border-radius: 40px;
+}
+
+/* 일정 카드 컨테이너 */
+.travel_plan_card_container {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 50px 120px 10px 100px;
+  box-sizing: border-box;
+  gap: 50px;
+}
+/* 타임라인 인디케이터 */
+.timeline_indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 10px;
+  gap: 10px;
+  width: 50px;
+}
+/* 타임라인: 원 */
+.timeline_indicator .circle {
+  width: 35px;
+  height: 35px;
+  background-color: var(--sub-color-2);
+  border-radius: 50%;
+}
+/* 시간 표시 컨테이너 */
+.travel_time_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  width: auto;
+  padding: 0px 30px 50px 0px;
+}
+
+/* 시간 표시 텍스트 */
+.travel_time {
+  text-align: center;
+  font-size: var(--font-size-6);
+  font-weight: var(--semibold);
+  color: var(--text-sub);
+}
+
+/* 삭제 아이콘 컨테이너 */
+.teavel_plan_delete {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px 80px 0px;
+}
+
+.trash_icon {
+  cursor: pointer;
+  color: var(--grey-2);
+  transition: all 0.2s ease;
+}
+
+.trash_icon:hover {
+  color: red;
+}
+
+/* 여행지 이미지 컨테이너 */
+.travel_image_container {
+  flex: 1;
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+
+/* 이미지 */
+.travel_image {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  border-radius: var(--border-radius-4);
+  box-shadow: var(--shadow-1);
+}
+
+.travel_image img {
+  width: 100%;
+  height: 100%;
+  border-radius: var(--border-radius-4);
+}
+
+/* 장소 설명 */
+.place_info_container {
+  width: 100%;
+  text-align: left;
+  margin-top: 10px;
+}
+
+.place_info_container h2 {
+  font-size: var(--font-size-4);
+  font-weight: var(--bold);
+  color: var(--text-main);
+  margin-bottom: 5px;
+}
+
+.place_info_container h3 {
+  font-size: var(--font-size-5);
+  color: var(--text-sub);
+  line-height: 1.5;
+}
+
+/* 모달 열기 */
+.open_modal_cotanier {
+  max-width: var(--max-width);
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+  z-index: 2;
+}
+
+.top_btn {
+  padding: 5px;
+  background-color: var(--black);
+  display: flex;
+  justify-content: center;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  cursor: pointer;
+
+  img {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+/* 반응형 처리 */
+@media screen and (max-width: 1024px),
+  screen and (max-width: 768px),
+  screen and (max-width: 480px) {
+  .open_modal_cotanier {
+    width: calc(100% - 0px);
+  }
+}
+
+@media (max-width: 768px) {
+.place_info_container h2 {
+  font-size: var(--font-size-5);
+}
+
+.place_info_container h3 {
+  font-size: var(--font-size-7);
+  font-weight: var(--semibold);
+  color: var(--text-sub);
+}
+
+  .travel_plan_card_container {
+    padding: 24px 24px 24px 0;
+    margin-left: 30px;
+    gap: 10px;
+  }
+.place_additional_info {
+  font-size: var(--font-size-7);
+  font-weight: var(--semibold);
+  color: var(--text-sub);
+}
+
+  .travel_plan_controls{
+    padding: 30px 24px 0px 0px;
+  }
+  .travel_image{
+    max-height: 150px;
+    width: 100%;
+  }
+  .place_description{
+    font-size: var(--font-size-7);
+  }
+  .timeline_indicator .circle{
+  width: 15px;
+  height: 15px;
+}
+}
+
+@media (max-width: 768px) {
+  .time_input {
+    font-size: var(--font-size-6);
+  }
+}
+
+.time_picker {
+  width: 85px !important;
+  margin-left: 10px;
+}
+
+.time_picker input {
+  padding: 8px !important;
+  font-size: var(--font-size-6) !important;
+  color: var(--text-sub) !important;
+  font-weight: var(--semibold) !important;
+  text-align: center !important;
+  background-color: var(--white) !important;
+}
+
+.time_picker fieldset {
+  border: none !important;
+}
+
+.time_picker .MuiInputAdornment-root {
+  display: none !important;
+}
+
+/* MUI TimePicker 팝업 스타일 커스터마이징 */
+:global(.MuiPickersPopper-root) {
+  & .MuiPaper-root {
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: var(--shadow-2);
+  }
+
+  & .MuiClockNumber-root {
+    color: var(--text-main);
+  }
+
+  & .MuiClockPointer-root {
+    background-color: var(--main-color-1);
+  }
+
+  & .MuiClock-pin {
+    background-color: var(--main-color-1);
+  }
+}
+
+@media (max-width: 768px) {
+  .time_picker input {
+    font-size: var(--font-size-6) !important;
+  }
+}
+.default_image {
+  object-fit:contain;
+}
+.default_image_container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+

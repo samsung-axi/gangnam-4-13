@@ -1,0 +1,20 @@
+services:
+  scrape:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: scrape:latest
+    container_name: scrape
+    ports:
+      - "8420:8420"
+    env_file:
+      - .env
+    volumes:
+      - ./:/app
+    restart: unless-stopped
+    networks:
+      - edge-net
+
+networks:
+  edge-net:
+    external: true

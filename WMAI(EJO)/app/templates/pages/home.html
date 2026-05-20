@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>홈 - Community Admin</title>
+    <link rel="icon" type="image/png" href="{{ url_for('static', path='/img/sub_home.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/app.css') }}">
+    <style>
+        .header-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            padding: 12px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+        .header-bar .logo {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1F2937;
+        }
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .user-name {
+            color: #374151;
+            font-weight: 500;
+        }
+        .btn-header {
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            border: none;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .btn-login {
+            background: #3B82F6;
+            color: white;
+        }
+        .btn-login:hover {
+            background: #2563EB;
+        }
+        .btn-logout {
+            background: #EF4444;
+            color: white;
+        }
+        .btn-logout:hover {
+            background: #DC2626;
+        }
+        .container {
+            padding-top: 80px;
+        }
+    </style>
+</head>
+<body style="background-color: #F9FAFB;">
+    <div class="header-bar">
+        <div class="logo">Community Admin</div>
+        <div class="user-info" id="userInfo">
+            <span id="loadingUser">로딩 중...</span>
+        </div>
+    </div>
+    <main class="container">
+<div class="hero-section">
+    <img src="/static/img/sub_home.png" alt="Community Admin Logo" style="width: 400px; max-width: 90%; height: auto; margin: 0 auto 10px; display: block; filter: drop-shadow(0 10px 20px rgba(0,0,0,0.1));">
+    <p>커뮤니티 관리 대시보드</p>
+</div>
+
+<div class="search-section">
+    <div class="search-box">
+        <input 
+            type="text" 
+            id="searchInput" 
+            class="search-input" 
+            placeholder="육아에 대한 게시글을 찾아줘"
+            autocomplete="off"
+        />
+        <button id="searchBtn" class="btn btn-primary">검색</button>
+    </div>
+    <div id="searchResults" class="search-results"></div>
+</div>
+
+<div class="features-grid">
+    <div class="feature-card">
+        <img src="/static/img/api-console.png" alt="API Console" style="width: 64px; height: 64px; margin-bottom: 16px; object-fit: contain;">
+        <h3>API 콘솔</h3>
+        <p>API 요청 테스트</p>
+        <a href="/api-console" class="btn btn-secondary">이동</a>
+    </div>
+    
+    <div class="feature-card">
+        <img src="/static/img/bounce.png" alt="Churn Analysis" style="width: 64px; height: 64px; margin-bottom: 16px; object-fit: contain;">
+        <h3>이탈 분석 대시보드</h3>
+        <p>사용자 이탈률 및 세그먼트 분석</p>
+        <a href="/churn" class="btn btn-secondary">이탈 분석 대시보드</a>
+    </div>
+    
+    <div class="feature-card">
+        <img src="/static/img/trends.png" alt="Trends" style="width: 64px; height: 64px; margin-bottom: 16px; object-fit: contain;">
+        <h3>트렌드 분석</h3>
+        <p>키워드 및 트래픽 추이</p>
+        <a href="/trends" class="btn btn-secondary">이동</a>
+    </div>
+    
+    <div class="feature-card">
+        <img src="/static/img/reports.png" alt="Reports" style="width: 64px; height: 64px; margin-bottom: 16px; object-fit: contain;">
+        <h3>신고 분류</h3>
+        <p>신고글 카테고리별 통계</p>
+        <a href="/reports" class="btn btn-secondary">이동</a>
+    </div>
+    
+    <div class="feature-card">
+        <img src="/static/img/hate.png" alt="Ethics Score" style="width: 64px; height: 64px; margin-bottom: 16px; object-fit: contain;">
+        <h3>비윤리/스팸지수</h3>
+        <p>게시글 비윤리지수, <br>스팸지수 평가</p>
+        <a href="/ethics_analyze" class="btn btn-secondary">입력하기</a>
+        <a href="/ethics_dashboard" class="btn btn-secondary">기록보기</a>
+    </div>
+    
+    <div class="feature-card">
+        <img src="/static/img/memo.png" alt="Board" style="width: 64px; height: 64px; margin-bottom: 16px; object-fit: contain;">
+        <h3>게시판</h3>
+        <p>커뮤니티 게시판 및 댓글</p>
+        <a href="/board" class="btn btn-secondary">게시판 이동</a>
+    </div>
+</div>
+    </main>
+
+    <script src="{{ url_for('static', path='/js/app.js') }}"></script>
+<script>
+    // 사용자 정보 로드
+    async function loadUserInfo() {
+        try {
+            const response = await fetch('/api/auth/me');
+            const data = await response.json();
+            
+            const userInfoDiv = document.getElementById('userInfo');
+            
+            if (data.authenticated && data.user) {
+                userInfoDiv.innerHTML = `
+                    <span class="user-name">${data.user.username}님</span>
+                    <button class="btn-header btn-logout" onclick="logout()">로그아웃</button>
+                `;
+            } else {
+                userInfoDiv.innerHTML = `
+                    <a href="/login" class="btn-header btn-login">로그인</a>
+                    <a href="/register" class="btn-header btn-login" style="background: #6B7280;">회원가입</a>
+                `;
+            }
+        } catch (error) {
+            console.error('Failed to load user info:', error);
+            document.getElementById('userInfo').innerHTML = `
+                <a href="/login" class="btn-header btn-login">로그인</a>
+            `;
+        }
+    }
+
+    async function logout() {
+        try {
+            const response = await fetch('/api/auth/logout', {
+                method: 'POST'
+            });
+            
+            if (response.ok) {
+                window.location.reload();
+            }
+        } catch (error) {
+            console.error('Logout error:', error);
+            alert('로그아웃 중 오류가 발생했습니다');
+        }
+    }
+
+    // 페이지 로드 시 사용자 정보 로드
+    loadUserInfo();
+</script>
+<script>
+    // Placeholder 애니메이션
+    const placeholders = [
+        '여행 관련 게시글을 찾아줘',
+        '최근 인기 있는 주제는 뭐야?',
+        '오늘의 할일 보여줘',
+        '신고된글 목록 보여줘',
+        '신고 처리 대기중인 글 목록 보여줘',
+        '이탈률 어떻게 하면 줄일 수 있을까? ',
+        '트랜드 분석해줘',
+        '윤리도와 스팸 분석 현황 보여줘'
+    ];
+    
+    let currentIndex = 0;
+    const searchInput = document.getElementById('searchInput');
+    
+    setInterval(() => {
+        if (!searchInput.value) {
+            currentIndex = (currentIndex + 1) % placeholders.length;
+            searchInput.placeholder = placeholders[currentIndex];
+        }
+    }, 2000);
+
+    // 검색 기능 - AI 챗봇으로 이동
+    document.getElementById('searchBtn').addEventListener('click', performSearch);
+    document.getElementById('searchInput').addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') performSearch();
+    });
+
+    function performSearch() {
+        const query = document.getElementById('searchInput').value.trim();
+        if (!query) {
+            alert('질문을 입력하세요');
+            return;
+        }
+
+        // AI 챗봇 페이지로 이동 (질문을 URL 파라미터로 전달)
+        window.location.href = `/chatbot?q=${encodeURIComponent(query)}`;
+    }
+</script>
+</body>
+</html>

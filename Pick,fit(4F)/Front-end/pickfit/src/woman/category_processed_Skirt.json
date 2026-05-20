@@ -1,0 +1,650 @@
+[
+    {
+        "product_info": {
+            "id": 1,
+            "brand": "막스마라",
+            "title": "프리마베라 여성 펠리체 스커트 베이지",
+            "price": "429,000",
+            "detail_page_url": "https://www.trenbe.com/product/++42876850?catalog=100013193",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1675256587648-0ce37e7c-0fa7-4d40-b342-8a4bb54ae1f2.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "elegant_classic"
+        },
+        "category_analysis": {
+            "big_category": "bottom"
+        }
+    },
+    {
+        "product_info": {
+            "id": 2,
+            "brand": "톰브라운",
+            "title": "탭 드롭백 플레인 위빙 울 플리츠 스커트",
+            "price": "2,600,000",
+            "detail_page_url": "https://www.trenbe.com/product/++103953723?catalog=100916944",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240903_638609275858912942_23205104_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "bottom"
+        }
+    },
+    {
+        "product_info": {
+            "id": 3,
+            "brand": "막스마라",
+            "title": "리리카 플리츠 스커트 블랙",
+            "price": "880,000",
+            "detail_page_url": "https://www.trenbe.com/product/++101454974?catalog=100924543",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1724029558744-d8960303-837c-4d04-a7a8-a31d1911a1c9.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "elegant_classic"
+        },
+        "category_analysis": {
+            "big_category": "bottom"
+        }
+    },
+    {
+        "product_info": {
+            "id": 4,
+            "brand": "톰브라운",
+            "title": "톰브라운 드롭백 플레인 울 플리츠 롱 여성 스커트 FGC400V 06146 415",
+            "price": "2,833,000",
+            "detail_page_url": "https://www.trenbe.com/product/++103862419?catalog=100924635",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1725265020188-499027b1-1fac-4a50-90a9-786c8ded0f05.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "bottom"
+        }
+    },
+    {
+        "product_info": {
+            "id": 5,
+            "brand": "막스마라",
+            "title": "막스마라 롱 스커트 CLAVIERCO Black",
+            "price": "539,000",
+            "detail_page_url": "https://www.trenbe.com/product/++73259207?catalog=100192162",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1710755692777-988a6eef-fa6b-412b-9aff-825814ae9938.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "elegant_classic"
+        },
+        "category_analysis": {
+            "big_category": "bottom"
+        }
+    },
+    {
+        "product_info": {
+            "id": 7,
+            "brand": "막스마라",
+            "title": "SPORTMAX 실버펄 롱스커트 네이비 PINA",
+            "price": "825,000",
+            "detail_page_url": "https://www.trenbe.com/product/++32354681?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1655449061993-1e9ebf24-2c6b-43c8-bc7d-b5db1ae96c15.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "elegant_classic"
+        },
+        "category_analysis": {
+            "big_category": "bottom"
+        }
+    },
+    {
+        "product_info": {
+            "id": 11,
+            "brand": "코스",
+            "title": "미디 스커트 ELASTICATED MIDI SKIRT 1227468002",
+            "price": "181,900",
+            "detail_page_url": "https://www.trenbe.com/product/++72608707?catalog=100916508",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240926_638629529461894535_21744894_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "cozy_minimal"
+        },
+        "category_analysis": {
+            "big_category": "bottom"
+        }
+    },
+    {
+        "product_info": {
+            "id": 12,
+            "brand": "펜디",
+            "title": "펜디 미디 스커트 FZQ706ANER F1KE0 Brown",
+            "price": "3,246,000",
+            "detail_page_url": "https://www.trenbe.com/product/++78928560?catalog=100226005",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240523_638520611277497939_22424715_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "boho_romantic"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 18,
+            "brand": "톰브라운",
+            "title": "4 바 스티치 링크 펜슬 스커트",
+            "price": "2,128,000",
+            "detail_page_url": "https://www.trenbe.com/product/++66527447?catalog=100860930",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240123_638415661355732997_21182665_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "formal_minimal"
+        },
+        "category_analysis": {
+            "big_category": "bottom"
+        }
+    },
+    {
+        "product_info": {
+            "id": 22,
+            "brand": "막스마라",
+            "title": "여성 펠리체 스커트 블랙",
+            "price": "429,000",
+            "detail_page_url": "https://www.trenbe.com/product/++42876848?catalog=100013175",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1675256577775-3efbe82f-2b29-48ed-976c-9f03d041554f.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "formal_minimal"
+        },
+        "category_analysis": {
+            "big_category": "bottom"
+        }
+    },
+    {
+        "product_info": {
+            "id": 23,
+            "brand": "비비안웨스트우드",
+            "title": "비비안웨스트우드 미디 스커트 1J010004 J006ON401",
+            "price": "292,000",
+            "detail_page_url": "https://www.trenbe.com/product/++101454978?catalog=100481866",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1724029558925-558b94a0-edff-471e-9f49-25b0a2f10f26.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "vintage_classic"
+        },
+        "category_analysis": {
+            "big_category": "bottom"
+        }
+    },
+    {
+        "product_info": {
+            "id": 32,
+            "brand": "폴로랄프로렌",
+            "title": "에이라인 스커트 폴로 블랙 Shirred-Yoke A-Line Skirt POLO BLACK 57214703",
+            "price": "687,200",
+            "detail_page_url": "https://www.trenbe.com/product/++53753643?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240704_638556701030101747_19115498_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "formal_minimal"
+        },
+        "category_analysis": {
+            "big_category": "bottom"
+        }
+    },
+    {
+        "product_info": {
+            "id": 33,
+            "brand": "테드베이커",
+            "title": "스커트 블랙 Ted Gjial Skirt Ld34 black 53765303",
+            "price": "324,900",
+            "detail_page_url": "https://www.trenbe.com/product/++58845234?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240604_638530811246883161_20099034_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "elegant_classic"
+        },
+        "category_analysis": {
+            "big_category": "bottom"
+        }
+    },
+    {
+        "product_info": {
+            "id": 37,
+            "brand": "막스마라",
+            "title": "ZITTO 001 FW24 여성 지토 스커트",
+            "price": "1,380,000",
+            "detail_page_url": "https://www.trenbe.com/product/++114332103?catalog=&options=owned",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1729143379146-0121568e-d58b-4272-9677-b7fa493ed113.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "elegant_classic"
+        },
+        "category_analysis": {
+            "big_category": "bottom"
+        }
+    },
+    {
+        "product_info": {
+            "id": 38,
+            "brand": "띠어리",
+            "title": "언발 비대칭 스커트 Asymmetrical Wool-Viscose Skirt M071301O EAH",
+            "price": "719,400",
+            "detail_page_url": "https://www.trenbe.com/product/++51621316?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20230614_638222989782374491_18669276_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "elegant_classic"
+        },
+        "category_analysis": {
+            "big_category": "bottom"
+        }
+    },
+    {
+        "product_info": {
+            "id": 44,
+            "brand": "랙앤본",
+            "title": "데님 맥시 스커트 Liquid Miramar Denim Maxi Skirt 5161518",
+            "price": "575,800",
+            "detail_page_url": "https://www.trenbe.com/product/++98833965?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240802_638582181807631610_22942514_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "modern_classic"
+        },
+        "category_analysis": {
+            "big_category": "bottom"
+        }
+    },
+    {
+        "product_info": {
+            "id": 49,
+            "brand": "코스",
+            "title": "[리퍼브 상품] M 사이즈 코스 여성 스커트 다크 블루 1001462812",
+            "price": "196,420",
+            "detail_page_url": "https://www.trenbe.com/product/++50185357?catalog=&options=owned",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20230405_638162626511658000_17412256_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "elegant_classic"
+        },
+        "category_analysis": {
+            "big_category": "bottom"
+        }
+    },
+    {
+        "product_info": {
+            "id": 50,
+            "brand": "랙앤본",
+            "title": "프린팅 맥시 스커트 Liquid Miramar Printed Maxi Skirt 0400021618924 MARI",
+            "price": "575,800",
+            "detail_page_url": "https://www.trenbe.com/product/++100482693?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240810_638588423712687300_22994045_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "vintage_classic"
+        },
+        "category_analysis": {
+            "big_category": "onepiece"
+        }
+    },
+    {
+        "product_info": {
+            "id": 55,
+            "brand": "프라다",
+            "title": "GONNE 858437",
+            "price": "2,890,500",
+            "detail_page_url": "https://www.trenbe.com/product/++115786060?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20241024_638653718578588233_23577432_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 58,
+            "brand": "톰브라운",
+            "title": "톰브라운 스커트 FGC400V00626 035 Charcoal",
+            "price": "3,215,000",
+            "detail_page_url": "https://www.trenbe.com/product/++110851326?catalog=100584558",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1726886802128_2018db47b8817c19885427c7313b9e86_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "elegant_classic"
+        },
+        "category_analysis": {
+            "big_category": "bottom"
+        }
+    },
+    {
+        "product_info": {
+            "id": 60,
+            "brand": "디올",
+            "title": "중고 디올 프릴 미디 테크니컬 튤 미디 스커트 38 블랙 4ET1552",
+            "price": "7,100,000",
+            "detail_page_url": "https://www.trenbe.com/product/++116020957?catalog=&options=owned",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1729848450220_166353ea3f48129e95e31e0e0f06bf1a_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "elegant_classic"
+        },
+        "category_analysis": {
+            "big_category": "onepiece"
+        }
+    },
+    {
+        "product_info": {
+            "id": 62,
+            "brand": "디젤",
+            "title": "디젤 블루 Diesel DE-PAGO Ld42 Blue 56648418",
+            "price": "452,900",
+            "detail_page_url": "https://www.trenbe.com/product/++62407451?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240408_638481263491161216_20661060_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "vintage_classic"
+        },
+        "category_analysis": {
+            "big_category": "onepiece"
+        }
+    },
+    {
+        "product_info": {
+            "id": 67,
+            "brand": "막스마라",
+            "title": "(W) 막스마라 프론트 패치 포켓 데님 스커트",
+            "price": "909,920",
+            "detail_page_url": "https://www.trenbe.com/product/++98218680?catalog=100261917",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240801_638581010802948099_22926640_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "vintage_classic"
+        },
+        "category_analysis": {
+            "big_category": "onepiece"
+        }
+    },
+    {
+        "product_info": {
+            "id": 72,
+            "brand": "구찌",
+            "title": "중고 744843 40 사이즈 티안 프린트 스커트",
+            "price": "800,000",
+            "detail_page_url": "https://www.trenbe.com/product/++99051505?catalog=&options=owned",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1723092684655-8d945c08-b52b-4952-a563-90e327471c99.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "boho_romantic"
+        },
+        "category_analysis": {
+            "big_category": "bottom"
+        }
+    },
+    {
+        "product_info": {
+            "id": 74,
+            "brand": "비비안웨스트우드",
+            "title": "블랙 BEA 울 스커트",
+            "price": "781,700",
+            "detail_page_url": "https://www.trenbe.com/product/++79705895?catalog=100040169",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1723539643054_8e6806a9054df18485f46900da0da1b5_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "formal_minimal"
+        },
+        "category_analysis": {
+            "big_category": "bottom"
+        }
+    },
+    {
+        "product_info": {
+            "id": 78,
+            "brand": "구찌",
+            "title": "중고 580504 인터로킹 로고 스커트",
+            "price": "350,000",
+            "detail_page_url": "https://www.trenbe.com/product/++98992619?catalog=&options=owned",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1722928401049-f378a823-9f84-4e5f-ab8f-25a007866e0e.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "bottom"
+        }
+    },
+    {
+        "product_info": {
+            "id": 83,
+            "brand": "띠어리",
+            "title": "띠어리 미디 스커트 O0805302 Black",
+            "price": "1,047,500",
+            "detail_page_url": "https://www.trenbe.com/product/++114637733?catalog=100876046",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20241010_638641610721893394_23465097_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "formal_minimal"
+        },
+        "category_analysis": {
+            "big_category": "onepiece"
+        }
+    },
+    {
+        "product_info": {
+            "id": 89,
+            "brand": "막스마라",
+            "title": "여성 엘로지오 레깅스 ELOGIO 003",
+            "price": "188,000",
+            "detail_page_url": "https://www.trenbe.com/product/++73307995?catalog=100921613",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1710841533358-f768c7f8-6319-45e8-b992-c5c4c4aeb0c9.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "bottom"
+        }
+    },
+    {
+        "product_info": {
+            "id": 95,
+            "brand": "프라다",
+            "title": "프라다 미디 스커트 P143S 1JBW F0002 Black",
+            "price": "2,855,000",
+            "detail_page_url": "https://www.trenbe.com/product/++116902121?catalog=100302594",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1730349355849_e5d49e240e0b592908e21a2c4b334fd8_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "elegant_classic"
+        },
+        "category_analysis": {
+            "big_category": "bottom"
+        }
+    },
+    {
+        "product_info": {
+            "id": 101,
+            "brand": "구찌",
+            "title": "[리퍼브 상품] UK14 구찌 GG 모노그램 캔버스 스커트",
+            "price": "3,672,340",
+            "detail_page_url": "https://www.trenbe.com/product/++60444611?catalog=&options=owned",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20230105_638084985419876265_14954364_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "vintage_classic"
+        },
+        "category_analysis": {
+            "big_category": "bottom"
+        }
+    },
+    {
+        "product_info": {
+            "id": 106,
+            "brand": "막스마라",
+            "title": "막스마라 스튜디오 여성 주를로 스커트 베이지 ZURLO 012",
+            "price": "259,000",
+            "detail_page_url": "https://www.trenbe.com/product/++64446717?catalog=&options=owned",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1702622434064-345a2d4d-93c1-4fbd-aa5a-d431764a7475.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "elegant_classic"
+        },
+        "category_analysis": {
+            "big_category": "bottom"
+        }
+    },
+    {
+        "product_info": {
+            "id": 107,
+            "brand": "아디다스",
+            "title": "아디다스 오리지널 여성 로고 스트라이프 롱 스커트 캐주얼 치마",
+            "price": "114,000",
+            "detail_page_url": "https://www.trenbe.com/product/++70664384?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1707985519467_ddf2a1b228eb4d613e57813bbf16198b_1.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "elegant_classic"
+        },
+        "category_analysis": {
+            "big_category": "bottom"
+        }
+    },
+    {
+        "product_info": {
+            "id": 118,
+            "brand": "톰브라운",
+            "title": "톰브라운 스커트",
+            "price": "1,360,000",
+            "detail_page_url": "https://www.trenbe.com/product/++51501107?catalog=100035823",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1686557501743_6a416c9bd4f12c9f16a574527bd3014c_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "elegant_classic"
+        },
+        "category_analysis": {
+            "big_category": "bottom"
+        }
+    },
+    {
+        "product_info": {
+            "id": 123,
+            "brand": "테드베이커",
+            "title": "스커트 블랙 Ted Cornina Skirt Ld42 black 53019403",
+            "price": "275,500",
+            "detail_page_url": "https://www.trenbe.com/product/++79096780?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240526_638522590647382983_22408271_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "boho_romantic"
+        },
+        "category_analysis": {
+            "big_category": "bottom"
+        }
+    },
+    {
+        "product_info": {
+            "id": 138,
+            "brand": "페세리코",
+            "title": "24FW 페세리코 미디 스커트 P05123J007453 946 AB023329",
+            "price": "1,306,000",
+            "detail_page_url": "https://www.trenbe.com/product/++115044537?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1729081529421_1a29b7fe66ebaa6278399f15e9a123e1_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "elegant_classic"
+        },
+        "category_analysis": {
+            "big_category": "bottom"
+        }
+    },
+    {
+        "product_info": {
+            "id": 145,
+            "brand": "막스마라",
+            "title": "스포트막스 미디 원피스 2422636011600001 Black",
+            "price": "968,000",
+            "detail_page_url": "https://www.trenbe.com/product/++97927842?catalog=100477158",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1720067568497_dc1737e64b079a20c90d1d17bb194c19_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "bottom"
+        }
+    }
+]

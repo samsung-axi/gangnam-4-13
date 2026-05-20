@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+.therapyWrapper {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+}
+
+.contentContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 15px;
+    position: relative;
+}
+
+.logo {
+    padding-top: 15px;
+    max-width: 150px;
+    max-height: 150px;
+    margin: 0 auto;
+    display: block;
+    translate: -10px -40px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.therapyMain {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100vh;
+    font-family: "Nanum Myeongjo", serif;
+    padding-top: 20px;
+    transform: translateY(-250px);
+}
+
+.heading {
+    font-size: 24px;
+    margin-bottom: 80px;
+    color: #333;
+    transform: translateY(-50px);
+}

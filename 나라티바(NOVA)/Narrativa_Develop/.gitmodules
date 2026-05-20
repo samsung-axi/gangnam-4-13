@@ -1,0 +1,12 @@
+[submodule "narrativa_frontend"]
+	path = narrativa_frontend
+	url = https://github.com/AI-X-4-A1-FINAL/Narrativa_Frontend
+[submodule "narrativa_backend"]
+	path = narrativa_backend
+	url = https://github.com/AI-X-4-A1-FINAL/Narrativa_Backend
+[submodule "narrativa_ml"]
+	path = narrativa_ml
+	url = https://github.com/AI-X-4-A1-FINAL/Narrativa_ML
+[submodule "narrativa_admin"]
+	path = narrativa_admin
+	url = https://github.com/AI-X-4-A1-FINAL/Narrativa_Admin

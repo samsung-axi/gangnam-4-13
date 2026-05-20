@@ -1,0 +1,729 @@
+﻿import { useState, useCallback, useEffect, useRef } from 'react';
+import { useDropzone } from 'react-dropzone';
+import { motion, AnimatePresence } from 'framer-motion';
+import { MdCameraAlt, MdHistory, MdCheckCircle, MdChat, MdInfoOutline, MdDeleteOutline, MdSearch } from 'react-icons/md';
+import toast from 'react-hot-toast';
+import { useAuth } from '@/context/AuthContext';
+import { useNavigate } from 'react-router-dom';
+import DaumPostcode from 'react-daum-postcode';
+import { formatDaumAddress, type DaumPostcodeData } from '@/utils/daumAddress';
+
+const CROPS = [
+  "감자", "고추", "들깨", "무", "배추", "벼", "양배추", "오이", "옥수수", "콩", "토마토", "파"
+];
+
+// 모델의 분류 어휘 (WizWix/kor-pest-detector evaluation/metrics.json) 와 1:1 정렬.
+// "정상" 은 UX 편의상 맨 앞으로 호이스트, 나머지 19종 해충은 한글 사전순.
+const PESTS = [
+  "정상", "검거세미밤나방", "꽃노랑총채벌레", "담배가루이", "담배거세미나방",
+  "담배나방", "도둑나방", "먹노린재", "목화바둑명나방", "무잎벌",
+  "배추좀나방", "배추흰나비", "벼룩잎벌레", "복숭아혹진딧물",
+  "썩덩나무노린재", "열대거세미나방", "큰28점박이무당벌레",
+  "톱다리개미허리노린재", "파밤나방", "홍비단노린재"
+];
+
+const API_BASE = 'http://localhost:8000/api/v1/diagnosis';
+
+const TIPS = [
+  "작물의 잎 이면까지 꼼꼼히 촬영하면 더 정확한 해충 진단이 가능합니다.",
+  "해충 발견 즉시 사진을 찍어 진단하면 피해를 최소화할 수 있습니다.",
+  "바람이 부는 날에는 농약 살포를 피하는 것이 좋습니다.",
+  "서로 다른 약제를 혼용할 때는 반드시 제품 라벨의 혼용 가이드를 확인하세요.",
+  "비가 온 직후에는 병해가 확산될 수 있으니 작물을 꼼꼼히 살피세요.",
+  "농약은 권장 희석 배수를 정확히 지켜야 작물 약해를 예방할 수 있습니다.",
+  "해충 방제는 예찰을 통한 초기 대응이 가장 효과적입니다.",
+  "수확을 앞둔 작물은 잔류 농약 안전 기준을 위해 사용 가능 시기를 꼭 확인하세요.",
+  "노린재류는 주로 아침, 저녁 시간에 잎 뒷면에 숨어 활동합니다.",
+  "시설 하우스에서는 주기적인 환기로 습도를 낮춰 곰팡이병을 예방하세요.",
+  "NCPMS 방제 지침은 국가 공인 데이터를 기반으로 작성됩니다.",
+  "기상청 데이터 연동을 통해 현재 날씨에 맞는 최적의 살포 시기를 추천합니다."
+];
+
+const LOADING_MESSAGES = [
+  "진단 이미지 특징점 전처리 중...",
+  "AI 모델 기반 해충 탐지 수행 중...",
+  "해충 데이터베이스와 대조 중...",
+  "NCPMS 방제 지침 데이터 연동 중...",
+  "농약 처방 데이터베이스 대조 중...",
+  "기상청 데이터 기반 방제 적합도 분석 중...",
+  "최적의 농약 정보 검색 중...",
+  "최종 진단 리포트 생성 중..."
+];
+
+export default function DiagnosisPage() {
+  const { user } = useAuth();
+  const navigate = useNavigate();
+
+  const [selectedRegion, setSelectedRegion] = useState("");
+  const [selectedCrop, setSelectedCrop] = useState("");
+  const [testPest, setTestPest] = useState(PESTS[1]);
+  const [isAnalyzing, setIsAnalyzing] = useState(false);
+  const [randomTip, setRandomTip] = useState(TIPS[0]);
+  const [loadingMessage, setLoadingMessage] = useState(LOADING_MESSAGES[0]);
+  const [history, setHistory] = useState<any[]>([]);
+  const [selectedIds, setSelectedIds] = useState<number[]>([]);
+  
+  // 페이징 관련 상태
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 10;
+  const totalPages = Math.ceil(history.length / itemsPerPage);
+  const currentItems = history.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
+
+  const [isPostcodeOpen, setIsPostcodeOpen] = useState(false);
+  const postcodeCloseButtonRef = useRef<HTMLButtonElement | null>(null);
+  
+  const [selectedFile, setSelectedFile] = useState<File | null>(null);
+
+  const handleCompletePostcode = (data: DaumPostcodeData) => {
+    setSelectedRegion(formatDaumAddress(data));
+    setIsPostcodeOpen(false);
+  };
+  
+  const abortControllerRef = useRef<AbortController | null>(null);
+
+  const cancelDiagnosis = () => {
+    abortControllerRef.current?.abort();
+    abortControllerRef.current = null;
+    setIsAnalyzing(false);
+  };
+
+  useEffect(() => {
+    let interval: ReturnType<typeof setInterval> | undefined;
+    if (isAnalyzing) {
+      interval = setInterval(() => {
+        setLoadingMessage(prev => {
+          let nextIndex = Math.floor(Math.random() * LOADING_MESSAGES.length);
+          while (LOADING_MESSAGES[nextIndex] === prev) {
+            nextIndex = Math.floor(Math.random() * LOADING_MESSAGES.length);
+          }
+          return LOADING_MESSAGES[nextIndex];
+        });
+      }, 2500);
+    }
+    return () => {
+      if (interval) clearInterval(interval);
+    };
+  }, [isAnalyzing]);
+
+  const fetchHistory = async () => {
+    try {
+      const response = await fetch(`${API_BASE}/history`, { credentials: 'include' });
+      if (!response.ok) throw new Error('Failed to fetch');
+      const data = await response.json();
+      setHistory(data);
+    } catch (error) {
+      console.error("Failed to fetch history:", error);
+      toast.error("진단 기록을 불러오는데 실패했습니다. 서버 연결을 확인해주세요.");
+    }
+  };
+
+  useEffect(() => {
+    if (user) {
+      // 프론트엔드의 user 객체에는 실제 DB의 location 필드가 포함되어 있습니다.
+      // 짧게 변환된 location_category 대신, 상세 주소가 포함된 원본 location을 사용하여
+      // 카카오 지오코딩 및 기상청 연동에 필요한 전체 좌표 정보를 얻습니다.
+      const displayRegion = user.location || "";
+      setSelectedRegion(displayRegion);
+      setSelectedCrop(user.main_crop || "배추");
+      fetchHistory();
+    }
+  }, [user]);
+
+  const toggleSelect = (e: React.MouseEvent, id: number) => {
+    e.stopPropagation();
+    setSelectedIds(prev => 
+      prev.includes(id) ? prev.filter(i => i !== id) : [...prev, id]
+    );
+  };
+
+  const toggleSelectAll = () => {
+    const currentIds = currentItems.map(h => h.id);
+    const allCurrentSelected = currentIds.length > 0 && currentIds.every(id => selectedIds.includes(id));
+    
+    if (allCurrentSelected) {
+      // 현재 페이지의 모든 항목이 선택되어 있다면, 현재 페이지 항목만 선택 해제
+      setSelectedIds(prev => prev.filter(id => !currentIds.includes(id)));
+    } else {
+      // 그렇지 않다면 현재 페이지의 모든 항목을 추가 (중복 제거)
+      setSelectedIds(prev => Array.from(new Set([...prev, ...currentIds])));
+    }
+  };
+
+  const deleteSelected = async () => {
+    if (selectedIds.length === 0) return;
+    
+    if (!window.confirm(`선택한 ${selectedIds.length}개의 진단 기록을 모두 삭제하시겠습니까?`)) {
+      return;
+    }
+    
+    try {
+      await Promise.all(
+        selectedIds.map(id => 
+          fetch(`${API_BASE}/history/${id}`, {
+            method: 'DELETE',
+            credentials: 'include',
+          })
+        )
+      );
+      setHistory(prev => prev.filter(h => !selectedIds.includes(h.id)));
+      setSelectedIds([]);
+    } catch (error) {
+      console.error("Delete failed:", error);
+    }
+  };
+
+  const deleteOne = async (e: React.MouseEvent, id: number) => {
+    e.stopPropagation();
+    if (!window.confirm('이 진단 기록을 삭제하시겠습니까?')) {
+      return;
+    }
+    try {
+      const response = await fetch(`${API_BASE}/history/${id}`, {
+        method: 'DELETE',
+        credentials: 'include',
+      });
+      if (!response.ok) throw new Error('Delete failed');
+      setHistory(prev => prev.filter(h => h.id !== id));
+      setSelectedIds(prev => prev.filter(i => i !== id));
+    } catch (error) {
+      console.error("Delete failed:", error);
+    }
+  };
+
+  const uploadImage = async (file: File, signal?: AbortSignal): Promise<{ image_url: string; pest?: string }> => {
+    const formData = new FormData();
+    formData.append('file', file);
+
+    try {
+      const res = await fetch(`${API_BASE}/upload`, {
+        method: 'POST',
+        body: formData,
+        credentials: 'include',
+        signal,
+      });
+
+      if (!res.ok) throw new Error('이미지 업로드에 실패했습니다.');
+      const data = await res.json();
+      return { image_url: data.image_url, pest: data.pest };
+    } catch (error) {
+      console.error("Upload error:", error);
+      throw error;
+    }
+  };
+
+  const startDiagnosis = async (isTest = false, fileToUpload: File | null = null) => {
+    if (!selectedRegion && !isTest) {
+      toast.error('정확한 기상청 데이터 연동을 위해 주소를 입력해주세요.');
+      setIsPostcodeOpen(true);
+      return;
+    }
+
+    setIsAnalyzing(true);
+    setRandomTip(TIPS[Math.floor(Math.random() * TIPS.length)]);
+    setLoadingMessage(LOADING_MESSAGES[Math.floor(Math.random() * LOADING_MESSAGES.length)]);
+
+    // 기존 진행 중인 요청 캔슬 및 새 AbortController 할당
+    if (abortControllerRef.current) {
+      abortControllerRef.current.abort();
+    }
+    const controller = new AbortController();
+    abortControllerRef.current = controller;
+
+    try {
+      let imageUrl: string | null = null;
+      let detectedPest: string | undefined;
+      const file = fileToUpload || selectedFile;
+      if (file) {
+        setLoadingMessage("이미지 고해상도 분석 및 최적화 중...");
+        const uploadResult = await uploadImage(file, controller.signal);
+        imageUrl = uploadResult.image_url;
+        detectedPest = uploadResult.pest;
+      }
+
+      // VLM 자동 판독 결과가 있으면 사용, 없으면 (테스트 모드 또는 분류 서버 미가용) testPest 로 폴백
+      const pestToUse = (!isTest && detectedPest) ? detectedPest : testPest;
+
+      if (!isTest && !detectedPest) {
+        toast('VLM 자동 판독 서버에 연결할 수 없어 선택된 해충으로 임시 진단합니다.', {
+          icon: '⚠️'
+        });
+      } else if (!isTest && detectedPest) {
+        toast.success(`AI 판독: ${detectedPest}`, { icon: '🤖' });
+      }
+
+      const payload = {
+        pest: pestToUse,
+        crop: selectedCrop || "배추",
+        region: selectedRegion || "서울",
+        image_url: imageUrl
+      };
+
+      const res = await fetch(`${API_BASE}/history`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'include',
+        body: JSON.stringify(payload),
+        signal: controller.signal
+      });
+
+      if (!res.ok) {
+        throw new Error('서버 응답 오류가 발생했습니다.');
+      }
+
+      const responseData = await res.json();
+      const savedData = responseData.data || responseData;
+
+      if (!savedData || !savedData.id) {
+        throw new Error('진단 데이터를 생성하지 못했습니다.');
+      }
+
+      fetchHistory();
+      navigate('/diagnosis/chat', { state: { diagnosisContext: savedData } });
+      
+    } catch (err: any) {
+      if (err.name === 'AbortError') {
+        console.log("Diagnosis aborted by user");
+        return;
+      }
+      console.error("Save error:", err);
+      toast.error(err.message || 'AI 진단 생성 중 오류가 발생했습니다. 잠시 후 다시 시도해주세요.');
+      setIsAnalyzing(false);
+    } finally {
+      if (abortControllerRef.current === controller) {
+        abortControllerRef.current = null;
+        setIsAnalyzing(false);
+      }
+    }
+  };
+
+  useEffect(() => {
+    if (isPostcodeOpen) {
+      postcodeCloseButtonRef.current?.focus();
+    }
+  }, [isPostcodeOpen]);
+
+  useEffect(() => {
+    if (!isPostcodeOpen) return;
+    const handleEsc = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setIsPostcodeOpen(false);
+      }
+    };
+    window.addEventListener('keydown', handleEsc);
+    return () => window.removeEventListener('keydown', handleEsc);
+  }, [isPostcodeOpen]);
+
+  const onDrop = useCallback((acceptedFiles: File[], fileRejections: any[]) => {
+    if (fileRejections.length > 0) {
+      const error = fileRejections[0].errors[0];
+      if (error.code === 'file-invalid-type' || error.code === 'invalid-extension') {
+        toast.error('허용되지 않는 파일 형식입니다. JPG, PNG, WebP 이미지만 업로드 가능합니다.');
+      } else {
+        toast.error(error.message);
+      }
+      return;
+    }
+
+    if (acceptedFiles.length > 0) {
+      setSelectedFile(acceptedFiles[0]);
+      startDiagnosis(false, acceptedFiles[0]);
+    }
+  }, [selectedCrop, selectedRegion, testPest]);
+
+  // 파일 확장자 엄격 검증 함수
+  const fileValidator = (file: File) => {
+    const fileName = file.name.toLowerCase();
+    const allowedExtensions = ['.jpg', '.jpeg', '.png', '.webp'];
+    const isValid = allowedExtensions.some(ext => fileName.endsWith(ext));
+    
+    if (!isValid) {
+      return {
+        code: "invalid-extension",
+        message: "허용되지 않는 확장자입니다."
+      };
+    }
+    return null;
+  };
+
+  const { getRootProps, getInputProps, isDragActive } = useDropzone({
+    onDrop,
+    validator: fileValidator,
+    // 중복을 막기 위해 최소한의 MIME 구조만 유지
+    accept: { 
+      'image/jpeg': ['.jpg', '.jpeg'],
+      'image/png': ['.png'],
+      'image/webp': ['.webp']
+    },
+    maxFiles: 1,
+    multiple: false
+  });
+
+  // input 속성에서 accept 문자열을 수동으로 재정의하여 중복 및 비표준 확장자 노출 방지
+  const customInputProps = {
+    ...getInputProps(),
+    accept: ".jpg,.jpeg,.png,.webp"
+  };
+
+  const isAutoFilled = user?.location_category && user?.main_crop;
+
+  return (
+    <div className="max-w-4xl mx-auto space-y-6 pb-20">
+      <div className="card bg-white border border-gray-100 shadow-sm">
+        <div className="flex items-center justify-between mb-4">
+          <h2 className="text-lg font-bold text-gray-800 flex items-center gap-2">
+            <MdInfoOutline className="text-primary" />
+            진단 환경 설정
+          </h2>
+          {isAutoFilled && (
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-green-50 text-green-600 text-xs font-bold rounded-full border border-green-100">
+              <MdCheckCircle className="text-sm" />
+              내 농장 정보 적용됨
+            </span>
+          )}
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="space-y-1.5 flex flex-col">
+            <label className="text-xs font-bold text-gray-400 ml-1">지역/상세주소 (기상청 연동)</label>
+            <div className="flex gap-2">
+              <input 
+                type="text"
+                readOnly
+                placeholder="주소를 검색하세요"
+                value={selectedRegion}
+                onClick={() => setIsPostcodeOpen(true)}
+                onKeyDown={(event) => {
+                  if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault();
+                    setIsPostcodeOpen(true);
+                  }
+                }}
+                tabIndex={0}
+                className="w-full p-3 rounded-xl border border-gray-200 bg-gray-50 focus:bg-white focus:ring-2 focus:ring-primary/20 transition-all outline-none cursor-pointer"
+              />
+              <button 
+                type="button"
+                onClick={() => setIsPostcodeOpen(true)}
+                className="bg-primary text-white p-3 rounded-xl font-bold flex items-center justify-center shadow hover:bg-primary/90 transition-colors"
+                title="주소 찾기"
+                aria-label="주소 찾기"
+              >
+                <MdSearch className="text-xl" />
+              </button>
+            </div>
+            
+            {isPostcodeOpen && (
+              <div
+                className="fixed inset-0 z-50 flex items-center justify-center bg-black/40"
+                role="presentation"
+                onClick={() => setIsPostcodeOpen(false)}
+              >
+                {/* Focus Trap Sentinel (Start) */}
+                <div tabIndex={0} onFocus={() => postcodeCloseButtonRef.current?.focus()} aria-hidden="true" />
+                <div
+                  role="dialog"
+                  aria-modal="true"
+                  aria-labelledby="diagnosis-postcode-modal-title"
+                  className="bg-white rounded-xl shadow-xl w-full max-w-md mx-4 overflow-hidden flex flex-col"
+                  onClick={(event) => event.stopPropagation()}
+                >
+                  <div className="flex justify-between items-center p-4 border-b border-gray-100">
+                    <h3 id="diagnosis-postcode-modal-title" className="font-bold text-gray-800 text-lg">주소 검색</h3>
+                    <button 
+                      type="button"
+                      ref={postcodeCloseButtonRef}
+                      aria-label="주소 검색 닫기"
+                      onClick={() => setIsPostcodeOpen(false)}
+                      className="text-gray-400 hover:text-gray-600 transition-colors"
+                    >
+                      ✕ 닫기
+                    </button>
+                  </div>
+                  <div className="w-full h-[400px]">
+                    <DaumPostcode onComplete={handleCompletePostcode} style={{ height: '100%' }} />
+                  </div>
+                </div>
+                {/* Focus Trap Sentinel (End) */}
+                <div tabIndex={0} onFocus={() => postcodeCloseButtonRef.current?.focus()} aria-hidden="true" />
+              </div>
+            )}
+          </div>
+          <div className="space-y-1.5">
+            <label className="text-xs font-bold text-gray-400 ml-1">작물 (농약 안전정보 연동)</label>
+            <select 
+              value={selectedCrop} 
+              onChange={(e) => setSelectedCrop(e.target.value)}
+              className="w-full p-3 rounded-xl border border-gray-200 bg-gray-50 focus:bg-white focus:ring-2 focus:ring-primary/20 transition-all outline-none cursor-pointer"
+            >
+              <option value="" disabled>작물 선택</option>
+              {CROPS.map(c => <option key={c} value={c}>{c}</option>)}
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div
+        {...getRootProps()}
+        className={`card border-2 border-dashed cursor-pointer transition-all text-center py-16 ${
+          isDragActive ? 'border-primary bg-primary/5' : 'border-gray-200 hover:border-primary/40 hover:bg-gray-50/50'
+        }`}
+      >
+        <input {...customInputProps} />
+        <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+          <MdCameraAlt className="text-4xl text-primary" />
+        </div>
+        <p className="text-xl font-bold text-gray-800">
+          {isDragActive ? '여기에 사진을 놓으세요!' : '해충 사진을 업로드하세요'}
+        </p>
+        <p className="text-sm text-gray-400 mt-2 max-w-xs mx-auto">
+          작물의 특징이나 해충이 잘 보이도록 근접 촬영한 사진일수록 정확합니다
+        </p>
+        <div className="flex justify-center">
+          <button className="btn-primary mt-6 !px-8">
+            사진 선택하기
+          </button>
+        </div>
+      </div>
+
+      <div className="card bg-amber-50/50 border border-amber-100 border-dashed">
+        <div className="flex items-center gap-2 mb-4 text-amber-700 font-bold text-sm">
+          <span className="px-2 py-0.5 bg-amber-200 rounded-md text-[10px]">FIXED</span>
+          임시 VLM 진단 테스트 (해충 강제 지정)
+        </div>
+        <div className="flex flex-col sm:flex-row gap-3">
+          <select 
+            value={testPest} 
+            onChange={(e) => setTestPest(e.target.value)}
+            className="flex-1 p-3 rounded-xl border border-amber-200 bg-white focus:ring-2 focus:ring-amber-200 outline-none cursor-pointer"
+          >
+            {PESTS.map(p => <option key={p} value={p}>{p}</option>)}
+          </select>
+          <button 
+            onClick={() => startDiagnosis(true)}
+            className="bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 px-6 rounded-xl transition-all shadow-sm shadow-amber-200 flex items-center justify-center gap-2 cursor-pointer"
+          >
+            <MdChat /> 테스트 진단 시작
+          </button>
+        </div>
+      </div>
+
+      <div className="card border border-gray-100">
+        <div className="flex items-center justify-between mb-6">
+          <div className="flex items-center gap-2">
+            <div className="p-2 bg-gray-100 rounded-lg">
+              <MdHistory className="text-xl text-gray-600" />
+            </div>
+            <h3 className="text-lg font-bold text-gray-800">최근 진단 기록</h3>
+          </div>
+          
+          {history.length > 0 && (
+            <div className="flex items-center gap-3">
+              {selectedIds.length > 0 && (
+                <button 
+                  onClick={() => setSelectedIds([])}
+                  className="text-xs font-bold text-red-400 hover:text-red-600 transition-colors cursor-pointer mr-2"
+                >
+                  선택 해제 ({selectedIds.length})
+                </button>
+              )}
+              <button 
+                onClick={toggleSelectAll}
+                className="text-xs font-bold text-gray-400 hover:text-primary transition-colors cursor-pointer"
+              >
+                {currentItems.length > 0 && currentItems.every(id => selectedIds.includes(id.id)) 
+                  ? "전체 해제" 
+                  : "전체 선택"}
+              </button>
+              {selectedIds.length > 0 && (
+                <button 
+                  onClick={deleteSelected}
+                  className="px-3 py-1.5 bg-red-50 text-red-600 text-xs font-bold rounded-lg border border-red-100 hover:bg-red-100 transition-all flex items-center gap-1"
+                >
+                  <MdDeleteOutline className="text-sm" />
+                  {selectedIds.length}개 삭제
+                </button>
+              )}
+            </div>
+          )}
+        </div>
+
+        <div className="grid grid-cols-1 gap-3">
+          {history.length === 0 ? (
+            <div className="py-20 text-center bg-gray-50/50 rounded-2xl border border-dashed border-gray-200">
+              <p className="text-gray-400 text-sm">최근 진단 내역이 없습니다.</p>
+            </div>
+          ) : (
+            <>
+              {currentItems.map(record => (
+                <div
+                  key={record.id}
+                  className={`group relative w-full text-left p-4 rounded-2xl border transition-all cursor-default flex items-center justify-between shadow-sm
+                    ${selectedIds.includes(record.id) 
+                      ? 'border-primary bg-primary/5 ring-1 ring-primary/20' 
+                      : 'border-primary/20 bg-white hover:border-primary/40'
+                    }`}
+                >
+                  <div className="flex items-center gap-4 flex-1">
+                    <div 
+                      onClick={(e) => toggleSelect(e, record.id)}
+                      className={`w-6 h-6 rounded-lg border-2 flex items-center justify-center transition-all flex-shrink-0 cursor-pointer
+                        ${selectedIds.includes(record.id) 
+                          ? 'bg-primary border-primary text-white scale-110' 
+                          : 'bg-white border-primary/40'
+                        }`}
+                    >
+                      {selectedIds.includes(record.id) && <MdCheckCircle className="text-lg" />}
+                    </div>
+
+                    <div 
+                      className="flex-1 space-y-1 cursor-pointer group/content"
+                      onClick={() => navigate('/diagnosis/chat', { 
+                        state: { 
+                          diagnosisContext: record,
+                          fromHistory: true 
+                        } 
+                      })}
+                    >
+                      <div className="flex items-center gap-2">
+                        <span className="px-2 py-0.5 text-[10px] font-bold rounded bg-primary text-white transition-colors">
+                          {record.crop}
+                        </span>
+                        <span className="font-bold text-primary transition-colors">
+                          {record.pest}
+                        </span>
+                      </div>
+                      <p className="text-xs text-gray-400">
+                        {record.region} · {record.date ? record.date : new Date(record.created_at).toLocaleDateString()} 
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-3">
+                    <button 
+                      onClick={(e) => deleteOne(e, record.id)}
+                      className="w-9 h-9 rounded-xl flex items-center justify-center text-red-500 bg-red-50 border border-red-100 transition-all cursor-pointer hover:border-red-500"
+                      title="기록 삭제"
+                    >
+                      <MdDeleteOutline className="text-xl" />
+                    </button>
+                    
+                    <div 
+                      className="flex items-center justify-center w-10 h-10 rounded-full transition-all shadow-sm bg-green-50 text-primary cursor-pointer border border-green-100 hover:border-primary"
+                      onClick={() => navigate('/diagnosis/chat', { 
+                        state: { 
+                          diagnosisContext: record,
+                          fromHistory: true 
+                        } 
+                      })}
+                      title="진단 상세 채팅"
+                    >
+                      <MdChat className="text-xl" />
+                    </div>
+                  </div>
+                </div>
+              ))}
+
+              {/* 페이지네이션 UI */}
+              {totalPages > 1 && (
+                <div className="flex items-center justify-center gap-2 mt-6 py-2">
+                  <button
+                    onClick={() => setCurrentPage(prev => Math.max(1, prev - 1))}
+                    disabled={currentPage === 1}
+                    className="p-2 rounded-lg border border-gray-200 text-gray-400 hover:bg-gray-50 disabled:opacity-30 disabled:cursor-not-allowed transition-all"
+                  >
+                    이전
+                  </button>
+                  
+                  <div className="flex items-center gap-1">
+                    {[...Array(totalPages)].map((_, i) => {
+                      const pageNum = i + 1;
+                      // 너무 많은 페이지 번호 방지 (현재 페이지 주변만 표시)
+                      if (totalPages > 5 && Math.abs(pageNum - currentPage) > 2 && pageNum !== 1 && pageNum !== totalPages) {
+                        if (pageNum === 2 || pageNum === totalPages - 1) return <span key={pageNum} className="px-1 text-gray-300">...</span>;
+                        return null;
+                      }
+                      
+                      return (
+                        <button
+                          key={pageNum}
+                          onClick={() => setCurrentPage(pageNum)}
+                          className={`w-8 h-8 rounded-lg font-bold text-xs transition-all ${
+                            currentPage === pageNum 
+                              ? 'bg-primary text-white shadow-md shadow-primary/20 scale-110' 
+                              : 'text-gray-400 hover:bg-gray-50'
+                          }`}
+                        >
+                          {pageNum}
+                        </button>
+                      );
+                    })}
+                  </div>
+
+                  <button
+                    onClick={() => setCurrentPage(prev => Math.min(totalPages, prev + 1))}
+                    disabled={currentPage === totalPages}
+                    className="p-2 rounded-lg border border-gray-200 text-gray-400 hover:bg-gray-50 disabled:opacity-30 disabled:cursor-not-allowed transition-all"
+                  >
+                    다음
+                  </button>
+                </div>
+              )}
+            </>
+          )}
+        </div>
+      </div>
+
+      <AnimatePresence>
+        {isAnalyzing && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-white/90 backdrop-blur-sm"
+          >
+            <div className="text-center space-y-8 max-w-sm px-6">
+              <div className="relative w-32 h-32 mx-auto">
+                <motion.div
+                  animate={{ rotate: 360 }}
+                  transition={{ repeat: Infinity, duration: 2, ease: 'linear' }}
+                  className="absolute inset-0 border-4 border-primary/10 border-t-primary rounded-full"
+                />
+                <motion.div
+                  animate={{ rotate: -360 }}
+                  transition={{ repeat: Infinity, duration: 3, ease: 'linear' }}
+                  className="absolute inset-4 border-4 border-primary-light/10 border-b-primary-light rounded-full"
+                />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <span className="text-4xl animate-bounce">🌱</span>
+                </div>
+              </div>
+
+              <div className="space-y-4">
+                <h2 className="text-2xl font-bold text-gray-800">AI 분석 진행 중</h2>
+                <p className="text-primary font-medium animate-pulse">
+                  {loadingMessage}
+                </p>
+              </div>
+
+              <div className="p-4 bg-primary/5 rounded-2xl border border-primary/10">
+                <p className="text-xs text-gray-500 leading-relaxed">
+                  <span className="font-bold text-primary block mb-1">💡 알고 계셨나요?</span>
+                  {randomTip}
+                </p>
+              </div>
+
+              <div className="pt-4">
+                <button
+                  onClick={cancelDiagnosis}
+                  className="px-6 py-2.5 bg-white text-gray-500 font-bold rounded-xl border border-gray-200 shadow-sm hover:bg-gray-50 hover:text-red-500 transition-all"
+                >
+                  진단 취소 및 돌아가기
+                </button>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+}

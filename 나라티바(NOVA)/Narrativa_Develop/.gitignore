@@ -1,0 +1,14 @@
+# Node
+data
+node_modules
+dist/
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# AWS
+.aws/
+
+create-parameters.sh

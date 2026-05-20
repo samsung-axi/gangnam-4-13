@@ -1,0 +1,415 @@
+/* =====================================================
+   기본 스타일
+===================================================== */
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Roboto', sans-serif;
+    background-color: #FCF3D4;
+    touch-action: none; /* 모바일에서 스크롤 방지 */
+  }
+  
+  /* =====================================================
+     홈 아이콘
+  ===================================================== */
+  .home-icon {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+  }
+  
+  /* =====================================================
+     메인 컨테이너
+  ===================================================== */
+  .smc-saved-my-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 60px; /* 홈 아이콘을 피하기 위한 상단 패딩 */
+  }
+  
+  /* =====================================================
+     카드 컴포넌트
+  ===================================================== */
+  .smc-card {
+    position: relative;
+    width: 90vw;
+    max-width: 800px; /* 최대 너비 설정 */
+    overflow: hidden;
+    margin: 100px auto 20px auto; /* 상단 마진 조정 */
+    border-radius: 10px;
+    border: 5px solid black;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* 이미지 및 네비게이션 */
+  .smc-image-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%; /* 16:9 비율 */
+    overflow: hidden;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: #ffffff; /* 컨테이너 확인을 위한 배경색 */
+  }
+  
+  .smc-image-container img.smc-main-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* 이미지 전체 표시 */
+    object-position: center;
+    display: block;
+  }
+  
+  /* 이전/다음 버튼 */
+  .smc-prev-button,
+    .smc-next-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #FFCC00;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background-color 0.3s, transform 0.3s;
+    z-index: 2; /* 이미지 위에 표시 */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    .smc-prev-button {
+        left: 15px;
+      }
+      
+      .smc-next-button {
+        right: 15px;
+      }
+  
+  .smc-prev-button:disabled,
+.smc-next-button:disabled {
+  background-color: rgba(200, 200, 200, 0.8);
+  cursor: not-allowed;
+}
+
+
+  
+.smc-prev-button:hover:not(:disabled),
+.smc-next-button:hover:not(:disabled) {
+  background-color: rgba(255, 255, 255, 1);
+  transform: translateY(-50%) scale(1.1);
+}
+
+/* 아이콘 추가 (화살표) */
+.smc-prev-button::before,
+.smc-next-button::after {
+  content: '';
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid #333;
+  border-right: 2px solid #333;
+}
+
+.smc-prev-button::before {
+  transform: rotate(-135deg);
+}
+
+.smc-next-button::after {
+  transform: rotate(45deg);
+}
+
+/* =====================================================
+   로딩 상태 스타일
+===================================================== */
+.smc-saved-my-card .loading-message {
+    font-size: 2rem;
+    color: #f7450f;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  
+  /* =====================================================
+     녹음 및 재생 섹션
+  ===================================================== */
+  .result-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 30px;
+  }
+  
+  .result-container .object-en,
+  .result-container .object-ko {
+    padding: 15px 25px;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    font-weight: bold;
+    background-color: #FFCC00;
+    border-radius: 40px;
+    border: 5px solid black;
+    color: black;
+    margin: 15px;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+  
+  .result-container .object-en:hover,
+  .result-container .object-ko:hover {
+    color: #007BFF;
+  }
+  
+
+  
+
+  /* =====================================================
+     오디오 녹음 모달
+  ===================================================== */
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modal-content {
+    position: relative;
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    width: 80vw;
+    max-width: 600px;
+    max-height: 80vh;
+    overflow-y: auto;
+    text-align: center;
+  }
+  
+  .modal-content h2 {
+    margin-top: 0;
+  }
+  
+  .close-modal {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .audio-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .confirm-audio-btn {
+    padding: 15px 30px;
+    background-color: #17a2b8;
+    border: none;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    margin-top: 15px;
+    transition: background-color 0.3s;
+  }
+  
+  .confirm-audio-btn:hover {
+    background-color: #138496;
+  }
+  
+  .confirm-audio-btn:disabled {
+    background-color: #6c757d;
+    cursor: not-allowed;
+  }
+  
+  /* =====================================================
+     유사도 결과 모달
+  ===================================================== */
+  .smc-modal .modal-content h2 {
+    margin-top: 0;
+  }
+  
+  .smc-modal .modal-content p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+  }
+  
+  /* =====================================================
+     SimpleAudioRecorder 컴포넌트
+  ===================================================== */
+  .simple-audio-recorder .record-control-btn {
+    padding: 15px 30px;
+    background-color: #17a2b8;
+    border: none;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+  }
+  
+  .simple-audio-recorder .record-control-btn:hover {
+    background-color: #138496;
+  }
+  
+  /* =====================================================
+     반응형 디자인
+  ===================================================== */
+  
+  /* iPad Pro 11인치 (Portrait) */
+  @media only screen and (min-device-width: 834px) and (max-device-width: 1194px) and (orientation: portrait) {
+    .smc-image-container {
+      width: 80vw;
+      padding-bottom: 43.75%; /* 16:9 비율에서 조정 */
+      max-width: 700px;
+      max-height: 350px;
+    }
+  
+    .smc-card {
+      width: 80vw;
+    }
+  
+    .upload-btn,
+    .upload-audio-btn,
+    .confirm-audio-btn {
+      padding: 15px 35px;
+      font-size: 1.4rem;
+    }
+  
+    .result-container .object-en,
+    .result-container .object-ko {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      padding: 20px 30px;
+      margin: 20px;
+    }
+  
+    .record-btn {
+      padding: 12px 25px;
+      font-size: 1.4rem;
+      margin: 0 15px;
+    }
+  
+    .record-btn img {
+      width: 40px;
+      height: 40px;
+      margin-right: 15px;
+    }
+  
+    .modal-content {
+      width: 70vw;
+      max-width: 500px;
+      padding: 40px;
+    }
+  }
+  
+  /* iPad Pro 11인치 (Landscape) */
+  @media only screen and (min-device-width: 834px) and (max-device-width: 1194px) and (orientation: landscape) {
+    .smc-image-container {
+      width: 60vw;
+      padding-bottom: 58.33%; /* 16:9 비율에서 조정 */
+      max-width: 800px;
+      max-height: 350px;
+    }
+  
+    .smc-card {
+      width: 60vw;
+    }
+  
+    .upload-btn,
+    .upload-audio-btn,
+    .confirm-audio-btn {
+      padding: 15px 35px;
+      font-size: 1.4rem;
+    }
+  
+    .result-container .object-en,
+    .result-container .object-ko {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      padding: 20px 30px;
+      margin: 20px;
+    }
+  
+    .record-btn {
+      padding: 12px 25px;
+      font-size: 1.4rem;
+      margin: 0 15px;
+    }
+  
+    .record-btn img {
+      width: 40px;
+      height: 40px;
+      margin-right: 15px;
+    }
+  
+    .modal-content {
+      width: 60vw;
+      max-width: 600px;
+      padding: 40px;
+    }
+  }
+  
+  /* 모바일 (최대 너비 768px) */
+  @media (max-width: 768px) {
+    .smc-image-container {
+      width: 90vw;
+      padding-bottom: 44.44%; /* 16:9 비율에서 조정 */
+    }
+  
+    .smc-card {
+      width: 90vw;
+    }
+  
+    .result-container .object-en,
+    .result-container .object-ko {
+      font-size: clamp(1.5rem, 5vw, 2rem);
+      padding: 15px 25px;
+      margin: 15px;
+    }
+  
+    .upload-btn,
+    .upload-audio-btn,
+    .confirm-audio-btn {
+      padding: 12px 25px;
+      font-size: 1.2rem;
+    }
+  
+    .record-btn {
+      padding: 10px 20px;
+      font-size: 1.2rem;
+      margin: 0 10px;
+    }
+  
+    .record-btn img {
+      width: 30px;
+      height: 30px;
+      margin-right: 10px;
+    }
+  
+    .modal-content {
+      width: 90vw;
+      max-width: 500px;
+      padding: 30px;
+    }
+  }
+  

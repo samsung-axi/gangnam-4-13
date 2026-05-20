@@ -1,0 +1,147 @@
+
+
+.travel_plan_list_header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  border-bottom: 3px solid var(--grey-1);
+  background-color: var(--white);
+}
+
+.travel_plan_list_name {
+  font-size: var(--font-size-1);
+  font-weight: var(--bold);
+  color: var(--text-main);
+  text-align: left;
+}
+
+.travel_plan_list_name_input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--grey-1);
+  border-radius: 5px;
+}
+
+.travel_plan_list_name_input:focus {
+  outline: none;
+}
+
+
+.travel_plan_list_sub_info {
+  width: 100%;
+  padding: 0px 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items: center;
+  gap: 15px;
+}
+
+.travel_plan_list_destination {
+  font-size: var(--font-size-2);
+  font-weight: var(--semibold);
+  color: var(--text-main);
+  text-align: left;
+}
+
+.travel_plan_list_sub_info_item_value {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+
+  div{
+    padding: 5px;
+    border-radius: 10px;
+    background-color: var(--main-color-2);
+    color: var(--white);
+    font-size: var(--font-size-6);
+    font-weight: var(--semibold);
+    text-align: center;
+  }
+}
+
+.travel_plan_list_content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  padding: 0px 20px;
+}
+
+@media (max-width: 768px) {
+  .travel_plan_list_header{
+    gap: 15px;
+  }
+  .travel_plan_list_name{
+    font-size: var(--font-size-3);
+  }
+  .travel_plan_list_destination{
+    font-size: var(--font-size-5);
+  }
+  .travel_plan_list_sub_info_item_value{
+    div{
+      font-size: var(--font-size-7);
+    }
+  }
+}
+
+.travel_plan_list_dates_wrapper {
+  width: calc(100% - 60px);
+}
+
+
+.travel_plan_list_date {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.travel_plan_list_date.selected {
+  border-bottom: 5px solid var(--main-color-1);
+}
+
+.travel_plan_list_day {
+  font-size: var(--font-size-5);
+  font-weight: var(--semibold);
+  color: var(--grey-1);
+  margin-bottom: 5px;
+}
+
+.travel_plan_list_date_text {
+  font-size: var(--font-size-5);
+  font-weight: var(--semibold);
+  color: var(--text-main);
+}
+
+/* react-slick 스타일 조정 */
+.slick_slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slick_track {
+  display: flex;
+  gap: 20px;
+}
+
+
+@media (max-width: 768px) {
+  .travel_plan_list_dates_wrapper {
+  width: calc(100% - 20px);
+}
+
+.travel_plan_list_sub_info {
+  padding: 0px 20px;
+}
+
+
+}
+
+

@@ -1,0 +1,902 @@
+[
+    {
+        "product_info": {
+            "id": 1,
+            "brand": "테드베이커",
+            "title": "드레스 블랙 Ted Molenaa Dress Ld42 Black 64061103",
+            "price": "459,200",
+            "detail_page_url": "https://www.trenbe.com/product/++76548935?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240512_638511085009174692_21961541_0.jpg"
+            ],
+            "description": "1. **소재와 색상**: 드레스는 블랙 색상이며, 일반적으로 사용되는 소재로는 폴리에스터나 레이온이 있을 것으로 예상됩니다.\n\n2. **디자인 디테일**: \n   - **소매**: 민소매 디자인.\n   - **실루엣**: 몸에 딱 맞는 실루엣으로, 세련된 느낌을 줌.\n   - **벨트**: 허리 부분에 링 디테일이 있는 벨트가 있어 포인트를 줌.\n   - **랩 스타일**: 드레스가 랩 형식으로 디자인되어 있어 유연한 느낌을 연출함."
+        },
+        "style_analysis": {
+            "final_style": "formal_minimal"
+        },
+        "category_analysis": {
+            "big_category": "onepiece"
+        },
+        "recommendations": []
+    },
+    {
+        "product_info": {
+            "id": 2,
+            "brand": "Crystal Doll",
+            "title": "퍼프 슬리브 드레스 Juniors' Scoop-Neck Puff-Sleeve Embellished-Bow Dress 18926895 Red",
+            "price": "119,000",
+            "detail_page_url": "https://www.trenbe.com/product/++117045445?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20241101_638660360860731401_23721559_0.jpg"
+            ],
+            "description": "1. **소재와 색상**: 드레스는 빨간색이며, 일반적으로 부드러운 합성 섬유나 코튼 혼합 소재로 제작될 수 있습니다.\n\n2. **디자인 디테일**: \n   - 퍼프 슬리브 디자인\n   - 스쿱 넥라인\n   - 좌측에 장식용 리본이 달린 버튼 디테일\n   - 몸에 딱 맞는 실루엣\n   - 짧은 길이의 드레스 디자인\n\n이 드레스는 세련되면서도 스포티한 느낌을 주는 스타일입니다."
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "onepiece"
+        },
+        "recommendations": []
+    },
+    {
+        "product_info": {
+            "id": 3,
+            "brand": "구찌",
+            "title": "구찌 GG 체크 울 블랜드 반팔 원피스 754639 XKDCZ 1137",
+            "price": "4,365,000",
+            "detail_page_url": "https://www.trenbe.com/product/++98773838?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1722584398923_6d1d4f8f6c769527a7d89bbac75e6842_0.jpeg"
+            ],
+            "description": "1. **소재와 색상**: \n   - 소재: 울 혼합 (울 블렌드)\n   - 색상: 주로 검정색, 분홍색, 흰색 패턴이 있는 체크 디자인\n\n2. **디자인 디테일**:\n   - 특징적인 요소: \n     - 반팔 디자인\n     - 니트 스타일의 라운드 넥\n     - 두 개의 포켓과 금색 버튼 장식\n     - 하단에 프린지 디테일\n     - 체크 패턴과 대조적인 색상 조합"
+        },
+        "style_analysis": {
+            "final_style": "feminine_romantic"
+        },
+        "category_analysis": {
+            "big_category": "onepiece"
+        },
+        "recommendations": []
+    },
+    {
+        "product_info": {
+            "id": 5,
+            "brand": "아르마니 익스체인지",
+            "title": "아르마니 익스체인지 니트 드레스 UK12 사이즈",
+            "price": "342,400",
+            "detail_page_url": "https://www.trenbe.com/product/++116683233?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240322_638466827475805099_21823906_0.jpg"
+            ],
+            "description": "1. **소재와 색상**: 이 드레스는 니트 소재로 보이며, 색상은 부드러운 핑크색입니다.\n\n2. **디자인 디테일**: \n   - 특징적인 요소로는 루즈한 실루엣의 상의 부분과 허리 부분의 리브 니트 디자인이 있습니다.\n   - 소매는 넓고, 전체적으로 편안한 느낌을 줍니다.\n   - 상의와 하의가 연결된 듯한 스타일로, 캐주얼하면서도 세련된 느낌을 줍니다."
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "onepiece"
+        },
+        "recommendations": []
+    },
+    {
+        "product_info": {
+            "id": 11,
+            "brand": "제임스펄스",
+            "title": "개더 리넨 선 미디 드레스 Gathered Linen Sun Midi Dress",
+            "price": "540,320",
+            "detail_page_url": "https://www.trenbe.com/product/++95357574?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1721710327680_2df023e77d77a33bc278676df2b3342b_0.jpeg"
+            ],
+            "description": "1. **소재와 색상**: 드레스는 리넨 소재로 보이며, 색상은 밝은 화이트입니다.\n\n2. **디자인 디테일**: 드레스는 주름 디테일이 있는 하이넥 디자인이며, 스트랩이 있는 홀터넥 스타일입니다. 또한, 양쪽에 포켓이 있는 점이 특징입니다. 실루엣은 여유로운 미디 길이로 편안한 느낌을 줍니다."
+        },
+        "style_analysis": {
+            "final_style": "boho_romantic"
+        },
+        "category_analysis": {
+            "big_category": "onepiece"
+        },
+        "recommendations": []
+    },
+    {
+        "product_info": {
+            "id": 23,
+            "brand": "가니",
+            "title": "(W) 가니 미디 오간자 자카드 원피스",
+            "price": "717,000",
+            "detail_page_url": "https://www.trenbe.com/product/++85497117?catalog=100489264",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1724732962415_0c703a5264b2d09fe1db632da32d2f4d_0.jpeg"
+            ],
+            "description": "1. **소재와 색상**: 이 원피스는 오간자 소재로 보이며, 색상은 연한 민트색입니다.\n\n2. **디자인 디테일**: \n   - 특징적인 요소: 작은 꽃무늬 패턴.\n   - 실루엣: A라인의 플레어 디자인.\n   - 소매: 반팔 소매.\n   - 주름: 허리 부분에 주름이 있어 풍성한 느낌을 줌."
+        },
+        "style_analysis": {
+            "final_style": "vintage_classic"
+        },
+        "category_analysis": {
+            "big_category": "onepiece"
+        },
+        "recommendations": []
+    },
+    {
+        "product_info": {
+            "id": 25,
+            "brand": "띠어리",
+            "title": "컬렉션 드레스 스트래치 Gathered Dress in Stretch Cotton-Modal O054601R 001",
+            "price": "483,600",
+            "detail_page_url": "https://www.trenbe.com/product/++116047407?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20241011_638642341513041674_23470856_0.jpg"
+            ],
+            "description": "1. **소재와 색상**: 드레스는 스트레치 코튼 모달 혼합 소재로, 색상은 블랙입니다.\n\n2. **디자인 디테일**: \n   - 특징적인 요소로는 측면 주름 디테일이 있으며, 드레스의 실루엣은 슬림핏입니다.\n   - 소매는 짧고, 전체적으로 미니멀한 디자인을 보여줍니다.\n   - 옆면에 슬릿이 있어 움직임이 용이합니다."
+        },
+        "style_analysis": {
+            "final_style": "formal_minimal"
+        },
+        "category_analysis": {
+            "big_category": "onepiece"
+        },
+        "recommendations": []
+    },
+    {
+        "product_info": {
+            "id": 27,
+            "brand": "폴로랄프로렌",
+            "title": "(W) 폴로 드레스 블랙",
+            "price": "687,200",
+            "detail_page_url": "https://www.trenbe.com/product/++58864466?catalog=100927670",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240417_638489734575282234_20102347_0.jpg"
+            ],
+            "description": "1. **소재와 색상**: 소재는 벨벳 또는 비슷한 부드러운 원단으로 보이며, 색상은 블랙입니다.\n\n2. **디자인 디테일**: 디자인에는 긴 소매와 심플한 실루엣이 특징이며, 목선은 라운드 형태로 되어 있습니다. 버튼 디테일은 뒷면에 위치할 가능성이 있으며, 전체적으로 미니멀한 스타일을 강조하고 있습니다."
+        },
+        "style_analysis": {
+            "final_style": "formal_minimal"
+        },
+        "category_analysis": {
+            "big_category": "onepiece"
+        },
+        "recommendations": []
+    },
+    {
+        "product_info": {
+            "id": 28,
+            "brand": "휴고보스",
+            "title": "드레스 블랙 Facene Dress Black 001 31223003",
+            "price": "569,100",
+            "detail_page_url": "https://www.trenbe.com/product/++57922785?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240415_638487394881668673_19823824_0.jpg"
+            ],
+            "description": "1. **소재와 색상**: 드레스는 블랙 색상으로 보이며, 일반적으로 니트 또는 신축성 있는 소재로 제작되었을 가능성이 높습니다.\n\n2. **디자인 디테일**:\n   - **버튼**: 앞면에 버튼이 줄지어 있어 기능적인 요소를 제공합니다.\n   - **주름**: 어깨 부분에 컷아웃 디자인이 있어 독특한 실루엣을 형성합니다.\n   - **실루엣**: 슬림 핏으로, 허리라인을 강조하며 우아한 느낌을 줍니다.\n   - **소매**: 긴 소매로 디자인되어 있습니다."
+        },
+        "style_analysis": {
+            "final_style": "elegant_classic"
+        },
+        "category_analysis": {
+            "big_category": "onepiece"
+        },
+        "recommendations": []
+    },
+    {
+        "product_info": {
+            "id": 29,
+            "brand": "B Darlin",
+            "title": "반팔 에이라인 드레스 Juniors' Scoop-Neck Scuba Short-Sleeve A-Line Dress 19106229 Deep Red",
+            "price": "119,000",
+            "detail_page_url": "https://www.trenbe.com/product/++118823136?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20241114_638671890874634920_24007009_0.jpg"
+            ],
+            "description": "1. **소재와 색상**: 이 드레스는 스쿠바 소재로 보이며, 색상은 딥 레드입니다.\n\n2. **디자인 디테일**: \n   - 특징적인 요소로는 스쿱 넥 디자인과 짧은 소매가 있습니다.\n   - 드레스 오른쪽에는 리본으로 묶인 디테일이 있으며, 이로 인해 실루엣이 더욱 매력적으로 보입니다. \n   - 전체적으로 몸에 맞는 핏을 강조하는 A라인 형태입니다."
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "onepiece"
+        },
+        "recommendations": []
+    },
+    {
+        "product_info": {
+            "id": 30,
+            "brand": "막스마라",
+            "title": "막스마라 레저 24FW 여성 파라오네 원피스 블랙 FARAONE 004",
+            "price": "313,000",
+            "detail_page_url": "https://www.trenbe.com/product/++110754671?catalog=&options=owned",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1726808027884-b471f9fc-6217-4ef7-8c6c-c39e87092f40.jpeg"
+            ],
+            "description": "1. **소재와 색상**: 원피스는 블랙 색상으로 보이며, 일반적으로 사용되는 소재로는 폴리에스터, 나일론 또는 울이 예상됩니다. 하지만 구체적인 소재는 이미지를 통해 확인할 수 없습니다.\n\n2. **디자인 디테일**: 이 원피스는 긴 소매와 롱 길이의 실루엣을 가지고 있으며, 주름 디자인이 특징적으로 보입니다. 이러한 디테일은 우아하고 클래식한 느낌을 주어 다양한 상황에서 착용하기 적합합니다."
+        },
+        "style_analysis": {
+            "final_style": "elegant_classic"
+        },
+        "category_analysis": {
+            "big_category": "onepiece"
+        },
+        "recommendations": []
+    },
+    {
+        "product_info": {
+            "id": 31,
+            "brand": "막스마라",
+            "title": "막스마라 레저 24FW 여성 파라오네 원피스 베이지 FARAONE 001",
+            "price": "301,000",
+            "detail_page_url": "https://www.trenbe.com/product/++110754655?catalog=&options=owned",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1726808017656-4e59e023-c3f5-4b59-9b7e-839a0d5052fd.jpeg"
+            ],
+            "description": "1. **소재와 색상**:\n   - **소재**: 주름이 있는 원단으로 보이며, 일반적으로 부드럽고 유연한 느낌을 줄 것으로 예상됩니다.\n   - **색상**: 베이지색.\n\n2. **디자인 디테일**:\n   - 특징적인 요소: 긴 소매, 직선적인 실루엣, 전체적으로 주름이 있는 디자인.\n   - 주름 디테일이 전체적으로 분포되어 있어 우아한 느낌을 줍니다."
+        },
+        "style_analysis": {
+            "final_style": "elegant_classic"
+        },
+        "category_analysis": {
+            "big_category": "onepiece"
+        },
+        "recommendations": []
+    },
+    {
+        "product_info": {
+            "id": 32,
+            "brand": "휴고보스",
+            "title": "드레스 블랙 Dilli Dress Black 001 65979503",
+            "price": "560,500",
+            "detail_page_url": "https://www.trenbe.com/product/++59364043?catalog=100927878",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20231006_638321389861022959_19899834_0.jpg"
+            ],
+            "description": "1. **소재와 색상**:\n   - **색상**: 블랙 (검정색)\n   - **소재**: 부드럽고 매끄러운 느낌의 원단으로 보이며, 드레스의 특성상 실크 또는 비슷한 고급 소재일 가능성이 있습니다.\n\n2. **디자인 디테일**:\n   - **특징적인 요소**: \n     - 긴 소매와 라운드 넥라인\n     - 허리 부분에 주름 디테일이 있어 실루엣이 강조됨\n     - 플레어 스타일의 스커트로 흐르는 느낌\n     - 뒷면에 지퍼가 있을 가능성 있음 (일반적인 드레스 디자인에 기반한 추정)"
+        },
+        "style_analysis": {
+            "final_style": "elegant_classic"
+        },
+        "category_analysis": {
+            "big_category": "onepiece"
+        },
+        "recommendations": []
+    },
+    {
+        "product_info": {
+            "id": 35,
+            "brand": "휴고보스",
+            "title": "점퍼 드레스 블랙 Fimalaya Jumper Dress Black 001 31223203",
+            "price": "385,700",
+            "detail_page_url": "https://www.trenbe.com/product/++58446438?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240411_638484133358319644_19823823_0.jpg"
+            ],
+            "description": "1. **소재와 색상**: \n   - 색상: 블랙\n   - 소재: 코지한 느낌의 니트\n\n2. **디자인 디테일**: \n   - 특징적인 요소: 터틀넥 스타일\n   - 실루엣: 여유 있는 핏\n   - 주름: 아래쪽 양측에 슬릿 디테일이 있어 활동성을 더함\n   - 소매: 긴 소매 디자인\n   - 밑단: 리브 조직의 마감 처리"
+        },
+        "style_analysis": {
+            "final_style": "cozy_minimal"
+        },
+        "category_analysis": {
+            "big_category": "onepiece"
+        },
+        "recommendations": []
+    },
+    {
+        "product_info": {
+            "id": 40,
+            "brand": "쟈딕앤볼테르",
+            "title": "쟈딕앤볼테르 Reina 블랙 게더 드레이프 벌룬 슬리브 브이넥 새틴 맥시 원피스",
+            "price": "998,000",
+            "detail_page_url": "https://www.trenbe.com/product/++110925262?catalog=&options=owned",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1726968797583-933797c2-c46d-401c-becc-32f19b304d7b.jpeg"
+            ],
+            "description": "1. **소재와 색상**: \n   - 소재: 새틴\n   - 색상: 블랙\n\n2. **디자인 디테일**:\n   - 특징적인 요소: 브이넥, 벌룬 슬리브\n   - 실루엣: 드레이프된 디자인, 허리 부분의 주름 디테일\n   - 길이: 맥시 원피스 스타일"
+        },
+        "style_analysis": {
+            "final_style": "elegant_classic"
+        },
+        "category_analysis": {
+            "big_category": "onepiece"
+        },
+        "recommendations": []
+    },
+    {
+        "product_info": {
+            "id": 47,
+            "brand": "막스마라",
+            "title": "에스막스마라 롱 원피스 TABATA040",
+            "price": "659,000",
+            "detail_page_url": "https://www.trenbe.com/product/++73259199?catalog=100250978",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1716794439897-dbb772c2-2a7e-476a-aa99-8494a4a8388e.jpeg"
+            ],
+            "description": "1. **소재와 색상**: 이 원피스는 부드러운 느낌의 소재로 보이며, 색상은 밝은 파란색입니다.\n\n2. **디자인 디테일**: \n   - **버튼**: 칼라가 있는 디자인으로, 버튼이 있는 것으로 추정됩니다.\n   - **주름**: 소매 부분은 볼륨감 있는 주름이 특징입니다.\n   - **실루엣**: 허리 부분에 리본으로 묶는 디자인으로, 여성스러운 실루엣을 강조합니다.\n   - **슬릿**: 원피스의 아래쪽에 슬릿이 있어 활동성을 더합니다."
+        },
+        "style_analysis": {
+            "final_style": "elegant_classic"
+        },
+        "category_analysis": {
+            "big_category": "onepiece"
+        },
+        "recommendations": []
+    },
+    {
+        "product_info": {
+            "id": 48,
+            "brand": "마쥬",
+            "title": "트위드 투인원 숏 드레스 Tweed 2-in-1 short dress MFPRO03287 F017",
+            "price": "687,400",
+            "detail_page_url": "https://www.trenbe.com/product/++64423651?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240415_638487749574768501_20929625_0.jpg"
+            ],
+            "description": "1. **옷의 소재와 색상:**\n   - 소재: 주로 트위드\n   - 색상: 핑크와 화이트의 조합, 검은색 포인트\n\n2. **디자인 디테일:**\n   - 버튼 여밈\n   - 두 개의 주머니가 있는 디자인\n   - 허리 부분에 벨트 또는 스트랩이 있어 실루엣 강조\n   - 밑단에 프린지 디테일"
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "onepiece"
+        },
+        "recommendations": []
+    },
+    {
+        "product_info": {
+            "id": 52,
+            "brand": "휴고보스",
+            "title": "메쉬 드레스 Eviba Mesh Dress 677822 Black 001",
+            "price": "470,600",
+            "detail_page_url": "https://www.trenbe.com/product/++66490926?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240418_638489653918064282_21151912_0.jpg"
+            ],
+            "description": "1. **소재와 색상**: 드레스는 메쉬 소재로 보이며, 색상은 블랙입니다.\n\n2. **디자인 디테일**: \n   - 긴 소매\n   - V자 형태의 네크라인\n   - 주름 디테일이 있는 실루엣\n   - 미디 길이로 보이는 디자인\n\n이 드레스는 우아하고 클래식한 느낌을 주는 스타일입니다."
+        },
+        "style_analysis": {
+            "final_style": "elegant_classic"
+        },
+        "category_analysis": {
+            "big_category": "onepiece"
+        },
+        "recommendations": []
+    },
+    {
+        "product_info": {
+            "id": 54,
+            "brand": "띠어리",
+            "title": "(W) 띠어리 울 비스코스 콤보 드레스 블랙",
+            "price": "931,000",
+            "detail_page_url": "https://www.trenbe.com/product/++73769660?catalog=100656353",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240324_638468869913472812_21876520_0.jpg"
+            ],
+            "description": "1. **소재와 색상**: \n   - 소재: 울과 비스코스 혼합\n   - 색상: 블랙\n\n2. **디자인 디테일**: \n   - 특징적인 요소: \n     - 상단은 슬림 핏의 긴 소매와 라운드 넥라인\n     - 하단은 주름이 있는 플레어 스커트\n     - 허리 부분에 밴딩 디테일\n     - 전체적으로 심플하면서도 우아한 실루엣"
+        },
+        "style_analysis": {
+            "final_style": "elegant_classic"
+        },
+        "category_analysis": {
+            "big_category": "onepiece"
+        },
+        "recommendations": []
+    },
+    {
+        "product_info": {
+            "id": 56,
+            "brand": "ANIYE BY",
+            "title": "아니예 바이 숏 원피스 181362 00336",
+            "price": "734,000",
+            "detail_page_url": "https://www.trenbe.com/product/++116748945?catalog=100138653",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1730289487346_10b11ff7c6c6635b473de2cc7468fc64_0.jpeg"
+            ],
+            "description": "1. **옷의 소재와 색상**: 이 원피스는 블랙 색상으로 보이며, 소재는 일반적으로 스트레치가 있는 폴리에스터나 스판덱스 혼합일 가능성이 높습니다.\n\n2. **디자인 디테일**: \n   - **소매**: 퍼프 소매 디자인이 특징입니다.\n   - **넥라인**: 깊은 V넥 스타일로, 중앙에 컷아웃 디테일이 있습니다.\n   - **장식**: 앞쪽에 수직으로 배열된 진주 또는 보석 같은 장식이 있어 시각적인 포인트를 줍니다.\n   - **실루엣**: 몸에 잘 맞는 핏으로, 허리를 강조하는 실루엣을 가지고 있습니다."
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "onepiece"
+        },
+        "recommendations": []
+    },
+    {
+        "product_info": {
+            "id": 59,
+            "brand": "막스마라",
+            "title": "여성 올림피아 드레스 OLIMPIA 003",
+            "price": "780,000",
+            "detail_page_url": "https://www.trenbe.com/product/++73538622?catalog=100921707",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1711094447723-ddb07a57-54ec-4be8-80c1-1e35ce0357de.jpeg"
+            ],
+            "description": "1. **소재와 색상**: 드레스는 부드러운 면 또는 혼합 소재로 보이며, 색상은 다크 브라운입니다.\n\n2. **디자인 디테일**: \n   - **카라**: 클래식한 셔츠 칼라 디자인\n   - **소매**: 볼륨감 있는 긴 소매\n   - **벨트**: 허리 부분에 벨트가 있어 실루엣을 강조\n   - **주름**: 스커트 부분에 주름이 있어 흐르는 느낌을 줌\n   - **포켓**: 앞면에 포켓이 있어 실용성을 더함"
+        },
+        "style_analysis": {
+            "final_style": "elegant_classic"
+        },
+        "category_analysis": {
+            "big_category": "onepiece"
+        },
+        "recommendations": []
+    },
+    {
+        "product_info": {
+            "id": 60,
+            "brand": "띠어리",
+            "title": "플리츠 드레스 텍스쳐드 새틴 Pleated Combo Dress in Textured Satin N0705608 D2D",
+            "price": "1,141,400",
+            "detail_page_url": "https://www.trenbe.com/product/++73769628?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20241011_638642341548625323_21876506_0.jpg"
+            ],
+            "description": "1. **소재와 색상**: 드레스는 텍스쳐드 새틴 소재로 보이며, 색상은 짙은 검정색입니다.\n\n2. **디자인 디테일**: 이 드레스는 하이넥 스타일과 슬리브리스 디자인을 가지고 있으며, 주름이 있는 스커트 부분이 특징적입니다. 실루엣은 슬림핏으로, 상반신은 타이트하게 디자인되어 있고 하반신은 플리츠로 풍성하게 떨어지는 형태입니다."
+        },
+        "style_analysis": {
+            "final_style": "formal_minimal"
+        },
+        "category_analysis": {
+            "big_category": "onepiece"
+        },
+        "recommendations": []
+    },
+    {
+        "product_info": {
+            "id": 62,
+            "brand": "띠어리",
+            "title": "언발 비대칭 드레스 스트래치 벨벳 Asymmetrical Dress in Stretch Velvet N1005606 D2D",
+            "price": "1,174,500",
+            "detail_page_url": "https://www.trenbe.com/product/++116202658?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20241011_638642341565338633_23470865_0.jpg"
+            ],
+            "description": "1. **소재와 색상**: 이 드레스는 스트레치 벨벳 소재로, 색상은 블랙입니다.\n\n2. **디자인 디테일**:\n   - **실루엣**: 언발 비대칭 디자인으로 한쪽 어깨가 드러나는 형태입니다.\n   - **소매**: 긴 소매로, 드레시한 느낌을 줍니다.\n   - **슬릿**: 옆에 슬릿이 있어 우아함을 강조합니다.\n   - **주름**: 어깨 부분에 주름 디테일이 있어 독특한 디자인 요소를 추가합니다."
+        },
+        "style_analysis": {
+            "final_style": "elegant_classic"
+        },
+        "category_analysis": {
+            "big_category": "onepiece"
+        },
+        "recommendations": []
+    },
+    {
+        "product_info": {
+            "id": 66,
+            "brand": "띠어리",
+            "title": "플리츠 드레스 스트래치 울 Pleated Combo Dress in Stretch Wool-Blend O0805607 SPF",
+            "price": "1,149,600",
+            "detail_page_url": "https://www.trenbe.com/product/++114748371?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20241012_638642619343323747_23472305_1.jpg"
+            ],
+            "description": "1. **소재와 색상**: 이 드레스는 스트레치 울 혼합 소재로 보이며, 색상은 다크 브라운입니다.\n\n2. **디자인 디테일**: 드레스는 슬리브리스 디자인이며, 상단은 매끄러운 실루엣으로 되어 있고, 하단은 주름이 잡힌 스타일로 길이가 긴 A라인 형태입니다. 이러한 주름 디테일은 우아한 느낌을 주며, 전체적으로 클래식한 스타일을 강조합니다."
+        },
+        "style_analysis": {
+            "final_style": "elegant_classic"
+        },
+        "category_analysis": {
+            "big_category": "onepiece"
+        },
+        "recommendations": []
+    },
+    {
+        "product_info": {
+            "id": 67,
+            "brand": "띠어리",
+            "title": "이론 플리트 디테일 슬리브리스 드레스 O10056020_001",
+            "price": "1,610,000",
+            "detail_page_url": "https://www.trenbe.com/product/++117189752?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1730502657487_62eb7828645ecb5db94d451ba5cbcc93_0.jpeg"
+            ],
+            "description": "1. **소재와 색상**: 드레스는 주로 블랙 색상으로 보이며, 상단은 부드러운 소재로, 하단은 주름이 있는 플리츠 디자인으로 제작된 것 같습니다.\n\n2. **디자인 디테일**: \n   - **소매**: 슬리브리스 스타일로, 어깨 부분이 드러납니다.\n   - **주름**: 하단 부분에 주름 디테일이 있어 우아한 실루엣을 만들어냅니다.\n   - **실루엣**: 몸에 맞는 상반신과 흐르는 듯한 하반신의 대비가 특징입니다. \n   - **넥라인**: 심플하고 클래식한 라운드 넥 디자인입니다."
+        },
+        "style_analysis": {
+            "final_style": "elegant_classic"
+        },
+        "category_analysis": {
+            "big_category": "onepiece"
+        },
+        "recommendations": []
+    },
+    {
+        "product_info": {
+            "id": 70,
+            "brand": "띠어리",
+            "title": "플리츠 미디 드레스 포플린 Pleated Midi Dress in Sleek Poplin O0305610 001",
+            "price": "950,800",
+            "detail_page_url": "https://www.trenbe.com/product/++76329170?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20241107_638665377821200037_22081413_0.jpg"
+            ],
+            "description": "1. **소재와 색상**: 드레스는 포플린 소재로, 색상은 블랙입니다.\n\n2. **디자인 디테일**:\n   - **특징적인 요소**: 슬리브리스 디자인으로, 상체 부분은 매끄럽고 타이트하게 맞춰져 있습니다.\n   - **주름**: 하늘 부분에서부터 시작되는 플리츠 주름이 있으며, 드레스의 전체 길이에 걸쳐 퍼지는 실루엣을 형성합니다.\n   - **실루엣**: 우아하고 클래식한 A라인 실루엣으로, 착용 시 편안하면서도 세련된 느낌을 줍니다."
+        },
+        "style_analysis": {
+            "final_style": "elegant_classic"
+        },
+        "category_analysis": {
+            "big_category": "onepiece"
+        },
+        "recommendations": []
+    },
+    {
+        "product_info": {
+            "id": 73,
+            "brand": "아소스",
+            "title": "숏 블랙 소매 Kurzes Hangerkleid in Schwarz mit ubergroßen Armeln 206473689SCHWARZ",
+            "price": "183,500",
+            "detail_page_url": "https://www.trenbe.com/product/++91609693?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240703_638556041413447695_22705429_0.jpg"
+            ],
+            "description": "1. **소재와 색상**: 옷의 색상은 블랙이며, 소재는 일반적으로 코튼이나 폴리에스터로 예상됩니다. 하지만 정확한 소재는 이미지 분석만으로는 확인할 수 없습니다.\n\n2. **디자인 디테일**: \n   - 특징적인 요소로는 큰 소매(우버그로세 아르멜른)가 있으며,\n   - 주름이 있는 디자인으로, 허리 부분에서 자연스럽게 퍼지는 실루엣이 특징입니다.\n   - 전체적으로 여유로운 핏을 가지고 있으며, 캐주얼하면서도 세련된 느낌을 줍니다."
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "onepiece"
+        },
+        "recommendations": []
+    },
+    {
+        "product_info": {
+            "id": 77,
+            "brand": "타미힐피거",
+            "title": "크레페 셔츠 드레스 CREPE KNEE SHIRT DRESS LS 646359 Desert Sky",
+            "price": "488,700",
+            "detail_page_url": "https://www.trenbe.com/product/++47378261?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240418_638489660284179092_17589220_0.jpg"
+            ],
+            "description": "1. **옷의 소재와 색상**: \n   - 소재: 크레페 (Crepe)\n   - 색상: 다크 네이비 (Desert Sky)\n\n2. **디자인 디테일**:\n   - 특징적인 요소: 버튼이 있는 셔츠 스타일, 허리띠(벨트)가 포함되어 있어 실루엣을 강조.\n   - 주름: 자연스러운 흐름을 주는 디자인.\n   - 실루엣: 클래식하고 우아한 A라인 형태. 긴 소매와 칼라가 특징."
+        },
+        "style_analysis": {
+            "final_style": "elegant_classic"
+        },
+        "category_analysis": {
+            "big_category": "onepiece"
+        },
+        "recommendations": []
+    },
+    {
+        "product_info": {
+            "id": 83,
+            "brand": "막스마라",
+            "title": "LEILA 024 여성 레일라 코튼 원피스",
+            "price": "1,280,000",
+            "detail_page_url": "https://www.trenbe.com/product/++101454944?catalog=100924539",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1724029497990-dd88e6aa-dd97-43a4-a216-9f6fba552002.jpeg"
+            ],
+            "description": "1. **소재와 색상**: 원피스는 코튼 소재로 보이며, 색상은 검정 배경에 흰색의 도트 패턴이 특징입니다.\n\n2. **디자인 디테일**: \n   - **실루엣**: 롱 원피스 스타일로, 허리 부분에 벨트 디테일이 있어 실루엣을 강조합니다.\n   - **소매**: 긴 소매 디자인입니다.\n   - **네크라인**: 브이넥 형태로, 우아한 느낌을 줍니다.\n   - **패턴**: 흰색 도트가 전체적으로 분포되어 있어 경쾌한 느낌을 더합니다."
+        },
+        "style_analysis": {
+            "final_style": "elegant_classic"
+        },
+        "category_analysis": {
+            "big_category": "onepiece"
+        },
+        "recommendations": []
+    },
+    {
+        "product_info": {
+            "id": 90,
+            "brand": "폴로랄프로렌",
+            "title": "셔츠 드레스 여성 화이트 Cory Shirt Dress Womens Bsr White 68469001",
+            "price": "526,800",
+            "detail_page_url": "https://www.trenbe.com/product/++64755736?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240608_638533972829365989_20997076_0.jpg"
+            ],
+            "description": "1. **소재와 색상**:\n   - 색상: 화이트\n   - 소재: 일반적으로 셔츠 드레스는 면 또는 면 혼합 소재로 제작됩니다.\n\n2. **디자인 디테일**:\n   - 특징적인 요소: \n     - 버튼 다운 디자인\n     - 벨트가 있는 실루엣\n     - 긴 소매\n     - 깃이 있는 칼라\n     - 세미 A라인의 드레스로, 허리선이 강조된 디자인."
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "onepiece"
+        },
+        "recommendations": []
+    },
+    {
+        "product_info": {
+            "id": 98,
+            "brand": "아르마니 익스체인지",
+            "title": "블랙 Armani Exchange Vestito Black 1200 33980703",
+            "price": "275,700",
+            "detail_page_url": "https://www.trenbe.com/product/++57922776?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20231207_638375562558346686_19899881_0.jpg"
+            ],
+            "description": "1. **소재와 색상**: 이 옷은 블랙 색상이며, 일반적으로 스웨트셔츠나 후드티에서 사용되는 면 혼합 소재일 가능성이 높습니다.\n\n2. **디자인 디테일**: \n   - 특징적인 요소로는 하이넥 디자인과 드로스트링이 있는 후드가 있습니다.\n   - 소매는 루즈핏이며, 밑단은 리브 마감 처리되어 있습니다.\n   - 앞면 중앙에는 브랜드 로고가 인쇄되어 있습니다."
+        },
+        "style_analysis": {
+            "final_style": "elegant_classic"
+        },
+        "category_analysis": {
+            "big_category": "onepiece"
+        },
+        "recommendations": []
+    },
+    {
+        "product_info": {
+            "id": 101,
+            "brand": "막스마라",
+            "title": "(W) 막스마라 누블 드레스 베이지",
+            "price": "773,520",
+            "detail_page_url": "https://www.trenbe.com/product/++98215116?catalog=100034261",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240801_638581009051278007_22926222_0.jpg"
+            ],
+            "description": "1. **소재와 색상**: 드레스는 부드럽고 매끄러운 소재로 보이며, 색상은 베이지입니다.\n\n2. **디자인 디테일**: \n   - 드레스의 왼쪽 어깨 부분에 주름이 잡혀 있으며, 노드 형태로 묶여 있는 디자인이 특징입니다.\n   - 실루엣은 슬림하고 세련된 형태로, 전체적으로 우아한 느낌을 줍니다."
+        },
+        "style_analysis": {
+            "final_style": "elegant_classic"
+        },
+        "category_analysis": {
+            "big_category": "onepiece"
+        },
+        "recommendations": []
+    },
+    {
+        "product_info": {
+            "id": 107,
+            "brand": "아디다스",
+            "title": "아디다스 아디컬러 클래식 삼선 맥시 드레스",
+            "price": "141,000",
+            "detail_page_url": "https://www.trenbe.com/product/++79205693?catalog=&options=owned",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1716789545071-2d47f7d3-0cd4-4ba3-80e7-7be5a721f9bf.png"
+            ],
+            "description": "1. **소재와 색상**:\n   - **소재**: 일반적으로 아디다스 제품은 부드러운 면이나 스판덱스 혼합 소재로 제작됩니다. 이 드레스도 비슷한 소재일 것으로 예상됩니다.\n   - **색상**: 빨간색과 검정색 두 가지 색상으로 제공됩니다.\n\n2. **디자인 디테일**:\n   - **특징적인 요소**: \n     - V-넥 디자인으로 세련된 느낌을 줍니다.\n     - 소매 부분에 아디다스의 상징적인 삼선 패턴이 적용되어 있습니다.\n     - 드레스의 왼쪽 하단에는 슬릿 디테일이 있어 활동성을 높입니다.\n     - 전체적으로 몸에 맞는 실루엣을 강조하여 여성스럽고 미니멀한 느낌을 줍니다."
+        },
+        "style_analysis": {
+            "final_style": "formal_minimal"
+        },
+        "category_analysis": {
+            "big_category": "onepiece"
+        },
+        "recommendations": []
+    },
+    {
+        "product_info": {
+            "id": 108,
+            "brand": "디젤",
+            "title": "24 SS 디젤 발레 골지 맥시 드레스 블랙",
+            "price": "446,000",
+            "detail_page_url": "https://www.trenbe.com/product/++91078042?catalog=100635359",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240629_638552334258150740_22138212_0.jpg"
+            ],
+            "description": "1. **소재와 색상**: 드레스는 블랙 색상으로 보이며, 일반적으로 신축성이 있는 면 또는 혼합 소재로 만들어졌을 가능성이 있습니다.\n\n2. **디자인 디테일**: \n   - **특징적인 요소**: 라운드 넥 디자인과 긴 소매가 특징입니다.\n   - **실루엣**: 몸에 맞는 슬림한 실루엣으로, 전체적으로 간결하고 세련된 스타일을 연출합니다.\n   - **로고**: 가슴 부분에 디젤 브랜드 로고가 작은 크기로 위치해 있습니다. \n\n이 드레스는 chic하고 sporty한 느낌을 잘 살리고 있습니다."
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "onepiece"
+        },
+        "recommendations": []
+    },
+    {
+        "product_info": {
+            "id": 112,
+            "brand": "폴로랄프로렌",
+            "title": "랄프 로렌 플로랄 실크 크레페 드레스 Ralph Lauren Floral Silk Crepe Dress 5135983",
+            "price": "996,800",
+            "detail_page_url": "https://www.trenbe.com/product/++77106485?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240501_638501204705308971_22204928_0.jpg"
+            ],
+            "description": "1. **옷의 소재와 색상**: 소재는 실크이며, 색상은 크림색 바탕에 다양한 색상의 꽃무늬가 특징입니다. 꽃무늬에는 빨강, 파랑, 초록 등의 색상이 포함되어 있습니다.\n\n2. **디자인 디테일**:\n   - **소매**: 프릴이 있는 소매 디자인으로, 여성스러운 느낌을 줍니다.\n   - **넥라인**: V넥 형태로, 목선을 강조합니다.\n   - **실루엣**: 몸에 잘 맞는 핏으로, 허리 부분이 슬림하게 디자인되어 있습니다.\n   - **길이**: 미디 길이로, 세련된 느낌을 더합니다."
+        },
+        "style_analysis": {
+            "final_style": "vintage_classic"
+        },
+        "category_analysis": {
+            "big_category": "onepiece"
+        },
+        "recommendations": []
+    },
+    {
+        "product_info": {
+            "id": 113,
+            "brand": "프라다",
+            "title": "새틴 미니 드레스 Satin Mini Dress 687493 Black",
+            "price": "5,524,200",
+            "detail_page_url": "https://www.trenbe.com/product/++62967444?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240417_638489740224078158_20709323_0.jpg"
+            ],
+            "description": "1. **소재와 색상**: 옷은 새틴 소재로 보이며, 색상은 검정색입니다.\n\n2. **디자인 디테일**: 특징적인 요소로는 큰 흰색 칼라, 버튼 여밈, 두 개의 앞 포켓, 미니 길이의 실루엣이 있습니다. 전체적으로 미니멀하고 포멀한 스타일을 강조하고 있습니다."
+        },
+        "style_analysis": {
+            "final_style": "formal_minimal"
+        },
+        "category_analysis": {
+            "big_category": "onepiece"
+        },
+        "recommendations": []
+    },
+    {
+        "product_info": {
+            "id": 117,
+            "brand": "테드베이커",
+            "title": "드레스 Ted Betyel Dress Ld99 Wine 33446508",
+            "price": "275,500",
+            "detail_page_url": "https://www.trenbe.com/product/++99018751?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240805_638584536376386481_22954067_0.jpg"
+            ],
+            "description": "1. **소재와 색상**: 드레스는 와인 색상이며, 부드러운 촉감의 소재로 보입니다.\n\n2. **디자인 디테일**: \n   - **특징적인 요소**: 하이넥 디자인과 함께 앞쪽에 묶음 디테일이 있습니다.\n   - **실루엣**: 슬림한 실루엣으로, 아래쪽은 비대칭적으로 디자인되어 있습니다.\n   - **주름**: 자연스러운 주름이 있어 우아한 느낌을 줍니다."
+        },
+        "style_analysis": {
+            "final_style": "elegant_classic"
+        },
+        "category_analysis": {
+            "big_category": "onepiece"
+        },
+        "recommendations": []
+    },
+    {
+        "product_info": {
+            "id": 122,
+            "brand": "폴로랄프로렌",
+            "title": "[리퍼브 상품] 사이즈10 (S) 폴로랄프로렌 타이 폴로 셔츠 드레스 라이트 인디고",
+            "price": "508,300",
+            "detail_page_url": "https://www.trenbe.com/product/++101536170?catalog=&options=owned",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1724121636144-02a45aac-db2c-4dc0-bd57-453bc7c27173.jpeg"
+            ],
+            "description": "1. **소재와 색상**: 이 제품은 부드러운 면 소재로 보이며, 색상은 라이트 인디고(연한 청색)입니다.\n\n2. **디자인 디테일**: \n   - **특징적인 요소**: 폴로 셔츠 스타일의 칼라와 버튼 플래킷이 있으며, 허리 부분에 묶음 디자인이 있습니다.\n   - **실루엣**: 슬림한 실루엣으로, 길이가 긴 드레스 형태입니다. 주름이 있는 스타일로, 전체적으로 우아한 느낌을 줍니다."
+        },
+        "style_analysis": {
+            "final_style": "elegant_classic"
+        },
+        "category_analysis": {
+            "big_category": "onepiece"
+        },
+        "recommendations": []
+    },
+    {
+        "product_info": {
+            "id": 123,
+            "brand": "아디다스",
+            "title": "오리지널 슬림핏 셔츠 롱원피스 블랙",
+            "price": "183,000",
+            "detail_page_url": "https://www.trenbe.com/product/++34232186?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20220813_637959729274406737_13298263_0.jpg"
+            ],
+            "description": "1. **소재와 색상**: 소재는 일반적으로 신축성이 있는 면이나 폴리에스터 혼합일 가능성이 높으며, 색상은 블랙입니다.\n\n2. **디자인 디테일**: \n   - 버튼 다운 스타일\n   - 긴 소매\n   - 측면 슬릿\n   - 아디다스의 특징적인 3선 디자인이 팔 부분에 있음\n   - 슬림핏 실루엣"
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "onepiece"
+        },
+        "recommendations": []
+    },
+    {
+        "product_info": {
+            "id": 127,
+            "brand": "톰브라운",
+            "title": "톰브라운 여성 반팔 플리츠 원피스",
+            "price": "2,145,000",
+            "detail_page_url": "https://www.trenbe.com/product/++80569910?catalog=100652868",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1717572338252-e7e1b6ce-5d92-4e15-9ce0-27c4d6555d31.jpeg"
+            ],
+            "description": "1. **소재와 색상**: 이 원피스는 주로 니트 소재로 보이며, 색상은 블랙입니다.\n\n2. **디자인 디테일**: \n   - 특징적인 요소: 원피스는 짧은 소매와 라운드 넥 디자인을 가지고 있습니다.\n   - 주름: 하단 부분에 플리츠 디테일이 있어 우아한 느낌을 줍니다.\n   - 실루엣: 몸에 맞는 실루엣으로, 상반신은 타이트하고 하반신은 여유 있는 스타일입니다."
+        },
+        "style_analysis": {
+            "final_style": "elegant_classic"
+        },
+        "category_analysis": {
+            "big_category": "onepiece"
+        },
+        "recommendations": []
+    },
+    {
+        "product_info": {
+            "id": 128,
+            "brand": "폴로랄프로렌",
+            "title": "[리퍼브 상품] 사이즈10(S) 폴로랄프로렌 미디 셔츠 드레스",
+            "price": "1,085,800",
+            "detail_page_url": "https://www.trenbe.com/product/++99048514?catalog=&options=owned",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240418_638489664236772468_17100946_0.jpg"
+            ],
+            "description": "1. **옷의 소재와 색상**: \n   - **색상**: 아이보리 바탕에 네이비 스트라이프 패턴.\n   - **소재**: 일반적으로 셔츠 드레스는 면이나 폴리에스터 혼합 소재로 제작되지만, 정확한 소재는 명시되어 있지 않습니다.\n\n2. **디자인 디테일**:\n   - **특징적인 요소**:\n     - **소매**: 퍼프 소매 디자인.\n     - **허리**: 벨트가 있어 실루엣을 강조.\n     - **패턴**: 수직 스트라이프 패턴으로 길어 보이는 효과.\n     - **칼라**: 클래식한 셔츠 칼라. \n     - **길이**: 미디 길이로, 편안하면서도 우아한 느낌."
+        },
+        "style_analysis": {
+            "final_style": "vintage_classic"
+        },
+        "category_analysis": {
+            "big_category": "onepiece"
+        },
+        "recommendations": []
+    },
+    {
+        "product_info": {
+            "id": 133,
+            "brand": "톰브라운",
+            "title": "톰브라운 센터백 스트라이프 폴로 원피스",
+            "price": "910,000",
+            "detail_page_url": "https://www.trenbe.com/product/++92909193?catalog=100649070",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1723514826425_161dd9da5c76ef881854bf0eb4cc732d_1.jpeg"
+            ],
+            "description": "1. **소재와 색상**: \n   - 색상: 연분홍색\n   - 소재: 일반적으로 폴로 원피스는 면이나 폴리에스터 혼합 소재로 제작되며, 부드럽고 신축성이 있는 경우가 많습니다.\n\n2. **디자인 디테일**: \n   - 특징적인 요소: \n     - 카라와 버튼 플래킷이 있는 폴로 스타일\n     - 소매는 짧고 깔끔한 디자인\n     - 옆면에 버튼 디테일과 함께 스트라이프 패턴이 있는 리본 장식이 있을 수 있음\n     - 실루엣은 여유 있는 A라인 형태로, 편안한 착용감을 제공하는 디자인입니다."
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "onepiece"
+        },
+        "recommendations": []
+    },
+    {
+        "product_info": {
+            "id": 140,
+            "brand": "버버리",
+            "title": "이펙트 롱 슬리브 드레스 Crinkled Effect Long Sleeve Dress -8068743N",
+            "price": "9,641,200",
+            "detail_page_url": "https://www.trenbe.com/product/++112770745?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20241108_638666725861197861_23399742_0.jpg"
+            ],
+            "description": "1. **옷의 소재와 색상**: \n   - 소재: 실크 또는 비슷한 느낌의 부드러운 패브릭\n   - 색상: 연한 파란색\n\n2. **디자인 디테일**: \n   - 버튼이 있는 셔츠 스타일\n   - 주름이 있는 실루엣\n   - 레이스 장식이 있는 밑단\n   - 독특한 크로스 스트랩 디자인이 특징적임."
+        },
+        "style_analysis": {
+            "final_style": "feminine_romantic"
+        },
+        "category_analysis": {
+            "big_category": "onepiece"
+        },
+        "recommendations": []
+    },
+    {
+        "product_info": {
+            "id": 144,
+            "brand": "리스",
+            "title": "유틸리티 드레스 Aimie Utility Dress 112138225 Black",
+            "price": "320,800",
+            "detail_page_url": "https://www.trenbe.com/product/++88090364?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20241015_638645397571947725_22651311_0.jpg"
+            ],
+            "description": "1. **소재와 색상**: 드레스는 블랙 색상으로, 일반적으로 유틸리티 드레스는 튼튼한 면 또는 코튼 혼합 소재로 만들어집니다.\n\n2. **디자인 디테일**:\n   - **버튼**: 프론트에 버튼이 있는 클로저.\n   - **포켓**: 가슴 부분에 두 개의 플랩 포켓이 있음.\n   - **벨트**: 허리를 강조하는 벨트가 있어 실루엣을 조절할 수 있음.\n   - **소매**: 반팔 디자인으로 활동성을 높임.\n   - **슬릿**: 사이드에 슬릿이 있어 편안함과 스타일을 더함."
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "onepiece"
+        },
+        "recommendations": []
+    },
+    {
+        "product_info": {
+            "id": 149,
+            "brand": "폴로랄프로렌",
+            "title": "포니 셔츠 드레스 Pony Shirt Dress 688953 Cruise Navy",
+            "price": "524,700",
+            "detail_page_url": "https://www.trenbe.com/product/++90863000?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240628_638551519150438914_22682105_0.jpg"
+            ],
+            "description": "1. **소재와 색상**: 이 드레스는 일반적으로 면 또는 면 혼합 소재로 제작되며, 색상은 다크 네이비입니다.\n\n2. **디자인 디테일**:\n   - **버튼**: 앞면에 버튼이 있으며, 단추가 일렬로 배열되어 있습니다.\n   - **주름**: 허리 부분에 벨트가 있어 실루엣을 강조합니다.\n   - **실루엣**: 클래식하고 우아한 A라인 실루엣으로, 편안하면서도 세련된 느낌을 줍니다.\n   - **소매**: 롤업 가능한 긴 소매 디자인입니다.\n   - **로고**: 왼쪽 가슴 부분에 브랜드 로고가 자리 잡고 있습니다."
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "onepiece"
+        },
+        "recommendations": []
+    }
+]

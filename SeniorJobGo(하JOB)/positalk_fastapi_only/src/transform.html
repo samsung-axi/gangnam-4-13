@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>positalk</title>
+    <link rel="stylesheet" href="/src/css/global.css">
+    <link rel="stylesheet" href="/src/css/transform.css">
+</head>
+
+<body>
+    <div id="header"></div>
+
+    <div class="container">
+        <div class="transformBox">
+            <div class="leftSection">
+                <h3>원문</h3>
+                <div class="inputWrapper">
+                    <textarea class="inputArea" placeholder="변환할 문장을 입력해주세요" id="inputText"></textarea>
+                    <button class="resetButton" id="resetButton">
+                        ✕
+                    </button>
+                </div>
+                <button class="transformButton" id="transformButton">변환하기</button>
+            </div>
+
+            <div class="rightSection">
+                <div class="selectWrapper">
+                    <select class="styleSelect" id="styleSelect">
+                        <option value="pretty">이쁘게</option>
+                        <option value="cute">귀엽게</option>
+                        <option value="polite">공손하게</option>
+                        <option value="formal">존댓말로</option>
+                        <option value="friendly">친근하게</option>
+                    </select>
+                </div>
+                <textarea class="outputArea" id="outputText" readonly></textarea>
+                <div class="buttonGroup">
+                    <button class="soundButton" id="soundButton">
+                        🔊
+                        <span class="srOnly">소리 재생</span>
+                    </button>
+                    <div class="copyButtonWrapper">
+                        <button class="copyButton" id="copyButton">
+                            📋
+                            <span class="srOnly">복사하기</span>
+                        </button>
+                        <div class="copyMessage" id="copyMessage" style="display: none;">
+                            복사되었습니다
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer"></div>
+
+    <script src="/src/js/frame.js"></script>
+    <script src="/src/js/transform.js"></script>
+</body>
+
+</html>

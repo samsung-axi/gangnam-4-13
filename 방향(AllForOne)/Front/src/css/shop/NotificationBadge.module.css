@@ -1,0 +1,33 @@
+.badge {
+    position: absolute;
+    top: -28px;
+    right: -30px;
+    background-color: #ff4444;
+    color: white;
+    border-radius: 50%;
+    min-width: 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: bold;
+    z-index: 10;
+    animation: bounce 0.3s ease-in-out;
+}
+
+.badge[data-badge="cart"] {
+    right: -70px;
+}
+
+@keyframes bounce {
+    0% {
+        transform: scale(0.8);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}

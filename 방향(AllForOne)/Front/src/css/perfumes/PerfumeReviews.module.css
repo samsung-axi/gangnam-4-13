@@ -1,0 +1,251 @@
+.reviewsContainer {
+    position: relative;
+    width: 1362px;
+    margin: 0 auto;
+    top: 1196px;
+}
+
+.topReviewsSection {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-bottom: 40px;
+}
+
+.topReviewCard {
+    width: 1362px;
+    height: 81px;
+    background: #FFFFFF;
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    margin-bottom: 60px;
+}
+
+.reviewListSection {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;  /* 자식 요소들을 오른쪽으로 정렬 */
+    width: 100%;
+}
+
+.reviewsHeader {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 30px;
+}
+
+.writeReviewBtn {
+    width: 210px;
+    height: 35px;
+    background: #FFFFFF;
+    border-radius: 20px;
+    font-family: 'Inter';
+    font-size: 20px;
+    line-height: 30px;
+    color: #000000;
+    border: none;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    user-select: none;
+    margin-bottom: 20px;
+    transform: translateX(30px);
+}
+
+.reviewCardsContainer {
+    position: relative;
+    width: 100%;
+    max-width: 1362px;
+    overflow: hidden;
+    padding: 0 20px;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+.reviewCards {
+    display: flex;
+    gap: 37px;
+    margin-bottom: 40px;
+    transition: transform 0.3s ease-out;
+    justify-content: flex-start;
+    margin: 0 auto;
+    width: max-content;
+    will-change: transform;
+    flex-wrap: nowrap;
+    padding: 10px 0; /* 그림자가 잘리지 않도록 패딩 추가 */
+}
+
+.reviewCard {
+    min-width: 196px;
+    width: 196px;
+    height: 334px;
+    background: #FFFFFF;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    position: relative; /* divider 위치 기준점 */
+}
+
+.reviewCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.perfumeThumb {
+    width: 108px;
+    height: 95px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto 15px;
+    user-select: none;
+}
+
+.divider {
+    width: 136px;
+    height: 1px;
+    background: #000000;
+    margin: 15px 0;
+    opacity: 0.2; /* divider를 좀 더 섬세하게 */
+}
+
+.reviewContent {
+    flex: 1;
+    width: 100%;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #494949;
+    text-align: center;
+    margin: 15px 0;
+    overflow-wrap: break-word;
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    user-select: none;
+}
+
+.reviewerName {
+    font-size: 12px;
+    color: #666;
+    text-align: center;
+    margin-top: auto;
+    font-weight: 500;
+    user-select: none;
+}
+
+.sliderContainer {
+    width: 100%;
+    max-width: 1362px;
+    padding: 0 20px;
+    margin: 20px auto 0;
+    box-sizing: border-box;
+}
+
+.sliderLine {
+    width: 100%;
+    height: 6px;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+    position: relative;
+    cursor: pointer;
+}
+
+.sliderHandle {
+    width: 100px;
+    height: 100%;
+    background-color: #000000;
+    border-radius: 3px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: grab;
+    transition: left 0.1s ease-out;
+}
+
+.sliderHandle:active {
+    cursor: grabbing;
+}
+
+.pagination {
+    display: flex;
+    gap: 25px;
+    margin-top: 40px;
+    justify-content: center;
+}
+
+.paginationDot {
+    width: 15px;
+    height: 15px;
+    background: #A4A4A4;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.paginationDot:hover {
+    transform: scale(1.1);
+}
+
+.paginationDot.active {
+    background: #000000;
+}
+
+.reviewCard.likedBorder {
+    border: 2px solid #FF0000;
+}
+
+.heartContainer {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.heartCount {
+    font-size: 12px;
+    color: #666;
+    min-width: 20px;
+    user-select: none;
+    transform: translateY(-3px);
+    user-select: none;
+}
+
+.heart, .heartActive {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    transition: all 0.3s ease;
+}
+
+.heartActive {
+    transform: scale(1.1);
+}
+
+.summarySection {
+    margin-bottom: 20px;
+}
+
+.summaryCard {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 1355px;
+}
+
+.summaryContent {
+    margin-top: 10px;
+    line-height: 1.6;
+}

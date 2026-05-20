@@ -1,0 +1,393 @@
+"""
+신흥 상권 조기 감지 추론
+
+predict(dong_code, industry_code) → EmergingResult
+
+담당: B2 — 수지니
+"""
+
+from __future__ import annotations
+
+import logging
+import pickle
+from typing import TypedDict
+
+import numpy as np
+import torch
+from sklearn.preprocessing import MinMaxScaler
+
+from models.emerging_district.model import WEIGHTS_DIR, LSTMAutoencoder
+
+logger = logging.getLogger(__name__)
+
+
+class EmergingResult(TypedDict):
+    dong_code: str
+    industry_code: str
+    anomaly_score: float  # 0~1 정규화 이상도 (1에 가까울수록 이상)
+    signal: str  # "emerging" | "declining" | "normal"
+    consecutive_anomaly_quarters: int
+    summary: str  # 자연어 설명
+    is_mock: bool
+    # 2026-05-06 추가: 시계열 + 분포 (Task 3, 4 에서 산출 로직 추가)
+    quarter_history: list[dict] | None
+    peer_distribution: dict | None
+
+
+_SIGNAL_KO = {
+    "emerging": "신흥 상권",
+    "declining": "쇠퇴 상권",
+    "normal": "정상",
+}
+
+_cache: dict = {}
+
+
+def _load_model() -> tuple[LSTMAutoencoder, dict]:
+    """LSTMAutoencoder + 메타 로드 (캐시)."""
+    global _cache  # noqa: PLW0603
+
+    if _cache:
+        return _cache["model"], _cache["meta"]
+
+    weights_path = WEIGHTS_DIR / "autoencoder.pt"
+    meta_path = WEIGHTS_DIR / "autoencoder_meta.pkl"
+
+    if not weights_path.exists() or not meta_path.exists():
+        raise FileNotFoundError(
+            f"신흥 상권 모델 가중치를 찾을 수 없습니다.\n"
+            f"먼저 학습을 실행하세요: python -m models.emerging_district.train\n"
+            f"가중치: {weights_path}"
+        )
+
+    with open(meta_path, "rb") as f:
+        meta = pickle.load(f)  # noqa: S301
+
+    import torch as _torch
+
+    _device = _torch.device("cuda" if _torch.cuda.is_available() else "cpu")
+    model = LSTMAutoencoder(
+        input_size=meta["input_size"],
+        hidden_size=meta["hidden_size"],
+        num_layers=meta["num_layers"],
+    )
+    model.load_weights(weights_path)
+    model.to(_device)
+    model.eval()
+
+    _cache.update({"model": model, "meta": meta})
+    return model, meta
+
+
+def _anomaly_score(reconstruction_error: float, threshold: float) -> float:
+    """reconstruction error → 0~1 이상도 점수 (threshold 기준 정규화, 최대 1.0 클리핑)."""
+    score = reconstruction_error / (threshold + 1e-9)
+    return round(min(float(score), 1.0), 4)
+
+
+def _compute_history_at_offset(
+    feat_scaled_full: np.ndarray,
+    model: LSTMAutoencoder,
+    threshold: float,
+    window_size: int,
+    q_offset: int,
+) -> float | None:
+    """q_offset 분기 전 시점 anomaly_score 산출.
+
+    feat_scaled_full: 전체 시계열 스케일된 피처 배열 (T x F)
+    q_offset: 0=현재, 7=7분기 전
+    반환: 0~1 anomaly_score 또는 None (데이터 부족)
+    """
+    end_idx = len(feat_scaled_full) - q_offset - 1
+    if end_idx < window_size - 1:
+        return None
+    window = feat_scaled_full[end_idx - window_size + 1 : end_idx + 1]
+    if len(window) < window_size:
+        return None
+    _dev = next(model.parameters()).device
+    x_t = torch.from_numpy(window.astype("float32")).unsqueeze(0).to(_dev)
+    with torch.no_grad():
+        recon = model(x_t).squeeze(0)
+    recon_error = float(((recon - x_t.squeeze(0)) ** 2).mean().item())
+    return _anomaly_score(recon_error, threshold)
+
+
+def _detect_signal(group_df, window: int = 3) -> str:
+    """최근 window 분기 추세로 신흥/쇠퇴 구분.
+
+    신흥: 매출 기울기 > 0 AND 점포 수 기울기 >= 0
+    쇠퇴: 매출 기울기 < 0 OR 점포 수 기울기 < 0
+    그 외: normal
+    """
+    if len(group_df) < window:
+        return "normal"
+
+    recent = group_df.sort_values("quarter").tail(window)
+    x = np.arange(window, dtype=float)
+    sales_slope = float(np.polyfit(x, recent["monthly_sales"].values.astype(float), 1)[0])
+    store_slope = float(np.polyfit(x, recent["store_count"].values.astype(float), 1)[0])
+
+    if sales_slope > 0 and store_slope >= 0:
+        return "emerging"
+    if sales_slope < 0 or store_slope < 0:
+        return "declining"
+    return "normal"
+
+
+def _count_consecutive_anomalies(
+    group_df,
+    model: LSTMAutoencoder,
+    meta: dict,
+    scaler: MinMaxScaler,
+) -> int:
+    """뒤에서부터 분기 단위 연속 이상 분기 수 카운트.
+
+    윈도우는 1분기씩 뒤로 밀지만, 비교는 윈도우의 마지막 timestep MSE만 사용 →
+    "분기 t의 패턴이 평소와 다른가"를 분기 단위로 판정. quarter_threshold 미존재
+    시 기존 threshold 로 fallback (구버전 meta 호환).
+    """
+    window_size = meta["window_size"]
+    feature_names = meta["feature_names"]
+    quarter_threshold = meta.get("quarter_threshold", meta["threshold"])
+
+    group_df = group_df.sort_values("quarter")
+    feat_vals = group_df[feature_names].values.astype(np.float32)
+
+    if len(feat_vals) < window_size:
+        return 0
+
+    feat_scaled = scaler.transform(feat_vals)
+    count = 0
+
+    for i in range(len(feat_scaled) - window_size, -1, -1):
+        seq = feat_scaled[i : i + window_size]
+        _dev = next(model.parameters()).device
+        x_t = torch.from_numpy(seq).unsqueeze(0).to(_dev)  # (1, window, features)
+        with torch.no_grad():
+            recon = model(x_t)
+        last_err = float(((recon[:, -1, :] - x_t[:, -1, :]) ** 2).mean().item())
+        if last_err > quarter_threshold:
+            count += 1
+        else:
+            break
+
+    return count
+
+
+def _compute_peer_distribution(
+    df_all,
+    industry_code: str,
+    own_dong_code: str,
+    own_score: float,
+    model: LSTMAutoencoder,
+    feature_cols: list[str],
+    threshold: float,
+    window_size: int,
+) -> dict | None:
+    """마포 16 동 기준 anomaly 분포 산출.
+
+    각 동에 대해 동일 industry_code 데이터를 슬라이스하여 새 MinMaxScaler로 스케일,
+    _compute_history_at_offset(q_offset=0) 으로 현재 시점 anomaly_score 산출.
+    데이터 부족 동 (<window_size) 과 예외 발생 동은 제외.
+
+    반환: { p25, p50, p75, p90, percentile_self, rank_in_total, total } 또는 None (4동 미만).
+    """
+    mapo_dongs = sorted(df_all["dong_code"].unique())
+    mapo_dongs = [d for d in mapo_dongs if str(d).startswith("11440")]
+
+    peer_scores: list[float] = []
+    own_rank_score: float | None = None
+
+    for code in mapo_dongs:
+        sub = df_all[
+            (df_all["dong_code"] == code) & (df_all["industry_code"] == industry_code)
+        ].copy()
+        if len(sub) < window_size:
+            continue
+        try:
+            sub = sub.sort_values("quarter")
+            feat_vals = sub[feature_cols].values.astype(np.float32)
+            sc = MinMaxScaler()
+            feat_scaled = sc.fit_transform(feat_vals)
+            score = _compute_history_at_offset(feat_scaled, model, threshold, window_size, q_offset=0)
+            if score is not None:
+                peer_scores.append(score)
+                if str(code) == str(own_dong_code):
+                    own_rank_score = score
+        except Exception:
+            continue
+
+    if len(peer_scores) < 4:
+        return None
+
+    arr = np.array(peer_scores)
+    quantiles = np.percentile(arr, [25, 50, 75, 90])
+
+    # own_score 가 peer_scores 에 없으면(자기 동 데이터 부족 등) own_score fallback
+    ref_score = own_rank_score if own_rank_score is not None else own_score
+    sorted_desc = sorted(peer_scores, reverse=True)
+    rank = next(
+        (i + 1 for i, s in enumerate(sorted_desc) if abs(s - ref_score) < 1e-6),
+        len(sorted_desc),
+    )
+    percentile_self = float((rank / len(peer_scores)) * 100)
+
+    return {
+        "p25": float(quantiles[0]),
+        "p50": float(quantiles[1]),
+        "p75": float(quantiles[2]),
+        "p90": float(quantiles[3]),
+        "percentile_self": percentile_self,
+        "rank_in_total": rank,
+        "total": len(peer_scores),
+    }
+
+
+def predict(
+    dong_code: str,
+    industry_code: str,
+    config: dict | None = None,
+) -> EmergingResult:
+    """특정 동×업종의 신흥 상권 가능성을 추론한다.
+
+    Parameters
+    ----------
+    dong_code : str
+        행정동 코드 (예: '11440660').
+    industry_code : str
+        업종 코드 (예: 'CS100001').
+    config : dict, optional
+        db_url 등 설정 오버라이드.
+
+    Returns
+    -------
+    EmergingResult
+        anomaly_score, signal, consecutive_anomaly_quarters, summary.
+    """
+    cfg = config or {}
+
+    try:
+        model, meta = _load_model()
+    except FileNotFoundError as e:
+        logger.warning("모델 없음 — mock 반환: %s", e)
+        return _mock_result(dong_code, industry_code)
+
+    window_size = meta["window_size"]
+    feature_names = meta["feature_names"]
+    threshold = meta["threshold"]
+
+    # 데이터 로드
+    from models.emerging_district.data_prep import DB_URL as _DB_URL  # noqa: E402
+    from models.emerging_district.data_prep import load_emerging_data
+
+    db_url = cfg.get("db_url", _DB_URL)
+    dong_prefix = dong_code[:5] if len(dong_code) >= 5 else dong_code
+
+    try:
+        df = load_emerging_data(db_url=db_url, dong_prefix=dong_prefix)
+    except Exception as e:
+        logger.warning("데이터 로드 실패 — mock 반환: %s", e)
+        return _mock_result(dong_code, industry_code)
+
+    group = df[(df["dong_code"] == dong_code) & (df["industry_code"] == industry_code)].copy()
+
+    if group.empty or len(group) < window_size:
+        logger.warning("데이터 부족: %s/%s (%d행)", dong_code, industry_code, len(group))
+        return _mock_result(dong_code, industry_code)
+
+    group = group.sort_values("quarter")
+
+    # 그룹 단위 MinMaxScaler (학습 시와 동일한 방식)
+    scaler = MinMaxScaler()
+    feat_vals = group[feature_names].values.astype(np.float32)
+    feat_scaled = scaler.fit_transform(feat_vals)
+
+    # 최근 window_size 분기로 reconstruction error 계산
+    recent_seq = feat_scaled[-window_size:]
+    _dev = next(model.parameters()).device
+    x_t = torch.from_numpy(recent_seq).unsqueeze(0).to(_dev)
+    with torch.no_grad():
+        recon = model(x_t)
+    reconstruction_error = float(((recon - x_t) ** 2).mean().item())
+
+    score = _anomaly_score(reconstruction_error, threshold)
+
+    # 신흥/쇠퇴 구분 (이상 감지 시에만)
+    signal = _detect_signal(group) if reconstruction_error > threshold else "normal"
+
+    # 연속 이상 분기 수
+    consecutive = _count_consecutive_anomalies(group, model, meta, scaler)
+
+    # 자연어 요약 — dong_code/industry_code 대신 한글명 사용 (사용자 응답 노출)
+    from models.interface import _resolve_dong_name, _resolve_industry_name
+
+    dong_name = _resolve_dong_name(dong_code)
+    industry_name = _resolve_industry_name(industry_code)
+
+    signal_ko = _SIGNAL_KO.get(signal, signal)
+    score_pct = int(round(score * 100))
+    if signal == "normal":
+        summary = f"{dong_name} {industry_name}: 정상 상권 패턴 (평소 대비 변화 {score_pct}%)"
+    else:
+        q_str = f"최근 {consecutive}분기 연속 이상 감지 " if consecutive > 0 else ""
+        summary = f"{dong_name} {industry_name}: {q_str}(평소 대비 변화 {score_pct}%) — {signal_ko} 가능성"
+
+    # 2026-05-06: 8 분기 시계열 history 산출
+    quarter_history: list[dict] = []
+    for offset in range(7, -1, -1):  # 7→0 (오름차순으로 표시)
+        h_score = _compute_history_at_offset(
+            feat_scaled,
+            model,
+            threshold,
+            window_size,
+            offset,
+        )
+        quarter_label = "현재" if offset == 0 else f"Q-{offset}"
+        quarter_history.append(
+            {
+                "quarter": quarter_label,
+                "anomaly_score": h_score if h_score is not None else 0.0,
+            }
+        )
+
+    # 2026-05-06: 마포 16동 peer_distribution 산출
+    peer_distribution = _compute_peer_distribution(
+        df_all=df,
+        industry_code=industry_code,
+        own_dong_code=dong_code,
+        own_score=score,
+        model=model,
+        feature_cols=feature_names,
+        threshold=threshold,
+        window_size=window_size,
+    )
+
+    return EmergingResult(
+        dong_code=dong_code,
+        industry_code=industry_code,
+        anomaly_score=score,
+        signal=signal,
+        consecutive_anomaly_quarters=consecutive,
+        summary=summary,
+        is_mock=False,
+        quarter_history=quarter_history,
+        peer_distribution=peer_distribution,
+    )
+
+
+def _mock_result(dong_code: str, industry_code: str) -> EmergingResult:
+    from models.interface import _resolve_dong_name, _resolve_industry_name
+
+    dong_name = _resolve_dong_name(dong_code)
+    industry_name = _resolve_industry_name(industry_code)
+    return EmergingResult(
+        dong_code=dong_code,
+        industry_code=industry_code,
+        anomaly_score=0.5,
+        signal="normal",
+        consecutive_anomaly_quarters=0,
+        summary=f"{dong_name} {industry_name}: 모델 미학습 상태 (mock)",
+        is_mock=True,
+        quarter_history=None,
+        peer_distribution=None,
+    )

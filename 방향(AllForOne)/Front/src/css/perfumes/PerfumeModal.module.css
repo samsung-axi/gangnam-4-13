@@ -1,0 +1,383 @@
+.modalBackdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 300;
+    overflow: hidden;
+}
+
+.modalContainer {
+    width: 950px;
+    max-height: 90vh;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column; 
+    gap: 10px; 
+    justify-content: space-between;
+}
+
+.modalContent {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    height: 800px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    position: relative;
+    text-align: left;
+    height: 600px;
+}
+
+.inputRow {
+    display: flex;
+    flex-wrap: wrap; /* 한 줄을 넘으면 자동 줄바꿈 */
+    gap: 10px;
+    justify-content: space-between;
+}
+
+.inputField {
+    flex: 1; /* 동일한 비율로 배치 */
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    background-color: #EFEDED;
+}
+
+.modalContainerSuccess {
+    background-color: #EFEDED;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    position: relative;
+    text-align: center;
+}
+
+.modalTitle {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* .modalRow {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    align-items: center;
+    margin-left: 50px;
+    margin-right: 50px;
+} */
+
+/* .modalRow {
+    display: flex;
+    flex-direction: column; 
+    flex: 1; 
+    min-width: 45%; 
+} */
+
+.modalRow {
+    display: flex;
+    flex-basis: 50%;
+    flex-direction: column;
+    flex: 1; /* 크기를 자동으로 맞춤 */
+    min-width: 45%; /* 한 줄에 2개씩 배치 */
+}
+
+/* .modalRow2 {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    align-items: center;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 50px;
+    margin-bottom: 30px;
+} */
+
+.modalRowName,
+.modalRowBrand,
+.modalRowDescription,
+.modalRowGrade,
+.modalRowSingleNote,
+.modalRowTopNote,
+.modalRowMiddleNote,
+.modalRowBaseNote,
+.imageUrlInput {
+    flex-basis: 50%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    background-color: #EFEDED;
+}
+
+/* .modalRowConcentration {
+    flex-basis: 70%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    background-color: #EFEDED;
+} */
+
+.modalRowConcentration {
+    flex-basis: 65%; 
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    background-color: #EFEDED;
+}
+
+.modalRowDescription {
+    resize: none;
+    height: 80px;
+}
+
+.imageUrlInput {
+    margin-left: 300px;
+}
+
+.imagePreview {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.fileInput {
+    display: none;
+}
+
+.imageUpload {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #ddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #EFEDED;
+    transform: translateX(-260px);
+}
+
+.placeholder {
+    font-size: 20px;
+    color: #aaa;
+    font-weight: bold;
+}
+
+.successMessage {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.modalActions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.saveButton,
+.cancelButton,
+.cancelButtonSuccess {
+    padding: 10px 20px;
+    border: none;
+    border: 1px solid black;
+    font-size: 14px;
+    cursor: pointer;
+    background-color: #fff;
+    color: rgb(37, 37, 37);
+    border-radius: 5px;
+}
+
+.modalContainerDelete {
+    background-color: #EFEDED;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    position: relative;
+    text-align: center;
+}
+
+.modalTitleDelete {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.modalActionsDelete {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.confirmButton,
+.cancelButtonDelete {
+    padding: 10px 20px;
+    border: 1px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #fff;
+}
+
+.formLabel {
+    font-family: 'Nanum Gothic', sans-serif;
+    font-size: 14px;
+    color: #333;
+}
+
+.modalRowImageLabel {
+    font-family: 'Nanum Gothic', sans-serif;
+    font-size: 14px;
+    color: #333;
+}
+
+.imageUrlsSection {
+    margin-bottom: 20px;
+}
+
+.imageUrlInput {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.removeUrlButton {
+    padding: 5px 10px;
+    background-color: #ff4444;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.addUrlButton {
+    padding: 8px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.imageInputContainer {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex: 1;
+}
+
+.imagePreviewBox {
+    width: 45px;
+    height: 45px;
+    background-color: #EFEDED;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 20px;
+    color: #666;
+}
+
+.previewImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.modalRowImageUrl {
+    flex: 1;
+    height: 45px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    background-color: #EFEDED;
+}
+
+.addImageButton {
+    width: 45px;
+    height: 45px;
+    background-color: #EFEDED;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 20px;
+    color: #666;
+}
+
+/* .imagePagination {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: -10px;
+    margin-bottom: 20px;
+} */
+
+.paginationDot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #ddd;
+}
+
+.activeDot {
+    background-color: #666;
+}
+
+.imagePagination {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* ✅ 중앙 정렬 */
+    gap: 8px;
+    margin-top: -10px;
+    margin-bottom: 20px;
+}
+
+.paginationArrow {
+    width: 45px;  /* ✅ 미리보기 이미지 크기와 동일하게 */
+    height: 45px; /* ✅ 미리보기 이미지 크기와 동일하게 */
+    background-color: #ddd;
+    border: 1px solid #bbb;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 20px;
+    color: #666;
+    transition: all 0.3s ease;
+}
+
+/* ✅ 버튼 hover 효과 */
+.paginationArrow:hover {
+    background-color: #bbb;
+    color: #333;
+}
+
+/* ✅ 비활성화 (첫 페이지 또는 마지막 페이지에서) */
+.paginationArrow:disabled {
+    background-color: #f0f0f0;
+    color: #aaa;
+    cursor: default;
+}
+

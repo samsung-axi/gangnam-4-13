@@ -1,0 +1,175 @@
+.modal_overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--black-opacity-25);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal_container {
+  background-color: white;
+  border-radius: var(--border-radius-4);
+  padding: 30px;
+  max-width: 80%;
+  max-height: 90%;
+  box-shadow: var(--shadow-2);
+}
+
+
+.modal_container h2 {
+  font-size: var(--font-size-3);
+  font-weight: var(--bold);
+  color: var(--text-main);
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.agent_grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  padding: 20px;
+}
+
+
+
+.agent_card {
+  background-color: var(--grey-3);
+  border-radius: var(--border-radius-4);
+  padding: 25px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+}
+
+.agent_card.selected {
+  background-color: var(--sub-color-2);
+  border-color: var(--primary-color);
+  transform: translateY(-5px);
+  border: none;
+}
+
+.agent_card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+}
+
+.agent_icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 20px;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.agent_icon img {
+  width: 50px;
+  height: 50px;
+}
+
+.agent_card h3 {
+  font-size: var(--font-size-4);
+  font-weight: var(--bold);
+  color: var(--text-main);
+  margin-bottom: 10px;
+}
+
+.agent_card p {
+  font-size: var(--font-size-5);
+  color: var(--text-sub);
+  margin-bottom: 15px;
+}
+
+.agent_card ul {
+  text-align: left;
+  padding-left: 20px;
+}
+
+.agent_card li {
+  font-size: var(--font-size-5);
+  color: var(--text-sub);
+  margin-bottom: 5px;
+} 
+.button_container {
+  margin-top: 30px;
+  max-width: 80%;
+  margin: 25px auto 0 auto;
+}
+.agent_submit_btn {
+  background-color: var(--sub-color-1);
+  border: none;
+  padding: 10px 20px;
+  border-radius: var(--border-radius-4);
+  color: var(--text-main);
+  font-size: var(--font-size-5);
+  font-weight: var(--bold);
+  cursor: pointer;
+  box-shadow: var(--shadow-basic);
+  transition: all 0.2s ease;
+}
+
+.agent_submit_btn:hover {
+  box-shadow: var(--shadow-hover);
+}
+
+.agent_submit_btn:active {
+  background-color: var(--main-color-1);
+}
+
+@media (max-width: 620px) {
+  .modal_container {
+    h2{
+        font-size: var(--font-size-5);
+        margin-bottom: 5px;
+    }
+  }
+  .agent_grid {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 10px;
+  }
+  .agent_icon img{
+    width: 30px;
+    height: 30px;
+  }
+  .agent_icon {
+    width: 40px;
+    height: 40px;
+    margin: 0 auto 5px;
+  }
+  .agent_card {
+    padding: 15px;
+  }
+  .agent_card h3 {
+    font-size: var(--font-size-6);
+    margin-bottom: 0px;
+  }
+  .agent_card p {
+    font-size: var(--font-size-6);
+  }
+  .button_container {
+    margin-top: 10px;
+  }
+  .agent_submit_btn {
+    font-size: var(--font-size-7);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+

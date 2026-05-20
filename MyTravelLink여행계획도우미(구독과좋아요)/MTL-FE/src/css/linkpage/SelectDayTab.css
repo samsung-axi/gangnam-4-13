@@ -1,0 +1,142 @@
+.WS-SelectDayTab-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+
+  width: 100%;
+  height: 100%;
+
+  background-color: white;
+  z-index: 7;
+}
+
+.WS-SelectDayTab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  position: relative;
+
+  max-width: 450px;
+  height: 1000px;
+
+  margin: 0 auto;
+}
+
+.WS-SelectDayTab-Container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 100%;
+  height: 65%;
+}
+
+.WS-SelectDayTab-Title-Container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 30%;
+}
+
+.WS-SelectDayTab-Title {
+  font-size: var(--font-size-2xl);
+  font-weight: bold;
+}
+
+.WS-SelectDayTab-SubTitle {
+  margin-top: 30%;
+  font-size: var(--font-size-base);
+}
+
+.WS-SelectDayTab-SubTitle-date {
+  margin-top: 5%;
+  font-size: var(--font-size-base);
+}
+
+.WS-SelectDayTab-Counter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+
+  margin-top: 25%;
+
+  gap: 100px;
+
+  padding: 2%;
+
+  width: 330px;
+
+  background-color: var(--color-main);
+  border-radius: var(--border-radius-full);
+}
+
+.WS-Counter-Button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 5%;
+
+  background: none;
+  border: none;
+  color: white;
+  font-size: var(--font-size-base);
+
+  cursor: pointer;
+}
+
+.WS-Counter-Input {
+  background: transparent;
+  border: none;
+  text-align: center;
+  font-size: var(--font-size-xl);
+  width: 40px;
+  color: white;
+}
+
+.WS-Counter-Input:focus {
+  outline: none;
+}
+
+.WS-SelectDayTab-Button-Container {
+  display: flex;
+  justify-content: center;
+
+  position: absolute;
+  bottom: 0;
+
+  gap: 10px;
+
+  width: 95%;
+}
+
+.WS-SelectDayTab-BackButton,
+.WS-SelectDayTab-NextButton {
+  padding: 5%;
+
+  width: 180px;
+
+  border-radius: var(--border-radius-full);
+  border: none;
+
+  font-size: var(--font-size-base);
+  color: var(--color-dark-gray);
+  font-weight: bold;
+
+  background-color: var(--color-light-gray);
+  cursor: pointer;
+}
+
+.WS-SelectDayTab-NextButton.active {
+  background-color: var(--color-main-hover);
+  color: white;
+}

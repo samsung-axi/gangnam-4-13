@@ -1,0 +1,189 @@
+.hmk-form-section {
+    font-family: 'Pretendard', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 12px;
+    background: white;
+    box-sizing: border-box;
+}
+
+.hmk-form-header {
+    display: flex;
+    align-items: center;
+    height: 5vh;
+    margin-bottom: 2vh;
+    position: relative;
+}
+
+.hmk-form-title {
+    flex: 1;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.hmk-register-form {
+    display: flex;
+    flex-direction: column;
+    height: 93vh; /* 헤더를 제외한 높이 */
+    justify-content: space-between;
+}
+
+/* 상단 입력 영역을 감싸는 컨테이너 추가 */
+.hmk-form-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+}
+
+.hmk-input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5vh;
+}
+
+.hmk-input-group label {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.required {
+    color: #FFB800;
+    margin-left: 2px;
+}
+
+.hmk-input-with-button {
+    display: flex;
+    gap: 8px;
+    width: 100%;
+}
+
+.hmk-input {
+    width: 100%;
+    height: 6vh;
+    max-height: 52px;
+    min-height: 44px;
+    padding: 0 16px;
+    border: 1px solid #E5E5E5;
+    border-radius: 8px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.hmk-check-button {
+    min-width: 80px;
+    height: 6vh;
+    max-height: 52px;
+    min-height: 44px;
+    background: #FFB800;
+    border: none;
+    border-radius: 8px;
+    color: #000;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    white-space: nowrap;
+    padding: 0 12px;
+}
+
+.hmk-input-hint {
+    font-size: 12px;
+    color: #FFB800;
+    margin: 2px 0 0 0;
+}
+
+.hmk-agreement-section {
+    margin-top: 3vh;
+}
+
+.hmk-agreement-title {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    line-height: 1.3;
+}
+
+.hmk-agreement-title .highlight {
+    color: #FFB800;
+}
+
+.hmk-agreement-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+    margin-top: 2vh;
+}
+
+.hmk-agreement-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 2px 0;
+}
+
+.hmk-agreement-item input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #E5E5E5;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    margin: 0;
+}
+
+.hmk-agreement-item input[type="checkbox"]:checked {
+    background-color: #FFB800;
+    border-color: #FFB800;
+}
+
+.hmk-agreement-item input[type="checkbox"]:checked::after {
+    content: '✓';
+    position: absolute;
+    color: white;
+    font-size: 16px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.hmk-agreement-item label {
+    font-size: 14px;
+    color: #000;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex: 1;
+}
+
+/* 하단 버튼 영역 */
+.hmk-form-footer {
+    margin-top: auto;
+    padding-bottom: 2vh;
+}
+
+.hmk-register-button {
+    width: 100%;
+    height: 6vh;
+    max-height: 52px;
+    min-height: 44px;
+    background: #E5E5E5;
+    border: none;
+    border-radius: 12px;
+    color: #666;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: not-allowed;
+    transition: all 0.2s ease;
+}
+
+.hmk-register-button:enabled {
+    background: #FFB800;
+    color: #000;
+    cursor: pointer;
+} 

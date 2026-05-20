@@ -1,0 +1,69 @@
+# 마포구 프랜차이즈 상권분석 시뮬레이터 — Docker Compose 구성
+# 실행: docker compose up --build
+# 접속: Frontend http://localhost | Backend API http://localhost:8000
+
+services:
+  # React 프론트엔드 — Nginx로 정적 파일 서빙 + API 리버스 프록시
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"       # HTTP
+      - "443:443"     # HTTPS (추후 SSL 적용 시)
+    depends_on:
+      - backend
+
+  # FastAPI 백엔드 — AI Agent 오케스트레이션 + API 서버
+  backend:
+    build:
+      context: .
+      dockerfile: ./backend/Dockerfile
+    command: >
+      sh -c "alembic upgrade head && python -m src.database.seed && uvicorn src.main:app --host 0.0.0.0 --port 8000"
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    depends_on:
+      redis:
+        condition: service_healthy
+    volumes:
+      - ./backend:/app
+      - ./data:/app/data
+      - ./models:/app/models
+      - ./validation:/app/validation
+
+  # PostgreSQL — AWS RDS로 이관 완료 (로컬 DB 불필요)
+  # 접속 정보는 .env의 POSTGRES_URL 참조
+  # db:
+  #   image: pgvector/pgvector:pg16
+  #   environment:
+  #     POSTGRES_DB: mapo_simulator
+  #     POSTGRES_USER: postgres
+  #     POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
+  #   volumes:
+  #     - postgres_data:/var/lib/postgresql/data
+  #   ports:
+  #     - "${DB_PORT:-5432}:5432"
+  #   healthcheck:
+  #     test: ["CMD-SHELL", "pg_isready -U postgres -d mapo_simulator"]
+  #     interval: 5s
+  #     timeout: 5s
+  #     retries: 5
+
+  # Redis — 시뮬레이션 결과 캐시 + Job 상태 관리
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+
+
+# volumes:
+#   postgres_data:    # RDS 이관으로 불필요

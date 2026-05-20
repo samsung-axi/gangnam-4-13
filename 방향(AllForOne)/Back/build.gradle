@@ -1,0 +1,37 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.3.5'
+    id 'io.spring.dependency-management' version '1.1.6'
+}
+
+group = 'com.banghyang'
+version = '0.0.1-SNAPSHOT'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-cache' // 캐싱
+    implementation 'org.springframework.boot:spring-boot-starter' // Spring boot
+    implementation 'org.springframework.boot:spring-boot-starter-web' // REST API
+    implementation 'org.springframework.boot:spring-boot-starter-webflux' // webflux
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa' // jpa
+    implementation 'org.springframework.boot:spring-boot-starter-data-mongodb' // MongoDB
+    implementation 'org.springframework.cloud:spring-cloud-starter-aws:2.2.6.RELEASE' // AWS S3
+    implementation 'org.springframework.boot:spring-boot-starter-validation'// validation
+    annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor' // @ConfigurationPropertiesScan
+    annotationProcessor 'org.projectlombok:lombok:1.18.28' // lombok
+    compileOnly 'org.projectlombok:lombok' // lombok
+    runtimeOnly 'com.mysql:mysql-connector-j' // mysql
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher' // 필수
+    testImplementation 'org.springframework.boot:spring-boot-starter-test' // Spring boot test
+}
+
+//tasks.named('test') {useJUnitPlatform()}

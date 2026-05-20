@@ -1,0 +1,809 @@
+/* main.module.scss */
+@use '@assets/styles/_variables' as *;
+@use "sass:color";
+
+/* 화면 전체(100vw, 100vh)를 사용하고, 페이지 밖으로 스크롤이 안 생기도록 설정 */
+.page {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden; // 페이지 밖으로 스크롤 X
+  background-color: $background-color;
+
+}
+
+/* .content는 헤더/Footer 등을 제외한 나머지 부분을 모두 차지.
+   overflow: hidden으로 자기 영역 밖으로 스크롤이 생기지 않게 함 */
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0;
+
+}
+
+/* 채팅 영역 전체. flex:1로 세로 공간 전부 차지 + 내부에서만 스크롤 */
+.chat {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+
+  background: $background-color;
+  overflow: hidden; // 채팅 컨테이너의 오버플로우 숨김
+  height: calc(100vh - 60px); // 헤더 높이 제외한 전체 높이
+  position: relative;
+
+  
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid $border-color;
+    background: $background-color;
+
+    @media (max-width: 768px) {
+      padding: 1rem;
+    }
+  }
+    
+  &__info {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    
+    img {
+      width: 26px;
+      height: 26px;
+      margin-bottom: 7px;
+    }
+    
+    span {
+      font-size: $font-size-18;
+      font-weight: $font-weight-semibold;
+    }
+  }
+  
+  &__mypage {
+    /* 마이페이지 버튼 스타일 */
+    padding: 0.5rem 1rem;
+    border: 1px solid $primary-color;
+    border-radius: $radius-md;
+    background: transparent;
+    color: $primary-color;
+    font-weight: $font-weight-medium;
+    transition: all .2s;
+
+    &:hover {
+      background: $primary-color;
+      color: $background-color;
+      cursor: pointer;
+    }
+  }
+
+  &__input {
+    position: sticky;
+    bottom: 0;
+    z-index: 20;
+    background: $background-color;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.8rem;
+    border-top: 1px solid $border-color;
+
+    .input__container {
+      flex: 1;
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    // 녹음 중 상태 표시
+    .recording__status {
+      display: flex;
+      align-items: center;
+      color: $primary-color;
+      font-size: $font-size-sm;
+      font-weight: $font-weight-medium;
+      white-space: nowrap;
+      
+      &::before {
+        content: "●";
+        color: $primary-color;
+        animation: blink 1s infinite;
+        margin-right: 4px;
+      }
+    }
+
+    // 확인 버튼
+    .confirm__button {
+      padding: 0 1.25rem;
+      height: 40px;
+      background: $primary-color;
+      color: $white-color;
+      border: none;
+      border-radius: $radius-md;
+      font-weight: $font-weight-medium;
+      min-width: 64px;
+      cursor: pointer;
+      transition: all 0.2s;
+
+      &:hover {
+        background: color.adjust($primary-color, $lightness: -5%);
+      }
+    }
+
+    // 기존 버튼 스타일 유지
+    button:not(.mic__button):not(.confirm__button) {
+      padding: 0 1.25rem;
+      height: 40px;
+      background: $primary-color;
+      color: $white-color;
+      border: none;
+      border-radius: $radius-md;
+      font-weight: $font-weight-medium;
+      min-width: 64px;
+      cursor: pointer;
+
+      &:disabled {
+        opacity: 0.7;
+        cursor: not-allowed;
+      }
+    }
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: translateY(-50%) scale(1);
+  }
+  50% {
+    transform: translateY(-50%) scale(1.1);
+  }
+  100% {
+    transform: translateY(-50%) scale(1);
+  }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* 메세지 스타일 */
+.message {
+  margin-bottom: 1.5rem;
+  width: 100%;
+
+  &__bot {
+    background: $background-color;
+    display: flex;
+    gap: 0.75rem;
+    width: 100%;
+    padding-right: 12px;
+  }
+
+  &__user {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+  }
+
+  &__icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  &__content {
+    padding: 0.75rem 1rem;
+    border-radius: $radius-lg;
+    max-width: 100%;
+    line-height: 1.4;
+    word-break: break-word;
+
+    .message__bot & {
+      background: $white-color;
+      border: 1px solid $border-color;
+
+    }
+
+    .message__user & {
+      background: rgb(252, 241, 217);
+
+    }
+
+    @media (max-width: 768px) {
+      max-width: 100%;
+    }
+  }
+}
+
+/* 봇 메세지에서 선택지(옵션) 버튼 스타일 */
+.options {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+  padding-left: 2.8rem;
+
+  &__button {
+    width: 120px;
+    height: 50px;
+    padding: 0.75rem;
+    border: 1px solid $primary-color;
+    border-radius: $radius-lg;
+    background: $background-color;
+    position: relative;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      color: $primary-color;
+      cursor: pointer;
+    }
+  }
+
+  &__number {
+    position: absolute;
+    top: 1rem;
+    font-size: $font-size-18;
+    font-weight: $font-weight-semibold;
+  }
+
+  &__text {
+    position: static;
+    text-align: center;
+    bottom: 1rem;
+    width: 100%;
+    left: 0;
+    font-size: $font-size-sm;
+    padding: 0 0.5rem;
+  }
+
+  @media (max-width: 480px) {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-left: 0;
+
+    &__button {
+      width: calc(50% - 0.5rem);
+      min-width: 120px;
+    }
+  }
+}
+
+/* 유저 정보 입력 폼 스타일 */
+.userForm {
+  max-width: 380px;
+  padding-left: 42px;
+
+  form {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+
+    background: $background-color;
+    border-radius: $radius-lg;
+    border: 1px solid $border-color;
+
+    input {
+      height: 48px;
+      padding: 0 1rem;
+      border: 1px solid $border-color;
+      border-radius: $radius-md;
+
+
+      &:focus {
+        border-color: $primary-color;
+        outline: none;
+      }
+    }
+
+    button {
+      height: 48px;
+      background: $primary-color;
+      color: $text-color;
+      border: none;
+
+      border-radius: $radius-md;
+      font-weight: $font-weight-medium;
+
+
+      &:hover {
+        background: $primary-hover-color;
+        cursor: pointer;
+        color: $white-color;
+      }
+
+      &:disabled {
+        background-color: #e9ecef; // 수정
+        cursor: not-allowed;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding-left: 42px;
+  }
+}
+
+/* 상단 공지 박스 */
+.notice {
+  position: absolute;
+  top: 10px;
+  left: 12px;
+  right: 12px;
+  z-index: 10;
+  background: $message-color;
+  border-radius: 14px;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 16px;
+    cursor: pointer;
+    color: $secondary-text-color;
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: $font-size-md;
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    padding: 12px 20px;
+  }
+
+  &__hideButton {
+    flex: 1;
+    padding: 8px 0;
+    background: transparent;
+    border: 1px solid rgba(0, 0, 0, .1);
+    border-radius: $radius-md;
+    font-size: $font-size-xs;
+    color: $icon-color;
+    cursor: pointer;
+
+    &:hover {
+      background: rgba(0, 0, 0, .05);
+    }
+  }
+
+  &__close {
+    font-size: $font-size-xs;
+    color: $icon-color;
+    background: none;
+    border: none;
+    padding: 4px 8px;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__arrow {
+    font-size: $font-size-22;
+    transition: transform .3s ease;
+
+    color: $text-color;
+
+
+    &.open {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__content {
+    padding: 0 16px 12px 20px;
+    font-size: $font-size-md;
+    line-height: 1.4;
+    color: $text-color;
+    background: $message-color;
+  }
+}
+
+/* 채용 공고 리스트 */
+.jobList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 16px;
+  width: 100%;
+}
+
+/* 개별 채용 공고 카드 */
+.jobCard {
+  background: $white-color;
+  border-radius: $radius-lg;
+  padding: 16px;
+  border: 1px solid $border-color;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  margin: 0;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &.selected {
+    border-color: $primary-color;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  &__details {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 12px;
+  }
+
+  // 상세 정보 영역
+  &__description {
+    display: none;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid $border-color;
+    
+    &.visible {
+      display: block;
+      animation: slideDown 0.3s ease;
+    }
+
+    p {
+      font-size: 15px;
+      line-height: 1.8;
+      color: $text-color;
+      margin-bottom: 16px;
+      padding: 0 4px;
+
+      // 구분된 정보 영역
+      &:not(:last-child) {
+        position: relative;
+        padding-left: 80px;
+        min-height: 24px;
+
+        // 정보 레이블
+        &::before {
+          content: attr(data-label);
+          position: absolute;
+          left: 4px;
+          color: $secondary-text-color;
+          font-weight: 500;
+          width: 70px;
+        }
+      }
+    }
+  }
+
+  &__footer {
+    display: none;
+    justify-content: flex-end;
+    margin-top: 24px;
+    padding-top: 16px;
+    border-top: 1px solid $border-color;
+    
+    &.visible {
+      display: flex;
+      animation: fadeIn 0.3s ease;
+    }
+  }
+
+  &__button {
+    padding: 8px 20px;
+    border: 1px solid $primary-color;
+    border-radius: 6px;
+    background: $primary-color;
+    color: $white-color;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+
+    &:hover {
+      background: color.adjust($primary-color, $lightness: -5%);
+      transform: translateY(-1px);
+    }
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+
+  &__location {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: $primary-color;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-medium;
+  }
+
+  &__company {
+    color: $secondary-text-color;
+    font-size: 14px;
+  }
+
+  &__title {
+    font-size: $font-size-md;
+    font-weight: $font-weight-semibold;
+    color: $text-title-color;
+    margin-bottom: 12px;
+    line-height: 1.4;
+  }
+
+  &__detail {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: $secondary-text-color;
+    font-size: $font-size-sm;
+
+    .icon {
+      color: $icon-color;
+    }
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* 채용 공고 상세보기 시 선택된 카드 */
+.selectedJobCard {
+  position: fixed; // 화면에 고정
+  bottom: 52px; // 채팅 입력바 위에 위치
+  left: 0;
+  right: 0;
+  background-color: #ffffff;
+  border-top: 1px solid $border-color;
+  padding: 16px;
+  z-index: 100;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+
+  &__title {
+    font-size: 16px;
+    font-weight: 600;
+    color: $text-color;
+  }
+
+  &__close {
+    padding: 4px 8px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: $secondary-text-color;
+    cursor: pointer;
+
+    &:hover {
+      color: $text-color;
+    }
+  }
+
+  &__content {
+    font-size: 14px;
+    line-height: 1.5;
+    color: $text-color;
+    margin-bottom: 12px;
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+  }
+
+  &__button {
+    padding: 6px 12px;
+    border: 1px solid $primary-color;
+    border-radius: 6px;
+    background: #fff;
+    color: $primary-color;
+    font-size: 14px;
+    cursor: pointer;
+
+    &:hover {
+      background: $primary-color;
+      color: #fff;
+    }
+  }
+}
+
+/* 선택된 채용공고 외 카드 흐리게(그레이스케일) */
+.grayscale {
+  opacity: 0.5;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+/* 닫기 버튼 공통 스타일 */
+.closeButton {
+
+  all: unset;
+  background-color: #f0ad4e;
+  color: white;
+  border-radius: 8px;
+  padding: 4px 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: #ec971f;
+  }
+}
+
+.processingTime {
+    font-size: 14px;
+    color: $secondary-text-color;
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.loadingBar {
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, 
+        $primary-color 0%, 
+        color.adjust($primary-color, $lightness: 20%) 50%, 
+        $primary-color 100%
+    );
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+    margin-bottom: 8px;
+    border-radius: 2px;
+}
+
+@keyframes loading {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+/* 훈련과정 리스트 */
+.trainingList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 16px;
+  width: 100%;
+}
+
+/* 훈련과정 카드 */
+.trainingCard {
+  background: $white-color;
+  border-radius: $radius-lg;
+  padding: 16px;
+  border: 1px solid $border-color;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  margin: 0;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &.selected {
+    border-color: $primary-color;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+
+  &__institute {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: $primary-color;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  &__location {
+    color: $secondary-text-color;
+    font-size: 14px;
+  }
+
+  &__title {
+    font-size: 16px;
+    font-weight: 600;
+    color: $text-color;
+    margin-bottom: 12px;
+    line-height: 1.4;
+  }
+
+  &__details {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 12px;
+  }
+
+  &__detail {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: $secondary-text-color;
+    font-size: 14px;
+
+    .icon {
+      color: $secondary-text-color;
+    }
+  }
+
+  &__description {
+    display: none;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid $border-color;
+    
+    &.visible {
+      display: block;
+      animation: slideDown 0.3s ease;
+    }
+
+    p {
+      font-size: 15px;
+      line-height: 1.8;
+      color: $text-color;
+      margin-bottom: 16px;
+      padding: 0 4px;
+
+      &[data-label]::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 4px;
+        color: $secondary-text-color;
+        font-weight: 500;
+        width: 70px;
+      }
+    }
+  }
+}
+

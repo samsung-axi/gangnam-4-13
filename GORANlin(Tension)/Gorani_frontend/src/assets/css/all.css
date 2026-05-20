@@ -1,0 +1,130 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: "Freesentation-9Black";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/2404@1.0/Freesentation-9Black.woff2")
+    format("woff2");
+  font-weight: 500;
+  font-style: normal;
+}
+
+/* 기본 요소 초기화 */
+body,
+div,
+p,
+dl,
+dt,
+ol,
+ul,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+form,
+input,
+select,
+textarea,
+button,
+fieldset,
+legend,
+table,
+thead,
+tbody,
+tfoot,
+tr,
+th,
+td,
+header,
+footer,
+main,
+nav,
+section,
+article,
+aside {
+  margin: 0;
+  padding: 0;
+}
+
+/* 리스트 스타일 초기화 */
+ul,
+ol {
+  list-style: none;
+}
+
+/* 텍스트 관련 초기화 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit; /* 상속된 폰트 사이즈 사용 */
+  font-weight: normal; /* 기본 폰트 두께 설정 */
+}
+
+/* 테이블 스타일 초기화 */
+table {
+  border-collapse: collapse; /* 테이블 경계 합치기 */
+}
+
+/* 기본 폼 요소 초기화 */
+input,
+button,
+textarea,
+select {
+  font-family: inherit; /* 폰트 패밀리 상속 */
+  font-size: inherit; /* 폰트 사이즈 상속 */
+  color: inherit;
+  /* 텍스트 색상 상속 */
+}
+
+/* 앵커 태그 초기화 */
+a {
+  text-decoration: none; /* 밑줄 제거 */
+  color: inherit; /* 부모 색상 상속 */
+}
+
+/* 기본 스크롤바 스타일 */
+body {
+  overflow-x: hidden; /* 가로 스크롤 제거 */
+  font-family: "Freesentation-9Black", Arial, sans-serif;
+}
+
+/* 기본 스크롤바 스타일 */
+::-webkit-scrollbar {
+  width: 6px; /* 세로 스크롤바 너비 */
+  height: 0; /* 가로 스크롤바 제거 */
+}
+
+/* 스크롤바 트랙 */
+::-webkit-scrollbar-track {
+  margin: 10px; /* 상하단 여백 추가 */
+}
+
+/* 스크롤바 핸들 */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    180deg,
+    #d9d9d9,
+    #a6a6a6
+  ); /* 부드러운 그라데이션 */
+  border-radius: 10px; /* 둥근 모서리 */
+  transition: background 0.2s ease; /* 색상 전환 애니메이션 */
+}
+
+/* 스크롤바 핸들 hover 효과 */
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(
+    180deg,
+    #a6a6a6,
+    #7d7d7d
+  ); /* hover 시 더 강렬한 그라데이션 */
+}
+
+/* 스크롤바 코너 (세로 및 가로 스크롤이 만나는 부분) */
+::-webkit-scrollbar-corner {
+  background: transparent; /* 코너를 투명하게 처리 */
+}

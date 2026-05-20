@@ -1,0 +1,130 @@
+.time_bar_container {
+  width: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 12px;
+  background-color: var(--white);
+  margin-top: 50px;
+  z-index: 1;
+}
+
+.time_bar {
+  position: relative;
+  width: 2px;
+  height: 100%;
+  background-color: var(--grey-3);
+  margin: 10px 0;
+}
+
+.time_marks {
+  position: absolute;
+  left: 50%;
+  transform: translateX(50%);
+  width: 20px;
+  height: 100%;
+}
+
+.time_mark {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  font-size: var(--font-size-7);
+  color: var(--text-sub);
+}
+
+.time_mark.line::before{
+  content: '';
+  position: absolute;
+  width: 15px;
+  height: 2px;
+  background-color: var(--grey-3);
+}
+
+.time_text {
+  font-size: var(--font-size-4);
+  margin-right: 20px;
+}
+
+.marker_container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  transform: translateX(-19px);
+}
+
+.spot_marker {
+  position: absolute;
+  right: -15px;
+  width: 12px;
+  height: 12px;
+  background-color: var(--main-color-1);
+  border-radius: 50%;
+  z-index: 2;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 0 4px rgba(var(--main-color-1-rgb), 0.2);
+}
+
+.spot_info {
+  position: absolute;
+  left: 40px;
+  background-color: var(--white);
+  padding: 8px 12px;
+  border-radius: 8px;
+  box-shadow: var(--shadow-1);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  min-width: 150px;
+  z-index: 3;
+}
+
+.marker_container:hover .spot_marker {
+  transform: scale(1.2);
+  box-shadow: 0 0 0 6px rgba(var(--main-color-1-rgb), 0.3);
+}
+
+.marker_container:hover .spot_info {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-10px);
+}
+
+.spot_name {
+  font-size: var(--font-size-4);
+  font-weight: var(--bold);
+  color: var(--text-main);
+  margin-bottom: 4px;
+}
+
+.spot_time {
+  font-size: var(--font-size-5);
+  color: var(--text-sub);
+}
+
+@media (max-width: 768px) {
+  .spot_marker {
+    width: 10px;
+    height: 10px;
+  }
+  
+  .time_text {
+    font-size: var(--font-size-6);
+    margin-right: 15px;
+  }
+
+  .spot_info {
+    right: 15px;
+    padding: 6px 10px;
+    min-width: 120px;
+  }
+
+  .spot_name {
+    font-size: var(--font-size-6);
+  }
+
+  .spot_time {
+    font-size: var(--font-size-7);
+  }
+}

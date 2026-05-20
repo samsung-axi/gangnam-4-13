@@ -1,0 +1,64 @@
+name: Deploy to Elastic Beanstalk
+
+on:
+  push:
+    branches:
+#      - dev      # 개발용
+       - main
+env:
+  EB_APP_NAME: ${{ secrets.EB_APP_NAME }}
+  EB_ENV_NAME: ${{ secrets.EB_ENV_NAME }}
+  S3_BUCKET:   ${{ secrets.S3_BUCKET }}
+  VERSION_LABEL: ${{ github.sha }}-${{ github.run_id }}-${{ github.run_attempt }}
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          distribution: temurin
+          java-version: 17
+
+      - name: Build JAR
+        run: ./gradlew clean bootJar
+
+      - name: Package artifact
+        run: |
+          mkdir -p deploy
+          cp build/libs/*.jar deploy/app.jar
+          echo "web: java -jar app.jar" > deploy/Procfile
+          cd deploy
+          zip -r ../deploy.zip .
+
+      - name: List full JAR contents for debugging
+        run: |
+          echo "=== JAR CONTENTS ==="
+          unzip -l deploy/app.jar
+
+      - name: Configure AWS creds
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          aws-access-key-id:     ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region:            ${{ secrets.AWS_REGION }}
+
+      - name: Upload to S3
+        run: aws s3 cp deploy.zip s3://$S3_BUCKET/deploy.zip
+
+      - name: Create EB application version
+        run: |
+          aws elasticbeanstalk create-application-version \
+            --application-name $EB_APP_NAME \
+            --version-label $VERSION_LABEL \
+            --source-bundle S3Bucket=$S3_BUCKET,S3Key=deploy.zip
+
+      - name: Update EB environment
+        run: |
+          aws elasticbeanstalk update-environment \
+            --environment-name $EB_ENV_NAME \
+            --version-label $VERSION_LABEL

@@ -1,0 +1,133 @@
+.WS-TitleEditModal-Content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 30px 20px 0px 20px;
+
+  border-radius: var(--border-radius-xl);
+
+  width: 80%;
+  max-width: 380px;
+  height: 35%;
+  max-height: 260px;
+
+  background-color: white;
+}
+
+.WS-TitleEditModal-Text-Container {
+  text-align: left;
+}
+
+.WS-TitleEditModal-header-Container {
+  margin-bottom: 4%;
+  width: 100%;
+}
+
+.HG-modal-title {
+  position: relative;
+  left: -18.5%;
+
+  font-size: var(--font-size-xl);
+  font-weight: bold;
+  color: var(--color-dark-gray);
+}
+
+.WS-TitleEditModal-Body-Container {
+  margin-bottom: 10%;
+  width: 100%;
+}
+
+.WS-TitleEditModal-date-Container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.WS-TitleEditModal-title {
+  margin-right: 10px;
+
+  font-size: var(--font-size-base);
+  font-weight: bold;
+  color: var(--color-dark-gray);
+}
+
+.WS-TitleEditModal-Date-input {
+  width: 40px;
+
+  padding: 10px 10px 10px 15px;
+
+  text-align: left;
+  font-weight: bold;
+  font-size: var(--font-size-base);
+  color: var(--color-guide);
+
+  border-radius: var(--border-radius-full);
+  border: 2px solid var(--color-guide);
+}
+
+.WS-TitleEditModal-Date-input:focus {
+  outline: none;
+}
+
+.WS-TitleEditModal-Date-Reset-Button {
+  position: relative;
+  right: 30px;
+  top: 2px;
+
+  background: none;
+  border: none;
+
+  color: var(--color-guide);
+}
+
+.WS-TitleEditModal-Edit-Container {
+  display: flex;
+  align-items: center;
+}
+
+.WS-TitleEditModal-input {
+  margin-left: 15px;
+  width: 150px;
+
+  padding: 10px 30px 5px 10px;
+
+  font-weight: bold;
+  font-size: var(--font-size-base);
+  color: var(--color-guide);
+
+  border: none;
+  border-bottom: 1px solid #48B569;
+}
+
+.WS-TitleEditModal-input:focus {
+  outline: none;
+}
+
+.WS-TitleEditModal-Button-Container {
+  display: flex;
+  align-items: center;
+
+  width: 110%;
+  height: 100%;
+  border-top: 2px solid var(--color-light-gray);
+}
+
+.WS-TitleEditModal-Button {
+  width: 100%;
+  height: 100%;
+
+  text-align: center;
+
+  background: none;
+  border: none;
+
+  font-size: var(--font-size-base);
+  font-weight: bold;
+  color: var(--color-guide);
+}
+
+.WS-TitleEditModal-Button:last-child {
+  border-left: 2px solid var(--color-light-gray);
+  color: var(--color-dark-gray);
+}

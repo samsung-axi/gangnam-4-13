@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Batang&family=Gowun+Dodum&family=Hahmlet:wght@100..900&family=Nanum+Gothic&family=Noto+Serif+KR:wght@200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+.container {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background: #EFEDED;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+}
+
+.logo {
+    padding-top: 15px;
+    max-width: 150px;
+    max-height: 150px;
+    margin: 0 auto;
+    display: block;
+    translate: -10px -40px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.mainTitle {
+    font-family: "Nanum Myeongjo", serif;
+    width: 100%;
+    text-align: center;
+    margin: 20px 0 0 0;
+    font-size: 24px;
+    transform: translateY(-100px);
+}
+
+.categoryTag {
+    font-family: 'GowunBatang';
+    font-size: 20px;
+    text-align: center;
+    transform: translateY(-80px);
+    margin: 0px 0;
+}
+
+.diffuserGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 280px);
+    gap: 150px;
+    width: 1040px;
+    margin: 20px auto;
+    justify-content: center;
+    transform: translateY(-50px) translateX(-20px);  /* Y축 이동에 X축 이동 추가 */
+}
+
+/* 디버깅을 위한 임시 스타일 */
+/* .container::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background-color: red;
+    z-index: 1000;
+} */
+
+.diffuserCard {
+    position: relative;
+    width: 280px;
+    /* 고정 너비 */
+    height: 380px;
+    /* 고정 높이 */
+    background: #FFFFFF;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+
+.cardFront {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.diffuserImage {
+    width: 200px;
+    height: 240px;
+    object-fit: contain;
+    margin-bottom: 20px;
+    margin: 0 auto;
+}
+
+.divider {
+    width: 100%;
+    height: 1px;
+    background: #000000;
+    margin: 10px 0;
+}
+.diffuserBrand {
+    font-family: 'GowunBatang';
+    font-size: 13px;
+    text-align: center;
+    width: 100%;
+}
+
+.diffuserName {
+    font-family: 'GowunBatang';
+    font-size: 16px;
+    text-align: center;
+    width: 100%;
+}
+
+.diffuserDescription {
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.95);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    visibility: hidden;
+    border-radius: 20px;
+    padding: 20px;
+    overflow: hidden;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.diffuserCard:hover .diffuserDescription {
+    opacity: 1;
+    visibility: visible;
+}
+
+@keyframes fragranceWave {
+    0% {
+        transform: translate(-50%, -50%) scale(0.1);
+        opacity: 0.9;
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(3);
+        opacity: 0;
+    }
+}
+
+.diffuserDescription p {
+    position: relative;
+    z-index: 1;
+    font-family: 'GowunBatang';
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: center;
+    margin: 0;
+    word-break: keep-all;
+    width: 100%;
+}
+
+.routineBox {
+    width: fit-content;     /* 내용에 맞게 너비 자동 조절 */
+    min-width: 500px;       /* 최소 너비 설정 */
+    max-width: 1500px;      /* 최대 너비 설정 */
+    margin: 0px auto;     /* 상하 여백 유지 */
+    padding: 15px 50px;     /* 좌우 패딩 늘림 */
+    border: 1px solid #000000;
+    background: #EFEDED;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    position: absolute;     /* 절대 위치 설정 */
+    left: 50%;             /* 왼쪽에서 50% */
+    transform: translateX(-50%);  /* 중앙 정렬 보정 */
+    bottom: 80px;          /* 하단에서의 거리 */
+}
+
+.routineText {
+    font-family: 'GowunBatang';
+    font-size: 20px;
+    line-height: 40px;
+    text-align: center;
+    white-space: pre-wrap;  /* 줄바꿈 유지 */
+    margin: 0;
+    padding: 0;
+    font-weight: 600;
+}

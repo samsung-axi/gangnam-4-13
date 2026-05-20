@@ -1,0 +1,386 @@
+.dress-selection {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: white;
+    padding: 12px 0 0;
+    overflow: hidden;
+}
+
+/* 카테고리 버튼 컨테이너 */
+.category-buttons-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    padding: 0 16px;
+    flex-shrink: 0;
+    justify-content: center;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: visible;
+}
+
+/* 카테고리 네비게이션 버튼 */
+.category-nav-button {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 2px solid #f4acb7;
+    background: white;
+    color: #f4acb7;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    line-height: 1;
+    padding: 0 0 3px 0;
+}
+
+.category-nav-button:hover:not(:disabled) {
+    background: #f4acb7;
+    color: white;
+    transform: scale(1.1);
+}
+
+.category-nav-button:disabled {
+    opacity: 0.3;
+    cursor: default;
+}
+
+/* 카테고리 버튼 스타일 */
+.category-buttons {
+    display: flex;
+    gap: 12px;
+    flex: 1;
+    min-width: 0;
+    justify-content: center;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: visible;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding: 4px 0;
+}
+
+.category-buttons::-webkit-scrollbar {
+    display: none;
+}
+
+.category-button {
+    padding: 10px 20px;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text-dark);
+    background: white;
+    border: 2px solid #e5e5e5;
+    border-radius: 24px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.category-button:hover {
+    border-color: #f4acb7;
+    background: rgba(236, 72, 153, 0.05);
+}
+
+.category-button.active {
+    background: #f4acb7;
+    color: white;
+    border-color: #f4acb7;
+}
+
+/* 커스텀 메시지 */
+.custom-message {
+    padding: 80px 20px;
+    text-align: center;
+    color: var(--text-light);
+    font-size: 16px;
+    width: 100%;
+}
+
+/* 드레스 컨텐츠 래퍼 */
+.dress-content-wrapper {
+    position: relative;
+    flex: 1 1 auto;
+    min-height: 0;
+    height: 100%;
+    display: flex;
+    gap: 16px;
+    padding-right: 8px;
+    padding-left: 50px;
+}
+
+/* 드레스 그리드 컨테이너 - 세로 스크롤 숨김 */
+.dress-grid-container {
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 0 20px 20px;
+    flex: 1 1 auto;
+    min-height: 0;
+    height: 100%;
+    /* 스크롤바 숨김 */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.dress-grid-container::-webkit-scrollbar {
+    display: none;
+}
+
+.dress-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    align-items: center;
+}
+
+.dress-card {
+    position: relative;
+    width: 60%;
+    padding-top: 40%;
+    background: var(--bg-white);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    cursor: grab;
+    transition: var(--transition);
+    box-shadow: var(--shadow-sm);
+    border: 3px solid transparent;
+    flex-shrink: 0;
+}
+
+.dress-card:active {
+    cursor: grabbing;
+}
+
+.dress-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.dress-card:hover .drag-hint {
+    opacity: 1;
+}
+
+.dress-card.selected {
+    border-color: #f4acb7;
+    box-shadow: var(--shadow-lg);
+}
+
+.dress-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.dress-card:hover .dress-image {
+    transform: scale(1.05);
+}
+
+.selected-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #f4acb7;
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: bold;
+    box-shadow: var(--shadow-md);
+    animation: popIn 0.3s ease;
+    z-index: 1;
+}
+
+.drag-hint {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.75);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 2;
+    pointer-events: none;
+}
+
+@keyframes popIn {
+    0% {
+        transform: scale(0);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+/* 세로 슬라이더 */
+.vertical-slider {
+    position: relative;
+    width: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+    padding: 10px 0;
+}
+
+.slider-arrow {
+    width: 32px;
+    height: 32px;
+    background: white;
+    border: 2px solid #f4acb7;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: #f4acb7;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.slider-arrow:hover {
+    background: #f4acb7;
+    color: white;
+    transform: scale(1.1);
+}
+
+.slider-arrow:active {
+    transform: scale(0.95);
+}
+
+.slider-track {
+    flex: 1;
+    width: 4px;
+    background: #e5e5e5;
+    border-radius: 2px;
+    position: relative;
+    min-height: 100px;
+}
+
+.slider-handle {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #f4acb7;
+    border: 3px solid white;
+    border-radius: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: grab;
+    box-shadow: 0 2px 8px rgba(236, 72, 153, 0.3);
+    transition: all 0.2s ease;
+}
+
+.slider-handle:hover {
+    transform: translate(-50%, -50%) scale(1.2);
+    box-shadow: 0 4px 12px rgba(236, 72, 153, 0.5);
+}
+
+.slider-handle:active {
+    cursor: grabbing;
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+
+@media (max-width: 768px) {
+    .dress-selection {
+        padding: 12px 0 0;
+    }
+
+    .category-buttons-wrapper {
+        gap: 8px;
+        margin-bottom: 16px;
+        padding: 0 12px;
+    }
+
+    .category-nav-button {
+        width: 32px;
+        height: 32px;
+        font-size: 20px;
+        padding: 0 0 2px 0;
+    }
+
+    .category-buttons {
+        gap: 6px;
+        padding: 2px 0;
+    }
+
+    .category-button {
+        padding: 8px 14px;
+        font-size: 13px;
+    }
+
+    .dress-content-wrapper {
+        gap: 8px;
+        padding-right: 4px;
+    }
+
+    .dress-grid-container {
+        padding: 0 12px 12px;
+    }
+
+    .dress-grid {
+        gap: 8px;
+    }
+
+    .dress-card {
+        width: 80%;
+        padding-top: 45%;
+    }
+
+    .selected-badge {
+        width: 26px;
+        height: 26px;
+        font-size: 14px;
+        top: 8px;
+        right: 8px;
+    }
+
+    .vertical-slider {
+        width: 30px;
+        padding: 8px 0;
+        gap: 6px;
+    }
+
+    .slider-arrow {
+        width: 26px;
+        height: 26px;
+        font-size: 12px;
+    }
+
+    .slider-handle {
+        width: 16px;
+        height: 16px;
+        border-width: 2px;
+    }
+}

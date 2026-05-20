@@ -1,0 +1,210 @@
+{% extends "base.html" %}
+
+{% block title %}비윤리/스팸지수 평가 - Community Admin{% endblock %}
+
+{% block extra_css %}
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<div class="ethics-analyze-container">
+    <!-- 헤더 -->
+    <div class="ethics-analyze-header">
+        <h1><i class="fas fa-search"></i> 비윤리/스팸지수 분석기</h1>
+        <p>텍스트를 입력하면 실시간으로 비윤리성과 스팸 여부를 분석합니다</p>
+    </div>
+
+    <!-- 입력 섹션 -->
+    <div class="ethics-input-section">
+        <div class="input-group">
+            <label for="textInput">분석할 텍스트를 입력하세요</label>
+            <textarea 
+                id="textInput" 
+                class="text-input" 
+                placeholder="예: 너 정말 멍청하구나&#10;또는&#10;안녕하세요, 좋은 아침입니다!"
+                maxlength="1000"
+            ></textarea>
+            <div class="char-count">
+                <span id="charCount">0</span> / 1000자
+            </div>
+        </div>
+        
+        <div class="options-group">
+            <button id="analyzeBtn" class="btn btn-primary">
+                <i class="fas fa-search"></i>
+                분석하기
+            </button>
+            <button id="detailBtn" class="btn btn-secondary" style="display:none;">
+                <i class="fas fa-info-circle"></i>
+                상세분석
+            </button>
+        </div>
+        
+        <div id="errorMessage" class="error-message"></div>
+    </div>
+
+    <!-- 로딩 스피너 -->
+    <div id="loadingSpinner" class="loading-spinner">
+        <div class="spinner"></div>
+        <p>분석 중입니다...</p>
+    </div>
+
+    <!-- 결과 섹션 -->
+    <div id="resultSection" class="ethics-result-section">
+        <div class="result-header">
+            <h3><i class="fas fa-chart-bar"></i> 분석 결과</h3>
+            <div class="analysis-time" id="analysisTime"></div>
+        </div>
+        
+        <div class="score-display">
+            <div id="scoreCard" class="score-card">
+                <div class="score-label">비윤리점수 (신뢰도)</div>
+                <div class="score-value" id="scoreValue">-</div>
+                <div class="score-unit">/ 100</div>
+            </div>
+            
+            <div id="spamCard" class="score-card">
+                <div class="score-label">스팸지수 (신뢰도)</div>
+                <div class="score-value" id="spamValue">-</div>
+                <div class="score-unit">/ 100</div>
+            </div>
+        </div>
+        
+        <div class="types-section">
+            <div class="types-label">감지된 유형</div>
+            <div class="types-container" id="typesContainer">
+                <!-- 유형 태그들이 여기에 동적으로 추가됩니다 -->
+            </div>
+        </div>
+        
+        <div id="recommendation" class="recommendation">
+            <!-- 추천 사항이 여기에 동적으로 추가됩니다 -->
+        </div>
+
+        <div id="ragSummary" class="rag-summary" style="display:none;">
+            <div class="rag-summary-header">
+                <h4><i class="fas fa-link"></i> RAG 기반 보정</h4>
+                <span id="ragSummaryStatus" class="rag-status-chip">데이터 준비 중</span>
+            </div>
+            <div class="rag-summary-metrics">
+                <div class="rag-summary-metric">
+                    <span class="metric-label">유사 사례</span>
+                    <span class="metric-value" id="ragSummaryCount">-</span>
+                </div>
+                <div class="rag-summary-metric">
+                    <span class="metric-label">최대 유사도</span>
+                    <span class="metric-value" id="ragSummaryMaxSim">-</span>
+                </div>
+                <div class="rag-summary-metric">
+                    <span class="metric-label">보정 가중치</span>
+                    <span class="metric-value" id="ragSummaryWeight">-</span>
+                </div>
+                <div class="rag-summary-metric">
+                    <span class="metric-label">보정 점수</span>
+                    <span class="metric-value" id="ragSummaryAdjustedScore">-</span>
+                </div>
+            </div>
+            <p id="ragSummaryText" class="rag-summary-text"></p>
+            <ul id="ragSummaryCases" class="rag-summary-cases"></ul>
+        </div>
+        
+        <!-- 상세 분석 섹션 -->
+        <div id="detailSection" class="detail-analysis-section" style="display:none;">
+            <div class="detail-header">
+                <h4><i class="fas fa-microscope"></i> 상세 분석 결과</h4>
+            </div>
+            
+            <div class="detail-content">
+                <!-- 비윤리 점수 상세 -->
+                <div class="detail-card">
+                    <h5>비윤리 점수 계산</h5>
+                    <div class="detail-row">
+                        <span>BERT 모델 점수 <br>(신뢰도):</span>
+                        <span><span id="detailBertScore">-</span> <small class="confidence-text">(<span id="detailBertConf">-</span>)</small></span>
+                    </div>
+                    <div class="detail-row">
+                        <span>LLM 모델 점수 <br>(신뢰도):</span>
+                        <span><span id="detailLlmScore">-</span> <small class="confidence-text">(<span id="detailLlmConf">-</span>)</small></span>
+                    </div>
+                    <div class="detail-row">
+                        <span>욕설 부스트:</span>
+                        <span id="detailProfanityBoost">-</span>
+                    </div>
+                    <div class="detail-formula">
+                        계산식: (BERT × <span id="detailBertWeight">-</span>) + (LLM × <span id="detailLlmWeight">-</span>) + 욕설부스트
+                    </div>
+                    <div class="detail-result">
+                        = <span id="detailBaseScore">-</span> + <span id="detailProfanityBoost2">-</span> = <span id="detailFinalScore">-</span>
+                    </div>
+                </div>
+                
+                <!-- 스팸 점수 상세 -->
+                <div class="detail-card">
+                    <h5>스팸 점수 계산</h5>
+                    <div class="detail-row">
+                        <span>LLM 스팸 점수:</span>
+                        <span id="detailLlmSpam">-</span>
+                    </div>
+                    <div class="detail-row">
+                        <span>규칙 기반 점수:</span>
+                        <span id="detailRuleSpam">-</span>
+                    </div>
+                    <div class="detail-formula">
+                        계산식: (LLM × <span id="detailSpamLlmWeight">-</span>) + (규칙 × <span id="detailSpamRuleWeight">-</span>)
+                    </div>
+                    <div class="detail-result">
+                        = <span id="detailFinalSpam">-</span>
+                    </div>
+                </div>
+
+                <!-- RAG 상세 -->
+                <div class="detail-card" id="ragDetailCard" style="display:none;">
+                    <h5>RAG 기반 보정</h5>
+                    <div class="detail-row">
+                        <span>RAG 활성화:</span>
+                        <span id="detailRagEnabled">-</span>
+                    </div>
+                    <div class="detail-row">
+                        <span>보정 적용 여부:</span>
+                        <span id="detailRagApplied">-</span>
+                    </div>
+                    <div class="detail-row">
+                        <span>보정 가중치:</span>
+                        <span id="detailRagWeight">-</span>
+                    </div>
+                    <div class="detail-row">
+                        <span>유사 사례 개수:</span>
+                        <span id="detailRagCount">-</span>
+                    </div>
+                    <div class="detail-row">
+                        <span>최대 유사도:</span>
+                        <span id="detailRagMaxSim">-</span>
+                    </div>
+                    <div class="detail-row">
+                        <span>보정된 비윤리 점수:</span>
+                        <span id="detailRagAdjustedScore">-</span>
+                    </div>
+                    <div class="detail-row">
+                        <span>보정된 스팸 점수:</span>
+                        <span id="detailRagAdjustedSpam">-</span>
+                    </div>
+                    <div class="rag-detail-cases" id="detailRagCases">
+                        <!-- 유사 사례 목록 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 네비게이션 링크 -->
+    <div class="nav-links">
+        <a href="/ethics_dashboard"><i class="fas fa-list"></i> 로그 대시보드</a>
+        <a href="/docs" target="_blank"><i class="fas fa-book"></i> API 문서</a>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', path='/js/ethics_analyze.js') }}"></script>
+{% endblock %}
+

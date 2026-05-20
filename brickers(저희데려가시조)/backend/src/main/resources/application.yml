@@ -1,0 +1,149 @@
+server:
+  port: 8080
+  forward-headers-strategy: framework
+
+spring:
+  application:
+    name: brickers-api
+  
+  config:
+    import: "optional:file:.env[.properties]"
+
+  mongodb:
+    uri: ${PRIMARY_MONGODB_URI}
+    auto-index-creation: true
+
+  servlet:
+    multipart:
+      max-file-size: 500MB
+      max-request-size: 500MB
+
+  jackson:
+    time-zone: Asia/Seoul
+    date-format: yyyy-MM-dd HH:mm:ss
+
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: ${GOOGLE_CLIENT_ID}
+            client-secret: ${GOOGLE_CLIENT_SECRET}
+            scope: profile, email
+            redirect-uri: ${GOOGLE_REDIRECT_URI}
+          kakao:
+            client-id: ${KAKAO_CLIENT_ID}
+            client-secret: ${KAKAO_CLIENT_SECRET}
+            client-authentication-method: client_secret_post
+            authorization-grant-type: authorization_code
+            redirect-uri: ${KAKAO_REDIRECT_URI}
+            scope: profile_nickname, profile_image, account_email
+            client-name: Kakao
+        provider:
+          kakao:
+            authorization-uri: https://kauth.kakao.com/oauth/authorize
+            token-uri: https://kauth.kakao.com/oauth/token
+            user-info-uri: https://kapi.kakao.com/v2/user/me
+            user-name-attribute: id
+
+# ✅ 커스텀 앱 설정 (들여쓰기 주의: app이 최상위)
+app:
+  front-base-url: ${FRONT_BASE_URL:http://localhost:3000}
+  generated-path: ${GENERATED_FILES_PATH:../brickers-ai/public/generated}
+  cookie:
+    secure: ${COOKIE_SECURE:false}    # 로컬은 false, 배포는 true
+    same-site: ${COOKIE_SAMESITE:Lax} # 로컬 Lax, 배포 None
+  
+  # 업로드 설정
+  upload:
+    # LOCAL or S3 (환경변수로 분기)
+    provider: ${UPLOAD_PROVIDER:LOCAL}
+    public-base-url: ${UPLOAD_PUBLIC_BASE_URL:http://localhost:8080/uploads}
+    # 로컬 저장소 설정
+    local:
+      root-dir: ${LOCAL_UPLOAD_ROOT_DIR:./uploads}
+      public-prefix: ${LOCAL_UPLOAD_PUBLIC_PREFIX:/uploads}
+    # S3 설정
+    s3:
+      bucket: ${AWS_S3_BUCKET:brickers-s3-bucket}
+      region: ${AWS_REGION:ap-northeast-2}
+      access-key: ${AWS_ACCESS_KEY_ID:}
+      secret-key: ${AWS_SECRET_ACCESS_KEY:}
+      presign-exp-seconds: ${AWS_PRESIGN_EXP_SECONDS:120}
+      key-prefix: ${AWS_S3_KEY_PREFIX:uploads}
+      max-bytes: ${UPLOAD_MAX_BYTES:52428800}
+      allowed-content-types: image/png,image/jpeg,image/webp,image/avif,application/octet-stream,text/plain
+
+# ✅ Gallery SEO Revalidate 설정
+gallery:
+  revalidate:
+    enabled: ${GALLERY_REVALIDATE_ENABLED:false}
+    url: ${GALLERY_REVALIDATE_URL:https://brickers.shop/gallery/api/revalidate}
+    secret: ${GALLERY_REVALIDATE_SECRET:your-secret-token}
+
+# ✅ AI 서버 설정 (들여쓰기 주의: ai가 최상위)
+ai:
+  server:
+    # 환경변수 AI_SERVER_URL이 없으면 기본값 localhost:8000 사용
+    url: ${AI_SERVER_URL:http://localhost:8000}
+
+# ✅ AWS 설정 (들여쓰기 주의: aws가 최상위)
+aws:
+  region: ${AWS_REGION:ap-northeast-2}
+  accessKeyId: ${AWS_ACCESS_KEY_ID:}
+  secretAccessKey: ${AWS_SECRET_ACCESS_KEY:}
+  sqs:
+    enabled: ${AWS_SQS_ENABLED:false}
+    queue:
+      request-url: ${AWS_SQS_REQUEST_QUEUE_URL:}  # Backend → AI (REQUEST)
+      result-url: ${AWS_SQS_RESULT_QUEUE_URL:}    # AI → Backend (RESULT)
+    polling:
+      fixed-delay: 5000        # 5초마다 폴링
+      initial-delay: 10000     # 시작 10초 후
+      max-messages: 10         # 배치 크기
+      wait-time: 10            # Long polling
+
+# ✅ Google Analytics 설정
+google:
+  analytics:
+    property-id: ${GA4_PROPERTY_ID:}
+    credentials-json: ${GA4_CREDENTIALS_JSON:}
+
+openai:
+  api-key: ${APP_OPENAI_API_KEY}
+
+jwt:
+  secret: ${JWT_SECRET}
+  access-expiration: ${JWT_ACCESS_EXPIRATION:3600000}
+  refresh-expiration: ${JWT_REFRESH_EXPIRATION:604800000}
+
+logging:
+  level:
+    "[org.springframework.data.mongodb.core.MongoTemplate]": DEBUG
+    "[org.springframework.data.mongodb.core.index]": DEBUG
+    "[org.springframework.security]": DEBUG
+    "[org.springframework.security.oauth2]": DEBUG
+    "[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]": DEBUG
+
+springdoc:
+  swagger-ui:
+    path: /swagger
+    operationsSorter: method
+    tagsSorter: alpha
+    display-request-duration: true
+  api-docs:
+    path: /v3/api-docs
+  default-produces-media-type: application/json
+  default-consumes-media-type: application/json
+
+management:
+  endpoint:
+    health:
+      show-details: when-authorized
+    web:
+      exposure:
+        include: health,info
+  
+  health:
+    mongodb:
+      enabled: false

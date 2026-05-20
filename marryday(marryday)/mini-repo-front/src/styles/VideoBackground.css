@@ -1,0 +1,174 @@
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    overflow: hidden;
+    animation: fadeInVideo 1s ease-in;
+}
+
+@keyframes fadeInVideo {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.video-background-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    /* 천천히 재생되도록 */
+    filter: brightness(1);
+}
+
+/* 검은색 오버레이 - 살짝 어둡게 */
+.video-background-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.40);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* 텍스트 오버레이 */
+.video-text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    text-align: center;
+    width: 90%;
+    max-width: 1000px;
+}
+
+/* 인트로 스킵 시 딜레이 제거 */
+.video-text-overlay.no-delay .video-text-line1,
+.video-text-overlay.no-delay .video-text-line2,
+.video-text-overlay.no-delay .video-fitting-button {
+    animation-delay: 0s;
+}
+
+.video-text-line1,
+.video-text-line2 {
+    color: white;
+    text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.6);
+    margin: 0;
+    opacity: 0;
+    animation: slideInText 1.5s ease-out forwards;
+}
+
+.video-text-line1 {
+    font-family: 'Gowun Batang', 'Noto Sans KR', serif;
+    font-size: 40px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    margin-bottom: 24px;
+    animation-delay: 0.5s;
+}
+
+.video-text-line2 {
+    font-family: 'Cormorant Garamond', 'Gowun Batang', serif;
+    font-size: 26px;
+    font-weight: 300;
+    letter-spacing: 3px;
+    animation-delay: 1s;
+    font-style: italic;
+}
+
+@keyframes slideInText {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 피팅하러 가기 버튼 */
+.video-fitting-button {
+    margin-top: 40px;
+    padding: 16px 48px;
+    background-color: transparent;
+    border: 2px solid white;
+    border-radius: 50px;
+    color: white;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    animation: slideInText 1.5s ease-out forwards;
+    animation-delay: 1.5s;
+    transition: color 0.4s ease;
+    z-index: 1;
+}
+
+.video-fitting-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+    z-index: -1;
+}
+
+.video-fitting-button:hover::before {
+    transform: scaleX(1);
+}
+
+.video-fitting-button:hover {
+    color: black;
+}
+
+/* 모바일에서도 잘 보이도록 */
+@media (max-width: 768px) {
+    .video-background-video {
+        min-width: 100%;
+        min-height: 100%;
+    }
+
+    .video-text-line1 {
+        font-size: 32px;
+        margin-bottom: 16px;
+        letter-spacing: 1px;
+    }
+
+    .video-text-line2 {
+        font-size: 20px;
+        letter-spacing: 2px;
+    }
+
+    .video-fitting-button {
+        margin-top: 30px;
+        padding: 14px 36px;
+        font-size: 16px;
+        letter-spacing: 1.5px;
+    }
+}

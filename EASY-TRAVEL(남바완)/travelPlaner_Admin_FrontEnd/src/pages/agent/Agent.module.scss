@@ -1,0 +1,66 @@
+.agent {
+  &_container {
+    display: flex;
+    flex-direction: column;
+    gap: 1%;
+    width: 100%;
+    position: relative;
+    min-height: 100vh;
+  }
+
+  &_content_container {
+    padding: 7% 7%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  &_title_container {
+    flex: 0 1 5%;
+    margin-bottom: 25px;
+  }
+
+  &_title {
+    font-size: 2em;
+    font-weight: bolder;
+  }
+
+  &_main_content_container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  @media screen and (min-width: 768px) {
+    &_content_container {
+      padding: 3% 7%;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    &_title_container {
+      flex: 0 1 5%;
+      margin-bottom: 30px;
+    }
+
+    &_main_content_container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto auto;
+      gap: 20px;
+    }
+    &_main_content_container > *:first-child {
+      grid-column: 1 / -1; // 전체 너비를 차지하도록 설정
+      font-size: 1.2em;
+
+      .card_content {
+        height: 300px;
+        width: 100%;
+      }
+    }
+
+  }
+}

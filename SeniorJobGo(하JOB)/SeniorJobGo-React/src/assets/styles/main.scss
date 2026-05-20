@@ -1,0 +1,20 @@
+@use './fonts';
+@use '@assets/styles/_variables' as *;
+@import url('https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css');
+
+body {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 400;
+}
+
+// 전역 선택 스타일 설정
+::selection {
+  background: $primary-color;
+  color: $text-color;
+}
+
+// Firefox 브라우저 지원을 위한 설정
+::-moz-selection {
+  background: $primary-color;
+  color: $text-color;
+}

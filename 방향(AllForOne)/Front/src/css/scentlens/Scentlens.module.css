@@ -1,0 +1,187 @@
+/* 배경 테마 */
+.lens_scent_lens.default {
+    background: linear-gradient(to bottom, rgba(239, 237, 237, 0.7), #ffffff);
+}
+
+.lens_scent_lens.spicy {
+    background: linear-gradient(to bottom, rgba(255, 87, 87, 0.5), rgba(255, 87, 87, 0.3));
+}
+
+.lens_scent_lens.fruity {
+    background: linear-gradient(to bottom, rgba(255, 189, 67, 0.5), rgba(255, 189, 67, 0.3));
+}
+
+.lens_scent_lens.citrus {
+    background: linear-gradient(to bottom, rgba(255, 224, 67, 0.5), rgba(255, 224, 67, 0.3));
+}
+
+.lens_scent_lens.green {
+    background: linear-gradient(to bottom, rgba(98, 214, 106, 0.5), rgba(98, 214, 106, 0.3));
+}
+
+.lens_scent_lens.aldehyde {
+    background: linear-gradient(to bottom, rgba(152, 209, 255, 0.5), rgba(152, 209, 255, 0.3));
+}
+
+.lens_scent_lens.aquatic {
+    background: linear-gradient(to bottom, rgba(86, 210, 255, 0.5), rgba(86, 210, 255, 0.3));
+}
+
+.lens_scent_lens.fougere {
+    background: linear-gradient(to bottom, rgba(255, 217, 166, 0.5), rgba(255, 217, 166, 0.3));
+}
+
+.lens_scent_lens.gourmand {
+    background: linear-gradient(to bottom, rgba(161, 82, 44, 0.5), rgba(161, 82, 44, 0.3));
+}
+
+.lens_scent_lens.woody {
+    background: linear-gradient(to bottom, rgba(134, 57, 15, 0.5), rgba(134, 57, 15, 0.3));
+}
+
+.lens_scent_lens.oriental {
+    background: linear-gradient(to bottom, rgba(192, 97, 255, 0.5), rgba(192, 97, 255, 0.3));
+}
+
+.lens_scent_lens.floral {
+    background: linear-gradient(to bottom, rgba(255, 128, 193, 0.5), rgba(255, 128, 193, 0.3));
+}
+
+.lens_scent_lens.musk {
+    background: linear-gradient(to bottom, rgba(248, 228, 255, 0.5), rgba(248, 228, 255, 0.3));
+}
+
+.lens_scent_lens.powdery {
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.3));
+}
+
+.lens_scent_lens.amber {
+    background: linear-gradient(to bottom, rgba(255, 167, 90, 0.5), rgba(255, 167, 90, 0.3));
+}
+
+.lens_scent_lens.tobacco_leather {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3));
+}
+
+/* 메인 컨테이너 */
+.lens_scent_lens {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+/* 메인 섹션 */
+.main_section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 5vh;
+    flex: 1;
+}
+
+/* 제목 */
+.title_container h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 2rem;
+    font-family: 'Nanum Myeongjo', serif;
+}
+
+/* 버튼 컨테이너 */
+.button_container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0;
+    position: relative;
+    transform: translateY(-20px);
+}
+
+/* 더보기 버튼 스타일 */
+.more_button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: transparent;
+    color: black;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    border: none;
+}
+
+.more_button:hover {
+    background: #CDC6CE;
+    color: black;
+}
+
+/* 추가 향수 섹션 수정 */
+.additional_section {
+    width: 100%;
+    min-height: 100vh;
+    padding: 4rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: inherit;
+}
+
+.additional_section h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 1.8rem;
+    color: #333;
+    width: 100%;
+    font-family: 'Nanum Myeongjo', serif;
+}
+
+.additional_perfumes {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 1rem;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    margin-top: 30px;
+}
+
+/* 뒤로가기 버튼 스타일 */
+.back_button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.back_button:hover {
+    background: rgba(255, 255, 255, 1);
+}
+
+.back_image {
+    width: 20px;
+    height: 20px;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 1400px) {
+    .additional_perfumes {
+        justify-content: flex-start; /* 왼쪽 정렬로 변경 */
+        padding: 2rem 1rem;
+    }
+}

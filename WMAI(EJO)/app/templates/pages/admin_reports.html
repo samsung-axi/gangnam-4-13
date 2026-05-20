@@ -1,0 +1,1257 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>관리자 - 신고 관리</title>
+    <link rel="icon" type="image/png" href="{{ url_for('static', path='/img/sub_home.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/app.css') }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body { background-color: #F9FAFB; margin: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+        
+        /* 헤더 바 */
+        .header-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            padding: 12px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+        .header-bar .logo {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1F2937;
+            text-decoration: none;
+        }
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .user-name {
+            color: #374151;
+            font-weight: 500;
+        }
+        .btn-header {
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            border: none;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .btn-login {
+            background: #3B82F6;
+            color: white;
+        }
+        .btn-logout {
+            background: #EF4444;
+            color: white;
+        }
+        
+        /* 메인 컨테이너 */
+        .admin-container {
+            max-width: 1400px;
+            margin: 100px auto 40px;
+            padding: 0 20px;
+        }
+        
+        .admin-header {
+            margin-bottom: 30px;
+        }
+        
+        .admin-header h1 {
+            font-size: 32px;
+            color: #1F2937;
+            margin: 0 0 10px 0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .admin-header p {
+            color: #6B7280;
+            margin: 0;
+        }
+        
+        /* 필터 */
+        .filters {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        .filters select {
+            padding: 10px 15px;
+            border: 1px solid #D1D5DB;
+            border-radius: 8px;
+            background: white;
+            color: #374151;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        
+        .filters button {
+            padding: 10px 20px;
+            background: #3B82F6;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        
+        .filters button:hover {
+            background: #2563EB;
+        }
+        
+        /* 신고 테이블 */
+        .report-table {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        
+        .report-row {
+            border-bottom: 2px solid #E5E7EB;
+            padding: 24px;
+            transition: all 0.2s;
+            background: white;
+            margin-bottom: 0;
+        }
+        
+        .report-row:last-child {
+            border-bottom: none;
+        }
+        
+        .report-row:hover {
+            background: #F9FAFB;
+            cursor: pointer;
+            box-shadow: inset 0 0 0 1px #E5E7EB;
+        }
+        
+        .report-row:nth-child(even) {
+            background: #FAFBFC;
+        }
+        
+        .report-row:nth-child(even):hover {
+            background: #F3F4F6;
+        }
+        
+        .report-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 16px;
+        }
+        
+        .report-info {
+            flex: 1;
+        }
+        
+        .report-id {
+            color: #9CA3AF;
+            font-size: 13px;
+            margin-bottom: 8px;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+        }
+        
+        .report-title {
+            font-size: 17px;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+        
+        .report-content {
+            color: #4B5563;
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 12px;
+            padding: 14px 16px;
+            background: #F9FAFB;
+            border-radius: 8px;
+            border-left: 4px solid #D1D5DB;
+            max-height: 120px;
+            overflow-y: auto;
+            word-break: break-word;
+        }
+        
+        .report-meta {
+            display: flex;
+            gap: 20px;
+            font-size: 14px;
+            color: #6B7280;
+            margin-top: 8px;
+        }
+        
+        .report-actions {
+            display: flex;
+            gap: 8px;
+            align-items: start;
+        }
+        
+        /* 배지 */
+        .badge {
+            padding: 6px 14px;
+            border-radius: 16px;
+            font-size: 13px;
+            font-weight: 600;
+            display: inline-block;
+            letter-spacing: 0.2px;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+        }
+        
+        .badge-pending { background: #FEF3C7; color: #92400E; border: 1px solid #FDE68A; }
+        .badge-reviewing { background: #DBEAFE; color: #1E40AF; border: 1px solid #BFDBFE; }
+        .badge-completed { background: #D1FAE5; color: #065F46; border: 1px solid #A7F3D0; }
+        .badge-rejected { background: #FEE2E2; color: #991B1B; border: 1px solid #FECACA; }
+        
+        .badge-board { background: #E0E7FF; color: #3730A3; border: 1px solid #C7D2FE; }
+        .badge-comment { background: #FCE7F3; color: #831843; border: 1px solid #FBCFE8; }
+        
+        /* 버튼 */
+        .btn {
+            padding: 10px 18px;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        .btn-approve {
+            background: #10B981;
+            color: white;
+        }
+        
+        .btn-approve:hover {
+            background: #059669;
+            box-shadow: 0 4px 8px rgba(16, 185, 129, 0.3);
+            transform: translateY(-1px);
+        }
+        
+        .btn-reject {
+            background: #EF4444;
+            color: white;
+        }
+        
+        .btn-reject:hover {
+            background: #DC2626;
+            box-shadow: 0 4px 8px rgba(239, 68, 68, 0.3);
+            transform: translateY(-1px);
+        }
+        
+        .btn-disabled {
+            background: #E5E7EB;
+            color: #9CA3AF;
+            cursor: not-allowed;
+        }
+        
+        /* 페이지네이션 */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 30px;
+        }
+        
+        .pagination button {
+            padding: 8px 16px;
+            border: 1px solid #D1D5DB;
+            background: white;
+            color: #374151;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        
+        .pagination button:hover:not(:disabled) {
+            background: #F9FAFB;
+        }
+        
+        .pagination button.active {
+            background: #3B82F6;
+            color: white;
+            border-color: #3B82F6;
+        }
+        
+        .pagination button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        
+        /* 빈 상태 */
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            color: #6B7280;
+        }
+        
+        .empty-state i {
+            font-size: 48px;
+            margin-bottom: 16px;
+            opacity: 0.5;
+        }
+        
+        /* 모달 */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal.show {
+            display: flex;
+        }
+        
+        .modal-content {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            max-width: 500px;
+            width: 90%;
+            max-height: 100vh;
+        }
+        
+        .modal-header {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            padding:0;
+        }
+        
+        .modal-body {
+            margin-bottom: 20px;
+            padding:0;
+        }
+        
+        .modal-body textarea {
+            width: 100%;
+            min-height: 100px;
+            padding: 12px;
+            border: 1px solid #D1D5DB;
+            border-radius: 8px;
+            font-size: 14px;
+            font-family: inherit;
+            resize: vertical;
+        }
+        
+        .modal-footer {
+            display: flex;
+            gap: 10px;
+            justify-content: flex-end;
+        }
+        
+        .btn-cancel {
+            background: #6B7280;
+            color: white;
+        }
+        
+        .btn-confirm {
+            background: #3B82F6;
+            color: white;
+        }
+        
+        /* 상세 정보 모달 */
+        .detail-modal-content {
+            max-width: 900px;
+            width: 95%;
+            position: relative;
+        }
+        
+        .modal-close-btn {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            width: 36px;
+            height: 36px;
+            background: #EF4444;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+            z-index: 10;
+            box-shadow: 0 2px 8px rgba(239, 68, 68, 0.3);
+        }
+        
+        .modal-close-btn:hover {
+            background: #DC2626;
+            transform: scale(1.1);
+            box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4);
+        }
+        
+        .modal-close-btn:active {
+            transform: scale(0.95);
+        }
+        
+        .detail-section {
+            margin-bottom: 24px;
+            padding: 16px;
+            background: #F9FAFB;
+            border-radius: 8px;
+            border-left: 4px solid #3B82F6;
+            position: relative;
+        }
+        
+        .detail-section h3 {
+            margin: 0 0 12px 0;
+            font-size: 16px;
+            font-weight: 600;
+            color: #1F2937;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .detail-section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+        
+        .detail-content {
+            display:block;
+            color: #374151;
+            font-size: 15px;
+            line-height: 1.6;
+            white-space: pre-wrap;
+            word-break: break-word;
+            background: white;
+            padding: 12px;
+            border-radius: 6px;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        
+        .analysis-badge {
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 14px;
+        }
+        
+        .analysis-match {
+            background: #FEE2E2;
+            color: #991B1B;
+        }
+        
+        .analysis-partial {
+            background: #FEF3C7;
+            color: #92400E;
+        }
+        
+        .analysis-mismatch {
+            background: #D1FAE5;
+            color: #065F46;
+        }
+        
+        .confidence-bar {
+            height: 24px;
+            background: #E5E7EB;
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .confidence-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #10B981, #3B82F6);
+            transition: width 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 13px;
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: 120px 1fr;
+            gap: 12px;
+            font-size: 14px;
+        }
+        
+        .info-label {
+            font-weight: 600;
+            color: #6B7280;
+        }
+        
+        .info-value {
+            color: #374151;
+        }
+        
+        .btn-view-post {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            background: #3B82F6;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+        
+        .btn-view-post:hover {
+            background: #2563EB;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 8px rgba(59, 130, 246, 0.3);
+        }
+        
+        .btn-view-post:active {
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="header-bar">
+        <a href="/" class="logo">Community Admin</a>
+        <div class="user-info" id="userInfo">
+            <span id="loadingUser">로딩 중...</span>
+        </div>
+    </div>
+    
+    <div class="admin-container">
+        <div class="admin-header">
+            <h1><i class="fas fa-shield-alt"></i> 신고 관리</h1>
+            <p>신고된 게시글과 댓글을 검토하고 처리합니다</p>
+        </div>
+        
+        <div class="filters">
+            <label style="color: #374151; font-weight: 500;">상태:</label>
+            <select id="statusFilter">
+                <option value="">모든 상태</option>
+                <option value="pending" selected>대기중</option>
+                <option value="completed">승인</option>
+                <option value="rejected">거부</option>
+            </select>
+            
+            <label style="color: #374151; font-weight: 500;">타입:</label>
+            <select id="typeFilter">
+                <option value="">모든 타입</option>
+                <option value="board">게시글</option>
+                <option value="comment">댓글</option>
+            </select>
+            
+            <button onclick="loadReports(1)"><i class="fas fa-search"></i> 조회</button>
+        </div>
+        
+        <div id="reportList" class="report-table">
+            <div style="padding: 40px; text-align: center; color: #6B7280;">
+                <i class="fas fa-spinner fa-spin" style="font-size: 32px;"></i>
+                <p style="margin-top: 16px;">로딩 중...</p>
+            </div>
+        </div>
+        
+        <div id="pagination" class="pagination"></div>
+    </div>
+    
+    <!-- 처리 모달 -->
+    <div id="processModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header" id="modalTitle">신고 처리</div>
+            <div class="modal-body">
+                <label style="display: block; margin-bottom: 8px; font-weight: 500; color: #374151;">처리 사유 (선택)</label>
+                <textarea id="processNote" placeholder="처리 사유를 입력하세요 (선택)"></textarea>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-cancel" onclick="closeModal()">취소</button>
+                <button class="btn btn-confirm" id="confirmBtn" onclick="confirmProcess()">확인</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 상세 정보 모달 -->
+    <div id="detailModal" class="modal">
+        <div class="modal-content detail-modal-content">
+            <button class="modal-close-btn" onclick="closeDetailModal()" title="닫기">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-header">
+                <span><i class="fas fa-info-circle"></i> 신고 상세 정보</span>
+            </div>
+            <div id="detailContent" style="max-height: 70vh; overflow-y: auto;">
+                <div style="text-align: center; padding: 40px; color: #6B7280;">
+                    <i class="fas fa-spinner fa-spin" style="font-size: 32px;"></i>
+                    <p style="margin-top: 16px;">로딩 중...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        let currentPage = 1;
+        let currentReportId = null;
+        let currentAction = null;
+        
+        // 사용자 정보 로드
+        async function loadUserInfo() {
+            try {
+                const response = await fetch('/api/auth/me');
+                const data = await response.json();
+                
+                const userInfoDiv = document.getElementById('userInfo');
+                
+                if (data.authenticated && data.user) {
+                    userInfoDiv.innerHTML = `
+                        <span class="user-name">${data.user.username}님</span>
+                        <button class="btn-header btn-logout" onclick="logout()">로그아웃</button>
+                    `;
+                } else {
+                    userInfoDiv.innerHTML = `
+                        <a href="/login" class="btn-header btn-login">로그인</a>
+                    `;
+                }
+            } catch (error) {
+                console.error('Failed to load user info:', error);
+            }
+        }
+        
+        // 로그아웃
+        async function logout() {
+            try {
+                await fetch('/api/auth/logout', { method: 'POST' });
+                location.href = '/';
+            } catch (error) {
+                console.error('Logout failed:', error);
+            }
+        }
+        
+        // 관리자 확인
+        async function checkAdmin() {
+            const response = await fetch('/api/admin/me');
+            const data = await response.json();
+            
+            if (!data.is_admin) {
+                alert('관리자 권한이 필요합니다');
+                location.href = '/';
+                return false;
+            }
+            return true;
+        }
+        
+        // 신고 목록 로드
+        async function loadReports(page = 1, autoRetry = true) {
+            const statusFilter = document.getElementById('statusFilter');
+            const status = statusFilter.value;
+            const type = document.getElementById('typeFilter').value;
+            
+            const params = new URLSearchParams({
+                page: page,
+                limit: 20
+            });
+            
+            if (status) params.append('status_filter', status);
+            if (type) params.append('type_filter', type);
+            
+            try {
+                const response = await fetch(`/api/admin/reports?${params}`);
+                const data = await response.json();
+                
+                if (data.success) {
+                    // "대기중" 필터에서 결과가 없고, 자동 재시도가 활성화된 경우
+                    if (status === 'pending' && (!data.reports || data.reports.length === 0) && autoRetry) {
+                        console.log('대기중 신고가 없습니다. 모든 상태로 전환합니다.');
+                        statusFilter.value = '';  // 모든 상태로 변경
+                        await loadReports(1, false);  // 재귀 방지를 위해 autoRetry=false
+                        return;
+                    }
+                    
+                    currentPage = page;
+                    renderReports(data.reports);
+                    renderPagination(data.pagination);
+                } else {
+                    alert('신고 목록을 불러오는데 실패했습니다');
+                }
+            } catch (error) {
+                console.error('Failed to load reports:', error);
+                document.getElementById('reportList').innerHTML = `
+                    <div class="empty-state">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <p>신고 목록을 불러오는데 실패했습니다</p>
+                    </div>
+                `;
+            }
+        }
+        
+        // 신고 목록 렌더링
+        function renderReports(reports) {
+            const container = document.getElementById('reportList');
+            
+            if (!reports || reports.length === 0) {
+                container.innerHTML = `
+                    <div class="empty-state">
+                        <i class="fas fa-inbox"></i>
+                        <p>표시할 신고가 없습니다</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            container.innerHTML = reports.map(report => {
+                const statusBadge = `<span class="badge badge-${report.status}">${getStatusText(report.status)}</span>`;
+                const typeBadge = `<span class="badge badge-${report.report_type}">${report.report_type === 'board' ? '게시글' : '댓글'}</span>`;
+                
+                // 신고된 내용
+                let reportedContent = '';
+                if (report.report_type === 'board') {
+                    reportedContent = `<strong>${report.board_title || '(삭제된 게시글)'}</strong>`;
+                } else {
+                    reportedContent = report.comment_content || '(삭제된 댓글)';
+                }
+                
+                // 현재 상태
+                let contentStatus = '';
+                if (report.report_type === 'board' && report.board_status) {
+                    contentStatus = `<span style="margin-left:5px; font-size: 14px; color: ${report.board_status === 'blocked' ? '#DC2626' : '#059669'};">
+                        [${report.board_status === 'blocked' ? '차단됨' : '노출중'}]
+                    </span>`;
+                } else if (report.report_type === 'comment' && report.comment_status) {
+                    contentStatus = `<span style="margin-left:5px; font-size: 14px; color: ${report.comment_status === 'blocked' ? '#DC2626' : '#059669'};">
+                        [${report.comment_status === 'blocked' ? '차단됨' : '노출중'}]
+                    </span>`;
+                }
+                
+                // 액션 버튼
+                let actions = '';
+                if (report.status === 'pending' || report.status === 'reviewing') {
+                    actions = `
+                        <button class="btn btn-approve" onclick="openProcessModal(${report.id}, 'approve')">
+                            <i class="fas fa-check"></i> 승인
+                        </button>
+                        <button class="btn btn-reject" onclick="openProcessModal(${report.id}, 'reject')">
+                            <i class="fas fa-times"></i> 거부
+                        </button>
+                    `;
+                } else {
+                    actions = `<span class="badge badge-${report.status}">처리 완료</span>`;
+                }
+                
+                // 신고자의 상세 사유
+                let reporterDetail = '';
+                if (report.report_detail) {
+                    reporterDetail = `
+                        <div style="margin-top: 10px; padding: 12px; background: #FEF3C7; border-left: 3px solid #F59E0B; border-radius: 4px;">
+                            <strong style="color: #92400E; font-size: 14px;">📝 신고 상세 사유:</strong><br>
+                            <span style="color: #78350F; white-space: pre-wrap; font-size: 14px; margin-top: 4px; display: block;">${report.report_detail}</span>
+                        </div>
+                    `;
+                }
+                
+                // 처리 정보
+                let processInfo = '';
+                if (report.processed_date) {
+                    const processedDate = new Date(report.processed_date).toLocaleString('ko-KR');
+                    processInfo = `
+                        <div style="margin-top: 10px; padding-top: 10px; border-top: 1px solid #E5E7EB; font-size: 14px; color: #6B7280;">
+                            <strong>처리 시간:</strong> ${processedDate}
+                            ${report.processing_note ? `<br><strong>관리자 처리 사유:</strong> ${report.processing_note}` : ''}
+                        </div>
+                    `;
+                }
+                
+                return `
+                    <div class="report-row" onclick="openDetailModal(${report.id}, event)">
+                        <div class="report-header">
+                            <div class="report-info">
+                                <div class="report-id">신고 ID: #${report.id} | 신고자: ${report.reporter_name || '(알 수 없음)'} | ${new Date(report.created_at).toLocaleString('ko-KR')}</div>
+                                <div class="report-title">
+                                    ${typeBadge}
+                                    ${statusBadge}
+                                    <span style="margin-left: 8px; color: #DC2626; font-weight: 600;">${report.report_reason}</span>
+                                </div>
+                                <div class="report-content">
+                                    ${reportedContent} ${contentStatus}
+                                </div>
+                                ${reporterDetail}
+                                ${processInfo}
+                            </div>
+                            <div class="report-actions" onclick="event.stopPropagation()">
+                                ${actions}
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+        
+        // 상태 텍스트 변환
+        function getStatusText(status) {
+            const statusMap = {
+                'pending': '대기중',
+                'reviewing': '검토중',
+                'completed': '승인',
+                'rejected': '거부'
+            };
+            return statusMap[status] || status;
+        }
+        
+        // 페이지네이션 렌더링
+        function renderPagination(pagination) {
+            const container = document.getElementById('pagination');
+            
+            if (pagination.total_pages <= 1) {
+                container.innerHTML = '';
+                return;
+            }
+            
+            let html = '';
+            
+            // 이전 버튼
+            html += `<button onclick="loadReports(${currentPage - 1})" ${currentPage === 1 ? 'disabled' : ''}>
+                <i class="fas fa-chevron-left"></i>
+            </button>`;
+            
+            // 페이지 번호
+            for (let i = 1; i <= pagination.total_pages; i++) {
+                if (
+                    i === 1 || 
+                    i === pagination.total_pages || 
+                    (i >= currentPage - 2 && i <= currentPage + 2)
+                ) {
+                    html += `<button onclick="loadReports(${i})" class="${i === currentPage ? 'active' : ''}">${i}</button>`;
+                } else if (i === currentPage - 3 || i === currentPage + 3) {
+                    html += '<button disabled>...</button>';
+                }
+            }
+            
+            // 다음 버튼
+            html += `<button onclick="loadReports(${currentPage + 1})" ${currentPage === pagination.total_pages ? 'disabled' : ''}>
+                <i class="fas fa-chevron-right"></i>
+            </button>`;
+            
+            container.innerHTML = html;
+        }
+        
+        // 처리 모달 열기
+        function openProcessModal(reportId, action) {
+            currentReportId = reportId;
+            currentAction = action;
+            
+            const modal = document.getElementById('processModal');
+            const title = document.getElementById('modalTitle');
+            const confirmBtn = document.getElementById('confirmBtn');
+            
+            if (action === 'approve') {
+                title.textContent = '신고 승인';
+                confirmBtn.textContent = '승인';
+                confirmBtn.className = 'btn btn-approve';
+            } else {
+                title.textContent = '신고 거부';
+                confirmBtn.textContent = '거부';
+                confirmBtn.className = 'btn btn-reject';
+            }
+            
+            document.getElementById('processNote').value = '';
+            modal.classList.add('show');
+        }
+        
+        // 모달 닫기
+        function closeModal() {
+            document.getElementById('processModal').classList.remove('show');
+            currentReportId = null;
+            currentAction = null;
+        }
+        
+        // 신고 처리 확인
+        async function confirmProcess() {
+            if (!currentReportId || !currentAction) return;
+            
+            const note = document.getElementById('processNote').value.trim();
+            
+            try {
+                const response = await fetch(`/api/admin/reports/${currentReportId}/process`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ 
+                        action: currentAction,
+                        note: note || null
+                    })
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    alert(data.message);
+                    closeModal();
+                    loadReports(currentPage);
+                } else {
+                    alert('처리 실패: ' + (data.detail || '알 수 없는 오류'));
+                }
+            } catch (error) {
+                console.error('Failed to process report:', error);
+                alert('처리 중 오류가 발생했습니다');
+            }
+        }
+        
+        // 모달 외부 클릭 시 닫기
+        document.getElementById('processModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+        
+        document.getElementById('detailModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeDetailModal();
+            }
+        });
+        
+        // 상세 정보 모달 열기
+        async function openDetailModal(reportId, event) {
+            // 버튼 클릭 시 이벤트 전파 중지
+            if (event && event.target.closest('.report-actions')) {
+                return;
+            }
+            
+            const modal = document.getElementById('detailModal');
+            const content = document.getElementById('detailContent');
+            
+            modal.classList.add('show');
+            content.innerHTML = `
+                <div style="text-align: center; padding: 40px; color: #6B7280;">
+                    <i class="fas fa-spinner fa-spin" style="font-size: 32px;"></i>
+                    <p style="margin-top: 16px;">로딩 중...</p>
+                </div>
+            `;
+            
+            try {
+                const response = await fetch(`/api/admin/reports/${reportId}/detail`);
+                const data = await response.json();
+                
+                if (data.success) {
+                    renderDetailContent(data);
+                } else {
+                    content.innerHTML = `
+                        <div style="text-align: center; padding: 40px; color: #DC2626;">
+                            <i class="fas fa-exclamation-circle" style="font-size: 32px;"></i>
+                            <p style="margin-top: 16px;">상세 정보를 불러올 수 없습니다</p>
+                        </div>
+                    `;
+                }
+            } catch (error) {
+                console.error('Failed to load report detail:', error);
+                content.innerHTML = `
+                    <div style="text-align: center; padding: 40px; color: #DC2626;">
+                        <i class="fas fa-exclamation-circle" style="font-size: 32px;"></i>
+                        <p style="margin-top: 16px;">로딩 중 오류가 발생했습니다</p>
+                    </div>
+                `;
+            }
+        }
+        
+        // 상세 정보 렌더링
+        function renderDetailContent(data) {
+            const report = data.report;
+            const analysis = data.analysis;
+            const hasAnalysis = data.has_analysis;
+            
+            const content = document.getElementById('detailContent');
+            
+            // 신고 상태 뱃지
+            const statusBadgeMap = {
+                'pending': { class: 'badge-pending', text: '⏳ 대기중', color: '#92400E' },
+                'reviewing': { class: 'badge-reviewing', text: '🔍 검토중', color: '#1E40AF' },
+                'completed': { class: 'badge-completed', text: '✅ 승인됨', color: '#065F46' },
+                'rejected': { class: 'badge-rejected', text: '❌ 거부됨', color: '#991B1B' }
+            };
+            const statusInfo = statusBadgeMap[report.status] || { class: 'badge-pending', text: report.status, color: '#6B7280' };
+            
+            // 신고 정보
+            const reportDate = new Date(report.created_at).toLocaleString('ko-KR');
+            
+            // 신고된 콘텐츠 전체 내용
+            let fullContent = '';
+            if (report.report_type === 'board') {
+                // 카테고리 한글 변환
+                const categoryLabels = {
+                    'free': '자유게시판',
+                    'notice': '공지사항',
+                    'qna': '질문답변',
+                    'review': '후기',
+                    'tips': '팁/노하우'
+                };
+                const categoryText = categoryLabels[report.board_category] || report.board_category || '(알 수 없음)';
+                
+                // 작성 시각
+                const boardCreatedAt = report.board_created_at ? new Date(report.board_created_at).toLocaleString('ko-KR') : '(알 수 없음)';
+                
+                fullContent = `
+                    <div class="detail-section">
+                        <div class="detail-section-header">
+                            <h3 style="margin: 0;"><i class="fas fa-file-alt"></i> 신고된 게시글</h3>
+                            ${report.board_id ? `
+                                <a href="/board/${report.board_id}" target="_blank" class="btn-view-post">
+                                    <i class="fas fa-external-link-alt"></i> 게시글 보러가기
+                                </a>
+                            ` : ''}
+                        </div>
+                        <div class="info-grid" style="margin-bottom: 12px;">
+                            <div class="info-label">제목:</div>
+                            <div class="info-value"><strong>${report.board_title || '(삭제됨)'}</strong></div>
+                            <div class="info-label">게시판:</div>
+                            <div class="info-value"><strong style="color: #3B82F6;">${categoryText}</strong></div>
+                            <div class="info-label">작성자:</div>
+                            <div class="info-value">${report.board_author_name || '(알 수 없음)'}</div>
+                            <div class="info-label">작성 시각:</div>
+                            <div class="info-value">${boardCreatedAt}</div>
+                            <div class="info-label">상태:</div>
+                            <div class="info-value">
+                                <span style="color: ${report.board_status === 'blocked' ? '#DC2626' : '#059669'}; font-weight: 600;">
+                                    ${report.board_status === 'blocked' ? '🚫 차단됨' : '✅ 노출중'}
+                                </span>
+                            </div>
+                        </div>
+                        <div style="font-weight: 600; margin-bottom: 8px; color: #374151;">전체 내용:</div>
+                        <div class="detail-content">${report.board_content || '(내용 없음)'}</div>
+                    </div>
+                `;
+            } else {
+                // 작성 시각
+                const commentCreatedAt = report.comment_created_at ? new Date(report.comment_created_at).toLocaleString('ko-KR') : '(알 수 없음)';
+                
+                fullContent = `
+                    <div class="detail-section">
+                        <div class="detail-section-header">
+                            <h3 style="margin: 0;"><i class="fas fa-comment"></i> 신고된 댓글</h3>
+                            ${report.comment_board_id ? `
+                                <a href="/board/${report.comment_board_id}" target="_blank" class="btn-view-post">
+                                    <i class="fas fa-external-link-alt"></i> 게시글 보러가기
+                                </a>
+                            ` : ''}
+                        </div>
+                        <div class="info-grid" style="margin-bottom: 12px;">
+                            <div class="info-label">작성자:</div>
+                            <div class="info-value">${report.comment_author_name || '(알 수 없음)'}</div>
+                            <div class="info-label">작성 시각:</div>
+                            <div class="info-value">${commentCreatedAt}</div>
+                            <div class="info-label">상태:</div>
+                            <div class="info-value">
+                                <span style="color: ${report.comment_status === 'blocked' ? '#DC2626' : '#059669'}; font-weight: 600;">
+                                    ${report.comment_status === 'blocked' ? '🚫 차단됨' : '✅ 노출중'}
+                                </span>
+                            </div>
+                        </div>
+                        <div style="font-weight: 600; margin-bottom: 8px; color: #374151;">전체 내용:</div>
+                        <div class="detail-content">${report.comment_content || '(내용 없음)'}</div>
+                    </div>
+                `;
+            }
+            
+            // 신고 정보
+            let reportInfo = `
+                <div class="detail-section">
+                    <h3><i class="fas fa-flag"></i> 신고 정보</h3>
+                    <div style="margin-bottom: 16px;">
+                        <span style="font-weight: 600; color: #374151;">처리 상태:</span>
+                        <span class="badge ${statusInfo.class}" style="margin-left: 8px; font-size: 15px;">
+                            ${statusInfo.text}
+                        </span>
+                    </div>
+                    <div class="info-grid">
+                        <div class="info-label">신고자:</div>
+                        <div class="info-value">${report.reporter_name || '(알 수 없음)'}</div>
+                        <div class="info-label">신고 사유:</div>
+                        <div class="info-value"><strong style="color: #DC2626;">${report.report_reason}</strong></div>
+                        <div class="info-label">신고 시각:</div>
+                        <div class="info-value">${reportDate}</div>
+                        ${report.report_detail ? `
+                            <div class="info-label">상세 사유:</div>
+                            <div class="info-value" style="white-space: pre-wrap;">${report.report_detail}</div>
+                        ` : ''}
+                    </div>
+                </div>
+            `;
+            
+            // AI 분석 결과
+            let analysisSection = '';
+            if (hasAnalysis && analysis) {
+                const resultClass = analysis.result === 'match' ? 'analysis-match' : 
+                                  analysis.result === 'partial_match' ? 'analysis-partial' : 
+                                  'analysis-mismatch';
+                
+                const analysisDate = new Date(analysis.created_at).toLocaleString('ko-KR');
+                
+                // 점수에 따른 판정 설명
+                let judgmentText = '';
+                if (analysis.confidence >= 81) {
+                    judgmentText = '신고 내용과 일치하여 자동 승인됨';
+                } else if (analysis.confidence <= 29) {
+                    judgmentText = '신고 내용과 불일치하여 자동 거부됨';
+                } else {
+                    judgmentText = '부분일치로 관리자 검토 필요';
+                }
+                
+                analysisSection = `
+                    <div class="detail-section" style="border-left-color: #8B5CF6;">
+                        <h3><i class="fas fa-robot"></i> AI 일치 분석 결과</h3>
+                        <div style="margin-bottom: 16px;">
+                            <div style="margin-bottom: 8px;">
+                                <span style="font-weight: 600; color: #374151;">판정 결과:</span>
+                                <span class="analysis-badge ${resultClass}" style="margin-left: 8px;">
+                                    ${analysis.result_text}
+                                </span>
+                            </div>
+                            <div style="margin-bottom: 8px;">
+                                <span style="font-weight: 600; color: #374151;">일치도 점수:</span>
+                                <span style="margin-left: 8px; font-weight: 600; font-size: 16px; color: #1F2937;">${Math.round(analysis.confidence)}점</span>
+                            </div>
+                            <div class="confidence-bar">
+                                <div class="confidence-fill" style="width: ${analysis.confidence}%">
+                                    ${Math.round(analysis.confidence)}%
+                                </div>
+                            </div>
+                            <div style="margin-top: 8px; font-size: 14px; color: #6B7280;">
+                                📌 ${judgmentText}
+                            </div>
+                        </div>
+                        <div style="font-weight: 600; margin-bottom: 8px; color: #374151;">AI 분석 내용:</div>
+                        <div class="detail-content" style="background: #F3F4F6;">${analysis.analysis || '(분석 내용 없음)'}</div>
+                        <div style="margin-top: 12px; font-size: 13px; color: #9CA3AF;">
+                            분석 시각: ${analysisDate}
+                        </div>
+                    </div>
+                `;
+            } else {
+                analysisSection = `
+                    <div class="detail-section" style="border-left-color: #9CA3AF;">
+                        <h3><i class="fas fa-robot"></i> AI 일치 분석 결과</h3>
+                        <div style="text-align: center; padding: 20px; color: #6B7280;">
+                            <i class="fas fa-clock" style="font-size: 24px; margin-bottom: 8px;"></i>
+                            <p style="margin: 0;">아직 분석이 완료되지 않았습니다</p>
+                        </div>
+                    </div>
+                `;
+            }
+            
+            // 처리 정보
+            let processingSection = '';
+            if (report.processed_date) {
+                const processedDate = new Date(report.processed_date).toLocaleString('ko-KR');
+                
+                // 처리 결과 텍스트 및 색상
+                let resultText = '';
+                let resultColor = '';
+                let resultIcon = '';
+                if (report.status === 'completed') {
+                    resultText = '승인 (콘텐츠 차단됨)';
+                    resultColor = '#059669';
+                    resultIcon = '✅';
+                } else if (report.status === 'rejected') {
+                    resultText = '거부 (콘텐츠 유지됨)';
+                    resultColor = '#DC2626';
+                    resultIcon = '❌';
+                } else {
+                    resultText = report.status;
+                    resultColor = '#6B7280';
+                    resultIcon = '📋';
+                }
+                
+                processingSection = `
+                    <div class="detail-section" style="border-left-color: ${resultColor};">
+                        <h3><i class="fas fa-check-circle"></i> 처리 정보</h3>
+                        <div class="info-grid">
+                            <div class="info-label">처리 결과:</div>
+                            <div class="info-value">
+                                <strong style="color: ${resultColor}; font-size: 16px;">
+                                    ${resultIcon} ${resultText}
+                                </strong>
+                            </div>
+                            <div class="info-label">처리 시각:</div>
+                            <div class="info-value">${processedDate}</div>
+                            ${report.processing_note ? `
+                                <div class="info-label">처리 사유:</div>
+                                <div class="info-value" style="white-space: pre-wrap;">${report.processing_note}</div>
+                            ` : ''}
+                        </div>
+                    </div>
+                `;
+            }
+            
+            content.innerHTML = `
+                ${fullContent}
+                ${reportInfo}
+                ${analysisSection}
+                ${processingSection}
+            `;
+        }
+        
+        // 상세 정보 모달 닫기
+        function closeDetailModal() {
+            document.getElementById('detailModal').classList.remove('show');
+        }
+        
+        // postMessage 리스너 - 챗봇에서 명령 받기
+        window.addEventListener('message', function(event) {
+            // 보안: 같은 origin에서만 허용
+            if (event.origin !== window.location.origin) return;
+            
+            if (!event.data || !event.data.type) return;
+            
+            const { type, data } = event.data;
+            
+            console.log('admin_reports received message:', type, data);
+            
+            if (type === 'reload_reports') {
+                // 현재 페이지로 신고 목록 새로고침
+                loadReports(currentPage);
+            } else if (type === 'filter_reports') {
+                // 필터 변경 후 첫 페이지로 이동
+                if (data.status !== undefined) {
+                    document.getElementById('statusFilter').value = data.status || '';
+                }
+                if (data.type !== undefined) {
+                    document.getElementById('typeFilter').value = data.type || '';
+                }
+                loadReports(1);
+            }
+        });
+        
+        // 초기화
+        (async function() {
+            await loadUserInfo();
+            const isAdmin = await checkAdmin();
+            if (isAdmin) {
+                loadReports(1);
+            }
+        })();
+    </script>
+</body>
+</html>
+

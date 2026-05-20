@@ -1,0 +1,30 @@
+name: CI Pipeline
+on:
+  push:
+    branches: [feature/*]
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Build frontend Docker image
+        run: |
+          cd frontend
+          docker build -t test-frontend .
+           
+      - name: Build backend Docker image
+        run: |
+          cd backend
+          docker build -t test-backend .
+           
+      - name: Build db Docker image
+        run: |
+          cd db
+          docker build -t test-db .
+           

@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# 환경설정
+.env
+repository/serviceAccountKey.json
+
+# 결과 및 데이터
+result_json/
+result_non_price_json/
+result_price_json/
+result_image/
+categories.json
+
+# 기타
+*.log
+.DS_Store
+.vscode/

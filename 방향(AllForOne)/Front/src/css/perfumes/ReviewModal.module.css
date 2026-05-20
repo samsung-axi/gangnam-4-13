@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Batang&family=Gowun+Dodum&family=Hahmlet:wght@100..900&family=Nanum+Gothic&family=Noto+Serif+KR:wght@200..900&display=swap');
+
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modalContainer {
+    position: relative;
+    width: 600px;  /* 797px에서 600px로 축소 */
+    height: 750px; /* 950px에서 700px로 축소 */
+    background: #FFFFFF;
+    border-radius: 30px;
+    padding: 20px;
+    transform: scale(0.85); /* 전체적으로 85% 크기로 축소 */
+}
+
+.closeButton {
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    right: -40px;
+    top: -63px;
+    background: #717171;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.line1, .line2 {
+    position: absolute;
+    width: 25px;    /* 45.28px에서 25px로 축소 */
+    height: 0;
+    left: 5px;      /* 위치 조정 */
+    top: 16px;      /* 위치 조정 */
+    border: 2px solid #FFFFFF;  /* 3px에서 2px로 축소 */
+}
+
+.line1 {
+    transform: rotate(46.79deg);
+}
+
+.line2 {
+    transform: rotate(-43.21deg);
+}
+
+.perfumeInfo {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 23px;
+}
+
+.perfumeImage {
+    width: 193px;
+    height: 166px;
+    object-fit: contain;
+}
+
+.perfumeName {
+    font-family: 'Inter';
+    font-size: 36px;
+    line-height: 30px;
+    color: #000000;
+}
+
+.divider {
+    width: 100%;
+    height: 1px;
+    background: #000000;
+    margin: 35px 0;
+}
+
+.reviewInput {
+    box-sizing: border-box;
+    width: 90%;     /* 고정 픽셀 대신 비율로 변경 */
+    height: 400px;  /* 524px에서 400px로 축소 */
+    background: #FFFFFF;
+    border: 1px solid #333;
+    padding: 20px;
+    margin: 0 auto;
+    display: block;
+    font-size: 16px;
+    resize: none;
+}
+
+.submitButton {
+    position: absolute;
+    width: 188px;
+    height: 47px;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 40px;
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    font-size: 28px;
+    color: #000000;
+    cursor: pointer;
+    font-family: 'Gowun Batang', serif;
+}

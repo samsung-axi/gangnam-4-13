@@ -1,0 +1,25 @@
+.searchInput-box{
+    width: 100%;
+    border-radius: var(--border-radius-2);
+    border: 1px solid var(--grey-1);
+    padding: 8px 12px;
+    font-size: var(--font-size-5);
+    box-shadow: var(--shadow-1);
+    outline: none;
+    position: relative;
+}
+
+.searchInput-box::placeholder{
+    content: url(/public/icons/search.jpg);
+    opacity: 0.5;
+    width: 25px;
+    height: 25px;
+    transform: translateY(15%);
+
+
+}
+
+.searchInput-box:focus{
+    border: 1px solid var(--black-opacity-50);
+}
+

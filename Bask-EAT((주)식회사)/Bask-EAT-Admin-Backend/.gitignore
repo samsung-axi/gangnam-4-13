@@ -1,0 +1,92 @@
+HELP.md
+.gradle
+build/
+!gradle/wrapper/gradle-wrapper.jar
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+bin/
+!**/src/main/**/bin/
+!**/src/test/**/bin/
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+out/
+!**/src/main/**/out/
+!**/src/test/**/out/
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+### VS Code ###
+.vscode/
+
+### OS & Editor junk ###
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+### Logs ###
+logs/
+*.log
+
+### Env / Secrets ###
+.env
+.env.*
+**/.env
+**/.env.*
+
+# Java keystores / certs
+*.jks
+*.keystore
+*.p12
+*.pfx
+*.pem
+
+### Firebase Admin tools (local-only utilities) ###
+scripts/firebase/node_modules/
+scripts/firebase/.env
+scripts/firebase/*.json
+scripts/firebase/*.pem
+scripts/firebase/.DS_Store
+# scripts/firebase/package-lock.json
+# scripts/firebase/pnpm-lock.yaml
+# scripts/firebase/yarn.lock
+
+### YAML configs ###
+application.yml
+firebase.yml
+config/application.yml
+docker-compose.override.yml
+docker-compose.*.override.yml
+k8s/**/secret*.yml
+k8s/**/secret*.yaml
+values.local.yml
+values.local.yaml
+
+firebase/node_modules/
+node_modules/
+**/node_modules/
+
+
+# --- Secrets (Firebase/GCP) ---
+firebase/service-account.json
+firebase/*.json              # firebase 디렉터리 내 모든 json 비추적 (필요시 유지)
+**/service-account.json      # 다른 하위 경로에 같은 이름이 생겨도 차단

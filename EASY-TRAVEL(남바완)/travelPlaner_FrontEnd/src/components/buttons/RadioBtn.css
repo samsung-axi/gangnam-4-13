@@ -1,0 +1,22 @@
+.radio-btn{
+    display: inline-block;
+    padding: 12px 12px;
+    border: none;
+    border-radius: var(--border-radius-2);
+    background-color: var(--sub-color-2);
+    color: var(--black-opacity-50);
+    font-size: var(--font-size-6);
+    font-weight: var(--bold);
+    cursor: pointer;
+    box-shadow: var(--shadow-basic);
+}
+
+.radio-btn:hover{
+    box-shadow: var(--shadow-hover);
+    transition: all 0.3s;
+}
+
+.radio-btn.active{
+    background-color: var(--main-color-2);
+    color: var(--black);
+}

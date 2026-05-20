@@ -1,0 +1,57 @@
+#header-container {
+  width: 100%;
+  max-width: inherit; /* 상위 요소의 max-width를 상속 */
+  height: 80px;
+  border-bottom: 2px solid var(--main-color-1, #76adec);
+  overflow: hidden;
+  flex-shrink: 0; /* Flexbox에서 헤더 크기가 줄어들지 않도록 설정 */
+}
+
+.header-area {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* 내부 요소를 수직 정렬 */
+  padding: 0 20px;
+  height: 100%;
+}
+
+.logo {
+  width: 100px;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.side-menu-btn {
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.text-container {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+
+  .profile_img{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid var(--main-color-1, #76adec);
+  object-fit: cover;
+  cursor: pointer;
+  }
+}
+
+.member-nickname{
+  font-size: var(--font-size-6);
+  font-weight: var(--bold);
+  color: var(--black);
+
+  span{
+    font-size: var(--font-size-6);
+    font-weight: var(--semibold);
+  }
+}
+
+

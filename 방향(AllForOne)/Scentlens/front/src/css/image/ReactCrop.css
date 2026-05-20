@@ -1,0 +1,67 @@
+.crop-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    background: transparent !important;
+}
+
+.ReactCrop {
+    position: relative;
+    display: inline-block;
+    width: fit-content;
+    height: fit-content;
+    background: none !important; /* 배경 제거 */
+}
+
+.ReactCrop img {
+    max-width: 600px;
+    max-height: 500px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    background: none;
+}
+
+.ReactCrop > div {
+    background: none !important; /* 내부 div 배경 제거 */
+}
+
+.ReactCrop__crop-selection {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: none;
+    border: 2px solid #fff;
+    border-radius: 0;
+}
+
+.button-wrapper {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 15px;
+    z-index: 1000;
+    padding: 8px 24px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.crop-container .button-wrapper button {
+    padding: 8px 24px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    color: white;
+    font-family: 'Gowun Batang', serif;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.crop-container .button-wrapper button:hover {
+    background: #CDC6CE;
+    transform: scale(1.05);
+}

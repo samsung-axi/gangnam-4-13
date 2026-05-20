@@ -1,0 +1,71 @@
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Build outputs
+dist/
+**/dist/
+dist-ssr/
+**/dist-ssr/
+.vite/
+**/.vite/
+
+# Environment variables
+.env
+.env.local
+.env*.local
+**/.env
+**/.env.local
+.env.production
+**/.env.production
+env.production
+
+# Logs
+logs/
+**/logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Editor directories and files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Testing
+coverage/
+*.tsbuildinfo
+
+# Temporary files and uploads
+tmp/
+temp/
+*.tmp
+uploads/
+*.mp4
+*.mov
+*.avi
+*.mkv
+
+__pycache__/
+*.pyc
+
+# FFmpeg 바이너리 (자동 다운로드됨)
+backend/bin/
+
+# 비디오 처리 임시 파일
+backend/temp_videos/
+videos/
+
+# Agent configuration
+.agent/

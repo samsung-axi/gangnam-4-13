@@ -1,0 +1,97 @@
+.searchBar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    translate: 80px 60px;
+}
+
+.searchActive {
+    translate: 170px -70px;
+    width: 1000px;
+}
+
+.searchInactive {
+    translate: 85px -70px;
+}
+
+.searchInput {
+    width: 25%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    outline: none;
+}
+
+.searchButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    transform: translateX(-60px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.searchIcon {
+    width: 25px;
+    height: 25px;
+}
+
+.highlight {
+    background-color: rgba(255, 247, 64, 0.3);
+    padding: 2px 0;
+    border-radius: 2px;
+}
+
+.currentHighlight {
+    background-color: #fff740;
+    font-weight: bold;
+}
+
+.resultCounter {
+    position: absolute;
+    right: 200px;
+    font-size: 12px;
+    color: #666;
+}
+
+.arrowButtonGroup {
+    position: absolute;
+    right: 140px;
+    top: 2px;
+    display: flex;
+    gap: 10px;  /* 버튼 사이 간격 제거 */
+}
+
+.arrowButton {
+    background: none;
+    border: none;
+    padding: 4px;
+    cursor: pointer;
+    color: #666;
+    font-size: 30px;
+    width: 15px;  /* 크기 키움 */
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.arrowButton:disabled {
+    color: #ccc;
+    cursor: default;
+}
+
+.clearSearchButton {
+    position: absolute;
+    right: 110px;
+    background: none;
+    border: none;
+    padding: 4px;
+    cursor: pointer;
+    color: #666;
+    font-size: 16px;
+}

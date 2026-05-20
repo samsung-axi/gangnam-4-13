@@ -1,0 +1,61 @@
+# FastAPI 및 웹 서버
+fastapi
+uvicorn
+httpx
+requests
+bcrypt
+
+# 데이터 처리 및 머신러닝
+pandas
+numpy
+torch
+sentence-transformers
+transformers
+scikit-learn
+
+# FAISS-GPU는 Conda로 설치해야 합니다. 아래 명령어를 따로 실행하세요.
+# conda install -c pytorch -c nvidia faiss-gpu
+
+# LangChain 관련
+langchain
+langchain_openai
+openai
+huggingface-hub
+langgraph
+
+# 이미지 및 HTTP 요청 처리
+opencv-python-headless
+rembg
+Pillow
+
+# 데이터베이스 ORM
+SQLAlchemy
+PyMySQL
+pymongo
+
+# 환경 변수 및 파일 처리
+python-multipart
+python-dotenv
+aiofiles
+
+# 테스트 및 개발 도구
+jupyter
+pytest
+pytest-asyncio
+pytest-cov
+
+# 코드 스타일 및 품질 관리
+black
+isort
+flake8
+
+# 데이터 처리
+pydantic
+jsonschema
+orjson
+
+chromadb
+einops
+timm
+
+# pip install -r requirements.txt

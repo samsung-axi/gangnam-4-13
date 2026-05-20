@@ -1,0 +1,93 @@
+.inputAreaWrapper {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    border-top: 1px solid #e0e0e0;
+    background-color: #EFEDED;
+    position: relative;
+}
+
+.inputArea {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px 20px;
+}
+
+.input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    padding: 8px;
+}
+
+.fileUpload {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.uploadIcon {
+    width: 24px;
+    height: 24px;
+}
+
+.sendButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+}
+
+.imagePreviewContainer {
+    position: absolute;
+    bottom: 100%; /* 입력창 바로 위에 위치 */
+    left: 90px;
+    right: 0;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    z-index: 1000;
+}
+
+.imagePreviewCard {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    max-width: 200px;
+}
+
+.imagePreview {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.removeImageButton {
+    position: absolute;
+    top: -10px;
+    left: 90px;
+    color: black;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+}

@@ -1,0 +1,200 @@
+2025-10-14T05:37:45.864514423Z 🔍 환경변수 로드 중...
+2025-10-14T05:37:45.864543098Z ✅ .env 파일 로드 시도 완료
+2025-10-14T05:37:45.864547306Z ✅ 환경변수 로드됨: ELEVEN_ST_API_KEY, PINECONE_API_KEY, PINECONE_INDEX_NAME2, GEMINI_API_KEY, OPENAI_API_KEY, YOUTUBE_API_KEY, NAVER_CLIENT_ID, NAVER_CLIENT_SECRET, KAKAO_REST_API_KEY, GOOGLE_API_KEY, REACT_APP_OPENWEATHER_API_KEY
+2025-10-14T05:37:46.169601450Z Hair Change: GEMINI_API_KEY 사용
+2025-10-14T05:37:46.169629042Z Hair Change 모듈 로드 성공
+2025-10-14T05:37:50.268630911Z INFO:root:Parsing model identifier. Schema: None, Identifier: ViT-B-32
+2025-10-14T05:37:50.268654236Z INFO:root:Loaded built-in ViT-B-32 model config.
+2025-10-14T05:37:54.657852016Z /usr/local/lib/python3.11/site-packages/open_clip/factory.py:450: UserWarning: QuickGELU mismatch between final model config (quick_gelu=False) and pretrained tag 'openai' (quick_gelu=True).
+2025-10-14T05:37:54.657879528Z   warnings.warn(
+2025-10-14T05:37:54.657885560Z INFO:root:Instantiating model architecture: CLIP
+2025-10-14T05:37:55.876055065Z INFO:root:Loading full pretrained weights from: /root/.cache/huggingface/hub/models--timm--vit_base_patch32_clip_224.openai/snapshots/a6f597a30f7b82c51704746581f9a4e41421e878/open_clip_model.safetensors
+2025-10-14T05:37:55.961947500Z INFO:root:Final image preprocessing configuration set: {'size': (224, 224), 'mode': 'RGB', 'mean': (0.48145466, 0.4578275, 0.40821073), 'std': (0.26862954, 0.26130258, 0.27577711), 'interpolation': 'bicubic', 'resize_mode': 'shortest', 'fill_color': 0}
+2025-10-14T05:37:55.961980212Z INFO:root:Model ViT-B-32 creation process complete.
+2025-10-14T05:37:55.962245105Z INFO:root:Parsing tokenizer identifier. Schema: None, Identifier: ViT-B-32
+2025-10-14T05:37:55.962252569Z INFO:root:Attempting to load config from built-in: ViT-B-32
+2025-10-14T05:37:55.962264021Z INFO:root:Using default SimpleTokenizer.
+2025-10-14T05:37:56.025911178Z INFO:services.hair_loss_daily.services.clip_ensemble_service:[OK] ViT-B-32 로드 완료 (기본 모델 - 빠르고 안정적)
+2025-10-14T05:37:56.025949480Z INFO:root:Parsing model identifier. Schema: None, Identifier: ViT-B-16
+2025-10-14T05:37:56.025986741Z INFO:root:Loaded built-in ViT-B-16 model config.
+2025-10-14T05:38:00.377512591Z INFO:root:Instantiating model architecture: CLIP
+2025-10-14T05:38:01.392447921Z INFO:root:Loading full pretrained weights from: /root/.cache/huggingface/hub/models--timm--vit_base_patch16_clip_224.openai/snapshots/977e3dd0ec55ab8da155f2fbeb6b5f54948b6e3d/open_clip_model.safetensors
+2025-10-14T05:38:01.478434595Z INFO:root:Final image preprocessing configuration set: {'size': (224, 224), 'mode': 'RGB', 'mean': (0.48145466, 0.4578275, 0.40821073), 'std': (0.26862954, 0.26130258, 0.27577711), 'interpolation': 'bicubic', 'resize_mode': 'shortest', 'fill_color': 0}
+2025-10-14T05:38:01.478455314Z INFO:root:Model ViT-B-16 creation process complete.
+2025-10-14T05:38:01.478679190Z INFO:root:Parsing tokenizer identifier. Schema: None, Identifier: ViT-B-16
+2025-10-14T05:38:01.478692384Z INFO:root:Attempting to load config from built-in: ViT-B-16
+2025-10-14T05:38:01.478698406Z INFO:root:Using default SimpleTokenizer.
+2025-10-14T05:38:01.539909924Z INFO:services.hair_loss_daily.services.clip_ensemble_service:[OK] ViT-B-16 로드 완료 (고해상도 모델 - 세밀한 특징)
+2025-10-14T05:38:01.539930513Z INFO:root:Parsing model identifier. Schema: None, Identifier: RN50
+2025-10-14T05:38:01.539946894Z INFO:root:Loaded built-in RN50 model config.
+2025-10-14T05:38:05.534191474Z INFO:root:Instantiating model architecture: CLIP
+2025-10-14T05:38:06.219508015Z INFO:root:Loading full pretrained weights from: /root/.cache/huggingface/hub/models--timm--resnet50_clip.openai/snapshots/ec3d92cf63a5f9d591f0d611b736895966c73076/open_clip_model.safetensors
+2025-10-14T05:38:06.289453348Z INFO:root:Final image preprocessing configuration set: {'size': 224, 'mode': 'RGB', 'mean': (0.48145466, 0.4578275, 0.40821073), 'std': (0.26862954, 0.26130258, 0.27577711), 'interpolation': 'bicubic', 'resize_mode': 'shortest', 'fill_color': 0}
+2025-10-14T05:38:06.289474278Z INFO:root:Model RN50 creation process complete.
+2025-10-14T05:38:06.289746505Z INFO:root:Parsing tokenizer identifier. Schema: None, Identifier: RN50
+2025-10-14T05:38:06.289783165Z INFO:root:Attempting to load config from built-in: RN50
+2025-10-14T05:38:06.289789577Z INFO:root:Using default SimpleTokenizer.
+2025-10-14T05:38:06.350923137Z INFO:services.hair_loss_daily.services.clip_ensemble_service:[OK] RN50 로드 완료 (ResNet 기반 - 다른 아키텍처)
+2025-10-14T05:38:06.350945229Z INFO:services.hair_loss_daily.services.clip_ensemble_service:[OK] CLIP 앙상블 서비스 초기화 완료 (디바이스: cuda)
+2025-10-14T05:38:06.403110809Z [OK] 의료 데이터셋 통계 로드 완료: data/medical_dataset_stats.json
+2025-10-14T05:38:06.405262968Z [OK] Gemini AI 모델 초기화 완료
+2025-10-14T05:38:06.419847811Z Hair Loss Daily 모듈 로드 성공
+2025-10-14T05:38:06.420440507Z 🔍 모델 파일 체크 중...
+2025-10-14T05:38:06.420502865Z 🔍 모델 파일 누락 감지: 3개 파일
+2025-10-14T05:38:06.420506813Z 📥 Google Drive에서 모델 파일 다운로드 중...
+2025-10-14T05:38:06.583263036Z Retrieving folder contents
+2025-10-14T05:38:07.048020282Z Retrieving folder contents completed
+2025-10-14T05:38:07.048038196Z Building directory structure
+2025-10-14T05:38:07.048041322Z Building directory structure completed
+2025-10-14T05:38:11.397905265Z Downloading...
+2025-10-14T05:38:11.397927817Z From: https://drive.google.com/uc?id=1_kPPYrEaU7J0jw6d3-jQxCuCOZcUWr2s
+2025-10-14T05:38:11.397931204Z To: /tmp/models_temp/79999_iter.pth
+2025-10-14T05:38:11.403059438Z Processing file 1_kPPYrEaU7J0jw6d3-jQxCuCOZcUWr2s 79999_iter.pth
+2025-10-14T05:38:11.403071972Z Processing file 1AxEZ5p9NmTLJ1NDF66UeEsqSMRoaufAn best_swin_hair_classifier_side.pth
+2025-10-14T05:38:11.403075458Z Processing file 1VWmFsmCBVZGqGU6sIHJ-oF3CUzzfj_vD best_swin_hair_classifier_top.pth
+2025-10-14T05:38:11.403078023Z Processing file 1KOZb_SfP_ef8cHP-zn5bdZwXE2M7VrQ6 새 텍스트 문서.txt
+2025-10-14T05:38:12.659289452Z 
+  0%|          | 0.00/53.3M [00:00<?, ?B/s]
+  5%|▍         | 2.62M/53.3M [00:00<00:02, 25.2MB/s]
+ 13%|█▎        | 6.82M/53.3M [00:00<00:01, 34.3MB/s]
+ 25%|██▍       | 13.1M/53.3M [00:00<00:00, 43.5MB/s]
+ 38%|███▊      | 20.4M/53.3M [00:00<00:00, 53.8MB/s]
+ 49%|████▉     | 26.2M/53.3M [00:00<00:00, 35.9MB/s]
+ 62%|██████▏   | 33.0M/53.3M [00:00<00:00, 43.2MB/s]
+ 72%|███████▏  | 38.3M/53.3M [00:00<00:00, 38.6MB/s]
+ 88%|████████▊ | 46.7M/53.3M [00:01<00:00, 42.4MB/s]
+ 96%|█████████▋| 51.4M/53.3M [00:01<00:00, 42.7MB/s]
+100%|██████████| 53.3M/53.3M [00:01<00:00, 42.4MB/s]
+2025-10-14T05:38:14.472565521Z Downloading...
+2025-10-14T05:38:14.472590568Z From (original): https://drive.google.com/uc?id=1AxEZ5p9NmTLJ1NDF66UeEsqSMRoaufAn
+2025-10-14T05:38:14.472596129Z From (redirected): https://drive.google.com/uc?id=1AxEZ5p9NmTLJ1NDF66UeEsqSMRoaufAn&confirm=t&uuid=68e4eefc-9c67-4055-8466-45b1eca0ce1a
+2025-10-14T05:38:14.472605917Z To: /tmp/models_temp/best_swin_hair_classifier_side.pth
+2025-10-14T05:38:17.858111511Z 
+  0%|          | 0.00/333M [00:00<?, ?B/s]
+  1%|          | 2.10M/333M [00:00<00:16, 19.8MB/s]
+  3%|▎         | 11.5M/333M [00:00<00:05, 62.1MB/s]
+  7%|▋         | 22.5M/333M [00:00<00:03, 82.9MB/s]
+  9%|▉         | 30.9M/333M [00:00<00:03, 83.0MB/s]
+ 12%|█▏        | 40.4M/333M [00:00<00:03, 86.0MB/s]
+ 15%|█▌        | 51.4M/333M [00:00<00:03, 92.8MB/s]
+ 19%|█▊        | 62.4M/333M [00:00<00:02, 97.5MB/s]
+ 22%|██▏       | 73.4M/333M [00:00<00:02, 101MB/s] 
+ 25%|██▌       | 84.4M/333M [00:00<00:02, 102MB/s]
+ 29%|██▊       | 95.4M/333M [00:01<00:02, 104MB/s]
+ 32%|███▏      | 106M/333M [00:01<00:02, 105MB/s] 
+ 35%|███▌      | 118M/333M [00:01<00:02, 106MB/s]
+ 39%|███▊      | 129M/333M [00:01<00:01, 106MB/s]
+ 42%|████▏     | 140M/333M [00:01<00:01, 106MB/s]
+ 45%|████▌     | 151M/333M [00:01<00:01, 105MB/s]
+ 49%|████▊     | 162M/333M [00:01<00:01, 103MB/s]
+ 52%|█████▏    | 173M/333M [00:01<00:01, 104MB/s]
+ 55%|█████▌    | 184M/333M [00:01<00:01, 103MB/s]
+ 58%|█████▊    | 194M/333M [00:01<00:01, 102MB/s]
+ 61%|██████▏   | 204M/333M [00:02<00:01, 101MB/s]
+ 65%|██████▍   | 215M/333M [00:02<00:01, 97.3MB/s]
+ 68%|██████▊   | 225M/333M [00:02<00:01, 92.2MB/s]
+ 71%|███████▏  | 238M/333M [00:02<00:00, 102MB/s] 
+ 75%|███████▍  | 249M/333M [00:02<00:00, 102MB/s]
+ 78%|███████▊  | 259M/333M [00:02<00:00, 102MB/s]
+ 81%|████████  | 269M/333M [00:02<00:00, 101MB/s]
+ 84%|████████▍ | 280M/333M [00:02<00:00, 96.4MB/s]
+ 88%|████████▊ | 292M/333M [00:02<00:00, 101MB/s] 
+ 91%|█████████ | 302M/333M [00:03<00:00, 101MB/s]
+ 94%|█████████▍| 312M/333M [00:03<00:00, 100MB/s]
+ 97%|█████████▋| 323M/333M [00:03<00:00, 99.9MB/s]
+100%|██████████| 333M/333M [00:03<00:00, 98.4MB/s]
+100%|██████████| 333M/333M [00:03<00:00, 98.4MB/s]
+2025-10-14T05:38:19.502409644Z Downloading...
+2025-10-14T05:38:19.502440212Z From (original): https://drive.google.com/uc?id=1VWmFsmCBVZGqGU6sIHJ-oF3CUzzfj_vD
+2025-10-14T05:38:19.502445272Z From (redirected): https://drive.google.com/uc?id=1VWmFsmCBVZGqGU6sIHJ-oF3CUzzfj_vD&confirm=t&uuid=a8848422-06a8-403e-8a1e-62efcc4b3a46
+2025-10-14T05:38:19.502452305Z To: /tmp/models_temp/best_swin_hair_classifier_top.pth
+2025-10-14T05:38:22.849071772Z 
+  0%|          | 0.00/333M [00:00<?, ?B/s]
+  1%|          | 2.62M/333M [00:00<00:12, 25.7MB/s]
+  3%|▎         | 11.5M/333M [00:00<00:05, 61.2MB/s]
+  6%|▋         | 21.5M/333M [00:00<00:04, 75.7MB/s]
+  9%|▉         | 31.5M/333M [00:00<00:03, 83.6MB/s]
+ 13%|█▎        | 42.5M/333M [00:00<00:03, 91.8MB/s]
+ 16%|█▌        | 53.0M/333M [00:00<00:02, 95.9MB/s]
+ 19%|█▉        | 64.0M/333M [00:00<00:02, 99.5MB/s]
+ 23%|██▎       | 75.0M/333M [00:00<00:02, 102MB/s] 
+ 26%|██▌       | 85.5M/333M [00:00<00:02, 103MB/s]
+ 29%|██▉       | 96.5M/333M [00:01<00:02, 104MB/s]
+ 32%|███▏      | 107M/333M [00:01<00:02, 103MB/s] 
+ 35%|███▌      | 118M/333M [00:01<00:02, 105MB/s]
+ 39%|███▊      | 129M/333M [00:01<00:01, 106MB/s]
+ 42%|████▏     | 140M/333M [00:01<00:01, 106MB/s]
+ 45%|████▌     | 151M/333M [00:01<00:01, 105MB/s]
+ 48%|████▊     | 161M/333M [00:01<00:01, 103MB/s]
+ 52%|█████▏    | 172M/333M [00:01<00:01, 99.6MB/s]
+ 55%|█████▍    | 182M/333M [00:01<00:01, 100MB/s] 
+ 58%|█████▊    | 193M/333M [00:01<00:01, 100MB/s]
+ 61%|██████    | 203M/333M [00:02<00:01, 101MB/s]
+ 64%|██████▍   | 214M/333M [00:02<00:01, 104MB/s]
+ 68%|██████▊   | 225M/333M [00:02<00:01, 105MB/s]
+ 71%|███████   | 236M/333M [00:02<00:00, 104MB/s]
+ 74%|███████▍  | 246M/333M [00:02<00:00, 104MB/s]
+ 77%|███████▋  | 257M/333M [00:02<00:00, 100MB/s]
+ 81%|████████  | 268M/333M [00:02<00:00, 103MB/s]
+ 84%|████████▎ | 279M/333M [00:02<00:00, 102MB/s]
+ 87%|████████▋ | 289M/333M [00:02<00:00, 96.6MB/s]
+ 90%|█████████ | 300M/333M [00:03<00:00, 98.5MB/s]
+ 93%|█████████▎| 310M/333M [00:03<00:00, 99.1MB/s]
+ 97%|█████████▋| 322M/333M [00:03<00:00, 103MB/s] 
+100%|█████████▉| 333M/333M [00:03<00:00, 104MB/s]
+100%|██████████| 333M/333M [00:03<00:00, 99.6MB/s]
+2025-10-14T05:38:24.375593037Z Downloading...
+2025-10-14T05:38:24.375620720Z From: https://drive.google.com/uc?id=1KOZb_SfP_ef8cHP-zn5bdZwXE2M7VrQ6
+2025-10-14T05:38:24.375627292Z To: /tmp/models_temp/새 텍스트 문서.txt
+2025-10-14T05:38:24.376033333Z 
+  0%|          | 0.00/273 [00:00<?, ?B/s]
+100%|██████████| 273/273 [00:00<00:00, 1.72MB/s]
+2025-10-14T05:38:24.378078940Z Download completed
+2025-10-14T05:38:24.405136162Z ✅ 모델 파일 다운로드 완료!
+2025-10-14T05:38:24.405294012Z Hair Loss Daily 라우터 마운트 완료 (/hair-loss-daily)
+2025-10-14T05:38:24.457516129Z Hair Classification RAG 라우터 include 완료 (/api/hair-classification-rag)
+2025-10-14T05:38:24.712824330Z OpenAI 클라이언트 초기화 완료
+2025-10-14T05:38:24.712842215Z Google Gemini 클라이언트 초기화 완료 (GEMINI_API_KEY 사용)
+2025-10-14T05:38:30.282613574Z Pinecone index connection success
+2025-10-14T05:38:30.288955515Z OpenAI 클라이언트 초기화 완료
+2025-10-14T05:38:30.295918485Z Hair Encyclopedia Paper API 라우터 마운트 완료
+2025-10-14T05:38:30.298849905Z INFO:HairEncyclopediaPubMedScheduler:Hair Encyclopedia PubMed 자동 수집 스케줄러 시작 - 일주일에 한 번 실행
+2025-10-14T05:38:30.299176155Z INFO:HairEncyclopediaPubMedScheduler:마지막 실행일: 2025-10-07
+2025-10-14T05:38:30.299183389Z INFO:HairEncyclopediaPubMedScheduler:마지막 실행 이후 7일 경과 - 즉시 논문 수집 실행
+2025-10-14T05:38:30.299561347Z INFO:HairEncyclopediaPubMedScheduler:=== Hair Encyclopedia 주간 PubMed 논문 수집 시작 ===
+2025-10-14T05:38:30.300066747Z Hair Encyclopedia PubMed 자동 수집 스케줄러 시작 완료 (매주 월요일 09:00)
+2025-10-14T05:38:30.300080634Z INFO:HairEncyclopediaPubMedScheduler:Hair Encyclopedia PubMed 자동 수집 백그라운드 스레드 시작됨
+2025-10-14T05:38:30.305506694Z INFO:services.hair_encyclopedia.hair_papers.pubmed_collector:논문 수집 시작: 키워드=['hair loss', 'alopecia'], 최대=3건
+2025-10-14T05:38:30.324963935Z Time-Series Analysis API 라우터 마운트 완료
+2025-10-14T05:38:30.327395465Z Weather API 라우터 마운트 완료
+2025-10-14T05:38:30.334696267Z /usr/local/lib/python3.11/site-packages/timm/models/layers/__init__.py:48: FutureWarning: Importing from timm.models.layers is deprecated, please import via timm.layers
+2025-10-14T05:38:30.334701898Z   warnings.warn(f"Importing from {__name__} is deprecated, please import via timm.layers", FutureWarning)
+2025-10-14T05:38:30.335095375Z Swin Hair Check 모듈 로드 성공
+2025-10-14T05:38:30.591784070Z INFO:services.hair_encyclopedia.hair_papers.pubmed_collector:검색된 논문 수: 9
+2025-10-14T05:38:30.603602206Z INFO:services.hair_encyclopedia.hair_papers.pubmed_collector:논문 처리 중: 40683456
+2025-10-14T05:38:30.698733395Z /usr/local/lib/python3.11/site-packages/langchain_pinecone/__init__.py:3: LangChainDeprecationWarning: As of langchain-core 0.3.0, LangChain uses pydantic v2 internally. The langchain_core.pydantic_v1 module was a compatibility shim for pydantic v1, and should no longer be used. Please update the code to import from Pydantic directly.
+2025-10-14T05:38:30.698759965Z For example, replace imports like: `from langchain_core.pydantic_v1 import BaseModel`
+2025-10-14T05:38:30.698762540Z with: `from pydantic import BaseModel`
+2025-10-14T05:38:30.698765205Z or the v1 compatibility namespace if you are working in a code base that has not been fully upgraded to pydantic 2 yet. 	from pydantic.v1 import BaseModel
+2025-10-14T05:38:30.698770375Z   from langchain_pinecone.vectorstores import Pinecone, PineconeVectorStore
+2025-10-14T05:38:30.815744448Z WARNING:services.rag_chatbot.rag_service_final:⚠️ .env 파일 없음: /.env
+2025-10-14T05:38:30.834486039Z INFO:services.hair_encyclopedia.hair_papers.pubmed_collector:Abstract만 저장: 40683456
+2025-10-14T05:38:30.972555073Z ✅ RAG 챗봇 모듈 로드 성공 (사용자별 메모리 관리 + LangChain)
+2025-10-14T05:38:30.975437871Z INFO:     Started server process [19]
+2025-10-14T05:38:30.975449062Z INFO:     Waiting for application startup.
+2025-10-14T05:38:30.975695911Z INFO:     Application startup complete.
+2025-10-14T05:38:30.976217072Z INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2025-10-14T05:38:31.237003933Z INFO:services.hair_encyclopedia.hair_papers.pubmed_collector:논문 처리 중: 41048335
+2025-10-14T05:38:31.293157902Z ERROR:services.hair_encyclopedia.hair_papers.pubmed_collector:논문 상세 정보 가져오기 실패 (PMID: 41048335): 429 Client Error: Too Many Requests for url: https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=41048335&retmode=xml
+2025-10-14T05:38:31.293877048Z INFO:services.hair_encyclopedia.hair_papers.pubmed_collector:논문 처리 중: 41048334
+2025-10-14T05:38:31.357503885Z ERROR:services.hair_encyclopedia.hair_papers.pubmed_collector:논문 상세 정보 가져오기 실패 (PMID: 41048334): 429 Client Error: Too Many Requests for url: https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=41048334&retmode=xml
+2025-10-14T05:38:31.359269470Z INFO:services.hair_encyclopedia.hair_papers.pubmed_collector:논문 수집 완료: 1건
+2025-10-14T05:38:31.359292324Z INFO:HairEncyclopediaPubMedScheduler:수집 완료: 1건
+2025-10-14T05:38:31.375693798Z INFO:services.hair_encyclopedia.hair_papers.pubmed_pinecone_vectorizer:Pinecone 인덱스 연결: hair-loss-papers
+2025-10-14T05:38:31.375733574Z INFO:HairEncyclopediaPubMedScheduler:벡터화 처리: 40683456
+2025-10-14T05:38:43.319080594Z INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-14T05:38:44.347196238Z INFO:httpx:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-10-14T05:38:44.798739796Z INFO:services.hair_encyclopedia.hair_papers.pubmed_pinecone_vectorizer:Abstract 논문 벡터화 완료: 40683456 (크기: 8.23KB)
+2025-10-14T05:38:44.799123636Z INFO:HairEncyclopediaPubMedScheduler:✅ 논문 처리 완료: 40683456 (1/1)
+2025-10-14T05:38:44.799138905Z INFO:HairEncyclopediaPubMedScheduler:총 1개 논문 처리 완료
+2025-10-14T05:38:44.799579732Z INFO:HairEncyclopediaPubMedScheduler:논문 수집 완료. 다음 실행: 1주일 후

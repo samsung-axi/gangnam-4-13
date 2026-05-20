@@ -1,0 +1,110 @@
+import { useMemo, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { HistoryCard } from './HistoryCard';
+import { HistoryFilter } from './HistoryFilter';
+import { ActivityDashboard } from './ActivityDashboard';
+import { useSimulationHistory } from '../../hooks/useSimulationHistory';
+import type { HistoryFilterParams, SimulationKind } from '../../types/simulationHistory';
+
+interface HistoryListProps {
+  /** 초기 필터 — 기본: 최근 30일 · 최신순 */
+  initialFilter?: HistoryFilterParams;
+}
+
+function getInitialRange30d(): { from: string; to: string } {
+  const iso = (d: Date) => d.toISOString().slice(0, 10);
+  const today = new Date();
+  const start = new Date(today);
+  start.setDate(start.getDate() - 29);
+  return { from: iso(start), to: iso(today) };
+}
+
+export function HistoryList({ initialFilter }: HistoryListProps) {
+  const navigate = useNavigate();
+  const defaultRange = useMemo(() => getInitialRange30d(), []);
+  const [filter, setFilter] = useState<HistoryFilterParams>(
+    initialFilter ?? {
+      from_date: defaultRange.from,
+      to_date: defaultRange.to,
+      page: 1,
+      size: 20,
+      sort: 'created_at_desc',
+    },
+  );
+
+  const { items, total, isLoading, error, remove, refetch } = useSimulationHistory(filter);
+
+  // 2026-05-02 DB 분리 — kind 별 라우트로 직접 진입 (3-card hub 우회).
+  const handleOpen = (id: number, kind: SimulationKind) => navigate(`/dashboard/${kind}/${id}`);
+  const handleDownloadPdf = (id: number, kind: SimulationKind) =>
+    navigate(`/dashboard/${kind}/${id}?autopdf=1`);
+  const handleDelete = async (id: number, kind: SimulationKind) => {
+    await remove(id, kind);
+  };
+
+  return (
+    <div className="space-y-4">
+      <ActivityDashboard items={items} total={total} isLoading={isLoading} />
+
+      <HistoryFilter value={filter} onChange={setFilter} />
+
+      <div className="flex items-center justify-between text-xs text-muted-foreground">
+        <span>
+          총 <span className="font-mono text-foreground">{total}</span>건
+        </span>
+        <button
+          type="button"
+          onClick={() => void refetch()}
+          className="text-muted-foreground hover:text-foreground"
+          aria-label="새로고침"
+        >
+          새로고침
+        </button>
+      </div>
+
+      {error && (
+        <div className="rounded-md border border-danger/40 bg-danger/10 px-3 py-2 text-sm text-danger">
+          {error}
+        </div>
+      )}
+
+      {isLoading ? (
+        <div className="rounded-lg border border-dashed border-border bg-card/40 p-10 text-center text-sm text-muted-foreground">
+          불러오는 중…
+        </div>
+      ) : items.length === 0 ? (
+        <div className="rounded-lg border border-dashed border-border bg-card/40 p-10 text-center text-sm text-muted-foreground">
+          <div>조건에 맞는 시뮬 이력이 없습니다</div>
+          <button
+            type="button"
+            onClick={() => {
+              const range = getInitialRange30d();
+              setFilter({
+                from_date: range.from,
+                to_date: range.to,
+                page: 1,
+                size: 20,
+                sort: 'created_at_desc',
+              });
+            }}
+            className="mt-3 inline-flex items-center gap-1.5 rounded-md border border-primary/40 bg-primary/10 px-3 py-2 text-xs font-bold text-primary hover:bg-primary/20 transition-colors"
+          >
+            필터 초기화
+          </button>
+        </div>
+      ) : (
+        <div className="space-y-3 pb-6">
+          {items.map((item) => (
+            <HistoryCard
+              key={item.id}
+              item={item}
+              onOpen={handleOpen}
+              onDelete={handleDelete}
+              onDownloadPdf={handleDownloadPdf}
+            />
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}

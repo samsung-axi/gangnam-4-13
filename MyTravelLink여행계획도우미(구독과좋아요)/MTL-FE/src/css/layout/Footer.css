@@ -1,0 +1,75 @@
+/* 푸터 메뉴 아이템 기본 스타일 */
+.WS-Footer-Item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+
+}
+
+.WS-Footer-Wish {
+    width: 25px;
+    height: 25px;
+    object-fit: contain;
+    filter: grayscale(100%);
+    position: relative;
+
+    z-index: 2;
+
+    cursor: pointer;
+}
+/* 푸터 메뉴 아이콘 이미지 스타일 */
+.WS-Footer-Item img {
+    width: 25px;
+    height: 25px;
+    object-fit: contain;
+    filter: grayscale(100%);
+    position: relative;
+
+    z-index: 2;
+}
+
+.WS-Footer-Text {
+    margin-top: 0.5vh;
+
+    font-size: var(--font-size-sm);
+    color: var(--color-dark-gray);
+
+    z-index: 2;
+}
+
+/* 호버 및 활성화 상태일 때 원형 배경 스타일 */
+.WS-Footer-Item:hover::before,
+.WS-Footer-Item.active::before {
+    content: '';
+
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 70px;
+    height: 70px;
+
+    color: white;
+    background-color: var(--color-main-hover);
+    border-radius: var(--border-radius-full);
+
+    z-index: 1;
+}
+
+/* 호버 및 활성화 상태일 때 아이콘 색상 변경 */
+.WS-Footer-Item:hover img,
+.WS-Footer-Item.active img {
+    filter: brightness(0) invert(1);
+}
+
+/* 호버 및 활성화 상태일 때 텍스트 색상 변경 */
+.WS-Footer-Item:hover div,
+.WS-Footer-Item.active div {
+    color: white;
+}
+
+/* 완료 ================================================================== */

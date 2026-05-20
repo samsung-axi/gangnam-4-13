@@ -1,0 +1,21 @@
+# 환경 변수
+.env
+google_auth/
+
+# 파이썬 캐시
+__pycache__/
+
+# 임시 파일
+tmp/__pycache__/
+*.pyc
+tmp/
+
+# ChromaDB
+chroma_data/chroma.sqlite3
+
+chroma_data/*
+
+storage/*
+
+# 테스트 폴더
+test/

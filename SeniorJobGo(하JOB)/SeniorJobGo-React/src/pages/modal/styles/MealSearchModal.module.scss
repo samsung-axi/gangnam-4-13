@@ -1,0 +1,63 @@
+@use '@assets/styles/_variables' as *;
+@use "sass:color";
+
+
+
+.recommendationTitle {
+  margin-top: 1rem;
+  font-size: $font-size-md;
+  font-weight: $font-weight-medium;
+  color: $secondary-text-color;
+}
+
+.searchTags {
+  width: 100% !important;
+  min-width: 100%;
+  display: block;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-bottom: 1rem;
+
+  .searchTagsInner {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  
+  .tagButton {
+    outline: none;
+    padding: 0.5rem 0.88rem;
+    background: $color-background-light;
+    border: 1px solid $border-light-color;
+    border-radius: $radius-md;
+    color: $secondary-text-color;
+    font-size: $font-size-md;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    
+    &:hover {
+      background: $primary-color;
+      color: $text-color;
+      border-color: $primary-color;
+    }
+    
+    &:active {
+      transform: translateY(1px);
+    }
+  }
+
+  @media (max-width: 768px) {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+   
+    .tagButton {
+      flex: 0 0 calc(25% - 6px); // 각 버튼의 너비를 25%로 설정하여 4개씩 배치
+      min-width: 0;
+    }
+  }
+}

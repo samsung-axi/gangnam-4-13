@@ -1,0 +1,65 @@
+name: Frontend build and deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build_and_push:
+    runs-on: ubuntu-latest
+    if: contains(github.event.head_commit.modified, 'frontend/') || contains(github.event.head_commit.added, 'frontend/') || contains(github.event.head_commit.message, 'frontend') || github.event_name == 'workflow_dispatch'
+    
+    steps:
+      - name: Login to DockerHub
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Frontend Dockerfile build
+        run: |
+          docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/mozara-frontend ./frontend
+      - name: Push Frontend Docker image
+        run: |
+          docker push ${{ secrets.DOCKERHUB_USERNAME }}/mozara-frontend
+  
+  deploy:
+    needs: build_and_push
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Docker pull and run
+        uses: appleboy/ssh-action@master
+        with:
+          username: ubuntu
+          host: ${{ secrets.LIVE_SERVER_IP }}
+          key: ${{ secrets.EC2_SSH_KEY }}
+          timeout: 60m
+          command_timeout: 60m
+          script: |
+            echo "🔄 프론트엔드 컨테이너 업데이트 중..."
+            
+            # 기존 컨테이너 정리
+            if [ "$(sudo docker ps -a -q -f name=mozara-frontend)" ]; then
+              sudo docker rm -f mozara-frontend
+            fi
+            
+            # 기존 이미지 정리
+            if [ "$(sudo docker images -q ${{ secrets.DOCKERHUB_USERNAME }}/mozara-frontend)" ]; then
+              sudo docker rmi -f ${{ secrets.DOCKERHUB_USERNAME }}/mozara-frontend
+            fi          
+            
+            # 새 이미지 다운로드
+            sudo docker pull ${{ secrets.DOCKERHUB_USERNAME }}/mozara-frontend         
+            
+            # SSL 인증서와 함께 컨테이너 실행
+            sudo docker run -d -p 80:80 -p 443:443 --name mozara-frontend \
+            -v /etc/letsencrypt:/etc/letsencrypt:ro \
+            ${{ secrets.DOCKERHUB_USERNAME }}/mozara-frontend
+            
+            echo "✅ 프론트엔드 배포 완료!"
+            sudo docker ps | grep mozara-frontend

@@ -1,0 +1,45 @@
+* {
+
+    -webkit-tap-highlight-color: transparent;
+    font-family: var(--font-primary);
+    transition: all 0.3s;
+}
+
+.WS-Main-Layout {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    max-width: 450px;
+}
+
+/* 메인 컨텐츠 영역 */
+.WS-Main-Container {
+
+    width: 96%;
+    height: 100%;
+}
+
+.WS-Main-Footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: var(--footer-height);
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    background-color: white;
+
+    z-index: 9;
+}
+
+/* 완료 ================================================================== */

@@ -1,0 +1,60 @@
+# GMP/SOP RAG + Agent 시스템 의존성
+# pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu126
+# pip install -r requirements.txt
+
+# === 기본 웹 프레임워크 ===
+fastapi
+uvicorn
+python-multipart
+
+# === 데이터베이스 ===
+psycopg2-binary
+pgvector
+neo4j
+
+# === ML/임베딩 ===
+# torch
+transformers
+sentence-transformers
+
+# === PDF 처리 ===
+pdfplumber
+pymupdf
+python-docx
+xhtml2pdf
+markdown
+
+# === LangChain + LangGraph ===
+langchain
+langchain-core
+langchain-openai
+langchain-community
+langgraph
+
+# === Z.AI (GLM-4.7-Flash) ===
+zai-sdk
+
+# === OpenAI ===
+openai
+
+# === LangSmith (추적/모니터링) ===
+langsmith
+
+# === 기타 ===
+pydantic
+numpy
+python-dotenv
+
+weaviate-client
+
+# === 인증/보안 ===
+passlib[bcrypt]
+python-jose[cryptography]
+python-multipart
+
+# === AWS S3 ===
+boto3
+
+# === OnlyOffice ===
+PyJWT
+httpx

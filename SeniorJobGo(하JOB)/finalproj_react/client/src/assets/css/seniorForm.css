@@ -1,0 +1,645 @@
+.hmk-form-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Noto Sans KR', sans-serif;
+  box-sizing: border-box;
+}
+
+.hmk-form-section {
+  display: flex;
+  flex-direction: column;
+  height: 97vh;
+  padding: 24px;
+  background: white;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.hmk-section-title {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.hmk-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+  align-items: stretch;
+}
+
+.hmk-selection-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 25px;
+  border: 2px solid #ddd;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-height: 120px;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 100%;
+  position: relative;
+}
+
+.hmk-selection-card:hover {
+  border-color: #4CAF50;
+  transform: translateY(-2px);
+}
+
+.hmk-selection-card.selected {
+  border-color: #4CAF50;
+  background-color: #E8F5E9;
+}
+
+.hmk-card-icon {
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+
+.hmk-card-label {
+  text-align: center;
+  font-size: 16px;
+  color: #333;
+  line-height: 1.4;
+}
+
+.hmk-input-group {
+  margin-bottom: 20px;
+  max-width: 100%;
+}
+
+.hmk-label {
+  display: block;
+  margin-bottom: 8px;
+  color: #333;
+  font-weight: 500;
+}
+
+.hmk-large-input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.hmk-resident-number {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.hmk-resident-number input {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.hmk-separator {
+  color: #666;
+  font-weight: bold;
+}
+
+.hmk-photo-upload-card {
+  width: 200px;
+  height: 200px;
+  border: 2px dashed #ddd;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin: 0 auto 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hmk-photo-preview {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hmk-camera-icon {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.hmk-camera-icon span {
+  font-size: 32px;
+}
+
+.hmk-camera-icon p {
+  margin: 0;
+  color: #666;
+  font-size: 14px;
+}
+
+.hmk-hidden-input {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.hmk-address-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.hmk-postcode-row {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.hmk-postcode {
+  width: 150px;
+  box-sizing: border-box;
+}
+
+.hmk-button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.hmk-address-search-btn {
+  background-color: #2196F3;
+  color: white;
+  white-space: nowrap;
+  padding: 12px 20px;
+}
+
+.hmk-navigation-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.hmk-prev-button {
+  background-color: #9E9E9E;
+  color: white;
+}
+
+.hmk-next-button, .hmk-submit-button {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.hmk-button:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.hmk-family-member-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  height: 100%;
+}
+
+.hmk-family-member-card .hmk-selection-card {
+  width: 100%;
+  margin-bottom: 0;
+}
+
+.hmk-count-control {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.hmk-count-button {
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 50%;
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.hmk-count-display {
+  min-width: 60px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+}
+
+.hmk-summary-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.hmk-summary-group {
+  padding: 15px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+}
+
+.hmk-summary-group h3 {
+  color: #2196F3;
+  margin-bottom: 10px;
+}
+
+.hmk-year-checkboxes {
+  display: flex;
+  gap: 20px;
+}
+
+.hmk-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.hmk-checkbox {
+  width: 18px;
+  height: 18px;
+}
+
+.hmk-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.hmk-modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 800px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.hmk-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.hmk-modal-close {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 0;
+  color: #666;
+}
+
+.hmk-modal-body {
+  padding: 20px;
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+/* 추가 스타일... */
+
+/* 모바일 대응을 위한 미디어 쿼리 추가 */
+@media (max-width: 768px) {
+  .hmk-form-container {
+    padding: 10px;
+  }
+
+  .hmk-form-section {
+    padding: 15px;
+  }
+
+  .hmk-postcode-row {
+    flex-direction: column;
+  }
+
+  .hmk-postcode {
+    width: 100%;
+  }
+
+  .hmk-address-search-btn {
+    width: 100%;
+  }
+
+  .hmk-card-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+
+  .hmk-selection-card {
+    padding: 20px;
+    min-height: 100px;
+  }
+
+  .hmk-family-member-card .hmk-selection-card {
+    padding: 20px;
+    min-height: 100px;
+  }
+}
+
+/* 요약 페이지 스타일 추가 */
+.hmk-summary-content ul {
+  list-style: none;  /* 리스트 점(bullet) 제거 */
+  padding: 0;        /* 기본 패딩 제거 */
+  margin: 0;         /* 기본 마진 제거 */
+}
+
+.hmk-summary-content li {
+  margin-bottom: 8px;  /* 리스트 항목 간 간격 */
+  padding-left: 0;     /* 왼쪽 패딩 제거 */
+}
+
+/* 모달 푸터 스타일 추가 */
+.hmk-modal-footer {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+}
+
+.hmk-rank-badge {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: #4CAF50;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 14px;
+  font-weight: bold;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.hmk-selection-card.selected[data-rank="1"] {
+  border-color: #FFD700; /* 금색 */
+}
+
+.hmk-selection-card.selected[data-rank="2"] {
+  border-color: #C0C0C0; /* 은색 */
+}
+
+.hmk-selection-card.selected[data-rank="3"] {
+  border-color: #CD7F32; /* 동색 */
+}
+
+/* 카메라 관련 스타일 */
+.hmk-camera-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hmk-camera-container {
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hmk-camera-container video {
+  width: 100%;
+  max-width: 800px;
+  border-radius: 8px;
+}
+
+.hmk-camera-controls {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.hmk-capture-btn,
+.hmk-cancel-btn {
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.hmk-capture-btn {
+  background: #007bff;
+  color: white;
+}
+
+.hmk-cancel-btn {
+  background: #dc3545;
+  color: white;
+}
+
+.hmk-photo-controls {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  justify-content: center;
+  width: 100%;
+}
+
+.hmk-camera-btn,
+.hmk-upload-btn {
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  border: 1px solid #ddd;
+  background: white;
+  font-size: 14px;
+  color: #333;
+  transition: all 0.2s ease;
+}
+
+.hmk-camera-btn:hover,
+.hmk-upload-btn:hover {
+  background: #f8f9fa;
+  border-color: #adb5bd;
+}
+
+.hmk-photo-upload-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  border: 2px dashed #ddd;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.hmk-photo-preview {
+  max-width: 200px;
+  max-height: 200px;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+.hmk-camera-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.hmk-icon {
+  font-size: 40px;
+}
+
+.hmk-hidden-input {
+  display: none;
+}
+
+/* 사진 선택 모달 스타일 */
+.hmk-photo-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  z-index: 1000;
+}
+
+.hmk-photo-modal-content {
+  background: #f1f2f6;
+  width: 100%;
+  padding: 8px 8px calc(env(safe-area-inset-bottom) + 8px) 8px;
+  border-radius: 12px 12px 0 0;
+  text-align: center;
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.hmk-photo-modal-content h3 {
+  margin: 16px 0;
+  color: #8e8e93;
+  font-size: 13px;
+  font-weight: normal;
+}
+
+.hmk-photo-modal-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.hmk-photo-modal-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 57px;
+  background: white;
+  border: none;
+  border-radius: 14px;
+  font-size: 20px;
+  font-weight: 400;
+  color: #007AFF;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  transition: background-color 0.2s ease;
+}
+
+.hmk-photo-modal-btn:active {
+  background-color: #F2F2F7;
+}
+
+.hmk-modal-icon {
+  font-size: 24px;
+}
+
+.hmk-photo-modal-close {
+  width: 100%;
+  height: 57px;
+  border: none;
+  border-radius: 14px;
+  background: white;
+  color: #007AFF;
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.hmk-photo-modal-close:active {
+  background-color: #F2F2F7;
+}
+
+/* 모바일 대응 */
+@media (max-width: 768px) {
+  .hmk-photo-modal-content {
+    margin: 8px;
+    width: calc(100% - 16px);
+  }
+}

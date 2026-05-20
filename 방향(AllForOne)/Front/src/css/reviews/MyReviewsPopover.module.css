@@ -1,0 +1,209 @@
+.popoverContainer {
+    position: absolute;
+    top: 70%;
+    left: 14.5%;
+    transform: translate(0, -50%);
+    width: 400px;
+    max-height: 500px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    overflow: hidden;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.header h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+    
+}
+
+.editButton {
+    background: none;
+    border: none;
+    color: #666;
+    cursor: pointer;
+    padding: 4px 8px;
+    margin-right: 8px;
+}
+
+.editButton:hover {
+    color: #333;
+}
+
+.editContainer {
+    margin-top: 10px;
+}
+
+.editInput {
+    width: 320px;
+    height: 100px; /* 고정 높이 설정 */
+    padding: 12px;
+    border: 1px solid #E5E5E5;
+    border-radius: 8px;
+    resize: none; /* 크기 조절 비활성화 */
+    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 1.5;
+    font-family: inherit; /* 기본 폰트 유지 */
+}
+
+.editActions {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+}
+
+.saveButton, .cancelButton {
+    padding: 6px 16px;
+    border: none;
+    border-radius: 20px; /* 더 부드러운 모서리 */
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.saveButton {
+    background-color: #8B7E74; /* 세련된 브라운 톤 */
+    color: white;
+}
+
+.saveButton:hover {
+    background-color: #7C6F65; /* 더 진한 브라운 */
+    transform: translateY(-1px);
+}
+
+.cancelButton {
+    background-color: #A7A7A7; /* 중립적인 그레이 톤 */
+    color: white;
+}
+
+.cancelButton:hover {
+    background-color: #919191; /* 더 진한 그레이 */
+    transform: translateY(-1px);
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: auto;
+    flex-shrink: 0;
+}
+.closeButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    color: #666;
+}
+
+.closeButton:hover {
+    color: #333;
+}
+
+.content {
+    padding: 20px;
+    overflow-y: auto;
+    max-height: 400px;
+}
+
+.reviewItem {
+    border-bottom: 1px solid #eee;
+    padding: 15px 0;
+    margin-bottom: 10px;
+}
+
+.reviewItem:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.reviewHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.date {
+    display: block;
+    font-size: 14px;
+    color: #666;
+    margin-top: 8px;  /* content와의 간격 */
+    text-align: right; /* 오른쪽 정렬 */
+}
+
+.reviewContent {
+    font-size: 15px;
+    line-height: 1.5;
+    color: #333;
+    margin: 0;
+    transform: translateY(5px);
+}
+
+.loading {
+    text-align: center;
+    padding: 20px;
+    color: #666;
+}
+
+.noReviews {
+    text-align: center;
+    padding: 30px 0;
+    color: #666;
+    font-size: 15px;
+}
+
+.deleteButton {
+    background: none;
+    border: none;
+    color: #ff4444;
+    font-size: 14px;
+    cursor: pointer;
+    padding: 4px 8px;
+}
+
+.deleteButton:hover {
+    text-decoration: underline;
+}
+
+/* 팝업창 스크롤바 스타일링 */
+.content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.content::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.content::-webkit-scrollbar-thumb {
+    background: #BDBDBD;
+    border-radius: 4px;
+}
+
+.content::-webkit-scrollbar-thumb:hover {
+    background: #A7A7A7;
+}
+
+.productName {
+    font-size: 14px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    flex: 1;
+    max-width: 55%; /* 60%에서 조금 더 줄임 */
+    min-width: 0;
+}

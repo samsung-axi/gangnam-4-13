@@ -1,0 +1,14 @@
+.NormalInput_box {
+  width: 100%;
+  border-radius: var(--border-radius-2);
+  border: 1px solid var(--grey-1);
+  padding: 8px 12px;
+  font-size: var(--font-size-5);
+  box-shadow: var(--shadow-1);
+  outline: none;
+}
+
+/* 리스트가 있을 때 아래쪽 모서리 제거 */
+.NormalInput_box.hasList {
+  border-radius: var(--border-radius-2) var(--border-radius-2) 0 0;
+}

@@ -1,0 +1,18 @@
+services:
+  admin-spa:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: admin-spa:latest
+    container_name: admin-spa
+    env_file:
+      - .env
+    ports:
+      - "5137:80"
+    restart: unless-stopped
+    networks:
+      - edge-net
+
+networks:
+  edge-net:
+    external: true

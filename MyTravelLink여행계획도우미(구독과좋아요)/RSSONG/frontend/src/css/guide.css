@@ -1,0 +1,101 @@
+.guide-container {
+  height: 834px;
+  width: 1194px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #FCF3D4;
+  border-radius: 15px;
+}
+
+.guide-content {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-right: 50px;
+}
+
+.logo {
+  width: 70px;
+  height: 70px;  
+  margin-left: 10px;
+}
+
+.alert-icon {
+  font-size: 50px;
+  font-weight: 900;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.guide-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.tag {
+  background-color: #ffd43b;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+.step-number {
+  font-size: 40px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.camera-icon {
+  width: 80px;
+  height: 50px;
+}
+
+.mic-icon {
+  position: relative;
+  top: 23px; /* 원하는 만큼 조정 가능 */
+  width: 70px;
+  height: 70px;
+}
+
+.guide-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 30px; /* 버튼 사이 간격 증가 */
+  margin-top: 40px;
+}
+
+.btn-no,
+.btn-yes {
+  padding: 20px 60px; /* 패딩 증가 */
+  border: none;
+  border-radius: 12px; /* 모서리 둥글기 증가 */
+  font-size: 24px; /* 폰트 크기 증가 */
+  font-weight: bold;
+  cursor: pointer;
+  min-width: 180px; /* 최소 너비 증가 */
+  transition: all 0.3s ease;
+}
+
+.btn-no {
+  background-color: #ff4b4b;
+  color: white;
+}
+
+.btn-yes {
+  background-color: #ffd43b;
+  color: black;
+}
+
+/* 호버 효과 */
+.btn-no:hover,
+.btn-yes:hover {
+  transform: scale(1.08); /* 호버시 더 크게 확대 */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* 그림자 효과 증가 */
+}
+
+/* 클릭 효과 */
+.btn-no:active,
+.btn-yes:active {
+  transform: scale(0.95);
+}

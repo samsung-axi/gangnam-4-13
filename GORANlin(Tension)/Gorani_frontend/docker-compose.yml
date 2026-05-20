@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: C:\Users\201\Desktop\Gorani-backend  
+      dockerfile: Dockerfile
+    image: aripos/gorani-backend:latest  
+    container_name: backend
+    ports:
+      - "8080:8080"
+    restart: always
+    # 🔥 더 이상 volumes나 환경 변수 설정 필요 없음 (이미지에 포함됨)
+
+  frontend:
+    build:
+      context: C:\Users\201\Desktop\Gorani1
+      dockerfile: Dockerfile
+      args:
+        REACT_APP_NAVER_CLIENT_ID: ${REACT_APP_NAVER_CLIENT_ID}
+        REACT_APP_NAVER_REDIRECT_URI: ${REACT_APP_NAVER_REDIRECT_URI}
+        REACT_APP_KAKAO_ID: ${REACT_APP_KAKAO_ID}
+        REACT_APP_KAKAO_REDIRECT_URI: ${REACT_APP_KAKAO_REDIRECT_URI}
+        REACT_APP_GOOGLE_CLIENT_ID: ${REACT_APP_GOOGLE_CLIENT_ID}
+        REACT_APP_GOOGLE_REDIRECT_URI: ${REACT_APP_GOOGLE_REDIRECT_URI}
+    image: aripos/gorani-frontend:latest 
+    container_name: frontend
+    ports:
+      - "80:80"
+    restart: always
+    env_file:
+      - .env

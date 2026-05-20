@@ -1,0 +1,46 @@
+.chartcard_container {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+    padding: 15px 20px;
+    transition: all 0.3s ease;
+
+    width: autopx;
+    height: auto;
+
+    margin-bottom: 30px;
+  
+    &:hover {
+      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
+      transform: translateY(-2px);
+    }
+  
+    .chart_container {
+      width: 100%;
+      height: 90%;
+
+      .chart_content{
+        width: 100%;
+        height: 100%;
+        margin-bottom: 9px;
+        background-color: blanchedalmond;
+        border-radius: 8px;
+        padding: 20px 0px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+    }
+  
+    .chartcard_title_container {
+      h2 {
+        font-size: 1.3rem;
+        color: #333;
+        margin: 0;
+        font-weight: bolder;
+      }
+    }
+  }
+  

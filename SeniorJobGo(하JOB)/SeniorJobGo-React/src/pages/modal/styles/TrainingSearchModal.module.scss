@@ -1,0 +1,322 @@
+@use 'sass:color';
+@use '@assets/styles/_variables' as *;
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+}
+
+.modalContent {
+  background: $white-color;
+  padding: 2rem;
+  border-radius: $radius-lg;
+  width: 90%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: $text-title-color;
+    font-size: $font-size-lg;
+    font-weight: $font-weight-semibold;
+  }
+}
+
+.searchForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  
+  label {
+    font-size: $font-size-md;
+    color: $secondary-text-color;
+    font-weight: $font-weight-medium;
+  }
+
+  input, select {
+    height: 48px;
+    padding: 0 8px;
+    border: 1px solid $border-color;
+    border-radius: $radius-md;
+    font-size: $font-size-md;
+    color: $placeholder-color;
+
+    &::placeholder {
+      color: $placeholder-color !important;
+    }
+    
+    &:focus {
+      border-color: $border-color;
+      outline: none;
+    }
+  }
+
+  select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    
+    background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L5 5L9 1' stroke='%23666666' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    padding-right: 32px;
+    
+    &::-ms-expand {
+      display: none;
+    }
+
+    &:disabled {
+      background: $color-background-light;
+      cursor: not-allowed;
+    }
+    
+    &:not(:focus):invalid,
+    &[value=""] {
+      color: $placeholder-color; // Keep placeholder color when no valid selection
+    }
+    
+    // option 스타일
+    option {
+      color: $text-color;
+      
+      &[disabled] {
+        color: $placeholder-color;
+      }
+    }
+
+    &:valid {
+      color: $text-color; // Ensure text color is applied when valid
+    }
+
+  }
+}
+
+.locationInputs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+
+  select {
+    width: 100%;
+    height: 48px;
+    padding: 0 8px;
+    border: 1px solid $border-color;
+    border-radius: $radius-md;
+    font-size: $font-size-md;
+    color: $secondary-text-color;
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L5 5L9 1' stroke='%23666666' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    padding-right: 32px;
+
+    &:disabled {
+      background: $color-background-light;
+      cursor: not-allowed;
+    }
+
+    &:focus {
+      border-color: $border-color;
+      outline: none;
+    }
+  }
+
+  input {
+    width: 100%;
+    height: 48px;
+    padding: 0 8px;
+    font-size: $font-size-md;
+    outline: none;
+    
+    &:focus {
+      border-color: $border-color;
+      outline: none;
+    }
+    
+    &::placeholder {
+      color: $secondary-text-color;
+    }
+  }
+  
+  input, select {
+    width: 100%;
+    height: 48px;
+    padding: 0 8px;
+    border: 1px solid $border-color;
+    border-radius: $radius-md;
+    font-size: $font-size-md;
+    color: $secondary-text-color;
+
+    &:disabled {
+      background: $color-background-light;
+      cursor: not-allowed;
+    }
+
+    &:focus {
+      border-color: $border-color;
+      outline: none;
+    }
+  }
+}
+
+.errorText {
+  color: $accent-color;
+  font-size: $font-size-sm;
+  padding-left: 2px;
+  display: flex;
+  align-items: center;
+  
+  &::before {
+    content: "!";
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+    background-color: $accent-color;
+    color: $white-color;
+    border-radius: 50%;
+    margin-right: 6px;
+    font-size: 12px;
+    font-weight: bold;
+  }
+}
+
+.required {
+  color: $accent-color;
+  margin-left: 3px;
+  vertical-align: top;
+  font-size: $font-size-sm;
+}
+
+.interestButtons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  width: 100%;
+
+  .interestButton {
+    flex: 0 0 calc((100% - 16px) / 3);
+    height: 48px;
+    padding: 0;
+    font-size: $font-size-16;
+    border: 1px solid $border-color;
+    border-radius: $radius-md;
+    background: $white-color;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $secondary-text-color;
+    
+    &.active {
+      background: $primary-color;
+      color: $text-color;
+      border-color: $primary-color;
+    }
+    
+    &:hover:not(.active):not(:disabled) {
+      background: $color-background-light;
+    }
+    
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+}
+
+select {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid $border-color;
+  border-radius: $radius-md;
+  font-size: $font-size-16;
+  background: $white-color;
+  
+  &:disabled {
+    background: $color-background-light;
+    cursor: not-allowed;
+  }
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 8px;
+  margin-top: 1.5rem;
+  
+  button {
+    flex: 1;
+    padding: 1rem;
+    border: none;
+    border-radius: $radius-md;
+    font-size: $font-size-16;
+    font-weight: $font-weight-medium;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+}
+
+.submitButton {
+  background: $primary-color;
+  color: $text-color;
+  
+  &:hover {
+    background: color.adjust($primary-color, $lightness: -5%);
+  }
+}
+
+.editButton {
+  background: #4F6EF7;
+  color: $white-color;
+  
+  &:hover {
+    background: color.adjust(#4F6EF7, $lightness: -5%);
+  }
+}
+
+.cancelButton {
+  background: $btn-cancel;
+  color: $secondary-text-color;
+  font-weight: $font-weight-medium;
+  
+  &:hover {
+    background: color.adjust($btn-cancel, $lightness: -5%);
+  }
+}
+
+@media (max-width: 768px) {
+  .modalContent {
+    padding: 1.5rem;
+    width: 95%;
+  }
+  
+  .interestButtons {
+    .interestButton {
+      padding: 1rem 0.8rem;
+      font-size: $font-size-md;
+    }
+  }
+} 

@@ -1,0 +1,169 @@
+/* 페이지 컨테이너 */
+.page-container {
+  padding-top: 80px; /* Reduced padding for a more compact look */
+  text-align: left;
+  width: 100%;
+  background-color: white; /* Clean white background */
+}
+
+/* 헤더 영역 스타일 (Wishlist 텍스트) */
+.header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 15px;
+  padding: 0 40px; /* Added horizontal padding */
+}
+
+/* 제목 스타일 */
+.page-container h1 {
+  font-size: 48px; /* Slightly reduced size for a more refined look */
+  font-weight: 700; /* Slightly lighter weight */
+  color: #343A3F; /* Using the recommended dark gray */
+  padding-left: 0; /* Removed left padding */
+  margin-bottom: 0;
+}
+
+/* 2px 두께의 구분선 */
+.divider {
+  margin-top: 15px;
+  height: 5px; /* Thinner divider */
+  background-color: #343A3F; /* Changed to match header color */
+  width: calc(100% - 80px); /* Slightly inset divider */
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+/* 바디 영역 */
+.body {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: calc(80vh - 100px);
+  text-align: center;
+  padding: 0 40px; /* Added horizontal padding */
+}
+
+/* 이미지 아이콘과 텍스트를 묶는 컨테이너 */
+.icon-with-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 500px;
+  width: 100%;
+}
+
+/* 이미지 아이콘 스타일 */
+.icon {
+  width: 250px; /* Slightly reduced size */
+  height: auto;
+  margin-bottom: 25px;
+  opacity: 0.7; /* Add a subtle fade to the icon */
+}
+
+/* 문구 스타일 */
+.no-items-text {
+  font-size: 20px; /* Slightly reduced size */
+  color: #343A3F; /* Changed to match the dark gray */
+  line-height: 1.6;
+  text-align: center;
+  font-weight: 300; /* Lighter font weight */
+}
+
+/* 위시리스트 상품 스타일 */
+.wishlist-products {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  width: 100%;
+}
+
+.wishlist-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  border: 1px solid #000;
+  border-radius: 8px;
+  padding: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-top: 10px;
+  position: relative; /* Make the item a positioning context */
+}
+
+.wishlist-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.wishlist-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.wishlist-details {
+  text-align: center;
+  width: 100%;
+}
+
+.wishlist-title {
+  font-size: 16px;
+  color: #343A3F;
+  margin-bottom: 5px;
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.wishlist-price {
+  font-size: 18px;
+  color: #343A3F;
+  font-weight: 600;
+}
+
+.remove-icon {
+  position: absolute; /* Position it relative to the wishlist-item */
+  top: 5px; /* Adjust to align at the top corner */
+  right: 5px; /* Align it at the right corner */
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  display: block; /* Always visible */
+}
+
+/* 애니메이션 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.wishlist-products {
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* 기존 슬라이드 아웃 애니메이션 유지 */
+@keyframes slideOutRight {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+.product-gallery .image-box.removing {
+  animation: slideOutRight 0.3s forwards;
+}

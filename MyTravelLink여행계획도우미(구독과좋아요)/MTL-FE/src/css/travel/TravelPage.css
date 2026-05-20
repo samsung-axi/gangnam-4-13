@@ -1,0 +1,68 @@
+.SJ-Travel-Page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin-top: 1vh;
+  height: 100%;
+
+  background-color: white;
+}
+
+.SJ-Travel-Tab-Container {
+  position: absolute;
+
+  width: 400px;
+  height: 55px;
+}
+
+.SJ-Travel-Tabs {
+  display: flex;
+  justify-content: space-around;
+
+  height: 53px;
+  border-bottom: 2px solid var(--color-light-gray);
+}
+
+/* 각 탭의 기본 스타일 */
+.SJ-Travel-Tab {
+  flex: 1;
+  text-align: center;
+  padding: 4%;
+  cursor: pointer;
+  color: var(--color-dark-gray);
+  font-size: var(--font-size-md);
+}
+
+.SJ-Travel-Tab.active {
+  color: var(--color-main-hover);
+  font-weight: bold;
+}
+
+.SJ-Tab-Indicator-Container {
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.SJ-Tab-Indicator {
+  width: 50%;
+  height: 2px;
+  background-color: var(--color-main);
+  transition: all 0.3s;
+}
+
+.SJ-Travel-Page {
+  position: relative;
+  min-height: 100vh;
+  /* 전체 페이지 높이 고정 */
+}
+
+.SJ-Travel-Page-Content {
+  margin-top: 15%;
+  width: 100%;
+  min-height: calc(100vh - 100px);
+  /* 탭 메뉴 높이를 뺀 나머지 영역 고정 */
+  position: relative;
+}

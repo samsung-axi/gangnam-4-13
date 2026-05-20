@@ -1,0 +1,158 @@
+// src/pages/index/styles/index.module.scss
+@use '@assets/styles/_variables' as *;
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 1rem 2rem 2rem 2rem;
+  box-sizing: border-box;
+}
+
+.intro {
+  text-align: center;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  &__title {
+    width: 100%;
+    max-width: 800px;
+    font-size: min(38px, 10vw);
+    font-weight: $font-weight-bold;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+  
+  &__subtitle {
+    width: 100%;
+    max-width: 800px;
+    font-size: min(18px, 4vw);
+    color: $secondary-text-grey;
+    line-height: 1.4;
+    margin-bottom: 2rem;
+  }
+
+  &__title, &__subtitle {
+    opacity: 0;
+    animation: fadeInOut 3s ease-in-out;
+    transition: opacity .5s ease-in-out;
+
+    &.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  &__image {
+    margin: 1rem 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+    img {
+      max-height: 30vh;
+      width: auto;
+      object-fit: contain;
+    }
+  }
+}
+
+.auth {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+
+  &__login {
+    width: 100%;
+    display: flex;
+    gap: 4px;
+    justify-content: center;
+    color: $secondary-text-grey;
+    margin-bottom: 1rem;
+  }
+  
+  &__signupBtn {
+    text-decoration: underline;
+    cursor: pointer;
+    &:hover {
+      color: $primary-hover-color;
+    }
+  }
+  
+  &__buttons {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+  
+  &__signinBtn, &__guestBtn {
+    width: 100%;
+    height: 48px; // 높이 고정
+    border-radius: $radius-md;
+    font-size: $font-size-md;
+    font-weight: $font-weight-medium;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 16px; // 좌우 패딩 고정
+  }
+  
+  &__signinBtn {
+    background: $primary-color;
+    border: 1px solid $primary-color;
+    
+    &:hover {
+      background: $primary-hover-color;
+      color: $primary-color;
+      border: 1px solid $primary-color;
+      color: $background-color;
+      cursor: pointer;
+    }
+  }
+  
+  &__guestBtn {
+    background: $white-color;
+    border: 1px solid $border-color;
+    color: $secondary-text-color;
+    
+    &:hover {
+      // color: $text-color;
+      cursor: pointer;
+      color: $primary-color;
+      border: 1px solid $primary-color;
+    }
+  }
+}
+
+@keyframes fadeInOut {
+  0% { 
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  20%, 80% { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% { 
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}

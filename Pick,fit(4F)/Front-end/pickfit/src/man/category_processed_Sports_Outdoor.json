@@ -1,0 +1,615 @@
+[
+    {
+        "product_info": {
+            "id": 2,
+            "brand": "파라점퍼스",
+            "title": "쿠퍼 남성 트레이닝 팬츠 블랙",
+            "price": "521,000",
+            "detail_page_url": "https://www.trenbe.com/product/++111144772?catalog=100931146",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1727184484470_5c3bed9eb6dd8578dd8bf32cce28abdb_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "bottom"
+        }
+    },
+    {
+        "product_info": {
+            "id": 5,
+            "brand": "클라터뮤젠",
+            "title": "날 자켓 맨 매더레드 10616M91",
+            "price": "311,000",
+            "detail_page_url": "https://www.trenbe.com/product/++47888335?catalog=&options=owned",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1685508734322-d5c31fa1-0438-44a4-ab59-98a17513c93e.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 8,
+            "brand": "노스페이스",
+            "title": "노스페이스 1996 레트로 눕시 자켓 브릴리언트 코랄",
+            "price": "364,500",
+            "detail_page_url": "https://www.trenbe.com/product/++67455418?catalog=100942481",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1705682603091-6ae26285-1bb7-4b0e-89d4-c9108fed5661.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "cozy_minimal"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 11,
+            "brand": "노스페이스",
+            "title": "(W) 노스페이스 화이트라벨 노벨티 눕시 다운 자켓 코코아 브라운",
+            "price": "521,600",
+            "detail_page_url": "https://www.trenbe.com/product/++67955639?catalog=100942503",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1706278131945-c14c19c6-98ca-499b-afd4-ee7199f53750.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "cozy_minimal"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 15,
+            "brand": "클라터뮤젠",
+            "title": "날 후디드 자켓 맨 스웜프그린 10652M11",
+            "price": "356,000",
+            "detail_page_url": "https://www.trenbe.com/product/++47888360?catalog=&options=owned",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1683164077526-37f8f782-da8c-495b-aad8-dcf68c75a829.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "modern_classic"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 16,
+            "brand": "클라터뮤젠",
+            "title": "날 후디드 자켓 맨 올리브 10652M11",
+            "price": "356,000",
+            "detail_page_url": "https://www.trenbe.com/product/++47888358?catalog=&options=owned",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1683164077407-29dee9bb-09c3-474d-94ce-d1f81377f907.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "modern_classic"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 21,
+            "brand": "노스페이스",
+            "title": "노스페이스(The North Face) RMST Nuptse NF0A7UQZ 등산 아웃도어 남자 경량 발수 다운 패딩 자켓",
+            "price": "1,250,000",
+            "detail_page_url": "https://www.trenbe.com/product/++38397964?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1668070724620_e2279b2f8f4a802bd94d2241908a1baa_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "modern_classic"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 25,
+            "brand": "나이키",
+            "title": "[해외]나이키 조던 남성 에센셜 플리스 풀오버 후드 팬츠 숏 트레이닝 세트 그레이",
+            "price": "200,000",
+            "detail_page_url": "https://www.trenbe.com/product/++56585183?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1692679255494_3f137cfa92597dbb21d1a98838d15def_1.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "casual_sporty"
+        },
+        "category_analysis": {
+            "big_category": "bottom"
+        }
+    },
+    {
+        "product_info": {
+            "id": 26,
+            "brand": "나이키",
+            "title": "나이키 남자 팀 베이퍼 셀렉트 파이핑 팬츠 2",
+            "price": "139,100",
+            "detail_page_url": "https://www.trenbe.com/product/++36052092?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/open-api-product-images/723/20221001/7494d84c-894a-4c6d-a72a-e4888d5e5125.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "bottom"
+        }
+    },
+    {
+        "product_info": {
+            "id": 30,
+            "brand": "제이린드버그",
+            "title": "노비아 프로 팩 쇼츠 여성",
+            "price": "126,400",
+            "detail_page_url": "https://www.trenbe.com/product/++97187549?catalog=100654603",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1732138524669_51f99c6a08e78636732f62105ae1117a_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "bottom"
+        }
+    },
+    {
+        "product_info": {
+            "id": 33,
+            "brand": "칼하트",
+            "title": "남성 스윔팬츠 수영바지 수영복 비치웨어 스윔숏츠 반바지",
+            "price": "186,000",
+            "detail_page_url": "https://www.trenbe.com/product/++76469595?catalog=100084158",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1714570435871_84eefa4fca0148a85fbc1bab20b666c2_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "active_sporty"
+        },
+        "category_analysis": {
+            "big_category": "bottom"
+        }
+    },
+    {
+        "product_info": {
+            "id": 50,
+            "brand": "노스페이스",
+            "title": "노스페이스 눕시 온 볼 베스트 제트 블랙",
+            "price": "322,600",
+            "detail_page_url": "https://www.trenbe.com/product/++72185317?catalog=100942261",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1709584335516-2a66b430-1135-4309-a0a7-9a791975e4f2.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "high_end_street"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 51,
+            "brand": "나이키",
+            "title": "Nike LIVERPOOL FC STRIKE ANTHEM JACKET - Club wear lt orewood brown/black/gym red",
+            "price": "306,000",
+            "detail_page_url": "https://www.trenbe.com/product/++94705272?catalog=100926057",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240720_638570070135764476_22830211_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 56,
+            "brand": "노스페이스",
+            "title": "(W) 노스페이스 화이트라벨 노벨티 눕시 다운 자켓 리얼 블랙",
+            "price": "606,900",
+            "detail_page_url": "https://www.trenbe.com/product/++67966768?catalog=100942505",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1706293723530-eeb3cf19-54e8-4ff0-805b-21b494156ecf.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "high_end_street"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 58,
+            "brand": "노스페이스",
+            "title": "노스페이스 노벨티 눕시 다운 자켓 리얼 블랙",
+            "price": "660,400",
+            "detail_page_url": "https://www.trenbe.com/product/++67451126?catalog=100942449",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1705678185003-74d4d9a4-2bfa-4fb3-a796-d4b60b7344e4.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "cozy_minimal"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 60,
+            "brand": "노스페이스",
+            "title": "노스페이스 1996 레트로 눕시 자켓 민트",
+            "price": "665,400",
+            "detail_page_url": "https://www.trenbe.com/product/++67457506?catalog=100942484",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1705686702154-642f8845-6682-49a6-8c30-e979806119dc.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "cozy_minimal"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 61,
+            "brand": "노스페이스",
+            "title": "[리퍼브 상품] S사이즈 노스페이스 남성 스키 팬츠 바지 네온 오렌지",
+            "price": "514,920",
+            "detail_page_url": "https://www.trenbe.com/product/++41819559?catalog=&options=owned",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20221203_638056268745851746_14911096_0.jpg",
+                "https://image-cdn.trenbe.com/productmain-image/20221203_638056268745861770_14911096_1.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "bottom"
+        }
+    },
+    {
+        "product_info": {
+            "id": 62,
+            "brand": "오클리",
+            "title": "드리프트 테크 플리스 후디 DRIFT TECH FLEECE HOODIE 20982583",
+            "price": "255,300",
+            "detail_page_url": "https://www.trenbe.com/product/++117560929?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20241104_638663218910624146_22121336_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 69,
+            "brand": "나이키",
+            "title": "나이키 테크 플리스 그래픽 풀 집 후디 그레이 DM6474-063",
+            "price": "299,000",
+            "detail_page_url": "https://www.trenbe.com/product/++30765286?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/open-api-product-images/862/20220914/2badee17-b72b-4e59-8aae-8efde86d3905.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "casual_sporty"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 70,
+            "brand": "나이키",
+            "title": "나이키 Style 에센셜 라인 봄버 자켓 아이스 실버 DM6698-104",
+            "price": "299,000",
+            "detail_page_url": "https://www.trenbe.com/product/++30765289?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/open-api-product-images/862/20220914/3154c006-7458-4a7f-8cb8-4c38030ed843.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "casual_sporty"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 75,
+            "brand": "나이키",
+            "title": "볼텍스 ACG CHENA VORTEX 20982953",
+            "price": "751,100",
+            "detail_page_url": "https://www.trenbe.com/product/++118987824?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20241116_638672852512121278_22122788_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 76,
+            "brand": "퓨마",
+            "title": "푸마 리가 코어 쇼츠(70563403)",
+            "price": "40,000",
+            "detail_page_url": "https://www.trenbe.com/product/++51334411?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1686291887040_8eb7bd15e5285b34679355973d11ee2b_0.png"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "bottom"
+        }
+    },
+    {
+        "product_info": {
+            "id": 80,
+            "brand": "럭스골프",
+            "title": "골피아 MX4W533 윈드페이스 남성 아웃도어 스판 기모 밴딩 팬츠",
+            "price": "43,800",
+            "detail_page_url": "https://www.trenbe.com/product/++118444165?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1731296675222_d3a7b13a9471e0f73a3715fa25b7751d_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "bottom"
+        }
+    },
+    {
+        "product_info": {
+            "id": 82,
+            "brand": "나이키",
+            "title": "나이키 드라이 파크 III NB 쇼트(BV6855-410)",
+            "price": "50,000",
+            "detail_page_url": "https://www.trenbe.com/product/++36471310?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/open-api-product-images/562/20221007/19e356cb-5f01-4785-ad32-ae6042ddf2f7.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "bottom"
+        }
+    },
+    {
+        "product_info": {
+            "id": 84,
+            "brand": "페라어스",
+            "title": "페라어스 남성 BFL 등매쉬 절개 여름 등산조끼 OCVS4BF8001",
+            "price": "57,000",
+            "detail_page_url": "https://www.trenbe.com/product/++72382503?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1709772119471_22112fd102c6325d06ddab3005e3c0d2_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 91,
+            "brand": "제이린드버그",
+            "title": "에이드 남성 티셔츠",
+            "price": "150,000",
+            "detail_page_url": "https://www.trenbe.com/product/++75677303?catalog=100655607",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1712644993808_30a6e8aeb7d4cec38d7449b94ccfc437_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "elegant_classic"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 96,
+            "brand": "Salt Life",
+            "title": "남성 포켓 티셔츠 Men's Amerishield Pocket Tee 10439451 Washed",
+            "price": "57,500",
+            "detail_page_url": "https://www.trenbe.com/product/++117177735?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20241102_638660972697774859_4613676_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "elegant_classic"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 107,
+            "brand": "MP",
+            "title": "남성 울트라 숏 슬리브 티셔츠 블랙 Men's Tempo Ultra Short Sleeve T-Shirt - Black 14186298",
+            "price": "65,400",
+            "detail_page_url": "https://www.trenbe.com/product/++59039773?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20230929_638315857863115878_20135074_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "casual_sporty"
+        },
+        "category_analysis": {
+            "big_category": "bottom"
+        }
+    },
+    {
+        "product_info": {
+            "id": 115,
+            "brand": "나이키",
+            "title": "나이키 우븐 플로우 라인드 쇼츠 DM6829-416",
+            "price": "65,000",
+            "detail_page_url": "https://www.trenbe.com/product/++51112022?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1685932828500_9f2bd65ad32ad090cd88c76b4fd69d9b_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "casual_sporty"
+        },
+        "category_analysis": {
+            "big_category": "bottom"
+        }
+    },
+    {
+        "product_info": {
+            "id": 116,
+            "brand": "나이키",
+            "title": "나이키 우븐 플로우 쇼츠 반바지 DM6829-493",
+            "price": "65,000",
+            "detail_page_url": "https://www.trenbe.com/product/++72899986?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1710385726825_b40c3d319f8ac779e5f676874834e2a6_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "casual_sporty"
+        },
+        "category_analysis": {
+            "big_category": "bottom"
+        }
+    },
+    {
+        "product_info": {
+            "id": 131,
+            "brand": "Tingley Overshoes",
+            "title": "남성 빅 톨 워터프루프 방수 팬츠 Men's Tingley Overshoes Big & Tall Icon® Workreation Waterproof Pants 97384143",
+            "price": "185,200",
+            "detail_page_url": "https://www.trenbe.com/product/++71494569?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20241113_638670606814893402_13333264_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "modern_classic"
+        },
+        "category_analysis": {
+            "big_category": "bottom"
+        }
+    },
+    {
+        "product_info": {
+            "id": 140,
+            "brand": "아디다스",
+            "title": "아디다스 트레이닝 블랙 adidas Training Workout Tragertop in Schwarz 204440323SCHWARZ",
+            "price": "71,100",
+            "detail_page_url": "https://www.trenbe.com/product/++63788832?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20231203_638371714363727653_20821315_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 143,
+            "brand": "콜럼비아",
+            "title": "남성 숏 슬리브 셔츠 Men's Rapid Rivers Short Sleeve Shirt 18445348",
+            "price": "128,600",
+            "detail_page_url": "https://www.trenbe.com/product/++77837311?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240510_638509244127955982_22304163_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "elegant_classic"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 148,
+            "brand": "나이키",
+            "title": "나이키 스포츠웨어 M2Z LBR 티셔츠 [DQ1004-133]",
+            "price": "83,000",
+            "detail_page_url": "https://www.trenbe.com/product/++31267200?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1673504301859_000be0e0f5bdd972db76bca2068ae697_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "casual_sporty"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    }
+]

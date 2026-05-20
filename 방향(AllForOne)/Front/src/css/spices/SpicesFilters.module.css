@@ -1,0 +1,58 @@
+.filters {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-bottom: 20px;
+    transform: translateX(-100px);
+}
+
+.filterButtons {
+    display: grid;
+    grid-template-columns: repeat(8, auto);
+    gap: 10px;
+    width: 100%;
+    justify-content: center;
+    margin-top: 20px;
+    transform: translateX(-10px);
+}
+
+.filterButton {
+    width: 120px;
+    height: 35px;
+    padding: 10px 20px;
+    border: 1px solid #000000;
+    border-radius: 15px;
+    font-family: "Gowun Batang", serif;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    justify-content: center;
+    align-items: center;
+    min-width: fit-content;
+    display: flex;
+}
+
+.filterButton:nth-child(1) {
+    order: 1;  /* ALL 버튼을 맨 앞으로 */
+    width: 80px;  /* 더 넓은 너비 */
+    height: 90px; /* 더 높은 높이 */
+    border-radius: 15px;
+    margin-bottom: 10px; /* 아래 버튼들과 간격 */
+    font-size: 16px; /* 더 큰 글씨 */
+    grid-row: span 2;
+    align-items: center;
+}
+
+/* 첫 줄 7개 버튼 */
+.filterButton:nth-child(n+2):nth-child(-n+8) {
+    order: 1;
+}
+
+/* 둘째 줄 7개 버튼 */
+.filterButton:nth-child(n+9) {
+    order: 2;
+}
+
+.filterButton.active {
+    color: #FFFFFF;
+}

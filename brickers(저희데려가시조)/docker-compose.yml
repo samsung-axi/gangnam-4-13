@@ -1,0 +1,111 @@
+services:
+  backend:
+    image: ${DOCKER_USERNAME}/brickers-backend:latest
+    container_name: brickers-backend
+    ports:
+      - "${BACKEND_PORT}:8080"
+    environment:
+      # ✅ 시간대 설정 (한국)
+      - TZ=Asia/Seoul
+      # ✅ MongoDB 설정
+      - PRIMARY_MONGODB_URI=${PRIMARY_MONGODB_URI}
+
+      # ✅ AWS S3 설정
+      - AWS_S3_BUCKET=${AWS_S3_BUCKET}
+      - AWS_REGION=${AWS_REGION}
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+      - UPLOAD_PROVIDER=${UPLOAD_PROVIDER:-S3}
+      - UPLOAD_PUBLIC_BASE_URL=${UPLOAD_PUBLIC_BASE_URL}
+
+      # ✅ JWT 설정
+      - JWT_SECRET=${JWT_SECRET}
+      - JWT_ACCESS_EXPIRATION=${JWT_ACCESS_EXPIRATION}
+      - JWT_REFRESH_EXPIRATION=${JWT_REFRESH_EXPIRATION}
+
+      # ✅ OAuth 설정
+      - KAKAO_CLIENT_ID=${KAKAO_CLIENT_ID}
+      - KAKAO_CLIENT_SECRET=${KAKAO_CLIENT_SECRET}
+      - KAKAO_ADMIN_KEY=${KAKAO_ADMIN_KEY}
+
+      - GOOGLE_CLIENT_ID=${GOOGLE_CLIENT_ID}
+      - GOOGLE_CLIENT_SECRET=${GOOGLE_CLIENT_SECRET}
+      - GOOGLE_REDIRECT_URI=${GOOGLE_REDIRECT_URI}
+      - GOOGLE_LOCAL_REDIRECT_URI=${GOOGLE_LOCAL_REDIRECT_URI}
+
+      # ✅ 카카오 리다이렉트 URI
+      - KAKAO_REDIRECT_URI=${KAKAO_REDIRECT_URI}
+
+      # ✅ 쿠키 설정
+      - COOKIE_SECURE=${COOKIE_SECURE:-true}
+      - COOKIE_SAMESITE=${COOKIE_SAMESITE:-None}
+
+      # ✅ Base URL
+      - FRONT_BASE_URL=${FRONT_BASE_URL}
+
+      # ✅ AI 서버 URL
+      - AI_SERVER_URL=${AI_SERVER_URL}
+
+      # ✅ OpenAI Key
+      - APP_OPENAI_API_KEY=${APP_OPENAI_API_KEY}
+
+      # ✅ (추가) Kids AI 처리 타임아웃
+      - PROCESS_TIMEOUT=900
+      - DOWNLOAD_TIMEOUT=120
+
+      # ✅ SQS 설정 (2개 Queue 분리)
+      - AWS_SQS_ENABLED=${AWS_SQS_ENABLED:-true}
+      - AWS_SQS_REQUEST_QUEUE_URL=${AWS_SQS_REQUEST_QUEUE_URL}
+      - AWS_SQS_RESULT_QUEUE_URL=${AWS_SQS_RESULT_QUEUE_URL}
+
+      # ✅ Gallery SEO Revalidate 설정
+      - GALLERY_REVALIDATE_ENABLED=${GALLERY_REVALIDATE_ENABLED:-true}
+      - GALLERY_REVALIDATE_URL=${GALLERY_REVALIDATE_URL:-http://frontend:3000/api/revalidate}
+      - GALLERY_REVALIDATE_SECRET=${GALLERY_REVALIDATE_SECRET}
+
+      # ✅ Internal API Token (AI Server → Backend 로그 전송 인증)
+      - INTERNAL_API_TOKEN=${INTERNAL_API_TOKEN}
+
+      # ✅ GA4 Data API 인증 (Backend 전용)
+      - GA4_PROPERTY_ID=${GA4_PROPERTY_ID}
+      - GA4_CREDENTIALS_JSON=${GA4_CREDENTIALS_JSON}
+
+    networks:
+      - brickers-network
+
+  # ✅ 통합된 Next.js 앱 (Kids + Gallery 모두 포함.)
+  frontend:
+    image: ${DOCKER_USERNAME}/brickers-frontend:latest
+    container_name: brickers-frontend
+    ports:
+      - "${FRONTEND_PORT}:80"
+      - "443:443"
+      - "3000:3000"
+    environment:
+      # ✅ 시간대 설정 (한국)
+      - TZ=Asia/Seoul
+      # ✅ Next.js 환경변수
+      # NEXT_PUBLIC_*은 클라이언트(브라우저)에서 사용 → 빈 문자열로 상대경로 사용
+      - NEXT_PUBLIC_API_BASE_URL=
+      - NEXT_PUBLIC_GA_ID=${NEXT_PUBLIC_GA_ID}
+      - NEXT_PUBLIC_GTM_ID=${NEXT_PUBLIC_GTM_ID}
+      # API_BASE는 서버사이드(SSR, rewrites)에서 사용 → Docker 내부 네트워크
+      - API_BASE=http://backend:8080
+      - REVALIDATE_SECRET=${GALLERY_REVALIDATE_SECRET}
+      # AI Server URL (nginx envsubst용 — Mac Studio Cloudflare Tunnel)
+      - AI_SERVER_URL=${AI_SERVER_URL}
+    depends_on:
+      - backend
+    volumes:
+      - /etc/letsencrypt:/etc/letsencrypt
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+    networks:
+      - brickers-network
+
+networks:
+  brickers-network:
+    driver: bridge

@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Batang&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap');
+
+
+/* 메인 페이지 스타일 */
+.main-page {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    transition: transform 1s ease-in-out;
+}
+
+/* 배경 비디오 */
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* 콘텐츠 영역 */
+.content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+}
+
+/* 제목 */
+.title {
+    font-size: 48px;
+    margin-bottom: 40px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    display: inline-flex;
+    align-items: center;
+    font-family: 'Nanum Myeongjo', serif;
+    font-weight: 300;
+}
+
+/* 버튼 */
+.find-perfume-button {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: black;
+    font-size: 20px;
+    padding: 10px 20px;
+    border: 1px solid lightgray;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); */
+    font-family: 'Gowun Batang', serif;
+}
+
+.find-perfume-button:hover {
+    background-color: #CDC6CE;
+    transform: scale(1.05);
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .title {
+        font-size: 1.8rem;
+    }
+
+    .find-perfume-button {
+        font-size: 1rem;
+        padding: 8px 16px;
+    }
+}
+
+.page-transition {
+    opacity: 0; /* 페이드아웃 효과 */
+    transform: translateY(-100%); /* 위로 이동 */
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out; /* 부드럽게 */
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    font-weight: bold;
+}
+
+.modal-content {
+    background: transparent !important;
+}
+

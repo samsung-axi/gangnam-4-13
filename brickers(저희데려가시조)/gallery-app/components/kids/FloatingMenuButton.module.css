@@ -1,0 +1,13 @@
+/* hint bubble triangle — ::after pseudo-element cannot be expressed with Tailwind */
+.hint::after {
+    content: "";
+    position: absolute;
+    right: 16px;
+    bottom: -8px;
+    width: 14px;
+    height: 14px;
+    background: #fff;
+    border-right: 2px solid #000;
+    border-bottom: 2px solid #000;
+    transform: rotate(45deg);
+}

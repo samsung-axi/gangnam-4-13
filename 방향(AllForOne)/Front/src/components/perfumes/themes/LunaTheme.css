@@ -1,0 +1,475 @@
+/* 루나 테마 - 달빛과 라벤더의 신비로운 감성 */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');
+
+/* 메인 이미지 영역 - 고정된 높이 */
+.luna-main-section {
+    position: relative;
+    height: 150vh;
+    min-height: 1200px;
+    overflow: hidden;
+}
+
+/* 향조 정보 이후 섹션들 - 독립적인 영역 */
+.luna-details-section {
+    position: relative;
+    background: #ffffff;
+    z-index: 4;
+}
+
+/* 히어로 섹션 */
+.luna-hero {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.luna-hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.luna-hero-bg::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 20%;
+    background: linear-gradient(to bottom, transparent 0%, rgba(255, 255, 255, 0.1) 40%, rgba(255, 255, 255, 0.4) 80%, rgba(255, 255, 255, 0.8) 100%);
+    z-index: 2;
+}
+
+.luna-main-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.luna-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        180deg,
+        rgba(138, 43, 226, 0.2) 0%,
+        rgba(138, 43, 226, 0.1) 20%,
+        rgba(138, 43, 226, 0.05) 40%,
+        rgba(255, 255, 255, 0.1) 60%,
+        rgba(255, 255, 255, 0.2) 75%,
+        rgba(255, 255, 255, 0.3) 85%,
+        rgba(255, 255, 255, 0.4) 95%,
+        rgba(255, 255, 255, 0.5) 100%
+    );
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.luna-hero-content {
+    text-align: center;
+    max-width: 800px;
+    padding: 0 2rem;
+    z-index: 3;
+}
+
+.luna-subtitle {
+    font-family: 'Cinzel', serif;
+    font-size: 2.2rem;
+    font-weight: 500;
+    font-style: italic;
+    color: #e9ecef;
+    margin-bottom: 1.5rem;
+    margin-top: -50px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4), 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.luna-tagline {
+    font-size: 1.3rem;
+    font-weight: 300;
+    color: #f1f3f4;
+    line-height: 1.8;
+    margin-top: -20px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4), 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* UVP 섹션 */
+.luna-uvp {
+    padding: 4rem 2rem;
+    background: transparent;
+    margin-top: -85vh;
+    padding-top: 6rem;
+    position: relative;
+    z-index: 3;
+}
+
+.luna-uvp-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.luna-uvp-text {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #f1f3f4;
+    line-height: 1.8;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4), 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* 감성 제품 설명 */
+.luna-description {
+    padding: 4rem 2rem;
+    background: transparent;
+    position: relative;
+    z-index: 3;
+}
+
+.luna-description-content {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.luna-description-text {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: #6c757d;
+    line-height: 2;
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.luna-description-text p {
+    margin-bottom: 1.5rem;
+}
+
+.luna-description-conclusion {
+    font-style: italic;
+    font-weight: 500;
+    color: #495057;
+    font-size: 1.3rem;
+    text-align: center;
+    margin-top: 4rem;
+    padding: 2rem;
+    background: transparent;
+    border-radius: 12px;
+    position: relative;
+    text-shadow: 0 2px 8px rgba(138, 43, 226, 0.6), 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* 향조 정보 */
+.luna-notes {
+    padding: 4rem 2rem;
+    background: #ffffff;
+    position: relative;
+    z-index: 4;
+    margin-top: -40px;
+}
+
+.luna-notes-content {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.luna-notes-layout {
+    display: flex;
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+.luna-notes-left {
+    flex: 1;
+}
+
+.luna-notes-right {
+    flex: 1;
+}
+
+.luna-note-item {
+    margin-bottom: 1.5rem;
+}
+
+.luna-note-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #6f42c1;
+    margin-bottom: 0.5rem;
+}
+
+.luna-note-graph {
+    width: 100%;
+}
+
+.luna-graph-bar {
+    display: flex;
+    height: 12px;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 1px 4px rgba(138, 43, 226, 0.2);
+    margin-bottom: 0.3rem;
+}
+
+.luna-graph-segment {
+    height: 100%;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.luna-graph-segment:hover {
+    transform: scaleY(1.2);
+    z-index: 2;
+}
+
+.luna-graph-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.7rem;
+    color: #495057;
+    font-weight: 500;
+}
+
+.luna-graph-labels span {
+    text-align: center;
+    flex: 1;
+}
+
+/* 성별 선호도 스타일 */
+.luna-preference-graph {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-top: 130px;
+}
+
+.luna-preference-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.luna-preference-label {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #6f42c1;
+    min-width: 70px;
+}
+
+.luna-preference-bar {
+    flex: 1;
+    height: 10px;
+    background: #f0f0f0;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.luna-preference-fill {
+    height: 100%;
+    border-radius: 5px;
+    transition: width 0.8s ease;
+    position: relative;
+}
+
+.luna-preference-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.3) 50%, transparent 100%);
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+.luna-preference-percent {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #6f42c1;
+    min-width: 35px;
+    text-align: right;
+}
+
+/* 어울리는 순간 */
+.luna-moments {
+    padding: 4rem 2rem;
+    position: relative;
+    z-index: 4;
+}
+
+.luna-moments-content {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.luna-moments-title {
+    font-family: 'Cinzel', serif;
+    font-size: 2.8rem;
+    font-weight: 600;
+    color: #8a2be2;
+    margin-bottom: 3rem;
+    text-align: center;
+    text-shadow: 0 2px 4px rgba(138, 43, 226, 0.3);
+    position: relative;
+}
+
+.luna-moments-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 2px;
+}
+
+.luna-moments-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.luna-moment-item {
+    background: transparent;
+    padding: 2.5rem;
+    text-align: center;
+    transition: all 0.4s ease;
+    position: relative;
+}
+
+.luna-moment-item:hover {
+    transform: translateY(-5px);
+}
+
+.luna-moment-number {
+    font-family: 'Cinzel', serif;
+    font-size: 2.5rem;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 1rem;
+    color: #8a2be2;
+    text-shadow: 0 2px 4px rgba(138, 43, 226, 0.3);
+    transition: all 0.3s ease;
+    line-height: 1;
+}
+
+.luna-moment-item:hover .luna-moment-number {
+    transform: scale(1.1);
+    color: #6f42c1;
+    text-shadow: 0 4px 12px rgba(138, 43, 226, 0.6);
+}
+
+.luna-moment-item p {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: #6f42c1;
+    line-height: 1.3;
+    font-style: italic;
+    text-shadow: 0 1px 2px rgba(138, 43, 226, 0.2);
+    position: relative;
+    z-index: 2;
+}
+
+/* 추천 계절 */
+.luna-season {
+    padding: 4rem 2rem;
+    background: linear-gradient(rgba(248, 244, 255, 0.3), rgba(248, 244, 255, 0.3)), url('../../../../public/images/luna-sub.png');
+    background-size: cover;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: 4;
+}
+
+.luna-season-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.luna-season-title {
+    font-family: 'Cinzel', serif;
+    font-size: 2.8rem;
+    font-weight: 600;
+    color: #6f42c1;
+    margin-bottom: 2rem;
+}
+
+.luna-season-text {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #f1f3f4;
+    line-height: 1.8;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4), 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* SNS 문구 */
+.luna-sns {
+    padding: 4rem 2rem;
+    background: #ffffff;
+    position: relative;
+    z-index: 4;
+}
+
+.luna-sns-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.luna-sns-text {
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: #495057;
+    line-height: 1.8;
+}
+
+.luna-sns-hashtags {
+    color: #9370DB;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .luna-subtitle {
+        font-size: 1.8rem;
+    }
+    
+    .luna-tagline {
+        font-size: 1.1rem;
+    }
+    
+    .luna-moments-title,
+    .luna-season-title {
+        font-size: 2.2rem;
+    }
+    
+    .luna-moments-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .luna-hero {
+        height: 70vh;
+        min-height: 500px;
+    }
+}

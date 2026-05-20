@@ -1,0 +1,165 @@
+.container {
+    position: relative;
+    width: 1200px;
+    width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+    transform: translateY(-60px);
+}
+
+.title {
+    font-family: "Gowun Batang", serif;
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: 20px; 
+    translate: 5px 50px;
+}
+
+.searchArea {
+    position: relative;
+    max-width: 200px;
+    width: 100%;
+    translate: 0px 50px;
+}
+
+.searchInput {
+    width: 100%;
+    padding: 10px 40px 10px 15px;
+    border: 1px solid #333;
+    background-color: #EFEDED;
+    border-radius: 20px;
+    font-size: 14px;
+    transform: translateX(-40px);
+}
+
+.searchIcon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.filterControlsContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    margin-bottom: -20px;  /* 기존 간격 조정 */
+    left: 30px;
+}
+
+.listControls {
+    display: flex;
+    gap: 8px;
+    margin: 20px 0;
+    justify-content: flex-end;
+    transform: translateY(20px);
+}
+
+.controlButton {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #333;
+    border-radius: 10%;
+    cursor: pointer;
+    background-color: #EFEDED;
+    transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.controlButton:hover {
+    background-color: #ccc;
+    transform: scale(1.1);
+}
+
+.divider {
+    width: calc(100% + 80px);
+    height: 1px;
+    background-color: #000000;
+    margin-bottom: 40px;
+    margin-left: -40px;
+}
+
+.logo {
+    padding-top: 15px;
+    max-width: 150px;
+    max-height: 150px;
+    margin: 0 auto;
+    display: block;
+    translate: -10px -40px;
+
+}
+
+.searchArea {
+    position: relative;
+    max-width: 200px;
+    width: 100%;
+    translate: 0px 50px;
+}
+
+.cardContainer {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.addButton,
+.selectButton,
+.deleteButton {
+    margin-right: 8px;
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #333;
+    border-radius: 10%;
+    cursor: pointer;
+    background-color: #EFEDED;
+    transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.modalBackdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.deleteModal,
+.successModal {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    text-align: center;
+}
+
+.modalActions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}

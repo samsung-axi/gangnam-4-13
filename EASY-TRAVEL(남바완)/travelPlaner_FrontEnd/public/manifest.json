@@ -1,0 +1,15 @@
+{
+  "short_name": "EasyTravel",
+  "name": "EasyTravel",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#76ADEC",
+  "background_color": "#76ADEC",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "32x32",
+      "type": "image/png"
+    }
+  ]
+}

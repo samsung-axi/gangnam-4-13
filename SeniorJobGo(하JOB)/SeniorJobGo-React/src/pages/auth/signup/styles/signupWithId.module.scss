@@ -1,0 +1,209 @@
+@use '@assets/styles/_variables' as *;
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 400px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  background-color: $background-color;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  
+  &__title {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: $font-size-lg;
+    font-weight: $font-weight-semibold;
+    margin-bottom: 2rem;
+
+    i {
+      position: absolute;
+      left: 0;
+      font-size: $font-icon-md;
+      cursor: pointer;
+    }
+  }
+  
+  &__content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  &__footer {
+    margin-top: auto;
+    padding: 2rem 0;
+  }
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+  
+  label {
+    font-size: $font-size-sm;
+    font-weight: $font-weight-medium;
+    color: $text-color;
+  }
+  
+  input {
+    height: 48px;
+    padding: 0 1rem;
+    border: 1px solid $border-color;
+    border-radius: $radius-md;
+    font-size: $font-size-sm;
+    
+    &::placeholder {
+      color: $placeholder-color;
+    }
+
+    &:focus {
+      outline: none;
+      border-color: $primary-color;
+    }
+  }
+}
+
+.inputWithButton {
+  display: flex;
+  gap: 0.5rem;
+  width: 100%;
+  
+  input {
+    flex: 1;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  button {
+    flex-shrink: 0;
+    min-width: 80px;
+    height: 48px;
+    background: $white-color;
+    border: 1px solid $primary-color;
+    border-radius: $radius-md;
+    color: $text-color;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-medium;
+    cursor: pointer;
+    
+    &:hover {
+      background: $primary-color;
+      border: 1px solid $primary-color;
+    }
+  }
+}
+
+.inputHint {
+  font-size: $font-size-xs;
+  color: $primary-color;
+  margin-top: 0.25rem;
+}
+
+.required {
+  color: $primary-hover-color;
+  margin-left: 2px;
+}
+
+.errorMessage {
+  color: $primary-hover-color;
+  margin-top: 2px;
+  display: none;
+  font-size: $font-size-xs;
+}
+
+.agreement {
+  margin-top: 2rem;
+  
+  &__title {
+    font-size: $font-size-16;
+    font-weight: $font-weight-semibold;
+    line-height: 1.4;
+    margin-bottom: 0.5rem;
+    
+    span {
+      color: $primary-color;
+    }
+  }
+  
+  &__items {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  &__item {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 6px;
+    
+    label {
+      font-size: $font-size-sm;
+      color: $text-color;
+    }
+    
+    input[type="checkbox"] {
+      width: 16px;
+      height: 16px;
+      border: 1px solid $border-color;
+      border-radius: $radius-circle;
+      cursor: pointer;
+      appearance: none;
+      
+      &:checked {
+        background-color: $primary-color;
+        border-color: $primary-color;
+        
+        &::after {
+          content: '✓';
+          display: block;
+          color: $white-color;
+          text-align: center;
+          line-height: 18px;
+        }
+      }
+    }
+  }
+}
+
+.submitButton {
+  width: 100%;
+  height: 48px;
+  border: none;
+  border-radius: $radius-md;
+  font-size: $font-size-md;
+  font-weight: $font-weight-medium;
+  background: $border-color;
+  color: $secondary-text-color;
+  
+  &:enabled {
+    background: $primary-color;
+    color: $text-color;
+    cursor: pointer;
+    
+    &:hover {
+      background: $primary-hover-color;
+    }
+  }
+}

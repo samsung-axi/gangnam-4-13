@@ -1,0 +1,71 @@
+package kr.co.himedia.entity;
+
+import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.AccessLevel;
+import org.hibernate.annotations.CreationTimestamp;
+
+import java.time.LocalDateTime;
+import java.util.UUID;
+
+@Entity
+@Table(name = "diag_sessions")
+@Getter
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+public class DiagSession {
+
+    @Id
+    @Column(name = "diag_session_id")
+    private UUID diagSessionId;
+
+    @Column(name = "vehicles_id", nullable = false)
+    private UUID vehiclesId;
+
+    @Column(name = "trip_id")
+    private UUID tripId;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "trigger_type")
+    private DiagTriggerType triggerType;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "status")
+    private DiagStatus status;
+
+    @Column(name = "progress_message", length = 1000)
+    private String progressMessage;
+
+    @Column(name = "dtc_context_json", columnDefinition = "TEXT")
+    private String dtcContextJson;
+
+    @CreationTimestamp
+    @Column(name = "created_at")
+    private LocalDateTime createdAt;
+
+    public DiagSession(UUID vehiclesId, UUID tripId, DiagTriggerType triggerType) {
+        this.diagSessionId = UUID.randomUUID();
+        this.vehiclesId = vehiclesId;
+        this.tripId = tripId;
+        this.triggerType = triggerType;
+        this.status = DiagStatus.PENDING;
+        this.progressMessage = "진단 대기 중";
+    }
+
+    public void updateStatus(DiagStatus status, String message) {
+        this.status = status;
+        this.progressMessage = message;
+    }
+
+    public void setDtcContextJson(String dtcContextJson) {
+        this.dtcContextJson = dtcContextJson;
+    }
+
+    public enum DiagTriggerType {
+        AUTO, DATA, VISUAL, AUDIO, DTC, ROUTINE
+    }
+
+    public enum DiagStatus {
+        PENDING, PROCESSING, REPLY_PROCESSING, DONE, ACTION_REQUIRED, FAILED
+    }
+}

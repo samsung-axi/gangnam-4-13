@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+@layer base {
+  html, body, #root {
+    @apply m-0 p-0 w-full h-full overflow-x-hidden box-border;
+  }
+}
+
+@layer utilities {
+  @media (max-width: 640px) {
+    html, body, #root {
+      @apply w-screen min-w-full max-w-full;
+    }
+  }
+}
+@theme{
+    --color-primary-100: rgba(240, 248, 255, 1);  /* 매우 연한 파란색 */
+    --color-primary-200: rgba(224, 240, 255, 1);  /* 연한 파란색 */
+    --color-primary-300: rgba(191, 222, 255, 1);  /* 밝은 파란색 */
+    --color-primary-400: rgba(156, 204, 255, 1);  /* 중간 밝은 파란색 */
+    --color-primary-500: rgba(112, 174, 255, 1);  /* 표준 파란색 */
+    --color-primary-600: rgba(66, 133, 244, 1);   /* 진한 파란색 */
+    --color-primary-700: rgba(51, 103, 214, 1);   /* 더 진한 파란색 */
+    --color-primary-800: rgba(32, 76, 165, 1);    /* 깊은 파란색 */
+    --color-primary-900: rgba(23, 54, 120, 1);    /* 가장 진한 파란색 */
+}
+
+@layer components {
+  .header {
+    @apply flex items-center px-4 py-2 border-gray-200 bg-white;
+  }
+
+  .logo {
+    @apply h-10 w-auto mr-3;
+  }
+
+  .title {
+    @apply text-2xl font-bold text-gray-800;
+  }
+}

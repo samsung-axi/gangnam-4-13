@@ -1,0 +1,101 @@
+HELP.md
+.gradle
+build/
+!gradle/wrapper/gradle-wrapper.jar
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+bin/
+!**/src/main/**/bin/
+!**/src/test/**/bin/
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+out/
+!**/src/main/**/out/
+!**/src/test/**/out/
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+### VS Code ###
+.vscode/
+
+# misc
+.DS_Store
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+dump.rdb
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# mac
+.DS_Store
+
+# ============================= #
+
+# frontend - React.js
+frontend/.next/
+frontend/node_modules/
+frontend/.turbo/
+frontend/.env.local
+
+# frontend - Flutter
+flutter/.dart_tool/
+flutter/.packages
+flutter/build/
+flutter/.flutter-plugins
+flutter/.flutter-plugins-dependencies
+flutter/.idea/
+flutter/.vscode/
+flutter/pubspec.lock
+flutter/ios/
+flutter/android/
+
+# backend - Spring Boot
+springboot/target/
+springboot/.mvn/
+springboot/mvnw*
+springboot/src/main/java/com/aix/againhello/call/input
+springboot/src/main/java/com/aix/againhello/call/output
+springboot/src/test
+springboot/upload
+springboot/output
+/src/main/resources/properties/env.properties
+
+# backend - Python
+python/.venv/
+python/.env
+python/*.ipynb_checkpoints/
+python/.pytest_cache/
+python/.mypy_cache/
+python/.pytorch_model/
+python/.coverage
+**/__pycache__/
+python/dump.rdb
+python/received_files/
+**/pretrained_models/
+
+# Google Cloud 인증키
+hello-again-ai-project.json

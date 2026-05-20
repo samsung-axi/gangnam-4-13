@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- 문자 인코딩을 UTF-8로 설정 -->
+    <meta charset="utf-8" />
+    
+    <!-- 뷰포트 설정 (반응형 웹 디자인을 위한 설정) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <!-- 웹 애플리케이션의 테마 색상을 검정색으로 설정 -->
+    <meta name="theme-color" content="#000000" />
+    
+    <!-- 웹사이트 설명 (검색엔진 최적화 용도) -->
+    <meta name="description" content="Web site created using create-react-app" />
+    
+    <!-- Google Fonts 서버와 사전 연결 설정 (성능 최적화) -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- 구글 폰트 "Racing Sans One" 폰트 로드 -->
+    <link href="https://fonts.googleapis.com/css2?family=Racing+Sans+One&display=swap" rel="stylesheet">
+    
+    <!-- 애니메이션 효과를 위한 외부 CSS 라이브러리 Animate.css 로드 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    
+    <!-- Progressive Web App(PWA) 설정 파일인 manifest.json 연결 -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  </head>
+  <body>
+    <!-- React 앱이 렌더링될 DOM 요소 (React가 이 div 안에 컴포넌트를 동적으로 삽입) -->
+    <div id="root"></div>
+
+    <script>
+      (function(){
+        var w = window;
+        // ChannelIO가 이미 존재하면 스크립트를 두 번 포함하지 않도록 방지
+        if(w.ChannelIO){ return w.console.error("ChannelIO script included twice."); }
+        
+        // ChannelIO 초기화 함수
+        var ch = function(){ ch.c(arguments); };
+        ch.q = [];
+        ch.c = function(args){ ch.q.push(args); };
+        w.ChannelIO = ch;
+
+        // ChannelIO 스크립트를 로드하는 함수
+        function l(){
+          if(w.ChannelIOInitialized){ return; }
+          w.ChannelIOInitialized = true;
+          
+          // ChannelIO 플러그인 스크립트를 비동기적으로 로드
+          var s = document.createElement("script");
+          s.type = "text/javascript";
+          s.async = true;
+          s.src = "https://cdn.channel.io/plugin/ch-plugin-web.js";
+          
+          // 스크립트를 문서에 삽입
+          var x = document.getElementsByTagName("script")[0];
+          if(x.parentNode){ x.parentNode.insertBefore(s, x); }
+        }
+        
+        // 문서가 준비되었을 때 ChannelIO 초기화 함수 호출
+        if(document.readyState === "complete"){
+          l();
+        } else {
+          w.addEventListener("DOMContentLoaded", l);
+          w.addEventListener("load", l);
+        }
+      })();
+    
+      // ChannelIO 플러그인 초기화
+      ChannelIO('boot', {
+        "pluginKey": "4b9d0ccb-7deb-4924-ac6f-e6c99f9481aa" // 플러그인의 고유한 키
+      });
+    </script>
+  </body>
+</html>

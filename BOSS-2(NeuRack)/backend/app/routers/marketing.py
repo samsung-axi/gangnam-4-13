@@ -1,0 +1,1125 @@
+"""마케팅 전용 API 라우터
+
+엔드포인트:
+  POST /api/marketing/image          — DALL-E 3 이미지 생성
+  POST /api/marketing/blog/upload    — 네이버 블로그 자동 업로드 (Playwright)
+  GET  /api/marketing/subsidies      — 지원사업 목록 조회
+"""
+
+from __future__ import annotations
+
+import base64
+import json
+import logging
+
+import uuid as _uuid
+
+from typing import List
+
+from fastapi import APIRouter, File, Form, HTTPException, Query, UploadFile
+from fastapi.responses import HTMLResponse
+from pydantic import BaseModel
+
+from app.core.llm import client as openai_client
+from app.core.config import settings
+from app.core.supabase import get_supabase
+from app.agents._marketing_knowledge import search_subsidy_programs
+from app.services.marketing_data_quality import (
+    NO_MARKETING_CONTENT_MESSAGE,
+    has_any_marketing_performance,
+    has_instagram_performance,
+    has_youtube_performance,
+    mark_empty_instagram,
+    mark_empty_youtube,
+)
+
+log = logging.getLogger(__name__)
+
+router = APIRouter(prefix="/api/marketing", tags=["marketing"])
+
+
+# ── 이미지 생성 ──────────────────────────────────────────────────────────────
+
+class ImageRequest(BaseModel):
+    prompt: str                          # 사용자 프롬프트
+    style: str = "vivid"                 # vivid | natural
+    size: str = "1024x1024"              # 1024x1024 | 1792x1024 | 1024x1792
+    business_type: str = ""              # 업종 (프로필에서 전달)
+    business_name: str = ""              # 가게명 (프로필에서 전달)
+
+
+class ImageResponse(BaseModel):
+    url: str
+    revised_prompt: str
+
+
+class InstagramActionExampleRequest(BaseModel):
+    account_id: str
+    title: str
+    target: str = ""
+    idea: str = ""
+    steps: list[str] = []
+    expected: str = ""
+    period: str = ""
+
+
+class InstagramActionExampleResponse(BaseModel):
+    data: dict
+    error: str | None = None
+
+
+@router.post("/image", response_model=ImageResponse)
+async def generate_image(req: ImageRequest):
+    """
+    DALL-E 3으로 마케팅용 이미지 생성.
+    업종/가게명을 프롬프트에 자동 보강해 결과물의 맥락을 높인다.
+    """
+    # 업종·가게명 보강
+    context_prefix = ""
+    if req.business_name:
+        context_prefix += f"For a Korean small business called '{req.business_name}'"
+        if req.business_type:
+            context_prefix += f" ({req.business_type})"
+        context_prefix += ". "
+
+    full_prompt = (
+        context_prefix
+        + req.prompt
+        + " High-quality marketing photo, Korean aesthetic, warm lighting."
+    )
+
+    try:
+        resp = await openai_client.images.generate(
+            model="dall-e-3",
+            prompt=full_prompt,
+            n=1,
+            size=req.size,  # type: ignore[arg-type]
+            style=req.style,  # type: ignore[arg-type]
+            quality="standard",
+        )
+    except Exception as e:
+        raise HTTPException(status_code=502, detail=f"이미지 생성 실패: {e}")
+
+    img = resp.data[0]
+    return ImageResponse(
+        url=img.url or "",
+        revised_prompt=img.revised_prompt or full_prompt,
+    )
+
+
+@router.post("/instagram/example", response_model=InstagramActionExampleResponse)
+async def generate_instagram_action_example(req: InstagramActionExampleRequest):
+    """Create an Instagram preview payload from a marketing action item."""
+    from app.core.llm import chat_completion
+    from app.agents.marketing import _generate_sns_image
+
+    source = "\n".join(
+        [
+            f"이벤트 이름: {req.title}",
+            f"대상: {req.target}",
+            f"아이디어: {req.idea}",
+            f"실행 방법: {' / '.join(req.steps)}",
+            f"기대효과: {req.expected}",
+            f"기간: {req.period}",
+        ]
+    )
+    prompt = (
+        "아래 마케팅 할 일 정보를 바탕으로 실제 인스타그램 피드 예시를 만들어주세요.\n"
+        "응답은 JSON 객체만 반환하세요. 마크다운 코드블록은 쓰지 마세요.\n"
+        "스키마: {"
+        '"title": "짧은 게시물 제목", '
+        '"caption": "인스타그램 본문 캡션. 안내문 없이 실제 게시글처럼 작성", '
+        '"hashtags": ["해시태그", "..."], '
+        '"best_time": "게시 추천 시간 한 줄", '
+        '"image_prompt": "정사각형 인스타그램 피드 이미지 생성용 영어 프롬프트"'
+        "}\n\n"
+        f"{source}"
+    )
+
+    fallback_title = req.title or "Instagram post"
+    fallback_caption = "\n".join(
+        p
+        for p in [
+            req.idea or fallback_title,
+            req.target and f"대상: {req.target}",
+            req.steps and "실행 방법: " + " / ".join(req.steps[:3]),
+        ]
+        if p
+    )
+    payload = {
+        "title": fallback_title,
+        "caption": fallback_caption,
+        "hashtags": ["마케팅", "이벤트", "소상공인"],
+        "best_time": req.period or "오늘 저녁 피드 업로드 추천",
+        "image_prompt": f"Instagram square feed image for {fallback_title}, Korean small business marketing, warm realistic photo",
+    }
+
+    try:
+        resp = await chat_completion(
+            messages=[{"role": "user", "content": prompt}],
+            model="gpt-4o",
+            temperature=0.5,
+        )
+        raw = (resp.choices[0].message.content or "").strip()
+        if raw.startswith("```"):
+            raw = raw.strip("`")
+            raw = raw.removeprefix("json").strip()
+        parsed = json.loads(raw)
+        if isinstance(parsed, dict):
+            payload.update(
+                {
+                    "title": str(parsed.get("title") or payload["title"]),
+                    "caption": str(parsed.get("caption") or payload["caption"]),
+                    "hashtags": parsed.get("hashtags") if isinstance(parsed.get("hashtags"), list) else payload["hashtags"],
+                    "best_time": str(parsed.get("best_time") or payload["best_time"]),
+                    "image_prompt": str(parsed.get("image_prompt") or payload["image_prompt"]),
+                }
+            )
+    except Exception:
+        log.exception("generate_instagram_action_example LLM call failed")
+
+    hashtags = [
+        str(tag).lstrip("#").strip()
+        for tag in (payload.get("hashtags") or [])
+        if str(tag).strip()
+    ][:20]
+    caption = str(payload.get("caption") or "")
+    image_context = f"{payload.get('image_prompt')}\n\nCaption context: {caption}"
+    image_url = await _generate_sns_image(image_context, hashtags)
+
+    return {
+        "data": {
+            "title": str(payload.get("title") or fallback_title),
+            "caption": caption,
+            "hashtags": hashtags,
+            "best_time": str(payload.get("best_time") or ""),
+            "image_url": image_url,
+        },
+        "error": None,
+    }
+
+
+# ── 네이버 블로그 자동 업로드 ────────────────────────────────────────────────
+
+class NaverBlogUploadRequest(BaseModel):
+    title: str
+    content: str                         # 마크다운 본문
+    tags: list[str] = []
+    image_urls: list[str] = []
+    account_id: str
+
+
+class NaverBlogUploadResponse(BaseModel):
+    success: bool
+    post_url: str = ""
+    error: str = ""
+
+
+@router.post("/blog/upload", response_model=NaverBlogUploadResponse)
+async def upload_naver_blog(req: NaverBlogUploadRequest):
+    """
+    Playwright로 네이버 블로그에 자동 업로드.
+    account_id별 platform_credentials DB에서 자격증명 로드.
+    """
+    try:
+        from app.services.naver_blog import upload_post
+        url = await upload_post(
+            account_id=req.account_id,
+            title=req.title,
+            content=req.content,
+            tags=req.tags,
+            image_urls=req.image_urls or None,
+        )
+        return NaverBlogUploadResponse(success=True, post_url=url)
+    except ImportError:
+        raise HTTPException(
+            status_code=501,
+            detail="playwright가 설치되지 않았습니다. `pip install playwright && playwright install chromium`",
+        )
+    except Exception as e:
+        return NaverBlogUploadResponse(success=False, error=str(e))
+
+
+# ── 리뷰 이미지 분석 ─────────────────────────────────────────────────────────
+
+_REVIEW_VISION_PROMPT = """이 이미지는 네이버 플레이스, 카카오맵, 구글맵 등의 고객 리뷰 캡처 화면입니다.
+아래 JSON 형식으로만 응답하세요. 다른 텍스트 없이 JSON만 출력.
+
+{
+  "platform": "naver 또는 kakao 또는 google 또는 other",
+  "star_rating": 별점 숫자 1~5 (없으면 null),
+  "review_text": "고객이 작성한 리뷰 본문만 (사장님 답글 제외)",
+  "reviewer_name": "닉네임 (없으면 null)"
+}
+
+규칙:
+- review_text는 고객 리뷰 원문만. 날짜·별점·닉네임·사장님 답글 제외.
+- star_rating은 별 개수를 숫자로 (★★★ = 3).
+- 리뷰가 보이지 않으면 {"error": "리뷰를 찾을 수 없습니다"} 반환."""
+
+
+class ReviewAnalysisResult(BaseModel):
+    platform: str = "other"
+    star_rating: int | None = None
+    review_text: str = ""
+    reviewer_name: str | None = None
+    error: str = ""
+
+
+_MIME_BY_EXT = {
+    "jpg": "image/jpeg", "jpeg": "image/jpeg", "png": "image/png",
+    "webp": "image/webp", "bmp": "image/bmp", "gif": "image/gif",
+}
+
+
+@router.post("/review/analyze", response_model=ReviewAnalysisResult)
+async def analyze_review_image(file: UploadFile = File(...)):
+    """
+    리뷰 캡처 이미지를 GPT-4o Vision으로 분석해 별점·플랫폼·리뷰 본문을 추출한다.
+    """
+    content = await file.read()
+    if not content:
+        raise HTTPException(status_code=400, detail="빈 파일입니다.")
+
+    ext = (file.filename or "").rsplit(".", 1)[-1].lower()
+    mime = _MIME_BY_EXT.get(ext, "image/jpeg")
+    b64 = base64.standard_b64encode(content).decode("ascii")
+    data_url = f"data:{mime};base64,{b64}"
+
+    try:
+        resp = await openai_client.chat.completions.create(
+            model="gpt-4o",
+            messages=[{
+                "role": "user",
+                "content": [
+                    {"type": "text", "text": _REVIEW_VISION_PROMPT},
+                    {"type": "image_url", "image_url": {"url": data_url}},
+                ],
+            }],
+            temperature=0,
+            max_tokens=800,
+            response_format={"type": "json_object"},
+        )
+    except Exception as exc:
+        log.exception("review vision call failed")
+        raise HTTPException(status_code=503, detail=f"이미지 분석 실패: {str(exc)[:200]}")
+
+    raw = (resp.choices[0].message.content or "").strip()
+    try:
+        data = json.loads(raw)
+    except json.JSONDecodeError:
+        raise HTTPException(status_code=422, detail="분석 결과를 파싱하지 못했습니다.")
+
+    if "error" in data:
+        return ReviewAnalysisResult(error=data["error"])
+
+    return ReviewAnalysisResult(
+        platform=data.get("platform", "other"),
+        star_rating=data.get("star_rating"),
+        review_text=(data.get("review_text") or "").strip(),
+        reviewer_name=data.get("reviewer_name"),
+    )
+
+
+# ── 인스타그램 자동 게시 ──────────────────────────────────────────────────────
+
+class InstagramPublishRequest(BaseModel):
+    account_id: str
+    image_urls: list[str]  # 1~10장 (1장: 단일, 2~10장: 캐러셀)
+    caption: str
+    hashtags: list[str] = []
+
+
+class InstagramPublishResponse(BaseModel):
+    success: bool
+    post_url: str = ""
+    error: str = ""
+
+
+@router.post("/instagram/publish", response_model=InstagramPublishResponse)
+async def publish_instagram(req: InstagramPublishRequest):
+    """
+    인스타그램 비즈니스 계정에 이미지 피드 게시.
+    META_ACCESS_TOKEN / INSTAGRAM_USER_ID 환경변수 필요.
+    """
+    try:
+        from app.services.instagram import publish_post
+        post_url = await publish_post(
+            account_id=req.account_id,
+            image_urls=req.image_urls,
+            caption=req.caption,
+            hashtags=req.hashtags,
+        )
+        return InstagramPublishResponse(success=True, post_url=post_url)
+    except Exception as e:
+        log.exception("instagram publish failed")
+        return InstagramPublishResponse(success=False, error=str(e)[:300])
+
+
+# ── 사진 라이브러리 ───────────────────────────────────────────────────────────
+
+@router.post("/photos/upload")
+async def upload_business_photo(
+    account_id: str = Form(...),
+    file: UploadFile = File(...),
+):
+    """사업자 사진 라이브러리에 사진 업로드."""
+    sb = get_supabase()
+    ext = file.filename.rsplit(".", 1)[-1].lower() if file.filename and "." in file.filename else "jpg"
+    path = f"{account_id}/{_uuid.uuid4().hex}.{ext}"
+    content = await file.read()
+
+    sb.storage.from_("business-photos").upload(
+        path=path,
+        file=content,
+        file_options={"content-type": file.content_type or "image/jpeg", "upsert": "true"},
+    )
+    public_url = sb.storage.from_("business-photos").get_public_url(path)
+
+    res = sb.table("business_photos").insert({
+        "account_id": account_id,
+        "storage_path": path,
+        "public_url": public_url,
+        "name": file.filename or path.split("/")[-1],
+        "size_bytes": len(content),
+    }).execute()
+
+    row = res.data[0]
+    return {"data": row, "error": None}
+
+
+@router.get("/photos")
+async def list_business_photos(account_id: str = Query(...)):
+    """계정의 사진 라이브러리 목록 조회."""
+    sb = get_supabase()
+    res = (
+        sb.table("business_photos")
+        .select("*")
+        .eq("account_id", account_id)
+        .order("created_at", desc=True)
+        .execute()
+    )
+    return {"data": res.data, "error": None}
+
+
+@router.delete("/photos/{photo_id}")
+async def delete_business_photo(photo_id: str, account_id: str = Query(...)):
+    """사진 라이브러리에서 사진 삭제."""
+    sb = get_supabase()
+    res = (
+        sb.table("business_photos")
+        .select("storage_path")
+        .eq("id", photo_id)
+        .eq("account_id", account_id)
+        .execute()
+    )
+    if not res.data:
+        raise HTTPException(status_code=404, detail="사진을 찾을 수 없습니다.")
+
+    sb.storage.from_("business-photos").remove([res.data[0]["storage_path"]])
+    sb.table("business_photos").delete().eq("id", photo_id).execute()
+    return {"data": {"deleted": True}, "error": None}
+
+
+# ── YouTube OAuth + Shorts ────────────────────────────────────────────────────
+
+@router.get("/youtube/oauth/start")
+async def youtube_oauth_start(account_id: str = Query(...)):
+    """YouTube OAuth 2.0 인가 URL 반환."""
+    from app.services.youtube import get_oauth_url
+    try:
+        return {"url": get_oauth_url(account_id)}
+    except RuntimeError as exc:
+        raise HTTPException(status_code=503, detail=str(exc)) from exc
+    from app.core.config import settings
+    if not settings.youtube_client_id:
+        raise HTTPException(status_code=503, detail="YOUTUBE_CLIENT_ID 환경변수가 설정되지 않았습니다.")
+    return {"url": get_oauth_url(account_id)}
+
+
+@router.get("/youtube/oauth/callback", response_class=HTMLResponse)
+async def youtube_oauth_callback(code: str = Query(...), state: str = Query(...)):
+    """Google OAuth 콜백 — 토큰 저장 후 팝업 닫기."""
+    from app.services.youtube import exchange_code_for_tokens
+    try:
+        await exchange_code_for_tokens(code, account_id=state)
+        html = """<html><body><script>
+            window.opener && window.opener.postMessage({type:'youtube_connected',success:true},'*');
+            window.close();
+        </script><p>YouTube 연결 완료! 이 창을 닫아주세요.</p></body></html>"""
+    except Exception as e:
+        log.exception("youtube oauth callback failed")
+        html = f"""<html><body><script>
+            window.opener && window.opener.postMessage({{type:'youtube_connected',success:false,error:'{str(e)[:100]}'}},'*');
+            window.close();
+        </script><p>오류: {str(e)[:200]}</p></body></html>"""
+    return HTMLResponse(html)
+
+
+@router.get("/youtube/oauth/status")
+async def youtube_oauth_status(account_id: str = Query(...)):
+    """YouTube 연결 상태 조회."""
+    from app.services.youtube import get_connection_status
+    return await get_connection_status(account_id)
+
+
+@router.delete("/youtube/oauth/disconnect")
+async def youtube_oauth_disconnect(account_id: str = Query(...)):
+    """YouTube 연결 해제."""
+    sb = get_supabase()
+    sb.table("youtube_oauth_tokens").delete().eq("account_id", account_id).execute()
+    return {"data": {"disconnected": True}, "error": None}
+
+
+@router.post("/youtube/shorts/preview-subtitles")
+async def preview_subtitles(
+    account_id: str = Form(...),
+    context: str = Form(""),
+    images: List[UploadFile] = File(...),
+):
+    """이미지들에 대한 AI 자막 + 제목·설명·태그 자동 생성 (FFmpeg 없이 빠른 응답)."""
+    from app.services.shorts_gen import generate_subtitles_for_images, generate_video_metadata
+    if not (2 <= len(images) <= 10):
+        raise HTTPException(status_code=400, detail="이미지는 2~10장이어야 합니다.")
+    image_bytes_list = [await img.read() for img in images]
+    subtitles = await generate_subtitles_for_images(image_bytes_list, context)
+    metadata = await generate_video_metadata(context, subtitles)
+    return {
+        "data": {
+            "subtitles": subtitles,
+            "title": metadata["title"],
+            "description": metadata["description"],
+            "tags": metadata["tags"],
+        },
+        "error": None,
+    }
+
+
+class ShortsGenerateResponse(BaseModel):
+    success: bool
+    youtube_url: str = ""
+    storage_url: str = ""
+    reels_url: str = ""
+    reels_error: str = ""
+    error: str = ""
+
+
+@router.post("/youtube/shorts/generate", response_model=ShortsGenerateResponse)
+async def generate_shorts(
+    account_id: str = Form(...),
+    title: str = Form(...),
+    description: str = Form(""),
+    tags: str = Form("[]"),
+    subtitles: str = Form("[]"),          # JSON list — 사용자가 편집한 자막
+    duration_per_slide: float = Form(3.0),
+    privacy_status: str = Form("private"),
+    upload_to_reels: bool = Form(False),  # Instagram Reels 동시 업로드 여부
+    images: List[UploadFile] = File(...),
+):
+    """이미지 슬라이드 → MP4 → YouTube Shorts 업로드."""
+    from app.services.shorts_gen import build_shorts_video
+    from app.services.youtube import upload_to_youtube
+
+    if not (2 <= len(images) <= 10):
+        raise HTTPException(status_code=400, detail="이미지는 2~10장이어야 합니다.")
+
+    try:
+        tag_list: list[str] = json.loads(tags)
+    except Exception:
+        tag_list = []
+
+    try:
+        subtitle_list: list[str] = json.loads(subtitles)
+    except Exception:
+        subtitle_list = []
+
+    # 자막 수가 이미지 수와 맞지 않으면 빈 문자열로 패딩
+    image_bytes_list = [await img.read() for img in images]
+    n = len(image_bytes_list)
+    while len(subtitle_list) < n:
+        subtitle_list.append("")
+
+    try:
+        storage_url, _storage_path, video_bytes = await build_shorts_video(
+            account_id=account_id,
+            image_bytes_list=image_bytes_list,
+            subtitles=subtitle_list[:n],
+            duration_per_slide=max(2.0, min(5.0, duration_per_slide)),
+        )
+    except Exception as e:
+        log.exception("shorts video generation failed")
+        return ShortsGenerateResponse(success=False, error=str(e)[:300])
+
+    try:
+        import tempfile, os
+        with tempfile.NamedTemporaryFile(suffix=".mp4", delete=False) as tmp:
+            tmp.write(video_bytes)
+            tmp_path = tmp.name
+        # YouTube가 Shorts로 인식하려면 제목 또는 설명에 #Shorts 필요
+        shorts_title = title if "#Shorts" in title or "#shorts" in title else f"{title} #Shorts"
+        shorts_desc = description if "#Shorts" in description or "#shorts" in description else f"{description}\n\n#Shorts".strip()
+        youtube_url = await upload_to_youtube(
+            account_id=account_id,
+            video_path=tmp_path,
+            title=shorts_title,
+            description=shorts_desc,
+            tags=tag_list,
+            privacy_status=privacy_status,
+        )
+        os.unlink(tmp_path)
+    except Exception as e:
+        log.exception("youtube upload failed")
+        reels_url = ""
+        reels_error = ""
+        if upload_to_reels:
+            try:
+                from app.services.instagram import publish_reels
+                reels_url = await publish_reels(
+                    account_id=account_id,
+                    video_url=storage_url,
+                    caption=description or title,
+                    hashtags=tag_list,
+                )
+            except Exception as re:
+                log.exception("instagram reels upload failed")
+                reels_error = str(re)[:300]
+        _persist_shorts_artifact(
+            account_id=account_id,
+            title=title,
+            description=description,
+            tags=tag_list,
+            subtitles=subtitle_list[:n],
+            youtube_url="",
+            storage_url=storage_url,
+            reels_url=reels_url,
+            duration_per_slide=duration_per_slide,
+            privacy_status=privacy_status,
+            slide_count=n,
+        )
+        return ShortsGenerateResponse(
+            success=True,
+            storage_url=storage_url,
+            reels_url=reels_url,
+            reels_error=reels_error,
+            error=f"YouTube 업로드 실패: {str(e)[:200]}",
+        )
+
+    # Instagram Reels 업로드 (선택)
+    reels_url = ""
+    reels_error = ""
+    if upload_to_reels:
+        try:
+            from app.services.instagram import publish_reels
+            reels_url = await publish_reels(
+                account_id=account_id,
+                video_url=storage_url,
+                caption=description or title,
+                hashtags=tag_list,
+            )
+        except Exception as e:
+            log.exception("instagram reels upload failed")
+            reels_error = str(e)[:300]
+
+    _persist_shorts_artifact(
+        account_id=account_id,
+        title=title,
+        description=description,
+        tags=tag_list,
+        subtitles=subtitle_list[:n],
+        youtube_url=youtube_url,
+        storage_url=storage_url,
+        reels_url=reels_url,
+        duration_per_slide=duration_per_slide,
+        privacy_status=privacy_status,
+        slide_count=n,
+    )
+
+    return ShortsGenerateResponse(
+        success=True,
+        youtube_url=youtube_url,
+        storage_url=storage_url,
+        reels_url=reels_url,
+        reels_error=reels_error,
+    )
+
+
+def _persist_shorts_artifact(
+    *,
+    account_id: str,
+    title: str,
+    description: str,
+    tags: list[str],
+    subtitles: list[str],
+    youtube_url: str,
+    storage_url: str,
+    reels_url: str = "",
+    duration_per_slide: float,
+    privacy_status: str,
+    slide_count: int,
+) -> None:
+    """Shorts 생성 결과를 kind='artifact' type='shorts_video' 로 저장.
+
+    metadata 에 youtube_url·storage_url·subtitles·tags 전부 담아 상세 모달에서 바로 재생/링크.
+    Marketing > Social 서브허브 아래 contains 엣지로 연결.
+    """
+    from app.agents._artifact import pick_sub_hub_id
+
+    try:
+        sb = get_supabase()
+        content = (description or "").strip()
+        if subtitles:
+            lines = [f"{i + 1}. {s}" for i, s in enumerate(subtitles) if s.strip()]
+            if lines:
+                content = (content + "\n\n") if content else ""
+                content += "**자막**\n" + "\n".join(lines)
+        metadata = {
+            "youtube_url": youtube_url,
+            "storage_url": storage_url,
+            "reels_url": reels_url,
+            "tags": tags,
+            "subtitles": subtitles,
+            "duration_per_slide": duration_per_slide,
+            "privacy_status": privacy_status,
+            "slide_count": slide_count,
+        }
+        payload = {
+            "account_id": account_id,
+            "domains": ["marketing"],
+            "kind": "artifact",
+            "type": "shorts_video",
+            "title": title[:180] or "YouTube Shorts",
+            "content": content,
+            "status": "active" if youtube_url else "draft",
+            "metadata": metadata,
+        }
+        res = sb.table("artifacts").insert(payload).execute()
+        if not res.data:
+            return
+        artifact_id = res.data[0]["id"]
+        hub_id = pick_sub_hub_id(
+            sb, account_id, "marketing",
+            prefer_keywords=("YouTube Shorts", "shorts", "video"),
+        )
+        if hub_id:
+            try:
+                sb.table("artifact_edges").insert({
+                    "account_id": account_id,
+                    "parent_id":  hub_id,
+                    "child_id":   artifact_id,
+                    "relation":   "contains",
+                }).execute()
+            except Exception:
+                pass
+        try:
+            sb.table("activity_logs").insert({
+                "account_id":  account_id,
+                "type":        "artifact_created",
+                "domain":      "marketing",
+                "title":       title[:180] or "YouTube Shorts",
+                "description": "YouTube Shorts 생성됨",
+                "metadata":    {"artifact_id": artifact_id},
+            }).execute()
+        except Exception:
+            pass
+    except Exception:
+        log.exception("shorts artifact insert failed")
+
+
+# ── 마케팅 성과 리포트 ────────────────────────────────────────────────────────
+
+@router.get("/report/instagram")
+async def get_instagram_report(
+    account_id: str = Query(..., description="BOSS2 계정 ID"),
+    days: int = Query(default=30, ge=7, le=90, description="조회 기간(일)"),
+):
+    """Instagram 계정/게시물 성과 데이터 조회."""
+    from app.services.instagram_insights import collect_report_data
+    data = mark_empty_instagram(await collect_report_data(days=days, account_id=account_id))
+    return {"data": data, "error": data.get("error")}
+
+
+@router.get("/report/youtube")
+async def get_youtube_report(
+    account_id: str = Query(..., description="BOSS2 계정 ID"),
+    days: int = Query(default=30, ge=7, le=90, description="조회 기간(일)"),
+):
+    """YouTube Analytics 채널/영상 성과 데이터 조회."""
+    from app.services.youtube_analytics import collect_report_data
+    data = mark_empty_youtube(await collect_report_data(account_id=account_id, days=days))
+    return {"data": data, "error": data.get("channel", {}).get("error")}
+
+
+# ── 마케팅 대시보드 ───────────────────────────────────────────────────────────
+
+@router.get("/dashboard")
+async def get_marketing_dashboard(
+    account_id: str = Query(...),
+    days: int = Query(default=30, ge=7, le=90),
+):
+    """Instagram + YouTube 데이터 병렬 수집 (LLM 없이 즉시 응답)."""
+    import asyncio
+    from app.services.instagram_insights import collect_report_data as ig_collect
+    from app.services.youtube_analytics import collect_report_data as yt_collect
+
+    ig_result, yt_result = await asyncio.gather(
+        ig_collect(days=days, account_id=account_id),
+        yt_collect(account_id=account_id, days=days),
+        return_exceptions=True,
+    )
+    if isinstance(ig_result, Exception):
+        ig_result = {"error": str(ig_result)}
+    if isinstance(yt_result, Exception):
+        yt_result = {"error": str(yt_result)}
+
+    ig_result = mark_empty_instagram(ig_result)
+    yt_result = mark_empty_youtube(yt_result)
+
+    return {
+        "data": {"instagram": ig_result, "youtube": yt_result, "period_days": days},
+        "error": None,
+    }
+
+
+@router.get("/dashboard/analysis")
+async def get_marketing_analysis(
+    account_id: str = Query(...),
+    days: int = Query(default=30, ge=7, le=90),
+):
+    """일별 데이터 + LLM 분석 텍스트 반환 (개요 탭 인페이지 표시용)."""
+    import asyncio, json as _json
+    from app.services.instagram_insights import collect_report_data as ig_collect, get_daily_reach
+    from app.services.youtube_analytics import collect_report_data as yt_collect, get_daily_analytics
+    from app.core.llm import chat_completion
+
+    # 기존 집계 데이터 + 일별 데이터 병렬 수집
+    ig_result, yt_result, yt_daily = await asyncio.gather(
+        ig_collect(days=days, account_id=account_id),
+        yt_collect(account_id=account_id, days=days),
+        get_daily_analytics(account_id=account_id, days=days),
+        return_exceptions=True,
+    )
+    if isinstance(ig_result, Exception):
+        ig_result = {"error": str(ig_result)}
+    if isinstance(yt_result, Exception):
+        yt_result = {"error": str(yt_result)}
+    if isinstance(yt_daily, Exception):
+        yt_daily = []
+
+    if not has_any_marketing_performance(ig_result, yt_result):
+        return {
+            "data": None,
+            "error": NO_MARKETING_CONTENT_MESSAGE,
+        }
+
+    ig_ok = has_instagram_performance(ig_result)
+    yt_ok = has_youtube_performance(yt_result)
+
+    # Instagram 일별 도달수
+    ig_daily: list[dict] = []
+    if ig_ok:
+        creds_res = None
+        access_token = ""
+        ig_user_id = ""
+        try:
+            from app.core.supabase import get_supabase
+            sb = get_supabase()
+            creds_res = (
+                sb.table("platform_credentials")
+                .select("credentials")
+                .eq("account_id", account_id)
+                .eq("platform", "instagram")
+                .execute()
+            )
+            if creds_res.data:
+                c = creds_res.data[0]["credentials"]
+                access_token = c.get("meta_access_token", "")
+                ig_user_id = c.get("instagram_user_id", "")
+        except Exception:
+            pass
+        if access_token and ig_user_id:
+            try:
+                ig_daily = await get_daily_reach(access_token, ig_user_id, days=days)
+            except Exception:
+                ig_daily = []
+
+    # LLM 분석용 데이터 요약
+    summary_lines = [f"[분석 기간] 최근 {days}일"]
+
+    if ig_ok:
+        acc = ig_result.get("account", {})
+        summary_lines.append(
+            f"[Instagram 집계]\n- 팔로워: {acc.get('followers_count', 0):,}명\n"
+            f"- 기간 도달수: {acc.get('reach', 0):,}회\n"
+            f"- 기간 인상수: {acc.get('impressions', 0):,}회\n"
+            f"- 평균 engagement: {ig_result.get('avg_engagement', 0):.1f}"
+        )
+        if ig_daily:
+            daily_str = ", ".join(f"{d['date']}:{d['reach']}" for d in ig_daily[-7:])
+            summary_lines.append(f"[Instagram 최근 7일 도달수] {daily_str}")
+
+    if yt_ok:
+        ch = yt_result.get("channel", {})
+        summary_lines.append(
+            f"[YouTube 집계]\n- 조회수: {ch.get('views', 0):,}회\n"
+            f"- 시청시간: {ch.get('watch_minutes', 0):,}분\n"
+            f"- 구독자 순증: {ch.get('net_subscribers', 0):+d}명"
+        )
+        if yt_daily:
+            daily_str = ", ".join(f"{d['date']}:{d['views']}회/{d['watch_minutes']}분" for d in yt_daily[-7:])
+            summary_lines.append(f"[YouTube 최근 7일 일별] {daily_str}")
+
+    data_summary = "\n\n".join(summary_lines)
+
+    analysis_prompt = (
+        f"소상공인의 마케팅 성과 데이터를 분석해서 핵심 인사이트를 전달해주세요.\n\n"
+        f"{data_summary}\n\n"
+        "다음 순서로 작성해주세요:\n"
+        "1. **전체 트렌드 요약** — 기간 전체 흐름을 2~3문장으로\n"
+        "2. **주목할 날짜·구간** — 급증하거나 저조한 날이 있다면 언급 (데이터 기반)\n"
+        "3. **플랫폼별 인사이트** — Instagram/YouTube 각각 1~2가지\n"
+        "4. **다음 주 제안** — 데이터에서 도출한 실행 팁 2가지\n\n"
+        "소상공인이 이해하기 쉬운 언어로, 마크다운 형식으로 작성하세요. "
+        "데이터가 없는 플랫폼은 해당 섹션 생략."
+    )
+
+    try:
+        resp = await chat_completion(
+            messages=[{"role": "user", "content": analysis_prompt}],
+            model="gpt-4o",
+            temperature=0.4,
+        )
+        analysis_text = resp.choices[0].message.content or ""
+    except Exception:
+        log.exception("get_marketing_analysis LLM call failed")
+        analysis_text = "분석 중 오류가 발생했습니다."
+
+    # 분석 결과를 artifact로 저장 → "성과 분석" 서브허브 컬럼에 표시
+    try:
+        from datetime import date as _date
+        from app.core.supabase import get_supabase
+        from app.agents._artifact import pick_sub_hub_id
+
+        sb = get_supabase()
+        today_str = _date.today().strftime("%Y-%m-%d")
+        artifact_title = f"마케팅 성과 분석 — {today_str}"
+
+        res = sb.table("artifacts").insert({
+            "account_id": account_id,
+            "domains": ["marketing"],
+            "kind": "artifact",
+            "type": "marketing_report",
+            "title": artifact_title,
+            "content": analysis_text,
+            "status": "active",
+            "metadata": {"period_days": days, "analyzed_date": today_str},
+        }).execute()
+
+        if res.data:
+            artifact_id = res.data[0]["id"]
+            hub_id = pick_sub_hub_id(
+                sb, account_id, "marketing",
+                prefer_keywords=("성과 분석", "분석", "report"),
+            )
+            if hub_id:
+                sb.table("artifact_edges").insert({
+                    "account_id": account_id,
+                    "parent_id": hub_id,
+                    "child_id": artifact_id,
+                    "relation": "contains",
+                }).execute()
+    except Exception:
+        log.exception("get_marketing_analysis artifact save failed")
+
+    return {
+        "data": {
+            "text": analysis_text,
+            "youtube_daily": yt_daily if not isinstance(yt_daily, Exception) else [],
+            "instagram_daily": ig_daily,
+            "period_days": days,
+        },
+        "error": None,
+    }
+
+
+@router.get("/dashboard/actions")
+async def get_marketing_dashboard_actions(
+    account_id: str = Query(...),
+    days: int = Query(default=30, ge=7, le=90),
+):
+    """마케팅 할 일 아이템 LLM 생성 (lazy — 탭 클릭 시 호출)."""
+    import asyncio, json as _json, re as _re
+    from datetime import date
+    from app.services.instagram_insights import collect_report_data as ig_collect
+    from app.services.youtube_analytics import collect_report_data as yt_collect
+    from app.core.llm import chat_completion
+    from app.agents.marketing import _get_upcoming_holidays
+
+    ig_result, yt_result = await asyncio.gather(
+        ig_collect(days=days, account_id=account_id),
+        yt_collect(account_id=account_id, days=days),
+        return_exceptions=True,
+    )
+    if isinstance(ig_result, Exception):
+        ig_result = {"error": str(ig_result)}
+    if isinstance(yt_result, Exception):
+        yt_result = {"error": str(yt_result)}
+
+    if not has_any_marketing_performance(ig_result, yt_result):
+        return {
+            "data": [],
+            "error": NO_MARKETING_CONTENT_MESSAGE,
+        }
+
+    ig_ok = has_instagram_performance(ig_result)
+    yt_ok = has_youtube_performance(yt_result)
+
+    summary_parts = [f"[분석 기간] 최근 {days}일"]
+    if ig_ok:
+        acc = ig_result.get("account", {})
+        top = ig_result.get("top_posts", [])
+        summary_parts.append(
+            f"[Instagram]\n- 팔로워: {acc.get('followers_count', 0):,}명\n"
+            f"- 기간 도달수: {acc.get('reach', 0):,}회\n"
+            f"- 평균 engagement: {ig_result.get('avg_engagement', 0):.1f}\n"
+            f"- 최고 게시물 TOP3: {[p.get('caption', '') for p in top]}"
+        )
+    else:
+        summary_parts.append(f"[Instagram] 데이터 없음")
+
+    if yt_ok:
+        ch = yt_result.get("channel", {})
+        summary_parts.append(
+            f"[YouTube]\n- 조회수: {ch.get('views', 0):,}회\n"
+            f"- 시청시간: {ch.get('watch_minutes', 0):,}분\n"
+            f"- 구독자 순증: {ch.get('net_subscribers', 0):+d}명"
+        )
+    else:
+        summary_parts.append(f"[YouTube] 데이터 없음")
+
+    data_summary = "\n\n".join(summary_parts)
+
+    _today = date.today()
+    today_str = _today.strftime("%Y년 %m월 %d일")
+    upcoming_holidays = _get_upcoming_holidays(_today, days_ahead=60)
+    if upcoming_holidays:
+        holiday_lines = "\n".join(
+            f"  - {h['name']} ({h['date']}, {h['days_left']}일 후)"
+            for h in upcoming_holidays
+        )
+        holiday_section = f"\n[다가오는 기념일 (60일 이내)]\n{holiday_lines}\n"
+    else:
+        holiday_section = ""
+
+    available_categories = ["content", "general"]
+    if ig_ok:
+        available_categories.insert(0, "instagram")
+    if yt_ok:
+        available_categories.insert(0, "youtube")
+    available_str = ", ".join(f'"{c}"' for c in available_categories)
+
+    prompt = (
+        f"오늘은 {today_str}입니다. 소상공인의 마케팅 성과 데이터를 바탕으로 "
+        f"지금 당장 실행 가능한 구체적인 마케팅 할 일 3~5개를 기획해주세요.\n\n"
+        f"{data_summary}{holiday_section}\n"
+        "각 할 일은 실제로 실행에 옮길 수 있는 구체적인 아이디어여야 합니다. "
+        "플랫폼 데이터가 없더라도 콘텐츠 전략·이벤트 기획 등 일반 마케팅 액션을 반드시 3개 이상 생성하세요.\n"
+        "다가오는 기념일이 있다면 해당 날짜에 맞춘 이벤트를 우선 제안하세요.\n\n"
+        "아래 JSON 배열 형식으로만 응답하세요 (다른 텍스트 없이):\n"
+        '[{"priority":"high","category":"instagram","title":"액션 제목 (20자 이내)",'
+        '"target":"타겟층","period":"실행 기간",'
+        '"due_date":"YYYY-MM-DD (마감일 — high는 7일 이내, medium은 30일 이내, low는 60일 이내)",'
+        '"idea":"구체적인 이벤트·콘텐츠 아이디어 (2~3문장)",'
+        '"steps":["단계1","단계2","단계3"],'
+        '"expected":"기대 효과","why":"이 액션이 필요한 이유"}]\n\n'
+        f'priority: "high"(이번 주), "medium"(이번 달), "low"(여유 있을 때)\n'
+        f'category 허용값: {available_str}\n'
+        f'due_date는 오늘({_today.isoformat()}) 기준 ISO 8601 날짜(YYYY-MM-DD)로 반드시 포함하세요.\n'
+        'steps는 2~4개. JSON 외 텍스트 절대 포함하지 마세요.'
+    )
+
+    try:
+        resp = await chat_completion(
+            messages=[{"role": "user", "content": prompt}],
+            model="gpt-4o",
+            temperature=0.3,
+        )
+        raw = (resp.choices[0].message.content or "[]").strip()
+        code_block = _re.search(r"```(?:json)?\s*([\s\S]*?)```", raw)
+        if code_block:
+            raw = code_block.group(1).strip()
+        else:
+            arr_match = _re.search(r"\[[\s\S]*\]", raw)
+            if arr_match:
+                raw = arr_match.group(0)
+        actions = _json.loads(raw)
+        if not isinstance(actions, list):
+            actions = []
+    except Exception:
+        log.exception("get_marketing_dashboard_actions failed")
+        actions = []
+
+    # due_date가 있는 항목을 DB에 upsert
+    if actions:
+        from app.core.supabase import get_supabase
+        try:
+            rows = [
+                {
+                    "account_id": account_id,
+                    "title": a.get("title", "")[:200],
+                    "category": a.get("category", "general"),
+                    "priority": a.get("priority", "medium"),
+                    "period": a.get("period"),
+                    "due_date": a.get("due_date"),
+                    "target": a.get("target"),
+                    "idea": a.get("idea"),
+                    "steps": a.get("steps"),
+                    "expected": a.get("expected"),
+                    "why": a.get("why"),
+                }
+                for a in actions
+                if a.get("title") and a.get("due_date")
+            ]
+            if rows:
+                supabase = get_supabase()
+                supabase.table("marketing_action_notices").upsert(
+                    rows, on_conflict="account_id,title,due_date"
+                ).execute()
+        except Exception:
+            log.exception("marketing_action_notices upsert failed")
+
+    return {"data": actions, "error": None}
+
+
+@router.get("/notices")
+async def get_marketing_notices(
+    account_id: str = Query(...),
+):
+    """내일 마감인 마케팅 할 일 알림 목록."""
+    from datetime import date, timedelta
+    from app.core.supabase import get_supabase
+
+    tomorrow = (date.today() + timedelta(days=1)).isoformat()
+    supabase = get_supabase()
+    result = (
+        supabase.table("marketing_action_notices")
+        .select("id,title,category,priority,period,due_date,target,idea,steps,expected,why,created_at")
+        .eq("account_id", account_id)
+        .eq("due_date", tomorrow)
+        .order("priority")
+        .execute()
+    )
+    return {"data": result.data or [], "error": None}
+
+
+# ── 지원사업 목록 ─────────────────────────────────────────────────────────────
+
+@router.get("/subsidies")
+async def list_subsidies(
+    q: str = Query(default="소상공인 마케팅", description="검색 키워드"),
+    limit: int = Query(default=10, ge=1, le=50),
+):
+    """
+    소상공인 정부 지원사업 목록 반환 (마케팅 관련도 내림차순 정렬).
+    """
+    results = search_subsidy_programs(q, max_results=limit)
+    return {"data": results, "total": len(results)}

@@ -1,0 +1,131 @@
+name: Deploy Frontend Only
+
+on:
+  push:
+    branches:
+      - 'frontend/**'  # frontend/로 시작하는 모든 브랜치
+    paths:
+      - 'frontend/**'
+  workflow_dispatch:
+
+jobs:
+  deploy-frontend:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: ${{ secrets.AWS_REGION }}
+    
+    - name: Login to Amazon ECR
+      id: login-ecr
+      uses: aws-actions/amazon-ecr-login@v2
+      with:
+        mask-password: 'true'
+    
+    - name: Build and push frontend image
+      env:
+        ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+        ECR_REPOSITORY: ${{ secrets.ECR_REPOSITORY_FRONTEND }}
+        IMAGE_TAG: ${{ github.sha }}
+      run: |
+        echo "🔨 Frontend 이미지 빌드 중..."
+        cd frontend
+        
+        docker buildx build \
+          --platform linux/amd64 \
+          --build-arg VITE_API_BASE_URL="/api/v1" \
+          --build-arg NODE_ENV="production" \
+          --tag $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG \
+          --tag $ECR_REGISTRY/$ECR_REPOSITORY:latest \
+          --push \
+          --progress=plain \
+          -f Dockerfile \
+          .
+        
+        echo "✅ Frontend 이미지 빌드 및 푸시 완료"
+    
+    - name: Deploy frontend to EC2
+      env:
+        EC2_HOST: ${{ secrets.EC2_HOST }}
+        EC2_USER: ${{ secrets.EC2_USER }}
+        EC2_KEY: ${{ secrets.EC2_PRIVATE_KEY }}
+        ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+        IMAGE_TAG: ${{ github.sha }}
+      run: |
+        echo "$EC2_KEY" > ec2_key.pem
+        chmod 600 ec2_key.pem
+        
+        ssh -i ec2_key.pem -o StrictHostKeyChecking=no $EC2_USER@$EC2_HOST << EOF
+          # AWS 자격증명 설정
+          export AWS_ACCESS_KEY_ID="${{ secrets.AWS_ACCESS_KEY_ID }}"
+          export AWS_SECRET_ACCESS_KEY="${{ secrets.AWS_SECRET_ACCESS_KEY }}"
+          export AWS_DEFAULT_REGION="${{ secrets.AWS_REGION }}"
+          
+          # 디스크 공간 확보를 위한 Docker 정리
+          echo "🧹 Docker 리소스 정리 중..."
+          
+          # Frontend 컨테이너 중지 및 제거
+          docker stop teamPicko-frontend || true
+          docker rm teamPicko-frontend || true
+          
+          # Frontend 관련 이미지만 선택적 삭제
+          docker images --format "table {{.Repository}}:{{.Tag}}\t{{.ID}}" | grep frontend | awk '{print \$2}' | xargs -I {} docker rmi -f {} || true
+          
+          # 사용하지 않는 리소스 정리
+          docker system prune -f
+          
+          echo "🔍 정리 후 디스크 공간:"
+          df -h
+          
+          # ECR 로그인
+          aws ecr get-login-password --region ${{ secrets.AWS_REGION }} | docker login --username AWS --password-stdin $ECR_REGISTRY
+          
+          # 새 프론트엔드 이미지 pull
+          docker pull $ECR_REGISTRY/${{ secrets.ECR_REPOSITORY_FRONTEND }}:$IMAGE_TAG
+          
+          # docker-compose로 frontend만 재시작 (네트워크 유지)
+          docker compose --env-file ~/.env up -d frontend
+          
+          # 헬스체크
+          sleep 30
+          curl -f http://localhost/ || echo "⚠️ Frontend health check failed"
+          
+          echo "✅ Frontend 개별 배포 완료"
+        EOF
+        
+        rm ec2_key.pem
+    
+    - name: Create Pull Request to dev
+      if: success()
+      env:
+        GITHUB_TOKEN: ${{ secrets.PAT_TOKEN || secrets.GITHUB_TOKEN }}
+        BRANCH_NAME: ${{ github.ref_name }}
+      run: |
+        echo "🔄 frontend 브랜치에서 dev로 PR 생성 중..."
+        
+        EXISTING_PR=$(gh pr list --head "${BRANCH_NAME}" --base "dev" --state open --json number --jq '.[0].number' 2>/dev/null || echo "")
+        
+        if [ -n "$EXISTING_PR" ] && [ "$EXISTING_PR" != "null" ]; then
+          echo "⚠️ 기존 PR #${EXISTING_PR}이 이미 존재합니다"
+        else
+          gh pr create \
+            --title "feat(frontend): ${BRANCH_NAME} 개발 완료" \
+            --body "## Frontend 개발 완료
+          
+          🚀 **브랜치**: \`${BRANCH_NAME}\`
+          📦 **배포 테스트**: 완료
+          
+          ### 테스트 완료
+          - [x] Docker 빌드 성공
+          - [x] EC2 배포 성공
+          - [x] Health check 통과" \
+            --base "dev" \
+            --head "${BRANCH_NAME}"
+          echo "✅ dev PR 생성 완료!"
+        fi

@@ -1,0 +1,61 @@
+<<<<<<< HEAD
+# Dependencies
+/node_modules
+/react_finalproj/client/node_modules
+/react_finalproj/node_modules
+
+# Production
+/build
+/react_finalproj/client/build
+
+# Environment files
+.env
+=======
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# production
+/build
+
+# misc
+.DS_Store
+>>>>>>> e5ee7193b18cc07c1d14dcc433dba39ed5d2b766
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+<<<<<<< HEAD
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+=======
+.env
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+>>>>>>> e5ee7193b18cc07c1d14dcc433dba39ed5d2b766

@@ -1,0 +1,208 @@
+.container {
+    width: 100%;
+}
+
+.loading {
+    text-align: center;
+    padding: 80px 20px;
+    color: #999;
+    font-size: 16px;
+}
+
+.noSubscriptions {
+    text-align: center;
+    padding: 80px 20px;
+    color: #bbb;
+    font-size: 16px;
+}
+
+.subscriptionList {
+    display: grid;
+    gap: 20px;
+}
+
+.subscriptionItem {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: #fafafa;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 15px;
+    transition: all 0.2s ease;
+}
+
+.subscriptionItem:hover {
+    background: #f5f5f5;
+}
+
+.iconWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background: #6b7280;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.packageIcon {
+    color: white;
+}
+
+.subscriptionInfo {
+    flex: 1;
+    min-width: 0;
+    margin-right: 20px;
+}
+
+.productName {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+    margin: 0 0 8px 0;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.productName:hover {
+    color: #6b7280;
+    text-decoration: underline;
+}
+
+.subscriptionDetails {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+}
+
+.date {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.statusActive {
+    display: inline-block;
+    padding: 4px 12px;
+    background: #CDC6CE;
+    color: #000000;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.statusInactive {
+    display: inline-block;
+    padding: 4px 12px;
+    background: #e5e7eb;
+    color: #888;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.cancelDate {
+    display: block;
+    font-size: 0.8rem;
+    color: #888;
+    margin-top: 4px;
+}
+
+.lastDeliveryDate {
+    display: block;
+    font-size: 0.8rem;
+    color: #6b7280;
+    margin-top: 10px;
+    font-weight: 500;
+}
+
+.nextPaymentDate {
+    display: block;
+    font-size: 0.8rem;
+    color: #10b981;
+    margin-top: 4px;
+    font-weight: 600;
+}
+
+.buttonGroup {
+    display: flex;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.cancelButton {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    background: white;
+    color: #ef4444;
+    border: 1px solid #ef4444;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.cancelButton:hover {
+    background: #fef2f2;
+}
+
+.resubscribeButton {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    background: #333;
+    color: white;
+    border: 1px solid #333;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.resubscribeButton:hover {
+    background: #555;
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+    .subscriptionItem {
+        flex-wrap: wrap;
+        gap: 12px;
+        padding: 16px;
+    }
+
+    .iconWrapper {
+        width: 48px;
+        height: 48px;
+    }
+
+    .productName {
+        font-size: 1rem;
+    }
+
+    .date {
+        font-size: 0.85rem;
+    }
+
+    .buttonGroup {
+        width: 100%;
+    }
+
+    .cancelButton,
+    .resubscribeButton {
+        flex: 1;
+        justify-content: center;
+    }
+}
+

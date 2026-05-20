@@ -1,0 +1,31 @@
+# ---- VCS / IDE ----
+.git
+.gitignore
+.gitattributes
+.idea
+.vscode
+
+# ---- Build outputs ----
+build
+out
+target
+dist
+
+# ---- Gradle caches (use BuildKit cache mounts instead) ----
+.gradle
+**/.gradle
+
+# ---- OS noise ----
+.DS_Store
+Thumbs.db
+
+# ---- Node / frontend ----
+node_modules
+**/node_modules
+
+# ---- Firebase credentials (never bake secrets into the image) ----
+firebase/service-account.json
+
+# ---- Misc ----
+*.log
+logs

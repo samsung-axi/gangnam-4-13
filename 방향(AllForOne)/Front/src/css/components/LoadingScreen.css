@@ -1,0 +1,59 @@
+/* 로딩 화면 컨테이너 */
+.loading-screen {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: linear-gradient(to bottom, #f8e1f4, #fdf6e3);
+    overflow: hidden;
+}
+
+/* 원형 로더 */
+.loading-loader-circle {
+    width: 100px;
+    height: 100px;
+    border: 10px solid rgba(255, 255, 255, 0.3);
+    border-top: 10px solid #d4a5ed;
+    border-radius: 50%;
+    animation: loading-spin 2s linear infinite;
+}
+
+/* 로딩 텍스트 */
+.loading-loader-text {
+    margin-top: 20px;
+    font-size: 1.5rem;
+    color: #7a4da5;
+    opacity: 0.8;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: loading-fadeInOut 2s ease-in-out infinite;
+}
+
+/* 원형 회전 애니메이션 */
+@keyframes loading-spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* 텍스트 깜빡임 애니메이션 */
+@keyframes loading-fadeInOut {
+
+    0%,
+    100% {
+        opacity: 0.8;
+    }
+
+    50% {
+        opacity: 0.4;
+    }
+}

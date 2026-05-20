@@ -1,0 +1,14 @@
+/* Only ::before pseudo-element remains — everything else converted to Tailwind */
+.answerActive {
+    position: relative;
+}
+
+.answerActive::before {
+    content: "\21B3";
+    position: absolute;
+    left: 0;
+    top: 16px;
+    font-size: 18px;
+    color: #000;
+    font-weight: bold;
+}

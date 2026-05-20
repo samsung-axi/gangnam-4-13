@@ -1,0 +1,591 @@
+name: Production Deploy
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  pre-deployment-check:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Validate deployment configuration
+      env:
+        # 테스트용 기본값 설정 (경고 제거)
+        DATABASE_URL: "postgresql://postgres:password@database:5432/teamPicko"
+        POSTGRES_DB: "teamPicko"
+        POSTGRES_USER: "postgres"
+        POSTGRES_PASSWORD: "password"
+        SECRET_KEY: "test-secret-key"
+        ALLOWED_HOSTS: "localhost,127.0.0.1"
+        BACKEND_CORS_ORIGINS: '["http://localhost:3000"]'
+        AWS_REGION: "ap-northeast-2"
+      run: |
+        echo "🔍 배포 설정 검증 중..."
+        cd deployment
+        # Docker Compose v2 사용 (docker compose)
+        docker compose config
+        echo "✅ Docker Compose configuration is valid"
+
+  deploy:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+    
+    # 변경된 서비스 감지
+    - name: Detect changes
+      id: changes
+      run: |
+        if git rev-parse HEAD~1 >/dev/null 2>&1; then
+          echo "backend_changed=$(git diff --name-only HEAD~1 HEAD | grep -q '^backend/' && echo 'true' || echo 'false')" >> $GITHUB_OUTPUT
+          echo "frontend_changed=$(git diff --name-only HEAD~1 HEAD | grep -q '^frontend/' && echo 'true' || echo 'false')" >> $GITHUB_OUTPUT
+          echo "aiserver_changed=$(git diff --name-only HEAD~1 HEAD | grep -q '^aiserver/' && echo 'true' || echo 'false')" >> $GITHUB_OUTPUT
+        else
+          echo "backend_changed=true" >> $GITHUB_OUTPUT
+          echo "frontend_changed=true" >> $GITHUB_OUTPUT
+          echo "aiserver_changed=true" >> $GITHUB_OUTPUT
+        fi
+    
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: ${{ secrets.AWS_REGION }}
+      continue-on-error: false
+    
+    - name: Verify AWS credentials
+      run: |
+        echo "🔍 AWS 자격증명 확인 중..."
+        aws sts get-caller-identity
+        echo "✅ AWS 자격증명 확인 완료"
+    
+    - name: Check ECR repositories exist
+      run: |
+        echo "🔍 ECR 저장소 존재 여부 확인 중..."
+        
+        # Backend ECR 저장소 확인/생성
+        if ! aws ecr describe-repositories --repository-names ${{ secrets.ECR_REPOSITORY_BACKEND }} > /dev/null 2>&1; then
+          echo "⚠️ Backend ECR 저장소가 없습니다. 생성 중..."
+          aws ecr create-repository \
+            --repository-name ${{ secrets.ECR_REPOSITORY_BACKEND }} \
+            --image-scanning-configuration scanOnPush=true \
+            --region ${{ secrets.AWS_REGION }}
+          echo "✅ Backend ECR 저장소 생성 완료"
+        else
+          echo "✅ Backend ECR 저장소 존재 확인"
+        fi
+        
+        # Frontend ECR 저장소 확인/생성
+        if ! aws ecr describe-repositories --repository-names ${{ secrets.ECR_REPOSITORY_FRONTEND }} > /dev/null 2>&1; then
+          echo "⚠️ Frontend ECR 저장소가 없습니다. 생성 중..."
+          aws ecr create-repository \
+            --repository-name ${{ secrets.ECR_REPOSITORY_FRONTEND }} \
+            --image-scanning-configuration scanOnPush=true \
+            --region ${{ secrets.AWS_REGION }}
+          echo "✅ Frontend ECR 저장소 생성 완료"
+        else
+          echo "✅ Frontend ECR 저장소 존재 확인"
+        fi
+        
+        # AI Server ECR 저장소 확인/생성
+        if ! aws ecr describe-repositories --repository-names ${{ secrets.ECR_REPOSITORY_AISERVER }} > /dev/null 2>&1; then
+          echo "⚠️ AI Server ECR 저장소가 없습니다. 생성 중..."
+          aws ecr create-repository \
+            --repository-name ${{ secrets.ECR_REPOSITORY_AISERVER }} \
+            --image-scanning-configuration scanOnPush=true \
+            --region ${{ secrets.AWS_REGION }}
+          echo "✅ AI Server ECR 저장소 생성 완료"
+        else
+          echo "✅ AI Server ECR 저장소 존재 확인"
+        fi
+    
+    - name: Login to Amazon ECR
+      id: login-ecr
+      uses: aws-actions/amazon-ecr-login@v2
+      with:
+        mask-password: 'true'
+    
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v3
+      with:
+        platforms: linux/amd64
+    
+    - name: Build and push backend image
+      if: steps.changes.outputs.backend_changed == 'true'
+      env:
+        ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+        ECR_REPOSITORY: ${{ secrets.ECR_REPOSITORY_BACKEND }}
+        IMAGE_TAG: ${{ github.sha }}
+        DOCKER_BUILDKIT: 1
+      run: |
+        echo "🔍 Backend 이미지 존재 여부 확인 중..."
+        echo "📍 ECR Registry: $ECR_REGISTRY"
+        echo "📍 Repository: $ECR_REPOSITORY"
+        echo "📍 Tag: $IMAGE_TAG"
+        
+        # 이미지가 이미 존재하는지 확인
+        if aws ecr describe-images \
+          --repository-name $ECR_REPOSITORY \
+          --image-ids imageTag=$IMAGE_TAG \
+          --region ${{ secrets.AWS_REGION }} > /dev/null 2>&1; then
+          echo "✅ Backend 이미지가 이미 존재합니다. 빌드를 스킵합니다."
+          echo "📦 기존 이미지: $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
+        else
+          echo "🔨 Backend 이미지 빌드 중..."
+          
+          # Docker context 확인
+          cd backend
+          ls -la
+          
+          # Backend 이미지 빌드 및 푸시 (Ubuntu 기반, faster-whisper 포함)
+          docker buildx build \
+            --platform linux/amd64 \
+            --tag $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG \
+            --tag $ECR_REGISTRY/$ECR_REPOSITORY:latest \
+            --push \
+            --quiet \
+            -f Dockerfile \
+            .
+          
+          echo "✅ Backend 이미지 빌드 및 푸시 완료"
+          echo "📦 이미지: $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
+          
+          # 푸시된 이미지 확인
+          aws ecr describe-images \
+            --repository-name $ECR_REPOSITORY \
+            --image-ids imageTag=$IMAGE_TAG \
+            --region ${{ secrets.AWS_REGION }}
+        fi
+    
+    - name: Build and push AI server image
+      if: steps.changes.outputs.aiserver_changed == 'true'
+      env:
+        ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+        ECR_REPOSITORY: ${{ secrets.ECR_REPOSITORY_AISERVER }}
+        IMAGE_TAG: ${{ github.sha }}
+        DOCKER_BUILDKIT: 1
+      run: |
+        echo "🔍 AI Server 이미지 존재 여부 확인 중..."
+        echo "📍 ECR Registry: $ECR_REGISTRY"
+        echo "📍 Repository: $ECR_REPOSITORY"
+        echo "📍 Tag: $IMAGE_TAG"
+        
+        # 이미지가 이미 존재하는지 확인
+        if aws ecr describe-images \
+          --repository-name $ECR_REPOSITORY \
+          --image-ids imageTag=$IMAGE_TAG \
+          --region ${{ secrets.AWS_REGION }} > /dev/null 2>&1; then
+          echo "✅ AI Server 이미지가 이미 존재합니다. 빌드를 스킵합니다."
+          echo "📦 기존 이미지: $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
+        else
+          echo "🔨 AI Server 이미지 빌드 중..."
+          
+          # Docker context 확인
+          cd aiserver
+          ls -la
+          
+          # AI Server 이미지 빌드 및 푸시
+          docker buildx build \
+            --platform linux/amd64 \
+            --tag $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG \
+            --tag $ECR_REGISTRY/$ECR_REPOSITORY:latest \
+            --push \
+            --quiet \
+            -f Dockerfile \
+            .
+          
+          echo "✅ AI Server 이미지 빌드 및 푸시 완료"
+          echo "📦 이미지: $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
+          
+          # 푸시된 이미지 확인
+          aws ecr describe-images \
+            --repository-name $ECR_REPOSITORY \
+            --image-ids imageTag=$IMAGE_TAG \
+            --region ${{ secrets.AWS_REGION }}
+        fi
+    
+    - name: Build and push frontend image
+      if: steps.changes.outputs.frontend_changed == 'true'
+      env:
+        ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+        ECR_REPOSITORY: ${{ secrets.ECR_REPOSITORY_FRONTEND }}
+        IMAGE_TAG: ${{ github.sha }}
+        DOCKER_BUILDKIT: 1
+      run: |
+        echo "🔍 Frontend 이미지 존재 여부 확인 중..."
+        echo "📍 ECR Registry: $ECR_REGISTRY"
+        echo "📍 Repository: $ECR_REPOSITORY"  
+        echo "📍 Tag: $IMAGE_TAG"
+        
+        # 이미지가 이미 존재하는지 확인
+        if aws ecr describe-images \
+          --repository-name $ECR_REPOSITORY \
+          --image-ids imageTag=$IMAGE_TAG \
+          --region ${{ secrets.AWS_REGION }} > /dev/null 2>&1; then
+          echo "✅ Frontend 이미지가 이미 존재합니다. 빌드를 스킵합니다."
+          echo "📦 기존 이미지: $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
+        else
+          echo "🔨 Frontend 이미지 빌드 중..."
+          
+          # Docker context 확인
+          cd frontend
+          ls -la
+          
+          # Frontend 이미지 빌드 및 푸시 (권한 문제 해결됨)
+          docker buildx build \
+            --platform linux/amd64 \
+            --build-arg VITE_API_BASE_URL="/api/v1" \
+            --build-arg NODE_ENV="production" \
+            --tag $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG \
+            --tag $ECR_REGISTRY/$ECR_REPOSITORY:latest \
+            --push \
+            --progress=plain \
+            -f Dockerfile \
+            .
+          
+          echo "✅ Frontend 이미지 빌드 및 푸시 완료"
+          echo "📦 이미지: $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
+          
+          # 푸시된 이미지 확인
+          aws ecr describe-images \
+            --repository-name $ECR_REPOSITORY \
+            --image-ids imageTag=$IMAGE_TAG \
+            --region ${{ secrets.AWS_REGION }}
+        fi
+    
+    - name: Deploy to Demo EC2
+      env:
+        EC2_HOST: ${{ secrets.EC2_HOST }}
+        EC2_USER: ${{ secrets.EC2_USER }}
+        EC2_KEY: ${{ secrets.EC2_PRIVATE_KEY }}
+        ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+        IMAGE_TAG: ${{ github.sha }}
+      run: |
+        # 시크릿 값 존재 여부 확인
+        echo "🔍 시크릿 값 확인:"
+        echo "EC2_HOST: ${EC2_HOST:-'❌ 없음'}"
+        echo "EC2_USER: ${EC2_USER:-'❌ 없음'}"
+        echo "EC2_KEY 길이: ${#EC2_KEY}"
+        
+        if [ -z "$EC2_HOST" ] || [ -z "$EC2_USER" ] || [ -z "$EC2_KEY" ]; then
+          echo "❌ 필수 시크릿이 누락되었습니다!"
+          echo "EC2_HOST 존재: $([ -n "$EC2_HOST" ] && echo 'O' || echo 'X')"
+          echo "EC2_USER 존재: $([ -n "$EC2_USER" ] && echo 'O' || echo 'X')"
+          echo "EC2_KEY 존재: $([ -n "$EC2_KEY" ] && echo 'O' || echo 'X')"
+          exit 1
+        fi
+        
+        echo "$EC2_KEY" > ec2_key.pem
+        chmod 600 ec2_key.pem
+        
+        # GitHub Actions runner IP 확인
+        echo "🔍 GitHub Actions runner IP:"
+        curl -s http://checkip.amazonaws.com/
+        
+        # SSH 키 파일 검증
+        echo "🔍 SSH 키 파일 검증:"
+        ls -la ec2_key.pem
+        echo "키 파일 첫 줄:"
+        head -1 ec2_key.pem
+        echo "키 파일 마지막 줄:"
+        tail -1 ec2_key.pem
+        
+        # 네트워크 연결 테스트
+        echo "🔍 네트워크 연결 테스트:"
+        nc -zv $EC2_HOST 22 || echo "⚠️ Port 22 연결 실패"
+        
+        # SSH 연결 테스트 (상세 로그)
+        echo "🔍 SSH 연결 테스트:"
+        ssh -vvv -i ec2_key.pem -o ConnectTimeout=30 -o StrictHostKeyChecking=no $EC2_USER@$EC2_HOST "echo 'SSH 연결 성공'" || {
+          echo "❌ SSH 연결 실패"
+          echo "EC2_HOST: $EC2_HOST"
+          echo "EC2_USER: $EC2_USER"
+          exit 1
+        }
+        
+        # Copy deployment files to EC2
+        scp -i ec2_key.pem -o StrictHostKeyChecking=no \
+          deployment/docker-compose.yml \
+          $EC2_USER@$EC2_HOST:~/
+        
+        # Create .env file for docker-compose
+        cat > deployment.env << EOL
+        # Docker Images (latest 태그 사용)
+        BACKEND_IMAGE=$ECR_REGISTRY/${{ secrets.ECR_REPOSITORY_BACKEND }}:latest
+        FRONTEND_IMAGE=$ECR_REGISTRY/${{ secrets.ECR_REPOSITORY_FRONTEND }}:latest
+        AISERVER_IMAGE=$ECR_REGISTRY/${{ secrets.ECR_REPOSITORY_AISERVER }}:latest
+        
+        # Database Configuration (컨테이너 간 통신)
+        POSTGRES_DB="${{ secrets.POSTGRES_DB }}"
+        POSTGRES_USER="${{ secrets.POSTGRES_USER }}"
+        POSTGRES_PASSWORD="${{ secrets.POSTGRES_PASSWORD }}"
+        DATABASE_URL="postgresql://${{ secrets.POSTGRES_USER }}:${{ secrets.POSTGRES_PASSWORD }}@database:5432/${{ secrets.POSTGRES_DB }}"
+        
+        # Database Connection Details for Django
+        DB_HOST="database"
+        DB_PORT="5432"
+        DB_NAME="${{ secrets.POSTGRES_DB }}"
+        DB_USER="${{ secrets.POSTGRES_USER }}"
+        DB_PASSWORD="${{ secrets.POSTGRES_PASSWORD }}"
+        
+        # Application Configuration
+        DEBUG=False
+        SECRET_KEY="${{ secrets.SECRET_KEY }}"
+        ALLOWED_HOSTS="${{ secrets.ALLOWED_HOSTS }},badaejangbu.store,${{ secrets.EC2_HOST }}"
+        PROJECT_NAME="Team-PICK-O Backend (Demo)"
+        
+        # Network Configuration (상대 경로 사용 - nginx 프록시 통해 백엔드 연결)
+        VITE_API_BASE_URL="/api/v1"
+        BACKEND_CORS_ORIGINS='["https://badaejangbu.store","https://www.badaejangbu.store","http://localhost:3000","http://localhost:5173","http://127.0.0.1:3000","http://127.0.0.1:5173","https://localhost:3000"]'
+        
+        # Ports (데모용)
+        FRONTEND_PORT=3000
+        BACKEND_PORT=8000
+        DB_PORT=5432
+        HTTP_PORT=80
+        
+        # AWS Configuration (infra에서 생성된 리소스 연결)
+        AWS_ACCESS_KEY_ID="${{ secrets.AWS_ACCESS_KEY_ID }}"
+        AWS_SECRET_ACCESS_KEY="${{ secrets.AWS_SECRET_ACCESS_KEY }}"
+        AWS_S3_BUCKET_NAME="${{ secrets.AWS_S3_BUCKET_NAME }}"
+        AWS_REGION="${{ secrets.AWS_REGION }}"
+        
+        # JWT 인증 설정 (Secrets에서 주입)
+        JWT_SECRET_KEY="${{ secrets.JWT_SECRET_KEY }}"
+        JWT_REFRESH_SECRET_KEY="${{ secrets.JWT_REFRESH_SECRET_KEY }}"
+        
+        # Firebase Admin SDK 설정 (Secrets에서 주입)
+        FIREBASE_ADMIN_CREDENTIALS_JSON='${{ secrets.FIREBASE_ADMIN_CREDENTIALS_JSON }}'
+        
+        # 외부 서비스 설정
+        TOSS_SECRET_KEY="${{ secrets.TOSS_SECRET_KEY }}"
+        VITE_TOSS_CLIENT_KEY="${{ secrets.VITE_TOSS_CLIENT_KEY }}"
+        DISCORD_WEBHOOK_URL="${{ secrets.DISCORD_WEBHOOK_URL }}"
+        
+        # API 키 설정 (새로 추가)
+        WEATHER_API_KEY="${{ secrets.WEATHER_API_KEY }}"
+        DATA_GO_KR_API_KEY="${{ secrets.DATA_GO_KR_API_KEY }}"
+        KOSIS_API_KEY="${{ secrets.KOSIS_API_KEY }}"
+        KHOA_API_KEY="${{ secrets.KHOA_API_KEY }}"
+        AGRICULTURE_API_KEY="${{ secrets.AGRICULTURE_API_KEY }}"
+        NIFS_API_KEY="${{ secrets.NIFS_API_KEY }}"
+        
+        # AI 서버 연결 설정
+        AI_SERVER_URL="http://aiserver:8001"
+        EOL
+        
+        # Copy env file to EC2
+        scp -i ec2_key.pem -o StrictHostKeyChecking=no deployment.env $EC2_USER@$EC2_HOST:~/.env
+        
+        # Deploy on EC2
+        ssh -i ec2_key.pem -o StrictHostKeyChecking=no $EC2_USER@$EC2_HOST << EOF
+          echo "🔍 현재 디스크 공간:"
+          df -h
+          
+          # Configure AWS credentials on EC2
+          export AWS_ACCESS_KEY_ID="${{ secrets.AWS_ACCESS_KEY_ID }}"
+          export AWS_SECRET_ACCESS_KEY="${{ secrets.AWS_SECRET_ACCESS_KEY }}"
+          export AWS_DEFAULT_REGION="${{ secrets.AWS_REGION }}"
+          
+          # Set Firebase Admin SDK JSON for file creation
+          export FIREBASE_ADMIN_CREDENTIALS_JSON='${{ secrets.FIREBASE_ADMIN_CREDENTIALS_JSON }}'
+          
+          echo "🔍 AWS 자격증명 확인:"
+          aws sts get-caller-identity || {
+            echo "❌ AWS 자격증명이 설정되지 않았습니다"
+            exit 1
+          }
+          
+          # ECR 레지스트리 URL 설정
+          ECR_REGISTRY="522814725827.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com"
+          echo "🔍 ECR 레지스트리: $ECR_REGISTRY"
+          
+          # Login to ECR
+          echo "🔍 ECR 로그인 시도..."
+          aws ecr get-login-password --region ${{ secrets.AWS_REGION }} | docker login --username AWS --password-stdin $ECR_REGISTRY
+          
+          if [ $? -eq 0 ]; then
+            echo "✅ ECR 로그인 성공"
+          else
+            echo "❌ ECR 로그인 실패"
+            exit 1
+          fi
+          
+          # Check disk space before deployment
+          echo "🔍 배포 전 디스크 공간 확인:"
+          df -h
+          
+          # Stop existing containers (using production compose)
+          docker compose --env-file ~/.env down || true
+          
+          # 기존 컨테이너 중지 (데이터 보존)
+          echo "🔧 기존 서비스 중지 중... (데이터 유지)"
+          
+          # Create Firebase Admin SDK key file from environment variable
+          echo "🔧 Firebase Admin SDK 키 파일 생성 중..."
+          echo "🔍 환경변수 확인: FIREBASE_ADMIN_CREDENTIALS_JSON 길이: \$${#FIREBASE_ADMIN_CREDENTIALS_JSON}"
+          
+          # Check if Firebase credentials are available from GitHub Secrets
+          echo "🔍 GitHub Secrets 확인 중..."
+          
+          # Remove any existing firebase-admin-key.json (directory or file)
+          rm -rf firebase-admin-key.json
+          
+          if [ ! -z '${{ secrets.FIREBASE_ADMIN_CREDENTIALS_JSON }}' ]; then
+            echo "✅ Firebase Admin SDK 시크릿 발견"
+            echo '${{ secrets.FIREBASE_ADMIN_CREDENTIALS_JSON }}' > firebase-admin-key.json
+            if [ -f firebase-admin-key.json ] && [ -s firebase-admin-key.json ]; then
+              echo "✅ Firebase Admin SDK 키 파일 생성 완료"
+              ls -la firebase-admin-key.json
+              echo "🔍 파일 내용 검증 (첫 줄):"
+              head -1 firebase-admin-key.json | cut -c1-50
+            else
+              echo "❌ Firebase Admin SDK 키 파일 생성 실패"
+              touch firebase-admin-key.json
+            fi
+          else
+            echo "⚠️ GitHub Secrets FIREBASE_ADMIN_CREDENTIALS_JSON이 설정되지 않았습니다"
+            touch firebase-admin-key.json
+          fi
+          
+          # Clean up Docker resources to free space
+          echo "🧹 Docker 리소스 정리 중..."
+          docker system prune -af --volumes || true
+          docker builder prune -af || true
+          
+          # Check disk space after cleanup
+          echo "🔍 정리 후 디스크 공간:"
+          df -h
+          
+          # Pull latest images
+          docker compose --env-file ~/.env pull
+          
+          # Start new containers in production mode
+          echo "🔧 컨테이너 시작 중..."
+          docker compose --env-file ~/.env up -d
+          
+          # Wait for containers to be ready
+          echo "⏳ 컨테이너 준비 대기 중..."
+          sleep 15
+          
+          # Check container status
+          echo "🔍 컨테이너 상태 확인:"
+          docker compose --env-file ~/.env ps
+          
+          # Copy Firebase Admin SDK key to backend container
+          echo "🔧 Firebase Admin SDK 키 파일을 백엔드 컨테이너에 복사 중..."
+          if [ -f "firebase-admin-key.json" ]; then
+            # Wait for backend container to be ready
+            sleep 10
+            docker cp firebase-admin-key.json teamPicko-backend:/app/firebase-admin-key.json
+            echo "✅ Firebase Admin SDK 키 파일 복사 완료"
+            
+            # Verify the file in container
+            docker exec teamPicko-backend ls -la /app/firebase-admin-key.json || echo "⚠️ 파일 복사 확인 실패"
+            
+            # Restart backend container to reload Firebase SDK
+            echo "🔄 백엔드 컨테이너 재시작 중..."
+            docker compose --env-file ~/.env restart backend
+          else
+            echo "⚠️ firebase-admin-key.json 파일이 없습니다"
+          fi
+          
+          # Wait for services to be healthy
+          sleep 50
+          
+          # Check if services are running
+          docker compose --env-file ~/.env ps
+          
+          # Check backend logs if unhealthy
+          echo "🔍 백엔드 컨테이너 로그 확인:"
+          docker logs teamPicko-backend --tail 50 || true
+          
+          echo "🔍 데이터베이스 컨테이너 로그 확인:"
+          docker logs teamPicko-database --tail 20 || true
+          
+          echo "🔍 프론트엔드 컨테이너 로그 확인:"
+          docker logs teamPicko-frontend --tail 20 || true
+          
+          # Verify services are accessible
+          echo "🔍 서비스 상태 확인 중..."
+          curl -f http://localhost/ || echo "⚠️ Frontend health check failed"
+          curl -f http://localhost:8000/health/ || echo "⚠️ Backend check failed"
+          
+          # Additional debugging if backend fails
+          if ! curl -f http://localhost:8000/health/ 2>/dev/null; then
+            echo "🔍 백엔드 디버깅 정보:"
+            docker exec teamPicko-backend ps aux || true
+            docker exec teamPicko-backend netstat -tlnp || echo "netstat not available"
+          fi
+          
+          echo "✅ 프로덕션 배포 완료"
+          echo "🌐 Frontend: https://badaejangbu.store"
+          echo "🔧 Backend API: https://badaejangbu.store/api"
+        EOF
+        
+        rm ec2_key.pem
+    
+    - name: Health Check
+      env:
+        EC2_HOST: ${{ secrets.EC2_HOST }}
+      run: |
+        sleep 30
+        echo "🔍 외부에서 서비스 접근 테스트..."
+        curl -f http://$EC2_HOST/ || echo "⚠️ Frontend 외부 접근 실패"
+        curl -f https://$EC2_HOST/ || echo "⚠️ HTTPS Frontend 외부 접근 실패"
+        curl -f http://$EC2_HOST:8000/api/v1/ || echo "⚠️ Backend 외부 접근 실패"
+        echo "✅ 프로덕션 배포 성공"
+    
+    - name: Notify deployment status
+      if: always()
+      run: |
+        if [ "${{ job.status }}" == "success" ]; then
+          echo "🚀 프로덕션 배포 성공!"
+          echo "접속 URL: https://badaejangbu.store"
+          echo "API URL: https://badaejangbu.store/api"
+        else
+          echo "❌ 프로덕션 배포 실패! 로그를 확인해주세요."
+        fi
+
+  rollback:
+    runs-on: ubuntu-latest
+    if: failure()
+    needs: deploy
+    
+    steps:
+    - name: Rollback deployment
+      env:
+        EC2_HOST: ${{ secrets.EC2_HOST }}
+        EC2_USER: ${{ secrets.EC2_USER }}
+        EC2_KEY: ${{ secrets.EC2_PRIVATE_KEY }}
+      run: |
+        echo "$EC2_KEY" > ec2_key.pem
+        chmod 600 ec2_key.pem
+        
+        ssh -i ec2_key.pem -o StrictHostKeyChecking=no $EC2_USER@$EC2_HOST << EOF
+          # Stop current deployment
+          docker compose --env-file ~/.env down
+          
+          # Pull and start last known good images
+          docker compose --env-file ~/.env pull
+          docker compose --env-file ~/.env up -d
+          
+          echo "🔄 롤백된 서비스 상태:"
+          docker compose --env-file ~/.env ps
+        EOF
+        
+        rm ec2_key.pem
+        echo "🔄 롤백 완료"

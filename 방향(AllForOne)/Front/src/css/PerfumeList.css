@@ -1,0 +1,473 @@
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Batang&family=Gowun+Dodum&family=Hahmlet:wght@100..900&family=Nanum+Gothic&family=Noto+Serif+KR:wght@200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap');
+
+.perfume-list-container {
+    position: relative;
+    width: 1200px; /* 고정된 폭 */
+    margin: 0 auto; /* 화면 중앙 정렬 */
+    background: #EFEDED;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.perfume-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+    transform: translateY(-60px);
+}
+
+.perfume-title {
+    font-family: "Gowun Batang", serif;
+    font-size: 24px;
+    font-weight: bold;
+    translate: 5px 50px;
+}
+
+.perfume-list-search-container {
+    position: absolute;
+    max-width: 200px;
+    width: 100%;
+    translate: 840px 50px;
+}
+
+.perfume-list-search {
+    width: 100%;
+    padding: 10px 40px 10px 15px;
+    border: 1px solid #333;
+    background-color: #EFEDED;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.perfume-list-search-icon {
+    position: absolute;
+    right: -40px;
+    top: 50%;
+    transform: translate(0px, -20px);
+    cursor: pointer;
+}
+
+.perfume-list-divider-line {
+    width: 95%;
+    height: 1px;
+    background-color: #333;
+    margin-top: 60px;
+    transform: translateY(-70px);
+}
+
+.perfume-list-filters {
+    display: flex;
+    justify-content: flex-start;
+    padding: 0 40px;
+    margin-top: 20px;
+    translate: -40px -50px;
+}
+
+.perfume-list-filter-btn {
+    padding: 8px 16px;
+    border: 1px solid #333;
+    border-radius: 20px;
+    background-color: #EFEDED;
+    ;
+    cursor: pointer;
+    transition: all 0.2s;
+    min-width: 150px;
+    text-align: center;
+    margin-right: 50px;
+}
+
+.perfume-list-filter-btn.active {
+    background-color: #000;
+    color: white;
+    border-color: #000;
+}
+
+.perfume-list-filter-btn:hover {
+    background-color: #000;
+    color: white;
+}
+
+.perfume-items-container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* 한 줄에 6개 */
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.perfume-item-card img {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 10px;
+}
+
+.perfume-item-card {
+    position: relative; /* 자식 요소 위치를 기준으로 설정 */
+    width: 200px;
+    height: 320px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    padding: 15px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* 설명이 카드 밖으로 넘치지 않도록 설정 */
+    transition: all 0.3s ease-in-out; /* 부드러운 효과 */
+    margin-bottom: 10px;
+}
+
+.perfume-item-card:hover {
+    background-color: #EFEDED; /* 카드 배경 색상 변경 */
+    transform: scale(1.05); /* 살짝 확대 효과 */
+    box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.3);
+}
+
+.perfume-description {
+    font-family: 'Nanum Gothic', sans-serif;
+    position: absolute;
+    bottom: -100%; /* 기본적으로 카드 아래 숨겨둠 */
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    font-size: 14px; 
+    padding: 20px 25px 10px 25px; /*상, 우, 하, 좌 순서*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: all 0.3s ease-in-out;
+    line-height: 1.8;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.perfume-description p {
+    margin: 8px 0; /* 항목 간의 여백 */
+}
+
+.perfume-item-card:hover .perfume-description {
+    bottom: 0; /* 마우스 올리면 카드 위로 올라옴 */
+}
+
+.perfume-item-name {
+    font-family: "Gowun Batang", serif;
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.perfume-divider-small {
+    width: 80%;
+    height: 1px;
+    background-color: #000000;
+    margin: 0 auto 10px auto;
+}
+
+.perfume-divider-back {
+    width: 80%;
+    height: 1px;
+    background-color: #616161;
+    margin: 0 auto 10px auto;
+}
+
+.perfume-category,
+.perfume-grade {
+    font-size: 14px;
+    text-align: center;
+    color: #000000;
+    margin-top: 10px;
+    font-family: 'Nanum Gothic';
+}
+
+.perfume-pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.perfume-pagination-button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #EFEDED;
+    color: #000000;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.perfume-pagination-button.active {
+    background-color: #CDC6CE;
+    color: white;
+    font-weight: bold;
+}
+
+.perfume-pagination-button:hover:not(.disabled) {
+    background-color: #CDC6CE;
+    color: #FFFFFF;
+}
+
+.perfume-pagination-button.disabled {
+    color: #A0A0A0;
+    cursor: not-allowed;
+}
+
+.admin-pefume-add-button,
+.admin-pefume-checkbox-button,
+.admin-pefume-delete-button {
+    margin-right: 10px;
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #333;
+    border-radius: 10%;
+    cursor: pointer;
+    background-color: #EFEDED;
+    transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.admin-perfume-controls{
+    display: flex;
+    gap: 2px;
+    margin-left: -130px;
+    translate: 280px -20px;
+}
+
+.admin-perfume-card-select-circle {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    appearance: none;
+    border: 1px solid #333; 
+    border-radius: 50%;
+    background-color: white; 
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 20;
+    translate: 7px 10px;
+    transition: all 0.3s ease;
+}
+
+
+.perfume-description-multiNote,
+.perfume-description-singleNote{
+    font-size: 12px;   
+}
+
+.admin-perfume-card-select-circle:checked {
+    background-color: #333;
+    border-color: #333;
+}
+
+.admin-perfume-add-button:hover,
+.admin-perfume-checkbox-button:hover,
+.admin-perfume-delete-button:hover {
+    background-color: #CCC;
+    transform: scale(1.1);
+}
+
+.admin-perfume-modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* 배경 반투명 */
+    display: flex;
+    justify-content: center; /* 가로 중앙 정렬 */
+    align-items: center; /* 세로 중앙 정렬 */
+    z-index: 100; /* 화면 위에 표시 */
+    overflow: hidden; /* 스크롤 방지 */
+}
+
+.admin-perfume-modal-container {
+    width: 550px; /* 모달 창의 너비 */
+    max-height: 90vh; /* 화면 높이의 90%로 제한 */
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* 그림자 효과 */
+}
+
+.admin-perfume-modal-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px; /* 모달 창의 고정된 너비 */
+    height: 800px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    position: relative;
+    text-align: left;
+    height: 600px;
+}
+
+.admin-perfume-modal-container-success {
+    background-color: #EFEDED;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px; 
+    position: relative;
+    text-align: center;
+}
+
+.admin-perfume-modal-title {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.perfume-description, 
+.perfume-description p, 
+.perfume-description span{
+    font-family: 'Nanum Gothic', sans-serif;
+    font-size: 13 px; /* 기본 글꼴 크기 */
+    line-height: 1.6; /* 가독성을 위한 줄 간격 */
+}
+
+.perfume-description strong {
+    font-family: 'Nanum Gothic', sans-serif;
+    font-size: 13 px; /* 기본 글꼴 크기 */
+    line-height: 1.6; /* 가독성을 위한 줄 간격 */
+    color: #a73cff; /* 기본 글자 색상 */
+    font-weight: bold;
+}
+
+.admin-perfume-modal-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    align-items: center;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.admin-perfume-modal-row2{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    align-items: center;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+.admin-perfume-modal-row input,
+.admin-perfume-modal-row-description,
+.admin-perfume-modal-row-grade,
+.admin-perfume-modal-row-singleNote,
+.admin-perfume-modal-row-topNote,
+.admin-perfume-modal-row-middleNote,
+.admin-perfume-modal-row-baseNote,
+.admin-perfume-image-url-input {
+    flex-basis: 65%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    background-color: #EFEDED;
+}
+
+.admin-perfume-modal-row-concentration{
+    flex-basis: 70%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    background-color: #EFEDED;
+}
+
+.admin-perfume-modal-row-description {
+    resize: none;
+    height: 80px;
+}
+
+.admin-perfume-image-url-input{
+    margin-left: 300px;
+}
+
+.admin-perfume-image-preview {
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    border-radius: 5px;
+}
+
+.admin-perfume-file-input {
+    display: none;
+}
+
+.admin-perfume-image-upload {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #ddd; /* 테두리 스타일 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #EFEDED; /* 배경색 */
+    transform: translateX(-260px);
+}
+
+.admin-perfume-placeholder {
+    font-size: 20px;
+    color: #aaa;
+    font-weight: bold;
+}
+
+.admin-perfume-success-message {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.admin-perfume-modal-actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.admin-perfume-save-button,
+.admin-perfume-cancel-button,
+.admin-perfume-cancel-button-success {
+    padding: 10px 20px;
+    border: none;
+    border: 1PX solid black;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.admin-perfume-save-button,
+.admin-perfume-cancel-button {
+    background-color: #fff;
+    color: rgb(37, 37, 37);
+    border-radius: 5px;
+}
+
+.admin-perfume-edit-button {
+    position: absolute; /* 위치 고정 */
+    top: 15px; /* 카드의 상단에서 10px */
+    right: 15px; /* 카드의 오른쪽에서 10px */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.admin-perfume-edit-button:hover {
+    color: #007bff; /* 호버 시 색상 변경 */
+}

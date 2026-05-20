@@ -1,0 +1,88 @@
+server:
+  port: 9001
+
+spring:
+  application:
+    name: edge-service
+
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: https://securetoken.google.com/bask-eat
+          jwk-set-uri: https://www.googleapis.com/service_accounts/v1/jwk/securetoken@system.gserviceaccount.com
+
+  cloud:
+    gateway:
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins:
+              - http://localhost:5173
+              - http://127.0.0.1:5173        # ← Vite IPv4 대비
+              - https://bask-eat.web.app
+              - https://bask-eat.firebaseapp.com
+              - https://admin.your.dom
+            allowedHeaders: "*"
+            allowedMethods: "*"
+            allowCredentials: true
+
+      routes:
+        # ---- Admin UI (루트) : /admin 또는 /admin/ → 프론트 루트(/)
+        - id: admin-ui-root
+          order: -10
+          uri: ${ADMIN_SERVICE_URL:http://127.0.0.1:5173}
+          predicates:
+            - Path=/admin,/admin/
+          filters:
+            - SetPath=/admin/
+            - RemoveRequestHeader=Authorization  # 프론트로 토큰 헤더 유출 방지
+
+        # ---- Admin UI (하위 경로) : /admin/** → 접두어 제거
+        - id: admin-ui
+          uri: ${ADMIN_SERVICE_URL:http://127.0.0.1:5173}
+          predicates:
+            - Path=/admin/**
+          filters:
+            - RemoveRequestHeader=Authorization  # 프론트로 토큰 헤더 유출 방지
+
+        # ---- API 서비스들 ----
+        - id: embed-service
+          uri: http://localhost:8000
+          predicates: [ Path=/embed/** ]
+          filters: [ StripPrefix=1 ]
+
+        - id: scrape-service
+          uri: http://localhost:8420
+          predicates: [ Path=/scrape/** ]
+          filters: [ StripPrefix=1 ]
+
+        - id: ops-embed-service
+          uri: http://localhost:8000
+          predicates: [ Path=/ops/embed/** ]
+          filters: [ StripPrefix=2 ]
+
+        - id: ops-scrape-service
+          uri: http://localhost:8420
+          predicates: [ Path=/ops/scrape/** ]
+          filters: [ StripPrefix=2 ]
+
+app:
+  security:
+    audience: bask-eat
+    cookie-name: ADMIN_ID_TOKEN
+    cookie-secure: false   # 운영 HTTPS에서는 true
+  firebase:
+    api-key: ${FIREBASE_API_KEY}
+    auth-domain: ${FIREBASE_AUTH_DOMAIN}
+    project-id: ${FIREBASE_PROJECT_ID}
+    storage-bucket: ${FIREBASE_STORAGE_BUCKET:}             # 선택
+    messaging-sender-id: ${FIREBASE_MESSAGING_SENDER_ID:}   # 선택
+    app-id: ${FIREBASE_APP_ID}
+    measurement-id: ${FIREBASE_MEASUREMENT_ID:}             # 선택
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info

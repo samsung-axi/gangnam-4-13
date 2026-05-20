@@ -1,0 +1,29 @@
+.member{
+    &_container {
+        display: flex;
+        flex-direction: column;
+        gap: 1%;
+        width: 100%;
+        position: relative;
+        height: 100vh;
+      }
+
+      &_content_container{
+        padding: 7% 7%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        gap: 3%;
+      }
+
+      &_title_container{
+        flex: 0 1 5%;
+      }
+
+      &_title{
+        font-size: 2em;
+        font-weight: bolder;
+        
+      }
+
+}

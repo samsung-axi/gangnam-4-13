@@ -1,0 +1,246 @@
+.sidebar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    position: absolute;
+    background-color: transparent;
+    z-index: 10;
+}
+
+.sidebar-menu {
+    translate: 40px -120px;
+    position: relative;
+    z-index: 2;  /* 메뉴가 항상 위에 보이도록 */
+}
+
+.sidebar-menu-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #333;
+    padding: 0.5rem;
+    margin-left: 10px;
+    z-index: 1001;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    transition: color 0.3s ease;
+}
+
+.sidebar-menu-button.active {
+    color: white;
+}
+
+.sidebar-menu-button.open {
+    transform: translateX(250px);
+}
+
+.sidebar-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 260px;
+    background-color: #EFEDED;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 999;
+}
+
+.sidebar-sidebar-open {
+    transform: translateX(0);
+}
+
+.sidebar-nav {
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+    margin-top: 100px;
+    font-family: "Gowun Batang", serif;
+}
+
+.sidebar-links {
+    display: flex;
+    flex-direction: column; /* 세로 정렬 */
+    gap: 15px;              /* 링크 간 간격 유지 */
+    max-height: calc(100vh - 200px);
+}
+
+.sidebar-link {
+    color: #333;
+    text-decoration: none;
+    padding: 0.5rem;
+    transition: color 0.2s;
+    display: block;
+    visibility: visible;
+    user-select: none;
+}
+
+.admin-sidebar-link {
+    color: #333;
+    text-decoration: none;
+    padding: 0.5rem;
+    transition: color 0.2s;
+}
+
+.sidebar-link:hover {
+    color: #000;
+}
+
+@media (max-width: 1200px) {
+    .sidebar-link:nth-child(5) {
+        display: none;
+    }
+    .sidebar-menu {
+        translate: 40px -100px;  /* 위로 조금 올림 */
+    }
+}
+
+@media (max-width: 1000px) {
+    .sidebar-link:nth-child(4) {
+        display: none;
+    }
+    .sidebar-menu {
+        translate: 40px -80px;
+    }
+}
+
+@media (max-width: 800px) {
+    .sidebar-link:nth-child(3) {
+        display: none;
+    }
+    .sidebar-menu {
+        translate: 40px -60px;
+    }
+}
+
+@media (max-width: 600px) {
+    .sidebar-link:nth-child(2) {
+        display: none;
+    }
+    .sidebar-menu {
+        translate: 40px -40px;
+    }
+}
+
+@media (max-width: 400px) {
+    .sidebar-link:nth-child(1) {
+        display: none;
+    }
+    .sidebar-menu {
+        translate: 40px -20px;
+    }
+}
+
+/* 수정된 인증 버튼 스타일 */
+.sidebar-auth-button {
+    background: none;
+    border: none;
+    color: #333;
+    padding: 0.5rem;
+    cursor: pointer;
+    font-family: "Gowun Batang", serif;
+    font-size: 1rem;
+    transition: color 0.2s;
+    text-align: left;
+    width: 100%;
+    margin-left: 30px;
+
+    white-space: nowrap;
+    /* 텍스트가 줄 바꿈되지 않도록 */
+    overflow: hidden;
+    /* 텍스트 넘침 방지 */
+    text-overflow: ellipsis;
+    /* 넘치는 텍스트는 생략 (...) */
+    display: inline-block;
+    user-select: none;
+}
+
+.sidebar-auth-button:hover {
+    color: #000;
+}
+
+.sidebar-auth-button.login {
+    background-color: transparent;
+    color: #333;
+    text-align: left;
+    padding: 0.5rem;
+    margin-left: 0px;
+}
+
+/* 수정된 프로필 섹션 스타일 */
+.sidebar-profile-section {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 0;
+    position: absolute;
+    bottom: 40px;
+    left: 80px;
+    transform: translateX(-30%);
+    flex-direction: row;
+    margin-top: auto; 
+}
+
+
+.sidebar-profile-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    padding-right: 10px;
+    user-select: none;
+}
+
+.sidebar-username {
+    color: #333;
+    font-size: 1rem;
+    font-weight: 500;
+    writing-mode: horizontal-tb;
+    /* 텍스트를 항상 가로로 표시 */
+    white-space: nowrap;
+    /* 텍스트 줄 바꿈 방지 */
+    display: inline-block;
+    /* 가로 정렬 유지 */
+    cursor: pointer;
+    user-select: none;
+}
+
+.sidebar-bottom-links {
+    position: absolute;
+    bottom: 40px;
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin: 0;
+}
+
+.sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 998;
+}
+
+.review-popover-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* 내가 작성한 리뷰 버튼을 위한 특별한 스타일 추가 */
+.sidebar-auth-button[data-type="my-reviews"] {
+    margin-left: 10px;  /* 기존 50px에서 30px로 줄임 */
+}

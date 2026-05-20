@@ -1,0 +1,830 @@
+[
+    {
+        "product_info": {
+            "id": 2,
+            "brand": "질샌더",
+            "title": "질샌더｜블랙 개버딘 투버튼 울 트렌치코트 J23AA0005 J40002 001 00014",
+            "price": "2,032,000",
+            "detail_page_url": "https://www.trenbe.com/product/++88459814?catalog=100657960",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1719219438321_4f0e88169433ca9837b2b3a200fd5378_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "elegant_classic"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 4,
+            "brand": "띠어리",
+            "title": "니트 울 Peacoat in Knit Wool 196060514882",
+            "price": "1,333,200",
+            "detail_page_url": "https://www.trenbe.com/product/++103848995?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240902_638608305911740672_23202769_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "elegant_classic"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 5,
+            "brand": "아워레가시",
+            "title": "아워레가시 남성 돌핀 울 코트 블랙헤비멜튼 M4201DB",
+            "price": "1,190,000",
+            "detail_page_url": "https://www.trenbe.com/product/++69521757?catalog=&options=owned",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1707364218048-5581b882-51ad-4aa8-9479-963397e9a801.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "elegant_classic"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 6,
+            "brand": "비오비",
+            "title": "BOB Coats 23644230",
+            "price": "790,300",
+            "detail_page_url": "https://www.trenbe.com/product/++97462503?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240820_638597543707482445_22908746_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "modern_classic"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 7,
+            "brand": "비오비",
+            "title": "BOB Coats 25053201",
+            "price": "670,700",
+            "detail_page_url": "https://www.trenbe.com/product/++112200112?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20241018_638647740133843018_23377573_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "modern_classic"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 12,
+            "brand": "버버리",
+            "title": "남성 패널드 가죽 더블 버튼 트렌치 코트 Men's Panelled Plonge Leather Double-breasted Trench Coat -4559798N",
+            "price": "20,923,400",
+            "detail_page_url": "https://www.trenbe.com/product/++31039405?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20231117_638357519635227976_11427735_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "formal_minimal"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 18,
+            "brand": "버버리",
+            "title": "체크 캐시미어 울 오버사이즈 남성 후드 더플 코트 차콜",
+            "price": "3,490,000",
+            "detail_page_url": "https://www.trenbe.com/product/++27474727?catalog=100019",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1677871416015-bc295d62-a8d8-4bf9-b9c0-6c72ccb7b886.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "high_end_street"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 22,
+            "brand": "띠어리",
+            "title": "발라스 싱글 브레스티드 코트 K1075413 XHX",
+            "price": "813,000",
+            "detail_page_url": "https://www.trenbe.com/product/++69118123?catalog=100932249",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1707271112858-1bdba758-52d4-4e3e-9c49-43b4b5098f44.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "modern_classic"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 26,
+            "brand": "톰브라운",
+            "title": "중고 [4] 톰브라운 하이암홀 삼선 울 코트 THA092537",
+            "price": "3,200,000",
+            "detail_page_url": "https://www.trenbe.com/product/++117543231?catalog=&options=owned",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1728537519221_7d7ba90efe3268860a505a92d8034ca9_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "elegant_classic"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 28,
+            "brand": "캐나다구스",
+            "title": "캐나다구스 자켓 2447M Black",
+            "price": "1,640,300",
+            "detail_page_url": "https://www.trenbe.com/product/++106526260?catalog=100539703",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240912_638616927660319513_23265619_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "vintage_classic"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 29,
+            "brand": "아페쎄",
+            "title": "24FW 아페쎄 자켓 PSAJO H02971AAD BROWN",
+            "price": "1,376,000",
+            "detail_page_url": "https://www.trenbe.com/product/++98823401?catalog=100663859",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240802_638582073345158101_22941275_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "vintage_classic"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 31,
+            "brand": "구찌",
+            "title": "워시드 개버딘 남성 트렌치 코트",
+            "price": "3,960,000",
+            "detail_page_url": "https://www.trenbe.com/product/++73980102?catalog=100025140",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1711530054573-19570b2f-61be-42f7-a377-7911fbaa4007.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 34,
+            "brand": "캐나다구스",
+            "title": "중고 남성,의류,코트 파카 패딩 블랙 후드 포함 캐나다구스 LANGFORD PARKA 933205",
+            "price": "877,800",
+            "detail_page_url": "https://www.trenbe.com/product/++118053348?catalog=&options=owned",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20241108_638666688400806690_23936737_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "high_end_street"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 37,
+            "brand": "띠어리",
+            "title": "THEORY 띠어리 Randall 블랙 멀티 헤링본 울 캐시미어 오버사이즈 롱 코트",
+            "price": "1,548,000",
+            "detail_page_url": "https://www.trenbe.com/product/++117363298?catalog=&options=owned",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1730671997733-43e632b6-c33f-433d-954a-af4fbc2dea15.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "elegant_classic"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 38,
+            "brand": "아미",
+            "title": "남성 울 캐시미어 코트 A21HM006 251 265",
+            "price": "1,711,000",
+            "detail_page_url": "https://www.trenbe.com/product/++27597568?catalog=100917623",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1705123379782-3f2790f2-6ccb-49a7-b255-db89af522489.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "elegant_classic"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 43,
+            "brand": "무레르",
+            "title": "블랙 Moorer Coats Black 22563725",
+            "price": "2,558,400",
+            "detail_page_url": "https://www.trenbe.com/product/++98840768?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240705_638557197008090245_22721449_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 44,
+            "brand": "스톤아일랜드",
+            "title": "[XL] 스톤아일랜드 와펜 판노 스페셜 울 코트",
+            "price": "2,200,000",
+            "detail_page_url": "https://www.trenbe.com/product/++76598201?catalog=&options=owned",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1713858477876-40814361-e5ac-4837-9183-27c6a4d77050.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "high_end_street"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 49,
+            "brand": "카고브로스",
+            "title": "CB 오버사이즈 발마칸 울 코트 (그레이)",
+            "price": "230,000",
+            "detail_page_url": "https://www.trenbe.com/product/++40969584?catalog=&options=owned",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1672191970307-aea57a92-51be-426f-a1df-5da0dc3178dc.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "modern_classic"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 53,
+            "brand": "울리치",
+            "title": "그린 Woolrich Coats Green 23798853",
+            "price": "1,735,500",
+            "detail_page_url": "https://www.trenbe.com/product/++115555334?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240806_638585025611847001_22961276_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "modern_classic"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 55,
+            "brand": "에르노",
+            "title": "나일론 다운 자켓 블랙 에스프레소",
+            "price": "1,761,000",
+            "detail_page_url": "https://www.trenbe.com/product/++97462544?catalog=100517241",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240808_638587330696699522_22908641_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "high_end_street"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 56,
+            "brand": "에르노",
+            "title": "화이트 Herno Coats White 24739482",
+            "price": "1,389,000",
+            "detail_page_url": "https://www.trenbe.com/product/++107004682?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240926_638629518160711975_23280680_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 60,
+            "brand": "에르메스",
+            "title": "에르메스 캐시미어 코트",
+            "price": "11,000,000",
+            "detail_page_url": "https://www.trenbe.com/product/++64087240?catalog=&options=owned",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1702028086025-8aba1539-88b7-4ee4-8b11-7d0ae20a15da.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "elegant_classic"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 67,
+            "brand": "닐바렛",
+            "title": "빈티지무스탕 코트 브라운 BPE453 5840068120",
+            "price": "5,380,000",
+            "detail_page_url": "https://www.trenbe.com/product/++28552747?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1678186881707-8c540872-2836-4af1-9a67-2fb0b3a0dfb0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "vintage_classic"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 70,
+            "brand": "라르디니",
+            "title": "코트 캐시미어 Coat cashmere 30323188",
+            "price": "4,279,000",
+            "detail_page_url": "https://www.trenbe.com/product/++99749928?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240807_638586116605389458_22976462_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "modern_classic"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 76,
+            "brand": "휴고보스",
+            "title": "보스 베이지 BOSS Coats Beige 22322362",
+            "price": "3,497,300",
+            "detail_page_url": "https://www.trenbe.com/product/++117056516?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20241101_638660384269001202_22589165_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "elegant_classic"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 78,
+            "brand": "휴고보스",
+            "title": "보스 베이지 BOSS Coats Beige 22322454",
+            "price": "1,145,700",
+            "detail_page_url": "https://www.trenbe.com/product/++105731561?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20241009_638640731378077941_22589397_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "modern_classic"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 80,
+            "brand": "휴고보스",
+            "title": "보스 코트 50485199 10245109 01 001",
+            "price": "899,000",
+            "detail_page_url": "https://www.trenbe.com/product/++69479838?catalog=100178324",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1707330281273_77faa6c0c14a77be63ddb8f7e82289ea_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "elegant_classic"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 82,
+            "brand": "휴고보스",
+            "title": "보스 Boss H-Hyde-Bib-234 10245109 01 610632 Med Grey 030",
+            "price": "936,900",
+            "detail_page_url": "https://www.trenbe.com/product/++55751246?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240417_638489625743375102_19526193_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "modern_classic"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 83,
+            "brand": "휴고보스",
+            "title": "블랙 Hugo Moreno2341 10253066 01 Black 001 62551203",
+            "price": "959,900",
+            "detail_page_url": "https://www.trenbe.com/product/++56641459?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20230823_638283668575503068_19652722_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "high_end_street"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 87,
+            "brand": "에르노",
+            "title": "블랙 Herno Coats Black 24739492",
+            "price": "1,437,000",
+            "detail_page_url": "https://www.trenbe.com/product/++107004458?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240926_638629518180046258_23280828_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "high_end_street"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 89,
+            "brand": "제냐",
+            "title": "미디 울 캐시미어 코트 midi wool and cashmere coat 242392UCA000001-NR",
+            "price": "3,162,500",
+            "detail_page_url": "https://www.trenbe.com/product/++116623546?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20241030_638658609645444510_23687116_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "elegant_classic"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 91,
+            "brand": "제냐",
+            "title": "캐시미어 코트 OASI CASHMERE ELEMENTS COAT 843914",
+            "price": "15,017,600",
+            "detail_page_url": "https://www.trenbe.com/product/++116138555?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20241026_638655168570579070_23577526_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "modern_classic"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 95,
+            "brand": "우영미",
+            "title": "벨트 울코트 블랙 W213HC04 907B",
+            "price": "2,016,000",
+            "detail_page_url": "https://www.trenbe.com/product/++40364332?catalog=&options=owned",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1672896927441-91c46ff3-7083-487b-846a-c9ee4abf20da.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "elegant_classic"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 100,
+            "brand": "브룩스브라더스",
+            "title": "브룩스 브라더스 남성 네이비 체크 울 후드 더플 롱 코트",
+            "price": "1,380,000",
+            "detail_page_url": "https://www.trenbe.com/product/++115424570?catalog=&options=owned",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1729473315940-e1038542-a603-4a1c-9228-88e9c29bbdc7.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "elegant_classic"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 104,
+            "brand": "오라리",
+            "title": "오라리 숏팬츠 A23AC01FBBROWNGREYCH Brown",
+            "price": "1,690,000",
+            "detail_page_url": "https://www.trenbe.com/product/++64713690?catalog=100468734",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1703051494529-7da50765-cb68-481d-97b9-3c3c6769c747.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "elegant_classic"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 109,
+            "brand": "막스마라",
+            "title": "22FW 밸류픽 막스마라 파올로레 버진울 코트 다크그레이 90160229 023",
+            "price": "1,798,000",
+            "detail_page_url": "https://www.trenbe.com/product/++36627376?catalog=&options=owned",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1665463868725-47a91c8d-c941-4050-9ee3-38cf74bdc307.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "elegant_classic"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 113,
+            "brand": "라르디니",
+            "title": "24FW 라르디니 코트 IV40408EIVC63624100NE GREY",
+            "price": "4,183,000",
+            "detail_page_url": "https://www.trenbe.com/product/++103656327?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1727598818589_aea962b22ec1df9be3bb3949aa437323_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "modern_classic"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 119,
+            "brand": "MATTHEW MILLER",
+            "title": "매튜 밀러 클립 디테일 싱글 코트 [올리브] (하자품) MMAW18-SANDER-O",
+            "price": "1,770,000",
+            "detail_page_url": "https://www.trenbe.com/product/++65873834?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1704361177524_27c8df9c0994dbfb6d958bc4b334ecc4_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "modern_classic"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 122,
+            "brand": "캘빈클라인",
+            "title": "울 블렌드 코트 그레이 MODERN WOOL BLEND COAT Grey P4E 62519802",
+            "price": "927,300",
+            "detail_page_url": "https://www.trenbe.com/product/++57087016?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20230826_638286542431505603_19617884_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "cozy_minimal"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 123,
+            "brand": "PT Torino",
+            "title": "PT Torino Coats 9276347",
+            "price": "1,711,600",
+            "detail_page_url": "https://www.trenbe.com/product/++113446269?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20241004_638636483096510727_23423370_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "modern_classic"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 129,
+            "brand": "콜마오리지널",
+            "title": "오리지널스 블랙 Colmar Originals Coats Black 23644111",
+            "price": "663,500",
+            "detail_page_url": "https://www.trenbe.com/product/++97462614?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240731_638579792290640747_22908583_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 135,
+            "brand": "엠포리오아르마니",
+            "title": "엠페리오 코트 네이비 Emporio Coat Sn99 Navy 33348618",
+            "price": "1,247,000",
+            "detail_page_url": "https://www.trenbe.com/product/++101440005?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240818_638595977040076461_23071846_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "elegant_classic"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 138,
+            "brand": "꼬르넬리아니",
+            "title": "24FW 꼬르넬리아니 코트 941581 9412179 015 GREY",
+            "price": "3,245,000",
+            "detail_page_url": "https://www.trenbe.com/product/++112772232?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1727742386948_72ee63f778cc4f1599b1884e515935f1_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "modern_classic"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 141,
+            "brand": "꼬르넬리아니",
+            "title": "24FW 꼬르넬리아니 코트 9415339418807 001",
+            "price": "3,051,000",
+            "detail_page_url": "https://www.trenbe.com/product/++111339749?catalog=",
+            "images": [
+                "https://d15jp4iwerkqw1.cloudfront.net/images/products/361893874/thumbs/89b8c9ef616449fb9748fdc46cd75e16.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "modern_classic"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 144,
+            "brand": "띠어리",
+            "title": "코트 울 Single-Breasted Coat in Wool Melton M081401R D2D",
+            "price": "1,525,000",
+            "detail_page_url": "https://www.trenbe.com/product/++36173178?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20221004_638004586391302285_13941984_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "cozy_minimal"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 148,
+            "brand": "톰브라운",
+            "title": "톰브라운 코트 MKJ125A Y1019415",
+            "price": "7,403,000",
+            "detail_page_url": "https://www.trenbe.com/product/++86689763?catalog=100555669",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1718680410694_0af500bb3ffca4e11cd17591c9316fe0_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    }
+]

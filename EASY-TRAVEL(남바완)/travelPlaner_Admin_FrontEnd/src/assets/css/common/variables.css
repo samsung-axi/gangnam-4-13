@@ -1,0 +1,72 @@
+@import url(/src/assets/css/common/reset.css);
+@import url(/src/assets/css/common/effect.css);
+
+:root {
+  /* background-colors */
+  --main-color-1: #76adec; /* 메인 컬러 1 */
+  --main-color-2: #f2a413; /* 메인 컬러 2 */
+  --sub-color-1: #dbecff; /* 서브 컬러 1 */
+  --sub-color-2: #ffe2ab; /* 서브 컬러 2 */
+  --black: #000000;
+  --black-opacity-75: rgba(0, 0, 0, 0.75);
+  --black-opacity-50: rgba(0, 0, 0, 0.5);
+  --black-opacity-25: rgba(0, 0, 0, 0.25);
+  --black-opacity-10: rgba(0, 0, 0, 0.1);
+  --white: #ffffff;
+  --grey-1: #b1b1b1; /* 회색 1 */
+  --grey-2: #434343; /* 회색 2 */
+  --grey-3: #eeeeee; /* 회색 3 */
+
+  /* max-width */
+  --max-width: 1024px;
+
+  /* text-colors */
+  --text-main: #323a27;
+  --text-sub: #767676;
+  --text-no-active: #b2b2b2;
+  --text-icon: #ffffff;
+
+  /* font-family */
+  --font-family-1: Pretendard-Regular, sans-serif;
+
+  /* text-weight */
+  --extrabold: 800;
+  --bold: 700;
+  --semibold: 600;
+  --medium: 500;
+  --regular: 400;
+  --light: 300;
+  --thin: 100;
+
+  /* font-size */
+  --font-size-1: 2.25em; /* 36px */
+  --font-size-2: 2em; /* 32px */
+  --font-size-3: 1.75em; /* 28px */
+  --font-size-4: 1.5em; /* 24px */
+  --font-size-5: 1.25em; /* 20px */
+  --font-size-6: 1em; /* 16px */
+  --font-size-7: 0.75em; /* 12px */
+  --font-size-8: 0.5em; /* 8px */
+
+  /* text-others */
+  --line-height-high: 160%;
+  --line-height-main: 140%;
+  --line-height-sub: 120%;
+
+  --letter-spacing-main: -2.5%;
+  --letter-spacing-sub: -2.5%;
+
+  --margin-left-main: 24px;
+  --margin-right-main: 24px;
+
+  /* border-radius */
+  --border-radius-1: 4px;
+  --border-radius-2: 8px;
+  --border-radius-3: 12px;
+  --border-radius-4: 16px;
+
+  /* shadows */
+  --shadow-1: 0 4px 4px rgba(0, 0, 0, 0.25);
+  --shadow-basic: 0 2px 8px rgba(0, 0, 0, 0.25);
+  --shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.4);
+}

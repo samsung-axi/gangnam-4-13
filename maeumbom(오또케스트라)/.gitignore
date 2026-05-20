@@ -1,0 +1,44 @@
+.idea/
+.cursorrules
+.antigravityrules
+.claude/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+# Thumbnails
+._*
+
+# Test
+frontend-test/
+
+.env
+
+# ==================================================================
+# 🚨 PRIVATE FILES - 면접 준비 자료 및 포트폴리오 내부 문서
+# Interview Preparation Materials & Portfolio Internal Documents
+# ==================================================================
+
+# 면접 질의응답 자료 (Interview Q&A Materials)
+*INTERVIEW*.md
+EXPECTED_QA*.md
+ON_SITE_INTERVIEW_QA.md
+MOONTO_INTERVIEW_SUMMARY.md
+
+# 발표 자료 (Presentation Materials)
+PRESENTATION_*.md
+GEMINI_PPT_PROMPT.md
+
+# 포트폴리오 내부 문서 (Portfolio Internal Documents)
+MAEUMBOM_PORTFOLIO.md
+DEVELOPMENT_DELIVERABLE.md
+ARCHITECTURE_FLOW_DIAGRAM.md
+GEMINI_IMAGE_PROMPTS.md
+VOICE_CHAT_TEST_GUIDE.md
+CHEATSHEET.md
+
+# ==================================================================
+# 면접관 및 외부에는 README.md만 공개됩니다
+# Only README.md will be publicly visible
+# ==================================================================

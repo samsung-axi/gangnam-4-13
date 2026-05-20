@@ -1,0 +1,47 @@
+.footerContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    max-width: var(--max-width);
+    background-color: var(--sub-color-1);
+    padding: 30px 30px;
+    
+    a {
+      display: inline-block;
+      color: var(--main-color);
+      text-decoration: none;
+      font-size: var(--font-size-5);
+      font-weight: var(--bold);
+    }
+  
+    .footerText1 {
+      // 필요한 스타일이 있다면 여기에 추가
+    }
+  
+    .footerText2 {
+      display: flex;
+      flex-direction: row;
+      gap: 5px;
+      font-size: var(--font-size-7);
+      font-weight: var(--medium);
+  
+      span {
+        font-weight: var(--semibold);
+      }
+    }
+  
+    .footerText3 {
+      font-size: var(--font-size-7);
+      font-weight: var(--semibold);
+    }
+  
+    @media (max-width: 550px) {
+      .footerText2 {
+        flex-direction: column;
+        gap: 5px;
+        font-size: var(--font-size-7);
+        font-weight: var(--medium);
+      }
+    }
+  }
+  

@@ -1,0 +1,179 @@
+.hmk-form-section {
+    font-family: 'Pretendard', sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding: 20px;
+    background: white;
+    box-sizing: border-box;
+}
+
+.hmk-form-header {
+    margin-bottom: 40px;
+}
+
+.hmk-register-intro-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.hmk-register-intro-title {
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.4;
+    margin: 0;
+    position: absolute;
+    top: 25%;
+    left: 20px;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.hmk-register-intro-title span {
+    position: relative;
+    display: inline-block;
+}
+
+.hmk-register-intro-title span::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 2px;
+    width: 100%;
+    height: 8px;
+    background-color: #FFB800;
+    z-index: -1;
+}
+
+.hmk-social-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.hmk-social-button {
+    width: 100%;
+    height: 44px;
+    background: white;
+    border: 1px solid #E5E5E5;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.hmk-social-button .icon {
+    font-size: 20px;
+}
+
+.hmk-login-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: #666;
+}
+
+.hmk-login-link {
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: 14px;
+    color: #000;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.hmk-terms-section {
+    text-align: center;
+    font-size: 12px;
+    color: #666;
+    margin-top: auto;
+}
+
+.hmk-terms-section p {
+    margin: 0 0 4px 0;
+}
+
+.hmk-terms-links {
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+}
+
+.hmk-terms-links a {
+    color: #666;
+    text-decoration: none;
+}
+
+.hmk-divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #666;
+    font-size: 14px;
+}
+
+.hmk-divider::before,
+.hmk-divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #E5E5E5;
+}
+
+.hmk-divider span {
+    padding: 0 10px;
+}
+
+.hmk-email-button {
+    width: 100%;
+    height: 48px;
+    background: #FFB800;
+    border: none;
+    border-radius: 8px;
+    color: #000;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.hmk-decorative-circles {
+    position: relative;
+    height: 50vh;
+    width: 100%;
+    margin: 20px 0;
+}
+
+.circle {
+    position: absolute;
+    background-color: #FFB800;
+    border-radius: 50%;
+}
+
+.circle-1 {
+    width: 110px;
+    height: 110px;
+    right: -65px;
+    top: 0;
+}
+
+.circle-2 {
+    width: 100px;
+    height: 100px;
+    left: -60px;
+    bottom: 80px;
+}
+
+.circle-3 {
+    width: 160px;
+    height: 160px;
+    right: -50px;
+    bottom: 20px;
+} 

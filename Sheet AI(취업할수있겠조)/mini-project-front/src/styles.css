@@ -1,0 +1,170 @@
+@import "tailwindcss";
+
+/* 프리텐다드 폰트 설정 */
+@font-face {
+  font-family: 'Pretendard';
+  src: url('./assets/fonts/Pretendard-Thin.subset.woff2') format('woff2'),
+       url('./assets/fonts/Pretendard-Thin.woff2') format('woff2'),
+       url('./assets/fonts/Pretendard-Thin.woff') format('woff');
+  font-weight: 100;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  src: url('./assets/fonts/Pretendard-ExtraLight.subset.woff2') format('woff2'),
+       url('./assets/fonts/Pretendard-ExtraLight.woff2') format('woff2'),
+       url('./assets/fonts/Pretendard-ExtraLight.woff') format('woff');
+  font-weight: 200;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  src: url('./assets/fonts/Pretendard-Light.subset.woff2') format('woff2'),
+       url('./assets/fonts/Pretendard-Light.woff2') format('woff2'),
+       url('./assets/fonts/Pretendard-Light.woff') format('woff');
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  src: url('./assets/fonts/Pretendard-Regular.subset.woff2') format('woff2'),
+       url('./assets/fonts/Pretendard-Regular.woff2') format('woff2'),
+       url('./assets/fonts/Pretendard-Regular.woff') format('woff');
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  src: url('./assets/fonts/Pretendard-Medium.subset.woff2') format('woff2'),
+       url('./assets/fonts/Pretendard-Medium.woff2') format('woff2'),
+       url('./assets/fonts/Pretendard-Medium.woff') format('woff');
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  src: url('./assets/fonts/Pretendard-SemiBold.subset.woff2') format('woff2'),
+       url('./assets/fonts/Pretendard-SemiBold.woff2') format('woff2'),
+       url('./assets/fonts/Pretendard-SemiBold.woff') format('woff');
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  src: url('./assets/fonts/Pretendard-Bold.subset.woff2') format('woff2'),
+       url('./assets/fonts/Pretendard-Bold.woff2') format('woff2'),
+       url('./assets/fonts/Pretendard-Bold.woff') format('woff');
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  src: url('./assets/fonts/Pretendard-ExtraBold.subset.woff2') format('woff2'),
+       url('./assets/fonts/Pretendard-ExtraBold.woff2') format('woff2'),
+       url('./assets/fonts/Pretendard-ExtraBold.woff') format('woff');
+  font-weight: 800;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  src: url('./assets/fonts/Pretendard-Black.subset.woff2') format('woff2'),
+       url('./assets/fonts/Pretendard-Black.woff2') format('woff2'),
+       url('./assets/fonts/Pretendard-Black.woff') format('woff');
+  font-weight: 900;
+  font-display: swap;
+}
+
+@layer base {
+  html, body, #root {
+    @apply m-0 p-0 w-full h-full overflow-x-hidden box-border;
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
+  }
+  
+  * {
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
+  }
+}
+
+@layer utilities {
+  @media (max-width: 640px) {
+    html, body, #root {
+      @apply w-screen min-w-full max-w-full;
+    }
+  }
+  
+  .font-pretendard {
+    font-family: 'Pretendard', sans-serif;
+  }
+}
+
+@theme{
+    --color-primary-100: rgba(240, 248, 255, 1);  /* 매우 연한 파란색 */
+    --color-primary-200: rgba(224, 240, 255, 1);  /* 연한 파란색 */
+    --color-primary-300: rgba(191, 222, 255, 1);  /* 밝은 파란색 */
+    --color-primary-400: rgba(156, 204, 255, 1);  /* 중간 밝은 파란색 */
+    --color-primary-500: rgba(112, 174, 255, 1);  /* 표준 파란색 */
+    --color-primary-600: rgba(66, 133, 244, 1);   /* 진한 파란색 */
+    --color-primary-700: rgba(51, 103, 214, 1);   /* 더 진한 파란색 */
+    --color-primary-800: rgba(32, 76, 165, 1);    /* 깊은 파란색 */
+    --color-primary-900: rgba(23, 54, 120, 1);    /* 가장 진한 파란색 */
+}
+
+@layer components {
+
+  .parent-header{
+    display:flex;
+  }
+  .header {
+    @apply flex items-center justify-center py-8 border-gray-200 bg-white;
+  }
+
+  .logo {
+    @apply h-10 w-auto mr-3;
+  }
+
+  .title {
+    @apply text-2xl font-bold text-gray-800;
+  }
+  
+  /* 공통 버튼 스타일 */
+  .btn-primary {
+    @apply w-full py-3 px-4 mt-4
+    flex justify-center items-center 
+    bg-primary-600 hover:bg-primary-700
+    text-white font-medium rounded-lg 
+    transition-colors duration-200
+    disabled:bg-gray-400 disabled:cursor-not-allowed;
+  }
+  
+  /* 보조 버튼 스타일 (취소, 복원 등) */
+  .btn-secondary {
+    @apply flex-1 py-2 px-4
+    bg-gray-500 text-white rounded-lg
+    hover:bg-gray-600 transition-colors;
+  }
+  
+  /* 성공 버튼 스타일 (적용하기 등) */
+  .btn-success {
+    @apply flex-1 py-2 px-4
+    bg-green-600 text-white rounded-lg
+    hover:bg-green-700 transition-colors;
+  }
+  
+  /* 작은 버튼 스타일 */
+  .btn-sm {
+    @apply py-1 px-4 text-sm;
+  }
+  
+  /* 로딩 스피너 */
+  .spinner {
+    @apply w-8 h-8 border-4 border-primary-500 border-t-transparent rounded-full animate-spin mb-2;
+  }
+}

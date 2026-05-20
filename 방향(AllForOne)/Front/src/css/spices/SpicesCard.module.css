@@ -1,0 +1,201 @@
+.cardWrapper {
+    position: relative;
+    width: 200px;
+    height: 300px;
+    perspective: 1000px;
+}
+
+.card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+    cursor: pointer;
+}
+
+.cardWrapper:hover .card {
+    transform: rotateY(180deg);
+}
+
+.front,
+.back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 20px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+.front {
+    transform: rotateY(0deg);
+}
+
+.back {
+    transform: rotateY(180deg);
+    background-color: #f8f8f8;
+    padding: 25px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.image {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.nameEn {
+    font-family: "Gowun Batang", serif;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    width: 100%;
+    text-align: center;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+.nameKr {
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    margin-bottom: 10px;
+    width: 100%;
+    text-align: center;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    padding: 0 10px;
+    box-sizing: border-box;
+    flex-shrink: 0;
+}
+
+.nameKrBack {
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    text-align: center;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    margin-top: 20px;
+    margin-bottom: -2px;
+}
+
+.divider {
+    width: 80%;
+    height: 1px;
+    background-color: #000000;
+    margin: 10px 0;
+    flex-shrink: 0;
+}
+
+.category {
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    color: #000000;
+}
+
+.description {
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+    line-height: 1.6;
+    text-align: center;
+    width: 100%;
+}
+
+.keyPoints {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.keyword {
+    background-color: #fff;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 12px;
+    color: #333;
+    border: 1px solid #ddd;
+}
+
+.mainDescription {
+    margin-bottom: 15px;
+    font-size: 13px;
+    color: #333;
+    text-align: center;
+    line-height: 1.4;
+    overflow-y: auto;
+    transform: translateY(-10px);
+}
+
+.editButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 2;
+}
+
+/* 카드 앞면일 때는 #333 */
+.cardWrapper .editButton {
+    color: #333;
+}
+
+/* 카드 뒷면일 때는 배경색에 맞는 색상 */
+.cardWrapper:hover .editButton svg {
+    color: var(--text-color);
+}
+
+.checkbox {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 15px;
+    height: 15px;
+    appearance: none;
+    border: 1px solid #333;
+    border-radius: 50%;
+    background-color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 2; /* 체크박스를 카드 위로 올림 */
+    transform-style: preserve-3d;
+}
+
+.checkbox:checked {
+    background-color: #333;
+    border-color: #333;
+}
+
+.cardWrapper:hover .checkbox,
+.cardWrapper:hover .editButton {
+    transform: rotateY(-360deg);
+}

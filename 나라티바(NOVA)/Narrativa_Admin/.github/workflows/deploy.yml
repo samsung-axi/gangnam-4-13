@@ -1,0 +1,113 @@
+name: Release and Deploy
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  release_and_deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      ### 1. 저장소 체크아웃
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+
+      ### 2. Node.js 환경 설정
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18"
+
+      ### 3. package.json에서 버전 읽기
+      - name: Read Version from package.json
+        id: read_version
+        run: |
+          VERSION=$(node -p "require('./package.json').version")
+          echo "VERSION=$VERSION" >> $GITHUB_ENV
+
+      ### 4. AWS Credentials 설정
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION }}
+
+      ### 5. 프로젝트 빌드 및 Docker 이미지 생성
+      - name: Build Project and Docker Image
+        env:
+          CI: false
+          REACT_APP_API_BASE_URL: ${{ secrets.REACT_APP_API_BASE_URL }}
+          REACT_APP_BACKEND_URL: ${{ secrets.REACT_APP_BACKEND_URL }}
+          REACT_APP_FIREBASE_API_KEY: ${{ secrets.REACT_APP_FIREBASE_API_KEY }}
+          REACT_APP_FIREBASE_AUTH_DOMAIN: ${{ secrets.REACT_APP_FIREBASE_AUTH_DOMAIN }}
+          REACT_APP_FIREBASE_PROJECT_ID: ${{ secrets.REACT_APP_FIREBASE_PROJECT_ID }}
+          REACT_APP_FIREBASE_STORAGE_BUCKET: ${{ secrets.REACT_APP_FIREBASE_STORAGE_BUCKET }}
+          REACT_APP_FIREBASE_MESSAGING_SENDER_ID: ${{ secrets.REACT_APP_FIREBASE_MESSAGING_SENDER_ID }}
+          REACT_APP_FIREBASE_APP_ID: ${{ secrets.REACT_APP_FIREBASE_APP_ID }}
+          REACT_APP_GITHUB_CLIENT_ID: ${{ secrets.REACT_APP_GITHUB_CLIENT_ID }}
+          REACT_APP_GITHUB_CLIENT_SECRET: ${{ secrets.REACT_APP_GITHUB_CLIENT_SECRET }}
+        run: |
+          npm install
+          npm run build
+          docker build -t narrativa-admin .
+          docker save -o narrativa-admin.tar narrativa-admin
+
+      ### 6. 배포 설정 및 실행
+      - name: Deploy to EC2
+        run: |
+          # SSH 설정
+          mkdir -p ~/.ssh
+          echo "${{ secrets.EC2_SSH_KEY }}" > ~/.ssh/narraa-admin.pem
+          chmod 600 ~/.ssh/narraa-admin.pem
+          ssh-keyscan -H ${{ secrets.EC2_HOST }} >> ~/.ssh/known_hosts
+
+          # Docker 이미지 전송 및 배포
+          scp -i ~/.ssh/narraa-admin.pem -o StrictHostKeyChecking=no narrativa-admin.tar ubuntu@${{ secrets.EC2_HOST }}:~/
+          ssh -i ~/.ssh/narraa-admin.pem -o StrictHostKeyChecking=no ubuntu@${{ secrets.EC2_HOST }} "
+            docker stop narrativa-admin || true
+            docker rm narrativa-admin || true
+            docker rmi narrativa-admin || true
+            docker load -i narrativa-admin.tar
+            docker run -d -p 3030:3030 --name narrativa-admin narrativa-admin
+            rm -f narrativa-admin.tar
+          "
+
+      ### 7. 릴리즈 생성
+      - name: Create Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+        run: |
+          # Git 설정
+          git config user.name "GitHub Actions Bot"
+          git config user.email "actions@github.com"
+          
+          # 태그 생성 및 푸시
+          TAG="v${{ env.VERSION }}"
+          git tag $TAG
+          git push origin $TAG
+          
+          # 릴리즈 노트 생성
+          {
+            echo "RELEASE_NOTES<<EOF"
+            echo "## Release $TAG"
+            echo ""
+            echo "### Deployment Information"
+            echo "- Deployment Date: $(date +'%Y-%m-%d %H:%M:%S')"
+            echo ""
+            echo "### Changes"
+            git log $(git describe --tags --abbrev=0 2>/dev/null || git rev-list --max-parents=0 HEAD)..HEAD --oneline
+            echo "EOF"
+          } >> $GITHUB_ENV
+          
+          # 릴리즈 생성
+          gh release create $TAG \
+            --title "Release $TAG" \
+            --notes "${{ env.RELEASE_NOTES }}" \
+            --draft=false \
+            --prerelease=false

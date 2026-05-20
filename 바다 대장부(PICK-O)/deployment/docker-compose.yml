@@ -1,0 +1,178 @@
+# Docker Compose 설정 (v3.8 삭제)
+
+services:
+  # Frontend (React + Nginx)
+  frontend:
+    image: ${FRONTEND_IMAGE:-nginx:alpine}
+    container_name: teamPicko-frontend
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      - NODE_ENV=${NODE_ENV:-production}
+      - VITE_API_BASE_URL=${VITE_API_BASE_URL:-/api/v1}
+      # 토스 결제 설정 (Secrets에서 주입)
+      - VITE_TOSS_CLIENT_KEY=${VITE_TOSS_CLIENT_KEY:-test_ck_default}
+    volumes:
+      - /etc/letsencrypt:/etc/letsencrypt:ro
+    depends_on:
+      backend:
+        condition: service_healthy
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+
+  # Backend (Django)
+  backend:
+    image: ${BACKEND_IMAGE:-python:3.11-slim}
+    container_name: teamPicko-backend
+    ports:
+      - "${BACKEND_PORT:-8000}:8000"
+    environment:
+      # 데이터베이스 설정 (컨테이너 간 통신)
+      - DATABASE_URL=postgresql://${POSTGRES_USER:-postgres}:${POSTGRES_PASSWORD:-password}@database:5432/${POSTGRES_DB:-teamPicko}
+      - POSTGRES_DB=${POSTGRES_DB:-teamPicko}
+      - POSTGRES_USER=${POSTGRES_USER:-postgres}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-password}
+      
+      # Database Connection Details for Django
+      - DB_HOST=${DB_HOST:-database}
+      - DB_PORT=${DB_PORT:-5432}
+      - DB_NAME=${DB_NAME:-${POSTGRES_DB:-teamPicko}}
+      - DB_USER=${DB_USER:-${POSTGRES_USER:-postgres}}
+      - DB_PASSWORD=${DB_PASSWORD:-${POSTGRES_PASSWORD:-password}}
+      
+      # 애플리케이션 설정 (Secrets에서 주입)  
+      - DEBUG=${DEBUG:-False}
+      - SECRET_KEY=${SECRET_KEY}
+      - ALLOWED_HOSTS=${ALLOWED_HOSTS:-badaejangbu.store,www.badaejangbu.store,backend,teamPicko-backend,localhost,127.0.0.1}
+      
+      # JWT 인증 설정 (Secrets에서 주입)
+      - JWT_SECRET_KEY=${JWT_SECRET_KEY}
+      - JWT_REFRESH_SECRET_KEY=${JWT_REFRESH_SECRET_KEY}
+      - PROJECT_NAME=${PROJECT_NAME:-Team-PICK-O Backend}
+      
+      # CORS 설정
+      - BACKEND_CORS_ORIGINS=${BACKEND_CORS_ORIGINS:-["https://badaejangbu.store","http://localhost:3000"]}
+      
+      # AWS 설정 (Secrets에서 주입)
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID:-}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY:-}
+      - AWS_S3_BUCKET_NAME=${AWS_S3_BUCKET_NAME:-}
+      - AWS_REGION=${AWS_REGION:-ap-northeast-2}
+      
+      # 외부 서비스 설정 (Secrets에서 주입)
+      - TOSS_SECRET_KEY=${TOSS_SECRET_KEY:-test_sk_default}
+      - DISCORD_WEBHOOK_URL=${DISCORD_WEBHOOK_URL:-}
+      
+      # API 키 설정 (Secrets에서 주입)
+      - WEATHER_API_KEY=${WEATHER_API_KEY:-}
+      - DATA_GO_KR_API_KEY=${DATA_GO_KR_API_KEY:-}
+      - KOSIS_API_KEY=${KOSIS_API_KEY:-}
+      - KHOA_API_KEY=${KHOA_API_KEY:-}
+      - AGRICULTURE_API_KEY=${AGRICULTURE_API_KEY:-}
+      - NIFS_API_KEY=${NIFS_API_KEY:-}
+      
+      # Firebase Admin SDK 설정 (Secrets에서 주입)
+      - FIREBASE_ADMIN_CREDENTIALS_JSON=${FIREBASE_ADMIN_CREDENTIALS_JSON:-}
+      
+      # AI 서버 연결 설정
+      - AI_SERVER_URL=${AI_SERVER_URL:-http://aiserver:8001}
+    depends_on:
+      database:
+        condition: service_healthy
+      aiserver:
+        condition: service_healthy
+    volumes:
+      - backend-logs:/app/logs
+      # Firebase Admin SDK 파일은 docker cp로 별도 복사
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+
+  # Database (PostgreSQL)
+  database:
+    image: postgres:15-alpine
+    container_name: teamPicko-database
+    environment:
+      - POSTGRES_DB=${POSTGRES_DB:-teamPicko}
+      - POSTGRES_USER=${POSTGRES_USER:-postgres}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-password}
+      - POSTGRES_INITDB_ARGS=--encoding=UTF-8 --locale=C
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+      - ./backup:/backup
+      - ./init-db.sql:/docker-entrypoint-initdb.d/init-db.sql
+    ports:
+      - "${DB_PORT:-5432}:5432"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+
+  # AI Server (FastAPI - YOLO + VGG)
+  aiserver:
+    image: ${AISERVER_IMAGE:-python:3.11-slim}
+    container_name: teamPicko-aiserver
+    # 포트는 내부 네트워크에서만 접근 (Django 서버를 통해서만 통신)
+    environment:
+      - PYTHONPATH=/app
+      - PYTHONUNBUFFERED=1
+      - TF_CPP_MIN_LOG_LEVEL=2
+      - CUDA_VISIBLE_DEVICES=""
+      
+      # AI Server 포트 설정
+      - AI_SERVER_PORT=8001
+      - AI_SERVER_HOST=0.0.0.0
+      
+      # 백엔드 연결 설정 (컨테이너 간 통신)
+      - BACKEND_HOST=backend
+      - BACKEND_PORT=8000
+      
+      # 모델 파일 경로 설정
+      - VGG16_MODEL_PATH=/app/models/vgg16/best_model.h5
+      - YOLO_MODEL_PATH=/app/models/yolo/best.pt
+      
+      # 모델 다운로드 URL (GitHub Release 사용시)
+      - VGG_MODEL_DOWNLOAD_URL=${VGG_MODEL_DOWNLOAD_URL:-}
+      
+      # AWS S3 설정 (모델 다운로드용)
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID:-}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY:-}
+      - AWS_S3_BUCKET_NAME=${AWS_S3_BUCKET_NAME:-}
+      - AWS_REGION=${AWS_REGION:-ap-northeast-2}
+      
+      # 파일 업로드 설정
+      - MAX_FILE_SIZE=${MAX_FILE_SIZE:-10485760}
+    volumes:
+      # AI 모델 파일들을 호스트에서 마운트 (배포 시 별도 설정 필요)
+      - aiserver-models:/app/models
+      - aiserver-logs:/app/logs
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8001/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+
+volumes:
+  postgres-data:
+    name: teamPicko-postgres-data
+  backend-logs:
+    name: teamPicko-backend-logs
+  aiserver-models:
+    name: teamPicko-aiserver-models
+  aiserver-logs:
+    name: teamPicko-aiserver-logs

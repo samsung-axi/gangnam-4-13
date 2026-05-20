@@ -1,0 +1,78 @@
+/* 가이드 메시지 컨테이너 */
+.guideMessages {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    position: fixed; /* absolute에서 fixed로 변경 */
+    bottom: 110px; /* 채팅 입력창 위에 위치하도록 조정 */
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+    z-index: 1000; /* z-index 값 증가 */
+    background-color: transparent;
+    padding: 10px;
+    margin: 0;
+}
+
+/* 가이드 메시지 버튼 */
+.guideMessageWrapper {
+    position: relative;
+    margin: 0 5px;
+}
+
+.guideMessageButton {
+    background: white;
+    border: 1px solid #ddd;
+    padding: 8px 10px;
+    font-size: 13px;
+    color: #333;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: all 0.2s ease-in-out;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 330px;
+    min-width: 120px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* 그림자 추가로 가시성 향상 */
+}
+
+/* 버튼 hover 효과 */
+.guideMessageButton:hover {
+    background-color: #f1f1f1;
+}
+
+/* 이미지 업로드 유도 버튼 강조 */
+.imageGuide {
+    border: 2px dashed #ff9800;
+    background-color: #fff7e6;
+    color: #e65100;
+}
+
+/* 툴팁 스타일 */
+.tooltip {
+    visibility: hidden;
+    width: auto;
+    max-width: 250px;
+    color: #333;
+    text-align: center;
+    padding: 5px 10px;
+    border-radius: 5px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 120%; /* 버튼 위에 툴팁 위치 */
+    white-space: nowrap;
+    font-size: 12px;
+    z-index: 200;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* 마우스를 올리면 툴팁 표시 */
+.guideMessageWrapper:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}

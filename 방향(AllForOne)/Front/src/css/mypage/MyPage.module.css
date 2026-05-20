@@ -1,0 +1,155 @@
+.container {
+    min-height: 100vh;
+    background-color: transparent;
+    padding: 20px;
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+}
+
+.content {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: transparent;
+    padding: 20px;
+}
+
+/* 헤더 */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    margin-bottom: 20px;
+}
+
+.backButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border: none;
+    border-radius: 50%;
+    background-color: transparent;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: #666;
+}
+
+.backButton:hover {
+    background-color: #f5f5f5;
+}
+
+.headerTitle {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #333;
+}
+
+.headerTitle h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+/* 환영 섹션 */
+.welcomeSection {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.welcomeSection h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+}
+
+/* 탭 네비게이션 */
+.tabNavigation {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    padding: 0 1rem;
+    border-bottom: 1px solid #000;
+    margin-bottom: 20px;
+}
+
+.tab {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 8px 16px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 400;
+    color: #666;
+    transition: all 0.3s ease;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    margin-top: 40px;
+}
+
+.tab:hover {
+    background-color: #f5f5f5;
+}
+
+.tabActive {
+    background-color: #E1DEDE;
+    color: #333;
+}
+
+/* 탭 콘텐츠 */
+.tabContent {
+    min-height: 400px;
+    padding: 0 1rem;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .container {
+        padding: 80px 16px 20px 16px;
+    }
+
+    .content {
+        border-radius: 16px;
+    }
+
+    .header {
+        padding: 20px 24px;
+    }
+
+    .headerTitle h1 {
+        font-size: 20px;
+    }
+
+    .welcomeSection {
+        padding: 30px 24px 24px 24px;
+    }
+
+    .welcomeSection h2 {
+        font-size: 24px;
+    }
+
+    .welcomeSection p {
+        font-size: 14px;
+    }
+
+    .tabNavigation {
+        padding: 0 24px;
+    }
+
+    .tab {
+        padding: 14px 16px;
+        font-size: 14px;
+    }
+
+    .tabContent {
+        padding: 24px;
+    }
+}
+

@@ -1,0 +1,73 @@
+# Python 캐시 파일
+**/__pycache__/
+*.py[cod]
+*$py.class
+
+# 분석 데이터 및 모델 파일
+data/
+*.bin
+
+# 가상 환경
+venv/
+env/
+.env/
+.env.kibana
+.env.kibana/
+
+# IDE 설정 파일
+# Python
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# 로그 파일
+*.log
+
+# 시스템 파일
+.DS_Store
+Thumbs.db
+
+# firebase 파일
+google-services.json
+firebase-service-account-key.json
+
+# env 파일
+.env
+
+/mini-api-test-a0538c7dd495.json
+# Logs
+*.log
+
+# Local development settings
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+agents/food/food_data/
+agents/food/elasticsearch/rag/recipes/
+agents/food/elasticsearch/rag/recipes/ 
+
+docker-compose2.yml

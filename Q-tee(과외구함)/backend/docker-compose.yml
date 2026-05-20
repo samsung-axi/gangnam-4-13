@@ -1,0 +1,254 @@
+services:
+  # PostgreSQL Database
+  postgres:
+    image: postgres:15
+    container_name: qt_project_db
+    environment:
+      POSTGRES_USER: ${DB_USER:-root}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-1234}
+      POSTGRES_DB: ${DB_NAME:-qt_project_db}
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./scripts/init-schema.sql:/docker-entrypoint-initdb.d/init-schema.sql
+    networks:
+      - qt_project_network
+
+  # Redis for Math Service (Celery)
+  redis:
+    image: redis:7-alpine
+    container_name: qt_project_redis
+    ports:
+      - "6379:6379"
+    networks:
+      - qt_project_network
+
+  # Math Service
+  math-service:
+    build:
+      context: ./services/math-service
+      dockerfile: Dockerfile
+    container_name: math_service
+    environment:
+      - DATABASE_URL=postgresql://${DB_USER:-postgres}:${DB_PASSWORD:-password}@postgres:5432/${DB_NAME:-qt_project_db}
+      - REDIS_URL=redis://redis:6379/0
+      - GEMINI_API_KEY=${MATH_GEMINI_API_KEY:-${GEMINI_API_KEY}}
+      - GOOGLE_VISION_API_KEY=${GOOGLE_VISION_API_KEY}
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - AUTH_SERVICE_URL=http://auth-service:8000
+      - NOTIFICATION_SERVICE_URL=http://notification-service:8000
+      - PORT=8000
+    ports:
+      - "8001:8000"
+    depends_on:
+      - postgres
+      - redis
+      - auth-service
+      - notification-service
+    volumes:
+      - ./services/math-service:/app
+    networks:
+      - qt_project_network
+    restart: unless-stopped
+
+  # English Service
+  english-service:
+    build:
+      context: ./services/english-service
+      dockerfile: Dockerfile
+    container_name: english_service
+    environment:
+      - DATABASE_URL=postgresql://${DB_USER:-postgres}:${DB_PASSWORD:-password}@postgres:5432/${DB_NAME:-qt_project_db}
+      - REDIS_URL=redis://redis:6379/0
+      - GEMINI_API_KEY=${ENGLISH_GEMINI_API_KEY:-${GEMINI_API_KEY}}
+      - AUTH_SERVICE_URL=http://auth-service:8000
+      - AUTH_SECRET_KEY=${AUTH_SECRET_KEY:-qt_project_super_secret_key_for_jwt_tokens_change_in_production}
+      - PORT=8000
+    ports:
+      - "8002:8000"
+    depends_on:
+      - postgres
+      - redis
+    volumes:
+      - ./services/english-service:/app
+    networks:
+      - qt_project_network
+    restart: unless-stopped
+
+  # Auth Service
+  auth-service:
+    build:
+      context: ./services/auth-service
+      dockerfile: Dockerfile
+    container_name: auth_service
+    environment:
+      - DATABASE_URL=postgresql://${DB_USER:-postgres}:${DB_PASSWORD:-password}@postgres:5432/${DB_NAME:-qt_project_db}
+      - REDIS_URL=redis://redis:6379/0
+      - SECRET_KEY=${AUTH_SECRET_KEY:-qt_project_super_secret_key_for_jwt_tokens_change_in_production}
+      - PORT=8000
+      - NOTIFICATION_SERVICE_URL=http://notification-service:8000
+    ports:
+      - "8003:8000"
+    depends_on:
+      - postgres
+      - redis
+    volumes:
+      - ./services/auth-service:/app
+    networks:
+      - qt_project_network
+    restart: unless-stopped
+
+  # Korean Service
+  korean-service:
+    build:
+      context: ./services/korean-service
+      dockerfile: Dockerfile
+    container_name: korean_service
+    environment:
+      - DATABASE_URL=postgresql://${DB_USER:-postgres}:${DB_PASSWORD:-password}@postgres:5432/${DB_NAME:-qt_project_db}
+      - REDIS_URL=redis://redis:6379/0
+      - KOREAN_GEMINI_API_KEY=${KOREAN_GEMINI_API_KEY:-${GEMINI_API_KEY}}
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - AUTH_SERVICE_URL=http://auth-service:8000
+      - NOTIFICATION_SERVICE_URL=http://notification-service:8000
+      - PORT=8000
+    ports:
+      - "8004:8000"
+    depends_on:
+      - postgres
+      - redis
+      - auth-service
+      - notification-service
+    volumes:
+      - ./services/korean-service:/app
+    networks:
+      - qt_project_network
+    restart: unless-stopped
+
+  # Market Service
+  market-service:
+    build:
+      context: ./services/market-service
+      dockerfile: Dockerfile
+    container_name: market_service
+    environment:
+      - DATABASE_URL=postgresql://${DB_USER:-postgres}:${DB_PASSWORD:-password}@postgres:5432/${DB_NAME:-qt_project_db}
+      - REDIS_URL=redis://redis:6379/0
+      - KOREAN_SERVICE_URL=http://korean-service:8000
+      - MATH_SERVICE_URL=http://math-service:8000
+      - ENGLISH_SERVICE_URL=http://english-service:8000
+      - AUTH_SERVICE_URL=http://auth-service:8000
+      - PORT=8000
+    ports:
+      - "8005:8000"
+    depends_on:
+      - postgres
+      - korean-service
+      - math-service
+      - english-service
+      - auth-service
+    volumes:
+      - ./services/market-service:/app
+      - ./uploads:/app/uploads
+    networks:
+      - qt_project_network
+    restart: unless-stopped
+
+  # Notification Service
+
+  notification-service:
+    build:
+      context: ./services/notification-service
+      dockerfile: Dockerfile
+    container_name: notification_service
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - REDIS_URL=redis://redis:6379/0
+      - PORT=8000
+    ports:
+      - "8006:8000"
+    depends_on:
+      - redis
+    volumes:
+      - ./services/notification-service:/app
+    networks:
+      - qt_project_network
+    restart: unless-stopped
+
+  # Celery Worker for Math Service
+  celery-worker:
+    build:
+      context: ./services/math-service
+      dockerfile: Dockerfile.celery
+    container_name: math_celery_worker
+    environment:
+      - DATABASE_URL=postgresql://${DB_USER:-postgres}:${DB_PASSWORD:-password}@postgres:5432/${DB_NAME:-qt_project_db}
+      - REDIS_URL=redis://redis:6379/0
+      - GEMINI_API_KEY=${MATH_GEMINI_API_KEY:-${GEMINI_API_KEY}}
+      - GOOGLE_VISION_API_KEY=${GOOGLE_VISION_API_KEY}
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - AUTH_SECRET_KEY=${AUTH_SECRET_KEY:-qt_project_super_secret_key_for_jwt_tokens_change_in_production}
+      - NOTIFICATION_SERVICE_URL=http://notification-service:8000
+    depends_on:
+      - postgres
+      - redis
+      - notification-service
+    volumes:
+      - ./services/math-service:/app
+    networks:
+      - qt_project_network
+    restart: unless-stopped
+
+  # Celery Worker for Korean Service
+  korean-celery-worker:
+    build:
+      context: ./services/korean-service
+      dockerfile: Dockerfile.celery
+    container_name: korean_celery_worker
+    environment:
+      - DATABASE_URL=postgresql://${DB_USER:-postgres}:${DB_PASSWORD:-password}@postgres:5432/${DB_NAME:-qt_project_db}
+      - REDIS_URL=redis://redis:6379/0
+      - KOREAN_GEMINI_API_KEY=${KOREAN_GEMINI_API_KEY:-${GEMINI_API_KEY}}
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - AUTH_SECRET_KEY=${AUTH_SECRET_KEY:-qt_project_super_secret_key_for_jwt_tokens_change_in_production}
+      - NOTIFICATION_SERVICE_URL=http://notification-service:8000
+    depends_on:
+      - postgres
+      - redis
+      - notification-service
+    volumes:
+      - ./services/korean-service:/app
+    networks:
+      - qt_project_network
+    restart: unless-stopped
+
+  # Celery Worker for English Service
+  english-celery-worker:
+    build:
+      context: ./services/english-service
+      dockerfile: Dockerfile.celery
+    container_name: english_celery_worker
+    environment:
+      - DATABASE_URL=postgresql://${DB_USER:-postgres}:${DB_PASSWORD:-password}@postgres:5432/${DB_NAME:-qt_project_db}
+      - REDIS_URL=redis://redis:6379/0
+      - GEMINI_API_KEY=${ENGLISH_GEMINI_API_KEY:-${GEMINI_API_KEY}}
+      - AUTH_SECRET_KEY=${AUTH_SECRET_KEY:-qt_project_super_secret_key_for_jwt_tokens_change_in_production}
+    depends_on:
+      - postgres
+      - redis
+    volumes:
+      - ./services/english-service:/app
+    networks:
+      - qt_project_network
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
+
+networks:
+  qt_project_network:
+    driver: bridge

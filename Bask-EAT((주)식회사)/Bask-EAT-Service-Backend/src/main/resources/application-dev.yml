@@ -1,0 +1,15 @@
+
+
+logging:
+  level:
+    com.example.backend: DEBUG
+    org.springframework.security: DEBUG
+    org.springframework.web: DEBUG
+
+llm:
+  module:
+    base-url: http://localhost:8001
+
+firebase:
+  config:
+    file-path: firebase-service-account-key.json

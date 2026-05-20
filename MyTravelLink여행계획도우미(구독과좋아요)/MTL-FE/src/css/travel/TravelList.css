@@ -1,0 +1,246 @@
+.SJ-Travel-List {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin-top: 2%;
+  height: 93%;
+
+  background-color: white;
+}
+
+.SJ-travel-container {
+  top: 1%;
+  width: 100%;
+}
+/* 가이드리스트랑 여기가 다름 ❤️❤️❤️❤️❤️❤️ */
+/* 최신순 생성일 즐겨찾기 버튼 */
+.SJ-filter-buttons {
+  display: flex;
+  margin-bottom: 2%;
+  margin-top: 2%;
+}
+
+.SJ-filter-btn {
+  margin-left: 20px; /* 퍼센트 대신 고정값 사용 */
+  padding: 13px 15px; /* 퍼센트 대신 고정값 사용 */
+  border: 1px solid var(--color-light-gray);
+
+  background: none;
+  cursor: pointer;
+
+  color: var(--color-guide);
+  border-radius: 22px;
+  transition: all 0.3s ease;
+  font-size: 12px; /* 글자 크기 키우기 */
+  /* 여기에 고정 높이와 너비를 추가 */
+  height: 40px; /* 버튼 높이 고정 */
+  min-width: 87px; /* 최소 너비 고정 */
+}
+
+.SJ-filter-btn.active {
+  background-color: var(--color-main);
+  color: white;
+  font-weight: bold;
+  border: none;
+  /* active 상태에서도 동일한 transition 적용 */
+  transition: all 0.3s ease;
+}
+
+.SJ-search-button-container {
+  position: absolute;
+  right: 11px;
+  top: 11px;
+}
+/* 검색 아이콘 */
+.SJ-search-icon {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: var(--font-size-base);
+
+  color: var(--color-guide);
+}
+
+.SJ-search-icon:hover {
+  color: var(--color-dark-gray);
+}
+
+.SJ-travel-grid {
+  display: grid;
+  align-content: start;
+  gap: 8px;
+  padding-left: 1.5%;
+
+  width: 97%;
+  height: 100%;
+  max-height: 700px;
+
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.SJ-travel-grid::-webkit-scrollbar {
+  width: 4px;
+}
+
+.SJ-travel-grid::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.SJ-travel-grid::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  border: transparent;
+}
+
+/* 스크롤바 호버 시 */
+.SJ-travel-grid::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+/* 스크롤바 드래그 시 */
+.SJ-travel-grid::-webkit-scrollbar-thumb:active {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* 카드 전체 */
+.SJ-travel-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  border-radius: 22px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+
+  width: 96%;
+  margin-left: 2%; /* 카드 오른쪽으로 이동 */
+  background-color: white;
+}
+
+.SJ-travel-img {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 24%;
+  height: 80px;
+
+  margin: 1.5%;
+  margin-right: 4%;
+}
+
+.SJ-travel-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.SJ-card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  width: 70%;
+  height: 110px;
+}
+
+.SJ-card-title {
+  font-size: 106%;
+  font-weight: bold;
+}
+
+/* 제목 일정 날짜 전체 움직임 */
+.SJ-card-footer {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  padding-right: 16%;
+  width: 80%;
+
+  margin-top: 2%;
+} /* 여행 장소 */
+.SJ-card-period {
+  color: var(--color-guide);
+  font-size: 76%;
+}
+
+/* 카드 생성일 */
+.SJ-card-date {
+  position: absolute;
+  right: 0px;
+
+  color: var(--color-guide);
+  font-size: 12px;
+}
+
+.SJ-pin-icon {
+  position: absolute;
+  top: 1%;
+  left: 1%;
+  font-size: 23px;
+  z-index: 1005;
+}
+
+.WS-favorite-button {
+  position: absolute;
+  right: 4%;
+  top: 10%;
+  color: var(--color-main);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 20px;
+  color: none;
+  border: none;
+  background: none;
+  transition: none;
+
+  cursor: pointer;
+}
+
+.WS-favorite-button.filled {
+  color: var(--color-main);
+  right: 4%;
+  top: 10%;
+}
+/* 더보기 위치 */
+.SJ-more-button {
+  position: absolute;
+  right: 3%;
+  bottom: -30%;
+
+  width: 10%;
+  height: 100%;
+  font-size: 130%;
+  color: var(--color-dark-gray);
+  background: none;
+  border: none;
+
+  cursor: pointer;
+}
+.HG-card-content-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+.HG-travel-card-link {
+  position: relative;
+  padding-right: 30px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-left: 2%;
+  text-decoration: none;
+  color: inherit;
+}

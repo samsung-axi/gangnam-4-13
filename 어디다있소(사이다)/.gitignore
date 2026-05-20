@@ -1,0 +1,50 @@
+﻿# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.venv/
+.env
+
+# Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+.next/
+frontend/node_modules/
+frontend/.next/
+frontend/.env.local
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# Custom
+poc/bjy/old/
+backend/database/debug_html/
+
+# Data Volumes
+es_data/
+qdrant_data/
+outputs/
+nlu_debug.log
+
+# Deployment & Test Files
+deploy_*.json
+deployments*.json
+*service_status*.json
+test_deploy_status*.json
+backend_logs*.txt
+frontend_logs*.txt
+backend_error_log.json
+*sys_log.txt
+check_*.py
+inspect_*.py
+test_*.py
+verify_*.py
+*results*.txt
+repro_search.py
+debug_search.py
+score_*.txt
+test_*.txt

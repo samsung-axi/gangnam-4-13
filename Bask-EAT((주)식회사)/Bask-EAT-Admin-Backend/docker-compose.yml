@@ -1,0 +1,30 @@
+services:
+  gateway:
+    image: gateway:latest
+    container_name: gateway
+    ports:
+      - "9001:9001"
+    environment:
+      # Spring Boot 기본 설정
+      SERVER_PORT: "9001"
+      SPRING_PROFILES_ACTIVE: "prod"
+
+      # (앱에서 참조하면 사용) 내부 서비스 URL
+      ADMIN_SERVICE_URL: "http://admin-spa:80"
+      EMBED_SERVICE_URL:  "http://embed:8000"
+      SCRAPE_SERVICE_URL: "http://scrape:8420"
+    volumes:
+      # 게이트웨이 라우팅 설정 (Spring Boot는 /config/application.yml 자동 로드)
+      - ./gateway-config/application.yml:/config/application.yml:ro
+    networks:
+      - edge-net
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:9001/actuator/health || exit 1"]
+      interval: 10s
+      timeout: 3s
+      retries: 10
+
+networks:
+  edge-net:
+    external: true

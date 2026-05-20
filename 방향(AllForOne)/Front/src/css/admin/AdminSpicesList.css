@@ -1,0 +1,344 @@
+
+
+.admin-spices-container {
+    position: relative;
+    width: 1200px; /* 고정된 폭 */
+    margin: 0 auto; /* 화면 중앙 정렬 */
+    background: #EFEDED;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-top: 30px;
+}
+
+.admin-spices-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #000000;
+    padding-bottom: 10px;
+    transform: translateY(-60px);
+}
+
+.admin-spices-title {
+    font-family: 'NanumMyeongjo', serif;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.admin-spices-logo {
+    width: 180px;
+    height: 180px;
+    margin: 0 auto;
+    background-size: contain;
+}
+
+.admin-spices-filters {
+    display: grid;
+    grid-template-columns: repeat(9, auto); 
+    gap: 10px;
+    width: 60%;
+    transform: translateY(-40px);
+}
+
+.admin-spices-filter-item {
+    width: 40px;
+    height: 10px;
+    padding: 10px 20px;
+    border: 1px solid #000000;
+    border-radius: 35px;
+    font-family: 'NanumMyeongjo', serif;
+    font-size: 14px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.admin-spices-filter-item.active {
+    color: #FFFFFF;
+}
+
+.admin-spices-search-bar {
+    display: flex;
+    align-items: center;
+    background-color: #EFEDED;
+}
+
+.admin-spices-search-input {
+    padding: 10px 15px;
+    font-size: 16px;
+    border: 1px solid #000000;
+    border-radius: 25px;
+    width: 240px; /* 검색 바 너비 */
+    height: 15px;
+    background-color: #EFEDED;
+}
+
+.admin-spices-search-input:focus {
+    outline: none;
+    border-color: #FF7F43;
+    box-shadow: 0 0 5px rgba(255, 127, 67, 0.5);
+}
+
+.admin-spices-list-search-icon {
+    position: absolute;
+    right: -40px;
+    top: 50%;
+    transform: translate(-60px, -15px);
+    cursor: pointer;
+}
+
+.admin-spices-items-container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* 한 줄에 6개 */
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.admin-spices-item-card {
+    width: 200px;
+    height: 300px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    padding: 15px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.admin-spices-item-card img {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 10px;
+}
+
+.admin-spices-name {
+    font-family: 'NanumMyeongjo', serif;
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.admin-spices-divider-small {
+    width: 80%;
+    height: 1px;
+    background-color: #000000;
+    margin: 0 auto 10px auto; /* 구분선 아래 간격 */
+}
+
+.admin-spices-category {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    text-align: center;
+    color: #000000;
+    margin-top: 10px;
+}
+
+.admin-spices-pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.admin-spices-pagination-button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #EFEDED;
+    color: #000000;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.admin-spices-pagination-button.active {
+    background-color: #EFEDED;
+    color: black;
+    font-weight: bold;
+}
+
+.admin-spices-pagination-button:hover:not(.disabled) {
+    background-color: #CDC6CE;
+    color: #FFFFFF;
+}
+
+.admin-spices-pagination-button.disabled {
+    color: #A0A0A0;
+    cursor: not-allowed;
+}
+
+
+.admin-spices-item-card .admin-spices-name,
+.admin-spices-item-card .admin-spices-category {
+    transition: opacity 0.3s ease;
+}
+
+.admin-spices-item-card.hover img,
+.admin-spices-item-card.hover .admin-spices-name,
+.admin-spices-item-card.hover .admin-spices-category {
+    opacity: 0;
+}
+
+.admin-spices-description {
+    font-size: 16px;
+    text-align: center;
+    padding: 10px;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.admin-spices-item-card.hover .admin-spices-description {
+    display: block;
+    opacity: 1;
+}
+
+.admin-spices-item-select-checkbox {
+    z-index: 10;
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+    opacity: 0;
+    
+}
+
+.admin-spices-item-select-checkbox + label {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: #ffffff;
+    border: 1px solid #000; 
+    border-radius: 50%;     
+    cursor: pointer;         
+    transition: background-color 0.3s ease;
+    translate: -80px -140px;
+}
+
+.admin-spices-item-select-checkbox:checked + label {
+    background-color: #1a87e0; /* 선택 시 배경색 */
+    border-color: #000;     /* 선택 시 테두리 색상 */
+}
+
+.admin-spices-modal-container-delete {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px; /* 모달 창의 고정된 너비 */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* 그림자 효과 */
+    font-family: Arial, sans-serif;
+    position: relative;
+    text-align: center;
+    height: 200px;
+}
+
+.admin-spices-modal-container-success {
+    background-color: #EFEDED;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px; /* 모달 창의 고정된 너비 */
+    font-family: Arial, sans-serif;
+    position: relative;
+    text-align: center;
+}
+
+.admin-spices-modal-title {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.admin-spices-modal-title-delete {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 40px;
+    margin-top: 20px;
+}
+
+.admin-spices-image-preview {
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    border-radius: 5px;
+}
+
+.admin-spices-file-input {
+    display: none;
+}
+
+
+.admin-spices-placeholder {
+    font-size: 20px;
+    color: #aaa;
+    font-weight: bold;
+}
+
+/* 성공 메시지 */
+.admin-spices-success-message {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* 모달 액션 버튼 */
+.admin-spices-modal-actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+
+}
+
+.admin-spices-save-button,
+.admin-spices-cancel-button,
+.admin-spices-cancel-button-success {
+    padding: 10px 20px;
+    border: none;
+    border: 1PX solid black;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.admin-spices-save-button {
+    background-color: #fff;
+    color: black;
+}
+
+.admin-spices-cancel-button {
+    background-color: #fff;
+    color: black;
+}
+
+.admin-spices-confirm-button {
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    background-color: #CDC6CE;
+    color: black;
+}
+
+/* Edit 아이콘 버튼 */
+.admin-spices-edit-button {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+}
+
+
+
+.admin-spices-edit-button:hover {
+    color: #007bff; /* 호버 시 색상 변경 */
+}

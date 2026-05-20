@@ -1,0 +1,428 @@
+/* 클릭 가능한 요소들에 대한 포인터 커서 설정 */
+button,
+a,
+[role="button"],
+.HG-TravelInfo-Back-Btn,
+.HG-TravelInfo-Title-Edit-text,
+.HG-TravelInfo-aiselect-btn,
+.HG-TravelInfo-Btn,
+.HG-TravelInfo-Select-Btn,
+.HG-travelinfo-content-frame-url,
+.HG-TravelInfo-Content-Frame-Place-Type,
+.HG-TravelInfo-Content-Frame-Place-Selected-Type,
+.HG-trevelinfo-content-frame-select-frame,
+.HG-trevelinfo-content-frame-select-intro,
+.HG-trevelinfo-content-frame-select-name,
+.HG-trevelinfo-content-frame-select {
+  cursor: pointer;
+}
+
+.HG-TravelInfo-Container {
+  background-color: white;
+  height: 100%;
+}
+
+.HG-TravelInfo-Header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 2% 0% 2% 0%;
+
+  border-bottom: 1px solid var(--color-light-gray);
+}
+
+.WS-TravelInfo-Header-Left {
+  display: flex;
+  align-items: center;
+}
+
+.WS-TravelInfo-Header-Left-Contents {
+  margin-left: 50px;
+}
+
+.WS-TravelInfo-Header-Left-Back-Btn {
+  position: absolute;
+  left: 2%;
+
+  cursor: pointer;
+}
+
+.WS-TravelInfo-Header-Left-Back-Btn-Icon {
+  width: 40px;
+  height: 25px;
+}
+
+.WS-TravelInfo-Travel-Days {
+  border: none;
+  background: none;
+  font-size: var(--font-size-sm);
+  font-weight: bold;
+}
+
+.HG-TravelInfo-Title-Edit-Container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.HG-TravelInfo-Title {
+  font-size: var(--font-size-xl);
+  font-weight: bold;
+}
+
+.HG-TravelInfo-Title-Edit-text {
+  font-size: var(--font-size-sm);
+  font-weight: bold;
+  color: var(--color-guide);
+  cursor: pointer;
+}
+
+.WS-TravelInfo-Header-Right {
+  display: inline-flex;
+  align-items: center;
+  justify-content: right;
+  width: 100px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.HG-TravelInfo-Select-Btn {
+  display: flex;
+  align-items: center;
+
+  color: var(--color-guide);
+  font-size: var(--font-size-base);
+  font-weight: bold;
+
+  cursor: pointer;
+}
+
+.HG-TravelInfo-Select-Cnt {
+  margin-bottom: auto;
+  transform: translateX(-10px);
+
+  padding: 6% 10% 5% 10%;
+
+  border-radius: var(--border-radius-full);
+  background-color: var(--color-main);
+  font-size: var(--font-size-sm);
+  color: white;
+}
+
+.HG-TravelInfo-Body {
+  align-content: start;
+}
+
+.HG-travelinfo-Title-list {
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 2%;
+  display: flex;
+
+  gap: 10px;
+}
+
+.HG-travelinfo-content-frame-url {
+  font-size: var(--font-size-lg);
+  color: var(--color-dark-gray);
+}
+
+.HG-underline {
+  border-bottom: 1px solid var(--color-main);
+  cursor: pointer;
+}
+
+.HG-TravelInfo-Content-Blank {
+  height: 44px;
+  transition: none;
+}
+
+.HG-TravelInfo-Content-Title {
+  margin: 10px 20px;
+
+  padding: 5px;
+
+  border-radius: var(--border-radius-base);
+  background-color: var(--color-light-gray);
+  font-size: var(--font-size-xs);
+  font-weight: bold;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  transition: none;
+
+}
+
+.HG-TravelInfo-Type-List {
+  display: flex;
+
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 1%;
+
+  gap: 10px;
+}
+
+.HG-TravelInfo-Selected-Type {
+  padding: 8px 16px;
+
+  border-radius: var(--border-radius-full);
+  background-color: var(--color-main-hover);
+  border: 2px solid var(--color-main-hover);
+
+  color: white;
+  font-weight: bold;
+
+  cursor: pointer;
+}
+
+.HG-TravelInfo-Unselected-Type {
+
+  padding: 8px 16px;
+
+  border-radius: var(--border-radius-full);
+  background: white;
+  border: 2px solid var(--color-light-gray);
+
+  color: var(--color-dark-gray);
+
+  cursor: pointer;
+}
+
+.WS-TravelInfo-aiselect-btn-Container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  position: relative;
+
+  margin-left: 5%;
+  margin-right: 5%;
+
+  height: 50px;
+  max-height: 70px;
+
+  border-bottom: 1px solid var(--color-dark-gray);
+}
+
+.HG-TravelInfo-aiselect-btn-ai-icon-selected {
+  padding: 3px 10px;
+  display: flex;
+  align-items: center;
+  border: 2px solid var(--color-light-gray);
+  border-radius: var(--border-radius-full);
+
+  cursor: pointer;
+}
+
+.HG-TravelInfo-aiselect-btn-ai-icon-selected:hover {
+  padding: 3px 10px;
+  display: flex;
+  align-items: center;
+  border: 2px solid var(--color-main-hover);
+  border-radius: var(--border-radius-full);
+
+  scale: 1.05;
+}
+
+.HG-TravelInfo-aiselect-btn-ai-icon {
+  width: 30px;
+  height: 30px;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: scaleY(0);
+  }
+
+  to {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+
+.WS-TravelInfo-btn-select-text-Container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+
+  padding: 5px 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+
+  border-radius: 0 0 var(--border-radius-lg) var(--border-radius-lg);
+  background-color: var(--color-light-gray);
+
+  animation: slideDown 0.3s ease-out forwards;
+  transform-origin: top;
+  /* 위쪽을 기준으로 scale 변환 */
+}
+
+.WS-TravelInfo-btn-select-text-bold {
+  font-size: var(--font-size-xs);
+  color: var(--color-main);
+  font-weight: bold;
+}
+
+.WS-TravelInfo-btn-select-text {
+  font-size: var(--font-size-xs);
+  color: var(--color-main);
+
+}
+
+.WS-TravelInfo-btn-select-all {
+  font-size: var(--font-size-sm);
+  font-weight: bold;
+  color: var(--color-dark-gray);
+  cursor: pointer;
+
+  position: absolute;
+  bottom: 10px;
+  right: 0;
+
+  border: none;
+  background-color: none;
+}
+
+.HG-TravelInfo-Content-Frame-Place-Slider {
+  margin-top: 2%;
+
+
+  height: 410px;
+
+
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.HG-TravelInfo-Content-Frame-Place-Slider::-webkit-scrollbar {
+  width: 4px;
+}
+
+.HG-TravelInfo-Content-Frame-Place-Slider::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.HG-TravelInfo-Content-Frame-Place-Slider::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  border: transparent;
+}
+
+/* 스크롤바 호버 시 */
+.HG-TravelInfo-Content-Frame-Place-Slider::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+/* 스크롤바 드래그 시 */
+.HG-TravelInfo-Content-Frame-Place-Slider::-webkit-scrollbar-thumb:active {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.WS-carousel-item {
+  margin-bottom: 2%;
+
+  height: 300px;
+  border-radius: var(--border-radius-base);
+
+  padding: 1% 3% 6% 3%;
+}
+
+.HG-select-place {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.HG-trevelinfo-select-Container {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+.HG-trevelinfo-content-frame-select {
+  width: 20px;
+  height: 20px;
+}
+
+.HG-trevelinfo-content-frame-select-name {
+  margin-top: 3px;
+  margin-left: -7px;
+  font-size: var(--font-size-lg);
+  font-weight: bold;
+  max-width: 300px;
+}
+
+.HG-trevelinfo-content-frame-select-intro {
+  margin-left: 10px;
+  margin-top: 5px;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-sm);
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 200px;
+}
+
+.slide-content {
+  position: relative;
+  height: 250px;
+}
+
+.slick-slider {
+  margin-top: 10px;
+}
+
+.HG-slide-content-image {
+  display: block;
+  object-fit: cover;
+  object-position: center;
+
+  border-radius: var(--border-radius-base);
+  width: 100%;
+  height: 100%;
+}
+
+.HG-TravelInfo-map-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: var(--border-radius-base);
+}
+
+.WS-TravelInfo-Description {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 5px;
+
+  font-size: var(--font-size-sm);
+}
+
+.WS-TravelInfo-Address {
+  font-size: var(--font-size-sm);
+}
+
+/* 각 도트 버튼 스타일링 */
+.slick-dots li button:before {
+  font-size: var(--font-size-sm) !important;
+  /* 도트 크기 조정 */
+  color: var(--color-dark-gray) !important;
+  /* 도트 색상 */
+  opacity: 0.2 !important;
+  /* 비활성 도트의 투명도 */
+}
+
+/* 활성화된 도트 스타일링 */
+.slick-dots li.slick-active button:before {
+  opacity: 1 !important;
+  /* 활성 도트의 투명도 */
+  color: var(--color-main-hover) !important;
+  /* 활성 도트 색상 */
+}
+
+/* ------------------------------------------------------------------------------------- */

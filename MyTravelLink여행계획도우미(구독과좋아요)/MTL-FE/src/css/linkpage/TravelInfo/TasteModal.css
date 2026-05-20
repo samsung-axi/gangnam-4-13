@@ -1,0 +1,240 @@
+.HG-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+}
+
+.HG-modal-content-taste {
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+
+  width: 400px;
+  height: 390px;
+
+  background: white;
+  border-radius: var(--border-radius-xl);
+  min-width: 300px;
+}
+
+.HG-modal-content-taste-container {
+  margin-top: -5px;
+}
+
+.HG-modal-title {
+  margin-left: 50px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: var(--font-size-xl);
+  font-weight: bold;
+}
+
+.HG-modal-content {
+  margin-top: -50%;
+  padding-left: 20px;
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+  margin-left: 20px;
+  margin-right: 20px;
+  gap: 20px;
+
+  width: 100%;
+  height: 300px;
+
+  background: white;
+  border-radius: 8px;
+  min-width: 300px;
+}
+
+.HG-TravelInfo-Edit-Frame {
+  padding-left: 50px;
+  padding-right: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.HG-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.HG-modal-input-days {
+  margin-left: 15px;
+  width: 40px;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding-right: 35px;
+  /* 초기화 버튼을 위한 공간 */
+  font-size: var(--font-size-xl);
+}
+
+.HG-modal-input {
+  margin-left: 30px;
+  width: 150px;
+  padding: 8px;
+  border: none;
+  border-bottom: 1px solid #48B569;
+  padding-right: 35px;
+  /* 초기화 버튼을 위한 공간 */
+  font-size: var(--font-size-base);
+}
+
+.HG-reset-button {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.HG-reset-button img {
+  width: 16px;
+  height: 16px;
+}
+
+.HG-modal-buttons {
+  margin-top: 50px;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: none;
+  border-top: 1px solid #ddd;
+  margin-top: 20px;
+}
+
+.HG-modal-button {
+  width: 100%;
+  flex: 1;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  font-size: var(--font-size-base);
+  font-weight: bold;
+}
+
+.HG-modal-button-submit {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex: 1;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  border-left: 2px solid var(--color-light-gray);
+  color: var(--color-main);
+  cursor: pointer;
+  font-size: var(--font-size-base);
+  font-weight: bold;
+}
+
+.HG-modal-title-guidebook {
+  margin-left: 50px;
+  margin-top: 50px;
+  font-size: var(--font-size-xl);
+  font-weight: bold;
+}
+
+.HG-modal-description-guidebook {
+  margin-bottom: 10px;
+  text-align: center;
+  font-size: var(--font-size-base);
+  color: var(--color-guide);
+}
+
+.HG-modal-input-guidebook {
+  width: 100%;
+  padding: 8px;
+  border: none;
+  border-bottom: 1px solid var(--color-dark-gray);
+  padding-right: 35px;
+  /* 초기화 버튼을 위한 공간 */
+  font-size: var(--font-size-base);
+}
+
+
+.HG-modal-title-taste {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-black);
+  font-size: var(--font-size-xl);
+  font-weight: bold;
+}
+
+.HG-modal-description-taste {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: var(--font-size-sm);
+  font-weight: bold;
+  color: var(--color-guide);
+}
+
+
+.HG-input-wrapper-taste {
+  margin-top: 30px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+/* 라디오 버튼 숨기기 */
+.HG-taste-radio-input {
+  display: none;
+}
+
+/* 라벨 기본 스타일 */
+.HG-taste-radio-label {
+  display: inline-block;
+  padding: 15px 40px;
+  border-radius: var(--border-radius-xl);
+  background-color: var(--color-light-gray);
+  color: var(--color-black);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: var(--font-size-base);
+  font-weight: bold;
+}
+
+/* 선택된 라디오 버튼의 라벨 스타일 */
+.HG-taste-radio-input:checked+.HG-taste-radio-label {
+  background-color: var(--color-main);
+  color: var(--color-white);
+}
+
+.HG-modal-button-submit-checked {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+  background-color: var(--color-main);
+  color: var(--color-white);
+  font-weight: bold;
+  border-radius: 0px 0px var(--border-radius-xl) 0px;
+}

@@ -1,0 +1,10 @@
+.main-content {
+  flex: 0 1;
+  width: 100%;
+  max-width: inherit;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center; /* 가로 중앙 정렬 */
+ 
+}
+

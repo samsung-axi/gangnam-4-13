@@ -1,0 +1,186 @@
+import * as THREE from "three";
+
+export type StepBrickInfo = {
+    partName: string;
+    color: string;
+    count: number;
+};
+
+export type LdrStepData = {
+    stepTexts: string[];
+    stepOnlyTexts: string[]; // [NEW] 해당 스텝의 브릭만 포함
+    bounds: THREE.Box3 | null;
+    stepBricks: StepBrickInfo[][];
+    sortedFullText: string; // 스텝이 Y 기준으로 정렬된 전체 LDR 텍스트 (0 STEP 포함)
+};
+
+export function parseAndProcessSteps(ldrText: string): LdrStepData {
+    const lines = ldrText.replace(/\r\n/g, "\n").split("\n");
+
+    // 1. 전체 Bounds 계산 및 Step 분리
+    let minX = Infinity, minY = Infinity, minZ = Infinity;
+    let maxX = -Infinity, maxY = -Infinity, maxZ = -Infinity;
+
+    type Segment = {
+        lines: string[];
+        avgY: number;
+        bricks: Map<string, StepBrickInfo>;
+    };
+
+    const segments: Segment[] = [];
+    let curLines: string[] = [];
+    let curBricks = new Map<string, StepBrickInfo>();
+    let curYSum = 0;
+    let curCount = 0;
+
+    const flush = () => {
+        const avgY = curCount > 0 ? curYSum / curCount : -Infinity;
+        segments.push({ lines: curLines, avgY, bricks: new Map(curBricks) });
+        curLines = [];
+        curBricks.clear();
+        curYSum = 0;
+        curCount = 0;
+    };
+
+    for (const raw of lines) {
+        const line = raw.trim();
+
+        // Step 구분
+        if (/^0\s+(STEP|ROTSTEP)\b/i.test(line)) {
+            flush();
+            continue;
+        }
+
+        // 부품 라인 파싱 (Type 1)
+        if (line.startsWith('1 ')) {
+            const parts = line.split(/\s+/);
+            if (parts.length >= 15) {
+                const color = parts[1];
+                const x = parseFloat(parts[2]);
+                const y = parseFloat(parts[3]);
+                const z = parseFloat(parts[4]);
+                const partName = parts[parts.length - 1].toLowerCase().replace('.dat', '');
+
+                if (!isNaN(x) && !isNaN(y) && !isNaN(z)) {
+                    minX = Math.min(minX, x); minY = Math.min(minY, y); minZ = Math.min(minZ, z);
+                    maxX = Math.max(maxX, x); maxY = Math.max(maxY, y); maxZ = Math.max(maxZ, z);
+
+                    curYSum += y;
+                    curCount++;
+
+                    const key = `${partName}|${color}`;
+                    if (curBricks.has(key)) {
+                        curBricks.get(key)!.count++;
+                    } else {
+                        curBricks.set(key, { partName, color, count: 1 });
+                    }
+                }
+            }
+        }
+
+        curLines.push(raw);
+    }
+    flush();
+
+    // 2. 정렬 (AI 엔진 생성 모델은 Y가 위쪽으로 증가함: 0이 바닥)
+    // 따라서 아래에서부터 위로 쌓으려면 Y 오름차순(Ascending) 정렬이 필요합니다.
+    let header = segments[0] || { lines: [], avgY: -Infinity, bricks: new Map() };
+    let body = segments.slice(1);
+
+    const headerHasGeometry = header.lines.some((line) => line.trim().startsWith("1 "));
+    if (headerHasGeometry) {
+        body = segments;
+        header = { lines: [], avgY: -Infinity, bricks: new Map() };
+    }
+
+    body.sort((a, b) => {
+        if (a.avgY === -Infinity && b.avgY === -Infinity) return 0;
+        if (a.avgY === -Infinity) return 1;
+        if (b.avgY === -Infinity) return -1;
+        return b.avgY - a.avgY;
+    });
+
+    // Merge steps by layer
+    const LAYER_EPS = 8;
+    const merged: Segment[] = [];
+    let curLinesMerge: string[] = [];
+    let curBricksMerge = new Map<string, StepBrickInfo>();
+    let curY = Number.NEGATIVE_INFINITY;
+
+    for (const seg of body) {
+        if (curY === Number.NEGATIVE_INFINITY || Math.abs(seg.avgY - curY) < LAYER_EPS) {
+            curLinesMerge = curLinesMerge.concat(seg.lines);
+
+            // Merge brick counts
+            seg.bricks.forEach((info, key) => {
+                if (curBricksMerge.has(key)) {
+                    curBricksMerge.get(key)!.count += info.count;
+                } else {
+                    curBricksMerge.set(key, { ...info });
+                }
+            });
+
+            if (curY === Number.NEGATIVE_INFINITY) curY = seg.avgY;
+        } else {
+            merged.push({ lines: curLinesMerge, avgY: curY, bricks: new Map(curBricksMerge) });
+            curLinesMerge = seg.lines;
+            curBricksMerge = new Map(seg.bricks);
+            curY = seg.avgY;
+        }
+    }
+    if (curLinesMerge.length) merged.push({ lines: curLinesMerge, avgY: curY, bricks: new Map(curBricksMerge) });
+
+    if (merged.length > 0 && header.lines.length > 0) {
+        merged[0].lines = [...header.lines, ...merged[0].lines];
+    }
+    const sortedSegments = [...merged];
+    if (sortedSegments.length === 0 && header.lines.length > 0) {
+        sortedSegments.push(header); // Fallback for header-only file
+    }
+
+    // 3. 누적 및 개별 텍스트 및 브릭 정보 생성
+    const stepTexts: string[] = [];
+    const stepOnlyTexts: string[] = [];
+    const stepBricks: StepBrickInfo[][] = [];
+    let acc: string[] = [];
+
+    const headerText = header.lines.join("\n");
+
+    // 4. 정렬된 전체 LDR 텍스트 생성 (0 STEP 마커 포함)
+    const sortedParts: string[] = [];
+    if (header.lines.length > 0) {
+        sortedParts.push(header.lines.join("\n"));
+    }
+
+    for (const seg of sortedSegments) {
+        acc = acc.concat(seg.lines);
+        stepTexts.push(acc.join("\n"));
+
+        // 개별 스텝 텍스트 (헤더 + 해당 세그먼트)
+        stepOnlyTexts.push(headerText + (headerText ? "\n" : "") + seg.lines.join("\n"));
+
+        // Each entry in stepBricks corresponds to the bricks *newly added* in that step
+        stepBricks.push(Array.from(seg.bricks.values()));
+
+        // 정렬된 전체 텍스트에 추가
+        sortedParts.push(seg.lines.join("\n"));
+        sortedParts.push("0 STEP");
+    }
+    const sortedFullText = sortedParts.join("\n");
+
+    // Bounds 생성
+    let bounds: THREE.Box3 | null = null;
+    if (minX !== Infinity) {
+        bounds = new THREE.Box3(
+            new THREE.Vector3(minX, minY, minZ),
+            new THREE.Vector3(maxX, maxY, maxZ)
+        );
+    }
+
+    return { stepTexts, stepOnlyTexts, bounds, stepBricks, sortedFullText };
+}
+
+export function buildCumulativeStepTexts(ldrText: string): string[] {
+    const result = parseAndProcessSteps(ldrText);
+    return result.stepTexts;
+}

@@ -1,0 +1,71 @@
+server:
+    port: 8080
+
+spring:
+    autoconfigure:
+        exclude:
+            - org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+            - org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration
+    application:
+        name: my-kotlin-backend
+    profiles:
+        active: dev
+
+    web:
+        resources:
+            static-locations: classpath:/static/,classpath:/public/,file:root/
+
+    security:
+        oauth2:
+            client:
+                registration:
+                    google:
+                        client-id: 579953258832-vpcoohlk9t1j9endh046b3713nnk7r9r.apps.googleusercontent.com
+                        client-secret: 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
+                        scope:
+                            - email
+                            - profile
+                provider:
+                    google:
+                        authorization-uri: https://accounts.google.com/o/oauth2/auth
+                        token-uri: https://oauth2.googleapis.com/token
+                        user-info-uri: https://www.googleapis.com/oauth2/v2/userinfo
+
+firebase:
+    config:
+        file-path: firebase-service-account-key.json
+
+jwt:
+    secret: IoLeQi+jTsOsthavBNGg3THncHFgnqD8Zq9JacNHDMHuZK3j5fv34a2j6wffEsu5NRpgWQb5DHogqiCwY3cj7g==
+    expiration: 86400000 # 24 hours
+
+llm:
+    module:
+        base-url: http://localhost:8001
+        timeout:
+            connect: 5000
+            read: 30000
+        polling:
+            interval: 2000 # 2 seconds
+            max-attempts: 150 # 5 minutes maximum
+
+
+logging:
+    level:
+        com.bask_eat.business_backend: INFO
+        org.springframework.security: INFO
+        org.springframework.web: INFO
+    pattern:
+        console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
+        file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+    file:
+        name: logs/application.log
+
+management:
+    endpoints:
+        web:
+            exposure:
+                include: health,info,metrics
+    endpoint:
+        health:
+            show-details: always

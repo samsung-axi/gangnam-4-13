@@ -1,0 +1,76 @@
+package kr.co.himedia.entity;
+
+import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.AccessLevel;
+import lombok.Builder;
+import lombok.AllArgsConstructor;
+
+import java.time.LocalDateTime;
+import java.util.UUID;
+
+/**
+ * 차량 고장 코드(DTC)의 감지 및 조치 이력을 관리하는 엔티티입니다.
+ */
+@Entity
+@Table(name = "dtc_history")
+@Getter
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+public class DtcHistory {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "dtc_id")
+    private UUID dtcId;
+
+    @Column(name = "vehicles_id", nullable = false)
+    private UUID vehiclesId;
+
+    @Column(name = "dtc_code", nullable = false)
+    private String dtcCode;
+
+    @Column(name = "description")
+    private String description;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "dtc_type")
+    private DtcType dtcType;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "status")
+    private DtcStatus status;
+
+    @Column(name = "severity")
+    private String severity;
+
+    @Column(name = "rag_guide", columnDefinition = "TEXT")
+    private String ragGuide;
+
+    @Column(name = "discovered_at")
+    private LocalDateTime discoveredAt;
+
+    @Column(name = "resolved_at")
+    private LocalDateTime resolvedAt;
+
+    public DtcHistory(UUID vehiclesId, String dtcCode, String description, String ragGuide, DtcType dtcType,
+            DtcStatus status) {
+        this.vehiclesId = vehiclesId;
+        this.dtcCode = dtcCode;
+        this.description = description;
+        this.ragGuide = ragGuide;
+        this.dtcType = dtcType;
+        this.status = status;
+        this.discoveredAt = LocalDateTime.now();
+    }
+
+    public enum DtcType {
+        STORED, PENDING, PERMANENT, FREEZE_FRAME
+    }
+
+    public enum DtcStatus {
+        ACTIVE, RESOLVED, CLEARED, PENDING, STORED
+    }
+}

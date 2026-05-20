@@ -1,0 +1,123 @@
+.plan_member_container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 50px auto;
+  padding: 0 20px;
+  min-height: 100vh;
+}
+
+.title {
+  font-size: var(--font-size-2);
+  font-weight: var(--bold);
+  color: var(--text-main);
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.plan_grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.plan_card {
+  background-color: white;
+  border-radius: var(--border-radius-4);
+  padding: 20px;
+  box-shadow: var(--shadow-1);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 200px;
+}
+
+.plan_card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+}
+
+.plan_info h2 {
+  font-size: var(--font-size-4);
+  font-weight: var(--bold);
+  color: var(--text-main);
+  margin-bottom: 10px;
+}
+
+.location {
+  font-size: var(--font-size-5);
+  color: var(--text-sub);
+  margin-bottom: 8px;
+}
+
+.date {
+  font-size: var(--font-size-5);
+  color: var(--primary-color);
+  font-weight: var(--semibold);
+}
+
+.created_at {
+  font-size: var(--font-size-6);
+  color: var(--text-sub);
+  margin-top: 15px;
+}
+
+.loading_container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.loading_spinner {
+  width: 50px;
+  height: 50px;
+  background-image: url(/public/images/loading_circle_arrow.png);
+  background-size: cover;
+  background-position: center;
+  animation: spin 1s linear infinite;
+  margin-top: 50%;
+}
+
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* 새로운 스타일 추가 */
+.empty_plans {
+  text-align: center;
+  padding: 40px;
+  color: var(--text-sub);
+  font-size: var(--font-size-4);
+}
+
+.plan_actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.plan_actions button {
+  padding: 5px 10px;
+  border-radius: var(--border-radius-2);
+  font-size: var(--font-size-6);
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.delete_btn {
+  background-color: var(--error-color);
+  border: none;
+}
+
+.edit_btn:hover,
+.delete_btn:hover {
+  opacity: 0.9;
+} 

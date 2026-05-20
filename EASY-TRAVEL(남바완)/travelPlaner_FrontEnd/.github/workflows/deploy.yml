@@ -1,0 +1,118 @@
+name: CI/CD to AWS ECR and EC2
+
+on:
+  workflow_run:
+    workflows: Docker image build Test
+    types:
+      - completed
+
+jobs:
+  build:
+    name: Build Frontend
+    runs-on: ubuntu-latest
+
+    steps:
+      # GitHub Actions 변수들을 환경 변수로 등록
+      - name: Set up environment variables
+        run: |
+          echo "환경 변수를 설정합니다."
+          echo "AWS_REGION=${{ secrets.AWS_REGION }}" >> $GITHUB_ENV
+          echo "AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }}" >> $GITHUB_ENV
+          echo "AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }}" >> $GITHUB_ENV
+          echo "환경 변수 설정완료."
+
+      # 체크아웃 / 리포지 상위 디렉토리로 자동 이동됨.
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # AWS ECR 퍼블릭 로그인
+      - name: Login to Amazon ECR Public
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        run: |
+          aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws
+
+      # Docker 이미지 빌드
+      - name: Build Docker image
+        run: |
+          docker build -t ${{ secrets.ECR_REPOSITORY_URI }}/frontend:latest .
+      # Docker 이미지 푸시
+      - name: Push Docker image to ECR
+        run: |
+          docker push ${{ secrets.ECR_REPOSITORY_URI }}/frontend:latest
+
+  deploy:
+    name: Deploy to EC2
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Set up environment variables
+        run: |
+          echo "환경 변수를 설정합니다."
+          echo "AWS_REGION=${{ secrets.AWS_REGION }}" >> $GITHUB_ENV
+          echo "AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }}" >> $GITHUB_ENV
+          echo "AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }}" >> $GITHUB_ENV
+          echo "환경 변수 설정완료."
+
+      # EC2로 배포
+      - name: Deploy to EC2
+        uses: appleboy/ssh-action@v0.1.7 # ssh를 이용하는 오픈소스
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USER }}
+          key: ${{ secrets.EC2_PRIVATE_KEY }}
+          port: 22
+          # appleboy 원격 쉘에 github runner환경의 환경변수 전달
+          envs: AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY
+          script: |
+            set -e  # 스크립트 실패 시 중단
+
+            echo "Amazon ECR 퍼블릭에 로그인 중입니다..."
+            aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws
+
+            echo "'frontend' 컨테이너가 존재하는지 확인 중입니다..."
+            if docker ps -a --filter "name=frontend" --format '{{.Names}}' | grep -w frontend; then
+              echo "'frontend' 컨테이너가 실행 중입니다. 중지 및 제거합니다..."
+              docker stop frontend
+              docker rm frontend
+            else
+              echo "'frontend' 컨테이너가 존재하지 않습니다. 중지 및 제거 단계를 건너뜁니다."
+
+            echo "기존 Docker 이미지를 정리 중입니다..."
+            existing_images=$(docker images --filter "reference=${{ secrets.ECR_REPOSITORY_URL }}/frontend:latest" --format "{{.ID}}")
+            if [ ! -z "$existing_images" ]; then
+              echo "기존 이미지를 삭제합니다..."
+              docker rmi -f $existing_images
+            else
+              echo "삭제할 기존 이미지가 없습니다."
+            fi
+
+            fi
+            echo "Amazon ECR에서 최신 이미지를 가져오는 중입니다..."
+            docker pull ${{ secrets.ECR_REPOSITORY_URI }}/frontend:latest
+
+            echo "AWS SSM에서 환경 변수를 가져와 .env 파일 생성 중입니다..."
+            aws ssm get-parameters-by-path \
+              --path "/frontend/" \
+              --with-decryption \
+              --region ${{ secrets.AWS_REGION }} \
+              --query "Parameters[*].[Name,Value]" \
+              --output text | while read -r name value; do
+              echo "${name##*/}=$value" >> .env
+            done
+
+            echo "새 컨테이너를 시작합니다..."
+            docker run -d --name frontend -p 3000:3000 --env-file .env ${{ secrets.ECR_REPOSITORY_URI }}/frontend:latest
+            echo "배포가 성공적으로 완료되었습니다."
+  # discord_alarm:
+  #   name: Discord Alarm
+  #   needs: deploy
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Send Discord message
+  #       uses: tsickert/discord-webhook@v5.3.0
+  #       with:
+  # url: ${{ secrets.DISCORD_WEB_HOOK_URL }}
+  #         content: "😊 프론트엔드 배포가 완료되었습니다."

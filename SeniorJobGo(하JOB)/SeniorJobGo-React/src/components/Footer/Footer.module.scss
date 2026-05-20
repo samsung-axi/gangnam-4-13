@@ -1,0 +1,20 @@
+@use '@assets/styles/_variables' as *;
+
+.footer {
+  width: 100%;
+  padding: 2rem 0;
+  border-top: 1px solid #eee;
+  
+  &Content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    text-align: center;
+    
+    p {
+      font-size: $font-size-sm;
+      line-height: 1.5;
+      color: $secondary-text-color;
+    }
+  }
+}

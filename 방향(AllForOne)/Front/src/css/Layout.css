@@ -1,0 +1,18 @@
+.layout-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.layout-content-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-bottom: 80px; /* Footer 높이만큼 패딩을 추가 */
+}
+
+.layout-main {
+    flex: 1;
+    padding: 20px;  /* 필요에 따라 조절 */
+}

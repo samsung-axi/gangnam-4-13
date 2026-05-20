@@ -1,0 +1,93 @@
+name: Python API Deploy
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build_and_push:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.modified, 'backend/python/') || contains(github.event.head_commit.added, 'backend/python/') || contains(github.event.head_commit.message, 'python')
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+        
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+        
+      - name: Build and push Python API
+        run: |
+          echo "🔨 Python API 이미지 빌드 중..."
+          docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/mozara-python-api:latest ./backend/python
+          docker push ${{ secrets.DOCKERHUB_USERNAME }}/mozara-python-api:latest
+          echo "✅ Python API 이미지 빌드 및 푸시 완료"
+
+  deploy:
+    needs: build_and_push
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Deploy Python API to Runpod Pod
+        run: |
+          echo "🚀 Runpod Pod에 Python API 배포 중..."
+          
+          # SSH 키 설정
+          mkdir -p ~/.ssh
+          # Secret으로 저장된 Private Key를 파일로 저장
+          echo "${{ secrets.RUNPOD_SSH_KEY }}" | tr -d '\r' > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          # Runpod 호스트 키를 known_hosts에 추가하여 연결 시 확인 절차 자동화
+          ssh-keyscan -H ssh.runpod.io >> ~/.ssh/known_hosts
+          
+          # 1. SSH 연결 테스트 (PTY 완전 비활성화)
+          echo "🔍 SSH 연결 테스트 중..."
+          ssh -o RequestTTY=no -o StrictHostKeyChecking=no -o ConnectTimeout=10 -i ~/.ssh/id_rsa ${{ secrets.RUNPOD_POD_ID }}-6441140b@ssh.runpod.io "echo 'SSH 연결 성공!'" || {
+            echo "❌ SSH 연결 실패"
+            exit 1
+          }
+          echo "✅ SSH 연결 성공!"
+          
+          # 2. Pod에서 새 이미지 pull 및 재시작
+          SSH_USER_HOST="${{ secrets.RUNPOD_POD_ID }}-6441140b@ssh.runpod.io"
+          DOCKER_IMAGE="${{ secrets.DOCKERHUB_USERNAME }}/mozara-python-api:latest"
+          
+          DEPLOY_COMMAND="
+            echo '🐳 기존 컨테이너 정리 중...' && \
+            docker stop mozara-python || true && \
+            docker rm mozara-python || true && \
+            echo '📥 새 Docker 이미지 pull 중...' && \
+            docker pull ${DOCKER_IMAGE} && \
+            echo '🚀 새 컨테이너 실행 중...' && \
+            docker run -d --name mozara-python \
+              -p 8000:8000 \
+              -e GEMINI_API_KEY_1='${{ secrets.GEMINI_API_KEY_1 }}' \
+              -e GEMINI_API_KEY='${{ secrets.GEMINI_API_KEY }}' \
+              -e YOUTUBE_API_KEY='${{ secrets.YOUTUBE_API_KEY }}' \
+              -e PINECONE_API_KEY='${{ secrets.PINECONE_API_KEY }}' \
+              -e PINECONE_INDEX_NAME1='${{ secrets.PINECONE_INDEX_NAME1 }}' \
+              -e PINECONE_INDEX_NAME2='${{ secrets.PINECONE_INDEX_NAME2 }}' \
+              -e PINECONE_INDEX_NAME_RAG_CONV='${{ secrets.PINECONE_INDEX_NAME_RAG_CONV }}' \
+              -e PINECONE_INDEX_NAME_RAG_VIT='${{ secrets.PINECONE_INDEX_NAME_RAG_VIT }}' \
+              -e OPENAI_API_KEY='${{ secrets.OPENAI_API_KEY }}' \
+              -e ELEVEN_ST_API_KEY='${{ secrets.ELEVEN_ST_API_KEY }}' \
+              -e NAVER_CLIENT_ID='${{ secrets.NAVER_CLIENT_ID }}' \
+              -e NAVER_CLIENT_SECRET='${{ secrets.NAVER_CLIENT_SECRET }}' \
+              -e KAKAO_REST_API_KEY='${{ secrets.KAKAO_REST_API_KEY }}' \
+              -e GOOGLE_API_KEY='${{ secrets.GOOGLE_API_KEY }}' \
+              -e REACT_APP_OPENWEATHER_API_KEY='${{ secrets.REACT_APP_OPENWEATHER_API_KEY }}' \
+              ${DOCKER_IMAGE} && \
+            echo '✅ 배포 완료!'
+          "
+          
+          ssh -o RequestTTY=no -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no ${SSH_USER_HOST} "${DEPLOY_COMMAND}"
+          
+          echo "🎉 Python API 배포 완료!"

@@ -1,0 +1,79 @@
+# General / System
+.DS_Store
+Thumbs.db
+Desktop.ini
+.vscode/
+.idea/
+*.swp
+*.bak
+*.tmp
+
+# AI Tools
+.gemini/
+.agent/
+.antigravity/
+.cortex/
+
+# Python / Environment
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+env/
+.env
+.env.*
+.ipynb_checkpoints/
+build/
+dist/
+*.egg-info/
+.pytest_cache/
+
+# Project Data (Large Files)
+data/anomaly/
+data/ast/
+data/CarDD_release/
+data/obd/
+data/processed/
+data/yolo/
+data/audio/raw/
+data/audio/processed/
+data/audio/cache/
+data/audio/temp/
+data/audio/test/
+data/audio/train/
+data/yolo_router/
+data/*.zip
+data/*.rar
+results/
+samples/
+runs/
+weights/
+
+# Model Weights
+*.pt
+*.pth
+*.safetensors
+*.h5
+*.onnx
+*.weights
+
+# Security / Credentials
+.kaggle/
+kaggle.json
+my_key
+*.pem
+*.key
+*.pub
+id_rsa
+id_rsa.pub
+credentials.json
+client_secret*.json
+
+# Logs
+*.log
+logs/
+benchmark_log.txt
+metrics.json
+*.results.json

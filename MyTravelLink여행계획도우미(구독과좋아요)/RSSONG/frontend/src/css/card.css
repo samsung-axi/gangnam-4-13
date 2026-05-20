@@ -1,0 +1,469 @@
+/* 기본 스타일 */
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  
+  font-family: 'Roboto', sans-serif;
+  background-color: #FCF3D4;
+  touch-action: none;
+  /* 모바일에서 스크롤 방지 */
+  /* position: fixed; */ /* 고정 위치 제거 */
+}
+
+.home-icon {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.image-container {
+  position: relative;
+  width: 90vw;
+  height: 40vw;
+  max-width: 800px; /* 최대 너비 설정 */
+  max-height: 400px; /* 최대 높이 설정 */
+  overflow: hidden;
+  margin: 60px 0 20px 0; /* 상단 마진 조정 */
+  border-radius: 10px;
+  border: 5px solid black;
+  cursor: pointer; /* 클릭 가능한 표시 */
+  left:30%;
+}
+
+.main-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* 이미지 전체 표시 */
+  object-position: center;
+}
+
+.retake-btn-container {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+.retake-btn {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px; /* 패딩 확대 */
+  background-color: white;
+  /* 반투명 검은색 배경 */
+  
+  color: black;
+  border: none;
+  border-radius: 10px; /* 라운드 반경 확대 */
+  cursor: pointer;
+  font-size: 1.2rem; /* 폰트 크기 확대 */
+}
+
+.retake-btn img {
+  width: 25px; /* 아이콘 크기 확대 */
+  height: auto;
+  margin-right: 10px;
+}
+
+.upload-btn {
+  display: block;
+  margin: 10px auto;
+  padding: 15px 30px; /* 패딩 확대 */
+  background-color: #007BFF;
+  border: none;
+  color: white;
+  border-radius: 10px; /* 라운드 반경 확대 */
+  cursor: pointer;
+  font-size: 1.2rem; /* 폰트 크기 확대 */
+}
+
+.upload-btn:hover {
+  background-color: #0056b3;
+}
+
+.audio-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px auto;
+}
+
+.upload-audio-btn {
+  margin-top: 10px;
+  padding: 15px 30px; /* 패딩 확대 */
+  background-color: #28a745;
+  border: none;
+  color: white;
+  border-radius: 10px; /* 라운드 반경 확대 */
+  cursor: pointer;
+  font-size: 1.2rem; /* 폰트 크기 확대 */
+}
+
+.upload-audio-btn:hover {
+  background-color: #218838;
+}
+
+.loading-message {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 50px;
+  margin-top: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+}
+
+.result-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  flex-wrap: wrap; /* 요소가 줄바꿈되도록 설정 */
+}
+
+.result-container span {
+  padding: 15px 25px; /* 패딩 확대 */
+  font-size: clamp(1.8rem, 4vw, 3rem); /* 반응형 폰트 크기 */
+  font-weight: bold;
+  background-color: #FFCC00;
+  border-radius: 40px;
+  border: 5px solid black;
+  color: black;
+  margin: 15px; /* 요소 간 간격 */
+}
+
+.tts-btn {
+  padding: 10px; /* 패딩 확대 */
+  margin: 10px; /* 좌우 마진 추가 */
+  background-color: rgb(255, 204, 0);
+  border: 5px solid black;
+  border-radius: 40px; /* 라운드 반경 확대 */
+  cursor: pointer;
+  font-size: 50px; /* 폰트 크기 확대 */
+  font-weight: bold;
+  width: 300px;
+  height: 100px;
+}
+
+.tts-btn:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.record-btn {
+  cursor: pointer;
+  width: 200px;
+  height: 200px;
+  margin: 20px 20px;
+}
+
+.record-btn:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+/* "확인 하기" 버튼 스타일 추가 */
+.confirm-audio-btn {
+  padding: 15px 30px; /* 패딩 확대 */
+  background-color: #17a2b8;
+  border: none;
+  color: white;
+  border-radius: 10px; /* 라운드 반경 확대 */
+  cursor: pointer;
+  font-size: 1.2rem; /* 폰트 크기 확대 */
+  margin-top: 15px;
+}
+
+.confirm-audio-btn:hover {
+  background-color: #138496;
+}
+
+/* "확인 하기" 버튼이 비활성화된 상태 스타일 */
+.confirm-audio-btn:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+}
+
+/* 모달 스타일 */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  position: relative; /* 닫기 버튼 위치 조정을 위해 추가 */
+  background-color: white;
+  padding: 30px; /* 패딩 확대 */
+  border-radius: 15px; /* 라운드 반경 확대 */
+  width: 80vw;
+  max-width: 600px; /* 최대 너비 설정 */
+  max-height: 80vh;
+  overflow-y: auto; /* 내용이 많을 경우 스크롤 */
+  text-align: center;
+}
+
+.audio-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 닫기 버튼 스타일 */
+.close-modal {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  font-size: 30px; /* 크기 확대 */
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* SimpleAudioRecorder 관련 스타일 추가 */
+.simple-audio-recorder .record-control-btn {
+  padding: 15px 30px; /* 패딩 확대 */
+  background-color: #17a2b8;
+  border: none;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  margin-top: 20px;
+}
+
+.simple-audio-recorder .record-control-btn:hover {
+  background-color: #138496;
+}
+
+/* iPad Pro 11인치 미디어 쿼리 */
+@media only screen and (min-device-width: 834px) and (max-device-width: 1194px) and (orientation: portrait) {
+  html, body {
+    height: 100%;
+    width: 100%;
+  }
+  
+  .image-container {
+    width: 80vw;
+    height: 35vw;
+    max-width: 700px;
+    max-height: 350px;
+  }
+  
+  .upload-btn, .upload-audio-btn, .confirm-audio-btn {
+    padding: 15px 35px;
+    font-size: 1.4rem;
+  }
+  
+  .result-container span {
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    padding: 20px 30px;
+    margin: 20px;
+  }
+  
+  .tts-btn, .record-btn, .confirm-audio-btn {
+    padding: 12px 25px;
+    font-size: 1.4rem;
+    margin: 0 15px;
+  }
+  
+  .record-btn img {
+    width: 40px;
+    height: 40px;
+    margin-right: 15px;
+  }
+  
+  .modal-content {
+    width: 70vw;
+    max-width: 500px;
+    padding: 40px;
+  }
+}
+
+@media only screen and (min-device-width: 834px) and (max-device-width: 1194px) and (orientation: landscape) {
+  html, body {
+    height: 100%;
+    width: 100%;
+  }
+  
+  .image-container {
+    width: 60vw;
+    height: 35vw;
+    max-width: 800px;
+    max-height: 350px;
+  }
+  
+  .upload-btn, .upload-audio-btn, .confirm-audio-btn {
+    padding: 15px 35px;
+    font-size: 1.4rem;
+  }
+  
+  .result-container span {
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    padding: 20px 30px;
+    margin: 20px;
+  }
+  
+  .tts-btn, .record-btn, .confirm-audio-btn {
+    padding: 12px 25px;
+    font-size: 1.4rem;
+    margin: 0 15px;
+  }
+  
+  .record-btn img {
+    width: 40px;
+    height: 40px;
+    margin-right: 15px;
+  }
+  
+  .modal-content {
+    width: 60vw;
+    max-width: 600px;
+    padding: 40px;
+  }
+}
+
+/* 반응형 디자인을 위한 추가 미디어 쿼리 (선택 사항) */
+@media (max-width: 768px) {
+  .image-container {
+    width: 90vw;
+    height: 40vw;
+  }
+
+  .result-container span {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+    padding: 15px 25px;
+    margin: 15px;
+  }
+
+  .upload-btn, .upload-audio-btn, .confirm-audio-btn {
+    padding: 12px 25px;
+    font-size: 1.2rem;
+  }
+
+  .tts-btn, .record-btn, .confirm-audio-btn {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    margin: 0 10px;
+  }
+
+  .record-btn img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+  }
+
+  .modal-content {
+    width: 90vw;
+    max-width: 500px;
+    padding: 30px;
+  }
+}
+
+.next-modal-btn {
+  padding: 10px 25px;
+  font-size: 20px;
+  margin-top: 10px;
+  margin-left: 10px;
+  border: 3px solid black;
+  border-radius: 20px;
+  cursor: pointer;
+  background-color: #007BFF;
+  color: white;
+}
+
+.next-modal-btn:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.loading-message {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
+.loading-spinner {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 15px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.stars-container {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.star {
+  font-size: 24px;
+  opacity: 0;
+  transform: scale(0);
+  animation: popIn 0.5s ease forwards;
+}
+
+.star:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.star:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.star:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+.star.filled {
+  color: gold;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+}
+
+.star.empty {
+  color: #ccc;
+}
+
+/* 통합된 팝업 애니메이션 */
+@keyframes popIn {
+  0% {
+      transform: scale(0) rotate(-180deg);
+      opacity: 0;
+  }
+  50% {
+      transform: scale(1.2) rotate(0deg);
+      opacity: 0.5;
+  }
+  80% {
+      transform: scale(0.9) rotate(0deg);
+      opacity: 0.8;
+  }
+  100% {
+      transform: scale(1) rotate(0deg);
+      opacity: 1;
+  }
+}

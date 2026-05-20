@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Batang&family=Gowun+Dodum&family=Hahmlet:wght@100..900&family=Nanum+Gothic&family=Noto+Serif+KR:wght@200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap');
+
+.container {
+    position: relative;
+    width: 1200px;
+    margin: 30px auto;
+    background: #EFEDED;
+    padding: 20px;
+    margin: 0 auto;
+}
+
+.logo {
+    padding-top: 15px;
+    max-width: 150px;
+    max-height: 150px;
+    margin: 0 auto;
+    display: block;
+    translate: -10px -40px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+    transform: translateY(-60px);
+}
+
+.title {
+    font-family: "Gowun Batang", serif;
+    font-size: 24px;
+    font-weight: bold;
+    translate: -80px 50px;
+}
+
+.searchContainer {
+    position: absolute;
+    max-width: 200px;
+    width: 100%;
+    translate: 1050px 50px;
+}
+
+.searchInput {
+    width: 100%;
+    padding: 10px 40px 10px 15px;
+    border: 1px solid #333;
+    background-color: #EFEDED;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.searchIcon {
+    position: absolute;
+    right: -40px;
+    top: 50%;
+    transform: translate(0px, -20px);
+    cursor: pointer;
+}
+
+.dividerLine {
+    width: 1480px;  /* 기존 1220px에서 좌우 여백 추가 */
+    height: 1px;
+    background-color: #000000;
+    margin-top: 80px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%) translateY(-70px);
+}
+
+.itemsContainer {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.adminControls {
+    display: flex;
+    gap: 2px;
+    margin-left: -130px;
+    translate: 280px -20px;
+}
+
+.addButton,
+.checkboxButton,
+.deleteButton {
+    margin-right: 10px;
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #333;
+    border-radius: 10%;
+    cursor: pointer;
+    background-color: #EFEDED;
+    transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.addButton:hover,
+.checkboxButton:hover,
+.deleteButton:hover {
+    background-color: #CCC;
+    transform: scale(1.1);
+}

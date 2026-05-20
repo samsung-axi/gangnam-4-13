@@ -1,0 +1,289 @@
+.modalBackdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 500px;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.modalHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.closeButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.imageUpload {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.preview {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.fileInput {
+    display: none;
+}
+
+.modalActions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.submitButton,
+.cancelButton {
+    padding: 10px 20px;
+    border: 1px solid black;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.spices_nameEn {
+    font-family: "Gowun Batang", serif;
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.spices_nameKr {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.spices_category {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    text-align: center;
+    color: #000000;
+    margin-top: 1px;
+}
+
+.spices_content {
+    text-align: center;
+    justify-content: center;
+    transform: translateY(10px);
+}
+
+.formRow {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.label {
+    width: 100px;
+    text-align: right;
+    margin-right: 15px;
+    font-size: 14px;
+}
+
+.input {
+    width: 270px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #EFEDED;
+    font-size: 14px;
+}
+
+.line_input {
+    width: 290px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #EFEDED;
+    font-size: 14px;
+}
+
+.imageUpload_input {
+    width: 180px;
+    height: 25px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #EFEDED;
+    font-size: 14px;
+    translate: 10px;
+}
+
+.textarea {
+    composes: input;
+    height: 80px;
+    resize: none;
+}
+
+.imageUpload {
+    display: flex;
+    align-items: center; /* 이미지와 텍스트 필드를 세로 중앙 정렬 */
+    justify-content: center; /* 가운데 정렬 */
+    gap: 10px; /* 이미지와 텍스트 필드 사이의 간격 */
+}
+
+.upload_preview {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 5px;
+    gap: 50px; /* 이미지 업로드와 입력란 간의 간격 */
+}
+
+.placeholder {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ddd;
+    background-color: #EFEDED;
+    border-radius: 5px;
+    font-size: 20px;
+    color: #999;
+    translate: -10px
+}
+
+.errorMessage {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.modalRow2 {
+    display: flex;
+    align-items: center; /* 세로 중앙 정렬 */
+    gap: 15px; /* 요소 간 간격 */
+    margin-bottom: 20px;
+}
+
+.submitButton,
+.cancelButton,
+.spices-cancel-button-success {
+    padding: 10px 20px;
+    border: none;
+    border: 1px solid black;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.select {
+    width: 290px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #EFEDED;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* select 화살표 커스텀 스타일링 */
+.selectWrapper {
+    position: relative;
+    width: 270px;
+}
+
+.selectWrapper::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #333;
+    pointer-events: none;
+}
+
+.imageUploadContainer {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.imagePreviewContainer {
+    width: 60px;
+    height: 60px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+    cursor: pointer;
+    background-color: #EFEDED;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.previewImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.imageUrlInput {
+    width: 190px;
+    height: 25px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #EFEDED;
+    font-size: 14px;
+    transform: translateY(10PX);
+}
+
+.errorMessage {
+    color: red;
+    font-size: 12px;
+    position: absolute;
+    margin-top: 5px;
+}
+
+/* 기존 스타일 유지 */
+.formRow {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.label {
+    width: 100px;
+    text-align: right;
+    margin-right: 15px;
+    font-size: 14px;
+}
+
+

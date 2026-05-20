@@ -1,0 +1,135 @@
+<!-- src/main/resources/static/admin-login.html -->
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <title>Admin Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+        body { font-family: system-ui,-apple-system,Segoe UI,Roboto,sans-serif; padding: 40px; max-width: 420px; margin: 0 auto; }
+        h1 { font-size: 20px; margin-bottom: 16px; }
+        button { width: 100%; padding: 12px; margin: 8px 0; box-sizing: border-box; }
+        .muted { color: #666; font-size: 12px; }
+        .ok { color: #0a7; } .err { color: #c33; }
+        .sep { text-align: center; margin: 16px 0; color: #999; font-size: 12px; }
+    </style>
+</head>
+<body>
+<h1>Admin Login (Google)</h1>
+
+<button id="googleBtn">Google로 로그인</button>
+<button id="logoutBtn">로그아웃</button>
+
+<p class="sep">— 상태 —</p>
+<p id="msg" class="muted"></p>
+
+<!-- compat 빌드 -->
+<script src="https://www.gstatic.com/firebasejs/10.12.3/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.3/firebase-auth-compat.js"></script>
+<script>
+
+    /* global firebase */
+
+
+    const $ = (id) => document.getElementById(id);
+    const msg = (t, ok=false) => { const m=$("msg"); m.textContent=t; m.className = ok ? "ok" : "err"; };
+
+    (async function init() {
+        try {
+            // 1) 서버에서 공개 가능한 Firebase 설정 로드
+            const res = await fetch("/config/firebase.json", { cache: "no-store" });
+            if (!res.ok) throw new Error("firebase.json 로드 실패: " + res.status);
+            const firebaseConfig = await res.json();
+
+            // 2) Firebase 초기화
+            firebase.initializeApp(firebaseConfig);
+            const auth = firebase.auth();
+
+            // 3) Google Provider 설정 (필요 시 도메인 제한/계정 선택 강제)
+            const provider = new firebase.auth.GoogleAuthProvider();
+            // 조직 도메인 제한이 필요하면 hd 파라미터 사용 (예: yourcompany.com)
+            // provider.setCustomParameters({ hd: "yourcompany.com", prompt: "select_account" });
+            provider.setCustomParameters({ prompt: "select_account" });
+
+            // 4) 로그인 버튼 (팝업 방식)
+            $("googleBtn").onclick = async () => {
+                try {
+                    const cred = await auth.signInWithPopup(provider);
+                    const idToken = await cred.user.getIdToken(true);
+
+                    const r = await fetch("/auth/session", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        credentials: "include",
+                        body: JSON.stringify({ idToken })
+                    });
+
+                    if (r.status === 204) {
+                        msg("로그인 성공. 관리자 페이지로 이동합니다.", true);
+                        location.href = "/admin/";
+                    } else if (r.status === 403) {
+                        msg("관리자 권한이 없습니다.");
+                    } else if (r.status === 401) {
+                        msg("토큰이 유효하지 않거나 만료되었습니다.");
+                    } else {
+                        msg("로그인 실패 (" + r.status + ")");
+                    }
+                } catch (e) {
+                    console.error(e);
+                    const code = e?.code || 'unknown';
+                    const hint =
+                        code === 'auth/popup-closed-by-user' ? '팝업이 닫혔습니다.' :
+                            code === 'auth/cancelled-popup-request' ? '다른 팝업 요청이 취소되었습니다.' :
+                                code === 'auth/popup-blocked' ? '팝업이 차단되었습니다. 브라우저 설정을 확인하세요.' :
+                                    '로그인 중 오류가 발생했습니다.';
+                    msg(`${hint} (${code})`);
+                }
+            };
+
+            // 5) 로그아웃
+            $("logoutBtn").onclick = async () => {
+                try {
+                    await fetch("/auth/logout", { credentials: "include" });
+                    await auth.signOut();
+                    msg("로그아웃 완료", true);
+                } catch (e) {
+                    console.error(e);
+                    msg("로그아웃 오류: " + (e?.message || e));
+                }
+            };
+
+            // 6) 토큰 자동 갱신 시 세션 동기화(선택)
+            // ID 토큰이 회전되면(60분 주기) 서버 쿠키 갱신을 시도합니다.
+            auth.onIdTokenChanged(async (user) => {
+                if (!user) return;
+                try {
+                    const idToken = await user.getIdToken(/*forceRefresh=*/false);
+                    await fetch("/auth/session", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        credentials: "include",
+                        body: JSON.stringify({ idToken })
+                    });
+                    // 조용히 동기화만 수행
+                } catch (e) {
+                    console.warn("세션 동기화 실패", e);
+                }
+            });
+
+            // 7) 현재 상태 표시(선택)
+            auth.onAuthStateChanged((user) => {
+                if (user) {
+                    msg(`로그인됨: ${user.email}`, true);
+                } else {
+                    msg("로그아웃 상태");
+                }
+            });
+
+        } catch (e) {
+            console.error(e);
+            msg("설정 초기화 실패: " + (e?.message || e));
+        }
+    })();
+</script>
+</body>
+</html>

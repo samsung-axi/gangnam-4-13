@@ -1,0 +1,812 @@
+[
+    {
+        "product_info": {
+            "id": 1,
+            "brand": "테드베이커",
+            "title": "드레스 블랙 Ted Molenaa Dress Ld42 Black 64061103",
+            "price": "459,200",
+            "detail_page_url": "https://www.trenbe.com/product/++76548935?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240512_638511085009174692_21961541_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "formal_minimal"
+        },
+        "category_analysis": {
+            "big_category": "onepiece"
+        }
+    },
+    {
+        "product_info": {
+            "id": 2,
+            "brand": "Crystal Doll",
+            "title": "퍼프 슬리브 드레스 Juniors' Scoop-Neck Puff-Sleeve Embellished-Bow Dress 18926895 Red",
+            "price": "119,000",
+            "detail_page_url": "https://www.trenbe.com/product/++117045445?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20241101_638660360860731401_23721559_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "onepiece"
+        }
+    },
+    {
+        "product_info": {
+            "id": 3,
+            "brand": "구찌",
+            "title": "구찌 GG 체크 울 블랜드 반팔 원피스 754639 XKDCZ 1137",
+            "price": "4,365,000",
+            "detail_page_url": "https://www.trenbe.com/product/++98773838?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1722584398923_6d1d4f8f6c769527a7d89bbac75e6842_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "feminine_romantic"
+        },
+        "category_analysis": {
+            "big_category": "onepiece"
+        }
+    },
+    {
+        "product_info": {
+            "id": 5,
+            "brand": "아르마니 익스체인지",
+            "title": "아르마니 익스체인지 니트 드레스 UK12 사이즈",
+            "price": "342,400",
+            "detail_page_url": "https://www.trenbe.com/product/++116683233?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240322_638466827475805099_21823906_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "onepiece"
+        }
+    },
+    {
+        "product_info": {
+            "id": 11,
+            "brand": "제임스펄스",
+            "title": "개더 리넨 선 미디 드레스 Gathered Linen Sun Midi Dress",
+            "price": "540,320",
+            "detail_page_url": "https://www.trenbe.com/product/++95357574?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1721710327680_2df023e77d77a33bc278676df2b3342b_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "boho_romantic"
+        },
+        "category_analysis": {
+            "big_category": "onepiece"
+        }
+    },
+    {
+        "product_info": {
+            "id": 23,
+            "brand": "가니",
+            "title": "(W) 가니 미디 오간자 자카드 원피스",
+            "price": "717,000",
+            "detail_page_url": "https://www.trenbe.com/product/++85497117?catalog=100489264",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1724732962415_0c703a5264b2d09fe1db632da32d2f4d_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "vintage_classic"
+        },
+        "category_analysis": {
+            "big_category": "onepiece"
+        }
+    },
+    {
+        "product_info": {
+            "id": 25,
+            "brand": "띠어리",
+            "title": "컬렉션 드레스 스트래치 Gathered Dress in Stretch Cotton-Modal O054601R 001",
+            "price": "483,600",
+            "detail_page_url": "https://www.trenbe.com/product/++116047407?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20241011_638642341513041674_23470856_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "formal_minimal"
+        },
+        "category_analysis": {
+            "big_category": "bottom"
+        }
+    },
+    {
+        "product_info": {
+            "id": 27,
+            "brand": "폴로랄프로렌",
+            "title": "(W) 폴로 드레스 블랙",
+            "price": "687,200",
+            "detail_page_url": "https://www.trenbe.com/product/++58864466?catalog=100927670",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240417_638489734575282234_20102347_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "formal_minimal"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 28,
+            "brand": "휴고보스",
+            "title": "드레스 블랙 Facene Dress Black 001 31223003",
+            "price": "569,100",
+            "detail_page_url": "https://www.trenbe.com/product/++57922785?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240415_638487394881668673_19823824_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "elegant_classic"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 29,
+            "brand": "B Darlin",
+            "title": "반팔 에이라인 드레스 Juniors' Scoop-Neck Scuba Short-Sleeve A-Line Dress 19106229 Deep Red",
+            "price": "119,000",
+            "detail_page_url": "https://www.trenbe.com/product/++118823136?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20241114_638671890874634920_24007009_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "onepiece"
+        }
+    },
+    {
+        "product_info": {
+            "id": 30,
+            "brand": "막스마라",
+            "title": "막스마라 레저 24FW 여성 파라오네 원피스 블랙 FARAONE 004",
+            "price": "313,000",
+            "detail_page_url": "https://www.trenbe.com/product/++110754671?catalog=&options=owned",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1726808027884-b471f9fc-6217-4ef7-8c6c-c39e87092f40.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "elegant_classic"
+        },
+        "category_analysis": {
+            "big_category": "onepiece"
+        }
+    },
+    {
+        "product_info": {
+            "id": 31,
+            "brand": "막스마라",
+            "title": "막스마라 레저 24FW 여성 파라오네 원피스 베이지 FARAONE 001",
+            "price": "301,000",
+            "detail_page_url": "https://www.trenbe.com/product/++110754655?catalog=&options=owned",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1726808017656-4e59e023-c3f5-4b59-9b7e-839a0d5052fd.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "elegant_classic"
+        },
+        "category_analysis": {
+            "big_category": "onepiece"
+        }
+    },
+    {
+        "product_info": {
+            "id": 32,
+            "brand": "휴고보스",
+            "title": "드레스 블랙 Dilli Dress Black 001 65979503",
+            "price": "560,500",
+            "detail_page_url": "https://www.trenbe.com/product/++59364043?catalog=100927878",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20231006_638321389861022959_19899834_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "elegant_classic"
+        },
+        "category_analysis": {
+            "big_category": "onepiece"
+        }
+    },
+    {
+        "product_info": {
+            "id": 35,
+            "brand": "휴고보스",
+            "title": "점퍼 드레스 블랙 Fimalaya Jumper Dress Black 001 31223203",
+            "price": "385,700",
+            "detail_page_url": "https://www.trenbe.com/product/++58446438?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240411_638484133358319644_19823823_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "cozy_minimal"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 40,
+            "brand": "쟈딕앤볼테르",
+            "title": "쟈딕앤볼테르 Reina 블랙 게더 드레이프 벌룬 슬리브 브이넥 새틴 맥시 원피스",
+            "price": "998,000",
+            "detail_page_url": "https://www.trenbe.com/product/++110925262?catalog=&options=owned",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1726968797583-933797c2-c46d-401c-becc-32f19b304d7b.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "elegant_classic"
+        },
+        "category_analysis": {
+            "big_category": "bottom"
+        }
+    },
+    {
+        "product_info": {
+            "id": 47,
+            "brand": "막스마라",
+            "title": "에스막스마라 롱 원피스 TABATA040",
+            "price": "659,000",
+            "detail_page_url": "https://www.trenbe.com/product/++73259199?catalog=100250978",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1716794439897-dbb772c2-2a7e-476a-aa99-8494a4a8388e.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "elegant_classic"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 48,
+            "brand": "마쥬",
+            "title": "트위드 투인원 숏 드레스 Tweed 2-in-1 short dress MFPRO03287 F017",
+            "price": "687,400",
+            "detail_page_url": "https://www.trenbe.com/product/++64423651?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240415_638487749574768501_20929625_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 52,
+            "brand": "휴고보스",
+            "title": "메쉬 드레스 Eviba Mesh Dress 677822 Black 001",
+            "price": "470,600",
+            "detail_page_url": "https://www.trenbe.com/product/++66490926?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240418_638489653918064282_21151912_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "elegant_classic"
+        },
+        "category_analysis": {
+            "big_category": "onepiece"
+        }
+    },
+    {
+        "product_info": {
+            "id": 54,
+            "brand": "띠어리",
+            "title": "(W) 띠어리 울 비스코스 콤보 드레스 블랙",
+            "price": "931,000",
+            "detail_page_url": "https://www.trenbe.com/product/++73769660?catalog=100656353",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240324_638468869913472812_21876520_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "elegant_classic"
+        },
+        "category_analysis": {
+            "big_category": "bottom"
+        }
+    },
+    {
+        "product_info": {
+            "id": 56,
+            "brand": "ANIYE BY",
+            "title": "아니예 바이 숏 원피스 181362 00336",
+            "price": "734,000",
+            "detail_page_url": "https://www.trenbe.com/product/++116748945?catalog=100138653",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1730289487346_10b11ff7c6c6635b473de2cc7468fc64_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 59,
+            "brand": "막스마라",
+            "title": "여성 올림피아 드레스 OLIMPIA 003",
+            "price": "780,000",
+            "detail_page_url": "https://www.trenbe.com/product/++73538622?catalog=100921707",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1711094447723-ddb07a57-54ec-4be8-80c1-1e35ce0357de.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "elegant_classic"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 60,
+            "brand": "띠어리",
+            "title": "플리츠 드레스 텍스쳐드 새틴 Pleated Combo Dress in Textured Satin N0705608 D2D",
+            "price": "1,141,400",
+            "detail_page_url": "https://www.trenbe.com/product/++73769628?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20241011_638642341548625323_21876506_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "formal_minimal"
+        },
+        "category_analysis": {
+            "big_category": "onepiece"
+        }
+    },
+    {
+        "product_info": {
+            "id": 62,
+            "brand": "띠어리",
+            "title": "언발 비대칭 드레스 스트래치 벨벳 Asymmetrical Dress in Stretch Velvet N1005606 D2D",
+            "price": "1,174,500",
+            "detail_page_url": "https://www.trenbe.com/product/++116202658?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20241011_638642341565338633_23470865_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "elegant_classic"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 66,
+            "brand": "띠어리",
+            "title": "플리츠 드레스 스트래치 울 Pleated Combo Dress in Stretch Wool-Blend O0805607 SPF",
+            "price": "1,149,600",
+            "detail_page_url": "https://www.trenbe.com/product/++114748371?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20241012_638642619343323747_23472305_1.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "elegant_classic"
+        },
+        "category_analysis": {
+            "big_category": "onepiece"
+        }
+    },
+    {
+        "product_info": {
+            "id": 67,
+            "brand": "띠어리",
+            "title": "이론 플리트 디테일 슬리브리스 드레스 O10056020_001",
+            "price": "1,610,000",
+            "detail_page_url": "https://www.trenbe.com/product/++117189752?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1730502657487_62eb7828645ecb5db94d451ba5cbcc93_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "elegant_classic"
+        },
+        "category_analysis": {
+            "big_category": "onepiece"
+        }
+    },
+    {
+        "product_info": {
+            "id": 70,
+            "brand": "띠어리",
+            "title": "플리츠 미디 드레스 포플린 Pleated Midi Dress in Sleek Poplin O0305610 001",
+            "price": "950,800",
+            "detail_page_url": "https://www.trenbe.com/product/++76329170?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20241107_638665377821200037_22081413_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "elegant_classic"
+        },
+        "category_analysis": {
+            "big_category": "onepiece"
+        }
+    },
+    {
+        "product_info": {
+            "id": 73,
+            "brand": "아소스",
+            "title": "숏 블랙 소매 Kurzes Hangerkleid in Schwarz mit ubergroßen Armeln 206473689SCHWARZ",
+            "price": "183,500",
+            "detail_page_url": "https://www.trenbe.com/product/++91609693?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240703_638556041413447695_22705429_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "onepiece"
+        }
+    },
+    {
+        "product_info": {
+            "id": 77,
+            "brand": "타미힐피거",
+            "title": "크레페 셔츠 드레스 CREPE KNEE SHIRT DRESS LS 646359 Desert Sky",
+            "price": "488,700",
+            "detail_page_url": "https://www.trenbe.com/product/++47378261?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240418_638489660284179092_17589220_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "elegant_classic"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 83,
+            "brand": "막스마라",
+            "title": "LEILA 024 여성 레일라 코튼 원피스",
+            "price": "1,280,000",
+            "detail_page_url": "https://www.trenbe.com/product/++101454944?catalog=100924539",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1724029497990-dd88e6aa-dd97-43a4-a216-9f6fba552002.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "elegant_classic"
+        },
+        "category_analysis": {
+            "big_category": "onepiece"
+        }
+    },
+    {
+        "product_info": {
+            "id": 90,
+            "brand": "폴로랄프로렌",
+            "title": "셔츠 드레스 여성 화이트 Cory Shirt Dress Womens Bsr White 68469001",
+            "price": "526,800",
+            "detail_page_url": "https://www.trenbe.com/product/++64755736?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240608_638533972829365989_20997076_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "onepiece"
+        }
+    },
+    {
+        "product_info": {
+            "id": 98,
+            "brand": "아르마니 익스체인지",
+            "title": "블랙 Armani Exchange Vestito Black 1200 33980703",
+            "price": "275,700",
+            "detail_page_url": "https://www.trenbe.com/product/++57922776?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20231207_638375562558346686_19899881_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "elegant_classic"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 101,
+            "brand": "막스마라",
+            "title": "(W) 막스마라 누블 드레스 베이지",
+            "price": "773,520",
+            "detail_page_url": "https://www.trenbe.com/product/++98215116?catalog=100034261",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240801_638581009051278007_22926222_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "elegant_classic"
+        },
+        "category_analysis": {
+            "big_category": "onepiece"
+        }
+    },
+    {
+        "product_info": {
+            "id": 107,
+            "brand": "아디다스",
+            "title": "아디다스 아디컬러 클래식 삼선 맥시 드레스",
+            "price": "141,000",
+            "detail_page_url": "https://www.trenbe.com/product/++79205693?catalog=&options=owned",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1716789545071-2d47f7d3-0cd4-4ba3-80e7-7be5a721f9bf.png"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "formal_minimal"
+        },
+        "category_analysis": {
+            "big_category": "onepiece"
+        }
+    },
+    {
+        "product_info": {
+            "id": 108,
+            "brand": "디젤",
+            "title": "24 SS 디젤 발레 골지 맥시 드레스 블랙",
+            "price": "446,000",
+            "detail_page_url": "https://www.trenbe.com/product/++91078042?catalog=100635359",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240629_638552334258150740_22138212_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "onepiece"
+        }
+    },
+    {
+        "product_info": {
+            "id": 112,
+            "brand": "폴로랄프로렌",
+            "title": "랄프 로렌 플로랄 실크 크레페 드레스 Ralph Lauren Floral Silk Crepe Dress 5135983",
+            "price": "996,800",
+            "detail_page_url": "https://www.trenbe.com/product/++77106485?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240501_638501204705308971_22204928_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "vintage_classic"
+        },
+        "category_analysis": {
+            "big_category": "onepiece"
+        }
+    },
+    {
+        "product_info": {
+            "id": 113,
+            "brand": "프라다",
+            "title": "새틴 미니 드레스 Satin Mini Dress 687493 Black",
+            "price": "5,524,200",
+            "detail_page_url": "https://www.trenbe.com/product/++62967444?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240417_638489740224078158_20709323_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "formal_minimal"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 117,
+            "brand": "테드베이커",
+            "title": "드레스 Ted Betyel Dress Ld99 Wine 33446508",
+            "price": "275,500",
+            "detail_page_url": "https://www.trenbe.com/product/++99018751?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240805_638584536376386481_22954067_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "elegant_classic"
+        },
+        "category_analysis": {
+            "big_category": "onepiece"
+        }
+    },
+    {
+        "product_info": {
+            "id": 122,
+            "brand": "폴로랄프로렌",
+            "title": "[리퍼브 상품] 사이즈10 (S) 폴로랄프로렌 타이 폴로 셔츠 드레스 라이트 인디고",
+            "price": "508,300",
+            "detail_page_url": "https://www.trenbe.com/product/++101536170?catalog=&options=owned",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1724121636144-02a45aac-db2c-4dc0-bd57-453bc7c27173.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "elegant_classic"
+        },
+        "category_analysis": {
+            "big_category": "onepiece"
+        }
+    },
+    {
+        "product_info": {
+            "id": 123,
+            "brand": "아디다스",
+            "title": "오리지널 슬림핏 셔츠 롱원피스 블랙",
+            "price": "183,000",
+            "detail_page_url": "https://www.trenbe.com/product/++34232186?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20220813_637959729274406737_13298263_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "onepiece"
+        }
+    },
+    {
+        "product_info": {
+            "id": 127,
+            "brand": "톰브라운",
+            "title": "톰브라운 여성 반팔 플리츠 원피스",
+            "price": "2,145,000",
+            "detail_page_url": "https://www.trenbe.com/product/++80569910?catalog=100652868",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1717572338252-e7e1b6ce-5d92-4e15-9ce0-27c4d6555d31.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "elegant_classic"
+        },
+        "category_analysis": {
+            "big_category": "onepiece"
+        }
+    },
+    {
+        "product_info": {
+            "id": 128,
+            "brand": "폴로랄프로렌",
+            "title": "[리퍼브 상품] 사이즈10(S) 폴로랄프로렌 미디 셔츠 드레스",
+            "price": "1,085,800",
+            "detail_page_url": "https://www.trenbe.com/product/++99048514?catalog=&options=owned",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240418_638489664236772468_17100946_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "vintage_classic"
+        },
+        "category_analysis": {
+            "big_category": "onepiece"
+        }
+    },
+    {
+        "product_info": {
+            "id": 133,
+            "brand": "톰브라운",
+            "title": "톰브라운 센터백 스트라이프 폴로 원피스",
+            "price": "910,000",
+            "detail_page_url": "https://www.trenbe.com/product/++92909193?catalog=100649070",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1723514826425_161dd9da5c76ef881854bf0eb4cc732d_1.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "onepiece"
+        }
+    },
+    {
+        "product_info": {
+            "id": 140,
+            "brand": "버버리",
+            "title": "이펙트 롱 슬리브 드레스 Crinkled Effect Long Sleeve Dress -8068743N",
+            "price": "9,641,200",
+            "detail_page_url": "https://www.trenbe.com/product/++112770745?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20241108_638666725861197861_23399742_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "feminine_romantic"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 144,
+            "brand": "리스",
+            "title": "유틸리티 드레스 Aimie Utility Dress 112138225 Black",
+            "price": "320,800",
+            "detail_page_url": "https://www.trenbe.com/product/++88090364?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20241015_638645397571947725_22651311_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "onepiece"
+        }
+    },
+    {
+        "product_info": {
+            "id": 149,
+            "brand": "폴로랄프로렌",
+            "title": "포니 셔츠 드레스 Pony Shirt Dress 688953 Cruise Navy",
+            "price": "524,700",
+            "detail_page_url": "https://www.trenbe.com/product/++90863000?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240628_638551519150438914_22682105_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "onepiece"
+        }
+    }
+]

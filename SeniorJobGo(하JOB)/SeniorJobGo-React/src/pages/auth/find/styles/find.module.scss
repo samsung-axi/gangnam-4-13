@@ -1,0 +1,168 @@
+// pages/auth/find/styles/find.module.scss
+@use '@assets/styles/_variables' as *;
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 400px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  background-color: $background-color;
+}
+
+.find {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  
+  &__title {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: $font-size-lg;
+    font-weight: $font-weight-semibold;
+    margin-bottom: 2rem;
+
+    i {
+      position: absolute;
+      left: 0;
+      font-size: $font-icon-md;
+      cursor: pointer;
+    }
+  }
+}
+
+.tabs {
+  display: flex;
+  position: relative;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid $border-color;
+  
+  &__button {
+    flex: 1;
+    height: 42px;
+    border: none;
+    background: $background-color;
+    color: $secondary-text-color;
+    font-size: $font-size-base;
+    font-weight: $font-weight-medium;
+    cursor: pointer;
+    position: relative;
+    transition: all .3s ease;
+    
+    // 버튼 사이 구분선
+    &:first-child::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 25%;
+      width: 1px;
+      background-color: $border-color;
+    }
+    
+     // 활성화된 탭 스타일
+    &.active {
+      color: $primary-color;
+      font-weight: $font-weight-semibold;
+      
+      &::before {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background-color: $primary-color;
+        transition: all .4s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+    }
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    animation: fadeIn .4s ease-in-out;
+  }
+  
+  &__footer {
+    margin-top: auto;
+    padding: 2rem 0;
+  }
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+  
+  label {
+    font-size: $font-size-sm;
+    font-weight: $font-weight-medium;
+    color: $text-color;
+  }
+  
+  input {
+    height: 48px;
+    padding: 0 1rem;
+    border: 1px solid $border-color;
+    border-radius: $radius-md;
+    font-size: $font-size-sm;
+    
+    &::placeholder {
+      color: $placeholder-color;
+    }
+
+    &:focus {
+      outline: none;
+      border-color: $primary-color;
+    }
+  }
+}
+
+.submitButton {
+  width: 100%;
+  height: 48px;
+  background: $primary-color;
+  border: 1px solid $primary-color;
+  border-radius: $radius-md;
+  color: $text-color;
+  font-size: $font-size-base;
+  font-weight: $font-weight-medium;
+  cursor: pointer;
+  
+  &:hover {
+    background: $primary-hover-color;
+    border: 1px solid $primary-color;
+    color: $white-color;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opcity: 1;
+    transform: translateY(0);
+  }
+}

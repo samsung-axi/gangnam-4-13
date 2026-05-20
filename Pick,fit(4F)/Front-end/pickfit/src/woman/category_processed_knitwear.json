@@ -1,0 +1,1442 @@
+[
+    {
+        "product_info": {
+            "id": 1,
+            "brand": "톰브라운",
+            "title": "4-바 클래식 밀라노 스티치 파인 메리노 울 브이넥 여성 가디건 네이비",
+            "price": "3,306,000",
+            "detail_page_url": "https://www.trenbe.com/product/++118692293?catalog=78705",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1731472803339-8aca43a3-7886-40cd-b1a1-3898f42b17ca.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 2,
+            "brand": "톰브라운",
+            "title": "클래식 사선 완장 메리노 울 여성 가디건 네이비",
+            "price": "3,050,000",
+            "detail_page_url": "https://www.trenbe.com/product/++93408648?catalog=73182",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1721117479136_c2ef8cd0d04d5bad2b02d3b421705a0b_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 4,
+            "brand": "톰브라운",
+            "title": "4바 스트라이프 메리노 울 오버사이즈 니트",
+            "price": "1,980,000",
+            "detail_page_url": "https://www.trenbe.com/product/++76230456?catalog=100029344",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1721802426315_f230673d851bad603d086e68ef3a5570_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 5,
+            "brand": "버버리",
+            "title": "벰톤 체크 패치 울 여성 니트 블랙",
+            "price": "919,000",
+            "detail_page_url": "https://www.trenbe.com/product/++112883880?catalog=100928702",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1728547156515_a3cc765cbfb750ee9422f773cee75391_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "cozy_minimal"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 6,
+            "brand": "폴로랄프로렌",
+            "title": "폴로랄프로렌 걸즈 케이블 니트 가디건 9컬러",
+            "price": "169,000",
+            "detail_page_url": "https://www.trenbe.com/product/++36070608?catalog=&options=owned",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1704269191695-ab5610c4-0985-43bc-b33a-5d15aff3eaa9.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "casual_sporty"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 7,
+            "brand": "이자벨마랑",
+            "title": "카린 로고 가디건 라이트그레이",
+            "price": "926,000",
+            "detail_page_url": "https://www.trenbe.com/product/++78019322?catalog=100013097",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1715604046667-8554fd8d-89be-45b8-9ec8-25de26e86e8c.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 8,
+            "brand": "폴로랄프로렌",
+            "title": "[10Color] 폴로 랄프로렌 보이즈 꽈배기 니트 스웨터 남녀공용",
+            "price": "169,000",
+            "detail_page_url": "https://www.trenbe.com/product/++41543433?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1728188370200-20bb5ed6-5b77-4a23-8908-c7d768afa7c7.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "cozy_minimal"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 9,
+            "brand": "비비안웨스트우드",
+            "title": "베아 크롭 캐시미어 울 여성 가디건 블랙",
+            "price": "734,400",
+            "detail_page_url": "https://www.trenbe.com/product/++91378453?catalog=100023728",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1732018152989_fb4275dcdcb22e0f9c3c256eb41be913_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 11,
+            "brand": "올세인츠",
+            "title": "올세인츠 아모라 여성 가디건 WK538Z CHALK WHITE BLACK",
+            "price": "584,000",
+            "detail_page_url": "https://www.trenbe.com/product/++92637103?catalog=100649991",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1720596373601_dc5dd5bbbc2935367ba1fa9487ef405e_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 12,
+            "brand": "막스마라",
+            "title": "TEULADA 024 여성 테울라다 코튼 가디건",
+            "price": "758,000",
+            "detail_page_url": "https://www.trenbe.com/product/++101455028?catalog=100924548",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1724029623283-4dc5b451-7bdf-483b-842d-43805f50cb6f.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "vintage_classic"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 14,
+            "brand": "비비안웨스트우드",
+            "title": "베아 크롭 가디건 오프 화이트",
+            "price": "920,000",
+            "detail_page_url": "https://www.trenbe.com/product/++113221670?catalog=100661868",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1728033603027_283f3c6ef85ac8e021c280fa48512f29_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "vintage_classic"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 18,
+            "brand": "메종키츠네",
+            "title": "더블 폭스 헤드 패치 라운드넥 가디건 베이지 멜란지",
+            "price": "615,000",
+            "detail_page_url": "https://www.trenbe.com/product/++114592143?catalog=250182",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1728537905728_5e50648ec208cc31d99e7e025a7a4b42_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 20,
+            "brand": "폴로랄프로렌",
+            "title": "랄프 로렌 가디건 211891643002 Dark Blue",
+            "price": "446,000",
+            "detail_page_url": "https://www.trenbe.com/product/++115147776?catalog=100789831",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1729217461051_4f4949cff26b9e9f0b1d05ee4495eb07_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "vintage_classic"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 22,
+            "brand": "막스마라",
+            "title": "콘트라스트 트림 케냐 카디건 아이보리",
+            "price": "880,000",
+            "detail_page_url": "https://www.trenbe.com/product/++110754982?catalog=100576617",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1726808296644-3ea94007-13a2-4901-a37c-0702ef89c3f3.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 26,
+            "brand": "폴로랄프로렌",
+            "title": "포니 자수 클래식 가디건 블루 211891672 002 63778",
+            "price": "324,000",
+            "detail_page_url": "https://www.trenbe.com/product/++114611146?catalog=100640978",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1728542765280_cf755e958b5b43aeeb1b83b447bd1b2d_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "modern_classic"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 27,
+            "brand": "이자벨마랑",
+            "title": "노라 로고 폴로 니트 라이트그레이",
+            "price": "875,000",
+            "detail_page_url": "https://www.trenbe.com/product/++105564573?catalog=100019316",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1725768668656_46412bca991c5743805530092b72bd6e_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 28,
+            "brand": "쟈딕앤볼테르",
+            "title": "자딕앤볼테르 가디건 KWCA00001001 Black",
+            "price": "1,437,000",
+            "detail_page_url": "https://www.trenbe.com/product/++105360337?catalog=100557956",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1675218253370_6ebabea5b87b04c9f5e2e44bd7bac816_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 30,
+            "brand": "아미",
+            "title": "하트로고 울 가디건 베이지",
+            "price": "646,500",
+            "detail_page_url": "https://www.trenbe.com/product/++100883656?catalog=100025431",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1723605397515_8dd283c66ae927933d913e12fa9bb38f_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 31,
+            "brand": "아미",
+            "title": "AMI 아미 24SS OFFWHITE 오프화이트 AMI 아미 드 꾀흐 스웨터 (UKS006 018 4843)",
+            "price": "789,000",
+            "detail_page_url": "https://www.trenbe.com/product/++116937192?catalog=100663270",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1730367285396_ad69c5bb542b4ab34d147ce040ec5ea6_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 34,
+            "brand": "톰브라운",
+            "title": "스트라이프 디테일 케이블 니트 스웨터",
+            "price": "2,022,000",
+            "detail_page_url": "https://www.trenbe.com/product/++117599908?catalog=100310991",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1715922412568_e7ff4d46942c4af88b248f86fa255f07_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 40,
+            "brand": "비비안웨스트우드",
+            "title": "베아 자수 로고 가디건 그레이",
+            "price": "954,100",
+            "detail_page_url": "https://www.trenbe.com/product/++113052259?catalog=100662627",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1727930056159_dde47a64a2abb122278a7616f633f641_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 41,
+            "brand": "아미",
+            "title": "아미 가디건 FKC157 005 052 GREY",
+            "price": "1,190,000",
+            "detail_page_url": "https://www.trenbe.com/product/++101866671?catalog=100783315",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1724384356634_d506b54e9f8a7e5014af31c8c642a239_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 42,
+            "brand": "폴로랄프로렌",
+            "title": "폴로 랄프로렌 걸즈 니트 가디건 레드",
+            "price": "99,000",
+            "detail_page_url": "https://www.trenbe.com/product/++105731695?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1725928557053-69bd2966-add5-4e8a-849b-cacc498dc1a4.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "casual_sporty"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 43,
+            "brand": "이자벨마랑",
+            "title": "블레이크 여성 니트 스웨터 아이보리",
+            "price": "254,000",
+            "detail_page_url": "https://www.trenbe.com/product/++17102806?catalog=76456",
+            "images": [
+                "https://image-proxy.trenbe.com/proxy?dpr=1&height=0&source=https%3A%2F%2Fs3.ap-northeast-2.amazonaws.com%2Fproduct-partner%2Fproductmain%2F1627967301358-7475492a-4da5-49d2-af51-595e398b0e8a.jfif&width=741"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 44,
+            "brand": "톰브라운",
+            "title": "로즈 인타르시아 케이블 니트 가디건",
+            "price": "1,345,500",
+            "detail_page_url": "https://www.trenbe.com/product/++115147735?catalog=100825338",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1729217379052_d1b8c88fa70a30a09f781758860282a1_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 46,
+            "brand": "아미",
+            "title": "빅하트 아미 드 쾨르 크루넥 박시핏 스웨터 화이트",
+            "price": "778,700",
+            "detail_page_url": "https://www.trenbe.com/product/++66503426?catalog=226130",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1704877002471-96e9f244-d153-4c21-b83e-e41fccc02d11.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "cozy_minimal"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 50,
+            "brand": "펜디",
+            "title": "펜디키즈 니트",
+            "price": "1,062,000",
+            "detail_page_url": "https://www.trenbe.com/product/++87795018?catalog=100040976",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1706596924005_aedd64bb3e51b9b714a15ede32caf2cd_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "high_end_street"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 51,
+            "brand": "메종마르지엘라",
+            "title": "메종마르지엘라 여성 니트 가디건 S51HP0004-S18200-509",
+            "price": "1,802,000",
+            "detail_page_url": "https://www.trenbe.com/product/++73538731?catalog=100637710",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1711094627693-fa02ec51-56ef-4e1e-996c-9dc5183bf77a.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "vintage_classic"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 52,
+            "brand": "이자벨마랑",
+            "title": "내쉬 터틀넥 니트 아이보리",
+            "price": "994,000",
+            "detail_page_url": "https://www.trenbe.com/product/++71626343?catalog=100129225",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1708944608796-d6e174b9-81b3-4ac2-8a1e-966b27766b87.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "cozy_minimal"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 54,
+            "brand": "톰브라운",
+            "title": "23SS KKA008A Y1002 035 톰브라운 삼선 메리노 울 니트 4A",
+            "price": "813,120",
+            "detail_page_url": "https://www.trenbe.com/product/++49980794?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1684983010794_6acb3b97f034b8a41a408164225420c0_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 57,
+            "brand": "이자벨마랑",
+            "title": "카린 로고 가디건 그레이",
+            "price": "1,019,000",
+            "detail_page_url": "https://www.trenbe.com/product/++105564519?catalog=100842128",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1725768651115_8b4853f636450f958b68dfb198281369_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 58,
+            "brand": "이자벨마랑",
+            "title": "에뚜왈 뉴턴 로고 인타르시아 가디건 그린",
+            "price": "395,000",
+            "detail_page_url": "https://www.trenbe.com/product/++76641044?catalog=100040560",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1723540273843_ff34187783d19986d75a99102c03b25d_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 59,
+            "brand": "버버리",
+            "title": "빈티지 체크 울 니트 아카이브베이지 8039152",
+            "price": "1,228,500",
+            "detail_page_url": "https://www.trenbe.com/product/++114614906?catalog=100952320",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1728544336134_ac92cb6ec058b08818077692f9cdb871_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "cozy_minimal"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 60,
+            "brand": "버버리",
+            "title": "(여성) 버버리 23SS 모노그램 오버사이즈 가디건 8065919 A1420",
+            "price": "1,900,000",
+            "detail_page_url": "https://www.trenbe.com/product/++53267464?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1688642126482_a4ec7e479e10cb1890a020bc9717febe_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "modern_classic"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 61,
+            "brand": "막스마라",
+            "title": "자나두 알파카 스웨터 그레이",
+            "price": "558,000",
+            "detail_page_url": "https://www.trenbe.com/product/++70768993?catalog=100636922",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1708078918549_406c8c67df9bc786f3d321c46cf00a4e_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "cozy_minimal"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 63,
+            "brand": "메종마르지엘라",
+            "title": "(W) 메종마르지엘라 폰트 제너레이터 맨투맨 스웻셔츠 블랙",
+            "price": "410,000",
+            "detail_page_url": "https://www.trenbe.com/product/++74151647?catalog=231213",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1711617653714_a0db62d9deab14ea9aaac875710db8ad_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "cozy_minimal"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 64,
+            "brand": "톰브라운",
+            "title": "톰브라운 스웨터 FKA451A Y3007100",
+            "price": "2,740,000",
+            "detail_page_url": "https://www.trenbe.com/product/++105286026?catalog=100716241",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240905_638610715186764249_23218495_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 65,
+            "brand": "아미",
+            "title": "스몰 하트 로고 브이넥 가디건 샴페인",
+            "price": "655,000",
+            "detail_page_url": "https://www.trenbe.com/product/++72156000?catalog=100015644",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1709536345264_9d50e7cd6953d7b8da09c8a29f32a7b9_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 66,
+            "brand": "버버리",
+            "title": "모노그램 울 캐시미어 블렌드 오버사이즈 여성 가디건 아카이브 베이지",
+            "price": "1,725,000",
+            "detail_page_url": "https://www.trenbe.com/product/++114609732?catalog=62595",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1728542349671_26a21721422e3256fc92daf865f85d8e_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 67,
+            "brand": "이자벨마랑",
+            "title": "이자벨마랑 켈라야 니트",
+            "price": "332,000",
+            "detail_page_url": "https://www.trenbe.com/product/++76641057?catalog=100040557",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1724746035058_5d15292b4e48780126cc903068234f71_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 70,
+            "brand": "막스마라",
+            "title": "여성 라두라 니트 RADURA 004",
+            "price": "580,000",
+            "detail_page_url": "https://www.trenbe.com/product/++73538770?catalog=100921724",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1711094681231-e8e900a5-b14d-4bd9-b091-c39643dcfbc0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "cozy_minimal"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 71,
+            "brand": "아미",
+            "title": "아미 브러쉬드 크루넥 스웨터 페일 그린",
+            "price": "490,000",
+            "detail_page_url": "https://www.trenbe.com/product/++64296334?catalog=100651471",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1702368669383_27fb1c4116df853896a3b5e37e78ddcb_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "cozy_minimal"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 73,
+            "brand": "띠어리",
+            "title": "니트 판초 울 캐시미어 Knit Poncho in Wool-Cashmere O071706R TSI",
+            "price": "774,200",
+            "detail_page_url": "https://www.trenbe.com/product/++116201023?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20241011_638642325690434677_23470521_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "cozy_minimal"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 75,
+            "brand": "띠어리",
+            "title": "터틀넥 스웨터 캐시미어 Slouchy Turtleneck Sweater in Cashmere O098710R EEU",
+            "price": "815,300",
+            "detail_page_url": "https://www.trenbe.com/product/++116200963?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20241011_638642325634528643_23470503_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 79,
+            "brand": "꼼데가르송",
+            "title": "꼼데가르송 레드와펜 가디건 레드(여성)",
+            "price": "590,000",
+            "detail_page_url": "https://www.trenbe.com/product/++116337732?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1730101925192_4c4d1831b0e02adf659e2e51be8b9acd_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "elegant_classic"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 82,
+            "brand": "아미",
+            "title": "아미 터틀넥 FKS427 005055",
+            "price": "1,050,000",
+            "detail_page_url": "https://www.trenbe.com/product/++114345126?catalog=100053282",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1728325290024-88d37647-750b-4654-971f-164808ac9992.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "cozy_minimal"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 84,
+            "brand": "보테가베네타",
+            "title": "보테가베네타 우먼스 BV 로고 캐시미어 니트 스웨터 VANILLE 604910",
+            "price": "1,599,000",
+            "detail_page_url": "https://www.trenbe.com/product/++37085509?catalog=&options=owned",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1666051771942-2e9ce9b0-b5f2-4167-a932-1a7de310c52a.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "cozy_minimal"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 86,
+            "brand": "아미",
+            "title": "여성 빅 하트 로고 자수 니트 E22UKS003 016 659",
+            "price": "735,930",
+            "detail_page_url": "https://www.trenbe.com/product/++114622447?catalog=100950566",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1728547506430_69470fb22b5a9690bd0eda19398edd69_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "cozy_minimal"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 87,
+            "brand": "비비안웨스트우드",
+            "title": "비비안웨스트우드 가디건 여성 베아 크롭 1803002U Y0018 K409",
+            "price": "665,600",
+            "detail_page_url": "https://www.trenbe.com/product/++113084976?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1727961218989_2aec65bfa1b6fe76f2368b545a53f4ee_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "vintage_classic"
+        },
+        "category_analysis": {
+            "big_category": "onepiece"
+        }
+    },
+    {
+        "product_info": {
+            "id": 88,
+            "brand": "로샤스",
+            "title": "로샤스 터틀넥 ROWV75042PRV640 524",
+            "price": "1,095,000",
+            "detail_page_url": "https://www.trenbe.com/product/++117976763?catalog=100902626",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1731046104468_cb4f75bea9df44f0c7064ce494725e91_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 92,
+            "brand": "구찌",
+            "title": "구찌 x 아디다스 여성 로고 울 가디건 723366",
+            "price": "2,470,000",
+            "detail_page_url": "https://www.trenbe.com/product/++108213419?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1726370332991_78df1bc1532e9ed9e3d43d55115e7f82_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "vintage_classic"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 93,
+            "brand": "톰브라운",
+            "title": "코튼 4 바 스트라이프 헥터 브이넥 카디건",
+            "price": "2,189,000",
+            "detail_page_url": "https://www.trenbe.com/product/++115936273?catalog=100040607",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1729843039178_c93b0c95418b783df7a3e52a1568c3dc_1.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 95,
+            "brand": "셀린느",
+            "title": "2ADII907Z 11JA 여성 트리오페 가디건",
+            "price": "1,850,000",
+            "detail_page_url": "https://www.trenbe.com/product/++100342046?catalog=100924415",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1723130958733-fd7aef61-493d-46c3-8f11-cd285958b3f1.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "vintage_classic"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 99,
+            "brand": "막스마라",
+            "title": "여성 에스타테 울 가디건 ESTATE 013",
+            "price": "1,080,000",
+            "detail_page_url": "https://www.trenbe.com/product/++73308083?catalog=100921624",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1710841714626-acb5c8e7-2dd6-4bcb-af82-779ddf113076.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "vintage_classic"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 101,
+            "brand": "메종키츠네",
+            "title": "베이비 폭스 패치 레귤러 가디건 MW00507KT1036 MEDIUMGREYMEL",
+            "price": "455,000",
+            "detail_page_url": "https://www.trenbe.com/product/++78165166?catalog=100932963",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1715829945088-5db0ea1a-722a-4ee3-b6e9-87c9f46f0ee6.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 102,
+            "brand": "메종마르지엘라",
+            "title": "(W) 4선 스티치 하이넥 니트 블랙",
+            "price": "1,848,000",
+            "detail_page_url": "https://www.trenbe.com/product/++59331090?catalog=100019572",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1696498679597_54ae3f791154bc2da65991160217ec38_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 103,
+            "brand": "이자벨마랑",
+            "title": "이자벨마랑 터틀넥 PU0290FAA4L06I 90BE BEIGE O TAN",
+            "price": "2,066,000",
+            "detail_page_url": "https://www.trenbe.com/product/++78931339?catalog=100229661",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240523_638520615847925616_22427736_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 108,
+            "brand": "톰브라운",
+            "title": "여성 사선완장 플라워 아이콘 브이넥 가디건 라이트핑크",
+            "price": "1,530,000",
+            "detail_page_url": "https://www.trenbe.com/product/++48842749?catalog=100026146",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1683534399250_c1c62e60c36f42dadb4bc58a05618158_1.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 110,
+            "brand": "막스마라",
+            "title": "막스마라 테디노 자켓",
+            "price": "3,780,000",
+            "detail_page_url": "https://www.trenbe.com/product/++55441066?catalog=100019751",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1705081793535-fe1dcbfe-329b-45ee-b414-b2e233ce7385.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "cozy_minimal"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 112,
+            "brand": "미우미우",
+            "title": "비스코스 로고 니트 블랙",
+            "price": "1,329,000",
+            "detail_page_url": "https://www.trenbe.com/product/++64941647?catalog=100945589",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1705062019500-69ab708c-1d75-465e-9cb8-b3899a31fe09.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "cozy_minimal"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 114,
+            "brand": "구찌",
+            "title": "GG 자카드 울 부클레 가디건 그레이",
+            "price": "2,632,500",
+            "detail_page_url": "https://www.trenbe.com/product/++115603589?catalog=100566132",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1729653913425_de3ad5f64021130fec83c41d649a17f1_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 115,
+            "brand": "로에베",
+            "title": "로에베 여성 아나그램 울 크롭 니트 (라이트그레이) S540Y14KBG 1130",
+            "price": "2,200,000",
+            "detail_page_url": "https://www.trenbe.com/product/++115456052?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1729507852577_567eb2d81c47beebd7287ca683b52d6d_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "cozy_minimal"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 117,
+            "brand": "폴로랄프로렌",
+            "title": "랄프 로렌 가디건 211910443",
+            "price": "541,000",
+            "detail_page_url": "https://www.trenbe.com/product/++117001329?catalog=100686557",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20241108_638666047066451550_23703264_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "modern_classic"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 118,
+            "brand": "아미",
+            "title": "여성 스몰하트 터틀넥 울 니트 차콜 FKS402",
+            "price": "510,000",
+            "detail_page_url": "https://www.trenbe.com/product/++43707552?catalog=&options=owned",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1676279877851-f2cb998d-fbfb-4914-94b2-06c444989ebf.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "cozy_minimal"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 119,
+            "brand": "마쥬",
+            "title": "시퀸 니트 가디건 Sequin knit cardigan MFPCA00486 0201",
+            "price": "532,500",
+            "detail_page_url": "https://www.trenbe.com/product/++65894053?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240415_638487752638814187_21109041_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 122,
+            "brand": "폴스미스",
+            "title": "폴 스미스 니트웨어 W2R429NN3124292 MULTICOLOR",
+            "price": "848,000",
+            "detail_page_url": "https://www.trenbe.com/product/++118007104?catalog=100910703",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1730909057285_74e9c2b544574d0baf980da78e519b6b_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "modern_classic"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 123,
+            "brand": "파비아나필리피",
+            "title": "파비아나 필리피 스웨터 MAD214F037 WHITE",
+            "price": "1,558,000",
+            "detail_page_url": "https://www.trenbe.com/product/++100366666?catalog=100847979",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240705_638557194286072915_22720613_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "cozy_minimal"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 125,
+            "brand": "발망",
+            "title": "(W) 발망 버튼 터틀넥 화이트 / 골드",
+            "price": "2,447,000",
+            "detail_page_url": "https://www.trenbe.com/product/++117964229?catalog=100225891",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1730283083524_549454da14d3dbab56d105ce79274594_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 131,
+            "brand": "가니",
+            "title": "가니 스웨터 K2125033 Light Purple",
+            "price": "387,800",
+            "detail_page_url": "https://www.trenbe.com/product/++98783326?catalog=100607071",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1707365448652_a1d9cbd3f79466b714e53c43ae67428f_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "cozy_minimal"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 133,
+            "brand": "띠어리",
+            "title": "띠어리 터틀넥 J1111703001",
+            "price": "474,000",
+            "detail_page_url": "https://www.trenbe.com/product/++115717468?catalog=100761800",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1729746510178_dd42262d9a59e49fe3be48fdfb45ace7_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 134,
+            "brand": "디젤",
+            "title": "(W) 디젤 M 베라 긴소매 티셔츠 블랙",
+            "price": "734,000",
+            "detail_page_url": "https://www.trenbe.com/product/++117599030?catalog=100933738",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1730859365259_1c0ab98238059df1f5567fdbd9be503a_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 135,
+            "brand": "페데리카토시",
+            "title": "페데리카 토시 터틀넥 31355314 29 Black",
+            "price": "557,000",
+            "detail_page_url": "https://www.trenbe.com/product/++116591556?catalog=100750230",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1730260050632_2b6e3372f2d0311298e9460003d8656c_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 139,
+            "brand": "꾸레쥬",
+            "title": "쿠레쥬 터틀넥 PERMPU026FI00019999 Black",
+            "price": "734,000",
+            "detail_page_url": "https://www.trenbe.com/product/++115909241?catalog=100488807",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1729825868268_67025f8b0b38c057ffb5e5da91e71638_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 140,
+            "brand": "아페쎄",
+            "title": "아페쎄 니트웨어 F23373WVBDK White",
+            "price": "627,400",
+            "detail_page_url": "https://www.trenbe.com/product/++118445074?catalog=100905771",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1731294823416_daee0a949fb5c2869e63eb04863fd8b9_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "cozy_minimal"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 141,
+            "brand": "비비안웨스트우드",
+            "title": "비비안웨스트우드 가디건 1803002P Y001BM401 GREEN",
+            "price": "683,100",
+            "detail_page_url": "https://www.trenbe.com/product/++91373504?catalog=100322732",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1732089135318_96c1d4f437b24d4572ed7c371b093423_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 142,
+            "brand": "모스키노",
+            "title": "모스키노 스웨터 V1707 55281181",
+            "price": "894,000",
+            "detail_page_url": "https://www.trenbe.com/product/++112902407?catalog=100724764",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1719630720416_7c3edbb00f1536cb5320336b625880c9_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 144,
+            "brand": "폴로랄프로렌",
+            "title": "랄프 로렌 스웨터 211941588001",
+            "price": "612,000",
+            "detail_page_url": "https://www.trenbe.com/product/++117928987?catalog=100836163",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1730256526317_34eb229f16a0993e2dfbd8b88486f393_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "vintage_classic"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 146,
+            "brand": "비비안웨스트우드",
+            "title": "오브 자수 니트 가디건",
+            "price": "774,000",
+            "detail_page_url": "https://www.trenbe.com/product/++115733680?catalog=100909051",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1729751803725_4f80044ab7bc9096f4a6a5af240c5f4b_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 148,
+            "brand": "꼼데가르송",
+            "title": "여성 더블 하트 와펜 가디건 그레이",
+            "price": "462,000",
+            "detail_page_url": "https://www.trenbe.com/product/++39499429?catalog=100013070",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1674011307131_a85e39f6f072b2e6106b983ee66d018b_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "vintage_classic"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 149,
+            "brand": "겐조",
+            "title": "미니 보크 플라워 로고 가디건 블랙",
+            "price": "724,000",
+            "detail_page_url": "https://www.trenbe.com/product/++73227130?catalog=100022505",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1710736959203-68494b14-d906-45f3-afc3-5fcd58e54b0e.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "elegant_classic"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    }
+]

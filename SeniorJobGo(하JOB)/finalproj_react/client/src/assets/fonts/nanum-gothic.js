@@ -1,0 +1,1 @@
+export const NANUM_GOTHIC_BASE64 = '...base64 string...'; 

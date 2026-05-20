@@ -1,0 +1,195 @@
+// pages/auth/signin/styles/signin.module.scss
+@use '@assets/styles/_variables' as *;
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 400px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  background-color: $background-color;
+}
+
+.signin {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  
+  &__title {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: $font-size-lg;
+    font-weight: $font-weight-semibold;
+    margin-bottom: 3rem;
+
+    i {
+      position: absolute;
+      left: 0;
+      font-size: $font-icon-md;
+      cursor: pointer;
+    }
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+  
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  &__footer {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+  
+  label {
+    font-size: $font-size-sm;
+    font-weight: $font-weight-medium;
+    color: $text-color;
+  }
+  
+  input {
+    height: 48px;
+    padding: 0 1rem;
+    border: 1px solid $border-color;
+    border-radius: $radius-md;
+    font-size: $font-size-sm;
+    
+    &::placeholder {
+      color: $placeholder-color;
+    }
+    
+    &:focus {
+      border-color: $primary-color;
+      outline: none;
+    }
+  }
+}
+
+.errorMessage {
+  color: $primary-hover-color;
+  font-size: $font-size-sm;
+  margin: 0.5rem 0;
+  text-align: center;
+}
+
+.options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: -0.5rem;
+  padding: 0 0.2rem;
+}
+
+.saveId {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: $font-size-sm;
+  color: $secondary-text-color;
+  cursor: pointer;
+  
+  input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    border: 1px solid $border-color;
+    border-radius: $radius-sm;
+    appearance: none;
+    cursor: pointer;
+    
+    &:checked {
+      background-color: $primary-color;
+      border-color: $primary-color;
+      
+      &::after {
+        content: '✓';
+        display: block;
+        text-align: center;
+        color: $white-color;
+        font-size: $font-size-xs;
+        line-height: 16px;
+      }
+    }
+  }
+}
+
+.findAccount {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: $font-size-sm;
+  color: $secondary-text-color;
+  text-decoration: underline;
+  cursor: pointer;
+  
+  &:hover {
+    color: $primary-hover-color;
+  }
+}
+
+.submitButton {
+  width: 100%;
+  height: 48px;
+  background: $border-color;
+  border: none;
+  border-radius: $radius-md;
+  color: $text-color;
+  font-size: $font-size-md;
+  font-weight: $font-weight-medium;
+  
+  &:disabled {
+    background: $border-color;
+    color: $secondary-text-color;
+  }
+
+  &:enabled {
+    background: $primary-color;
+    color: $text-color;
+    cursor: pointer;
+  }
+  
+  &:not(:disabled):hover {
+    background: $primary-hover-color;
+  }
+}
+
+.signupButton {
+  width: 100%;
+  height: 48px;
+  background: $background-color;
+  border: 1px solid $border-color;
+  border-radius: $radius-md;
+  color: $text-color;
+  font-size: $font-size-md;
+  font-weight: $font-weight-medium;
+  cursor: pointer;
+  
+  &:hover {
+    border-color: $primary-color;
+    color: $primary-color;
+  }
+}

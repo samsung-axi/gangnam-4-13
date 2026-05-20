@@ -1,0 +1,600 @@
+/* 공통 변수 정의 */
+:root {
+  --primary-color: #2ec4b6;
+  --primary-hover: #28b2a5;
+  --secondary-color: #ff4d4f;
+  --secondary-hover: #e04344;
+  --disabled-color: #cccccc;
+  --error-color: #d93025;
+  --border-color: #e0e0e0;
+  --background-light: #f9f9f9;
+  --text-color: #333;
+  --white: #ffffff;
+  --border-radius: 8px;
+  --transition-speed: 0.3s;
+  --modal-background: rgba(0, 0, 0, 0.5);
+  --modal-box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  --button-size: 40px;
+  --icon-size: 20px;
+  --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* 공통 버튼 스타일 */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 10px;
+  font-size: 14px;
+  font-family: var(--font-family);
+  color: var(--white);
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background-color var(--transition-speed) ease,
+    box-shadow var(--transition-speed) ease, transform 0.2s ease;
+  box-shadow: var(--box-shadow);
+  white-space: nowrap;
+}
+
+.button svg {
+  width: var(--icon-size);
+  height: var(--icon-size);
+  stroke: var(--white);
+}
+
+.button:disabled {
+  background-color: var(--disabled-color);
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.button:not(:disabled):hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.button:not(:disabled):focus {
+  outline: 2px solid var(--primary-hover);
+  outline-offset: 2px;
+}
+
+.button:active {
+  transform: scale(0.98);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.glossary-edit-button,
+.glossary-delete-button,
+.glossary-default-button,
+.glossary-save-button,
+.glossary-cancel-button {
+  background-color: var(--secondary-color);
+  width: 40px;
+  height: 36px;
+}
+
+.glossary-save-button,
+.glossary-cancel-button {
+  display: none;
+
+}
+
+.glossary-edit-button:hover,
+.glossary-delete-button:hover,
+.glossary-default-button:hover {
+  background-color: var(--secondary-hover);
+}
+
+/* 추가 버튼 */
+.button--add-term {
+  width: var(--button-size);
+  height: var(--button-size);
+  padding: 0;
+  margin: 10px;
+}
+
+/* 공통 입력 필드 스타일 */
+input[type="text"],
+input[type="password"],
+textarea {
+  padding-left: 5px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  font-size: 16px;
+  color: var(--text-color);
+  background-color: var(--background-light);
+  transition: border-color var(--transition-speed) ease,
+    box-shadow var(--transition-speed) ease;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+textarea:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 5px rgba(46, 196, 182, 0.5);
+  outline: none;
+}
+
+/* 단어쌍 추가 버튼 */
+.add-term-button {
+  margin-top: 10px;
+}
+
+/* 단어 아이템 스타일 */
+.word-item {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0 15px;
+}
+
+.word-item-language {
+  text-align: left;
+  font-size: 16px;
+  color: var(--primary-color);
+  margin-bottom: 5px;
+}
+
+.word-item-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.start-word,
+.arrive-word {
+  flex: 1;
+  height: 40px;
+  padding: 10px 12px;
+  background-color: var(--background-light);
+  color: var(--text-color);
+  border-radius: var(--border-radius);
+  margin-bottom: 10px;
+  border: 1px solid var(--border-color);
+  font-weight: 600;
+}
+
+.create-glossary {
+  padding: 8px;
+  margin: 10px 0;
+}
+
+.create-glossary:hover,
+.button--add-term:hover {
+  background-color: var(--primary-hover);
+}
+
+.glossary-editor h3 {
+  padding: 0px 10px;
+  font-weight: bolder;
+}
+
+.divider {
+  margin: 20px 0;
+  /* 위아래 간격 */
+  border-bottom: 1px solid black !important;
+  /* 검정색 구분선 */
+}
+
+/* 용어집 박스 */
+.glossary-box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: absolute;
+  z-index: 1500;
+  top: -15px;
+  right: -5px;
+  margin-top: 10px;
+  padding: 20px;
+  background-color: var(--white);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  min-width: 600px;
+}
+
+.glossary-box h2 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: var(--primary-color);
+}
+
+.glossary-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+}
+
+.glossary-category {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: var(--white);
+  font-weight: bolder;
+  transition: background-color var(--transition-speed) ease;
+  margin-bottom: 5px;
+}
+
+.glossary-category:last-child {
+  border-bottom: none;
+}
+
+.glossary-category svg {
+  margin-left: 5px;
+  cursor: pointer;
+  transition: transform 0.3s ease, color var(--transition-speed) ease;
+}
+
+.glossary-category:hover,
+.glossary-category svg:hover {
+  color: var(--primary-color);
+}
+
+.glossary-category .dropdown-icon.rotated {
+  transform: rotate(180deg);
+}
+
+.glossary-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+  background-color: var(--white);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  font-weight: 600;
+  transition: background-color var(--transition-speed) ease;
+  cursor: pointer;
+}
+
+.glossary-item span {
+  margin: 0 12px;
+}
+
+.glossary-item:first-child {
+  border-radius: 8px 8px 0 0;
+}
+
+.glossary-item:last-child {
+  border-radius: 0 0 8px 8px;
+}
+
+.glossary-item:hover {
+  border: 1px solid var(--primary-color);
+}
+
+.glossary-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+/* 단어쌍 리스트 전체 박스 */
+.word-list {
+  width: 100%;
+  margin-top: 10px;
+  padding: 5px;
+  background-color: var(--white);
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  max-height: 300px;
+  overflow-y: auto;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.word-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.word-list::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 4px;
+}
+
+.word-list::-webkit-scrollbar-thumb:hover {
+  background-color: #aaa;
+}
+
+/* 단일 단어쌍 항목 */
+.word-pair {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  /* 입력 필드와 버튼 간 간격 */
+  width: 100%;
+  /* 부모 요소에 맞게 늘어남 */
+  max-width: 100%;
+  /* 부모 요소 크기를 초과하지 않음 */
+  box-sizing: border-box;
+  /* 패딩 포함 크기 계산 */
+  overflow: hidden;
+  /* 넘치는 내용을 숨김 */
+}
+
+/* 버튼 스타일 조정 */
+.word-actions button {
+  flex-shrink: 0;
+  /* 버튼 크기가 축소되지 않도록 설정 */
+  max-width: calc(50% - 5px);
+  /* 버튼 크기를 부모 요소 절반으로 제한 (간격 제외) */
+}
+
+.word-pair input {
+  flex: 1;
+  margin: 5px;
+  min-width: 0;
+}
+
+.word-pair input:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 5px rgba(46, 196, 182, 0.5);
+}
+
+.word-pair span {
+  margin: 0 8px;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.word-pair button {
+  padding: 10px;
+  background-color: var(--secondary-color);
+  color: var(--white);
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color var(--transition-speed) ease;
+}
+
+.word-pair button:hover {
+  background-color: var(--secondary-hover);
+}
+
+/* 모달 스타일 */
+.Modal {
+  background-color: var(--modal-background);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: var(--white);
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: var(--modal-box-shadow);
+}
+
+.modal-content button:hover {
+  background-color: var(--primary-hover);
+}
+
+/* 에러 메시지 스타일 */
+.error {
+  color: var(--error-color);
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+/* 버튼 클릭 애니메이션 */
+.button:active,
+.button--icon:active,
+.glossary-button:active,
+.create-glossary:active,
+.modal-content button:active,
+.add-term-button:active,
+.glossary-edit-button:active,
+.glossary-delete-button:active {
+  transform: scale(0.98);
+}
+
+/* 용어집 활성화/비활성화 토글 */
+.glossary-toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.glossary-toggle input[type="checkbox"] {
+  display: none;
+}
+
+.glossary-toggle input[type="checkbox"]+span {
+  width: 50px;
+  height: 25px;
+  background-color: #ccc;
+  border-radius: 15px;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.glossary-toggle input[type="checkbox"]+span::before {
+  content: "";
+  width: 21px;
+  height: 21px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.glossary-toggle input[type="checkbox"]:checked+span {
+  background-color: #4caf50;
+  /* 활성화 색상 */
+}
+
+.glossary-toggle input[type="checkbox"]:checked+span::before {
+  transform: translateX(25px);
+  /* 스위치 이동 */
+}
+
+.loading {
+  font-size: 18px;
+  color: var(--primary-color);
+}
+
+.no-words-message {
+  margin-top: 10px;
+  font-size: 14px;
+  color: var(--text-color);
+}
+
+/* 단어 입력 필드 */
+.word-input {
+  flex: 1;
+  height: 30px;
+  padding: 5px 5px;
+  background-color: var(--background-light);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  transition: border-color var(--transition-speed) ease,
+    box-shadow var(--transition-speed) ease;
+  margin-top: 2px;
+}
+
+.word-input:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 5px rgba(46, 196, 182, 0.5);
+  outline: none;
+}
+
+/* 수정 및 삭제 버튼 정렬 */
+.word-actions {
+  display: flex !important;
+  gap: 5px;
+  /* 버튼 간 간격 */
+  justify-content: flex-start;
+  /* 좌측 정렬 */
+  align-items: center;
+  /* 수직 정렬 */
+  flex-wrap: wrap !important;
+  max-width: 100% !important;
+  box-sizing: border-box;
+  /* 패딩 포함 크기 계산 */
+}
+
+/* 화살표 스타일 */
+.arrow {
+  margin: 0 8px;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+/* 추가 아이콘 스타일 */
+.add-icon {
+  width: var(--icon-size);
+  height: var(--icon-size);
+  stroke: var(--white);
+}
+
+.mobile-information{
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+
+  .glossary-box {
+    width: 50vw;
+    min-width: 200px;
+    right: -20px;
+  }
+
+  .glossary-buttons {
+    gap: 5px;
+  }
+
+  .glossary-item span {
+    margin: 0 3px;
+  }
+
+  .glossary-toggle {
+    font-size: 14px;
+  }
+
+  .glossary-category {
+    font-size: 14px;
+  }
+
+  .glossary-item {
+    font-size: 14px;
+    padding: 5px;
+  }
+
+  .glossary-edit-button,
+  .glossary-delete-button,
+  .glossary-default-button,
+  .glossary-save-button,
+  .glossary-cancel-button {
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    font-size: 13px;
+  }
+
+  .button svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  input[type="text"],
+  input[type="password"],
+  textarea {
+    font-size: 14px;
+  }
+
+  .word-list {
+    margin-top: 10px;
+    width: 58vw;
+  }
+
+  .word-pair {
+    gap: 5px;
+    height: 50px;
+  }
+
+  .word-pair span {
+    margin: 0;
+  }
+
+  .word-pair input {
+    margin: 0;
+  }
+
+  .create-glossary,
+  .glossary-editor {
+    display: none;
+  }
+
+  .mobile-information{
+    display: inline;
+    font-size: 14px;
+    padding: 0 10px;
+  }
+
+  .divider{
+    margin-bottom: 0;
+  }
+}

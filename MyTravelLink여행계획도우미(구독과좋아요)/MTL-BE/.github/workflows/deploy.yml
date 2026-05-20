@@ -1,0 +1,80 @@
+name: Deploy my travel link website
+
+on:
+  push:
+    branches:
+      - dev
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v2
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      - name: Build with Maven
+        run: mvn clean package
+        env:
+          SPRING_PROFILES_ACTIVE: test
+          SPRING_DATASOURCE_URL: ${{ secrets.MYSQL_URL }}
+          SPRING_DATASOURCE_USERNAME: ${{ secrets.MYSQL_USERNAME }}
+          SPRING_DATASOURCE_PASSWORD: ${{ secrets.MYSQL_PASSWORD }}
+          AI_SERVER_URL: ${{ secrets.AI_SERVER_URL }}
+          JWT_SECRET: ${{ secrets.JWT_SECRET }}
+          JWT_EXPIRATION_TIME: ${{ secrets.JWT_EXPIRATION_TIME }}  # 예: 86400000
+          OAUTH2_GOOGLE_CLIENT_ID: ${{ secrets.OAUTH2_GOOGLE_CLIENT_ID }}
+          OAUTH2_GOOGLE_CLIENT_SECRET: ${{ secrets.OAUTH2_GOOGLE_CLIENT_SECRET }}
+          OAUTH2_GOOGLE_REDIRECT_URI: ${{ secrets.OAUTH2_GOOGLE_REDIRECT_URI }}
+
+      - name: Build Docker image
+        run: docker build -t yuchankim/api-mytravellink:latest .
+
+      - name: Log in to Docker Hub
+        run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+
+      - name: Push Docker image to Docker Hub
+        run: docker push yuchankim/api-mytravellink:latest
+
+  SSH:
+    needs: build-and-deploy
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: SSH to EC2
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            sudo mkdir -p /home/ec2-user/upload
+            sudo docker pull yuchankim/api-mytravellink:latest
+            sudo docker stop api-mytravellink || true
+            sudo docker rm api-mytravellink || true
+            sudo docker run -d --name api-mytravellink -p 80:9000 \
+              -v /home/ec2-user/upload:/app/upload \
+              -e SPRING_PROFILES_ACTIVE=test \
+              -e SERVER_TOMCAT_CONNECTION_TIMEOUT=900000 \
+              -e SERVER_TOMCAT_KEEP_ALIVE_TIMEOUT=900000 \
+              -e SPRING_DATASOURCE_URL="jdbc:mysql://mytravellink.czaw4ussgprp.ap-northeast-2.rds.amazonaws.com:3306/test_db02" \
+              -e SPRING_DATASOURCE_USERNAME="travellink" \
+              -e SPRING_DATASOURCE_PASSWORD="mytravellinkmytravellink" \
+              -e JWT_SECRET="wERjtIdxQ8lNjF0w/AAiN6HqTASaCAUzSq6nbKefMwf5CbPE8GvwLsClz94uVt9Q1esxYwwXVU+BYn7/mR01Qg" \
+              -e JWT_EXPIRATION_TIME="86400000" \
+              -e AI_SERVER_URL="http://221.148.97.237:28001" \
+              -e OAUTH2_GOOGLE_CLIENT_ID="493235437055-i3vpr6aqus0mqfarsvfm65j2rkllo97t.apps.googleusercontent.com" \
+              -e OAUTH2_GOOGLE_CLIENT_SECRET="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" \
+              -e OAUTH2_GOOGLE_REDIRECT_URI="https://mytravellink.site/auth/google/callback" \
+              yuchankim/api-mytravellink:latest
+
+
+defaults:
+  run:
+    working-directory: ./MyTravelLink

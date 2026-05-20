@@ -1,0 +1,120 @@
+.WS-login {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin: 0 auto;
+
+    width: 430px;
+    height: 100vh;
+
+    background-color: white;
+    overflow: hidden;
+}
+
+.WS-login-header-Container {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+
+    display: flex;
+    align-items: left;
+}
+
+.WS-login-back-button {
+    background-color: transparent;
+    border: none;
+
+    font-size: var(--font-size-lg);
+    font-weight: bold;
+    color: var(--color-dark-gray);
+
+    cursor: pointer;
+}
+
+.WS-login-body-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100%;
+}
+
+.WS-login-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 120px;
+    margin-bottom: 40%;
+
+    width: 100%;
+    height: 100px;
+}
+
+.WS-login-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 15px;
+
+    width: 300px;
+
+    border: 2px solid var(--color-light-gray);
+    border-radius: var(--border-radius-full);
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+
+    background-color: white;
+
+    cursor: pointer;
+}
+
+.WS-login-button img {
+    width: 24px;
+    /* 아이콘 크기 */
+    height: 24px;
+    /* 아이콘 크기 */
+    margin-right: 10px;
+    /* 아이콘과 텍스트 간격 */
+}
+
+.WS-login-button:hover {
+    background: #f0f0f0;
+    /* 호버 시 배경 색상 변경 */
+}
+
+.WS-login-message-container {
+    position: fixed;
+    bottom: 13%;
+    left: 0;
+    right: 0;
+
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    gap: 30px;
+
+    padding-top: 10px;
+
+    width: 96%;
+
+    border-top: 1px solid var(--color-guide);
+}
+
+.WS-login-message-container div {
+    margin-right: 10px;
+
+    font-size: var(--font-size-sm);
+    font-weight: bold;
+    color: var(--color-guide);
+}

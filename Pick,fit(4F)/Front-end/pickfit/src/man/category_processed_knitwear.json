@@ -1,0 +1,920 @@
+[
+    {
+        "product_info": {
+            "id": 99,
+            "brand": "아미",
+            "title": "리브드 코튼 울 스웨터 아이보리",
+            "price": "214,000",
+            "detail_page_url": "https://www.trenbe.com/product/197+62852693?catalog=&view=ad",
+            "images": [
+                "https://i.ibb.co/54m2b3n/white-knit.webp"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 5,
+            "brand": "톰브라운",
+            "title": "트위드 4바 모헤어 니트 네이비 MKA489A Y1506 415 63383",
+            "price": "993,330",
+            "detail_page_url": "https://www.trenbe.com/product/++116327197?catalog=100640855",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1730683950364_5a26524f3886580a565dcfd70bfb1a65_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 2,
+            "brand": "할리오브스코틀랜드",
+            "title": "할리오브스코틀랜드 M3834 7 SHAGGY TUSK Shaggy Dog 쉐기 독 터스크 남성 니트",
+            "price": "469,000",
+            "detail_page_url": "https://www.trenbe.com/product/++73385971?catalog=100922008",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1710928932070-bd663bfb-14a2-4127-899d-7e80ada08c9e.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "cozy_minimal"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 3,
+            "brand": "아미",
+            "title": "빅 하트 로고 터틀넥 스웨터",
+            "price": "1,057,000",
+            "detail_page_url": "https://www.trenbe.com/product/++101470818?catalog=100039225",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1724044271536-f86b1221-e2dd-4281-b22d-735066de4a54.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 4,
+            "brand": "타미힐피거",
+            "title": "타미 힐피거 남성 풀 집업 코튼 니트 남녀공용",
+            "price": "120,000",
+            "detail_page_url": "https://www.trenbe.com/product/++60824013?catalog=&options=owned",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1700208567262-d53d0c3d-8665-4ab9-8e64-d18e5acbb9e2.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "casual_sporty"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 6,
+            "brand": "꼼데가르송",
+            "title": "레드하트 와펜 울 니트 AZ N068 GREY",
+            "price": "443,000",
+            "detail_page_url": "https://www.trenbe.com/product/++41443779?catalog=100930428",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1696579498695-9994f242-2f3d-4435-89bb-1cb7f6006f5f.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "cozy_minimal"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 9,
+            "brand": "스톤아일랜드",
+            "title": "남성 와펜 패치 터틀넥 울 니트 7715552C2 V0020",
+            "price": "807,000",
+            "detail_page_url": "https://www.trenbe.com/product/++74791605?catalog=100945752",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1711705444779-18f88ff0-5e1b-4ce4-9229-b564275a50b3.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "high_end_street"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 11,
+            "brand": "톰브라운",
+            "title": "4바 스트라이프 펀믹스 모헤어 케이블 가디건",
+            "price": "627,000",
+            "detail_page_url": "https://www.trenbe.com/product/++116327371?catalog=100943039",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1730683928836_a8090c57c32da39d19ace5e64659ca86_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 12,
+            "brand": "할리오브스코틀랜드",
+            "title": "할리오브스코틀랜드 M3116 7 DRIFT Shaggy Dog 쉐기 독 드리프트 남성 니트",
+            "price": "469,000",
+            "detail_page_url": "https://www.trenbe.com/product/++73385962?catalog=100922003",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1710928904457-692b24b0-3874-464d-86cf-6da18fcf93b6.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "cozy_minimal"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 15,
+            "brand": "할리오브스코틀랜드",
+            "title": "할리오브스코틀랜드 24FW 남성 쉐기독 울 크루넥 니트 발레리나 M2474 7 SHAGGY BALLERINA",
+            "price": "239,000",
+            "detail_page_url": "https://www.trenbe.com/product/++117832247?catalog=&options=owned",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1730978221701-6936ccaa-c810-4eb4-a26c-baef62bfbd4c.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "cozy_minimal"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 16,
+            "brand": "할리오브스코틀랜드",
+            "title": "할리오브스코틀랜드 24FW 남성 울 크루넥 니트 샌데이 M5008 7 SANDAY",
+            "price": "269,000",
+            "detail_page_url": "https://www.trenbe.com/product/++117832180?catalog=&options=owned",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1730978133019-fdc4768f-9310-45af-943d-63c4124d4723.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "cozy_minimal"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 17,
+            "brand": "할리오브스코틀랜드",
+            "title": "할리 오브 스코틀랜드 쉐기독 남성 니트 M3834 7 TUSK",
+            "price": "188,000",
+            "detail_page_url": "https://www.trenbe.com/product/++73979554?catalog=100921949",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1711528704313_2e206011412561a175820f23bb8eba7f_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "cozy_minimal"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 18,
+            "brand": "톰브라운",
+            "title": "사선완장 셰틀랜드 울 남성 가디건 네이비",
+            "price": "1,526,000",
+            "detail_page_url": "https://www.trenbe.com/product/++114599387?catalog=60533",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1728540142504_49f2bed5cb9901968103cc8b60f8148b_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 23,
+            "brand": "아미",
+            "title": "아미 파리 니트 스웨터 블랙",
+            "price": "913,900",
+            "detail_page_url": "https://www.trenbe.com/product/++114334356?catalog=100013108",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1729143583632-9465c34c-2535-4576-8dda-2d89932388ff.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "vintage_classic"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 29,
+            "brand": "아미",
+            "title": "하트 로고 자수 가디건 헤더 그레이",
+            "price": "829,000",
+            "detail_page_url": "https://www.trenbe.com/product/++94645256?catalog=100651940",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1721375075923-494c854d-0b8d-4b9c-99d6-d8900e7dc82c.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "modern_classic"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 34,
+            "brand": "아미",
+            "title": "체인스티치 하트 로고 울 남성 가디건 아이보리",
+            "price": "850,000",
+            "detail_page_url": "https://www.trenbe.com/product/++54740608?catalog=100646190",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1690334122465_491728fcbb57d5a6217510d5cada5b45_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "modern_classic"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 41,
+            "brand": "CP컴퍼니",
+            "title": "24FW 17CMKN047A 110149A M13 CP컴퍼니 니트 스웨터",
+            "price": "381,920",
+            "detail_page_url": "https://www.trenbe.com/product/++117589799?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1730855004670_938ab45b95746160fd3cddf638322f57_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "cozy_minimal"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 43,
+            "brand": "스톤아일랜드",
+            "title": "로고 와펜 남성 니트 7615516B2 V0M67",
+            "price": "620,000",
+            "detail_page_url": "https://www.trenbe.com/product/++33423791?catalog=100944727",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1705173508435-b3dbcfb3-fa16-4a11-a0f5-4baab8ab46b6.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "cozy_minimal"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 44,
+            "brand": "CP컴퍼니",
+            "title": "24FW 17CMKN047A 110149A 887 CP컴퍼니 니트 스웨터",
+            "price": "381,920",
+            "detail_page_url": "https://www.trenbe.com/product/++117589791?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1730854996563_be7416a43d81df25131c12cb7bda9203_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "cozy_minimal"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 45,
+            "brand": "CP컴퍼니",
+            "title": "씨피 컴퍼니 터틀넥 17CMKN142A110149A103",
+            "price": "665,000",
+            "detail_page_url": "https://www.trenbe.com/product/++101547431?catalog=100733141",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1724124198888_6b4f7dc7abedef572b16f0a79dde35fa_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 47,
+            "brand": "띠어리",
+            "title": "라마 반집업 스웨터 메리노 울 Lamar Quarter-Zip Sweater in Merino Wool M1081718 07N",
+            "price": "666,600",
+            "detail_page_url": "https://www.trenbe.com/product/++116203182?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20241011_638642348136435888_23471043_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "cozy_minimal"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 51,
+            "brand": "띠어리",
+            "title": "크루넥 스웨터 메리노 울 Crewneck Sweater in Merino Wool N1081706 1K5",
+            "price": "436,000",
+            "detail_page_url": "https://www.trenbe.com/product/++116203000?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20241011_638642348175240347_23471048_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "cozy_minimal"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 52,
+            "brand": "아이앱스튜디오",
+            "title": "아이앱 스튜디오 후드 듀얼 그레이",
+            "price": "826,350",
+            "detail_page_url": "https://www.trenbe.com/product/++117591579?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1730857753353-180946ba-f4b1-49e6-9a64-dedcdcb072ef.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "cozy_minimal"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 56,
+            "brand": "톰브라운",
+            "title": "도네갈 크루넥 니트 그레이",
+            "price": "1,070,100",
+            "detail_page_url": "https://www.trenbe.com/product/++116327062?catalog=100640849",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1730683946144_a133a72caa91ff8fb387d4ec39ec5cfb_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "cozy_minimal"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 57,
+            "brand": "바버",
+            "title": "바버 로고 코튼 니트 하프집업 스웻셔츠 그레이",
+            "price": "177,300",
+            "detail_page_url": "https://www.trenbe.com/product/++27176047?catalog=254284",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240713_638564674931950549_8064462_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "high_end_street"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 58,
+            "brand": "타미힐피거",
+            "title": "타미 힐피거 남녀공용 케이블 꽈배기 코튼 반집업 니트",
+            "price": "120,000",
+            "detail_page_url": "https://www.trenbe.com/product/++60653671?catalog=&options=owned",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1698376749026-08317362-41a8-4e62-ac1a-9366a0caef92.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "elegant_classic"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 64,
+            "brand": "폴로랄프로렌",
+            "title": "[백화점AS] 폴로 랄프로렌 남성 피마코튼 텍스쳐 가디건 (3color)",
+            "price": "260,000",
+            "detail_page_url": "https://www.trenbe.com/product/++112667798?catalog=&options=owned",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1727619581622-e1491c6a-ef43-4bf5-8a02-ed295cb2d013.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "elegant_classic"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 70,
+            "brand": "폴로랄프로렌",
+            "title": "[7color] 폴로 랄프로렌 남성 케이블 니트 스웨터",
+            "price": "259,000",
+            "detail_page_url": "https://www.trenbe.com/product/++117033647?catalog=&options=owned",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1730435079026-8929b93a-8f94-4c87-8cd1-b0c060fb224c.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 73,
+            "brand": "바버",
+            "title": "크루넥 넥 점퍼 Chester Crew Neck Jumper 333430 WhisperWht WH32",
+            "price": "214,700",
+            "detail_page_url": "https://www.trenbe.com/product/++117856795?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20241108_638665954263508680_23921970_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 75,
+            "brand": "CP컴퍼니",
+            "title": "CP 렌즈 와펜 모크넥 니트 09CMKN099A 005558G 103",
+            "price": "249,000",
+            "detail_page_url": "https://www.trenbe.com/product/++57686418?catalog=100943987",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1693977867579-580fece0-e121-4d72-9237-58f808fa06a8.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "cozy_minimal"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 79,
+            "brand": "띠어리",
+            "title": "반집업 스웨터 캐시미어 Quarter-Zip Sweater in Cashmere N0888701 07N",
+            "price": "774,200",
+            "detail_page_url": "https://www.trenbe.com/product/++73769960?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20241011_638642348080078555_21876681_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "cozy_minimal"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 80,
+            "brand": "아미",
+            "title": "리브드 코튼 울 스웨터 아이보리",
+            "price": "899,000",
+            "detail_page_url": "https://www.trenbe.com/product/++59914569?catalog=100010066",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1705224855811-b8e4feeb-0b11-4d82-852e-1cde34b36208.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "cozy_minimal"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 81,
+            "brand": "띠어리",
+            "title": "크루넥 스웨터 오가닉 코튼 Crewneck Sweater in Organic Cotton Pique O074710R 0RO",
+            "price": "360,500",
+            "detail_page_url": "https://www.trenbe.com/product/++116203005?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20241011_638642347915866878_23470978_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "cozy_minimal"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 86,
+            "brand": "아미",
+            "title": "빅 하트 스트라이프 니트 블랙/화이트 H21K029 018 004 57131",
+            "price": "695,000",
+            "detail_page_url": "https://www.trenbe.com/product/++107032634?catalog=100645947",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1726216212041_239a8abdeb68a573f2da6ec6549ff4fc_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "cozy_minimal"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 87,
+            "brand": "아크네스튜디오",
+            "title": "페이스 로고 패치 크루넥 울 니트 스웨터 블랙",
+            "price": "507,000",
+            "detail_page_url": "https://www.trenbe.com/product/++54751920?catalog=226328",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1690350350938_d8783d9e30d961c38bdbbf17eb326af2_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "high_end_street"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 89,
+            "brand": "휴고보스",
+            "title": "Ecaio-P 10255187 01 313930 Dark Blue",
+            "price": "313,100",
+            "detail_page_url": "https://www.trenbe.com/product/++65818874?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240104_638398938291454831_21103341_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 92,
+            "brand": "아소스",
+            "title": "가디건 넥 카라 & Gerippte Strickjacke in Steinbeige mit Kragen und normalem Schnitt 207042534STEIN",
+            "price": "76,000",
+            "detail_page_url": "https://www.trenbe.com/product/++107453186?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20241003_638635541583087291_23256640_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 105,
+            "brand": "아크네스튜디오",
+            "title": "24 FW 아크네 스튜디오 Faces Tiles 페이스 타일 패턴 가디건 C60070 DFI",
+            "price": "490,000",
+            "detail_page_url": "https://www.trenbe.com/product/++58090365?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1694481882387_ddbc4d2eb017e906dfd48fdd38246508_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "high_end_street"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 111,
+            "brand": "닐바렛",
+            "title": "브러쉬드 코튼 핏 스웻셔츠 Brushed Cotton FAIRISLE THUNDERBOLT Easy Fit Sweatshirt 577759",
+            "price": "1,002,900",
+            "detail_page_url": "https://www.trenbe.com/product/++71039288?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240226_638445446296938389_21567203_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 113,
+            "brand": "구찌",
+            "title": "구찌 GG 로고 남성 라운드넥 니트 626288 XKBFB 4795",
+            "price": "1,340,000",
+            "detail_page_url": "https://www.trenbe.com/product/++67935978?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1706257904765_7283485c5750230f6ed8afc1a9697e1e_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 116,
+            "brand": "메종키츠네",
+            "title": "메종키츠네 남성 네이비폭스 패치 니트(그레이) IU00509KT1058 H150",
+            "price": "469,000",
+            "detail_page_url": "https://www.trenbe.com/product/++54751094?catalog=100646441",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1690339965160_dfc1f005202dab4e6bd6eab1d24cb388_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "cozy_minimal"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 121,
+            "brand": "루이비통",
+            "title": "루이비통 모노그램 남자 남성 캐시미어 니트 가디건",
+            "price": "3,480,000",
+            "detail_page_url": "https://www.trenbe.com/product/++37635638?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1666952217495_d2886d2255bcd68b8eba7d631e3823a8_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "modern_classic"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 126,
+            "brand": "스톤아일랜드",
+            "title": "와펜 패치 라운드넥 남성 니트 네이비",
+            "price": "962,000",
+            "detail_page_url": "https://www.trenbe.com/product/++54757936?catalog=61533",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1690355796337_0be87a28d8e23f1b0dcf89450b84cc82_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "high_end_street"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 127,
+            "brand": "스톤아일랜드",
+            "title": "와펜 패치 버튼 울 가디건 네이비",
+            "price": "1,128,000",
+            "detail_page_url": "https://www.trenbe.com/product/++62848874?catalog=100013049",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1700471087629_86208d41d442be20be1b03344ac9aa63_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "elegant_classic"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 128,
+            "brand": "구찌",
+            "title": "구찌 남성 곰돌이 패턴 크루넥 니트 스웨터 741902 XKC7R 8050",
+            "price": "2,582,000",
+            "detail_page_url": "https://www.trenbe.com/product/++114721529?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1728629136176_c866591a6639415bc40ae2ccd119e0ad_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "modern_classic"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 130,
+            "brand": "루이비통",
+            "title": "(A/S가능) 루이비통 울 블렌드 풀오버 남성 니트 티셔츠 1AGJSR",
+            "price": "3,550,000",
+            "detail_page_url": "https://www.trenbe.com/product/++116047282?catalog=&options=owned",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1729871289371-d44d109f-a1e7-4499-b7c7-d7f0e2999113.png"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "vintage_classic"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 131,
+            "brand": "루이비통",
+            "title": "(A/S가능) 루이비통 청키 울 블렌드 풀오버 남성 니트 티셔츠 1AGJH4",
+            "price": "3,100,000",
+            "detail_page_url": "https://www.trenbe.com/product/++115745537?catalog=&options=owned",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1729758610532-14ccb569-506e-4d8c-9e6f-16c16d2331b0.png"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 136,
+            "brand": "휴고보스",
+            "title": "집업 자켓 Adam Zip Jacket 10166548 01 527456 Black 001",
+            "price": "256,000",
+            "detail_page_url": "https://www.trenbe.com/product/++80678919?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240606_638532175165611041_22540314_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 137,
+            "brand": "휴고보스",
+            "title": "Botto-L 10243935 01 312265 Dark Blue 404",
+            "price": "254,100",
+            "detail_page_url": "https://www.trenbe.com/product/++58354268?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20230917_638304869896982594_19985056_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "modern_classic"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 148,
+            "brand": "카고브로스",
+            "title": "CB 피그먼트 케이블 라운드 니트 (네이비)",
+            "price": "89,000",
+            "detail_page_url": "https://www.trenbe.com/product/++58264758?catalog=&options=owned",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1694753873979-92f2a77c-c0ac-4772-9cfd-b9d992c02f01.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "cozy_minimal"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    },
+    {
+        "product_info": {
+            "id": 149,
+            "brand": "타미힐피거",
+            "title": "타미 힐피거 남녀공용 터틀넥 꽈배기 케이블 스몰 로고 코튼 니트 스웨터 남성 남자",
+            "price": "120,000",
+            "detail_page_url": "https://www.trenbe.com/product/++115747936?catalog=&options=owned",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1729760766156-2487eb8c-f1a8-4ec8-b5f7-8a22c45829a6.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "elegant_classic"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        }
+    }
+]

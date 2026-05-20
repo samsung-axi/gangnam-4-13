@@ -1,0 +1,1826 @@
+[
+    {
+        "product_info": {
+            "id": 3,
+            "brand": "룰루레몬",
+            "title": "룰루레몬 여성 팬츠 댄스 스튜디오 미드 라이즈 레귤러 12칼라",
+            "price": "240,000",
+            "detail_page_url": "https://www.trenbe.com/product/++84110737?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1718255378623_2a57c7f390884d18aefdc5defce90960_1.jpeg"
+            ],
+            "description": "1. **소재와 색상**: 팬츠는 부드러운 텍스처의 소재로 보이며, 색상은 갈색 계열입니다.\n\n2. **디자인 디테일**: \n   - 허리 부분에 조절 가능한 스트랩이 있으며, \n   - 앞쪽에 큰 포켓이 두 개 있습니다.\n   - 전체적으로 여유로운 실루엣으로 편안함을 강조하고 있습니다."
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "bottom"
+        },
+        "recommendations": [
+            {
+                "title": "유지 후디 우먼 매더레드 20643W02",
+                "brand": "클라터뮤젠",
+                "price": "278,000",
+                "detail_page_url": "https://www.trenbe.com/product/++47888410?catalog=&options=owned",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain/1682063963036-06aab49a-6171-44ef-bc5b-c93c8c28dace.jpeg"
+                ]
+            },
+            {
+                "title": "크롭 집업 플리스 블랙 Women’s 100 Glacier Cropped ¼ Zip Fleece TNF Black 66371640",
+                "brand": "노스페이스",
+                "price": "119,200",
+                "detail_page_url": "https://www.trenbe.com/product/++74272891?catalog=",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain-image/20240503_638502834951326110_21824845_0.jpg"
+                ]
+            },
+            {
+                "title": "날 자켓 우먼 블랙 10616W01",
+                "brand": "클라터뮤젠",
+                "price": "311,000",
+                "detail_page_url": "https://www.trenbe.com/product/++47888412?catalog=&options=owned",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain/1682063966293-3bed7095-6e2e-48c3-82b7-a8334d7b0b48.jpeg"
+                ]
+            },
+            {
+                "title": "스키 자켓 COURAGE SKI JACKET 20983201",
+                "brand": "골드버그",
+                "price": "1,448,400",
+                "detail_page_url": "https://www.trenbe.com/product/++116102299?catalog=",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain-image/20241025_638654881921309985_22122783_0.jpg"
+                ]
+            }
+        ]
+    },
+    {
+        "product_info": {
+            "id": 6,
+            "brand": "언더아머",
+            "title": "에센셜 조거 팬츠 여성 옐로우 Essential Jogging Pants Womens Yellow 34752913",
+            "price": "151,600",
+            "detail_page_url": "https://www.trenbe.com/product/++68534288?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240203_638425218986397110_21291673_0.jpg"
+            ],
+            "description": "1. **소재와 색상**: 제품은 밝은 옐로우 색상이며, 일반적으로 조거 팬츠에 사용되는 부드러운 면 또는 폴리에스터 소재로 보입니다.\n\n2. **디자인 디테일**: \n   - 허리 부분은 신축성이 있는 밴드와 조절 가능한 끈이 있어 편안한 착용감을 제공합니다.\n   - 밑단은 시보리 형태로 마감되어 있어 조여진 실루엣을 형성합니다.\n   - 브랜드 로고가 옆면에 위치해 있어 특징적인 요소로 작용합니다."
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "bottom"
+        },
+        "recommendations": [
+            {
+                "title": "유지 후디 우먼 매더레드 20643W02",
+                "brand": "클라터뮤젠",
+                "price": "278,000",
+                "detail_page_url": "https://www.trenbe.com/product/++47888410?catalog=&options=owned",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain/1682063963036-06aab49a-6171-44ef-bc5b-c93c8c28dace.jpeg"
+                ]
+            },
+            {
+                "title": "크롭 집업 플리스 블랙 Women’s 100 Glacier Cropped ¼ Zip Fleece TNF Black 66371640",
+                "brand": "노스페이스",
+                "price": "119,200",
+                "detail_page_url": "https://www.trenbe.com/product/++74272891?catalog=",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain-image/20240503_638502834951326110_21824845_0.jpg"
+                ]
+            },
+            {
+                "title": "날 자켓 우먼 블랙 10616W01",
+                "brand": "클라터뮤젠",
+                "price": "311,000",
+                "detail_page_url": "https://www.trenbe.com/product/++47888412?catalog=&options=owned",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain/1682063966293-3bed7095-6e2e-48c3-82b7-a8334d7b0b48.jpeg"
+                ]
+            },
+            {
+                "title": "스키 자켓 COURAGE SKI JACKET 20983201",
+                "brand": "골드버그",
+                "price": "1,448,400",
+                "detail_page_url": "https://www.trenbe.com/product/++116102299?catalog=",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain-image/20241025_638654881921309985_22122783_0.jpg"
+                ]
+            }
+        ]
+    },
+    {
+        "product_info": {
+            "id": 9,
+            "brand": "클라터뮤젠",
+            "title": "날 자켓 우먼 블랙 10616W01",
+            "price": "311,000",
+            "detail_page_url": "https://www.trenbe.com/product/++47888412?catalog=&options=owned",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1682063966293-3bed7095-6e2e-48c3-82b7-a8334d7b0b48.jpeg"
+            ],
+            "description": "1. **소재와 색상**: 이 자켓은 주로 블랙 색상으로 보이며, 기능성 소재일 가능성이 높습니다. 일반적으로 방풍 또는 방수 기능이 있는 재질이 사용될 수 있습니다.\n\n2. **디자인 디테일**: \n   - **지퍼**: 중앙에 긴 지퍼가 있으며, 주머니에도 지퍼가 있습니다.\n   - **목 부분**: 스탠드 칼라 디자인으로, 따뜻함과 스타일을 제공합니다.\n   - **소매**: 소매 끝 부분에 메쉬 디테일이 있어 통기성을 높입니다.\n   - **핏**: 현대적인 실루엣을 갖추고 있어 슬림하게 보입니다.\n   - **로고**: 브랜드 로고가 앞쪽에 위치해 있습니다."
+        },
+        "style_analysis": {
+            "final_style": "modern_classic"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        },
+        "recommendations": [
+            {
+                "title": "유지 후디 우먼 매더레드 20643W02",
+                "brand": "클라터뮤젠",
+                "price": "278,000",
+                "detail_page_url": "https://www.trenbe.com/product/++47888410?catalog=&options=owned",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain/1682063963036-06aab49a-6171-44ef-bc5b-c93c8c28dace.jpeg"
+                ]
+            },
+            {
+                "title": "크롭 집업 플리스 블랙 Women’s 100 Glacier Cropped ¼ Zip Fleece TNF Black 66371640",
+                "brand": "노스페이스",
+                "price": "119,200",
+                "detail_page_url": "https://www.trenbe.com/product/++74272891?catalog=",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain-image/20240503_638502834951326110_21824845_0.jpg"
+                ]
+            },
+            {
+                "title": "룰루레몬 여성 팬츠 댄스 스튜디오 미드 라이즈 레귤러 12칼라",
+                "brand": "룰루레몬",
+                "price": "240,000",
+                "detail_page_url": "https://www.trenbe.com/product/++84110737?catalog=",
+                "images": [
+                    "https://image-cdn.trenbe.com/product-images/1718255378623_2a57c7f390884d18aefdc5defce90960_1.jpeg"
+                ]
+            },
+            {
+                "title": "에센셜 조거 팬츠 여성 옐로우 Essential Jogging Pants Womens Yellow 34752913",
+                "brand": "언더아머",
+                "price": "151,600",
+                "detail_page_url": "https://www.trenbe.com/product/++68534288?catalog=",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain-image/20240203_638425218986397110_21291673_0.jpg"
+                ]
+            }
+        ]
+    },
+    {
+        "product_info": {
+            "id": 15,
+            "brand": "골드버그",
+            "title": "스키 자켓 COURAGE SKI JACKET 20983201",
+            "price": "1,448,400",
+            "detail_page_url": "https://www.trenbe.com/product/++116102299?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20241025_638654881921309985_22122783_0.jpg"
+            ],
+            "description": "1. **소재와 색상**:\n   - **소재**: 부드러운 나일론 또는 폴리에스터 소재로 보이며, 방수 및 방풍 기능이 있을 가능성이 높습니다.\n   - **색상**: 흰색과 검은색의 조합으로, 흰색은 상단과 중앙 부분에, 검은색은 하단과 측면에 배치되어 있습니다.\n\n2. **디자인 디테일**:\n   - **특징적인 요소**: \n     - 상단에 큰 후드가 있으며, 후드 부분에 별 모양 장식이 있습니다.\n     - 전면 중앙에 지퍼가 있으며, 지퍼 양쪽에 포켓이 위치해 있습니다.\n     - V자 형태의 패턴이 특징적으로 디자인되어 있어, 세련된 느낌을 줍니다.\n     - 소매 부분이 넓고 부풀어 오른 실루엣입니다."
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        },
+        "recommendations": [
+            {
+                "title": "유지 후디 우먼 매더레드 20643W02",
+                "brand": "클라터뮤젠",
+                "price": "278,000",
+                "detail_page_url": "https://www.trenbe.com/product/++47888410?catalog=&options=owned",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain/1682063963036-06aab49a-6171-44ef-bc5b-c93c8c28dace.jpeg"
+                ]
+            },
+            {
+                "title": "크롭 집업 플리스 블랙 Women’s 100 Glacier Cropped ¼ Zip Fleece TNF Black 66371640",
+                "brand": "노스페이스",
+                "price": "119,200",
+                "detail_page_url": "https://www.trenbe.com/product/++74272891?catalog=",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain-image/20240503_638502834951326110_21824845_0.jpg"
+                ]
+            },
+            {
+                "title": "룰루레몬 여성 팬츠 댄스 스튜디오 미드 라이즈 레귤러 12칼라",
+                "brand": "룰루레몬",
+                "price": "240,000",
+                "detail_page_url": "https://www.trenbe.com/product/++84110737?catalog=",
+                "images": [
+                    "https://image-cdn.trenbe.com/product-images/1718255378623_2a57c7f390884d18aefdc5defce90960_1.jpeg"
+                ]
+            },
+            {
+                "title": "에센셜 조거 팬츠 여성 옐로우 Essential Jogging Pants Womens Yellow 34752913",
+                "brand": "언더아머",
+                "price": "151,600",
+                "detail_page_url": "https://www.trenbe.com/product/++68534288?catalog=",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain-image/20240203_638425218986397110_21291673_0.jpg"
+                ]
+            }
+        ]
+    },
+    {
+        "product_info": {
+            "id": 18,
+            "brand": "아디다스",
+            "title": "블랙 Voyg Overall Ld99 Black 55833303",
+            "price": "303,300",
+            "detail_page_url": "https://www.trenbe.com/product/++14421273?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20231204_638372580001091263_834782_0.jpg"
+            ],
+            "description": "1. **소재와 색상**: \n   - 색상: 주로 블랙과 다크 그레이의 조합.\n   - 소재: 다양한 패브릭을 사용하여 편안함과 활동성을 고려한 디자인.\n\n2. **디자인 디테일**: \n   - 특징적인 요소: 짧은 소매와 루즈핏 디자인.\n   - 주름: 허리 부분의 주름 디테일로 실루엣 강조.\n   - 실루엣: 스포티하면서도 시크한 느낌을 주는 구조.\n   - 포켓: 앞쪽에 두 개의 넓은 포켓이 있어 실용성을 더함.\n   - 지퍼: 뒷면에 지퍼 디테일이 있어 착용이 용이함."
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "onepiece"
+        },
+        "recommendations": [
+            {
+                "title": "날 자켓 우먼 블랙 10616W01",
+                "brand": "클라터뮤젠",
+                "price": "311,000",
+                "detail_page_url": "https://www.trenbe.com/product/++47888412?catalog=&options=owned",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain/1682063966293-3bed7095-6e2e-48c3-82b7-a8334d7b0b48.jpeg"
+                ]
+            },
+            {
+                "title": "스키 자켓 COURAGE SKI JACKET 20983201",
+                "brand": "골드버그",
+                "price": "1,448,400",
+                "detail_page_url": "https://www.trenbe.com/product/++116102299?catalog=",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain-image/20241025_638654881921309985_22122783_0.jpg"
+                ]
+            },
+            {
+                "title": "트랙 탑 여성 Healing Crystals Track Top Womens Blackwhite 50009803",
+                "brand": "아디다스",
+                "price": "154,800",
+                "detail_page_url": "https://www.trenbe.com/product/++58854547?catalog=",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain-image/20240418_638489829569380966_20072387_0.jpg"
+                ]
+            },
+            {
+                "title": "[해외]아크테릭스 여성 아톰 후디 자켓 블랙 블루 오렌지",
+                "brand": "아크테릭스",
+                "price": "800,000",
+                "detail_page_url": "https://www.trenbe.com/product/++56637657?catalog=",
+                "images": [
+                    "https://image-cdn.trenbe.com/product-images/1692765829612_a21e8c513d5e7500f092f9cf363e6e00_1.jpg"
+                ]
+            }
+        ]
+    },
+    {
+        "product_info": {
+            "id": 20,
+            "brand": "언더아머",
+            "title": "메쉬 레깅스 여성 퍼플 Heatgear Shine Mesh Leggings Ladies Purple 34799124",
+            "price": "137,900",
+            "detail_page_url": "https://www.trenbe.com/product/++37816064?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240203_638425213957516307_14518348_0.jpg"
+            ],
+            "description": "1. **소재와 색상**: \n   - 소재: 메쉬 또는 신축성이 있는 합성 섬유 (일반적으로 레깅스에서 사용됨).\n   - 색상: 보라색 (퍼플)과 핑크색 포인트.\n\n2. **디자인 디테일**: \n   - 특징적인 요소: 사이드에 핑크색 스트라이프가 있으며, 전체적으로 매끄러운 실루엣.\n   - 허리 부분이 높고, 스포티한 느낌을 주는 디자인."
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "bottom"
+        },
+        "recommendations": [
+            {
+                "title": "유지 후디 우먼 매더레드 20643W02",
+                "brand": "클라터뮤젠",
+                "price": "278,000",
+                "detail_page_url": "https://www.trenbe.com/product/++47888410?catalog=&options=owned",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain/1682063963036-06aab49a-6171-44ef-bc5b-c93c8c28dace.jpeg"
+                ]
+            },
+            {
+                "title": "크롭 집업 플리스 블랙 Women’s 100 Glacier Cropped ¼ Zip Fleece TNF Black 66371640",
+                "brand": "노스페이스",
+                "price": "119,200",
+                "detail_page_url": "https://www.trenbe.com/product/++74272891?catalog=",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain-image/20240503_638502834951326110_21824845_0.jpg"
+                ]
+            },
+            {
+                "title": "날 자켓 우먼 블랙 10616W01",
+                "brand": "클라터뮤젠",
+                "price": "311,000",
+                "detail_page_url": "https://www.trenbe.com/product/++47888412?catalog=&options=owned",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain/1682063966293-3bed7095-6e2e-48c3-82b7-a8334d7b0b48.jpeg"
+                ]
+            },
+            {
+                "title": "스키 자켓 COURAGE SKI JACKET 20983201",
+                "brand": "골드버그",
+                "price": "1,448,400",
+                "detail_page_url": "https://www.trenbe.com/product/++116102299?catalog=",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain-image/20241025_638654881921309985_22122783_0.jpg"
+                ]
+            }
+        ]
+    },
+    {
+        "product_info": {
+            "id": 21,
+            "brand": "언더아머",
+            "title": "앵클 레깅스 여성 그린 Armour HeatGear® No-Slip Waistband Ankle Leggings Women's Green 34734828",
+            "price": "209,400",
+            "detail_page_url": "https://www.trenbe.com/product/++65820519?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240107_638401786193133455_21103602_0.jpg"
+            ],
+            "description": "1. **소재와 색상**:\n   - **소재**: 일반적으로 레깅스는 신축성이 좋은 합성 섬유(예: 폴리에스터, 스판덱스)로 제작됩니다.\n   - **색상**: 연두색(그린).\n\n2. **디자인 디테일**:\n   - **특징적인 요소**: \n     - **허리밴드**: No-Slip Waistband 디자인으로, 착용 시 미끄러짐을 방지합니다.\n     - **실루엣**: 슬림핏으로 다리를 강조하는 디자인.\n     - **주머니**: 측면에 주머니가 있을 수 있습니다(모델에 따라 다를 수 있음)."
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "bottom"
+        },
+        "recommendations": [
+            {
+                "title": "유지 후디 우먼 매더레드 20643W02",
+                "brand": "클라터뮤젠",
+                "price": "278,000",
+                "detail_page_url": "https://www.trenbe.com/product/++47888410?catalog=&options=owned",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain/1682063963036-06aab49a-6171-44ef-bc5b-c93c8c28dace.jpeg"
+                ]
+            },
+            {
+                "title": "크롭 집업 플리스 블랙 Women’s 100 Glacier Cropped ¼ Zip Fleece TNF Black 66371640",
+                "brand": "노스페이스",
+                "price": "119,200",
+                "detail_page_url": "https://www.trenbe.com/product/++74272891?catalog=",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain-image/20240503_638502834951326110_21824845_0.jpg"
+                ]
+            },
+            {
+                "title": "날 자켓 우먼 블랙 10616W01",
+                "brand": "클라터뮤젠",
+                "price": "311,000",
+                "detail_page_url": "https://www.trenbe.com/product/++47888412?catalog=&options=owned",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain/1682063966293-3bed7095-6e2e-48c3-82b7-a8334d7b0b48.jpeg"
+                ]
+            },
+            {
+                "title": "스키 자켓 COURAGE SKI JACKET 20983201",
+                "brand": "골드버그",
+                "price": "1,448,400",
+                "detail_page_url": "https://www.trenbe.com/product/++116102299?catalog=",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain-image/20241025_638654881921309985_22122783_0.jpg"
+                ]
+            }
+        ]
+    },
+    {
+        "product_info": {
+            "id": 25,
+            "brand": "아디다스",
+            "title": "트랙 탑 여성 Healing Crystals Track Top Womens Blackwhite 50009803",
+            "price": "154,800",
+            "detail_page_url": "https://www.trenbe.com/product/++58854547?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240418_638489829569380966_20072387_0.jpg"
+            ],
+            "description": "1. **소재와 색상**: \n   - 색상: 블랙\n   - 소재: 일반적으로 아디다스의 트랙 탑은 폴리에스터가 사용되며, 경량성과 내구성을 제공합니다.\n\n2. **디자인 디테일**:\n   - 특징적인 요소: 버튼 클로저, 리브 니트 소매\n   - 실루엣: 크롭 스타일로, 몸에 잘 맞는 핏\n   - 추가 디테일: 브랜드 로고와 자수 장식이 있어 스타일리시함을 더합니다."
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        },
+        "recommendations": [
+            {
+                "title": "유지 후디 우먼 매더레드 20643W02",
+                "brand": "클라터뮤젠",
+                "price": "278,000",
+                "detail_page_url": "https://www.trenbe.com/product/++47888410?catalog=&options=owned",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain/1682063963036-06aab49a-6171-44ef-bc5b-c93c8c28dace.jpeg"
+                ]
+            },
+            {
+                "title": "크롭 집업 플리스 블랙 Women’s 100 Glacier Cropped ¼ Zip Fleece TNF Black 66371640",
+                "brand": "노스페이스",
+                "price": "119,200",
+                "detail_page_url": "https://www.trenbe.com/product/++74272891?catalog=",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain-image/20240503_638502834951326110_21824845_0.jpg"
+                ]
+            },
+            {
+                "title": "룰루레몬 여성 팬츠 댄스 스튜디오 미드 라이즈 레귤러 12칼라",
+                "brand": "룰루레몬",
+                "price": "240,000",
+                "detail_page_url": "https://www.trenbe.com/product/++84110737?catalog=",
+                "images": [
+                    "https://image-cdn.trenbe.com/product-images/1718255378623_2a57c7f390884d18aefdc5defce90960_1.jpeg"
+                ]
+            },
+            {
+                "title": "에센셜 조거 팬츠 여성 옐로우 Essential Jogging Pants Womens Yellow 34752913",
+                "brand": "언더아머",
+                "price": "151,600",
+                "detail_page_url": "https://www.trenbe.com/product/++68534288?catalog=",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain-image/20240203_638425218986397110_21291673_0.jpg"
+                ]
+            }
+        ]
+    },
+    {
+        "product_info": {
+            "id": 34,
+            "brand": "아디다스",
+            "title": "W Hyglm Pt Ld99 Almyel/White 67225713",
+            "price": "118,600",
+            "detail_page_url": "https://www.trenbe.com/product/++84651005?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240614_638539699176335362_22580635_0.jpg"
+            ],
+            "description": "1. **소재와 색상**: \n   - 색상: 연한 노란색 (알미엘)\n   - 소재: 일반적으로 아디다스의 팬츠는 면 혼합 또는 폴리에스터 소재로 제작됩니다.\n\n2. **디자인 디테일**: \n   - 허리 부분: 신축성이 있는 밴드와 조절 가능한 끈.\n   - 옆면: 아디다스의 상징적인 세 개의 스트라이프 디자인.\n   - 실루엣: 편안한 일자핏으로, 하단에서 약간 좁아지는 형태.\n   - 주름: 일반적으로 주름이 없거나 부드러운 주름 처리."
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "bottom"
+        },
+        "recommendations": [
+            {
+                "title": "유지 후디 우먼 매더레드 20643W02",
+                "brand": "클라터뮤젠",
+                "price": "278,000",
+                "detail_page_url": "https://www.trenbe.com/product/++47888410?catalog=&options=owned",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain/1682063963036-06aab49a-6171-44ef-bc5b-c93c8c28dace.jpeg"
+                ]
+            },
+            {
+                "title": "크롭 집업 플리스 블랙 Women’s 100 Glacier Cropped ¼ Zip Fleece TNF Black 66371640",
+                "brand": "노스페이스",
+                "price": "119,200",
+                "detail_page_url": "https://www.trenbe.com/product/++74272891?catalog=",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain-image/20240503_638502834951326110_21824845_0.jpg"
+                ]
+            },
+            {
+                "title": "날 자켓 우먼 블랙 10616W01",
+                "brand": "클라터뮤젠",
+                "price": "311,000",
+                "detail_page_url": "https://www.trenbe.com/product/++47888412?catalog=&options=owned",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain/1682063966293-3bed7095-6e2e-48c3-82b7-a8334d7b0b48.jpeg"
+                ]
+            },
+            {
+                "title": "스키 자켓 COURAGE SKI JACKET 20983201",
+                "brand": "골드버그",
+                "price": "1,448,400",
+                "detail_page_url": "https://www.trenbe.com/product/++116102299?catalog=",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain-image/20241025_638654881921309985_22122783_0.jpg"
+                ]
+            }
+        ]
+    },
+    {
+        "product_info": {
+            "id": 41,
+            "brand": "클라터뮤젠",
+            "title": "유지 후디 우먼 매더레드 20643W02",
+            "price": "278,000",
+            "detail_page_url": "https://www.trenbe.com/product/++47888410?catalog=&options=owned",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1682063963036-06aab49a-6171-44ef-bc5b-c93c8c28dace.jpeg"
+            ],
+            "description": "1. **옷의 소재와 색상**: \n   - 색상: 매더레드 (붉은색 계열)\n   - 소재: 구체적인 소재는 확인할 수 없지만, 일반적으로 후디는 면, 폴리에스터 또는 혼합 소재일 가능성이 높습니다.\n\n2. **디자인 디테일**: \n   - 특징적인 요소: \n     - 후드 디자인\n     - 비대칭적인 패턴이 있는 봉제선\n     - 소매와 옆부분에 검은색 패치 디테일\n     - 전체적으로 스포티한 실루엣과 캐주얼한 느낌을 전달하는 디자인"
+        },
+        "style_analysis": {
+            "final_style": "casual_sporty"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        },
+        "recommendations": [
+            {
+                "title": "룰루레몬 여성 팬츠 댄스 스튜디오 미드 라이즈 레귤러 12칼라",
+                "brand": "룰루레몬",
+                "price": "240,000",
+                "detail_page_url": "https://www.trenbe.com/product/++84110737?catalog=",
+                "images": [
+                    "https://image-cdn.trenbe.com/product-images/1718255378623_2a57c7f390884d18aefdc5defce90960_1.jpeg"
+                ]
+            },
+            {
+                "title": "에센셜 조거 팬츠 여성 옐로우 Essential Jogging Pants Womens Yellow 34752913",
+                "brand": "언더아머",
+                "price": "151,600",
+                "detail_page_url": "https://www.trenbe.com/product/++68534288?catalog=",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain-image/20240203_638425218986397110_21291673_0.jpg"
+                ]
+            },
+            {
+                "title": "날 자켓 우먼 블랙 10616W01",
+                "brand": "클라터뮤젠",
+                "price": "311,000",
+                "detail_page_url": "https://www.trenbe.com/product/++47888412?catalog=&options=owned",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain/1682063966293-3bed7095-6e2e-48c3-82b7-a8334d7b0b48.jpeg"
+                ]
+            },
+            {
+                "title": "스키 자켓 COURAGE SKI JACKET 20983201",
+                "brand": "골드버그",
+                "price": "1,448,400",
+                "detail_page_url": "https://www.trenbe.com/product/++116102299?catalog=",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain-image/20241025_638654881921309985_22122783_0.jpg"
+                ]
+            }
+        ]
+    },
+    {
+        "product_info": {
+            "id": 46,
+            "brand": "나이키",
+            "title": "나이키 에센셜 하이라이즈 레깅스 [CZ8528-017]",
+            "price": "69,000",
+            "detail_page_url": "https://www.trenbe.com/product/++29606859?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1673501157243_364d5c24d1ca62974f8d4dee67c7d89e_0.jpg"
+            ],
+            "description": "1. **소재와 색상**: 레깅스는 일반적으로 신축성이 좋은 소재로 제작되며, 색상은 검정색입니다.\n\n2. **디자인 디테일**: \n   - 특징적인 요소로는 사이드에 큰 나이키 로고가 있는 점이 있습니다.\n   - 하이 웨이스트 디자인으로 실루엣을 강조하며, 슬림한 핏이 특징입니다.\n   - 버튼이나 주름 등의 장식은 없고, 간결한 디자인이 돋보입니다."
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "bottom"
+        },
+        "recommendations": [
+            {
+                "title": "유지 후디 우먼 매더레드 20643W02",
+                "brand": "클라터뮤젠",
+                "price": "278,000",
+                "detail_page_url": "https://www.trenbe.com/product/++47888410?catalog=&options=owned",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain/1682063963036-06aab49a-6171-44ef-bc5b-c93c8c28dace.jpeg"
+                ]
+            },
+            {
+                "title": "크롭 집업 플리스 블랙 Women’s 100 Glacier Cropped ¼ Zip Fleece TNF Black 66371640",
+                "brand": "노스페이스",
+                "price": "119,200",
+                "detail_page_url": "https://www.trenbe.com/product/++74272891?catalog=",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain-image/20240503_638502834951326110_21824845_0.jpg"
+                ]
+            },
+            {
+                "title": "날 자켓 우먼 블랙 10616W01",
+                "brand": "클라터뮤젠",
+                "price": "311,000",
+                "detail_page_url": "https://www.trenbe.com/product/++47888412?catalog=&options=owned",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain/1682063966293-3bed7095-6e2e-48c3-82b7-a8334d7b0b48.jpeg"
+                ]
+            },
+            {
+                "title": "스키 자켓 COURAGE SKI JACKET 20983201",
+                "brand": "골드버그",
+                "price": "1,448,400",
+                "detail_page_url": "https://www.trenbe.com/product/++116102299?catalog=",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain-image/20241025_638654881921309985_22122783_0.jpg"
+                ]
+            }
+        ]
+    },
+    {
+        "product_info": {
+            "id": 52,
+            "brand": "아디다스",
+            "title": "(W) 아디다스 런 바지 올블랙",
+            "price": "124,100",
+            "detail_page_url": "https://www.trenbe.com/product/++37165544?catalog=100926458",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20230524_638205182660292168_14001332_1.jpg"
+            ],
+            "description": "1. **소재와 색상**: \n   - 소재: 경량의 기능성 원단 (스포츠용)\n   - 색상: 올블랙\n\n2. **디자인 디테일**: \n   - 특징적인 요소: 허리 부분의 밴드, 두 겹의 레이어(바지와 쇼츠 조합), 사이드 슬릿\n   - 실루엣: 슬림 핏, 활동적인 디자인"
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "bottom"
+        },
+        "recommendations": [
+            {
+                "title": "유지 후디 우먼 매더레드 20643W02",
+                "brand": "클라터뮤젠",
+                "price": "278,000",
+                "detail_page_url": "https://www.trenbe.com/product/++47888410?catalog=&options=owned",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain/1682063963036-06aab49a-6171-44ef-bc5b-c93c8c28dace.jpeg"
+                ]
+            },
+            {
+                "title": "크롭 집업 플리스 블랙 Women’s 100 Glacier Cropped ¼ Zip Fleece TNF Black 66371640",
+                "brand": "노스페이스",
+                "price": "119,200",
+                "detail_page_url": "https://www.trenbe.com/product/++74272891?catalog=",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain-image/20240503_638502834951326110_21824845_0.jpg"
+                ]
+            },
+            {
+                "title": "날 자켓 우먼 블랙 10616W01",
+                "brand": "클라터뮤젠",
+                "price": "311,000",
+                "detail_page_url": "https://www.trenbe.com/product/++47888412?catalog=&options=owned",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain/1682063966293-3bed7095-6e2e-48c3-82b7-a8334d7b0b48.jpeg"
+                ]
+            },
+            {
+                "title": "스키 자켓 COURAGE SKI JACKET 20983201",
+                "brand": "골드버그",
+                "price": "1,448,400",
+                "detail_page_url": "https://www.trenbe.com/product/++116102299?catalog=",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain-image/20241025_638654881921309985_22122783_0.jpg"
+                ]
+            }
+        ]
+    },
+    {
+        "product_info": {
+            "id": 57,
+            "brand": "아디다스",
+            "title": "프로 블랙 Terrex Agravic Pro Skort Black 63110403",
+            "price": "206,800",
+            "detail_page_url": "https://www.trenbe.com/product/++60403905?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20231023_638336738469577571_20072356_0.jpg"
+            ],
+            "description": "1. **소재와 색상**: \n   - 색상: 블랙\n   - 소재: 구체적인 소재는 이미지로부터 확인할 수 없지만, 일반적으로 아디다스의 프로 스커트는 기능성 소재로 제작됩니다.\n\n2. **디자인 디테일**: \n   - 특징적인 요소: \n     - 허리 부분은 밴드 형태로 되어 있어 편안한 착용감을 제공합니다.\n     - 오른쪽 측면에 아디다스의 아이코닉한 세 개의 스트라이프가 흰색으로 디자인되어 있습니다.\n     - 전체적인 실루엣은 A라인 형태로, 활동성을 고려한 디자인입니다. \n     - 스커트의 밑단은 약간의 트임이 있어 움직임이 자유롭습니다."
+        },
+        "style_analysis": {
+            "final_style": "formal_minimal"
+        },
+        "category_analysis": {
+            "big_category": "bottom"
+        },
+        "recommendations": [
+            {
+                "title": "유지 후디 우먼 매더레드 20643W02",
+                "brand": "클라터뮤젠",
+                "price": "278,000",
+                "detail_page_url": "https://www.trenbe.com/product/++47888410?catalog=&options=owned",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain/1682063963036-06aab49a-6171-44ef-bc5b-c93c8c28dace.jpeg"
+                ]
+            },
+            {
+                "title": "크롭 집업 플리스 블랙 Women’s 100 Glacier Cropped ¼ Zip Fleece TNF Black 66371640",
+                "brand": "노스페이스",
+                "price": "119,200",
+                "detail_page_url": "https://www.trenbe.com/product/++74272891?catalog=",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain-image/20240503_638502834951326110_21824845_0.jpg"
+                ]
+            },
+            {
+                "title": "날 자켓 우먼 블랙 10616W01",
+                "brand": "클라터뮤젠",
+                "price": "311,000",
+                "detail_page_url": "https://www.trenbe.com/product/++47888412?catalog=&options=owned",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain/1682063966293-3bed7095-6e2e-48c3-82b7-a8334d7b0b48.jpeg"
+                ]
+            },
+            {
+                "title": "스키 자켓 COURAGE SKI JACKET 20983201",
+                "brand": "골드버그",
+                "price": "1,448,400",
+                "detail_page_url": "https://www.trenbe.com/product/++116102299?catalog=",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain-image/20241025_638654881921309985_22122783_0.jpg"
+                ]
+            }
+        ]
+    },
+    {
+        "product_info": {
+            "id": 67,
+            "brand": "나이키",
+            "title": "나이키 에센셜 레깅스 그레이",
+            "price": "77,000",
+            "detail_page_url": "https://www.trenbe.com/product/++29606920?catalog=100926409",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1673501266223_1965497af36a568db2acbc23c69ed548_0.jpg"
+            ],
+            "description": "1. **소재와 색상**:\n   - **소재**: 일반적으로 레깅스는 신축성이 좋은 면 또는 스판덱스 혼합 소재로 제작됩니다.\n   - **색상**: 그레이.\n\n2. **디자인 디테일**:\n   - **특징적인 요소**: \"JUST DO IT.\" 텍스트가 크게 프린트되어 있어 시각적으로 눈에 띄며, 왼쪽 다리 쪽에 위치해 있습니다.\n   - **실루엣**: 슬림 핏으로 몸에 꼭 맞는 디자인.\n   - **허리밴드**: 높은 허리 라인으로 안정감과 편안함을 제공합니다."
+        },
+        "style_analysis": {
+            "final_style": "casual_sporty"
+        },
+        "category_analysis": {
+            "big_category": "bottom"
+        },
+        "recommendations": [
+            {
+                "title": "유지 후디 우먼 매더레드 20643W02",
+                "brand": "클라터뮤젠",
+                "price": "278,000",
+                "detail_page_url": "https://www.trenbe.com/product/++47888410?catalog=&options=owned",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain/1682063963036-06aab49a-6171-44ef-bc5b-c93c8c28dace.jpeg"
+                ]
+            },
+            {
+                "title": "크롭 집업 플리스 블랙 Women’s 100 Glacier Cropped ¼ Zip Fleece TNF Black 66371640",
+                "brand": "노스페이스",
+                "price": "119,200",
+                "detail_page_url": "https://www.trenbe.com/product/++74272891?catalog=",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain-image/20240503_638502834951326110_21824845_0.jpg"
+                ]
+            },
+            {
+                "title": "날 자켓 우먼 블랙 10616W01",
+                "brand": "클라터뮤젠",
+                "price": "311,000",
+                "detail_page_url": "https://www.trenbe.com/product/++47888412?catalog=&options=owned",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain/1682063966293-3bed7095-6e2e-48c3-82b7-a8334d7b0b48.jpeg"
+                ]
+            },
+            {
+                "title": "스키 자켓 COURAGE SKI JACKET 20983201",
+                "brand": "골드버그",
+                "price": "1,448,400",
+                "detail_page_url": "https://www.trenbe.com/product/++116102299?catalog=",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain-image/20241025_638654881921309985_22122783_0.jpg"
+                ]
+            }
+        ]
+    },
+    {
+        "product_info": {
+            "id": 72,
+            "brand": "노스페이스",
+            "title": "크롭 집업 플리스 블랙 Women’s 100 Glacier Cropped ¼ Zip Fleece TNF Black 66371640",
+            "price": "119,200",
+            "detail_page_url": "https://www.trenbe.com/product/++74272891?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240503_638502834951326110_21824845_0.jpg"
+            ],
+            "description": "1. **소재와 색상**: \n   - 소재: 플리스\n   - 색상: 블랙\n\n2. **디자인 디테일**: \n   - 특징적인 요소: 크롭 디자인, ¼ 지퍼 클로저, 높은 목 디자인, 브랜드 로고(노스페이스)가 왼쪽 가슴 부분에 위치."
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        },
+        "recommendations": [
+            {
+                "title": "룰루레몬 여성 팬츠 댄스 스튜디오 미드 라이즈 레귤러 12칼라",
+                "brand": "룰루레몬",
+                "price": "240,000",
+                "detail_page_url": "https://www.trenbe.com/product/++84110737?catalog=",
+                "images": [
+                    "https://image-cdn.trenbe.com/product-images/1718255378623_2a57c7f390884d18aefdc5defce90960_1.jpeg"
+                ]
+            },
+            {
+                "title": "에센셜 조거 팬츠 여성 옐로우 Essential Jogging Pants Womens Yellow 34752913",
+                "brand": "언더아머",
+                "price": "151,600",
+                "detail_page_url": "https://www.trenbe.com/product/++68534288?catalog=",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain-image/20240203_638425218986397110_21291673_0.jpg"
+                ]
+            },
+            {
+                "title": "날 자켓 우먼 블랙 10616W01",
+                "brand": "클라터뮤젠",
+                "price": "311,000",
+                "detail_page_url": "https://www.trenbe.com/product/++47888412?catalog=&options=owned",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain/1682063966293-3bed7095-6e2e-48c3-82b7-a8334d7b0b48.jpeg"
+                ]
+            },
+            {
+                "title": "스키 자켓 COURAGE SKI JACKET 20983201",
+                "brand": "골드버그",
+                "price": "1,448,400",
+                "detail_page_url": "https://www.trenbe.com/product/++116102299?catalog=",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain-image/20241025_638654881921309985_22122783_0.jpg"
+                ]
+            }
+        ]
+    },
+    {
+        "product_info": {
+            "id": 78,
+            "brand": "아디다스",
+            "title": "블랙 W Fi 3S Fz Ld99 Black 66919703",
+            "price": "130,000",
+            "detail_page_url": "https://www.trenbe.com/product/++118268548?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20241110_638667783422282030_23948692_0.jpg"
+            ],
+            "description": "1. **소재와 색상**: \n   - 색상: 블랙\n   - 소재: 일반적으로 아디다스의 후드집업은 면과 폴리에스터 혼합 소재로 제작되며, 부드럽고 신축성이 있는 재질일 가능성이 높습니다.\n\n2. **디자인 디테일**: \n   - 후드 디자인\n   - 앞면 중앙에 지퍼\n   - 양쪽에 포켓\n   - 소매에 아디다스의 상징적인 3선 디자인\n   - 전체적으로 루즈한 실루엣"
+        },
+        "style_analysis": {
+            "final_style": "high_end_street"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        },
+        "recommendations": [
+            {
+                "title": "룰루레몬 여성 팬츠 댄스 스튜디오 미드 라이즈 레귤러 12칼라",
+                "brand": "룰루레몬",
+                "price": "240,000",
+                "detail_page_url": "https://www.trenbe.com/product/++84110737?catalog=",
+                "images": [
+                    "https://image-cdn.trenbe.com/product-images/1718255378623_2a57c7f390884d18aefdc5defce90960_1.jpeg"
+                ]
+            },
+            {
+                "title": "에센셜 조거 팬츠 여성 옐로우 Essential Jogging Pants Womens Yellow 34752913",
+                "brand": "언더아머",
+                "price": "151,600",
+                "detail_page_url": "https://www.trenbe.com/product/++68534288?catalog=",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain-image/20240203_638425218986397110_21291673_0.jpg"
+                ]
+            },
+            {
+                "title": "날 자켓 우먼 블랙 10616W01",
+                "brand": "클라터뮤젠",
+                "price": "311,000",
+                "detail_page_url": "https://www.trenbe.com/product/++47888412?catalog=&options=owned",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain/1682063966293-3bed7095-6e2e-48c3-82b7-a8334d7b0b48.jpeg"
+                ]
+            },
+            {
+                "title": "스키 자켓 COURAGE SKI JACKET 20983201",
+                "brand": "골드버그",
+                "price": "1,448,400",
+                "detail_page_url": "https://www.trenbe.com/product/++116102299?catalog=",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain-image/20241025_638654881921309985_22122783_0.jpg"
+                ]
+            }
+        ]
+    },
+    {
+        "product_info": {
+            "id": 90,
+            "brand": "파타고니아",
+            "title": "파타고니아 신칠라 오트밀 라이트웨이트 스냅티 풀오버",
+            "price": "219,900",
+            "detail_page_url": "https://www.trenbe.com/product/++57961535?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1694275889250_a6595cdbf546a1fd2bc1daf5879c33cd_0.png"
+            ],
+            "description": "1. **소재와 색상**: \n   - 소재: 신칠라 (fleece)\n   - 색상: 오트밀 (밝은 베이지색)과 네이비 블루의 조합\n\n2. **디자인 디테일**:\n   - 특징적인 요소: \n     - 스냅 버튼 클로저\n     - 낮은 스탠드 카라\n     - 왼쪽 가슴에 포켓 \n     - 포켓과 카라 부분은 네이비 블루 색상으로 대비를 이루며, 전체적으로 깔끔하고 현대적인 실루엣을 제공함."
+        },
+        "style_analysis": {
+            "final_style": "modern_classic"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        },
+        "recommendations": [
+            {
+                "title": "룰루레몬 여성 팬츠 댄스 스튜디오 미드 라이즈 레귤러 12칼라",
+                "brand": "룰루레몬",
+                "price": "240,000",
+                "detail_page_url": "https://www.trenbe.com/product/++84110737?catalog=",
+                "images": [
+                    "https://image-cdn.trenbe.com/product-images/1718255378623_2a57c7f390884d18aefdc5defce90960_1.jpeg"
+                ]
+            },
+            {
+                "title": "에센셜 조거 팬츠 여성 옐로우 Essential Jogging Pants Womens Yellow 34752913",
+                "brand": "언더아머",
+                "price": "151,600",
+                "detail_page_url": "https://www.trenbe.com/product/++68534288?catalog=",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain-image/20240203_638425218986397110_21291673_0.jpg"
+                ]
+            },
+            {
+                "title": "날 자켓 우먼 블랙 10616W01",
+                "brand": "클라터뮤젠",
+                "price": "311,000",
+                "detail_page_url": "https://www.trenbe.com/product/++47888412?catalog=&options=owned",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain/1682063966293-3bed7095-6e2e-48c3-82b7-a8334d7b0b48.jpeg"
+                ]
+            },
+            {
+                "title": "스키 자켓 COURAGE SKI JACKET 20983201",
+                "brand": "골드버그",
+                "price": "1,448,400",
+                "detail_page_url": "https://www.trenbe.com/product/++116102299?catalog=",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain-image/20241025_638654881921309985_22122783_0.jpg"
+                ]
+            }
+        ]
+    },
+    {
+        "product_info": {
+            "id": 101,
+            "brand": "아디다스",
+            "title": "슈즈 블랙 W Fi Wvn Sh Ld99 Black 57361803",
+            "price": "118,600",
+            "detail_page_url": "https://www.trenbe.com/product/++87971773?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240621_638545499004645118_22625834_0.jpg"
+            ],
+            "description": "1. **소재와 색상**: \n   - 소재: 경량의 나일론 또는 폴리에스터로 보이며, 통기성이 좋은 메쉬 안감이 있는 것 같습니다.\n   - 색상: 블랙.\n\n2. **디자인 디테일**: \n   - 특징적인 요소: 허리 부분에 주름이 있는 셔링 디자인.\n   - 실루엣: 여유 있는 핏으로, 다리가 자유롭게 움직일 수 있는 디자인.\n   - 추가 디테일: 측면에 아디다스의 상징인 세 줄의 화이트 스트라이프가 있습니다."
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "bottom"
+        },
+        "recommendations": [
+            {
+                "title": "유지 후디 우먼 매더레드 20643W02",
+                "brand": "클라터뮤젠",
+                "price": "278,000",
+                "detail_page_url": "https://www.trenbe.com/product/++47888410?catalog=&options=owned",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain/1682063963036-06aab49a-6171-44ef-bc5b-c93c8c28dace.jpeg"
+                ]
+            },
+            {
+                "title": "크롭 집업 플리스 블랙 Women’s 100 Glacier Cropped ¼ Zip Fleece TNF Black 66371640",
+                "brand": "노스페이스",
+                "price": "119,200",
+                "detail_page_url": "https://www.trenbe.com/product/++74272891?catalog=",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain-image/20240503_638502834951326110_21824845_0.jpg"
+                ]
+            },
+            {
+                "title": "날 자켓 우먼 블랙 10616W01",
+                "brand": "클라터뮤젠",
+                "price": "311,000",
+                "detail_page_url": "https://www.trenbe.com/product/++47888412?catalog=&options=owned",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain/1682063966293-3bed7095-6e2e-48c3-82b7-a8334d7b0b48.jpeg"
+                ]
+            },
+            {
+                "title": "스키 자켓 COURAGE SKI JACKET 20983201",
+                "brand": "골드버그",
+                "price": "1,448,400",
+                "detail_page_url": "https://www.trenbe.com/product/++116102299?catalog=",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain-image/20241025_638654881921309985_22122783_0.jpg"
+                ]
+            }
+        ]
+    },
+    {
+        "product_info": {
+            "id": 107,
+            "brand": "아크테릭스",
+            "title": "[해외]아크테릭스 여성 아톰 후디 자켓 블랙 블루 오렌지",
+            "price": "800,000",
+            "detail_page_url": "https://www.trenbe.com/product/++56637657?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1692765829612_a21e8c513d5e7500f092f9cf363e6e00_1.jpg"
+            ],
+            "description": "1. **소재와 색상**: \n   - **소재**: 경량 및 방수 기능이 있는 합성 소재로 보임.\n   - **색상**: 블랙.\n\n2. **디자인 디테일**: \n   - **특징적인 요소**: 후드 디자인, 중앙 지퍼 클로저, 슬림한 실루엣. \n   - **기타 디테일**: 소매가 조정 가능한 형태, 브랜드 로고가 가슴 부분에 위치."
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        },
+        "recommendations": [
+            {
+                "title": "유지 후디 우먼 매더레드 20643W02",
+                "brand": "클라터뮤젠",
+                "price": "278,000",
+                "detail_page_url": "https://www.trenbe.com/product/++47888410?catalog=&options=owned",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain/1682063963036-06aab49a-6171-44ef-bc5b-c93c8c28dace.jpeg"
+                ]
+            },
+            {
+                "title": "크롭 집업 플리스 블랙 Women’s 100 Glacier Cropped ¼ Zip Fleece TNF Black 66371640",
+                "brand": "노스페이스",
+                "price": "119,200",
+                "detail_page_url": "https://www.trenbe.com/product/++74272891?catalog=",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain-image/20240503_638502834951326110_21824845_0.jpg"
+                ]
+            },
+            {
+                "title": "룰루레몬 여성 팬츠 댄스 스튜디오 미드 라이즈 레귤러 12칼라",
+                "brand": "룰루레몬",
+                "price": "240,000",
+                "detail_page_url": "https://www.trenbe.com/product/++84110737?catalog=",
+                "images": [
+                    "https://image-cdn.trenbe.com/product-images/1718255378623_2a57c7f390884d18aefdc5defce90960_1.jpeg"
+                ]
+            },
+            {
+                "title": "에센셜 조거 팬츠 여성 옐로우 Essential Jogging Pants Womens Yellow 34752913",
+                "brand": "언더아머",
+                "price": "151,600",
+                "detail_page_url": "https://www.trenbe.com/product/++68534288?catalog=",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain-image/20240203_638425218986397110_21291673_0.jpg"
+                ]
+            }
+        ]
+    },
+    {
+        "product_info": {
+            "id": 128,
+            "brand": "아디다스",
+            "title": "3 스트라이프 롱 슬리브 롱슬리브 탑 블랙 화이트 Trainicons 3-Stripes Long Sleeve Long-Sleeve Top Black/White 34438903",
+            "price": "176,900",
+            "detail_page_url": "https://www.trenbe.com/product/++40583631?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20230519_638200579356244769_15186303_0.jpg"
+            ],
+            "description": "1. **소재와 색상**: \n   - 색상: 블랙과 화이트\n   - 소재: 일반적으로 아디다스의 롱슬리브 탑은 신축성이 있는 폴리에스터 혼합 소재로 제작됩니다.\n\n2. **디자인 디테일**:\n   - 특징적인 요소: \n     - 크롭 기장 (짧은 길이)\n     - 긴 소매\n     - 아디다스 로고가 중앙에 위치\n     - 3 스트라이프 디자인이 측면에 배치되어 있어 스포츠적인 느낌을 강조합니다."
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        },
+        "recommendations": [
+            {
+                "title": "룰루레몬 여성 팬츠 댄스 스튜디오 미드 라이즈 레귤러 12칼라",
+                "brand": "룰루레몬",
+                "price": "240,000",
+                "detail_page_url": "https://www.trenbe.com/product/++84110737?catalog=",
+                "images": [
+                    "https://image-cdn.trenbe.com/product-images/1718255378623_2a57c7f390884d18aefdc5defce90960_1.jpeg"
+                ]
+            },
+            {
+                "title": "에센셜 조거 팬츠 여성 옐로우 Essential Jogging Pants Womens Yellow 34752913",
+                "brand": "언더아머",
+                "price": "151,600",
+                "detail_page_url": "https://www.trenbe.com/product/++68534288?catalog=",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain-image/20240203_638425218986397110_21291673_0.jpg"
+                ]
+            },
+            {
+                "title": "날 자켓 우먼 블랙 10616W01",
+                "brand": "클라터뮤젠",
+                "price": "311,000",
+                "detail_page_url": "https://www.trenbe.com/product/++47888412?catalog=&options=owned",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain/1682063966293-3bed7095-6e2e-48c3-82b7-a8334d7b0b48.jpeg"
+                ]
+            },
+            {
+                "title": "스키 자켓 COURAGE SKI JACKET 20983201",
+                "brand": "골드버그",
+                "price": "1,448,400",
+                "detail_page_url": "https://www.trenbe.com/product/++116102299?catalog=",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain-image/20241025_638654881921309985_22122783_0.jpg"
+                ]
+            }
+        ]
+    },
+    {
+        "product_info": {
+            "id": 144,
+            "brand": "아디다스",
+            "title": "플리스 자켓 그레이 Terrex x and wander Fleece Jacket Orbit Grey 44296302",
+            "price": "295,400",
+            "detail_page_url": "https://www.trenbe.com/product/++92339824?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240707_638559212353217983_22734160_0.jpg"
+            ],
+            "description": "1. **소재와 색상**: \n   - 소재: 플리스\n   - 색상: 오르빗 그레이 (Orbit Grey)\n\n2. **디자인 디테일**:\n   - 특징적인 요소: \n     - 하이넥 디자인\n     - 지퍼 클로저\n     - 앞면에 포켓 (플랩 포켓)\n     - 소매와 옆면에 다른 패턴의 원단 사용\n     - 전체적으로 편안하고 여유로운 실루엣."
+        },
+        "style_analysis": {
+            "final_style": "cozy_minimal"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        },
+        "recommendations": [
+            {
+                "title": "유지 후디 우먼 매더레드 20643W02",
+                "brand": "클라터뮤젠",
+                "price": "278,000",
+                "detail_page_url": "https://www.trenbe.com/product/++47888410?catalog=&options=owned",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain/1682063963036-06aab49a-6171-44ef-bc5b-c93c8c28dace.jpeg"
+                ]
+            },
+            {
+                "title": "크롭 집업 플리스 블랙 Women’s 100 Glacier Cropped ¼ Zip Fleece TNF Black 66371640",
+                "brand": "노스페이스",
+                "price": "119,200",
+                "detail_page_url": "https://www.trenbe.com/product/++74272891?catalog=",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain-image/20240503_638502834951326110_21824845_0.jpg"
+                ]
+            },
+            {
+                "title": "룰루레몬 여성 팬츠 댄스 스튜디오 미드 라이즈 레귤러 12칼라",
+                "brand": "룰루레몬",
+                "price": "240,000",
+                "detail_page_url": "https://www.trenbe.com/product/++84110737?catalog=",
+                "images": [
+                    "https://image-cdn.trenbe.com/product-images/1718255378623_2a57c7f390884d18aefdc5defce90960_1.jpeg"
+                ]
+            },
+            {
+                "title": "에센셜 조거 팬츠 여성 옐로우 Essential Jogging Pants Womens Yellow 34752913",
+                "brand": "언더아머",
+                "price": "151,600",
+                "detail_page_url": "https://www.trenbe.com/product/++68534288?catalog=",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain-image/20240203_638425218986397110_21291673_0.jpg"
+                ]
+            }
+        ]
+    },
+    {
+        "product_info": {
+            "id": 149,
+            "brand": "언더아머",
+            "title": "크루넥 스웻셔츠 여성 미드나잇 네이비 Rival Crest Crew Sweatshirt Womens Midnight Navy 34384518",
+            "price": "137,900",
+            "detail_page_url": "https://www.trenbe.com/product/++37165857?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20230519_638200576579794295_13951842_0.jpg"
+            ],
+            "description": "1. **소재와 색상**:\n   - **소재**: 일반적으로 스웻셔츠는 면, 폴리에스터 또는 혼합 소재로 제작됩니다. 정확한 정보는 제공되지 않았으나, 보통 이런 제품의 경우 부드럽고 신축성이 있는 소재가 사용됩니다.\n   - **색상**: 미드나잇 네이비 (진한 네이비 블루).\n\n2. **디자인 디테일**:\n   - **특징적인 요소**: 앞면에 브랜드 로고와 함께 \"UNDER ARMOUR\" 및 \"NINETEEN NINETY SIX\"이라는 텍스트가 프린트되어 있습니다.\n   - **실루엣**: 루즈핏으로 보이며, 편안한 착용감을 제공합니다.\n   - **소매 및 밑단**: 리브 직조의 마감 처리가 되어 있어 신축성이 좋고, 몸에 잘 맞는 느낌을 줍니다."
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        },
+        "recommendations": [
+            {
+                "title": "룰루레몬 여성 팬츠 댄스 스튜디오 미드 라이즈 레귤러 12칼라",
+                "brand": "룰루레몬",
+                "price": "240,000",
+                "detail_page_url": "https://www.trenbe.com/product/++84110737?catalog=",
+                "images": [
+                    "https://image-cdn.trenbe.com/product-images/1718255378623_2a57c7f390884d18aefdc5defce90960_1.jpeg"
+                ]
+            },
+            {
+                "title": "에센셜 조거 팬츠 여성 옐로우 Essential Jogging Pants Womens Yellow 34752913",
+                "brand": "언더아머",
+                "price": "151,600",
+                "detail_page_url": "https://www.trenbe.com/product/++68534288?catalog=",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain-image/20240203_638425218986397110_21291673_0.jpg"
+                ]
+            },
+            {
+                "title": "날 자켓 우먼 블랙 10616W01",
+                "brand": "클라터뮤젠",
+                "price": "311,000",
+                "detail_page_url": "https://www.trenbe.com/product/++47888412?catalog=&options=owned",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain/1682063966293-3bed7095-6e2e-48c3-82b7-a8334d7b0b48.jpeg"
+                ]
+            },
+            {
+                "title": "스키 자켓 COURAGE SKI JACKET 20983201",
+                "brand": "골드버그",
+                "price": "1,448,400",
+                "detail_page_url": "https://www.trenbe.com/product/++116102299?catalog=",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain-image/20241025_638654881921309985_22122783_0.jpg"
+                ]
+            }
+        ]
+    },
+    {
+        "product_info": {
+            "id": 150,
+            "brand": "언더아머",
+            "title": "레깅스 여성 Armour HeatGear® No-Slip Waistband Full-Length Leggings Women's Maroon 34734974",
+            "price": "124,100",
+            "detail_page_url": "https://www.trenbe.com/product/++66322565?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240107_638401868256807410_21130122_0.jpg"
+            ],
+            "description": "1. **소재와 색상**: \n   - 소재: 일반적으로 스판덱스와 폴리에스터 혼합으로 제작된 레깅스일 가능성이 높습니다. \n   - 색상: 마룬 (짙은 적색)입니다.\n\n2. **디자인 디테일**: \n   - 특징적인 요소: \n     - 노-슬립 웨이스트밴드로, 허리 부분이 안정적으로 고정됩니다.\n     - 전체 길이 디자인으로 다리라인을 길게 보이게 합니다.\n     - 슬림한 실루엣으로 몸에 딱 맞는 핏을 제공합니다. \n     - 주머니는 없는 것으로 보이며, 깔끔한 외관을 유지합니다."
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "bottom"
+        },
+        "recommendations": [
+            {
+                "title": "유지 후디 우먼 매더레드 20643W02",
+                "brand": "클라터뮤젠",
+                "price": "278,000",
+                "detail_page_url": "https://www.trenbe.com/product/++47888410?catalog=&options=owned",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain/1682063963036-06aab49a-6171-44ef-bc5b-c93c8c28dace.jpeg"
+                ]
+            },
+            {
+                "title": "크롭 집업 플리스 블랙 Women’s 100 Glacier Cropped ¼ Zip Fleece TNF Black 66371640",
+                "brand": "노스페이스",
+                "price": "119,200",
+                "detail_page_url": "https://www.trenbe.com/product/++74272891?catalog=",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain-image/20240503_638502834951326110_21824845_0.jpg"
+                ]
+            },
+            {
+                "title": "날 자켓 우먼 블랙 10616W01",
+                "brand": "클라터뮤젠",
+                "price": "311,000",
+                "detail_page_url": "https://www.trenbe.com/product/++47888412?catalog=&options=owned",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain/1682063966293-3bed7095-6e2e-48c3-82b7-a8334d7b0b48.jpeg"
+                ]
+            },
+            {
+                "title": "스키 자켓 COURAGE SKI JACKET 20983201",
+                "brand": "골드버그",
+                "price": "1,448,400",
+                "detail_page_url": "https://www.trenbe.com/product/++116102299?catalog=",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain-image/20241025_638654881921309985_22122783_0.jpg"
+                ]
+            }
+        ]
+    },
+    {
+        "product_info": {
+            "id": 151,
+            "brand": "언더아머",
+            "title": "핑크 Grphc Legging Ld99 Pink 34951206",
+            "price": "135,100",
+            "detail_page_url": "https://www.trenbe.com/product/++66322527?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240107_638401802643050058_21130087_0.jpg"
+            ],
+            "description": "1. **소재와 색상**: \n   - **색상**: 핑크\n   - **소재**: 일반적으로 레깅스는 폴리에스터, 스판덱스 혼합 소재로 제작되며, 신축성과 통기성이 좋습니다.\n\n2. **디자인 디테일**: \n   - 특징적인 요소: 허리 부분은 높은 디자인으로 되어 있으며, 몸에 밀착되는 슬림한 실루엣을 가집니다. \n   - 별다른 버튼이나 주름이 없고, 깔끔한 스무스한 마감이 특징입니다. \n   - 브랜드 로고가 측면에 위치해 있습니다."
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "bottom"
+        },
+        "recommendations": [
+            {
+                "title": "유지 후디 우먼 매더레드 20643W02",
+                "brand": "클라터뮤젠",
+                "price": "278,000",
+                "detail_page_url": "https://www.trenbe.com/product/++47888410?catalog=&options=owned",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain/1682063963036-06aab49a-6171-44ef-bc5b-c93c8c28dace.jpeg"
+                ]
+            },
+            {
+                "title": "크롭 집업 플리스 블랙 Women’s 100 Glacier Cropped ¼ Zip Fleece TNF Black 66371640",
+                "brand": "노스페이스",
+                "price": "119,200",
+                "detail_page_url": "https://www.trenbe.com/product/++74272891?catalog=",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain-image/20240503_638502834951326110_21824845_0.jpg"
+                ]
+            },
+            {
+                "title": "날 자켓 우먼 블랙 10616W01",
+                "brand": "클라터뮤젠",
+                "price": "311,000",
+                "detail_page_url": "https://www.trenbe.com/product/++47888412?catalog=&options=owned",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain/1682063966293-3bed7095-6e2e-48c3-82b7-a8334d7b0b48.jpeg"
+                ]
+            },
+            {
+                "title": "스키 자켓 COURAGE SKI JACKET 20983201",
+                "brand": "골드버그",
+                "price": "1,448,400",
+                "detail_page_url": "https://www.trenbe.com/product/++116102299?catalog=",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain-image/20241025_638654881921309985_22122783_0.jpg"
+                ]
+            }
+        ]
+    },
+    {
+        "product_info": {
+            "id": 154,
+            "brand": "언더아머",
+            "title": "앵클 Novelty Ankle Leg Ld99 Maroon 34950424",
+            "price": "137,900",
+            "detail_page_url": "https://www.trenbe.com/product/++66322507?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240106_638401789263620490_21130071_0.jpg"
+            ],
+            "description": "1. **소재와 색상**: \n   - 색상: 마룬 (진한 붉은색)\n   - 소재: 일반적으로 스판덱스 또는 나일론 혼합 소재로, 신축성이 좋고 운동에 적합한 재질입니다.\n\n2. **디자인 디테일**: \n   - 특징적인 요소: \n     - 사이드에 있는 핑크색 파이핑 디테일이 포인트입니다.\n     - 하이웨이스트 디자인으로 허리를 잘 잡아줍니다.\n     - 슬림한 실루엣으로 몸매를 강조합니다."
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "bottom"
+        },
+        "recommendations": [
+            {
+                "title": "유지 후디 우먼 매더레드 20643W02",
+                "brand": "클라터뮤젠",
+                "price": "278,000",
+                "detail_page_url": "https://www.trenbe.com/product/++47888410?catalog=&options=owned",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain/1682063963036-06aab49a-6171-44ef-bc5b-c93c8c28dace.jpeg"
+                ]
+            },
+            {
+                "title": "크롭 집업 플리스 블랙 Women’s 100 Glacier Cropped ¼ Zip Fleece TNF Black 66371640",
+                "brand": "노스페이스",
+                "price": "119,200",
+                "detail_page_url": "https://www.trenbe.com/product/++74272891?catalog=",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain-image/20240503_638502834951326110_21824845_0.jpg"
+                ]
+            },
+            {
+                "title": "날 자켓 우먼 블랙 10616W01",
+                "brand": "클라터뮤젠",
+                "price": "311,000",
+                "detail_page_url": "https://www.trenbe.com/product/++47888412?catalog=&options=owned",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain/1682063966293-3bed7095-6e2e-48c3-82b7-a8334d7b0b48.jpeg"
+                ]
+            },
+            {
+                "title": "스키 자켓 COURAGE SKI JACKET 20983201",
+                "brand": "골드버그",
+                "price": "1,448,400",
+                "detail_page_url": "https://www.trenbe.com/product/++116102299?catalog=",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain-image/20241025_638654881921309985_22122783_0.jpg"
+                ]
+            }
+        ]
+    },
+    {
+        "product_info": {
+            "id": 159,
+            "brand": "카리모어",
+            "title": "메리노 브라 블랙 Merino Bra Ld51 Black 42190303",
+            "price": "66,200",
+            "detail_page_url": "https://www.trenbe.com/product/++71429671?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240820_638597549734634270_21445616_0.jpg"
+            ],
+            "description": "1. **소재와 색상**: 이 브라는 메리노 소재로 보이며, 색상은 블랙입니다.\n\n2. **디자인 디테일**: \n   - **특징적인 요소**: 슬리브리스 디자인으로, 뒷면에 X자 형태의 끈이 있어 스포츠 활동 시 편안함을 제공합니다.\n   - **실루엣**: 몸에 꼭 맞는 핏으로, 운동 중에도 안정적인 착용감을 줍니다.\n   - **로고**: 브랜드 로고가 앞쪽 상단에 위치해 있습니다."
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        },
+        "recommendations": [
+            {
+                "title": "룰루레몬 여성 팬츠 댄스 스튜디오 미드 라이즈 레귤러 12칼라",
+                "brand": "룰루레몬",
+                "price": "240,000",
+                "detail_page_url": "https://www.trenbe.com/product/++84110737?catalog=",
+                "images": [
+                    "https://image-cdn.trenbe.com/product-images/1718255378623_2a57c7f390884d18aefdc5defce90960_1.jpeg"
+                ]
+            },
+            {
+                "title": "에센셜 조거 팬츠 여성 옐로우 Essential Jogging Pants Womens Yellow 34752913",
+                "brand": "언더아머",
+                "price": "151,600",
+                "detail_page_url": "https://www.trenbe.com/product/++68534288?catalog=",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain-image/20240203_638425218986397110_21291673_0.jpg"
+                ]
+            },
+            {
+                "title": "날 자켓 우먼 블랙 10616W01",
+                "brand": "클라터뮤젠",
+                "price": "311,000",
+                "detail_page_url": "https://www.trenbe.com/product/++47888412?catalog=&options=owned",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain/1682063966293-3bed7095-6e2e-48c3-82b7-a8334d7b0b48.jpeg"
+                ]
+            },
+            {
+                "title": "스키 자켓 COURAGE SKI JACKET 20983201",
+                "brand": "골드버그",
+                "price": "1,448,400",
+                "detail_page_url": "https://www.trenbe.com/product/++116102299?catalog=",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain-image/20241025_638654881921309985_22122783_0.jpg"
+                ]
+            }
+        ]
+    },
+    {
+        "product_info": {
+            "id": 165,
+            "brand": "클라터뮤젠",
+            "title": "루나 스테이트먼트 우먼 반팔 스노우 20626W91",
+            "price": "103,000",
+            "detail_page_url": "https://www.trenbe.com/product/++47888399?catalog=&options=owned",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1682063943993-e3421a10-9f45-4cac-b8d1-ef3ef3f96ae7.jpeg"
+            ],
+            "description": "1. **소재와 색상**: \n   - 소재: 일반적으로 반팔 티셔츠는 면 또는 혼합 소재로 제작됩니다. \n   - 색상: 흰색.\n\n2. **디자인 디테일**:\n   - 특징적인 요소: 뒷면에 브랜드 로고와 그래픽 요소가 포함되어 있습니다. \n   - 실루엣: 기본적인 반팔 티셔츠 실루엣."
+        },
+        "style_analysis": {
+            "final_style": "high_end_street"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        },
+        "recommendations": [
+            {
+                "title": "룰루레몬 여성 팬츠 댄스 스튜디오 미드 라이즈 레귤러 12칼라",
+                "brand": "룰루레몬",
+                "price": "240,000",
+                "detail_page_url": "https://www.trenbe.com/product/++84110737?catalog=",
+                "images": [
+                    "https://image-cdn.trenbe.com/product-images/1718255378623_2a57c7f390884d18aefdc5defce90960_1.jpeg"
+                ]
+            },
+            {
+                "title": "에센셜 조거 팬츠 여성 옐로우 Essential Jogging Pants Womens Yellow 34752913",
+                "brand": "언더아머",
+                "price": "151,600",
+                "detail_page_url": "https://www.trenbe.com/product/++68534288?catalog=",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain-image/20240203_638425218986397110_21291673_0.jpg"
+                ]
+            },
+            {
+                "title": "날 자켓 우먼 블랙 10616W01",
+                "brand": "클라터뮤젠",
+                "price": "311,000",
+                "detail_page_url": "https://www.trenbe.com/product/++47888412?catalog=&options=owned",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain/1682063966293-3bed7095-6e2e-48c3-82b7-a8334d7b0b48.jpeg"
+                ]
+            },
+            {
+                "title": "스키 자켓 COURAGE SKI JACKET 20983201",
+                "brand": "골드버그",
+                "price": "1,448,400",
+                "detail_page_url": "https://www.trenbe.com/product/++116102299?catalog=",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain-image/20241025_638654881921309985_22122783_0.jpg"
+                ]
+            }
+        ]
+    },
+    {
+        "product_info": {
+            "id": 170,
+            "brand": "나이키",
+            "title": "프로 플렉스 여성 투인원 바지 Pro Flex Women's 2-in-1 Shorts White/Silver 34211401",
+            "price": "95,300",
+            "detail_page_url": "https://www.trenbe.com/product/++93220079?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240714_638564884581113957_22802009_0.jpg"
+            ],
+            "description": "1. **소재와 색상**: \n   - 소재: 신축성이 있는 폴리에스터 또는 나일론 혼합 소재로 보이며, 경량성이 특징입니다.\n   - 색상: 주로 흰색이며, 악센트로 실버 색상이 사용되었습니다.\n\n2. **디자인 디테일**:\n   - 특징적인 요소: 허리 부분에 밴드가 있어 편안한 착용감을 제공합니다.\n   - 실루엣: 넉넉한 핏으로, 짧은 길이의 반바지 스타일입니다.\n   - 추가 디자인: 내장된 레깅스가 있어 2-in-1 스타일을 잘 보여줍니다."
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "bottom"
+        },
+        "recommendations": [
+            {
+                "title": "유지 후디 우먼 매더레드 20643W02",
+                "brand": "클라터뮤젠",
+                "price": "278,000",
+                "detail_page_url": "https://www.trenbe.com/product/++47888410?catalog=&options=owned",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain/1682063963036-06aab49a-6171-44ef-bc5b-c93c8c28dace.jpeg"
+                ]
+            },
+            {
+                "title": "크롭 집업 플리스 블랙 Women’s 100 Glacier Cropped ¼ Zip Fleece TNF Black 66371640",
+                "brand": "노스페이스",
+                "price": "119,200",
+                "detail_page_url": "https://www.trenbe.com/product/++74272891?catalog=",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain-image/20240503_638502834951326110_21824845_0.jpg"
+                ]
+            },
+            {
+                "title": "날 자켓 우먼 블랙 10616W01",
+                "brand": "클라터뮤젠",
+                "price": "311,000",
+                "detail_page_url": "https://www.trenbe.com/product/++47888412?catalog=&options=owned",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain/1682063966293-3bed7095-6e2e-48c3-82b7-a8334d7b0b48.jpeg"
+                ]
+            },
+            {
+                "title": "스키 자켓 COURAGE SKI JACKET 20983201",
+                "brand": "골드버그",
+                "price": "1,448,400",
+                "detail_page_url": "https://www.trenbe.com/product/++116102299?catalog=",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain-image/20241025_638654881921309985_22122783_0.jpg"
+                ]
+            }
+        ]
+    },
+    {
+        "product_info": {
+            "id": 175,
+            "brand": "클라터뮤젠",
+            "title": "파프네 반팔 우먼 페디드그린 20635W01",
+            "price": "195,000",
+            "detail_page_url": "https://www.trenbe.com/product/++47888402?catalog=&options=owned",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1682063946975-2de986bd-450f-4597-b8b5-597c672258a3.jpeg"
+            ],
+            "description": "1. **소재와 색상**: 이 옷은 부드러운 촉감을 가진 원단으로 보이며, 색상은 페디드 그린입니다.\n\n2. **디자인 디테일**:\n   - 특징적인 요소로는 비대칭적인 디자인이 있으며, 왼쪽 어깨 부분에 작은 검은색 삼각형 패치가 있습니다.\n   - 소매는 짧고, 라운드 넥 디자인입니다.\n   - 전체적으로 스포티하면서도 현대적인 실루엣을 가지고 있습니다."
+        },
+        "style_analysis": {
+            "final_style": "modern_classic"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        },
+        "recommendations": [
+            {
+                "title": "룰루레몬 여성 팬츠 댄스 스튜디오 미드 라이즈 레귤러 12칼라",
+                "brand": "룰루레몬",
+                "price": "240,000",
+                "detail_page_url": "https://www.trenbe.com/product/++84110737?catalog=",
+                "images": [
+                    "https://image-cdn.trenbe.com/product-images/1718255378623_2a57c7f390884d18aefdc5defce90960_1.jpeg"
+                ]
+            },
+            {
+                "title": "에센셜 조거 팬츠 여성 옐로우 Essential Jogging Pants Womens Yellow 34752913",
+                "brand": "언더아머",
+                "price": "151,600",
+                "detail_page_url": "https://www.trenbe.com/product/++68534288?catalog=",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain-image/20240203_638425218986397110_21291673_0.jpg"
+                ]
+            },
+            {
+                "title": "날 자켓 우먼 블랙 10616W01",
+                "brand": "클라터뮤젠",
+                "price": "311,000",
+                "detail_page_url": "https://www.trenbe.com/product/++47888412?catalog=&options=owned",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain/1682063966293-3bed7095-6e2e-48c3-82b7-a8334d7b0b48.jpeg"
+                ]
+            },
+            {
+                "title": "스키 자켓 COURAGE SKI JACKET 20983201",
+                "brand": "골드버그",
+                "price": "1,448,400",
+                "detail_page_url": "https://www.trenbe.com/product/++116102299?catalog=",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain-image/20241025_638654881921309985_22122783_0.jpg"
+                ]
+            }
+        ]
+    },
+    {
+        "product_info": {
+            "id": 188,
+            "brand": "월포드",
+            "title": "더 탑 Wolford The Workout Top 1412923465",
+            "price": "307,500",
+            "detail_page_url": "https://www.trenbe.com/product/++76001982?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240415_638487069442326211_22053766_0.jpg"
+            ],
+            "description": "1. **소재와 색상**: 이 의류는 부드러운 느낌의 신축성 있는 소재로 보이며, 색상은 밝은 파란색입니다.\n\n2. **디자인 디테일**: 이 탑은 민소매 디자인으로, 깔끔한 라운드 넥과 슬림한 실루엣이 특징입니다. 주름이나 버튼 같은 장식은 없고, 심플하면서도 세련된 느낌을 줍니다."
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        },
+        "recommendations": [
+            {
+                "title": "룰루레몬 여성 팬츠 댄스 스튜디오 미드 라이즈 레귤러 12칼라",
+                "brand": "룰루레몬",
+                "price": "240,000",
+                "detail_page_url": "https://www.trenbe.com/product/++84110737?catalog=",
+                "images": [
+                    "https://image-cdn.trenbe.com/product-images/1718255378623_2a57c7f390884d18aefdc5defce90960_1.jpeg"
+                ]
+            },
+            {
+                "title": "에센셜 조거 팬츠 여성 옐로우 Essential Jogging Pants Womens Yellow 34752913",
+                "brand": "언더아머",
+                "price": "151,600",
+                "detail_page_url": "https://www.trenbe.com/product/++68534288?catalog=",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain-image/20240203_638425218986397110_21291673_0.jpg"
+                ]
+            },
+            {
+                "title": "날 자켓 우먼 블랙 10616W01",
+                "brand": "클라터뮤젠",
+                "price": "311,000",
+                "detail_page_url": "https://www.trenbe.com/product/++47888412?catalog=&options=owned",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain/1682063966293-3bed7095-6e2e-48c3-82b7-a8334d7b0b48.jpeg"
+                ]
+            },
+            {
+                "title": "스키 자켓 COURAGE SKI JACKET 20983201",
+                "brand": "골드버그",
+                "price": "1,448,400",
+                "detail_page_url": "https://www.trenbe.com/product/++116102299?catalog=",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain-image/20241025_638654881921309985_22122783_0.jpg"
+                ]
+            }
+        ]
+    },
+    {
+        "product_info": {
+            "id": 189,
+            "brand": "월포드",
+            "title": "풀오버 Wolford Tony Pullover 1412923413",
+            "price": "676,100",
+            "detail_page_url": "https://www.trenbe.com/product/++76001980?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240415_638487069456356335_22053774_0.jpg"
+            ],
+            "description": "1. **소재와 색상**: 이 풀오버는 부드러운 니트 소재로 보이며, 색상은 연한 핑크색입니다.\n\n2. **디자인 디테일**: \n   - **넥라인**: 터틀넥 스타일로 디자인되어 있습니다.\n   - **소매**: 소매는 슬림핏으로, 약간의 주름이 있는 디테일이 있습니다.\n   - **실루엣**: 전체적으로 몸에 잘 맞는 실루엣으로, 세련된 느낌을 줍니다.\n   - **투명한 부분**: 앞쪽 중앙에 약간의 투명한 패널이 있어 독특한 디자인 요소를 추가합니다."
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        },
+        "recommendations": [
+            {
+                "title": "룰루레몬 여성 팬츠 댄스 스튜디오 미드 라이즈 레귤러 12칼라",
+                "brand": "룰루레몬",
+                "price": "240,000",
+                "detail_page_url": "https://www.trenbe.com/product/++84110737?catalog=",
+                "images": [
+                    "https://image-cdn.trenbe.com/product-images/1718255378623_2a57c7f390884d18aefdc5defce90960_1.jpeg"
+                ]
+            },
+            {
+                "title": "에센셜 조거 팬츠 여성 옐로우 Essential Jogging Pants Womens Yellow 34752913",
+                "brand": "언더아머",
+                "price": "151,600",
+                "detail_page_url": "https://www.trenbe.com/product/++68534288?catalog=",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain-image/20240203_638425218986397110_21291673_0.jpg"
+                ]
+            },
+            {
+                "title": "날 자켓 우먼 블랙 10616W01",
+                "brand": "클라터뮤젠",
+                "price": "311,000",
+                "detail_page_url": "https://www.trenbe.com/product/++47888412?catalog=&options=owned",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain/1682063966293-3bed7095-6e2e-48c3-82b7-a8334d7b0b48.jpeg"
+                ]
+            },
+            {
+                "title": "스키 자켓 COURAGE SKI JACKET 20983201",
+                "brand": "골드버그",
+                "price": "1,448,400",
+                "detail_page_url": "https://www.trenbe.com/product/++116102299?catalog=",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain-image/20241025_638654881921309985_22122783_0.jpg"
+                ]
+            }
+        ]
+    },
+    {
+        "product_info": {
+            "id": 191,
+            "brand": "월포드",
+            "title": "다이애나 울 셔츠 Wolford Diana Wool-Blend Shirt 1412923410",
+            "price": "526,900",
+            "detail_page_url": "https://www.trenbe.com/product/++76001971?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240414_638487069404600222_22053748_0.jpg"
+            ],
+            "description": "1. **옷의 소재와 색상**: 이 셔츠는 울 혼합 소재로 보이며, 색상은 검정입니다.\n\n2. **디자인 디테일**: \n   - 특징적인 요소: 라운드 넥, 짧은 소매\n   - 실루엣: 슬림한 핏\n   - 주름: 세로 주름 디자인이 있어 텍스처가 돋보입니다."
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "top"
+        },
+        "recommendations": [
+            {
+                "title": "룰루레몬 여성 팬츠 댄스 스튜디오 미드 라이즈 레귤러 12칼라",
+                "brand": "룰루레몬",
+                "price": "240,000",
+                "detail_page_url": "https://www.trenbe.com/product/++84110737?catalog=",
+                "images": [
+                    "https://image-cdn.trenbe.com/product-images/1718255378623_2a57c7f390884d18aefdc5defce90960_1.jpeg"
+                ]
+            },
+            {
+                "title": "에센셜 조거 팬츠 여성 옐로우 Essential Jogging Pants Womens Yellow 34752913",
+                "brand": "언더아머",
+                "price": "151,600",
+                "detail_page_url": "https://www.trenbe.com/product/++68534288?catalog=",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain-image/20240203_638425218986397110_21291673_0.jpg"
+                ]
+            },
+            {
+                "title": "날 자켓 우먼 블랙 10616W01",
+                "brand": "클라터뮤젠",
+                "price": "311,000",
+                "detail_page_url": "https://www.trenbe.com/product/++47888412?catalog=&options=owned",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain/1682063966293-3bed7095-6e2e-48c3-82b7-a8334d7b0b48.jpeg"
+                ]
+            },
+            {
+                "title": "스키 자켓 COURAGE SKI JACKET 20983201",
+                "brand": "골드버그",
+                "price": "1,448,400",
+                "detail_page_url": "https://www.trenbe.com/product/++116102299?catalog=",
+                "images": [
+                    "https://image-cdn.trenbe.com/productmain-image/20241025_638654881921309985_22122783_0.jpg"
+                ]
+            }
+        ]
+    }
+]

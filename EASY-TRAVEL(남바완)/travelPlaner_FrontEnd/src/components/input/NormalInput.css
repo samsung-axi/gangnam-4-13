@@ -1,0 +1,14 @@
+.NormalInput-box{
+    width: 100%;
+    border-radius: var(--border-radius-2);
+    border: 1px solid var(--grey-1);
+    padding: 8px 12px;
+    font-size: var(--font-size-5);
+    box-shadow: var(--shadow-1);
+    outline: none;
+}
+
+.NormalInput-box:focus{
+    border: 1px solid var(--black-opacity-50);
+}
+

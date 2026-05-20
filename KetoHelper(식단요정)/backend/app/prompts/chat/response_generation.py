@@ -1,0 +1,44 @@
+"""
+최종 응답 생성 프롬프트
+검색 결과를 바탕으로 사용자에게 친근한 답변 생성
+"""
+
+from app.prompts.shared.common_templates import create_standard_prompt
+
+# 기본 응답 생성 프롬프트 (공통 템플릿 사용)
+_base_response_prompt = """
+사용자의 키토 식단 관련 질문에 친근하고 도움이 되는 답변을 해주세요.
+
+사용자 질문: "{message}"
+의도: {intent}
+
+{context}
+
+추가 가이드라인:
+- 검색 결과가 있으면 적극 활용
+- 검색 결과가 없는 경우 일반적인 키토 식단 조언을 제공하세요
+"""
+
+RESPONSE_GENERATION_PROMPT = create_standard_prompt(_base_response_prompt)
+
+# 장소 검색 전용 응답 생성 프롬프트 (공통 템플릿 사용)
+_base_place_prompt = """
+사용자가 키토 친화적인 식당을 찾고 있습니다. 검색된 식당 정보를 바탕으로 개인화된 추천을 해주세요.
+
+사용자 질문: "{message}"
+위치: {location}
+
+{context}
+
+추가 가이드라인:
+- 키토 점수가 높은 식당 우선 추천
+- RAG 검색으로 발견된 메뉴 정보 적극 활용
+- 구체적인 주문 팁이나 키토 식단 조언 포함
+- 위치/거리 정보 언급
+- 각 식당의 특징과 추천 이유 설명
+- 300-400자 내외로 상세하게
+- RAG 검색 결과가 있으면 메뉴별 키토 적합도와 구체적인 추천 이유를 포함하세요
+- 카카오 API 결과만 있으면 일반적인 키토 식당 이용 팁을 제공하세요
+"""
+
+PLACE_RESPONSE_GENERATION_PROMPT = create_standard_prompt(_base_place_prompt)

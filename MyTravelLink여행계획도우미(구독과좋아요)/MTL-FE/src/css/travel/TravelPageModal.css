@@ -1,0 +1,217 @@
+.SJ-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 11;
+}
+
+.SJ-modal-bottom {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  margin: 0 auto;
+  max-width: 470px;
+
+  padding: 20px;
+
+  gap: 3px;
+
+  background-color: white;
+  border: 3px solid var(--color-light-gray);
+  border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;
+
+  z-index: 12;
+}
+
+.SJ-modal-content {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.SJ-modal-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.SJ-modal-icon {
+  font-size: 20px;
+}
+
+/* ---------------------------------------------------------------------------  */
+.WS-second-Modal-Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+    z-index: 13;
+
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.WS-second-Modal-Content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+
+  padding-top: 30px;
+  padding-right: 20px;
+  padding-left: 20px;
+
+  border-radius: 20px;
+
+  width: 300px;
+  height: 240px;
+
+  background-color: white;
+}
+
+.WS-Edit-Modal-Message-Container {
+  margin-bottom: 30px;
+  margin-left: 50px;
+  text-align: left;
+
+  width: 100%;
+}
+
+.WS-Edit-Modal-Title {
+  font-size: var(--font-size-xl);
+  font-weight: bold;
+  color: var(--color-dark-gray);
+
+  margin-bottom: 10px;
+}
+
+.WS-Edit-Modal-Message {
+  font-size: var(--font-size-base);
+  color: var(--color-dark-gray);
+}
+
+.WS-Edit-Modal-Input-Container {
+  margin-bottom: 45px;
+  margin-left: 50px;
+  text-align: left;
+
+  width: 100%;
+}
+
+.WS-Edit-Modal-Input {
+  width: 200px;
+
+  padding: 10px;
+  padding-right: 35px;
+
+  font-weight: bold;
+  font-size: var(--font-size-base);
+  color: var(--color-guide);
+
+  border: none;
+  border-bottom: 1px solid var(--color-guide);
+}
+
+.WS-Edit-Modal-Input:focus {
+  outline: none;
+}
+
+.WS-Edit-Modal-Reset-Button {
+  position: absolute;
+  top: 49.5%;
+  right: 44%;
+  background: none;
+  border: none;
+
+  color: var(--color-guide);
+}
+
+.WS-second-Modal-Button-Container {
+  display: flex;
+  align-items: center;
+
+  width: 113%;
+  height: 100%;
+  border-top: 2px solid var(--color-light-gray);
+}
+
+.WS-second-Modal-Button {
+  width: 100%;
+  height: 100%;
+  padding-bottom: 5px;
+
+  text-align: center;
+  align-items: center;
+
+  background: none;
+  border: none;
+
+  font-size: var(--font-size-base);
+  font-weight: bold;
+  color: var(--color-guide);
+  
+
+  cursor: pointer;
+}
+
+.WS-second-Modal-Button:last-child {
+  border-left: 2px solid var(--color-light-gray);
+  color: var(--color-dark-gray);
+}
+
+#WS-Delete-Modal-Content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+
+  padding-top: 50px;
+  padding-right: 20px;
+  padding-left: 20px;
+
+  border-radius: 20px;
+
+  width: 300px;
+  height: 170px;
+
+  background-color: white;
+}
+
+.WS-Delete-Modal-Message-Container {
+  margin-top: 10px;
+  margin-bottom: 40px;
+}
+
+.WS-Delete-Modal-Title {
+  font-size: var(--font-size-xl);
+  font-weight: bold;
+  color: var(--color-main);
+
+  margin-bottom: 5px;
+}
+
+.WS-Delete-Modal-Message {
+  font-size: var(--font-size-sm);
+  color: var(--color-dark-gray);
+}

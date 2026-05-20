@@ -1,0 +1,142 @@
+.footer {
+    position: relative;
+    width: 100%;
+    background-color: #CDC6CE;
+    padding: 20px 0;
+    z-index: 100;
+    margin-top: 0; /* auto에서 0으로 변경 */
+    bottom: 0; /* 하단에 고정 */
+}
+
+/* 스크롤이 있는 경우에도 푸터가 잘 보이도록 설정 */
+@media screen and (max-height: 800px) {
+    .footer {
+        position: relative;
+        margin-top: 0; /* 20px에서 0으로 변경 */
+        bottom: 0;
+    }
+}
+
+/* 기존 스타일 유지 */
+.footer-main-logo-image{
+    width: 120px;
+    margin-left: 27px;
+    margin-bottom: -20px;
+    margin-top: -15px;
+}
+
+.footer-top-logo {
+    width: 100%;
+    background-color: #EFEDED;
+    padding: 0px;
+    text-align: center;
+}
+
+.footer-top-logo {
+    max-width: 700px;
+    height: auto;
+}
+
+.footer-logo {
+    display: block;
+    max-width: 150px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.footer-container {
+    width: 100%;
+    padding: 0 20px;
+}
+
+.footer-textbox {
+    margin-left: 30px;
+}
+
+.footer-logo-section {
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.footer-slogan {
+    font-size: 14px;
+    color: #333;
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
+
+.footer-navlinks {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-bottom: 25px;
+    color: #333;
+}
+.footer-nav {
+    color: #333;
+}
+
+.footer-navlinks a {
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.separator {
+    margin: 0 10px;
+    color: #666;
+}
+
+.footer-social {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.footer-social a {
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer-company-info {
+    color: #333;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.footer-bottom-block {
+    margin-top: 12px;
+}
+
+.footer-legal {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+    font-size: 12px;
+}
+
+.footer-legal a {
+    color: #333;
+    text-decoration: none;
+}
+
+.privacyPolicy, .termsOfUse, .cookiePolicy {
+    font-size: 12px;
+    color: #333;
+    text-decoration: none;
+}
+
+.privacyPolicy:hover, .termsOfUse:hover, .cookiePolicy:hover {
+    text-decoration: underline;
+}
+
+.footer-copyright {
+    font-size: 12px;
+    color: #666;
+    margin-top: 10px;
+}

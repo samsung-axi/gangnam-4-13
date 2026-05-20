@@ -1,0 +1,146 @@
+.WS-LinkList-Tab {
+  width: 100%;
+  height: 100%;
+}
+
+.WS-LinkList-AddButton {
+  position: absolute;
+  right: 11px;
+  top: 11px;
+
+  background: none;
+  border: none;
+  font-size: var(--font-size-lg);
+  font-weight: 900;
+  color: var(--color-dark-gray);
+}
+
+/* 링크 추가 버튼 호버 효과 */
+.WS-LinkList-AddButton:hover {
+  color: var(--color-main);
+  scale: 1.05;
+
+  cursor: pointer;
+}
+
+/* 링크 아이템 스타일 */
+.WS-LinkList-Items {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 15% auto 30% auto;
+  gap: 10px;
+}
+
+.WS-LinkList-Item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 2%;
+
+  width: 85%;
+  height: 5%;
+  border-radius: var(--border-radius-full);
+  background-color: var(--color-light-gray);
+}
+
+.WS-LinkList-Content {
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+}
+
+.WS-LinkList-Badge {
+  margin-right: 3%;
+  padding: 4% 4% 3.5% 4%;
+  width: 20%;
+  text-align: center;
+  border-radius: var(--border-radius-full);
+  font-size: var(--font-size-sm);
+  font-weight: bold;
+}
+
+.WS-LinkList-Item.youtube .WS-LinkList-Badge {
+  background-color: var(--color-main);
+  color: white;
+}
+
+.WS-LinkList-Item.blog .WS-LinkList-Badge {
+  background-color: var(--color-success);
+  color: white;
+}
+
+.WS-LinkList-Text {
+  flex: 1;
+  text-align: left;
+
+  font-size: var(--font-size-sm);
+  color: var(--color-dark-gray);
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.WS-LinkList-DeleteButton {
+  display: flex;
+  align-items: center;
+
+  margin-right: 2%;
+
+  width: 24px;
+  height: 24px;
+
+  background-color: white;
+  color: var(--color-dark-gray);
+  font-size: var(--font-size-sm);
+  border-radius: var(--border-radius-full);
+  border: none;
+
+  cursor: pointer;
+}
+
+.WS-LinkList-DeleteButton:hover {
+  background-color: var(--color-main);
+  color: white;
+  transition: none;
+}
+
+.WS-LinkList-Next-Container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  position: absolute;
+  bottom: 12%;
+  left: 0;
+  right: 0;
+}
+
+.WS-LinkList-Counter {
+  color: var(--color-dark-gray);
+  font-size: var(--font-size-sm);
+  margin-bottom: 2%;
+}
+
+.WS-LinkList-NextButton {
+  padding: 4.5%;
+
+  width: 85%;
+  border: none;
+  border-radius: var(--border-radius-full);
+  background-color: var(--color-main);
+
+  color: white;
+  font-size: var(--font-size-base);
+  font-weight: bold;
+
+  cursor: pointer;
+}
+
+.WS-LinkList-NextButton:disabled {
+  background-color: var(--color-light-gray);
+  cursor: not-allowed;
+}

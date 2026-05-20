@@ -1,0 +1,71 @@
+/* * {
+    font-family: 'Nanum Myeongjo', serif;
+} */
+
+.faq-container {
+    background-color: #EFEDED;
+    min-height: 100vh;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+}
+
+.faq-li {
+    margin-left: 30px;
+}
+
+.faq-content {
+    background-color: transparent;
+    max-width: 800px;
+    width: 100%;
+    padding: 3rem;
+    border-radius: 8px;
+}
+
+.faq-title {
+    text-align: left;
+    font-size: 30px;
+    margin-bottom: 2rem;
+}
+
+.faq-notice {
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.faq-section {
+    margin-bottom: 2rem;
+}
+
+.faq-section h2 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.faq-section ul {
+    list-style: none;
+    padding-left: 1rem;
+}
+
+.faq-section li {
+    margin-bottom: 0.5rem;
+    position: relative;
+}
+
+.faq-section li:before {
+    content: "•";
+    position: absolute;
+    left: -1rem;
+}
+
+.faq-section p {
+    padding-left: 1rem;
+    line-height: 1.6;
+}
+
+.faq-footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+}

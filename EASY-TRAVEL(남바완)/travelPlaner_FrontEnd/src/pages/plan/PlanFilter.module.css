@@ -1,0 +1,433 @@
+/* 공통 스타일 */
+.travel_plan_container {
+  width: 100%;
+  padding: 50px 24px;
+  box-sizing: border-box;
+  min-height: 100vh;
+}
+
+.travel_plan_header {
+  font-size: var(--font-size-3);
+  font-weight: var(--bold);
+  color: #000;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 400px) {
+  .travel_plan_header {
+    font-size: var(--font-size-4);
+  }
+}
+
+
+.travel_plan_description {
+  font-size: var(--font-size-5);
+  color: #b1b1b1;
+  margin-bottom: 20px;
+}
+
+.section_title {
+  font-size: var(--font-size-5);
+  font-weight: var(--bold);
+  color: #000;
+  margin-bottom: 10px;
+}
+
+/* 지역 섹션 */
+.travel_region_section {
+  margin-bottom: 50px;
+}
+
+.region_input_container {
+  position: relative;
+  width: 98%;
+  margin: 20px 0px 0px 15px;
+}
+
+.region_input {
+  flex: 1;
+  height: 40px;
+  border: 1px solid #e0dede;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+}
+
+.filtered_region_list {
+  width: 98%;
+  max-height: 200px;
+  overflow-y: auto;
+  border-left: 1px solid var(--grey-1);
+  border-right: 1px solid var(--grey-1);
+  border-bottom: 1px solid var(--grey-1);
+  border-top: none;
+  margin-left: 15px;
+  padding: 4px 0px;
+  background-color: var(--white);
+  border-radius: 0 0 var(--border-radius-2) var(--border-radius-2);
+  font-size: var(--font-size-5);
+}
+
+.filtered_region_list li {
+  padding: 7px 12px;
+  cursor: pointer;
+}
+
+.filtered_region_list li:hover {
+  background-color: var(--grey-3);
+}
+
+/* 일정 섹션 */
+.travel_schedule_section {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0;
+  height: 390px;
+  /* 일정 높이 고정 */
+}
+
+/* 달력 컨테이너 */
+.calendar_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 390px;
+  /* 일정 높이 고정 */
+  position: relative;
+}
+
+/* 달력 */
+.calendar_wrapper {
+  flex-grow: 1;
+  flex-shrink: 1;
+  min-width: 0;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 366px;
+  gap: 10px;
+  /* wrapper의 높이 고정 */
+}
+
+/* react-calendar */
+.custom_calendar {
+  padding: 10px 10px;
+  height: 366px;
+  /* react-calendar 높이 고정 */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* 버튼 스타일 공통 */
+.calendar_nav_button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  font-size: var(--font-size-5);
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+
+  img {
+    width: 40px;  
+  }
+}
+
+
+
+/* react-calendar 커스텀 스타일 */
+.react-calendar__navigation__label__labelText {
+  font-size: var(--font-size-5);
+  font-weight: var(--semibold);
+  color: var(--text-main);
+}
+
+.custom-calendar .react-calendar__tile {
+  aspect-ratio: 1;
+  transition: all 0.2s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.react-calendar__tile:disabled {
+  background-color: transparent;
+  color: var(--text-no-active);
+}
+
+.react-calendar__tile:disabled:hover {
+  color: var(--text-no-active) !important;
+}
+
+/* 현재 날짜 */
+.custom-calendar .react-calendar__tile--now {
+  background-color: var(--sub-color-2);
+  border-radius: 50%;
+}
+
+.custom-calendar .react-calendar__tile:hover {
+  background-color: transparent;
+  color: var(--text-main);
+}
+
+.custom-calendar .react-calendar__tile--active {
+  background-color: var(--sub-color-1);
+  color: #006edc;
+}
+
+/* 범위 시작 날짜 */
+.custom-calendar .react-calendar__tile--rangeStart {
+  background-color: #006edc !important;
+  color: var(--white);
+  border-radius: 50%;
+  font-weight: var(--bold);
+}
+
+/* 범위 종료 날짜 */
+.custom-calendar .react-calendar__tile--rangeEnd {
+  background-color: #006edc !important;
+  color: var(--white);
+  border-radius: 50%;
+  font-weight: var(--bold);
+}
+
+/* range 선택 중 hover 상태 배경색 제거 */
+.react-calendar--selectRange .react-calendar__tile--hover {
+  background-color: transparent;
+}
+
+/* 이전달, 다음달 날짜 색 */
+.react-calendar__month-view__days__day--neighboringMonth,
+.react-calendar__decade-view__years__year--neighboringDecade,
+.react-calendar__century-view__decades__decade--neighboringCentury {
+  color: var(--grey-1);
+}
+
+/* 선택된 날짜 */
+.selected_date {
+  margin-top: 10px;
+  font-size: var(--font-size-6);
+  text-align: center;
+
+  span {
+    font-weight: var(--semibold);
+  }
+}
+
+/* 날씨 정보 */
+
+.weather_container {
+  margin: 70px auto;
+  max-width: 400px;
+}
+
+.weather_alert_card {
+  width: 100%;
+  background-color: var(--white);
+  border-radius: var(--border-radius-2);
+  box-shadow: var(--shadow-basic);
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.weather_icon_wrapper {
+  flex-shrink: 0;
+}
+
+.weather_icon {
+  width: 2.5rem;
+  height: 1.8rem;
+  color: var(--text-sub);
+}
+
+.weather_content {
+  flex: 1;
+}
+
+.weather_title {
+  font-size: var(--font-size-6);
+  line-height: 1.5rem;
+  font-weight: var(--medium);
+  color: var(--text-main);
+}
+
+.weather_update_time {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: var(--text-sub);
+}
+
+/* 나이 섹션 */
+.travel_age_section {
+  margin-bottom: 50px;
+}
+
+.age_selection_container {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 20px 0px 20px 15px;
+}
+
+.age_button {
+  width: 60px;
+  height: 40px;
+  border: none;
+  border-radius: var(--border-radius-2);
+  text-align: center;
+  line-height: 40px;
+  font-size: var(--font-size-6);
+  background-color: var(--grey-3);
+  color: var(--text-main);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  font-weight: var(--semibold);
+}
+
+.age_button:hover {
+  background-color: var(--sub-color-1);
+}
+
+.age_button.active {
+  background-color: var(--main-color-1);
+  border-color: #76adec;
+}
+
+
+/* 일행 섹션 */
+.travel_companions_section {
+  margin-bottom: 50px;
+}
+
+.companions_selection_container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin: 20px 0px 20px 15px;
+}
+
+.companion_group {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* 좌우 정렬 */
+}
+
+.companion_controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-grow: 1;
+  /* 가운데 공간을 확보 */
+
+  
+}
+
+
+.companion_minus,
+.companion_plus {
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--grey-1);
+  border-radius: var(--border-radius-4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: var(--font-size-6);
+  color: #000;
+  background-color: #fff;
+  /* 버튼 배경색 */
+  transition: background-color 0.2s ease, border-color 0.2s ease,
+    color 0.2s ease;
+  /* 클릭 시 애니메이션 */
+}
+
+.companion_minus:hover {
+  background-color: var(--sub-color-2);
+  /* 호버 시 하늘색에 가까운 배경 */
+}
+
+.companion_plus:hover {
+  background-color: var(--sub-color-1);
+  /* 호버 시 하늘색에 가까운 배경 */
+}
+
+.companion_label {
+  font-size: var(--font-size-6);
+  font-weight: var(--semibold);
+  color: var(--text-main);
+  text-align: center;
+  padding: 0 10px;
+  width: 70px;
+  /* 고정 너비로 일관된 정렬 유지 */
+}
+
+.companion_count {
+  font-size: var(--font-size-6);
+  color: var(--text-main);
+  margin-left: auto;
+  text-align: right;
+
+  .count_number {
+    font-weight: var(--semibold);
+  }
+}
+
+/* 목적 섹션 */
+
+.travel_purpose_section {
+  margin-bottom: 50px;
+}
+
+.purpose_selection_container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px 0px 20px 15px;
+}
+
+.purpose_button {
+  padding: 8px 12px;
+  font-size: var(--font-size-6);
+  font-weight: var(--bold);
+  border: none;
+  border-radius: var(--border-radius-2);
+  color: var(--text-main);
+  background-color: var(--grey-3);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.purpose_button:hover {
+  background-color: var(--sub-color-2);
+}
+
+.purpose_button.active {
+  background-color: var(--main-color-2);
+}
+
+.travel_plan_complete_button {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.travel_plan_complete_button>* {
+  max-width: 50%;
+  width: 100%;
+}
+

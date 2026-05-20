@@ -1,0 +1,58 @@
+name: Python Docker Deploy
+
+on:
+  push:
+    branches: [dev]
+    paths:
+      - "python/**"
+      - ".github/workflows/python.yml"
+      - "requirements.txt"
+      - "python/Dockerfile"
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Docker 로그인
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Docker 빌드 및 푸시
+        run: |
+          docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/your-app-name:${{ github.sha }} -f ./python/Dockerfile ./python
+          docker push ${{ secrets.DOCKERHUB_USERNAME }}/your-app-name:${{ github.sha }}
+
+  deploy:
+    needs: build-and-push
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: SSH 접속 및 배포
+        uses: appleboy/ssh-action@v0.1.10
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ubuntu
+          key: ${{ secrets.EC2_KEY }}
+          script: |
+            # Docker 시스템 리소스 정리
+            sudo docker system prune -a -f
+
+            # 최신 이미지 pull
+            docker pull ${{ secrets.DOCKERHUB_USERNAME }}/your-app-name:${{ github.sha }}
+
+            # 기존 컨테이너 종료 및 삭제
+            docker stop python-app || true
+            docker rm python-app || true
+
+            # 새 컨테이너 실행
+            docker run -d --name python-app \
+              --env-file /home/ubuntu/python.env \
+              -v /home/ubuntu/hello-again-ai-project.json:/app/hello-again-ai-project.json \
+              -p 8000:8000 \
+              ${{ secrets.DOCKERHUB_USERNAME }}/your-app-name:${{ github.sha }}

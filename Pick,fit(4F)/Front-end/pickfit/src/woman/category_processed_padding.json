@@ -1,0 +1,1514 @@
+[
+    {
+        "product_info": {
+            "id": 1,
+            "brand": "몽클레르",
+            "title": "보에드 여성 패딩 점퍼 블랙 베이지",
+            "price": "6,478,000",
+            "detail_page_url": "https://www.trenbe.com/product/++79079181?catalog=100924826",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20241120_638676863439146222_22451546_1.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "cozy_minimal"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 2,
+            "brand": "몽클레르",
+            "title": "몽클레어 파르나이 롱 다운 패딩 자켓 블랙 Parnaiba Long Down Jacket Black J20931C0005068950999",
+            "price": "3,670,000",
+            "detail_page_url": "https://www.trenbe.com/product/++78886762?catalog=100916900",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20241120_638676857958854898_22411634_1.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "high_end_street"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 4,
+            "brand": "몽클레르",
+            "title": "아바디아 쇼츠 패딩 다운 자켓 블랙",
+            "price": "3,848,000",
+            "detail_page_url": "https://www.trenbe.com/product/++58794840?catalog=100465458",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1695629553627_ae6b0591eb17d4ea57fdbe245b4c7224_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "high_end_street"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 5,
+            "brand": "몽클레르",
+            "title": "부토르 롱 다운 패딩 조끼 블랙",
+            "price": "2,541,000",
+            "detail_page_url": "https://www.trenbe.com/product/++78887800?catalog=100012682",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20241120_638676869937377103_22411721_1.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "elegant_classic"
+        },
+        "category_analysis": {
+            "big_category": "onepiece"
+        }
+    },
+    {
+        "product_info": {
+            "id": 7,
+            "brand": "바버",
+            "title": "노튼 퀼티드 자켓 아이보리",
+            "price": "426,500",
+            "detail_page_url": "https://www.trenbe.com/product/++58711722?catalog=100014459",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20230923_638310302567526160_20066968_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 8,
+            "brand": "이자벨마랑",
+            "title": "드로스트링 스트럭쳐 패딩 자켓 페이드블랙",
+            "price": "778,700",
+            "detail_page_url": "https://www.trenbe.com/product/++114598918?catalog=100019400",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1728539903298_305857de15471ae904482fc21b6b1eab_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 9,
+            "brand": "막스마라",
+            "title": "막스마라 패딩 블랙",
+            "price": "1,607,000",
+            "detail_page_url": "https://www.trenbe.com/product/++118638260?catalog=100811554",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20241113_638670335910525984_23973761_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "high_end_street"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 12,
+            "brand": "막스마라",
+            "title": "여성 세이파 구스다운 롱패딩 카푸치노",
+            "price": "1,890,000",
+            "detail_page_url": "https://www.trenbe.com/product/++63600682?catalog=100012870",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1704884492066-3f5fede0-7c2e-4d01-b799-2f1b7d1d0adf.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 13,
+            "brand": "몽클레르",
+            "title": "보에딕 롱 패딩 자켓 블랙",
+            "price": "7,800,000",
+            "detail_page_url": "https://www.trenbe.com/product/++118596180?catalog=100925152",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1731398259784-e68a93aa-56de-4d79-aeb0-7b5364b6bc04.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 15,
+            "brand": "몽클레르",
+            "title": "몽클레어 코체비스 퀼팅 다운 재킷 블랙",
+            "price": "3,600,000",
+            "detail_page_url": "https://www.trenbe.com/product/++78990101?catalog=100666209",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20241120_638676849887590212_22441495_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "high_end_street"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 17,
+            "brand": "몽클레르",
+            "title": "알파카 패딩 믹스 집업 여성 자켓 블랙",
+            "price": "1,607,000",
+            "detail_page_url": "https://www.trenbe.com/product/++54634686?catalog=100012608",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1690267905157_be7b4cb3ef8250b5845226d8cee90133_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 18,
+            "brand": "버버리",
+            "title": "버버리 코듀로이 카라 다이아몬드 퀼팅 크롭 여성 반 자켓 블랙",
+            "price": "2,536,000",
+            "detail_page_url": "https://www.trenbe.com/product/++70809966?catalog=252992",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1708128614199-5c0c7b3b-c449-40b4-95a3-6b29dd3c8d50.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 19,
+            "brand": "구찌",
+            "title": "구찌 GG 코튼 캔버스 푸퍼 자켓",
+            "price": "3,652,000",
+            "detail_page_url": "https://www.trenbe.com/product/++66509149?catalog=100021482",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1705454659716-a8fe54b3-9a37-48f8-8456-495cc82409d2.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "high_end_street"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 20,
+            "brand": "몽클레르",
+            "title": "롱 패딩 다운 자켓 블랙",
+            "price": "5,198,000",
+            "detail_page_url": "https://www.trenbe.com/product/++87798567?catalog=100012630",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1694073814949_6ab7856c6fc8aa69b2ebcc9fbde5fab0_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "cozy_minimal"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 21,
+            "brand": "버버리",
+            "title": "버버리 다이아몬드 퀄팅 체온조절 여성 반 자켓 블랙",
+            "price": "2,598,000",
+            "detail_page_url": "https://www.trenbe.com/product/++42854724?catalog=62736",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1725252213787_8ca20883256d78ecc8df34da449629a5_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "high_end_street"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 22,
+            "brand": "몽클레르",
+            "title": "기에 롱 다운 패딩 자켓 블랙",
+            "price": "3,397,000",
+            "detail_page_url": "https://www.trenbe.com/product/++116456384?catalog=100916925",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1730180060354-cc9db2a3-21bd-45cb-8b3c-1338d86dbd4f.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 23,
+            "brand": "몽클레르",
+            "title": "히르마 롱 패딩 점퍼 블랙",
+            "price": "4,394,100",
+            "detail_page_url": "https://www.trenbe.com/product/++117635991?catalog=100924827",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1730939684660_0ccfa21fa4c5503fe982b3ab103f9eda_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 24,
+            "brand": "에르노",
+            "title": "클리오페 여성 패딩 도브 그레이",
+            "price": "1,376,000",
+            "detail_page_url": "https://www.trenbe.com/product/++117534953?catalog=100010519",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1727236627130_7324f1d927d0852448c3b182fe8eb6bc_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 26,
+            "brand": "몽클레르",
+            "title": "클로에 후드 폭스퍼 롱 다운 패딩 자켓 블랙",
+            "price": "7,127,120",
+            "detail_page_url": "https://www.trenbe.com/product/++64817876?catalog=62819",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1689578708662_3ad3b9e8194b402cc5a6a5aa98392218_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "high_end_street"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 27,
+            "brand": "막스마라",
+            "title": "막스마라 오간자 실크 후드 파카 카키",
+            "price": "5,002,800",
+            "detail_page_url": "https://www.trenbe.com/product/++98223789?catalog=100286069",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240801_638581013115839213_22928641_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 29,
+            "brand": "버버리",
+            "title": "버버리 리버시블 체크 나일론 푸퍼 자켓 Reversible Check Nylon Puffer Jacket 80961291",
+            "price": "4,428,000",
+            "detail_page_url": "https://www.trenbe.com/product/++100465645?catalog=100660480",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240809_638588247443569371_22990196_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "modern_classic"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 31,
+            "brand": "사카이",
+            "title": "사카이 패딩 23 06857 022",
+            "price": "4,497,800",
+            "detail_page_url": "https://www.trenbe.com/product/++98206107?catalog=100083339",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240801_638581005184694413_22923956_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 33,
+            "brand": "몽클레르",
+            "title": "몽클레르 몽클레어 플라메뜨 롱패딩",
+            "price": "1,500,000",
+            "detail_page_url": "https://www.trenbe.com/product/++88296251?catalog=&options=owned",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1729134599502-b8eb4dc0-9474-4077-a503-bbd23597f176.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "high_end_street"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 36,
+            "brand": "막스마라",
+            "title": "24FW 막스마라 더큐브 세이아 구스다운 자켓 카멜",
+            "price": "1,380,000",
+            "detail_page_url": "https://www.trenbe.com/product/++106979872?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1726187692890_20a61457570ce89f728c93e09508d65f_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "high_end_street"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 38,
+            "brand": "노스페이스",
+            "title": "노스페이스 여성 1996 에코 눕시 자켓 블랙 NJ1DQ85A",
+            "price": "499,000",
+            "detail_page_url": "https://www.trenbe.com/product/++117614440?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1730859789031_a5707f4f8b67c3be3c36017a0b9d6802_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "cozy_minimal"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 39,
+            "brand": "버버리",
+            "title": "버버리 24FW 여성 애쉬윅 벨티드 롱 다운패딩 블랙 8096365 A1189",
+            "price": "2,590,000",
+            "detail_page_url": "https://www.trenbe.com/product/++118805139?catalog=&options=owned",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1731586658558-01ed1fdd-3485-4e94-a7af-c2cbb06df971.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "high_end_street"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 40,
+            "brand": "프라다",
+            "title": "프라다 리나일론 삼각로고 퍼 여성 롱 패딩 점퍼",
+            "price": "3,000,000",
+            "detail_page_url": "https://www.trenbe.com/product/++118605503?catalog=&options=owned",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1731401329272-5e0c38d2-c529-4f0f-8513-ca121e01abd2.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "high_end_street"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 41,
+            "brand": "몽클레르",
+            "title": "라이체 후드퍼 숏 다운 패딩 자켓 블랙",
+            "price": "3,208,660",
+            "detail_page_url": "https://www.trenbe.com/product/++62326433?catalog=62915",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1700071533600-4b9d1c57-5a12-4fff-b08e-5f87c87ed5c0.png"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "high_end_street"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 42,
+            "brand": "막스마라",
+            "title": "사코 나일론 패딩 자켓",
+            "price": "1,080,000",
+            "detail_page_url": "https://www.trenbe.com/product/++63845321?catalog=100019739",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1701684931778_7816e1e8ea50c228c266d03fe73350e1_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 43,
+            "brand": "바버",
+            "title": "데브론 코듀로이 카라 여성 퀼팅 자켓 페일핑크 아이스화이트",
+            "price": "242,900",
+            "detail_page_url": "https://www.trenbe.com/product/++10562959?catalog=248162",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20230521_638201994100882395_847288_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 47,
+            "brand": "막스마라",
+            "title": "드로스트링 후드 패딩 자켓 블랙",
+            "price": "901,200",
+            "detail_page_url": "https://www.trenbe.com/product/++115933105?catalog=100127549",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20241025_638654365783482612_23635675_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 50,
+            "brand": "막스마라",
+            "title": "막스마라 패딩 GREENBOX037 Green",
+            "price": "1,580,000",
+            "detail_page_url": "https://www.trenbe.com/product/++101933784?catalog=100156809",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1724424197510-19558651-3f19-4990-8096-af8dc2c83041.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 51,
+            "brand": "노비스",
+            "title": "스틸 그레이 모르간 다운 패딩 자켓 MORGAN STEEL GREY 1000020507",
+            "price": "2,126,600",
+            "detail_page_url": "https://www.trenbe.com/product/++41006552?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240821_638597792440757078_15275737_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "high_end_street"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 52,
+            "brand": "무스너클",
+            "title": "데비 봄버 패딩 블랙",
+            "price": "2,250,000",
+            "detail_page_url": "https://www.trenbe.com/product/++114345354?catalog=100009031",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1728325571380-33030aff-1932-4dfe-a406-93d71be1dece.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "high_end_street"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 54,
+            "brand": "프라다",
+            "title": "프라다 여성 트라이앵글 로고 퍼후드 롱다운자켓 블랙 29E117 106O F0002",
+            "price": "3,780,000",
+            "detail_page_url": "https://www.trenbe.com/product/++75463059?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1712302256023_4c17faff9bdc9e6b0119225a72b90817_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "cozy_minimal"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 55,
+            "brand": "몽클레르",
+            "title": "몽클레어 씨냐 시냐 숏 다운 패딩 자켓 베이지 Cygne Short Down Jacket Sand Beige J20931A0017654A81222",
+            "price": "3,861,000",
+            "detail_page_url": "https://www.trenbe.com/product/++78886669?catalog=100916889",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20241120_638676681274078705_22411658_1.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "cozy_minimal"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 58,
+            "brand": "아크네스튜디오",
+            "title": "넥 포인트 로고 자수 후드 패딩 자켓 블랙",
+            "price": "1,708,200",
+            "detail_page_url": "https://www.trenbe.com/product/++63494766?catalog=100639823",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1701335999982-dc13b42d-221f-4094-a7bd-2ac1d799052f.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "high_end_street"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 59,
+            "brand": "폴로랄프로렌",
+            "title": "24FW 레드 포니 자수 롱 패딩 블랙 211941005 002",
+            "price": "1,345,500",
+            "detail_page_url": "https://www.trenbe.com/product/++115894647?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1729824569862_a893a38e3f706896b7b23121e23e7795_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "high_end_street"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 60,
+            "brand": "몽클레르",
+            "title": "몽클레어 롱 다운 패딩 자켓 블랙 Brou Long Down Jacket Black J20931C0002854AQE999",
+            "price": "4,320,000",
+            "detail_page_url": "https://www.trenbe.com/product/++100469092?catalog=100917207",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20241120_638676809024298785_22990467_1.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "high_end_street"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 61,
+            "brand": "몽클레르",
+            "title": "세리뜨 후드 숏 패딩 자켓 블랙",
+            "price": "5,933,840",
+            "detail_page_url": "https://www.trenbe.com/product/++78886898?catalog=222562",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20241120_638676835122492426_22411673_1.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "high_end_street"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 62,
+            "brand": "바버",
+            "title": "인터네셔널 퀼티드 나일론 벨티드 자켓 블랙",
+            "price": "415,200",
+            "detail_page_url": "https://www.trenbe.com/product/++10592361?catalog=67927",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240731_638579970531069322_847287_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 63,
+            "brand": "몽클레르",
+            "title": "란스 패딩 핑크",
+            "price": "2,878,000",
+            "detail_page_url": "https://www.trenbe.com/product/++53253308?catalog=100015072",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1731654068012_f43630caad8d5021d9e06812389b2cc6_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 64,
+            "brand": "바버",
+            "title": "인터네셔널 여성 퀼티드 자켓 토프",
+            "price": "381,100",
+            "detail_page_url": "https://www.trenbe.com/product/++10769403?catalog=67946",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240731_638580238669055438_847290_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 65,
+            "brand": "바버",
+            "title": "리데스데일 오버사이즈 퀼티드 자켓 30th Anniversary Liddesdale Oversized Quilted Jacket 689959 Olive/Classic",
+            "price": "407,000",
+            "detail_page_url": "https://www.trenbe.com/product/++102906802?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240829_638605013360191730_23172919_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 66,
+            "brand": "막스마라",
+            "title": "(W) 사코 SACCO 패딩 자켓 베이지",
+            "price": "1,228,000",
+            "detail_page_url": "https://www.trenbe.com/product/++67209435?catalog=100013011",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1707901746963_ba47c4bacfe690b09ba293c403956596_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "modern_classic"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 67,
+            "brand": "무스너클",
+            "title": "무스너클 여성 패딩 봄버 자켓 M32LB002N 292",
+            "price": "1,980,000",
+            "detail_page_url": "https://www.trenbe.com/product/++37701784?catalog=100638174",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1667204665915_186ffa47b55999b19dfcfd3fbaefa199_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "high_end_street"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 68,
+            "brand": "발렌시아가",
+            "title": "중고 502624 36사이즈 그레이 컬러 리플렉티브 다운 자켓",
+            "price": "1,000,000",
+            "detail_page_url": "https://www.trenbe.com/product/++28245553?catalog=&options=owned",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1643349555952-65438d71-d469-4d63-b198-b3f28f7fcda7.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "cozy_minimal"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 69,
+            "brand": "몽클레르",
+            "title": "몽클레르 몽클레어 샤르팔 롱패딩",
+            "price": "1,150,000",
+            "detail_page_url": "https://www.trenbe.com/product/++88300465?catalog=&options=owned",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1719206090826-a172a08f-727a-44cb-bdd8-f2a56ed6e015.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "high_end_street"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 70,
+            "brand": "페트레이",
+            "title": "PED3372 215 (TAKAN MQ 02 FUR) 타칸 후드퍼 여성 패딩",
+            "price": "2,420,000",
+            "detail_page_url": "https://www.trenbe.com/product/++48014439?catalog=100012340",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1729500938657_6408e1b017854b1c6f4993a3b19624fe_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "cozy_minimal"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 71,
+            "brand": "노비스",
+            "title": "메리데스 여성 패딩자켓 스틸그레이 MERIDETH NF STEEL GREY 50803",
+            "price": "1,168,830",
+            "detail_page_url": "https://www.trenbe.com/product/++114587910?catalog=100644679",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1728536634740_45265bf474e2d57db16ebc252e5dd2c5_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "cozy_minimal"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 72,
+            "brand": "무스너클",
+            "title": "아스토리아 여성 다운 패딩 블랙",
+            "price": "2,338,000",
+            "detail_page_url": "https://www.trenbe.com/product/++63436176?catalog=255060",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1701062712892_bf5882c03da63b24d57a44712ebe36c2_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "high_end_street"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 74,
+            "brand": "몽클레르",
+            "title": "란스 경량 패딩",
+            "price": "2,133,000",
+            "detail_page_url": "https://www.trenbe.com/product/++72407662?catalog=100036374",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1709797487295_a5187945fa77f4ad7ddf3c8fdfb02671_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 75,
+            "brand": "몽클레르",
+            "title": "몽클레르 몽클레어 여성 롱패딩 점퍼",
+            "price": "1,850,000",
+            "detail_page_url": "https://www.trenbe.com/product/++117018613?catalog=&options=owned",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1730432538900-42aa260e-b70c-450c-9f45-c356a3f1a587.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "high_end_street"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 76,
+            "brand": "몽클레르",
+            "title": "13주년 FULMARUS 로고 롱 패딩 49863 25 C0065 999",
+            "price": "3,872,700",
+            "detail_page_url": "https://www.trenbe.com/product/++114601550?catalog=100951685",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1728540989177_568deb91e69e5ce462d66b15de6783d5_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 77,
+            "brand": "몽클레르",
+            "title": "아프로티 롱 다운 재킷 블랙",
+            "price": "7,018,000",
+            "detail_page_url": "https://www.trenbe.com/product/++114883941?catalog=100915522",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1728885775684-1236882e-93e4-440e-bfec-a0bef364896b.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "high_end_street"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 80,
+            "brand": "막스마라",
+            "title": "여성 마야 퀼팅 자켓 MAYA 045",
+            "price": "702,000",
+            "detail_page_url": "https://www.trenbe.com/product/++58228658?catalog=100919909",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1705215856203-b0e579ce-7ff7-419d-af15-5d6879b0c18e.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 81,
+            "brand": "몽클레르",
+            "title": "몽클레르 몽클레어 하이넥 숏 패딩 점퍼",
+            "price": "800,000",
+            "detail_page_url": "https://www.trenbe.com/product/++88296164?catalog=&options=owned",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1719199825189-e8d2d279-2c2c-406c-acfc-9acf1ceb14ca.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 86,
+            "brand": "에르노",
+            "title": "CLAUDIA 클라우디아 퍼 여성 패딩 블랙",
+            "price": "1,691,000",
+            "detail_page_url": "https://www.trenbe.com/product/++106663877?catalog=100007120",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1726107156539_40bbc5434b445ab22144e539328ced31_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 88,
+            "brand": "듀베티카",
+            "title": "듀베티카 디아데마 다운 자켓 블랙",
+            "price": "1,204,000",
+            "detail_page_url": "https://www.trenbe.com/product/++57306234?catalog=254899",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1693387561157_27323fa521d207b09995f570d61fc5b3_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "modern_classic"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 89,
+            "brand": "무스너클",
+            "title": "그랜드 메티스 다운 패딩 금장 블랙",
+            "price": "1,772,000",
+            "detail_page_url": "https://www.trenbe.com/product/++114621249?catalog=61414",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1728546430932_efed707d3e0f4d008411540d61e7dfdb_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "high_end_street"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 91,
+            "brand": "버버리",
+            "title": "라임하우스 여성 후드 롱 푸퍼 코트 클레이 그린",
+            "price": "2,121,000",
+            "detail_page_url": "https://www.trenbe.com/product/++35084433?catalog=253137",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1662431208397-f6485dbb-2e61-4677-8a0f-6072e358f7a8.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "high_end_street"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 92,
+            "brand": "버버리",
+            "title": "버버리 다이아몬드 퀄팅 나일론 벨티드 여성 자켓 아카이브베이지",
+            "price": "2,553,000",
+            "detail_page_url": "https://www.trenbe.com/product/++97942179?catalog=100009469",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1722484014980-4c5bc863-ce8e-4c9d-8fd9-80dd6efed353.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 98,
+            "brand": "몽클레르",
+            "title": "몽클레르 몽클레어 여성 니트패딩",
+            "price": "1,150,000",
+            "detail_page_url": "https://www.trenbe.com/product/++115930887?catalog=&options=owned",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1729838014188-7bcc7d27-29c5-4ee2-abd2-64812cddb235.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 99,
+            "brand": "버버리",
+            "title": "버버리 페르넬리 다이아몬드 퀼팅 체온조절 여성 자켓 미드나이트",
+            "price": "2,859,000",
+            "detail_page_url": "https://www.trenbe.com/product/++41477515?catalog=60491",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1667805571986_790e1a546b7167563f6c2eb80ec8d026_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "elegant_classic"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 104,
+            "brand": "몽클레르",
+            "title": "몽클레어 여성 란스 경량패딩 LANS 라이트블루 1A1010053048 715",
+            "price": "2,878,000",
+            "detail_page_url": "https://www.trenbe.com/product/++94500647?catalog=100648707",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1721267164752_c3622befaa03e773254b7977d3a2cd99_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 106,
+            "brand": "막스마라",
+            "title": "막스마라 패딩 Seipa 세이파 푸퍼 롱패딩 자켓",
+            "price": "1,382,000",
+            "detail_page_url": "https://www.trenbe.com/product/++55618931?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1691432308961_ff8b22871cfb3dde5248cc5d8941bedd_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "high_end_street"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 107,
+            "brand": "막스마라",
+            "title": "막스마라 패딩 23FW tregil 트레길 퀼팅 롱패딩 후드 조끼",
+            "price": "1,490,000",
+            "detail_page_url": "https://www.trenbe.com/product/++58827508?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1695662151695_cb652ee7db4ac315b463d82b47968c6a_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 109,
+            "brand": "스톤아일랜드",
+            "title": "스톤아일랜드 40735 V0058 크링클랩스 와펜 로고 패치 주니어 패딩",
+            "price": "1,649,000",
+            "detail_page_url": "https://www.trenbe.com/product/++58090840?catalog=100919921",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1694483186903_9c3f199e6b65f8657dcfd0cd3708078e_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "high_end_street"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 112,
+            "brand": "텐씨",
+            "title": "텐씨 남성 알파인 다운 후드 패딩 자켓(블랙) 21CTCUC03127 006102 999",
+            "price": "1,740,000",
+            "detail_page_url": "https://www.trenbe.com/product/++94861890?catalog=100646710",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1721650295340_414e810a3441c0043ed49f6ff199aa30_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "high_end_street"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 114,
+            "brand": "노스페이스",
+            "title": "노스페이스 화이트 라벨 네오 프리 무브 다운 자켓 블랙",
+            "price": "456,400",
+            "detail_page_url": "https://www.trenbe.com/product/++100783334?catalog=100942637",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1723514506948-eadb43ea-c934-405c-8cfd-43af4d64b496.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "high_end_street"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 116,
+            "brand": "에르노",
+            "title": "클라우디아 구스다운 여성 에코퍼 패딩 베이지",
+            "price": "1,688,000",
+            "detail_page_url": "https://www.trenbe.com/product/++66379057?catalog=85034",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1704698609852_893e49ac4460b03ef7836b08e292fda6_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 117,
+            "brand": "이자벨마랑",
+            "title": "토비 로고 패치 패딩 베스트 블랙",
+            "price": "830,700",
+            "detail_page_url": "https://www.trenbe.com/product/++65346313?catalog=100639532",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1703754802297_677ff100bab83117cf3d750b95d33d8d_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 123,
+            "brand": "몽클레르",
+            "title": "레이 RAIE 후드 패딩 자켓 블랙",
+            "price": "3,471,000",
+            "detail_page_url": "https://www.trenbe.com/product/++112490315?catalog=100640961",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1727968992733_8464c483b5a013e1797296b74b49fba9_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 124,
+            "brand": "샤넬",
+            "title": "샤넬 여성 롱 패딩 점퍼",
+            "price": "4,000,000",
+            "detail_page_url": "https://www.trenbe.com/product/++118693678?catalog=&options=owned",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1731473959039-c7c8aaa8-be4f-4ecc-a5c4-5143aa155250.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 127,
+            "brand": "몽클레르",
+            "title": "보에드 퍼 후드 패딩 자켓 크림",
+            "price": "6,610,000",
+            "detail_page_url": "https://www.trenbe.com/product/++97504447?catalog=100663905",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240821_638597839816916532_22910804_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 129,
+            "brand": "에르노",
+            "title": "에르노 패딩 PI001933D12017Z9406 Grey",
+            "price": "1,432,000",
+            "detail_page_url": "https://www.trenbe.com/product/++116165934?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1729931435763_b166a7c73cfba980cdc1205de6f29318_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "high_end_street"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 130,
+            "brand": "파라점퍼스",
+            "title": "MUMMY 후드 여성 다운 롱패딩 자켓 블랙",
+            "price": "1,607,000",
+            "detail_page_url": "https://www.trenbe.com/product/++63458758?catalog=100017947",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1701090916495_98700c9a5071092826787246f239bb65_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "high_end_street"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 135,
+            "brand": "바버",
+            "title": "자켓 퀼티드 Barbour Bristro Quilted Jacket LQU1384NY91",
+            "price": "556,000",
+            "detail_page_url": "https://www.trenbe.com/product/++30976803?catalog=100656826",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1652176222939-af86a0f2-8064-4961-ad77-46bb2ac1ac17.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 136,
+            "brand": "폴로랄프로렌",
+            "title": "로렌 랄프로렌 네이비 인조퍼 트림 후드 하프 오리털 다운 패딩 점퍼 코트",
+            "price": "598,000",
+            "detail_page_url": "https://www.trenbe.com/product/++117474122?catalog=&options=owned",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain/1730753544962-97af8f76-f10c-405a-8796-fd12886c183f.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 137,
+            "brand": "휴고보스",
+            "title": "푸퍼 자켓 Famara Puffer Jacket 611991 Black 001",
+            "price": "459,600",
+            "detail_page_url": "https://www.trenbe.com/product/++36790544?catalog=",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240726_638576053280989568_13839286_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 144,
+            "brand": "몽클레르",
+            "title": "몽클레어 글레스 패치로고 후드 패딩 여성 자켓 1A00064 595ZZ 500 GLES",
+            "price": "2,610,000",
+            "detail_page_url": "https://www.trenbe.com/product/++87798826?catalog=100923592",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1715237007401_71b21d19a638cca0e2a9521fad7ad6c7_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "cozy_minimal"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 145,
+            "brand": "아페쎄",
+            "title": "아페쎄 패딩 PSAJAF02947 AAG",
+            "price": "1,217,000",
+            "detail_page_url": "https://www.trenbe.com/product/++118934303?catalog=100576002",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1731641132136_e3b6f3b368f82245178a05f2dbe20718_0.jpeg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 146,
+            "brand": "맥케이지",
+            "title": "맥케이지 패딩 DELIA C0001",
+            "price": "1,818,000",
+            "detail_page_url": "https://www.trenbe.com/product/++97920665?catalog=100193166",
+            "images": [
+                "https://image-cdn.trenbe.com/product-images/1708068630836_8305d71099dd1e32114217bb74fc7d49_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "outer"
+        }
+    },
+    {
+        "product_info": {
+            "id": 149,
+            "brand": "타트라스",
+            "title": "타트라스 패딩 LTAT23A4694 NAVY BLUE",
+            "price": "1,481,500",
+            "detail_page_url": "https://www.trenbe.com/product/++101099526?catalog=100304289",
+            "images": [
+                "https://image-cdn.trenbe.com/productmain-image/20240814_638592322064334422_23036986_0.jpg"
+            ]
+        },
+        "style_analysis": {
+            "final_style": "chic_sporty"
+        },
+        "category_analysis": {
+            "big_category": "bottom"
+        }
+    }
+]

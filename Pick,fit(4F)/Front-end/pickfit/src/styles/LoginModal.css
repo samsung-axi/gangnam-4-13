@@ -1,0 +1,57 @@
+/* 오버레이 스타일 */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7); /* 배경을 더 어두운 블랙으로 변경 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999; /* 모달이 다른 요소 위에 나타나도록 z-index 추가 */
+  }
+  
+  /* 모달 스타일 */
+  .modal {
+    background-color: #1E1E1E; /* 모달 배경을 어두운 그레이로 변경 */
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    width: 320px; /* 더 넓은 너비로 수정 */
+    max-width: 90%; /* 모바일에서는 모달의 크기를 더 작은 비율로 설정 */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* 부드러운 그림자 효과 추가 */
+    color: #D9D9D9; /* 텍스트 색상을 요청하신 #D9D9D9로 변경 */
+  }
+  
+  /* 헤더 텍스트 스타일 */
+  .modal p {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    color: #D9D9D9; /* 텍스트 색상 */
+  }
+  
+  /* 버튼 스타일 */
+  .modal-button {
+    margin: 12px 0;
+    padding: 12px 24px;
+    background-color: #343A3F; /* 버튼 색상 변경 */
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .modal-button:hover {
+    background-color: #2C3035; /* 버튼 호버시 어두운 색으로 변경 */
+    transform: translateY(-2px); /* 버튼 호버시 살짝 위로 올라가는 효과 */
+  }
+  
+  .modal-button:active {
+    transform: translateY(1px); /* 버튼 클릭 시 아래로 밀리는 효과 */
+  }
+  

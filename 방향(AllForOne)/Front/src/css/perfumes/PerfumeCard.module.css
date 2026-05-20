@@ -1,0 +1,198 @@
+.card {
+    position: relative;
+    width: 200px;
+    height: 320px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    padding: 15px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.card:hover {
+    background-color: #EFEDED;
+    transform: scale(1.05);
+    box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* 북마크된 카드 스타일 추가 */
+.card.bookmarked {
+    border: 2px solid #FF0000;
+}
+
+/* 북마크된 카드의 하트 아이콘 */
+.card.bookmarked::after {
+    content: '♥';
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+    color: #FF0004;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 선택된 카드 스타일 */
+.card.selected {
+    background-color: #333;  /* 선택된 카드 배경을 검은색으로 */
+    color: white;  /* 선택된 카드의 텍스트 색상 흰색으로 */
+}
+
+/* 이미지 컨테이너 */
+.imageContainer {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 15px;
+    height: 120px;
+}
+
+.image {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 20px;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.fadeOut {
+    opacity: 0;
+}
+
+.fadeIn {
+    opacity: 1;
+}
+
+.name {
+    font-family: "Gowun Batang", serif;
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 10px;
+    pointer-events: none;
+    user-select: none;
+}
+
+.divider {
+    width: 80%;
+    height: 1px;
+    background-color: #000000;
+    margin: 0 auto 10px auto;
+}
+
+.category,
+.grade {
+    font-size: 14px;
+    text-align: center;
+    color: #000000;
+    margin-top: 10px;
+    font-family: 'Nanum Gothic';
+    pointer-events: none;
+    user-select: none;
+}
+
+.description {
+    font-family: 'Nanum Gothic', sans-serif;
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    font-size: 13px;
+    padding: 20px 25px 10px 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: all 0.3s ease-in-out;
+    line-height: 1.8;
+    border-radius: 10px;
+    box-sizing: border-box;
+    pointer-events: none;
+    user-select: none;
+}
+
+.card:hover .description {
+    bottom: 0;
+    pointer-events: none;
+    user-select: none;
+}
+
+/* 카드 상단의 체크박스 및 버튼 컨트롤 */
+.cardControls {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    display: flex;
+    gap: 8px;
+    z-index: 20;
+}
+
+/* 체크박스 스타일 */
+.checkbox {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 20px;
+    height: 20px;
+    appearance: none;
+    border: 1px solid #333;
+    border-radius: 50%;
+    background-color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    z-index: 20;
+}
+
+/* 체크박스가 선택되었을 때 스타일 */
+.checkbox:checked {
+    background-color: #333;
+    border-color: #333;
+}
+
+/* 체크박스 선택 시 표시되는 흰색 원 */
+.checkbox:checked::after {
+    content: '';
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+/* 편집 버튼 */
+.editButton {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 20;
+}
+
+.editButton:hover {
+    color: #007bff;
+}
+
+.singleNote,
+.multiNote {
+    font-size: 12px;
+    pointer-events: none;
+    user-select: none;
+}

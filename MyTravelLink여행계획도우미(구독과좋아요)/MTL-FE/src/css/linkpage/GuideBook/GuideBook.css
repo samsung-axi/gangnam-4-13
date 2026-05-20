@@ -1,0 +1,892 @@
+.WS-GuideBook-Container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  margin: 0 auto;
+
+  width: 100%;
+  max-width: 470px;
+
+  height: 100%;
+  max-height: 1000px;
+
+  background-color: white;
+
+  z-index: 11;
+
+  transition: none;
+
+  overflow: hidden;
+}
+
+.WS-GuideBook-Header {
+  display: flex;
+
+  width: 96%;
+  height: 8%;
+}
+
+.WS-GuideBook-Header-Left-Container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 85%;
+}
+
+.WS-GuideBook-Header-Back-Btn-Container {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+
+  filter: invert(0);
+
+  width: 15%;
+  height: 100%;
+}
+
+.WS-GuideBook-Header-Back-Btn {
+  width: 25px;
+  height: 25px;
+}
+
+.WS-GuideBook-Header-Left-Text-Container {
+  width: 100%;
+  height: 80%;
+}
+
+.WS-GuideBook-Header-Left-Text-Container-Title {
+  font-size: var(--font-size-xl);
+  color: black;
+  font-weight: bold;
+
+}
+
+.WS-GuideBook-Header-Left-Text-Contents-Title-Container {
+  display: flex;
+  justify-content: left;
+}
+
+.WS-GuideBook-Header-Left-Text-Contents-Title {
+  font-size: var(--font-size-lg);
+  color: var(--color-dark-gray);
+
+  max-width: 250px;
+}
+
+.WS-GuideBook-Header-Left-Text-Contents-Title-Edit {
+  font-size: var(--font-size-sm);
+  color: var(--color-guide);
+  font-weight: bold;
+
+  margin-top: 5px;
+  margin-left: 10px;
+
+  cursor: pointer;
+}
+
+.WS-GuideBook-Body {
+  margin-top: 2%;
+
+  width: 100%;
+  height: 100%;
+
+  background-color: white;
+}
+
+/* 코스 메뉴 지도 컨테이너 */
+.WS-GuideBook-Map {
+  margin-left: 2%;
+  margin-right: 2%;
+
+  width: 96%;
+  height: 33%;
+}
+
+.WS-GuideBook-Button-Container {
+  display: flex;
+  flex-direction: column;
+
+  margin-top: 2%;
+  margin-bottom: 2%;
+
+  width: 100%;
+  height: 60px;
+}
+
+.WS-GuideBook-Buttons-On-Container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  margin-left: 2%;
+  margin-right: 2%;
+
+  width: 96%;
+  height: 45px;
+
+  overflow-x: auto;
+  white-space: nowrap;
+  scrollbar-width: none;
+}
+
+.WS-GuideBook-Button-Clicked {
+  padding: 10px 20px 8px 20px;
+
+  border: 2px solid var(--color-main);
+  border-radius: var(--border-radius-full);
+  background-color: var(--color-main);
+  color: white;
+  font-size: var(--font-size-sm);
+  font-weight: bold;
+
+  cursor: pointer;
+}
+
+.WS-GuideBook-Button-Not-Clicked {
+  padding: 10px 20px 8px 20px;
+
+  border: 2px solid var(--color-guide);
+  border-radius: var(--border-radius-full);
+  background-color: white;
+  color: var(--color-guide);
+  font-size: var(--font-size-sm);
+
+  cursor: pointer;
+}
+
+.WS-GuideBook-Buttons-Under-Container {
+  display: flex;
+  justify-content: flex-end;
+
+  margin-right: 2%;
+  margin-left: 2%;
+
+  width: 96%;
+}
+
+.WS-GuideBook-Button-EditBtn {
+  background: none;
+  border: none;
+  font-size: var(--font-size-base);
+  color: var(--color-guide);
+  font-weight: 900;
+
+  cursor: pointer;
+}
+
+.WS-GuideBook-Contents-List {
+  width: 100%;
+  overflow-y: auto;
+
+  background-color: white;
+}
+
+/* ---------------------------------------------------------------------- */
+
+.YC-GuideBook-place {
+  position: relative;
+  padding-left: 50px;
+  min-height: 95px;
+
+}
+
+/* 코스 메뉴 장소 컨테이너 */
+.YC-GuideBook-place-Container {
+  position: relative;
+  display: flex;
+
+  align-items: flex-start;
+  margin-bottom: 15px;
+  margin-right: 10px;
+
+  padding: 10px 15px;
+
+  border-radius: 22px;
+  border: none;
+  background-color: var(--color-light-gray);
+}
+
+
+
+.HG-GuideBookList-Header-contents {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  align-self: center;
+  margin-left: 25px;
+
+}
+
+.HG-GuideBookList-Header-contents-title {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  font-size: var(--font-size-lg);
+  color: var(--color-black);
+  font-weight: bold;
+}
+
+
+.HG-GuideBookList-Header-contents-course {
+  font-size: var(--font-size-xs);
+  color: var(--color-main);
+  font-weight: bold;
+}
+
+.YC-GuideBookList-Container::-webkit-scrollbar {
+  display: none;
+  /* Chrome, Safari, Opera에서 스크롤바 숨기기 */
+}
+
+@keyframes slideUpEdit {
+  from {
+    transform: translateY(100%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* 코스 메뉴 장소 컨테이너 편집 모드일 때 크기 조정 */
+.YC-GuideBook-place-Container.edit-mode {
+  margin-right: 40px;
+  /* 편집 모드일 때만 드래그 버튼을 위한 공간 확보 */
+}
+
+/* 코스 메뉴 장소 컨테이너 세로선 */
+.YC-GuideBook-place-Container::before {
+  content: '';
+  /* 내용 없음 */
+  position: absolute;
+  /* 절대 위치 */
+  left: -28px;
+  /* 왼쪽 위치 */
+  top: 24px;
+  /* 상단 위치 */
+  width: 2px;
+  /* 너비 */
+  height: calc(100% + 15px);
+  /* 높이 */
+  background-color: #e0e0e0;
+  /* 배경색 */
+  z-index: 1;
+  /* 쌓임 순서 */
+}
+
+/* 마지막 아이템의 세로선 제거 */
+.YC-GuideBook-place-Container:last-child::before {
+  display: none;
+  /* 표시 안 함 */
+}
+
+/* 드래그 중인 아이템 스타일 */
+.YC-GuideBook-place-Container.dragging {
+  background-color: #f0f0f0;
+  /* 배경색 */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  /* 그림자 효과 */
+}
+
+/* 드래그 중일 때 체크박스 숨기기 */
+.YC-GuideBook-place-Container.dragging .YC-GuideBook-place-checkbox {
+  visibility: hidden;
+  /* 숨김 */
+}
+
+/* 세로선과 번호는 별도의 요소로 처리 */
+.YC-GuideBook-place>div {
+  position: relative;
+  /* 상대 위치 */
+}
+
+/* 세로선 스타일 */
+.YC-GuideBook-place>div::before {
+  content: '';
+  /* 내용 없음 */
+  position: absolute;
+  /* 절대 위치 */
+  left: -28px;
+  /* 왼쪽 위치 */
+  top: 24px;
+  /* 상단 위치 */
+  width: 2px;
+  /* 너비 */
+  height: calc(100% + 15px);
+  /* 높이 */
+  background-color: #e0e0e0;
+  /* 배경색 */
+  z-index: 1;
+  /* 쌓임 순서 */
+  pointer-events: none;
+  /* 상호작용 없음 */
+}
+
+/* 드래그 중인 아이템의 드래그 버튼 컨테이너 */
+.YC-GuideBook-place-draggable {
+  display: flex;
+  /* 플렉스 박스 사용 */
+  align-items: center;
+  /* 수직 중앙 정렬 */
+  gap: 15px;
+  /* 요소 간 간격 */
+}
+
+/* 장소 유형 스타일 */
+#YC-GuideBook-place-type {
+  font-size: 5px;
+  /* 글씨 크기 */
+}
+
+/* 드래그 중인 아이템의 placeholder 스타일 */
+[data-rbd-placeholder-context-id] {
+  position: relative;
+  /* 상대 위치 */
+  background-color: #f8f8f8;
+  /* 배경색 */
+  border-radius: 10px;
+  /* 둥근 모서리 */
+  margin-bottom: 15px;
+  /* 하단 여백 */
+}
+
+/* 장소 번호 스타일 */
+#YC-GuideBook-place-number {
+  position: absolute;
+  /* 절대 위치 */
+  left: -40px;
+  /* 왼쪽 위치 */
+  top: 0;
+  /* 상단 위치 */
+  width: 24px;
+  /* 너비 */
+  height: 24px;
+  /* 높이 */
+  border-radius: 50%;
+  /* 원형 */
+  display: flex;
+  /* 플렉스 박스 사용 */
+  align-items: center;
+  /* 수직 중앙 정렬 */
+  justify-content: center;
+  /* 수평 중앙 정렬 */
+  background-color: #FF6B6B;
+  /* 기본 배경색 설정 */
+  color: white;
+  /* 텍스트 색상 */
+  font-weight: bold;
+  /* 굵은 글씨 */
+  font-size: 14px;
+  /* 글씨 크기 */
+  z-index: 2;
+  /* 쌓임 순서 */
+  visibility: visible;
+  /* 항상 보이도록 설정 */
+}
+
+/* 번호 색상 변경 */
+.YC-GuideBook-place-Container:nth-child(5n+1) #YC-GuideBook-place-number {
+  background-color: #FF6B6B;
+  /* 배경색 */
+}
+
+.YC-GuideBook-place-Container:nth-child(5n+2) #YC-GuideBook-place-number {
+  background-color: #4ECDC4;
+  /* 배경색 */
+}
+
+.YC-GuideBook-place-Container:nth-child(5n+3) #YC-GuideBook-place-number {
+  background-color: #45B7D1;
+  /* 배경색 */
+}
+
+.YC-GuideBook-place-Container:nth-child(5n+4) #YC-GuideBook-place-number {
+  background-color: #96CEB4;
+  /* 배경색 */
+}
+
+.YC-GuideBook-place-Container:nth-child(5n) #YC-GuideBook-place-number {
+  background-color: #D4A5A5;
+  /* 배경색 */
+}
+
+/* 장소 이미지 스타일 */
+#YC-GuideBook-place-image {
+  width: 90px;
+  /* 너비 */
+  height: 70px;
+  /* 높이 */
+  object-fit: cover;
+  /* 이미지 비율 유지 */
+  border-radius: 22px;
+  /* 둥근 모서리 */
+}
+
+/* 장소 이름 스타일 */
+#YC-GuideBook-place-name {
+  font-size: 14px;
+  /* 글씨 크기 */
+  font-weight: bold;
+  /* 굵은 글씨 */
+  color: #333;
+  /* 텍스트 색상 */
+  display: block;
+  /* 블록 요소 */
+  margin-bottom: 5px;
+  /* 하단 여백 */
+}
+
+/* 장소 유형 스타일 */
+#YC-GuideBook-place-type {
+  font-size: 10px;
+  /* 글씨 크기 */
+  color: #666;
+  /* 텍스트 색상 */
+  display: block;
+  /* 블록 요소 */
+}
+
+/* 장소 설명 스타일 */
+#YC-GuideBook-place-description {
+  font-size: 8px;
+  /* 글씨 크기 */
+  color: #888;
+  /* 텍스트 색상 */
+  margin: 5px 0;
+  /* 상하 여백 */
+}
+
+/* 드래그 버튼 컨테이너 */
+.drag-handle {
+  position: absolute;
+  right: -30px;
+  /* 오른쪽 위치 */
+  top: 50%;
+  /* 수직 중앙 */
+  transform: translateY(-50%);
+  cursor: grab;
+  width: 24px;
+  /* 너비 */
+  height: 24px;
+  /* 높이 */
+  display: flex;
+  /* 플렉스 박스 사용 */
+  flex-direction: column;
+  /* 세로 정렬 */
+  align-items: center;
+  /* 수직 중앙 정렬 */
+  justify-content: center;
+  /* 수평 중앙 정렬 */
+  gap: 3px;
+  /* 요소 간 간격 */
+}
+
+/* 드래그 버튼 스타일 */
+.drag-handle::before,
+.drag-handle::after,
+.drag-handle span {
+  content: '';
+  /* 내용 없음 */
+  display: block;
+  /* 블록 요소 */
+  width: 12px;
+  /* 너비 */
+  height: 2px;
+  /* 높이 */
+  background-color: #666;
+  /* 배경색 */
+  border-radius: 1px;
+  /* 둥근 모서리 */
+}
+
+/* 장소 정보 컨테이너 */
+.YC-GuideBook-place-info {
+  flex: 1;
+  /* 남은 공간 차지 */
+  display: flex;
+  /* 플렉스 박스 사용 */
+  flex-direction: column;
+  /* 세로 정렬 */
+  gap: 5px;
+}
+
+/* 드래그 중인 아이템의 세로선과 번호 숨기기 */
+[data-rbd-dragging-state="true"] .YC-GuideBook-place-Container::before,
+[data-rbd-dragging-state="true"] #YC-GuideBook-place-number {
+  visibility: hidden;
+  /* 숨김 */
+}
+
+/* 드래그 중인 아이템의 placeholder에 세로선 유지 */
+[data-rbd-placeholder-context-id] {
+  visibility: hidden;
+  /* 숨김 */
+}
+
+/* 드래그 중인 아이템의 원래 위치에 세로선과 번호 유지 */
+.YC-GuideBook-place-Container:not(.dragging)::before,
+.YC-GuideBook-place-Container:not(.dragging) #YC-GuideBook-place-number {
+  visibility: visible !important;
+  /* 항상 보이도록 설정 */
+}
+
+/* 장소 번호와 체크박스 위치 고정 */
+.YC-GuideBook-place-fixed {
+  position: absolute;
+  /* 절대 위치 */
+  top: 0;
+  /* 상단 위치 */
+  width: 24px;
+  /* 너비 */
+  height: 24px;
+  /* 높이 */
+  z-index: 2;
+  /* 쌓임 순서 */
+}
+
+/* 체크박스 스타일 */
+.YC-GuideBook-place-checkbox {
+  position: absolute;
+  /* 절대 위치 */
+  left: -40px;
+  /* 왼쪽 위치 */
+  top: 0;
+  /* 상단 위치 */
+  width: 24px;
+  /* 너비 */
+  height: 24px;
+  /* 높이 */
+  appearance: none;
+  /* 기본 스타일 제거 */
+  -webkit-appearance: none;
+  /* 웹킷 기본 스타일 제거 */
+  background-color: #f0f0f0;
+  /* 배경색 */
+  border: 2px solid #d0d0d0;
+  /* 테두리 */
+  border-radius: 50%;
+  /* 원형 */
+  cursor: pointer;
+  /* 커서 모양 변경 */
+}
+
+/* 편집 모드일 때 번호 숨기기 */
+.YC-GuideBook-place-Container.edit-mode #YC-GuideBook-place-number {
+  display: none;
+  /* 숨김 */
+}
+
+/* 편집 모드일 때 세로선 숨기기 */
+.YC-GuideBook-place-Container.edit-mode::before {
+  display: none;
+  /* 숨김 */
+}
+
+/* 체크박스 커스텀 스타일 */
+.YC-GuideBook-place-checkbox:checked {
+  background-color: #d0d0d0;
+  /* 배경색 */
+}
+
+.YC-GuideBook-place-checkbox:checked::after {
+  content: '✓';
+  /* 체크 표시 */
+  position: absolute;
+  /* 절대 위치 */
+  top: 50%;
+  /* 수직 중앙 */
+  left: 50%;
+  /* 수평 중앙 */
+  transform: translate(-50%, -50%);
+  /* 중앙 정렬 */
+  color: white;
+  /* 텍스트 색상 */
+  font-size: 14px;
+  /* 글씨 크기 */
+}
+
+
+/* 장소 상세 모달 오버레이 */
+.YC-GuideBook-detail-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+}
+
+/* 장소 상세 모달 */
+.YC-GuideBook-detail-modal {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  position: relative;
+  padding: 0;
+  background-color: white;
+}
+
+/* 모달 헤더 */
+.YC-GuideBook-detail-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+/* 뒤로가기 버튼 */
+.YC-GuideBook-detail-modal-back {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #333;
+  padding: 5px;
+}
+
+/* 공유 버튼 */
+.YC-GuideBook-detail-modal-share {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #333;
+  padding: 5px;
+}
+
+/* 모달 내용 컨테이너 */
+.YC-GuideBook-detail-modal-content {
+  margin: 0;
+  padding: 0;
+}
+
+/* 모달 이미지 */
+.YC-GuideBook-detail-modal-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  margin: 0;
+}
+
+/* 모달 정보 섹션 */
+.YC-GuideBook-detail-modal-info {
+  padding: 20px;
+}
+
+/* 모달 제목 */
+.YC-GuideBook-detail-modal-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin: 0 0 5px 0;
+}
+
+/* 모달 일본어 제목 */
+.YC-GuideBook-detail-modal-title-jp {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+/* 모달 주소 */
+.YC-GuideBook-detail-modal-address {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* 모달 운영시간 */
+.YC-GuideBook-detail-modal-hours {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* 모달 추천 관광시간 */
+.YC-GuideBook-detail-modal-recommended-time {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* 모달 설명 제목 */
+.YC-GuideBook-detail-modal-description-title {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* 모달 설명 */
+.YC-GuideBook-detail-modal-description {
+  font-size: 14px;
+  color: #444;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* 모달 지도 컨테이너 */
+.YC-GuideBook-detail-modal-map {
+  margin: 0;
+  width: 100%;
+  height: 250px;
+  position: relative;
+}
+
+/* 모달 지도 iframe */
+.YC-GuideBook-detail-modal-map-iframe {
+  width: 100%;
+  height: 250px;
+  border: 0;
+}
+
+.HG-GuideBook-detail-modal-header {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+/* ---------------------------------------------------------------- */
+.WS-GuideBook-Modal-Bottom {
+  display: flex;
+  flex-direction: column;
+
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  margin: 0 auto;
+  width: 420px;
+
+  padding: 20px;
+
+  gap: 3px;
+
+  background-color: white;
+  border: 3px solid var(--color-light-gray);
+  border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;
+
+  z-index: 9;
+}
+
+.WS-Modal-Option {
+  display: flex;
+  align-items: center;
+
+  padding: 10px 0;
+
+  width: 100%;
+  height: 100%;
+
+  cursor: pointer;
+}
+
+.WS-Modal-Option:hover {
+  background-color: var(--color-light-gray);
+}
+
+
+.WS-Copy-Modal-Option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 100%;
+  height: 100%;
+
+  gap: 3px;
+
+  cursor: pointer;
+}
+
+.WS-Modal-Option2 {
+  width: 100%;
+  height: 100%;
+
+}
+
+.WS-Select-Option-checkbox-Container {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.WS-Select-Option-checkbox-Container input[type="checkbox"] {
+  display: none;
+  border: none;
+}
+
+.WS-Select-Option-checkbox-Container input[type="checkbox"]:checked+.WS-Select-Option-checkbox-text {
+  width: 100%;
+  height: 100%;
+
+  background-color: var(--color-light-gray);
+  color: var(--color-main);
+  border: none;
+}
+
+.WS-Select-Option-checkbox-text {
+  padding: 20px 10px;
+
+  width: 100%;
+  height: 100%;
+
+  border: none;
+  background: none;
+
+  font-size: var(--font-size-base);
+  font-weight: bold;
+}
+
+.WS-Copy-Modal-Button-Container {
+  display: flex;
+  align-items: center;
+
+  margin-top: 10px;
+
+  gap: 3px;
+
+  width: 100%;
+  height: 100%;
+}
+
+.WS-Copy-Modal-Button {
+
+  width: 100%;
+  height: 100%;
+
+  padding: 20px 0px 18px 0px;
+
+  border: none;
+
+  background-color: var(--color-main);
+  color: white;
+  font-size: var(--font-size-sm);
+  font-weight: bold;
+
+  border-radius: var(--border-radius-full);
+
+  cursor: pointer;
+}
+
+/* ---------------------------------------------------------------------- */

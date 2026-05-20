@@ -1,0 +1,66 @@
+/* 향수 카드 */
+.perfume_card {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 300px;
+    height: 400px;
+    animation: fadeIn 0.5s ease-in-out;
+    border: 1px solid #EFEDED;
+    margin: 0 auto;
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+/* hover 효과는 transform만 적용 */
+.perfume_card:hover {
+    transform: translateY(-5px);
+}
+
+.perfume_image {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 15px;
+    display: block;
+    margin-bottom: 50px;
+}
+
+.perfume_name {
+    font-size: 20px;
+    margin: 10px 0;
+    margin-bottom: 15px;
+}
+
+.perfume_brand {
+    font-size: 14px;
+    color: #555;
+    margin: 5px 0;
+    margin-bottom: 15px;
+}
+
+.perfume_description {
+    font-size: 16px;
+    word-break: break-word;
+    white-space: normal;
+}
+
+/* 추가 향수 섹션의 카드 스타일 */
+.additional_perfumes .perfume_card {
+    flex: 0 0 300px; /* 카드 크기 고정 */
+    margin: 0; /* 자동 마진 제거 */
+}
+
+/* 추가 애니메이션 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

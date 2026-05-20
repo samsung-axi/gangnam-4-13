@@ -1,0 +1,19 @@
+/* FinancialInputModal.css */
+
+.financial-modal::-webkit-scrollbar {
+  width: 6px;
+}
+
+.financial-modal::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.financial-modal::-webkit-scrollbar-thumb {
+  background-color: #64748b; /* slate-500 */
+  border-radius: 8px;
+}
+
+.financial-modal {
+  scrollbar-width: thin;
+  scrollbar-color: #64748b transparent;
+}

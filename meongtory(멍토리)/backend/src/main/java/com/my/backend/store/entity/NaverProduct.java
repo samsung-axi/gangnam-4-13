@@ -1,0 +1,108 @@
+package com.my.backend.store.entity;
+
+import jakarta.persistence.*;
+import lombok.*;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import io.hypersistence.utils.hibernate.type.array.ListArrayType;
+
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
+
+@Entity
+@Table(name = "naver_product")
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+public class NaverProduct {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "naver_product_id")
+    private Long id;
+
+    // 네이버 쇼핑 API에서 제공하는 고유 ID (중복 방지를 위한 인덱스)
+    @Column(unique = true, nullable = false)
+    private String productId;
+
+    @Column(nullable = false)
+    private String title;
+
+    @Column(columnDefinition = "TEXT")
+    private String description;
+
+    @Column(nullable = false)
+    private Long price;
+
+    @Column(nullable = false)
+    private String imageUrl;
+
+    @Column(nullable = false)
+    private String mallName;
+
+    @Column(nullable = false)
+    private String productUrl;
+
+    @Column(nullable = true)
+    private String brand;
+
+    @Column(nullable = true)
+    private String maker;
+
+    @Column(nullable = true)
+    private String category1;
+
+    @Column(nullable = true)
+    private String category2;
+
+    @Column(nullable = true)
+    private String category3;
+
+    @Column(nullable = true)
+    private String category4;
+
+    @Column(nullable = true)
+    private Integer reviewCount;
+
+    @Column(nullable = true)
+    private Double rating;
+
+    @Column(nullable = true)
+    private Integer searchCount;
+
+    @Column(columnDefinition = "vector(1536)", nullable = true)
+    @org.hibernate.annotations.JdbcTypeCode(java.sql.Types.OTHER)
+    private Object titleEmbedding;
+
+    @Column(nullable = false)
+    private LocalDateTime createdAt;
+
+    @Column(nullable = false)
+    private LocalDateTime updatedAt;
+
+    // 기존 Product와의 연관관계 (선택적)
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "related_product_id")
+    @JsonIgnore
+    private Product relatedProduct;
+
+    // 네이버 상품을 카트에 담은 사용자들
+    @OneToMany(mappedBy = "naverProduct", cascade = CascadeType.ALL)
+    @JsonIgnore
+    @Builder.Default
+    private List<Cart> cartItems = new ArrayList<>();
+
+    @PrePersist
+    protected void onCreate() {
+        createdAt = LocalDateTime.now();
+        updatedAt = LocalDateTime.now();
+        if (searchCount == null) {
+            searchCount = 0;
+        }
+    }
+
+    @PreUpdate
+    protected void onUpdate() {
+        updatedAt = LocalDateTime.now();
+    }
+}

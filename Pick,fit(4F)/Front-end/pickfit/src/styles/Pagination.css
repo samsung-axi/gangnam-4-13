@@ -1,0 +1,59 @@
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+    padding: 10px 0;
+  }
+  
+  .pagination-arrow {
+    background-color: transparent;
+    border: none;
+    border-radius: 50%; /* 동그란 박스 */
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .pagination-arrow img {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .pagination-arrow:hover {
+    background-color: white; /* 화살표 호버 시 흰색 */
+  }
+  
+  .pagination-arrow.disabled {
+    cursor: not-allowed;
+    opacity: 0.5; /* 비활성화 상태 */
+  }
+  
+  .pagination-numbers {
+    display: flex;
+    gap: 20px; /* 번호들 간 간격 */
+  }
+  
+  .pagination-number {
+    width: 40px; /* 기본 상태에서 크기 고정 */
+    height: 40px;
+    border-radius: 50%; /* 항상 동그란 모양 유지 */
+    background-color: transparent; /* 기본 상태에서 배경 없음 */
+    color: black; /* 기본 텍스트 색상 */
+    font-size: 16px;
+    font-weight: bold;
+    border: 1px solid transparent; /* 기본 상태에서 테두리 없음 */
+    cursor: pointer;
+    transition: none; /* 스타일 전환 효과 제거 */
+  }
+  
+  .pagination-number.active {
+    background-color: black; /* 활성화된 배경색 */
+    color: white; /* 흰색 텍스트 */
+    border-color: black; /* 테두리 활성화 */
+  }

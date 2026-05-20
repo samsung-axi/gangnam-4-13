@@ -1,0 +1,547 @@
+/* SubscriptionTheme.css - 감성적이고 아름다운 디자인 */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap');
+
+.subscription-theme-container {
+    font-family: 'Noto Sans KR', sans-serif;
+    color: #2d3748;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* ===== 메인 섹션 - 고정된 영역 ===== */
+.subscription-main-section {
+    position: relative;
+    height: 100vh;
+    min-height: 900px;
+    overflow: hidden;
+}
+
+/* ===== 히어로 섹션 ===== */
+.subscription-hero-section {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.subscription-hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+        url('../../../../public/images/package-sub.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+
+.subscription-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.15) 0%, transparent 60%),
+        radial-gradient(circle at 70% 80%, rgba(255, 255, 255, 0.08) 0%, transparent 60%);
+    z-index: 2;
+}
+
+.subscription-floating-elements {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 3;
+    pointer-events: none;
+}
+
+.floating-element {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    animation: float 8s ease-in-out infinite;
+}
+
+.element-1 {
+    width: 120px;
+    height: 120px;
+    top: 15%;
+    left: 8%;
+    animation-delay: 0s;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent);
+}
+
+.element-2 {
+    width: 80px;
+    height: 80px;
+    top: 25%;
+    right: 12%;
+    animation-delay: 2s;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.15), transparent);
+}
+
+.element-3 {
+    width: 100px;
+    height: 100px;
+    bottom: 25%;
+    left: 15%;
+    animation-delay: 4s;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1), transparent);
+}
+
+.element-4 {
+    width: 60px;
+    height: 60px;
+    top: 60%;
+    right: 20%;
+    animation-delay: 6s;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.12), transparent);
+}
+
+.element-5 {
+    width: 90px;
+    height: 90px;
+    bottom: 15%;
+    right: 8%;
+    animation-delay: 8s;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.08), transparent);
+}
+
+@keyframes float {
+    0%, 100% { 
+        transform: translateY(0px) rotate(0deg) scale(1); 
+        opacity: 0.3;
+    }
+    50% { 
+        transform: translateY(-30px) rotate(180deg) scale(1.1); 
+        opacity: 0.8;
+    }
+}
+
+.subscription-hero-content {
+    position: relative;
+    z-index: 4;
+    text-align: center;
+    color: white;
+    max-width: 1000px;
+    padding: 2rem;
+}
+
+.subscription-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: transparent;
+    border: none;
+    border-radius: 50px;
+    padding: 1rem 2rem;
+    margin-bottom: 3rem;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.subscription-badge:hover {
+    transform: translateY(-2px);
+}
+
+.badge-icon {
+    font-size: 1.5rem;
+    animation: sparkle 2s ease-in-out infinite;
+}
+
+@keyframes sparkle {
+    0%, 100% { transform: scale(1) rotate(0deg); }
+    50% { transform: scale(1.2) rotate(180deg); }
+}
+
+.subscription-main-title {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 4rem;
+    font-weight: 400;
+    margin-bottom: 2rem;
+    text-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    line-height: 1.2;
+    letter-spacing: 0.5px;
+}
+
+.title-line-1 {
+    display: block;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.8), 0 2px 4px rgba(0, 0, 0, 0.6), 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+
+.subscription-main-subtitle {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-bottom: 3rem;
+    opacity: 0.9;
+    letter-spacing: 0.5px;
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.6), 0 2px 4px rgba(0, 0, 0, 0.4), 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.subscription-hero-description {
+    background: transparent;
+    border: none;
+    border-radius: 40px;
+    padding: 3rem;
+    max-width: 800px;
+    margin: 0 auto;
+    transition: all 0.3s ease;
+}
+
+.subscription-hero-description:hover {
+    transform: translateY(-5px);
+}
+
+.hero-description-text {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    opacity: 0.95;
+    font-weight: 300;
+    margin: 0;
+}
+
+/* ===== 상세 정보 섹션 - 독립적인 영역 ===== */
+.subscription-details-section {
+    position: relative;
+    background: #ffffff;
+    z-index: 4;
+    padding: 8rem 2rem;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 6rem;
+}
+
+.subscription-section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    font-weight: 600;
+    color: #2d3748;
+    margin-bottom: 1.5rem;
+    position: relative;
+    letter-spacing: -0.01em;
+}
+
+.section-subtitle {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1.3rem;
+    color: #8B4513;
+    font-weight: 300;
+    max-width: 700px;
+    margin: 0 auto;
+    font-style: italic;
+    line-height: 1.6;
+    position: relative;
+    padding: 1.5rem 2rem;
+    background: linear-gradient(135deg, rgba(255, 182, 193, 0.1), rgba(255, 192, 203, 0.1), rgba(230, 230, 250, 0.1));
+    border-radius: 20px;
+    border: 1px solid rgba(255, 182, 193, 0.2);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(255, 182, 193, 0.15);
+}
+
+.subscription-section-title::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -20px;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, #667eea, #8B5CF6, transparent);
+    border-radius: 5px;
+}
+
+/* ===== 향수 리스트 ===== */
+.perfume-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: -180px;
+}
+
+.perfume-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    background: transparent;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.perfume-item:hover {
+    transform: translateY(-5px);
+}
+
+.perfume-image-container {
+    margin-bottom: -60px;
+}
+
+.subscription-theme-container .perfume-image {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    border-radius: 50%;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.1));
+}
+
+.subscription-theme-container .perfume-item:hover .perfume-image {
+    transform: scale(1.05);
+}
+
+.perfume-info {
+    width: 100%;
+    margin-bottom: 80px;
+}
+
+.perfume-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: #2d3748;
+    letter-spacing: -0.01em;
+}
+
+.perfume-description {
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #718096;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    font-weight: 300;
+}
+
+.perfume-accord {
+    margin-bottom: 1rem;
+}
+
+.accord-text {
+    background: linear-gradient(135deg, #FFB6C1, #FFC0CB, #E6E6FA);
+    color: brown;
+    padding: 0.4rem 1rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(255, 182, 193, 0.2);
+}
+
+.perfume-tags {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.tag {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.tag:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+}
+
+/* ===== 혜택 리스트 ===== */
+.benefits-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+    margin-left: 350px;
+}
+
+.benefit-item {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+    background: transparent;
+    border: none;
+    transition: all 0.3s ease;
+    margin-top: -80px;
+}
+
+.benefit-item:hover {
+    transform: translateY(-3px);
+}
+
+.benefit-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.benefit-item:hover .benefit-icon {
+    transform: scale(1.1);
+}
+
+.benefit-content {
+    flex: 1;
+}
+
+.benefit-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #2d3748;
+    margin-bottom: 0.25rem;
+    letter-spacing: -0.01em;
+}
+
+.benefit-description {
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #718096;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    font-weight: 300;
+}
+
+/* ===== 정보 리스트 ===== */
+.info-list {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    flex-wrap: nowrap;
+    justify-content: center;
+    margin-left: 40px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.8rem;
+    background: transparent;
+    border: none;
+    transition: all 0.3s ease;
+    flex: 1;
+    min-width: 180px;
+    max-width: 220px;
+    margin-top: -60px;
+}
+
+.info-item:hover {
+    transform: translateY(-2px);
+}
+
+.info-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.info-item:hover .info-icon {
+    transform: scale(1.1);
+}
+
+.info-content {
+    flex: 1;
+}
+
+.info-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #2d3748;
+    margin-bottom: 0.25rem;
+    letter-spacing: -0.01em;
+}
+
+.info-description {
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #718096;
+    font-size: 0.9rem;
+    font-weight: 300;
+}
+
+/* ===== 반응형 디자인 ===== */
+@media (max-width: 768px) {
+    .subscription-main-title {
+        font-size: 3.5rem;
+    }
+    
+    .subscription-main-subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .subscription-section-title {
+        font-size: 2.5rem;
+    }
+    
+    .perfume-list {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .perfume-item {
+        flex-direction: row;
+        text-align: left;
+        gap: 2rem;
+    }
+    
+    .perfume-image-container {
+        margin-bottom: 0;
+    }
+    
+    .subscription-theme-container .perfume-image {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+    }
+    
+    .benefit-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+    }
+    
+    .info-list {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .info-item {
+        flex-direction: row;
+        text-align: left;
+        gap: 1rem;
+        min-width: auto;
+        max-width: none;
+    }
+    
+    .subscription-hero-description {
+        padding: 2rem;
+    }
+}

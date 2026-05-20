@@ -1,0 +1,31 @@
+server {
+    listen ${PORT};
+    server_name _;
+
+    root /usr/share/nginx/html;
+    index index.html;
+
+    # /admin/ 이하 SPA 라우팅
+    location /admin/ {
+        try_files $uri $uri/ /admin/index.html;
+    }
+
+    # 루트 접근 시 /admin/로 이동(선택)
+    location = / {
+        return 302 /admin/;
+    }
+
+    # 헬스체크(선택)
+    location = /health {
+        access_log off;
+        add_header Content-Type text/plain;
+        return 200 'OK';
+    }
+
+    # 정적 캐시
+    location ~* \.(?:js|css|png|jpg|jpeg|gif|svg|ico|woff2?)$ {
+        expires 30d;
+        access_log off;
+        try_files $uri =404;
+    }
+}

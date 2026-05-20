@@ -1,0 +1,72 @@
+:root {
+  --primary-color: #F2A413;   /* 주황 */
+  --secondary-color: #76ADEC; /* 파랑 */
+}
+
+/* 전체 컴포넌트를 감싸는 카드 형태 컨테이너 */
+.voiceChat {
+  max-width: 500px;
+  margin: 100px auto 0; /* 상단에 여백을 주어 헤더와 구분 */
+  padding: 20px;
+  background-color: #ffffff; /* 배경은 흰색 */
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  font-family: 'Roboto', sans-serif;
+}
+
+/* 녹음 시작/중지 버튼 */
+.button {
+  background-color: var(--primary-color);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 14px 32px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  outline: none;
+
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.button:hover {
+  background-color: var(--secondary-color);
+  transform: scale(1.05);
+}
+
+/* 녹음 중 상태 - 시각적으로 확실히 구분하기 위해 빨간 계열로 지정 */
+.recording {
+  background-color: #ff4d4d !important;
+}
+
+/* AI 응답 및 사용자 발화가 표시되는 영역 */
+.response {
+  margin-top: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #eeeeee;
+  border-radius: 8px;
+  padding: 20px;
+  width: 100%;
+  color: #333333;
+
+  /* 나타날 때 부드럽게 fade-in */
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* 에러 메시지 */
+.error {
+  margin-top: 10px;
+  color: #ff0000;
+}
+
+/* 간단한 fade-in 애니메이션 정의 */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

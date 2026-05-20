@@ -1,0 +1,139 @@
+/* 내 정보 관리 탭 스타일 */
+.SJ_account_settings {
+  min-height: 100vh;
+}
+
+.SJ_settings_header {
+  display: flex;
+  align-items: center;
+  padding: 5%;
+}
+
+.SJ_back_button {
+  border: none;
+  background: none;
+  font-size: 100%;
+  margin-right: 2%;
+  padding: 1%;
+  /* 패딩 제거 */
+  cursor: pointer;
+  color: #3e3e3e;
+  display: flex;
+  /* flexbox 사용 */
+  align-items: center;
+  /* 수직 중앙 정렬 */
+  justify-content: center;
+  /* 수평 중앙 정렬 */
+  width: 20px;
+  /* 고정 너비 설정 */
+  height: 20px;
+  /* 고정 높이 설정 */
+}
+
+/* 내 정보 관리 */
+.SJ_settings_header h1 {
+  font-size: 140%;
+}
+
+.SJ_settings_content {
+  border: 2px solid var(--color-light-gray);
+  border-radius: 22px;
+
+  margin: 5%;
+  padding: 5%;
+}
+
+.SJ_settings_section {
+  margin-bottom: 0px;
+}
+
+.SJ_section_label {
+  color: #919191;
+  font-size: 90%;
+  margin-bottom: 3%;
+}
+
+/* 컨테이너 세로 길이 */
+.SJ_section_content p {
+  font-size: 100%;
+}
+
+/* 로그인 옵션 */
+.SJ_login_options {
+  border: 2px solid var(--color-light-gray);
+  border-radius: 20px;
+
+  margin: 5%;
+  display: flex;
+  justify-content: space-between;
+  /* 아이템 사이의 간격 조정 */
+  align-items: center;
+  /* 수직 중앙 정렬 */
+  padding: 4%;
+  border-radius: 20px;
+  font-weight: bold;
+
+  height: 50px;
+}
+
+.SJ_login_info {
+  display: flex;
+  align-items: center;
+  gap: 0px;
+  /* 로고와 텍스트 사이 간격 */
+}
+
+.SJ_google_logo {
+  width: 4%;
+  height: 4%;
+}
+
+.SJ_login_text {
+  font-size: 100%;
+  color: #333;
+  writing-mode: horizontal-tb;
+  text-orientation: mixed;
+  white-space: nowrap;
+  /* 텍스트 줄바꿈 방지 */
+}
+
+.SJ_google_login {
+  display: flex;
+  /* 아이콘과 텍스트를 수평으로 나열 */
+  align-items: center;
+  /* 수직 중앙 정렬 */
+}
+
+.SJ_google_icon {
+  margin-right: 3%;
+  /* 아이콘과 텍스트 간의 간격 */
+  width: 10%;
+  height: 10%;
+}
+
+/* 로그아웃 버튼 */
+.SJ_logout_button {
+  background: none;
+  border: none;
+  color: #3e3e3e;
+  font-size: 100%;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 4%;
+  font-weight: bold;
+  white-space: nowrap; /* 텍스트 줄바꿈 방지 */
+}
+
+.SJ_withdrawal {
+  margin: 20px;
+  text-align: center;
+}
+
+.SJ_withdrawal_link {
+  color: #919191;
+  background: none;
+  border: none;
+  font-size: 80%;
+  cursor: pointer;
+  padding-left: 78%;
+}

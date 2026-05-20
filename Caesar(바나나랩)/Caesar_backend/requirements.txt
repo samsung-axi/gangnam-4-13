@@ -1,0 +1,119 @@
+#############################################
+# Caesar MCP 프로젝트 - requirements.txt
+# (Windows/로컬 개발 기준 권장 버전 + 주석)
+#############################################
+
+######## Web / Server ########
+fastapi>=0.112               # 경량 ASGI 웹 프레임워크
+uvicorn[standard]>=0.30      # ASGI 서버 (watchfiles 등 포함)
+pydantic>=2.7                # 데이터 검증/모델링 (v2 API)
+
+######## Database / ORM ########
+SQLAlchemy>=2.0              # ORM/쿼리
+alembic>=1.13                # DB 마이그레이션
+
+######## Vector DB / RAG ########
+chromadb>=0.5                # 벡터 스토어(로컬/서버 모두 가능)
+
+######## LangChain / LangGraph / LangSmith ########
+# → 서로 호환되는 라인으로 고정 (langgraph.prebuilt 사용 가능)
+langchain==0.3.27
+langchain-core==0.3.76
+langchain-community==0.3.29
+langchain-openai==0.3.33
+langchain-chroma
+langgraph>=0.2.80
+langgraph-checkpoint>=2.1.0
+langgraph-sdk>=0.1.70
+langsmith>=0.1.119          # 실행 추적 대시보드 (환경변수로 활성화)
+
+######## LLM / Token ########
+openai>=1.40                 # OpenAI SDK (Responses API 등 최신)
+tiktoken>=0.7                # 토큰 카운팅 유틸
+
+######## Embeddings / NLP ########
+# ⚠️ sentence-transformers는 torch가 필요합니다.
+#    설치 순서 권장: (1) torch/torchvision → (2) 본 파일 설치
+sentence-transformers>=3.0
+
+######## Document Parsing ########
+python-docx>=1.1             # Word(.docx)
+openpyxl>=3.1                # Excel(.xlsx)
+pypdf>=5.0                   # PDF 파서 (PyPDF2 대신 권장)
+pdfplumber>=0.11             # 표/좌표 등 고급 PDF 파싱
+
+######## MySQL ########
+PyMySQL>=1.1                 # MySQL 드라이버
+
+######## Cloud APIs (선택) ########
+google-auth>=2.30
+google-auth-oauthlib>=1.2
+google-auth-httplib2>=0.2
+google-api-python-client>=2.130
+
+######## Slack / Notion (선택) ########
+slack-sdk>=3.33
+notion-client>=2.2
+
+######## Security / Crypto ########
+bcrypt>=4.1                  # 비밀번호 해시
+pycryptodome>=3.20           # AES 등 대칭키 암호화
+
+######## Utils ########
+python-dotenv>=1.0           # .env 로딩
+pyyaml>=6.0                  # YAML
+aiofiles>=23.2               # 비동기 파일 I/O (FastAPI 업로드 등)
+requests>=2.32               # HTTP 클라이언트
+
+######## Dev / Test ########
+pytest>=8.3
+pytest-asyncio>=0.24
+black>=24.8
+flake8>=7.1
+
+######## MCP (추가 예정) ########
+# TODO: 공식 MCP 클라이언트 라이브러리 공개 시 버전 핀
+# mcp-client
+
+# LangChain/LangGraph (Agent 용)
+langchain==0.1.0
+langgraph==0.0.20
+langchain-community==0.0.10
+langchain-openai==0.0.5
+
+# # RAG 관련
+# # chromadb==0.4.18  # Vector DB
+# # sentence-transformers==2.2.2  # Embedding
+# # faiss-cpu==1.7.4  # Alternative vector search
+
+# # Google APIs (MCP 서버용)
+# google-auth==2.25.0
+# google-auth-oauthlib==1.1.0
+# google-auth-httplib2==0.1.1
+# google-api-python-client==2.110.0
+
+# # HTTP 클라이언트 (실제 API 연동용)
+# aiohttp==3.9.1
+# httpx==0.25.2
+
+# # Slack API
+# slack-sdk==3.26.0
+
+# # Notion API
+# notion-client==2.2.1
+
+# # 보안 및 암호화
+# bcrypt==4.1.2
+# pycryptodome==3.19.0
+
+# # 유틸리티
+# python-dotenv==1.0.0
+# pyyaml==6.0.1
+# aiofiles==23.2.1
+# requests==2.31.0
+
+# # 개발/테스트
+# pytest==7.4.3
+# pytest-asyncio==0.21.1
+# black==23.11.0
+# flake8==6.1.0
